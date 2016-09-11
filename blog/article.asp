@@ -24,7 +24,8 @@ if(id>118 && id<154){
 }else if(id>304){
     year = 2016;
 }
-location.href='/blog/'.year.'/'.id.'.html';
+url = '/blog/'.year.'/'.id.'.html';
+location.href=url;
 
 function GetRequest() {  
   var url = location.search; //获取url中"?"符后的字串
