@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.biglee.cn/xmlrpc.php">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>IE与Firefox下对CSS解析的区别 &#8211; 网站建设技术集锦</title>
+<link rel='dns-prefetch' href='http://www.biglee.cn'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="http://www.biglee.cn/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="http://www.biglee.cn/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; IE与Firefox下对CSS解析的区别评论Feed" href="http://www.biglee.cn/blog/2007/36.html/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.biglee.cn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://www.biglee.cn/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.biglee.cn/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.biglee.cn/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='doctype后如何获得body.clientHeight' href='http://www.biglee.cn/blog/2007/35.html' />
+<link rel='next' title='如何提高研发过程效率&#8212;内部沟通方式' href='http://www.biglee.cn/blog/2007/37.html' />
+<meta name="generator" content="WordPress 4.6" />
+<link rel="canonical" href="http://www.biglee.cn/blog/2007/36.html" />
+<link rel='shortlink' href='http://www.biglee.cn/?p=36' />
+<link rel="alternate" type="application/json+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.biglee.cn%2Fblog%2F2007%2F36.html" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.biglee.cn%2Fblog%2F2007%2F36.html&#038;format=xml" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="single single-post postid-36 single-format-standard">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+<article id="post-36" class="post-36 post type-post status-publish format-standard hentry category-9">
+	<header class="entry-header">
+		<h1 class="entry-title">IE与Firefox下对CSS解析的区别</h1>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>1、对高度的解析<br />
+IE：将根据内容的高度变化，包括未定义高度的图片内容，即使定义了高度，当内容超过高度时，将使用实际高度。</p>
+<p>Firefox：没有定义高度时，如果内容中包括了图片内容，MF的高度解析是根据印刷标准，这样就会造成和实际内容高度不符合的情况；当定义了高度,但是内容超过高度时，内容会超出定义的高度，但是区域使用的样式不会变化，造成样式错位。</p>
+<p>结论：大家在可以确定内容高度的情况下最好定义高度，如果真的没有办法定义高度，最好不用使用边框样式，否则样式肯定会出现混乱！</p>
+<p>img对象alt和title的解析<br />
+alt：当照片不存在或者load错误时的提示；<br />
+title：照片的tip说明。<br />
+在IE中如果没有定义title，alt也可以作为img的tip使用，但是在MF中，两者完全按照标准中的定义使用</p>
+<p>结论：大家在定义img对象时，最后将alt和title对象都写全，保证在各种浏览器中都能正常使用</p>
+<p>其他的细节差别<br />
+当你在写css的时候，特别是用float: left（或right）排列一窜图片时，会发现在firefox里面正常而IE里面有问题。无论你用margin:0,还是border: 0来约束，都无济于事。</p>
+<p>其实这里还有另外一个问题，就是IE对于空格的处理，firefox是忽略的而IE对于块与块之间的空格是处理的。也就是说一个div结束后要紧接着一个div写，中间不要有回车或者空格。不然也许会有问题，比如3px的偏差，而且这个原因很难发现。</p>
+<p>非常不走运的是我又碰到了这样的问题，多个img标签连着，然后定义的float: left，希望这些图片可以连起来。但是结果在firefox里面正常而IE里面显示的每个img都相隔了3px。我把标签之间的空格都删除都没有作用。</p>
+<p>后来的解决方法是在img外面套li，并且对li定义margin: 0，这样就解决了IE和firefox的显示偏差。IE对于一些模型的解释会产生很多错误问题，只有多多尝试才能发现原因。</p>
+<p>      2、嵌套DIV:父DIV的高度不能根据子DIV自动变化的解决方案</p>
+<div id=”parent”>
+<div id=”content”> </div>
+</div>
+<p>当Content内容多时，即使parent设置了高度100%或auto,在不同浏览器下还是不能完好的自动伸展。 解决方案</p>
+<div id=”parent”>
+<div id=”content”></div>
+<div style=”font: 0px> </div>
+</div>
+<p>在层的最下方产生一个高度为1的空格，可解除这个问题</p>
+<p>      3、CSS DIV 学习笔记</p>
+<p>一、基本上每个区块的div 都要有自己的id，杜绝不同功能的区块用同一个id/class</p>
+<p>二、每个稍大的区块div 后面都跟一个<!– /id –>标记开始、结束</p>
+<p>三、隐藏文字的又一种方法 TEXT-INDENT: -9999px; LINE-HEIGHT: 0</p>
+<p>四、巧妙地处理并列的两列:<br />
+1)<br />
+右列为P, width=44.5%, float=left<br />
+左列为P.first, border-right: #a7a7a7 1px solid, width=45%<br />
+2)<br />
+右列#right, margin-left:50%<br />
+左列#left, float=left,width=50% border-right:#a7a7a7 1px solid</p>
+<p>以上两种方法关键点在于选择其中一个为float=left</p>
+<p>五、随机的切换图片：<br />
+#random {<br />
+BACKGROUND: url(/rotate.php);<br />
+}<br />
+这个方法很巧妙。</p>
+<p>      4、关于div的高度自适应</p>
+<p>　<br />
+　今天小尿让我帮他的页子解决一个问题，就是div的高度自适应，也就是在一个父级div中嵌套一左一右两个子div，右边的子div内容可无限扩展，而<br />
+可以使得父级div的高度能被无限拉长，用一般的布局方法，在IE中可以正确浏览，在Mozilla中父级div的高度就固定在10px左右，无法自适应<br />
+高度，height:auto也不行，怎么办呢。网上参考到一篇资料，要实现自适应高度，div层必须具有float属性，于是我开始动手试验，<br />
+float:left的话，div就跑到页面最左边去了，这好办，我在它的外面再套一层div，把位置定好，那么里面的就算float:left也不会被<br />
+移动位置了。</p>
+<p>xhtml:<br />
+===============</p>
+<div id=”container_father”>
+<div id=”container”>
+<div id=”panel”> test<br />
+    test<br />
+    test<br />
+     <!– id=”panel” –>
+   </div>
+<div id=”sidebar”>
+<ul>
+<li class=”current”>预安装检查</li>
+<li>阅读 PFC 授权协议</li>
+<li>初始化数据库</li>
+<li>完成安装</li>
+</ul>
+<p>     <!– id=”sidebar” –>
+   </div>
+<p>   <!– id=”container” –>
+</div>
+</div>
+<p>CSS<br />
+=================<br />
+#container_father {<br />
+margin-left: auto;<br />
+margin-right: auto;<br />
+padding: 0px;<br />
+width: 750px;<br />
+}</p>
+<p>#container {<br />
+  width: 750px;<br />
+  border: 1px solid #cccccc;<br />
+  padding: 8px;<br />
+  margin: 0px;<br />
+  background-color: #F1F3F5;<br />
+  float: left;<br />
+}</p>
+<p>FRom: http://ulean.zg163.net/</p>
+<p>      5、  深入标准  ~  The IE Doubled Float-Margin Bug(IE双倍浮动边界Bug)<br />
+什么发生故障？</p>
+<p>一段无错的代码把一个居左浮动(float:left)的元素放置进一个容器盒(box)，并在浮动元素上使用了左边界(margin-left)来令它和容器的左边产生一段距离。看起来相当的简单，对吗？但直至它被在IE/Win中浏览为止，在浏览器中居左浮动元素的边界长度被神秘地翻了一倍！</p>
+<p>情况应该如何？</p>
+<p>下面的图释展示了一个简单的div(茶色的盒子)包含着一个居左浮动的div(绿色的盒子)。浮动元素有一个100px的左边界，使容器盒与它的左边缘之间产生了一个100px的间隙。到现在为止，一直都还不错。</p>
+<p>.floatbox {<br />
+float: left;<br />
+width: 150px;<br />
+height: 150px;<br />
+margin: 5px 0 5px 100px;<br />
+/*This last value applies the 100px left margin */<br />
+}</p>
+<p>陈旧的IE“双倍占据”</p>
+<p>原样的相同代码被在IE/Win中浏览时以些微不同的方式显示，下面的图释展示了IE/Win在布局上所做的。</p>
+<p>这为什么会发生？别问这种傻问题！这就是IE，记得吗？符合标准只是理想的状况，不指望实现，这个简单的事实正验证了。</p>
+<p>重点</p>
+<p>这个Bug仅当浮动边界和浮动元素的方向相同时出现在浮动元素和容器盒的内边缘之间，在这之后的任意有着相似边界的浮动元素不会呈现双倍边界。只有特定的浮动行的第一个浮动元素会遭遇这个Bug。像居左的情况一样，双倍边界同样神秘地显示在居右的相同方式。</p>
+<p>最后，修复办法！</p>
+<p>直到现在(04年1月)这个Bug一直被认为是无法修复的，通常用来替代错误的边界的控制方法如：一个不可视浮动元素的左边距，连同一个内嵌的盒子一起，可<br />
+视的盒子装在不可视浮动元素里；或者使用技巧仅对IE/Win设定边界的1/2值。这办法生效了，但是是混乱的而且搞糟了干净的源代码。不过现在全部结束<br />
+了。</p>
+<p>Steve Clason发现了一个修复办法，描述在他的Guest Demo里，修复了双倍边界和围绕文字缩进Bug。这是一个经典的IE的Bug修复办法，使用一个属性来修复影响不相关属性的Bug。</p>
+<p>现在如何来做？</p>
+<p>研究它，简单地将{display: inline;}设置给浮动元素就是全部所需做的！是的，听起来太简单了，不是吗？不过这是真的，仅仅一个display的”inline”声明已经能够胜任了。</p>
+<p>熟悉规则的人知道浮动元素自动设置为”block”元素，而不管他们之前是什么。就如Steve从W3C里指出：</p>
+<p>9.5.1 Positioning the float: the ‘float’ property</p>
+<p>“This<br />
+property specifies whether a box should float to the left, right, o&#114;<br />
+not at all. It may be set for elements that generate boxes that are not<br />
+absolutely positioned. The values of this property have the following<br />
+meanings:</p>
+<p>left<br />
+The element generates a block box that is<br />
+floated to the left. Content flows on the right side of the box,<br />
+starting at the top (subject to the ‘clear’ property). The ‘display’ is<br />
+ignored, unless it has the value ‘none’.</p>
+<p>right<br />
+Same as ‘left’, but content flows on the left side of the box, starting at the top.</p>
+<p>none<br />
+The box is not floated. “</p>
+<p>这说明浮动元素上的{display:<br />
+inline;}会被忽略，事实上所有的浏览器没有呈现任何改变，包括IE。但是，它不知何故让IE停止将浮动元素的边界翻倍。因而，这个修复办法可以被<br />
+直接应用，而没有任何繁琐的隐藏方法。如果将来的一款浏览器决定对这个修复办法抱恙，只要把这个修复装入IE独用的Tan Hack里，细节如同IE<br />
+Three Pixel Text-Jog Demo。</p>
+<p>下面是两个使用了前面相同代码的生动演示，第一个照常显示了IE的Bug，下一个对浮动元素使用了”inline”修复。<br />
+.floatbox {<br />
+float: left;<br />
+width: 150px;<br />
+height: 150px;<br />
+margin: 5px 0 5px 100px;<br />
+display: inline;<br />
+}</p>
+<p>Up&#100;ate (20060828)：</p>
+<p>      6、空
+<li></li>
+<p>解析问题。</p>
+<p>在FF下空
+<li></li>
+<p>是不被解析的，也就是说，
+<li>标签所带的css样式是不被解释的。但是在IE下空
+<li></li>
+<p>是一样会被解析的。<br />
+例如我定义如下Css:<br />
+#sidebar ul li {<br />
+　　list-style-type: none;<br />
+　　list-style-image: none;<br />
+　　margin-bottom: 15px;<br />
+}</p>
+<p>而我的sidebar使用了一个空的
+<li></li>
+<p> 。那么在FF下不被解析，而在IE下会出现15px的空白。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/36.html" rel="bookmark"><time class="entry-date published" datetime="2007-04-26T12:45:11+00:00">2007年4月26日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" rel="category tag">网站技术</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			《IE与Firefox下对CSS解析的区别》有1个想法		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-59" class="comment even thread-even depth-1">
+			<article id="div-comment-59" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/?s=42&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/?s=84&amp;d=mm&amp;r=g 2x' class='avatar avatar-42 photo avatar-default' height='42' width='42' />						<b class="fn">Lee</b><span class="says">说道：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://www.biglee.cn/blog/2007/36.html#comment-59">
+							<time datetime="2007-11-06T18:57:32+00:00">
+								2007年11月6日 18:57							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>今天在写样式时发现，对于Border，其厚度，在IE下，是占用容器的高和宽的，而在FF下，是另外算的。</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.biglee.cn/blog/2007/36.html?replytocom=59#respond' onclick='return addComment.moveForm( "div-comment-59", "59", "respond", "36" )' aria-label='回复给Lee'>回复</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+					<div id="respond" class="comment-respond">
+			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.biglee.cn/blog/2007/36.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="http://www.biglee.cn/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表评论" /> <input type='hidden' name='comment_post_ID' value='36' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="http://www.biglee.cn/blog/2007/35.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">doctype后如何获得body.clientHeight</span></a></div><div class="nav-next"><a href="http://www.biglee.cn/blog/2007/37.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">如何提高研发过程效率&#8212;内部沟通方式</span></a></div></div>
+	</nav>
+	</main><!-- .site-main -->
+
+	
+</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="http://www.biglee.cn/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="http://www.biglee.cn/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="http://www.biglee.cn/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="http://www.biglee.cn/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='http://www.biglee.cn/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="http://www.biglee.cn/blog/category/.Net" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="http://www.biglee.cn/wp-login.php">登录</a></li>
+			<li><a href="http://www.biglee.cn/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.biglee.cn/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

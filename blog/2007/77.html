@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.biglee.cn/xmlrpc.php">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>SQL Server性能调优入门（图文版） &#8211; 网站建设技术集锦</title>
+<link rel='dns-prefetch' href='http://www.biglee.cn'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="http://www.biglee.cn/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="http://www.biglee.cn/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; SQL Server性能调优入门（图文版）评论Feed" href="http://www.biglee.cn/blog/2007/77.html/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.biglee.cn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://www.biglee.cn/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.biglee.cn/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.biglee.cn/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='打不开删不掉的特殊文件夹的建立与删除等' href='http://www.biglee.cn/blog/2007/76.html' />
+<link rel='next' title='高效程序员应该养成的七个习惯' href='http://www.biglee.cn/blog/2007/78.html' />
+<meta name="generator" content="WordPress 4.6" />
+<link rel="canonical" href="http://www.biglee.cn/blog/2007/77.html" />
+<link rel='shortlink' href='http://www.biglee.cn/?p=77' />
+<link rel="alternate" type="application/json+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.biglee.cn%2Fblog%2F2007%2F77.html" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.biglee.cn%2Fblog%2F2007%2F77.html&#038;format=xml" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="single single-post postid-77 single-format-standard">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+<article id="post-77" class="post-77 post type-post status-publish format-standard hentry category-15">
+	<header class="entry-header">
+		<h1 class="entry-title">SQL Server性能调优入门（图文版）</h1>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><strong>第一步，在业务高峰期抓取样本数据</strong>（2个小时左右）。采用的工具是sqlserver自带的profiler，也叫事件探查器，如下图：</p>
+<div class=&#34;postbody&#34;>
+<p><img height=&#34;275&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image002.jpg&#34; width=&#34;415&#34; /> </p>
+<p>进入后，点击最左面的按钮，建立一个新的跟踪： </p>
+<p><img height=&#34;278&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image004.jpg&#34; width=&#34;403&#34; /> </p>
+<p>登录需要用DBO权限，所以可以用sa登录，也可以用windows集成验证方式（如果当前登录的就是sqlserver的话） </p>
+<p><img height=&#34;280&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image006.jpg&#34; width=&#34;406&#34; /> </p>
+<p>新建跟踪，一共有4个tab页进行配置，首先看第一个。跟踪名称不用更改，默认的即可。保存一共有两种方式，一是文件，扩展名是.trc（这种方式方便你把客户那里的跟踪结果发给你），其二是数据库中的表。 </p>
+<p><img height=&#34;307&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image008.jpg&#34; width=&#34;432&#34; /> </p>
+<p>为了分析方便，我们把它另存为表。此时sql提示你重新进行登录，这里我们把表保存到master中 </p>
+<p><img height=&#34;312&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image010.jpg&#34; width=&#34;438&#34; /> </p>
+<p>假设表名字叫做jq（如果有重复的，系统会提示是否覆盖） </p>
+<p><img height=&#34;311&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image012.jpg&#34; width=&#34;434&#34; /> </p>
+<p>确定后回到了刚才的第一个tab页中： </p>
+<p><img height=&#34;312&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image014.jpg&#34; width=&#34;436&#34; /> </p>
+<p>然后切换到第二个选项卡中： </p>
+<p><img height=&#34;311&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image016.jpg&#34; width=&#34;437&#34; /> </p>
+<p>左面列出了各种事件类（Event Class），右面是当前已有的事件类。对于性能调优，我们不需要安全审核、会话信息，点击删除按钮即可： </p>
+<p><img height=&#34;312&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image018.jpg&#34; width=&#34;432&#34; /> </p>
+<p>继续切换到第三个tab页上，这里的数据列默认就够了，当然，如果你看着不顺眼，可以把Appname/NT username等都删除。 </p>
+<p><img height=&#34;311&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image020.jpg&#34; width=&#34;431&#34; /> </p>
+<p>最后一个tab页上，我们需要把系统自己产生的事件ID屏蔽掉： </p>
+<p><img height=&#34;309&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image022.jpg&#34; width=&#34;429&#34; /> </p>
+<p>把那个排除系统ID进行check即可，如下图： </p>
+<p><img height=&#34;305&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image024.jpg&#34; width=&#34;434&#34; /> </p>
+<p>所有项目配置好后，点击&amp;ldquo;运行&amp;rdquo;按钮。持续运行两个小时左右即可（业务高峰期，能典型的反应客户最近一段时间内的业务模式） </p>
+<p><img height=&#34;313&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image026.jpg&#34; width=&#34;448&#34; /> </p>
+<p>好了，第一步的准备工作完成了，等待一段时间后，我们开始检查刚才自动保存到master中的表jq。 </p>
+<p><strong>第二步，开始查找影响速度的地方。</strong> </p>
+<p>打开查询分析器（sql analyzer），登录到master中，从 表jq里面按照I/O倒序，读取若干个sql。根据我的习惯，一般是读取1000条记录。为什么根据I/O来找呢，而不是根据时间来找呢？原因很简单，一句SQL执行，&amp;ldquo;稳定&amp;rdquo;的是I/O，而duration是一个不稳定的因素。我们进行sql调优的目的，就是降低I/O成本，从而提高效率。（一般而言，I/O降低了，duration自然就会降低）详细内容，参考我以前的post：<a href=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/juqiang&#34;>http://blog.joycode.com/juqiang</a> </p>
+<p><img height=&#34;86&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image028.jpg&#34; width=&#34;443&#34; border=&#34;0&#34; /> </p>
+<p>执行完成后，我们仔细看下面的输出。 </p>
+<p>1、 XL_TALLY_Proc04这个sp的reads最大，将近100w，duration也达到了25秒多。 </p>
+<p>2、 Erp_IM_GMBill_GetBill这个sp的I/O不算大，才7w，duration平均都在1秒多点。但是这个sp执行的次数非常多。 </p>
+<p>经过询问客户，XL_TALLY_Proc04这个sp执行的频度很低，一天也就一两次，但是Erp_IM_GMBill_GetBill大概5分钟就要一次。这样整体I/O就占用的非常大。 </p>
+<p>所以这里我们要重点分析Erp_IM_GMBill_GetBill这个sp，而不是第一个！ </p>
+<p>总结一个原则就是：<strong>调整的重点是客户最关心的内容，是执行频度最高、看起来I/O又比较大的那种。I/O最大的，不一定是我们要优先解决的内容。</strong> </p>
+<p><img height=&#34;198&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image030.jpg&#34; width=&#34;442&#34; border=&#34;0&#34; /> </p>
+<p>第三步，开始分析刚才看到的那个语句。既然我们要分析I/O，那么就要把I/O打开，这样每次调整sql，我们都能随时看到I/O的变化情况。这句很有用处地：set statistics io on </p>
+<p><img height=&#34;309&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image032.jpg&#34; width=&#34;444&#34; border=&#34;0&#34; /> </p>
+<p>单纯看I/O变化，我们会晕倒的。因为我们不知道自己做的任何改动，对I/O是如何产生影响的。所以，还要看sql的执行计划是怎佯的。 在查询分析器中，我们按Ctrl+K，或者如下图的菜单，check上即可。 </p>
+<p><img height=&#34;194&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image034.jpg&#34; width=&#34;448&#34; border=&#34;0&#34; /> </p>
+<p>好了，准备工作都做好了，下面开始干活了。 </p>
+<p>我们首先看sql语句的调优，假设下面这条sql语句性能低下： </p>
+<p><img height=&#34;253&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image036.jpg&#34; width=&#34;448&#34; border=&#34;0&#34; /> </p>
+<p>上面的sql一共读取了6636条数据，逻辑读是1126。那么这个I/O是否合理呢？大了还是小了？还有改进的余地吗？我们看执行计划： </p>
+<p><img height=&#34;294&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image038.jpg&#34; width=&#34;449&#34; border=&#34;0&#34; /> </p>
+<p>哦，一共4个咚咚在里面。Index seek的成本占了2%， index scan的占了47%，hash match占了51%，sel&#101;ct最终是0%。我们应该牢记第二个原则，所有的index，尽可能的都走index seek。 </p>
+<p>我们看一下billsoflading的索引信息： </p>
+<p><img height=&#34;216&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image040.jpg&#34; width=&#34;442&#34; border=&#34;0&#34; /> </p>
+<p>当前索引为什么走scan，这里就不说了，感兴趣的可以随便找一本介绍数据库索引的书籍来看看即可。根据我以前那篇blog的描述，我们知道应该建立一个复合索引（也叫convered index）：boldate+companyid+bolcode </p>
+<p><img height=&#34;73&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image042.jpg&#34; width=&#34;447&#34; border=&#34;0&#34; /> </p>
+<p>然后我们重新执行sql，看看I/O变化情况： </p>
+<p><img height=&#34;211&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image044.jpg&#34; width=&#34;448&#34; border=&#34;0&#34; /> </p>
+<p>Ooh，非常cool！logical reads降低到了50。为什么会这样呢？我们看一下执行计划： </p>
+<p><img height=&#34;252&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image046.jpg&#34; width=&#34;448&#34; border=&#34;0&#34; /> </p>
+<p>原来是index scan变成了index seek，效率自然大大的提升！ </p>
+<p>Sql语句在index上调优的方法，基本就是这样。我们继续看sp的。 </p>
+<p>&amp;nbsp;</p>
+<p>对于sp的调优，有一点是和sql调优不同的：sp内部的逻辑处理可能非常复杂。单纯从查询分析器中，我们无法得知哪一小块的sql执行的I/O最大，我们只能看到一个总体的描述。所以，我们要知道sp内部的信息。 </p>
+<p>首先，了解自己当前的spid是多少。一种方法是sel&#101;ct @@spid，另一种方法是看查询分析器下面的status bar的信息。 </p>
+<p><img height=&#34;227&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image048.jpg&#34; width=&#34;444&#34; border=&#34;0&#34; /> </p>
+<p>Ooh，我的spid是101。（上图的最下面那个tips） </p>
+<p>然后我重新打开profiler（事件探查器），重新建立一个跟踪，这里面要修改第二个tab页的信息，把左面事件列&amp;ldquo;存储过程&amp;rdquo;中的SmtpCompleted加上 </p>
+<p><img height=&#34;310&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image050.jpg&#34; width=&#34;445&#34; border=&#34;0&#34; /> </p>
+<p>增加后的样子如下： </p>
+<p><img height=&#34;272&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image052.jpg&#34; width=&#34;259&#34; border=&#34;0&#34; /> </p>
+<p>然后修改第4个tab页，把刚才看到的spid=101的信息填上： </p>
+<p><img height=&#34;271&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image054.jpg&#34; width=&#34;261&#34; border=&#34;0&#34; /> </p>
+<p>点击运行后，这样profiler只能抓到在查询分析器中，spid=101那个窗口发送的sql。我们切换回查询分析器，执行有问题的sp，执行完成后，我们再回到profiler，点停止按钮。一个sp内部所有执行的sql，都被分开了！ </p>
+<p><img height=&#34;282&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image056.jpg&#34; width=&#34;444&#34; border=&#34;0&#34; /> </p>
+<p>这次的结果假设保存在了jq2表中，我们把所有执行的小片sql都列出来： </p>
+<p><img height=&#34;309&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image058.jpg&#34; width=&#34;444&#34; border=&#34;0&#34; /> </p>
+<p>第一个是sp执行后的总体结果，I/O为62328，就是这个sp自己的。第二个是向临时表中插入数据，I/O为61514，我们很容易看到，这一句占用了整个sp的大概95%以上的成本。如果我们把这句ins&#101;rt into #temptable搞定，整个sp的成本自然就下来了。所以我们需要把这句ins&#101;rt搞出来。 </p>
+<p>但是慢着！default情况下，sqlserver的results只显示很少的字符，第二行的sql，我们根本抓不全的，所以我们需要修改一下设置。在查询分析器的工具-选项菜单中，切换到&amp;ldquo;结果&amp;rdquo;这个tab页，修改每列最多字符个数为8192（这是最大的允许值），然后点击&amp;ldquo;确定&amp;rdquo;按钮，重新从jq2中读取信息。也许你会问，如果某个sql特别长，怎么办？其实很简单，在你的代码中把这句sql单独写到log中，或者直接修改sp，把这句print出来即可。 </p>
+<p><img height=&#34;315&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image060.jpg&#34; width=&#34;449&#34; border=&#34;0&#34; /> </p>
+<p>Ok，我们把这句ins&#101;rt sql抓下来后，放到查询分析器中。因为temptable我们没有它的结构，所以我们把ins&#101;rt部分注释掉，看后面的sel&#101;ct语句。执行后，ooh，在goodsmovement表上的成本是57834。 </p>
+<p><img height=&#34;205&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image062.jpg&#34; width=&#34;448&#34; border=&#34;0&#34; /> </p>
+<p>老办法，我们继续看执行计划： </p>
+<p><img height=&#34;390&#34; alt=&#34;&#34; src=http://www.biglee.cn/blog/2007/&#34;http://blog.joycode.com/images/blog_joycode_com/juqiang/1368/o_WindowsLiveWriter_SQLServer_B707_clip_image064.jpg&#34; width=&#34;553&#34; border=&#34;0&#34; /> </p>
+<p>其实，现在又回归到了sql调优的步骤，下面的工作我就不写啦！ </p>
+<p>&amp;nbsp;</p>
+<p>这个步骤，看起来很简单，希望大家对于sql调优（索引部分）心中都有这么一个概念，知道第一步作什么，第二步作什么。还是那句话，索引调优，基本上是最简单的。但是貌似简单的东西，我们越应该重视。你随便找一个应用跟踪一下，各种效率低下的索引，会让你实在#￥*#（**&amp;hellip;&amp;hellip;￥ </p>
+</div>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/77.html" rel="bookmark"><time class="entry-date published" datetime="2007-06-19T23:07:39+00:00">2007年6月19日</time><time class="updated" datetime="2007-06-24T10:24:00+00:00">2007年6月24日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93" rel="category tag">数据库</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+	
+					<div id="respond" class="comment-respond">
+			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.biglee.cn/blog/2007/77.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="http://www.biglee.cn/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表评论" /> <input type='hidden' name='comment_post_ID' value='77' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="http://www.biglee.cn/blog/2007/76.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">打不开删不掉的特殊文件夹的建立与删除等</span></a></div><div class="nav-next"><a href="http://www.biglee.cn/blog/2007/78.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">高效程序员应该养成的七个习惯</span></a></div></div>
+	</nav>
+	</main><!-- .site-main -->
+
+	
+</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="http://www.biglee.cn/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="http://www.biglee.cn/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="http://www.biglee.cn/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="http://www.biglee.cn/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='http://www.biglee.cn/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="http://www.biglee.cn/blog/category/.Net" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="http://www.biglee.cn/wp-login.php">登录</a></li>
+			<li><a href="http://www.biglee.cn/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.biglee.cn/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

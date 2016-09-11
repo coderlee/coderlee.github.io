@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>2007年9月 &#8211; 网站建设技术集锦</title>
+<link rel='dns-prefetch' href='http://www.biglee.cn'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="http://www.biglee.cn/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="http://www.biglee.cn/comments/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.biglee.cn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://www.biglee.cn/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.biglee.cn/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.biglee.cn/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="archive date hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			<header class="page-header">
+				<h1 class="page-title">月份：2007年9月</h1>			</header><!-- .page-header -->
+
+			
+<article id="post-105" class="post-105 post type-post status-publish format-standard hentry category-15">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/105.html" rel="bookmark">sqlserver2000数据库置疑的解决方法之一</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　今天早上断了下电，电脑再开起来后打开Sqlserver2000数据库，发现一个数据库的状态为置疑，无法使用。<br />
+　　习惯性地百度。看到网上介绍的解决方法，基本上都是分离数据库，然后新建一个数据库，再用原来的数据库文件覆盖，最后还要执行一串的SQL语句。感觉好麻烦，于是我自己尝试着解决。<br />
+　　我先分离数据库，然后再把分离出来的数据库附加回去，竟然成功了！<br />
+　　如果你也碰到这样的问题，不烦按此方法一试。若不行，再按网上的那些麻烦的方法吧。我把那些解决方法摘录如下，以供参考：<br />
+　　方法一：[quote]先分离数据库</p>
+<p>企业管理器&#8211;右键suspect的数据库&#8211;所有任务&#8211;分离数据库<br />
+然后备份你的suspect数据库的文件,再按下面的步骤处理:<br />
+1.新建一个同名的数据库<br />
+2.再停掉sql server<br />
+3.用suspect数据库的文件覆盖掉这个新建的同名数据库<br />
+4.再重启sql server<br />
+5.此时打开企业管理器时新建的同名数据库会出现置疑，先不管，执行下面的语句（注意修改其中的数据库名)</p>
+<p>use master<br />
+go</p>
+<p>sp_configure allow up&#100;ates,1 reconfigure with override<br />
+go</p>
+<p>up&#100;ate sysdatabases set status =32768 wh&#101;re name=his222<br />
+go</p>
+<p>sp_dboption test, single user, true<br />
+go</p>
+<p>dbcc checkdb(test)<br />
+go</p>
+<p>up&#100;ate sysdatabases set status =28 wh&#101;re name=test<br />
+go</p>
+<p>sp_configure allow up&#100;ates, 0 reconfigure with override<br />
+go </p>
+<p>sp_dboption test, single user, false<br />
+go</p>
+<p>6.完成后一般就可以访问数据库中的数据了,这时,数据库本身一般还要问题,解决办法是,利用<br />
+数据库的脚本创建一个新的数据库,并将数据导进去就行了.</p>
+<p>如果这样改不加数据库状态,你就把数据库导成一个新库来代替旧库吧</p>
+<p>企业管理器&#8211;右键你的数据库&#8211;所有任务&#8211;导出数据<br />
+　　&#8211;目标标数据库选择新建<br />
+　　&#8211;选择&#34;在两个sql数据库之间复制对象和数据&#34;<br />
+　　&#8211;把&#34;包含扩展属性&#34;选上,其他的根据需要选择<br />
+　　&#8211;最后完成<br />
+[/quote]</p>
+<p>　　方法二：[quote]工作中已经碰到两次这种情况了，想想还是应该把他记录下来，利人利己。</p>
+<p>通常这个问题是由于硬盘空间不够或硬盘读写错误造成的。</p>
+<p>问题现象：</p>
+<p>数据库后面有“置疑”字样，查看系统事务日记出现以下错误：<br />
+错误1&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+错误: 823，严重度: 24，状态: 2<br />
+I/O error 23(数据错误 (循环冗余检查)。) detected during read at offset 0x00000000200000 in file &#39;C:Program FilesMicrosoft SQL ServerMSSQLDataJiapei_Data.MDF&#39;.<br />
+错误2&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+错误: 3313，严重度: 21，状态: 2<br />
+恢复数据库 &#39;Jiapei&#39; 的日志中记录的操作时出错。出错位置在日志记录 ID (274:377:2)。<br />
+错误3&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+错误: 3313，严重度: 21，状态: 2<br />
+Error while redoing logged operation in database &#39;Jiapei&#39;. Error at log record ID (274:377:2).<br />
+数据库可以分离，但分离后无法附加，附加时出现“823”号错误。</p>
+<p>解决方法：</p>
+<p>1、新建一同名数据库（文件名，文件组都和原来的一样），然后停止数据库服务，用原来文件替换新建的数据库文件，启动数据库，该数据库被设为suspect</p>
+<p>2、把数据库改成紧急模式：<br />
+sp_configure &#39;allow&#39;, 1<br />
+reconfigure with override<br />
+up&#100;ate sysdatabases set status = 32768 wh&#101;re name = &#39;数据库名&#39;<br />
+3、把LDF文件改名，再执行<br />
+DBCC REBUILD_LOG (&#39;数据库名&#39;, &#39;E:fdzzdatabasefdzz1204_Log.LDF&#39; )<br />
+4、恢复数据库紧急模式<br />
+up&#100;ate sysdatabases set status = 0 wh&#101;re name = &#39;数据库名&#39;<br />
+执行<br />
+restore database 数据库名 WITH RECOVERY<br />
+sp_configure &#39;allow&#39;, 0<br />
+reconfigure with override<br />
+5、然后用DBCC CHECKDB (&#39;数据库名&#39;)看看有没有错误<br />
+6、如果上面还是不行，试试吧数据库设为紧急模式，应该可以看到数据了，在把数据导出到一个新的数据库。 </p>
+<p>其他有用的操作：</p>
+<p>/*&#8211;重置置疑状态<br />
+1.系统方法:<br />
+如果 sql server 因为磁盘驱动器不再有可用空间，而不能完成数据库的恢复，<br />
+那么 microsoft® sql server™ 2000 会返回错误 1105<br />
+并且将 sysdatabases 中的 status 列设为置疑。按下面的步骤解决这个问题：<br />
+执行 sp_resetstatus。<br />
+语法为：<br />
+sp_resetstatus &#39;数据库名&#39;<br />
+用 alt&#101;r database 向数据库添加一个数据文件或日志文件。<br />
+停止并重新启动 sql server。<br />
+用新的数据文件或日志文件所提供的额外空间，sql server 应该能完成数据库的恢复。<br />
+释放磁盘空间并且重新运行恢复操作。<br />
+sp_resetstatus 关闭数据库的置疑标志，但是原封不动地保持数据库的其它选项。<br />
+&#8211;*/<br />
+&#8211;2.手工重置置疑状态<br />
+use master<br />
+go<br />
+sp_configure &#39;allow up&#100;ates&#39;,1 reconfigure with override<br />
+go<br />
+declare @dbname varchar(30)<br />
+set @dbname=&#39;你要处理的数据库名&#39;<br />
+if @@trancount > 0<br />
+print &#39;正在进行事务处理,操作不能进行&#39;<br />
+else if suser_id()!=1<br />
+print &#39;你不是系统管理员(sa),不能进行此操作&#39;<br />
+else if not exists(sel&#101;ct 1 from master..sysdatabases wh&#101;re name=@dbname)<br />
+print &#39;你要操作的数据库不存在&#39;<br />
+else if not exists(sel&#101;ct 1 from master..sysdatabases wh&#101;re name= @dbname and status &amp; 256 = 256)<br />
+print &#39;你的数据库没有被置疑&#39;<br />
+else<br />
+begin<br />
+begin tran<br />
+up&#100;ate master..sysdatabases set status = status ^ 256 wh&#101;re name = @dbname<br />
+if @@error != 0 o&#114; @@rowcount != 1<br />
+rollback tran<br />
+else<br />
+begin<br />
+commit tran<br />
+print &#39;操作成功,请重新启动SQL&#39;<br />
+end<br />
+end<br />
+go<br />
+sp_configure &#39;allow up&#100;ates&#39;, 1 reconfigure with override<br />
+go </p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>可是现在我已经将这个数据库分离出去了，又不能附加进来，所以那个操作sp_resetstatus 就玩不起来了</p>
+<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
+<p>右键置疑状态的数据库&#8211;>所有任务&#8211;>脱机<br />
+右键脱机状态的数据库&#8211;>所有任务&#8211;>联机<br />
+重置置疑状态<br />
+如果 SQL Server 因为磁盘驱动器不再有可用空间，而不能完成数据库的恢复，那么<br />
+Microsoft? SQL Server? 2000 会返回错误 1105 并且将 sysdatabases 中的 status<br />
+列设为置疑。按下面的步骤解决这个问题：<br />
+1.. 执行 sp_resetstatus。<br />
+2.. 用 Alt&#101;r DATABASE 向数据库添加一个数据文件或日志文件。<br />
+3.. 停止并重新启动 SQL Server。<br />
+用新的数据文件或日志文件所提供的额外空间，SQL Server 应该能完成数据库的恢<br />
+复。<br />
+4.. 释放磁盘空间并且重新运行恢复操作。<br />
+sp_resetstatus 关闭数据库的置疑标志，但是原封不动地保持数据库的其它选项。<br />
+注意 只有在您的主要支持提供者指导下或有疑难解答建议的做法时，才可以使用<br />
+sp_resetstatus。否则，可能会损坏数据库。<br />
+由于该过程修改了系统表，系统管理员必须在创建这个过程前，启用系统表更新。要启<br />
+用更新，使用下面的过程：<br />
+USE master<br />
+GO<br />
+sp_configure &#39;allow up&#100;ates&#39;, 1<br />
+GO<br />
+RECONFIGURE WITH OVERRIDE<br />
+GO<br />
+过程创建后，立即禁用系统表更新：<br />
+sp_configure &#39;allow up&#100;ates&#39;, 0<br />
+GO<br />
+RECONFIGURE WITH OVERRIDE<br />
+GO<br />
+只有系统管理员才能执行 sp_resetstatus。执行该过程后，立即关闭 SQL Server。<br />
+语法为：<br />
+sp_resetstatus database_name<br />
+下面的例子将关闭 PRODUCTION 数据库的置疑标志。<br />
+sp_resetstatus PRODUCTION<br />
+下面是结果集：<br />
+Database &#39;PRODUCTION&#39; status reset!<br />
+WARNING: You must reboot SQL Server prior to accessing this database!<br />
+sp_resetstatus 存储过程代码<br />
+下面是 sp_resetstatus 存储过程的代码：<br />
+IF EXISTS ( Sel&#101;ct * from sysobjects wh&#101;re name = &#39;sp_resetstatus&#39; )<br />
+Dro&#112; PROCEDURE sp_resetstatus<br />
+GO<br />
+Cr&#101;ate PROC sp_resetstatus @dbname varchar(30) AS<br />
+DECLARE @msg varchar(80)<br />
+IF @@trancount > 0<br />
+BEGIN<br />
+PRINT &#39;Can&#39;&#39;t run sp_resetstatus from within a transaction.&#39;<br />
+RETURN (1)<br />
+END<br />
+IF suser_id() != 1<br />
+BEGIN<br />
+Sel&#101;ct @msg = &#39;You must be the System Administrator (SA)&#39;<br />
+Sel&#101;ct @msg = @msg + &#39; to execute this procedure.&#39;<br />
+RETURN (1)<br />
+END<br />
+IF (Sel&#101;ct COUNT(*) FROM master..sysdatabases<br />
+Wh&#101;re name = @dbname) != 1<br />
+BEGIN<br />
+Sel&#101;ct @msg = &#39;Database &#39; + @dbname + &#39; does not exist!&#39;<br />
+PRINT @msg<br />
+RETURN (1)<br />
+END<br />
+IF (Sel&#101;ct COUNT(*) FROM master..sysdatabases<br />
+Wh&#101;re name = @dbname AND status &amp; 256 = 256) != 1<br />
+BEGIN<br />
+PRINT &#39;sp_resetstatus can only be run on suspect databases.&#39;<br />
+RETURN (1)<br />
+END<br />
+BEGIN TRAN<br />
+Up&#100;ate master..sysdatabases SET status = status ^ 256<br />
+Wh&#101;re name = @dbname<br />
+IF @@error != 0 o&#114; @@rowcount != 1<br />
+ROLLBACK TRAN<br />
+ELSE<br />
+BEGIN<br />
+COMMIT TRAN<br />
+Sel&#101;ct @msg = &#39;Database &#39; + @dbname + &#39; status reset!&#39;<br />
+PRINT @msg<br />
+PRINT &#39;&#39;<br />
+PRINT &#39;WARNING: You must reboot SQL Server prior to &#39;<br />
+PRINT &#39; accessing this database!&#39;<br />
+PRINT &#39;&#39;<br />
+END<br />
+GO<br />
+[/quote]</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/105.html" rel="bookmark"><time class="entry-date published" datetime="2007-09-29T11:05:44+00:00">2007年9月29日</time><time class="updated" datetime="2008-12-21T05:05:00+00:00">2008年12月21日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93" rel="category tag">数据库</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/105.html#respond"><span class="screen-reader-text">于sqlserver2000数据库置疑的解决方法之一</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-104" class="post-104 post type-post status-publish format-standard hentry category-13">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/104.html" rel="bookmark">阿里妈妈，帮你实现网络赚钱梦，流量变成现金！</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　前不久我注册成为了阿里妈妈的广告会员，刚投放不久就已经捞到了一桶金，虽然说金额不高，但总比在那些有最低付款限额的联盟那做要强。<br />
+　　推荐各位站长去试试阿里妈妈广告，把你的流量变成现金。点击下面的广告图就可以进入注册了<br />
+[url=http://www.alimama.com/membersvc/rd.do?w=p_10042801&amp;p=&amp;f=http://www.alimama.com/membersvc/promotion/tjyj.htm][img]http://img.alimama.cn/images/adzone/banner_tjyj_468x60.gif[/img][/url]</p>
+<p>这是我广告位的详情，从上面可以看到我的收入情况http://www.alimama.com/membersvc/buyadzone/buy_ad_zone.htm?adzoneid=131799</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/104.html" rel="bookmark"><time class="entry-date published" datetime="2007-09-21T22:34:00+00:00">2007年9月21日</time><time class="updated" datetime="2008-04-26T07:02:00+00:00">2008年4月26日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA" rel="category tag">杂货铺</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/104.html#respond"><span class="screen-reader-text">于阿里妈妈，帮你实现网络赚钱梦，流量变成现金！</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-103" class="post-103 post type-post status-publish format-standard hentry category-PC">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/103.html" rel="bookmark">删除服务的方法</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　在手工处理病毒或一些流氓软件时，经常要删除其生成的服务。下面总结一下删除服务的几种方法。<br />
+　　方法一、用生成服务的程序本身的命令来取消服务。这类程序一般都是可在命令行下运行，用自带的帮助命令（一般是用参数“/?”）可以找到删除服务的方法，按说明执行一下命令即可删除。<br />
+　　方法二、用sc.exe这个Windows命令。系统开始菜单&#8211;>运行，输入：sc del&#101;te &#34;服务名&#34;，确定即可。如果服务名不包含空格，可不加引号。<br />
+　　系统开始菜单&#8211;>运行，输入：cmd，确定，再输入：sc /?，可以查看此命令的详细说明。<br />
+　　方法三、编辑注册表。 打开注册表编辑器，找到下面的项：<br />
+　　HKEY_LOCAL_MACHINESYSTEMCurrentControlSetServices<br />
+　　一般服务会以相同的名字在这里显示一个项，直接删除相关的项便可。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/103.html" rel="bookmark"><time class="entry-date published" datetime="2007-09-20T14:19:26+00:00">2007年9月20日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF" rel="category tag">PC技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/103.html#respond"><span class="screen-reader-text">于删除服务的方法</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-102" class="post-102 post type-post status-publish format-standard hentry category-9">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/102.html" rel="bookmark">PHP学习书籍介绍</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>今天看到别人介绍推荐的两本不错的PHP学习书籍：</p>
+<p>PHP与MySQL 5程序设计（第二版）</p>
+<p>译者: 朱涛江<br />
+作者: （美）吉尔摩<br />
+ISBN: 9787115155092 ［十位: 7115155097］<br />
+页数: 634<br />
+定价: 79.0<br />
+出版社: 人民邮电出版社<br />
+出版年: 2007-2-1</p>
+<p>　　被奉为“新圣经”，本书全面介绍PHP脚本语言和MySOL数据库这两种目前最流行的开源软件，主要内容包括PHP和MySQL基本概念、PHP扩展与应用库、日期和时间功能、PHP数据对象扩展、PHP的mysqli扩展、MySQL 5的存储例程、解发器和视图等。本书实用性强，帮助读者学习PHP编程语言和MySQL数据库服务器的最佳实践，了解如何结合这些卓越的技术创建数据库驱动的动态Web应用程序。<br />
+　　 本书适合于Web开发的新手阅读，也适合作为各层次PHP和MySQL开发人员的参考书。</p>
+<p>作者简介 ······<br />
+　　W.Jason Gilmore，世界知名的PHP开发人员，曾开发了大量PHP和MySQL应用程序，并在各大专业媒体发表了众多脍炙人口的文章。目前，Jason在开发之余，还负责着Apress出版公司的开源图书出版项目。可以通wj@wjgilmore.com与他联系。他的个人网站是http：//www.wjgilmore.com。</p>
+<p>PHP和MySQL Web开发（原书第3版）</p>
+<p>又名: PHP and MySQL Web Development, Third Editio</p>
+<p>译者: 武欣 / 邵煜<br />
+作者: Luke Welling / Laura Thomson</p>
+<p>ISBN: 9787111154709 ［十位: 7111154703］<br />
+页数: 666<br />
+定价: 78<br />
+出版社: 机械工业出版社<br />
+出版年: 2005-6-1</p>
+<p>　　本书将PHP开发与MySQL应用相结合，分别对PHP和MySQL做了深入浅出的分析，不仅介绍PHP和MySQL的一般概念，而且对PHP和MySQL的Web应用做了较全面的阐述，并包括几个经典且实用的例子。</p>
+<p>作者简介<br />
+　　Laura Thomson是澳大利亚墨尔本RMIT大学计算机科学信息技术学院的讲师。她也是Tangled Web Design公司的合伙人。Laura曾经在Telstra和波士顿顾问集团工作过。她获得了应用科学（计算机科学）的学士学位和工程学（计算机系统工程）学士学位，目前她正在攻读适应性Web站点的博士学位。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/102.html" rel="bookmark"><time class="entry-date published" datetime="2007-09-17T20:34:39+00:00">2007年9月17日</time><time class="updated" datetime="2007-09-17T08:37:00+00:00">2007年9月17日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" rel="category tag">网站技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/102.html#respond"><span class="screen-reader-text">于PHP学习书籍介绍</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-101" class="post-101 post type-post status-publish format-standard hentry category-13">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/101.html" rel="bookmark">麻省理工学院开放课件</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>开放课件列表页面：http://www.core.org.cn/OcwWeb/Global/all-courses.htm</p>
+<p>[url=http://www.core.org.cn/OcwWeb/Electrical-Engineering-and-Computer-Science/index.htm]Electrical Engineering and Computer Science（电气工程与计算机科学）[/url]<br />
+[url=http://www.core.org.cn/OcwWeb/Electrical-Engineering-and-Computer-Science/6-046JFall-2004/CourseHome/index.htm]Introduction to Algorithms（算法导论）[/url]</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/101.html" rel="bookmark"><time class="entry-date published" datetime="2007-09-14T09:15:42+00:00">2007年9月14日</time><time class="updated" datetime="2007-09-14T09:16:00+00:00">2007年9月14日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA" rel="category tag">杂货铺</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/101.html#respond"><span class="screen-reader-text">于麻省理工学院开放课件</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-100" class="post-100 post type-post status-publish format-standard hentry category-11">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/100.html" rel="bookmark">[桌面游戏]卡卡松</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　卡卡松是一座法国南部的美丽古城，参加者扮演中古时代的君主，派手下的亲信去开疆拓土，亲信扮演不同的脚色，去占领或管理领地。看谁的策略运用得当，就能赢得最后的胜利。这个合作即竞争的策略性版图游戏。每次玩都会激荡出不同的策略或同盟关系，除了对图像的敏锐感觉外，开放的合作态度更是致胜的关键！</p>
+<p>　　卡卡松是一个评价超过五星级的版图拼放游戏。这个游戏荣获2001年所有的大奖，它不但能训练各年龄层朋友的思考策略，更能培养朋友与家人之间的合作及互动，最适合全家同乐及朋友聚会！所以它受到各方面的极力推荐，被誉为接触德国桌上游戏必备游戏！</p>
+<p>　　每个人轮流抽出地图片，然后按照规则摆到地图，每次摆完地图片都可以选择把自己的小人放上去，放在不同的地方代表不同的职业，有骑士、农夫、盗贼以及寺僧，每种职业有简单的算分方法，全部地图片都摆放结束后，看谁的得分最高即为胜者。  </p>
+<p>　　游戏可以2-6个人玩，2个人玩的时候策略性较高，越多人玩随机性越大，运气成分也越高。什么时候破坏对方建设或是进行自己的建设以及什么时候把自己有限的小人资源摆上地图是游戏的关键。不过总体来说这个游戏还是相当的简单，要思考的也不多，因为谁也不知道自己下一块会摸到的地图片是什么，正所谓人算不如天算。看着每次大家摆出的不同的漂亮卡卡城，也是一种乐趣啊 </p>
+<p>　　此游戏可单机玩，也可联网玩。<br />
+　　游戏下载地址：http://hx.hxgame.net/getdown.asp?id=1442</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/100.html" rel="bookmark"><time class="entry-date published" datetime="2007-09-05T19:33:54+00:00">2007年9月5日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90" rel="category tag">影音娱乐</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/100.html#respond"><span class="screen-reader-text">于[桌面游戏]卡卡松</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-99" class="post-99 post type-post status-publish format-standard hentry category-9">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/99.html" rel="bookmark">Service Unavailable案例之一解决方法</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　今天在测试一个托管机房的网速，服务商给了个服务器给我，让我测试。我远程登录上去新建了一个站点，结果一浏览就出现Service Unavailable。<br />
+　　以前还没有遇到一建立站点就有这问题的，搞不定，于是我习惯性地去网络上搜索，有说是权限问题的，我把权限给了最大，还是解决不了。<br />
+　　无意中看到一文章中提到系统日志，我想，能不能在日志里找到些蛛丝马迹呢？打开事件查看器，一看应用程序日志，里面一串的错误信息，打开其中一个，发现内容分别有：[quote]HTTP 筛选器 DLL C:<br />
+ewriteRewrite.dll 加载失败。数据是错误。</p>
+<p>有关更多信息，请参阅在 http://go.microsoft.com/fwlink/events.asp 的帮助和支持中心。[/quote]<br />
+和[quote]无法加载站点/服务的所有 ISAPI 筛选器。因此启动中止。</p>
+<p>有关更多信息，请参阅在 http://go.microsoft.com/fwlink/events.asp 的帮助和支持中心。[/quote]<br />
+　　这下明白了，原来是ISAPI筛选器在作怪。<br />
+　　看Rewrite的名称，应该是URL　Rewrite类的东东，找了一下没找到错误信息里提到的文件和文件夹，看来是原来的管理员直接就把这玩意给删删了。<br />
+　　接下来只好在IIS管理器里操作了。打开网站属性页，在ISAPI 筛选器这一项里找到了出错的筛选器，删除，然后重新启动一下IIS。再一看网站，可以运行了。<br />
+　　从这个案例的处理过程中，我觉得在日志里可以找到一些问题相关信息，使得问题的解决变得简单快速。做为一个管理员，要有看日志的意识。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/99.html" rel="bookmark"><time class="entry-date published" datetime="2007-09-03T16:20:39+00:00">2007年9月3日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" rel="category tag">网站技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/99.html#respond"><span class="screen-reader-text">于Service Unavailable案例之一解决方法</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="http://www.biglee.cn/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="http://www.biglee.cn/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="http://www.biglee.cn/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="http://www.biglee.cn/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='http://www.biglee.cn/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="http://www.biglee.cn/blog/category/.Net" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="http://www.biglee.cn/wp-login.php">登录</a></li>
+			<li><a href="http://www.biglee.cn/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.biglee.cn/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

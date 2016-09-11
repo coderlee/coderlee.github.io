@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.biglee.cn/xmlrpc.php">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>11个rsync使用实例 &#8211; 网站建设技术集锦</title>
+<link rel='dns-prefetch' href='http://www.biglee.cn'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="http://www.biglee.cn/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="http://www.biglee.cn/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 11个rsync使用实例评论Feed" href="http://www.biglee.cn/blog/2014/297.html/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.biglee.cn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://www.biglee.cn/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.biglee.cn/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.biglee.cn/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='linux下which、wh&#101;reis、locate、find 命令的区别' href='http://www.biglee.cn/blog/2014/296.html' />
+<link rel='next' title='各种SSH终端软件对比' href='http://www.biglee.cn/blog/2014/298.html' />
+<meta name="generator" content="WordPress 4.6" />
+<link rel="canonical" href="http://www.biglee.cn/blog/2014/297.html" />
+<link rel='shortlink' href='http://www.biglee.cn/?p=297' />
+<link rel="alternate" type="application/json+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.biglee.cn%2Fblog%2F2014%2F297.html" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.biglee.cn%2Fblog%2F2014%2F297.html&#038;format=xml" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="single single-post postid-297 single-format-standard">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+<article id="post-297" class="post-297 post type-post status-publish format-standard hentry category-PC">
+	<header class="entry-header">
+		<h1 class="entry-title">11个rsync使用实例</h1>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><span style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">rsync表示 remote sync，其用于在本地或与远程主机间进行文件或目录备份。相比较scp等工具，rsync有以下优点：</span></p>
+<ol style="padding-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">
+<li style="list-style-type: decimal;">速度：除首次全拷贝外，其他时候实现增量拷贝，加快传输速度</li>
+<li style="list-style-type: decimal;">安全：传输数据时可用ssh加密传输</li>
+<li style="list-style-type: decimal;">带宽占用：rsync可对数据进行分块压缩传输，相比其他文件传输工具占用更少带宽</li>
+<li style="list-style-type: decimal;">权限限制：非root用户也可安转和执行rsync命令</li>
+</ol>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">rsync执行方式如下：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync options source destination</pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">source 和 destination 既可以指示本地，也可以是远程机器。下面通过实例说明rsync的用法。</p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;"><strong>1.在本地两个目录间进行数据同步</strong></p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">以下命令用于在两个目录间完成文件拷贝：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; ; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ <span style="color: #ff0000; line-height: 1.5 !important;">rsync -zvr /var/opt/lx/ /root/temp/</span>
+sending incremental file list
+a.c
+b.c
+
+sent 211 bytes  received 50 bytes  522.00 bytes/sec
+total size is 81  speedup is 0.31</pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">以上选项表示意思如下：</p>
+<ul style="margin-left: 45px; padding-left: 0px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">
+<li style="list-style: inherit !important;">-z 传输前进行压缩</li>
+<li style="list-style: inherit !important;">-v 显示命令执行详细信息</li>
+<li style="list-style: inherit !important;">-r 递归拷贝目录</li>
+</ul>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">此时我们看本地和目的地两个文件属性，注意到两者的时间戳是不同的：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ ll /var/opt/lx/a.c /root/temp/a.c 
+-rw-r--r-- 1 root root 73 04-06 21:11 /root/temp/a.c
+-rw-r--r-- 1 root root 73 04-06 21:05 /var/opt/lx/a.c
+</pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">若要保留原文件时间戳、属主/属组、权限属性，我们可以使用 -a 选项：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ <span style="color: #ff0000; line-height: 1.5 !important;">rsync -azv /var/opt/lx/ /root/temp/</span></pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">-a选项亦包含递归的作用，因而可以替代-r选项。</p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;"><strong>2.本地与远程主机间完成数据同步</strong></p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">我们可以用rsync将本地的文件，同步到远程机器：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ <span style="color: #ff0000; line-height: 1.5 !important;">rsync -avz /root/temp/ lx@192.168.1.103:/home/lx/tmp/</span>
+Password:  
+sending incremental file list
+created directory /home/lx/tmp
+./
+a.c
+b.c
+
+sent 216 bytes  received 53 bytes  21.52 bytes/sec
+total size is 81  speedup is 0.30
+</pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">以上我们指明了目的机器ip、登录用户以及所路径，并且需要输入相应用户的登录密码。以上命令完成本地到远程机器的同步，调换source和destination的位置，我们亦可完成远程机器到本地的数据同步。</p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;"><strong>3.使用ssh通道进行数据同步</strong></p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">在与远端进行数据同步时，我们一般采用ssh通道，使用 -e ssh 选项可以完成该功能：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ <span style="color: #ff0000; line-height: 1.5 !important;">rsync -avz -e ssh /root/temp/ lx@192.168.1.103:/home/lx/tmp/</span></pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;"><strong>4.不覆盖目的地对文件已作的修改</strong></p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">经常出现这样的场景，我们对源文件和目的地文件均作了修改，同时想将源文件作的修改同步到目的地，但又保留对目的地文件的更改，此时可以使用 -u 选项：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ ls -l /root/temp/b.c 
+-rw-r--r-- 1 root root 12 04-06 22:19 /root/temp/b.c
+$ ls -l /var/opt/lx/b.c 
+-rw-r--r-- 1 root root 8 04-06 21:06 /var/opt/lx/b.c
+$ rsync -avzu /var/opt/lx/ /root/temp/
+sending incremental file list
+./
+a.c
+
+sent 172 bytes  received 34 bytes  412.00 bytes/sec
+total size is 101  speedup is 0.49 
+</pre>
+<p class="p1"><span class="s1">以上目的地 b.c 文件经过修改，与源文件不相同，此时使用 -u 选项，可以看到对 b.c 并不进行同步，目的地 b.c 的修改得以保存。</span></p>
+<p class="p1"><span class="s1"><b>5.删除不存在于源目录的目的地文件</b></span></p>
+<p class="p1"><span class="s1">对于不存在于源目录，但存在于目的地的文件，有时我们想在做文件同步时删除它们，&#8211;delete 选项可以满足要求：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avz --delete /var/opt/lx/ /root/temp/
+sending incremental file list
+./
+deleting c.c
+b.c
+
+sent 101 bytes  received 34 bytes  270.00 bytes/sec
+total size is 101  speedup is 0.75</pre>
+<p class="p1"><span class="s1">以上目的地相比源目录多了c.c文件，同步时 &#8211;delete 将该文件删除。</span><span class="s1"> </span></p>
+<p class="p1"><span class="s1"><b>6.在同步时不在目的地创建新文件</b></span></p>
+<p class="p1"><span class="s1">有时我们只想对目的地已经有的文件进行同步，而不理会源目录新增的文件，此时可以使用 &#8211;existing 选项：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avz --existing /var/opt/lx/ /root/temp/</pre>
+<p class="p1"><span class="s1"><b>7.显示执行进度</b></span></p>
+<p class="p1"><span class="s1">使用 &#8211;progress 选项可以显示同步的进度，包括文件传输完成进度、传输速率信息：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avz --progress /var/opt/lx/ /root/temp/
+sending incremental file list
+./
+a.c
+          93 100%    0.00kB/s    0:00:00 (xfer#1, to-check=1/3)
+b.c
+           8 100%    7.81kB/s    0:00:00 (xfer#2, to-check=0/3)
+
+sent 220 bytes  received 53 bytes  546.00 bytes/sec
+total size is 101  speedup is 0.37
+</pre>
+<p class="p1"><span class="s1"><b>8.查看 source 和 destination 间的区别</b></span></p>
+<p class="p1"><span class="s1">rsync完成源目录到目的地的拷贝，若能查看到源目录与目的地间的差异，这对同步十分有帮助，-i 选项可以显示源目录与目的地间的差异，示例如下。</span></p>
+<p class="p1"><span class="s1">source:</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ ls -l /var/opt/lx/
+总计 8
+-rw-r--r-- 1 root root 145 04-06 23:11 a.c
+-rw-r--r-- 1 root root   8 04-06 21:06 b.c
+</pre>
+<p class="p1"><span class="s1">destination:</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ ls -l /root/temp/
+总计 8
+-rw-r--r-- 1 root root 93 04-06 22:20 a.c
+-rw-r--r-- 1 lx   root  8 04-06 21:06 b.c
+</pre>
+<p class="p6"><span class="s5">-rw-r&#8211;r&#8211; </span><span class="s6">1</span><span class="s5"> lx <span class="Apple-converted-space">  </span>root<span class="Apple-converted-space">  </span></span><span class="s6">8</span> <span class="s6">04</span><span class="s5">&#8211;</span><span class="s6">06</span> <span class="s6">21</span><span class="s5">:</span><span class="s6">06</span><span class="s5"> b.c</span></p>
+<p class="p1"><span class="s1">可以看到 source 与 destination 有两处不同，一处为 a.c 的文件大小，第二处为 b.c 的属主，此时添加 -i 选项进行数据同步，有以下输出：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avzi /var/opt/lx/ /root/temp/
+sending incremental file list
+.d..t...... ./
+&gt;f.st...... a.c
+.f....o.... b.c
+
+sent 175 bytes  received 37 bytes  424.00 bytes/sec
+total size is 153  speedup is 0.72
+</pre>
+<p class="p1"><span class="s1">对于同步的每个文件，均对应有一条输出，有11个标志位指示源文件与目的地文件的区别，在以上例子中，各标志位意义如下：</span></p>
+<ul class="ul1">
+<li class="li1"><span class="s1">&gt; 指示传输到本地</span></li>
+<li class="li1"><span class="s1">f  指示所传为文件</span></li>
+<li class="li1"><span class="s1">s  指示文件大小不一致</span></li>
+<li class="li1"><span class="s1">t  指示时间戳不一致</span></li>
+<li class="li1"><span class="s1">o  指示属主不一致</span></li>
+</ul>
+<p class="p1"><span class="s1"> </span><span class="s1"><b>9.按指定模式进行同步</b></span></p>
+<p class="p1"><span class="s1">使用 &#8211;include 和 &#8211;exclude 选项，可以帮助我们完成只同步特定文件的目的，例如以下只同步以 &#8216;a&#8217; 开头的文件：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avz --include 'a*' --exclude '*' /var/opt/lx/ /root/temp/
+sending incremental file list
+./
+a.c
+aa.c
+
+sent 220 bytes  received 53 bytes  546.00 bytes/sec
+total size is 148  speedup is 0.54
+</pre>
+<p class="p1"><span class="s1"><b>10.限制传输文件的大小</b></span></p>
+<p class="p1"><span class="s1">使用 &#8211;max-size 选项，我们可以限制传输文件的最大大小：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$rsync -avz --max-size='100K' /var/opt/lx/ /root/temp/</pre>
+<p class="p1"><span class="s1">以上命令限制传输的文件大小只能小于或等于100K，另可以使用 M 和 G 作为大小单位。</span></p>
+<p class="p1"><span class="s1"><b>11.全拷贝</b></span></p>
+<p class="p1"><span class="s1">默认情况下 rsync 采用增量拷贝，这样能节省带宽，在所同步文件不大的情况下，我们可以通过 -W 选项实现全拷贝：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avzW /var/opt/lx/ /root/temp/</pre>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2014/297.html" rel="bookmark"><time class="entry-date published" datetime="2014-07-31T12:16:44+00:00">2014年7月31日</time><time class="updated" datetime="2016-09-11T13:12:59+00:00">2016年9月11日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF" rel="category tag">PC技术</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+	
+					<div id="respond" class="comment-respond">
+			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.biglee.cn/blog/2014/297.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="http://www.biglee.cn/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表评论" /> <input type='hidden' name='comment_post_ID' value='297' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="http://www.biglee.cn/blog/2014/296.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">linux下which、wh&#101;reis、locate、find 命令的区别</span></a></div><div class="nav-next"><a href="http://www.biglee.cn/blog/2014/298.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">各种SSH终端软件对比</span></a></div></div>
+	</nav>
+	</main><!-- .site-main -->
+
+	
+</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="http://www.biglee.cn/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="http://www.biglee.cn/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="http://www.biglee.cn/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="http://www.biglee.cn/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='http://www.biglee.cn/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="http://www.biglee.cn/blog/category/.Net" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="http://www.biglee.cn/wp-login.php">登录</a></li>
+			<li><a href="http://www.biglee.cn/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.biglee.cn/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

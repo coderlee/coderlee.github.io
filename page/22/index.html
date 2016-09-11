@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>网站建设技术集锦 &#8211; 第22页 &#8211; 涉及网站建设、服务器维护等IT技术的博客</title>
+<link rel='dns-prefetch' href='http://www.biglee.cn'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="http://www.biglee.cn/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="http://www.biglee.cn/comments/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.biglee.cn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://www.biglee.cn/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.biglee.cn/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.biglee.cn/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="home blog paged paged-22 hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<h1 class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></h1>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+			
+<article id="post-87" class="post-87 post type-post status-publish format-standard hentry category-7">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/87.html" rel="bookmark">[讲义]同理心</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>当你和你的当事人发生冲突时，怎么才能化解冲突呢?你了解对方的真实想法吗?你站在对方的角度想过对方的感受吗？假如你从没有这么做过，请尝试一下下面的同理心,它会让你的人际关系迅速得到改善。</p>
+<p>一、 定义：<br />
+站在当事人的角度和位置上，客观地理解当事人的内心感受及内心世界，且把这种理解传达给当事人。但这并不意味倾听者一定赞同当事人的观点与行为。<br />
+三重概念：<br />
+1.   辩识：分辩、抓住当事人的内心世界；<br />
+2.   反馈：将此辩识反馈给当事人；<br />
+3.   非赞同，不一定代表赞同当事人的观点；（与&#34;同情心&#34;的区别）<br />
+两大步骤<br />
+辨识     反馈<br />
+同理心两条准则：<br />
+（1）、先处理心情，再处理事情；如果处理好心情，处理事情速度会快一点；<br />
+（2）、立场要坚定，态度要热情：如对方要你降价，你知道肯定不能降价，那你礼貌热情地告诉他，让他以一种最好的方式接受；挑剔的语言：不过、可是、虽然、但是&#8230;&#8230;<br />
+二：同理心功效<br />
+1、深度尊重别人，满足对方心理需求<br />
+2、化解人际矛盾，融洽人际关系<br />
+3、消除逆发情绪，解除沟通障碍<br />
+4、增加专业风范，展示人格魅力<br />
+5、无需用任何金钱投资，且具千金难买之力<br />
+同理心评量表<br />
+LL——最低分阶段<br />
+受话者：<br />
+1、 取笑发话者的感受<br />
+2、 制止对方说话<br />
+3、 挑剔其见解<br />
+4、 自我辩护<br />
+5、 自述以满足自我需要<br />
+6、 完全忽视发话�<br />
+结果：致使说话者觉得受伤害，造成沟通隔阂。<br />
+L——低分阶段（没错但也不等于对，离好有距离，离高明还差一截），今天的核心领导力是&#34;亲和力&#34;。<br />
+受话者：<br />
+1、 提出问题<br />
+2、 给予忠告（忠告多会形成代沟，母亲的唠唠叨叨太多也会形成代沟）<br />
+3、 重复发话者的内容<br />
+4、 仅表抱歉（多发生在服务行业）<br />
+5、 盲目同意（人家想听你的方案，而你一直说：老板，我听你的&#8230;&#8230;）<br />
+6、 盲目安抚（一个被上司骂了一顿，而你说：好了，大人不计小人过，这就是固化矛盾）<br />
+结果：明显遗漏对方感受。仅处理事情，未处理心情，致使说话者觉得被误解、有挫折感。<br />
+4、H——高分阶段（倾听是永远不变的H）<br />
+受话者：<br />
+1、  准确辨认说话者重要的感受<br />
+2、  准确反馈说话者重要而明显的感受<br />
+结果：因为正确了解说话者重要而明显的感受，使说话者觉得有被人了解的感觉，乐意继续倾诉其感受。<br />
+5、HH——最高分阶段（非常潜在的东西，有一语惊醒梦中人的感觉，也就是将语言进行了恰当的&#34;修饰&#34;）；<br />
+受话者：一针见血指出说话者未表达甚至自己都未完全明白的感受，如<br />
+*各种复杂感受中的潜在感受<br />
+*潜在需求<br />
+*潜台词<br />
+*潜意识<br />
+*暗示<br />
+相关形容词：心领神会 心心相印 心在灵犀一点通 恍然大悟  一针见血  默契 知己<br />
+结果：因受话者能超越其明显感受，且能明白其隐含感受，使说话者觉得被深入了解，产生&#34;真是如此&#34;感受，愿意更深入地与对方沟通。<br />
+*著名案例：家庭夫妻（未用同理心）<br />
+珍：你晚上还要加班吗？<br />
+明：是啊！没办法！<br />
+珍：我们说好今晚出去逛街的呀；<br />
+明：我又不知道今晚临时要加班；<br />
+珍：你天天只知道工作工作，从不留点时间给我<br />
+明：你又再哆嗦啦！真烦死人了！<br />
+珍：你才烦死人呢？你老是工作第一<br />
+明：先生工作这么辛苦，别人家的太太都会心痛，你却这样抱怨我；<br />
+珍：太太理家也很辛苦，别人家的先生都好么体贴，你却一点也不关心我； </p>
+<p>*家庭夫妻（同一件事，运用同理心）：<br />
+珍：你今晚又要加班吗？<br />
+明：嗯，看来今天你又得一个人呆在家里了。真对不起，老婆；<br />
+珍：能不去吗？<br />
+明：我也很想跟你呆在一起，可是公司时最近这么忙，我又是具体负责这项工作的，不去能行吗？你看怎么办呢？<br />
+珍：不是说好了今晚我们一起去逛街的吗？<br />
+明：我知道你又要怪我开空头支票了，可是，你也知道我真的也是非常非常想多跟你呆在一起的呀！<br />
+珍：哼，假惺惺！你就知道工作，一点也不关心我；<br />
+明：你冤枉好人！我句句都是实话，再说，我要加班，多挣钱，不也是为我们以后的日子过得好一点点吗？<br />
+珍：走吧，走吧，不要烦了；早点回来，自己当心点；<br />
+*加班时还可以做同理心：加班途中打个电话回家继续做同理心，一方面问好，一方面查岗；<br />
+*加完班回家还可以做同理心：回家时带束花、晚点、或介绍公司的新闻什么的；<br />
+*这六天回去，可练习同理心，回去同上司做同理心，上司首先想看到的是结果；<br />
+*一个人的层次越低，就越不考虑对方的感受；一个人的层次越高，同理心修炼的越好。 </p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/87.html" rel="bookmark"><time class="entry-date published" datetime="2007-07-20T16:45:50+00:00">2007年7月20日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90" rel="category tag">管理营运</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/87.html#respond"><span class="screen-reader-text">于[讲义]同理心</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-86" class="post-86 post type-post status-publish format-standard hentry category-14">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/86.html" rel="bookmark">[经典]要如此爱国（转台湾忠信中学校长演讲）</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>现在的国人大都变得越来越自私自利，遇事推卸责任，很大一部分原因是教育的问题。转摘一演讲，让各位看看：</p>
+<p>台湾一校长震动所有中国人的演讲</p>
+<p>台湾有这么一所学校，学生年龄在15－18之间，每年三千多学生中，因违反校规校纪被校方开除的二、三百人。学校没有工人，没有保卫，没有大师傅，一切必要工种都由学生自己去做。学校实行学长制，三年级学生带一年级学生。全校集合只需3分钟。学生见到老师七米外要敬礼。学生没有寒署假作业，没有一个考不上大学的。这就是台湾享誉30年以道德教育为本的忠信高级工商学校。在台湾各大报纸招聘广告上，经常出现&#34;只招忠信毕业生”字样。<br />
+    以下是校长高震东在国内的讲演： </p>
+<p>    同学们，你们说“天下兴亡”的下一句是什么？（台下声音：“匹夫有责”）──不，是“我的责任”。如果今年高考每个人都额外加10分，那不等于没加吗？“天下兴亡，匹夫有责”等于大家无责。“匹夫有责”要改成“我的责任”，我是这样教我的学生的。所以说，现在我们大陆教育办得不好，是我高震东的责任，只因为这样，我才回祖国专门举办道德方面演讲。（掌声）“以天下兴亡为已任”是孟子思想。 禹是人，舜是人，我也是人！他们能做到的，我为什么不能呢？ “天下兴亡，我的责任”，唯有这个思想，我们的国家才有希望。我们每个学生如果人人都说：学校秩序不好，是我的责任；国家教育办不好，是我的责任；国家不强盛，我的责任……人人都能主动负责，天下哪有不兴盛的国家？哪有不团结的团体？所以说，每个学生都应该把责任拉到自己身上来，而不是推出去。我在台湾办学校就是这样，如果教室很脏，我问“怎么回事？”假如有个学生站起来说：“报告老师，今天是32号同学值日，他没打扫卫生”。那样，这个学生是要挨揍的。在我的学校，学生会这样说：“老师，对不起，这是我的责任”，然后马上去打扫。灯泡坏了，哪个学生看见了，自己就会掏钱去买个安上，窗户玻璃坏了，学生自己马上买一块换上它──这才是教育，不把责任推出去，而是揽过来。也许有些人说这是吃亏，我告诉你，吃亏就是占便宜，这种教育要牢牢记在心里，我们每个中国人都要记住！<br />
+    学校更应该训练学生这种“天下兴亡，我的责任”的思想。校园不干净，就应该是大家的责任。你想，这么大的一个校园，你不破坏，我不破坏，它会脏吗？脏了之后，人人都去弄干净，它会脏吗？你只指望几个工人做这个工作，说：“这是他们的事。我是来读书的，不是扫地的。”──这是什么观念？你读书干什么？读书不是为国家服务吗？眼前的务你都不服，你还能为未来服务？当前的责任你都不负，未来的责任你能负吗？水龙头漏水，你不能堵住吗？有人会说：“那不是我的事，那是总务处的事。”这是错误的。一般人最坏的毛病是这样：打开水龙头后，发现没水，又去开第二个，第二个也没有，又去开第三个 ──这样的学生，在我学校是要被开除的！连举一反三都不懂，第一个没水，第二个会有吗？你就没想到水会来吗？人无远虑怎么能行？作为一个干部，作为一个人，都要想到后果，后果看得越远的人，越是一个成功的人。一个只管眼前，不顾将来的人，不是一个好干部，不是一个有用的人。水管不关，来了水后让它哗哗哗满池子去流，仍不去关注：“反正是国家的水，不是我的自己的！”──浪费国家的，就是“汉奸”！你为什么浪费国家的水？你为什么浪费国家的资源？我每天洗脸都为国家省一盆水，一年省多少水，你算算，你们学校六千多学生，每个每天节省一盆水，一年省多少水？省水就是省电，就是节省国家资源。爱国可有两种，一种是积极爱国，一种是消极爱国。积极爱国是为国家创造财富，消极爱国是为国家节省财富。国家用那么多百姓的民脂民膏来供你读书，你还浪费国家的财富，你良心何在？你上大学都如此，怎么能期望于中学生、小学生呢？怎么能期望于一般老百姓呢？你高级知识分子都不爱国，怎么能让老百姓去爱国呢？从自己身边做起，我们国家才有希望──这就是“天下兴亡，我的责任”积极负责的道德观念，这就是道德教育。<br />
+     另一点，我们要有“勿以善小而不为，勿以恶小而为之”的敬业观念。天下有大事吗？没有。但任何小事都是大事。集小恶则成大恶，集小善则为大善。培养良好的道德，是从尊敬老师开始的，是从那很小很小的事开始的。这种道德是慢慢建立起来的，而不专门找到大事才干。今天上午下课的时候，我和师大校长一块出来，礼堂里有很多废纸。我说不要捡，要等下午学生自己捡 ──同学们，谁丢下这些纸屑就是不爱国。天下无大事，请先把自己脚下的纸屑捡起来──这就是我的教材”。好的，同学们捡起自己脚下的废纸，这就爱国的开始。我给大家讲两个关于渍纸的故事。<br />
+     第一个，美国有个“福特公司”，福特是一个人，他大学毕业后，去一家汽车公司应聘。和他同应聘的三四个人都比他学历高，当前面几个人面试之后，他觉得自己没有什么希望了。但既来之，则安之。他敲门走进了董事长办公室，一进办公室，他发现门口地上有一张纸，弯腰捡了起来，发现是一张渍纸，便顺手把它扔进了废纸篓里。然后才直到董事长的办公桌前，说：“我是来应聘的福特。”事长说：“很好，很好！福特先生，你已被我们录用了。”福特惊讶地说：“董事长，我觉得前几位都比我好，你怎么把我录用了？”董事长说：“福特先生，前面三位的确学历比你高，且仪表堂堂，但是他们眼睛只能“看见”大事，而看不见小事。你的眼睛能看见小事，我认为能看见小事的人，将来自然看到大事，一个只能“看见”大事的人，他会忽略很多小事。他是不会成功的。所以，我才录用你。”福特就这样进了这个公司，这个公司不久就扬名天下，福特把这个公司改为“福特公司”，也相应改变了整个美国国民经济状况，使美国汽车产业在世界占居鳌头，这就是今天“美国福特公司”的创造人福特。大家说，这张废纸重要不重要？看见小事的人能看见大事，但只能 “看见”大事的人，不一定能看见小事，这是很重要的教训。<br />
+    第二个渍纸的故事，当本届亚运会在日本广岛结束的时候，六万人的会场上竟没有一张废纸。全世界报纸都登文惊叹：“可敬，可怕的日本民族！”就是因为没有一张废纸，就使全世界为之惊讶。再看看我们十月一日***广场升国旗的镜头，当人们散去，满地废纸，到处乱刮！外国人一看当然会这样认为：你们中国此时要同日本比，差得远呢！大家不要总是说：我们国家地大物博，有137枚金牌──这都没用，咱们的道德水准还没上来，还差得远！大家说这些废纸重要不重要？所以说，我让大家捡起一张废纸，这就是爱国的开始。万事从小事做起。美国太空3号快到月球了，它却不能登上去而无奈地返回来，为什么？只是因为一节30块钱的小电池坏了，他们这个酝酿很久的航天计划被破坏了，几亿元报废了！天下有大事吗？大家看哪次飞机失事是翅膀和头一齐掉下来的？都是一节油管不通，一个轮胎放不下来才失事的。一个人的死，哪个是全身完全溃烂死掉的？都是肝坏了，或心脏有毛病，等等一个小器官不正常而死的！──<br />
+    同学们，从现在开始，你们要有敬业观念。我们中国实行九年制教育目的就是这样，就是要看你怎样同老师相处，怎样与朋友相处，这就是教育的目的。从古至今，中国的教育才是最伟大的教育，你把西方的教育看作是最先进的教育，那就大错特错了。美国的教育部长三个月前发表讲话说：“我们国家的教育是彻底失败的??英文！（掌声）我们学英文目的并不是为了去美国洗盘子刷马桶，去伺侯外国人，去做丢尽祖宗八辈人的事！”（掌声）所以，我的学生英文学得都非常好。如果一个英文老师一上课就说：“同学们，今天我们要学英文了。英文是世界语言，是世界上最美的语言！一个不会英文的民族是一个低等民族，英文太美了！太棒了！”你说这个老师要不要打屁股？所以我总是告诉这些老师：要好好教我的学生，你不要替外国人宣传，变成“汉*”！要告诉学生雪耻图强，打败列强，这是中国人的希望（掌声）！你们这里不也有英文老师吗？外语系的学生以后不也去教英文吗？上课以前你们要对学生进行爱国学英文的教育，不要上来就替外国吹一场，你们不要认为：传道者只是传英文之道、授英文之业，而要传爱国之道，授英文之业。好，同学们懂得了这些道理，下一步我们就要知道，我们今天的教育是很失败的。因为，我们从小就被教错了。所以，我们要进行为国家而求学问，为社会分工而学技能利他、利群的道德教育。大家先要想想为什么读书，为谁读书？你们要反思一下。有些人也许会说，为自己找个饭碗而读书！这是多么卑鄙和渺小，多么无聊和可怜！你绝对不应该单是为找个饭碗而活着！找个饭碗吃饭太简单了！拿个刀子，找个人随便捅一下，绝对一辈子有了饭吃，而且还有人伺侯，还有人为你做饭，睡觉时还有人为你站岗，你的东西一样少不了！那不就解决吃饭了吗？你为什么不干呢？因为我告诉了你，要学好生存的技能，要懂得生命的意义和价值，那里不是创造人类价值的地方！所以，我们要知道读书绝对不是为了自己，读书是为了国家而求学问，所以，我们要告诉孩子们读书、做事要确定一个方向：先做自己应该做的事，再做自己喜欢做的事。<br />
+    很多人为兴趣而读书，岂有此理！读书有什么兴趣？真正目标不应是兴趣，而是责任，在责任当中找到兴趣，但不能用兴趣代替责任。越在黑暗中越做光明的事，这就是道德教育。我们读书是为了国家。同学们，你们想想你们从小受到什么教育？尤其是农村子弟，你爹妈是怎么教你的？他们这样告诉你：你要好好念书！你不好好念书，将来就不能出人头地，你必须努力奋斗好好读书，你才有前途，读书是为了你的幸福，读书是为了你的前途！读书一切是为了你！你就是在这种教育下长大的，这就是最错误的教育，这就是最糟糕的教育！所以小孩子长大以后就知道，啊哈，读书就是为了我呀，与任何不相干，为了我的前途，为了我的未来，为了我的希望，你看这个国家还有希望吗？它与国家毫不相干！他喝着国家的奶水，用着国家纳税人的钱，拿民脂民膏培养出的却是一个自私自利的小孩，培养出一批自私自利的老师，你想：这国家会有前途吗？你读书的方向都错了，读书不是为了自己，读书是为了我们的国家，国家需要人才，国家需要干部，国家需要建国的栋梁。国家为什么培养你？国家是欠你的吗？你能白白吃国家的饭吗？白白享受这里的宿舍和餐厅、白白地享受老师对你知识的传授吗？你凭什么？你对国家有什么贡献？你对社会有什么贡献？有什么牺牲？你一切都没有，你只是个造粪的机器而已。你每天吃饭了，无所事事，你对国家有什么贡献？国家在期盼着你的贡献，期盼着你的未来，因为有一天你会长大，有一天你会学成，你要为国家做事，所以国家才在你身上投资，让你为国效命。因为道德教育必须以国家教育为前提，所以今天我们要爱我们的国家。正好你们是读师大的，你们在三、四年之后要培养跨世纪的接班人，你的责任比谁都大。如果你都没有国家观念，你都不爱国，你怎么要求你的学生爱国呢？所以说今天的老师是最重要的。这就是我跑来跑去，为师范生灌输爱国思想的原因所在！你们爱国，学生自然爱国！如果不爱国，天天发牢骚，天天想转行，天天想下海，那下一代还有什么希望？尤其是学英文的，总想好好学，将来以后到哪个公司为哪个老板、哪个董事长当翻译官，多丢脸！多没人格，多没气度！（掌声）我这里特别强调的是国家观念。 </p>
+<p>    我常常给我的学生讲一个故事：我们有一天出去旅行，忽然间暴风雨来了。我们没地方避风躲雨，孩子们向前跑，一看前面有个草棚，大家“哗”地冲了进去，一冲进去大雨就来了。大家好高兴，“哇，今天运气不错哟，刚刚找了房子大雨就来了。太快乐了！”大家也不顾虑房子干不干净，有没有人住过，只要有避雨的地方就很满足了。但这个房子在风雨中突然间要倒塌，同学们想尽办法 “扶住它，不能让房子倒塌”。在这种状况下，我很有感慨，同学们，你们说是我们需要房子呢，还是房子需要我们呢？（掌声）<br />
+    我看是我们需要这座房子。这座房子就是我们的国家，再破再烂是我们的家，再穷再破，是我们的家，我们要爱她！（掌声）你怎么可以羡慕外国人呢？“唉呀，你看外国人多好！我不当中国人，我想当外国人！”那是不对的。我们国家不如别人，我们承认，但是我们有决心，我们会慢慢把它搞好，但我们一定要牺牲自己，有热爱国家的观念。<br />
+    人人在砍国家、吃国家、拿国家，这个国家怎么会好呢？人人都贪污、腐败，这国家会好吗？外国有个加拿大！中国有个“大家拿”，再大的国家也会被你拿穷了。（掌声）我走到哪里，绝对拒绝招待。我走到哪里吃自己，用自己，坐你的汽车给车钱，住你的旅馆给你旅馆钱，吃你的饭给饭钱，绝对不沾国家一毛钱。我就是要做个示范给你看！（掌声）什么叫爱国，是我们把东西把钱把命给国家，这叫爱国，你总是把国家的东西往家拿，这叫什么爱国？有些人偷国家、拿国家，还拿得津津有味，拿得大言不惭，拿得毫不要脸，这怎么得了？（掌声） 有人说：老师，你让我爱国，我可以爱国，不过，国家在哪里？我找不着！“不识庐山真面目，只缘身在此山中。”你在国家里头，不知国家在哪。当老师的，国家就是你面前的学生。你往讲台上一站，下边的学生就是你的国家，找国家太容易了。今天我往这儿一站，下面1500人就是我的国家，我必须对你们尽心尽责，就要产生教化作用，影响作用，你就是我的国家，我爱你，就是我爱国，把我的思想传播给你，就是爱国！（掌声）那你以后往你的学生面前一站，那就是你的国家。你不能浪费他的时间，他的生命，你要好好为国家培养下一代，你给他这种爱国思想，你就是一个爱国者，不给他，你就是不爱国，你就是叛国者！（掌声）同学们，将来你也有留学的机会，你要注意到，不要让自己丢了中国人</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/86.html" rel="bookmark"><time class="entry-date published" datetime="2007-07-17T10:06:41+00:00">2007年7月17日</time><time class="updated" datetime="2007-07-17T10:09:00+00:00">2007年7月17日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98" rel="category tag">文摘</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/86.html#respond"><span class="screen-reader-text">于[经典]要如此爱国（转台湾忠信中学校长演讲）</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-85" class="post-85 post type-post status-publish format-standard hentry category-11">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/85.html" rel="bookmark">[BT,迅雷,电驴]《变形金刚》真人版</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>最近变形金刚很流行。为了方便大家观看，我收集了一些下载地址及在线观看地址。</p>
+<p>下面是下载地址（用迅雷下载，速度很快）：<br />
+http://221.130.66.37/data/www.uubird.com悠悠鸟影视论坛/www.uubird.com-悠悠鸟影视论坛-变形金刚真人版a.rmvb<br />
+http://221.130.66.37/data/www.uubird.com悠悠鸟影视论坛/www.uubird.com-悠悠鸟影视论坛-变形金刚真人版b.rmvb</p>
+<p>变形金刚BT下载：<br />
+[down=attachments/month_0707/n200771620182.torrent]点击下载BT种子文件[/down]</p>
+<p>超清晰版，PMP AVC格式的，下载完后，请用暴风影音或拷贝到PSP里进行观看：<br />
+[down=attachments/month_0707/32007716202317.torrent]点击下载BT种子文件[/down]</p>
+<p>这个效果很好，也是BT下载：<br />
+[down=attachments/month_0707/t2007716202651.torrent]点击下载BT种子文件[/down]</p>
+<p>不能保证种子文件长期有效，所以我找了好多个，大家请自己尝试。</p>
+<p>电驴下载地址：[url=ed2k://|file|%E5%8F%98%E5%BD%A2%E9%87%91%E5%88%9A%20(%E6%B8%85%E6%99%B0%E5%AD%97%E5%B9%95%E7%89%88.rmvb|1005532222|B3DEFF2808CBA8EAE2D7DDA19D937A95|/]点击用电驴下载[/url]</p>
+<p>不想下载的，可以用下面的即时在线视频观看<br />
+[url=http://www.ku6.com/show/xDdjo_47hV2DGSAY.html]变形金刚真人版中文字幕A[/url]<br />
+[url=http://www.ku6.com/show/MRf_3xsfDEJYv4a1.html]变形金刚真人版中文字幕B[/url]<br />
+[url=http://www.ku6.com/show/7NsEnz7g9hc7nLir.html]变形金刚真人版中文字幕C[/url]<br />
+[url=http://www.ku6.com/show/gX7bjSJhzYVl_DFf.html]变形金刚真人版中文字幕D[/url]</p>
+<p>下面是的电影的介绍和评论：</p>
+<p>电影海报:<br />
+[img]http://photo6.yupoo.com/20070704/145046_1339749605_toqbdhbi.jpg[/img]<br />
+◎译　　名　Transformers<br />
+◎片　　名　Transformers CAM XViD-VIDEO_T<br />
+◎年　　代　2007<br />
+◎国　　家　美国<br />
+◎类　　别　动作/科幻/冒险<br />
+◎语　　言　英语<br />
+◎字　　幕　中文字幕<br />
+◎IMDB评分　8.3/10 (5,543 votes)<br />
+◎IMDB链接　<br />
+http://www.imdb.com/title/tt0418279<br />
+◎文件格式　XviD + MP3<br />
+◎视频尺寸　528 x 224<br />
+◎文件大小　2CD 2 x 49 x 15MB<br />
+◎片　　长　144 Min<br />
+◎导　　演　迈克尔·贝Michael Bay<br />
+◎主　　演　希安·拉博夫 Shia LaBeouf<br />
+　　　　　　乔什·杜哈明 Josh Duhamel<br />
+　　　　　　泰瑞斯·吉布森 Tyrese Gibson<br />
+　　　　　　乔恩·沃伊特 Jon Voight<br />
+　　　　　　梅甘·福克斯 Megan Fox<br />
+　　　　　　瑞切尔·泰勒 Rachael Taylor &#8230;..Maggie<br />
+　　　　　　Rachel Taylor &#8230;..Maggie<br />
+　　　　　　安东尼·安德森 Anthony Anderson &#8230;..Glen<br />
+　　　　　　约翰·特托罗 John Turturro &#8230;..Agent Simmons<br />
+◎简　　介　<br />
+19世纪初，北极圈内：<br />
+　　Archibald Witwicky船长(维特维奇家族的先祖)在一次灾难中随着巨大的冰块落入深渊，落到了埋藏在冰层之下的一个机器人手掌上。船长醒来后发现机器人的眼睛正注视着他。而这台机器人正是很久以前离开塞伯坦，前往地球寻找火种源(Allspark)的威震天(Megatron)……<br />
+　　威震天将揭示火种源下落的地图烧刻在船长的眼镜上。眼镜作为船长的遗物一代一代地传到了萨姆(Shia LaBeout饰演)的手里……<br />
+　　现代社会：<br />
+　　中东卡塔尔的某个美国空军基地遭到了狂派战士眩晕(Blackout)，他将这个基地完全毁掉，而且还从一台计算机里获得了大量信息。此外，眩晕还释放了巨蝎怪(Scorponok)去追杀Lennox上尉和他的特别行动小队。Lennox上尉与五角大楼取得了联系，美国军方派遣一架战斗机暂时打退了狂派的小规模进攻。<br />
+　　萨姆·维特维奇(Sam Witwicky)从汽车代理商手里买到了他的第一辆车，而这辆车恰恰是博派的大黄蜂(Bumblebee)。大黄蜂帮助萨姆赢得了Mikaela的芳心。博派前来寻找Archibald　老船长的眼镜，他们被迫躲藏在萨姆家的后院，因为凶恶的第七防区(Sector 7)的特工突然闯进了萨姆的家……<br />
+　　影片将会采用五条故事线平行推进，最终汇总的形式。在影片的结尾会有一场博派领袖擎天柱(Optimus Prime)与狂派首领威震天的惊天大战。他们将从胡佛大坝一直杀到洛杉矶……</p>
+<p>《变形金钢真人版 》</p>
+<p>　　很久没有这么期待过一部电影的上映，甚至于特地请了一天假，就为了从这部电影中找回些许失落的童年。这部电影就是《变形金刚》。<br />
+[img]http://img.album.pchome.net/00/08/46/42/58230e5a362c07b9cb82a91404025080.jpg[/img]<br />
+　　相信很多70后，甚至80后的男生，或多或少的都有过&#34;变形金刚&#34;的情结。可以说，变形金刚已经超越了普通动画片的范畴，承载了几代人太多的梦想。所以，才会出现首映日一票难求的现象。<br />
+　　我是在网上订的电影票。原本以为，提前一天订座，怎么也可以挑挑拣拣的，就像几个月前看《蜘蛛侠3》。谁知道一大早就发现，7月11日当天19点之后的座位几乎都已经被预定一空，仅仅剩下前排两三个偏僻的角落。要知道影院最好的座位莫过于最末一排正中间的位置。无奈只能选择17:55分场的。<br />
+　　今天提早40分钟就赶到了电影院，终于体会到了&#34;金刚&#34;的热度。才下午5点多，多数人都还没有下班，售票处就排起了长龙，还有拖家带口一起来的。人人都在谈论变形金刚。甚至还有记者架起了摄像机访问购票人的感想。除了《变形金刚》，谁还会有这么大的魅力？<br />
+　　影片的公映，国内比美国整整晚了一个星期。这一个星期里，《变形金刚》势如破竹，全美票房已经超过了1.55亿美刀。尽管《哈利波特5》已经气势汹汹的杀到，&#34;金刚&#34;们还是稳赚不赔了。<br />
+[img]http://img.album.pchome.net/00/08/46/42/4b2c8b75ba8f045555dc03e8d78d84ce.jpg[/img]<br />
+　　导演老贝（迈克尔贝）在好莱坞也算名气不小。这厮外号&#34;破外之王&#34;，以&#34;打砸抢&#34;三字真言称霸好莱坞，砸起汽车来跟砸玩具似的。在《石破天惊》就来了一场悍马和法拉利的旷世追逐，砸了N辆警车，末了还炸了辆大巴，然后用这辆大巴把光鲜的法拉利砸了个稀巴烂……《变形金刚》有了老贝，再加上斯皮尔伯格作为监制，想不热闹都难。<br />
+[img]http://img.album.pchome.net/00/08/46/42/e4d6265efa3a79b8217ae082eda1299d.jpg[/img]<br />
+　　一直到影片开始我才知道原来我看的是配音版。不过配音的效果相当不错，丝毫不影响影片的效果。<br />
+　　原来的变形金刚动画片有两个版本，一个是上译版，一个是港版。国内除了广东以外播放的应该都是上译版。此次的配音继承了上译版的风格，依然是“汽车人”“霸天虎”“擎天柱”“红蜘蛛”之类的名字，而这些在港版中则称为“博派”“狂派”“柯柏文”“星星叫”……<br />
+　　《变形金刚》是一场视觉盛宴。或许，称之为视觉&#34;饕餮&#34;也不为过。<br />
+　　儿时的动画片，金刚们差不多都是由大方块组成，变形也相对简单。不过要是到了电影里还来这一套，估计老贝都能让口水给淹死。毕竟，金刚们也要与时俱进。<br />
+[img]http://img.album.pchome.net/00/08/46/42/9dfad75fc58fcd8a3120f61b7ca415c0.jpg[/img]<br />
+　　于是，我们的擎天柱大哥换成了新的集卡车头，画上了火焰纹身，车型更加强悍。而威震天同学要是再变形为一把小手枪，估计老贝同志又得淹死一回。电影版里的威震天一身复杂的银色铰链结构，变形为一艘超猛的异形飞船。红蜘蛛（确切的说，应该是&#34;灰蜘蛛&#34;）变形为新式的F22战机。人类的好朋友&#34;大黄蜂&#34;则由大众的甲壳虫换成了雪佛兰跑车。汽车人，包括“铁皮”“爵士”“救护车”，全都换上了通用的新车型（这个通用一定给了老贝很多钱）……<br />
+[img]http://img.album.pchome.net/00/08/46/42/3488f651e76f96c38ec0e9b48524b1ef.jpg[/img]<br />
+　　电影版每个金刚都由数万个零部件组装而成，每次变形，N多部件同时移动，看得人眼花缭乱。最酷的一个场景是5个汽车人把男主角围在中间，随着镜头的旋转一起嘎叽嘎叽的变形……简直是由内而外的酷啊！就连坐在我身边的一个七八岁的小朋友，一看到擎天柱大哥出场，兴奋的站起来指着屏幕大喊：擎天柱，擎天柱~~~害得他老爸赶紧叫他“轻点轻点”。<br />
+　　影片集成了老贝一贯的MTV式风格。镜头快速转换，场景快速切换，配以雄壮的音乐，同时顺大便又玩了一把《绝地战警2》中的360度快速旋转视角。开场不到五分钟就来了一场大战，坦克满天飞，充分展现了变形金刚的战斗力。最精彩的是影片后半部分，正义的一方（汽车人+人类）和邪恶的一方（霸天虎）展开了整整半个小时的巷战，导弹与砖块齐飞，打的连谁是谁都分不清。整条街道几乎被夷为平地，看得人气都喘不过来，那叫一个惊心动魄！这种效果，绝对不是从网上下载一个人头晃动的枪版所能感受到的。如果你肾脏不好尿频尿急尿不尽，到了那个时候也没有丝毫尿意，就算服用了惠仁肾宝也不过如此。<br />
+[img]http://img.album.pchome.net/00/08/46/42/8ba8772a49265a04430dc8728be5a1c2.jpg[/img]<br />
+　　今年的大片实在是太多，《蜘蛛侠3》《加勒比海盗3》《F4》……动不动就是两三亿美金砸下去。而《变形金刚》只用了“区区”1.5亿。不过想想也是，那么多车都是人家通用提供的，战争场景得到了美国军方的大力支持，里面的电脑是HP的，手机是NOKIA的，给你来几个特写，就是老大一笔赞助费。人类主角和龙套都是一些新人，至于金刚们——拼死拼活全是义务劳动，片酬分文不取啊。看看人家《加3》，几大主角的片酬就能砸死人了。<br />
+　　男一号Shia LaBeouf目前似乎风头挺盛。起初看到预告片的时候就觉得这小子眼熟，回忆了半天才想起来，原来他就是“The Greatest Game Ever Played”（《果岭争锋》，一部讲高尔夫的励志片）的男主角。年纪轻轻就担纲大梁，星途无限啊。<br />
+[img]http://img.album.pchome.net/00/08/46/42/997807e6768ea3eb64b40ea9ad391d35.jpg[/img]</p>
+<p>　　影片另一个吸引眼球的地方就是女主角惹火的身材。尤其是修车的那一段，连男主角都受不了大呼“Oh My God”。这个片段可以从“Yahoo! Movies”看到。建议男同胞观看时多带几包纸巾，否则血洒影院可不是一件十分风光的事情。:)<br />
+[img]http://img.album.pchome.net/00/08/46/42/7fd08c9a5802e25f1c7f41c317cb2285.jpg[/img]<br />
+[img]http://img.album.pchome.net/00/08/46/42/17766f6bd995f2895451e3ed66cc98a9.jpg[/img]</p>
+<p>　　《变形金刚》是一部典型的商业片，所以你得清楚，你是冲着什么去看的。<br />
+　　如果你是变形金刚的粉丝，或者喜欢超强的视听感受，那么这部电影就值得你看。如果你比较注重是剧情、穿帮以及演员的表演，那么《变形金刚》不是很适合你。至少对我来说，能够看到昔日心中的金刚们以全新的形象嘎叽嘎叽的变形，这40元的票钱就已经值得了。<br />
+　　电影的结尾毫无疑问是正义战胜邪恶。老贝也打了个翻身仗，虽然这个身翻得没有铁皮来的漂亮。<br />
+　　如果你问派拉蒙的老总会不会拍续集，他肯定会指着自己的脑袋问你：这是什么？你要是回答“脑袋”，他肯定会告诉你：对，可是他没有进水…… </p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/85.html" rel="bookmark"><time class="entry-date published" datetime="2007-07-16T19:50:51+00:00">2007年7月16日</time><time class="updated" datetime="2007-08-19T08:14:00+00:00">2007年8月19日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90" rel="category tag">影音娱乐</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/85.html#respond"><span class="screen-reader-text">于[BT,迅雷,电驴]《变形金刚》真人版</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-84" class="post-84 post type-post status-publish format-standard hentry category-11">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/84.html" rel="bookmark">经典益智游戏，推箱子</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>很经典的推箱子游戏，值得一玩<embed src=http://www.biglee.cn/page/&#34;http://60.191.9.194/flash/flash_swf/2861.swf&#34; width=&#34;550&#34; height=&#34;500&#34; type=&#34;application/x-shockwave-flash&#34;></embed></p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/84.html" rel="bookmark"><time class="entry-date published" datetime="2007-07-04T17:39:44+00:00">2007年7月4日</time><time class="updated" datetime="2007-07-04T05:42:00+00:00">2007年7月4日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90" rel="category tag">影音娱乐</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/84.html#respond"><span class="screen-reader-text">于经典益智游戏，推箱子</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-83" class="post-83 post type-post status-publish format-standard hentry category-9">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/83.html" rel="bookmark">深入浅出之正则表达式（二）</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>前言：<br />
+　　本文是前一片文章《深入浅出之正则表达式（一）》的续篇，在本文中讲述了正则表达式中的组与向后引用，先前向后查看，条件测试，单词边界，选择符等表达式及例子，并分析了正则引擎在执行匹配时的内部机理。<br />
+　　本文是Jan Goyvaerts为RegexBuddy写的教程的译文，版权归原作者所有，欢迎转载。但是为了尊重原作者和译者的劳动，请注明出处！谢谢！</p>
+<p>9.单词边界 </p>
+<p>元字符<<>>也是一种对位置进行匹配的“锚”。这种匹配是0长度匹配。</p>
+<p>有4种位置被认为是“单词边界”：</p>
+<p>1)在字符串的第一个字符前的位置(如果字符串的第一个字符是一个“单词字符”)<br />
+2)在字符串的最后一个字符后的位置(如果字符串的最后一个字符是一个“单词字符”)<br />
+3)在一个“单词字符”和“非单词字符”之间，其中“非单词字符”紧跟在“单词字符”之后<br />
+4)在一个“非单词字符”和“单词字符”之间，其中“单词字符”紧跟在“非单词字符”后面</p>
+<p> “单词字符”是可以用“w”匹配的字符，“非单词字符”是可以用“W”匹配的字符。在大多数的正则表达式实现中，“单词字符”通常包括<<[a-zA-Z0-9_]>>。</p>
+<p>例如：<<4>>能够匹配单个的4而不是一个更大数的一部分。这个正则表达式不会匹配“44”中的4。</p>
+<p>换种说法，几乎可以说<<>>匹配一个“字母数字序列”的开始和结束的位置。</p>
+<p>“单词边界”的取反集为<<B>>，他要匹配的位置是两个“单词字符”之间或者两个“非单词字符”之间的位置。</p>
+<p>·深入正则表达式引擎内部</p>
+<p>让我们看看把正则表达式<<is>>应用到字符串“This island is beautiful”。引擎先处理符号<<>>。因为是0长度 ，所以第一个字符T前面的位置会被考察。因为T是一个“单词字符”，而它前面的字符是一个空字符(void)，所以匹配了单词边界。接着<<i>>和第一个字符“T”匹配失败。匹配过程继续进行，直到第五个空格符，和第四个字符“s”之间又匹配了<<>>。然而空格符和<<i>>不匹配。继续向后，到了第六个字符“i”，和第五个空格字符之间匹配了<<>>，然后<<is>>和第六、第七个字符都匹配了。然而第八个字符和第二个“单词边界”不匹配，所以匹配又失败了。到了第13个字符i，因为和前面一个空格符形成“单词边界”，同时<<is>>和“is”匹配。引擎接着尝试匹配第二个<<>>。因为第15个空格符和“s”形成单词边界，所以匹配成功。引擎“急着”返回成功匹配的结果。</p>
+<p>10.选择符</p>
+<p>正则表达式中“|”表示选择。你可以用选择符匹配多个可能的正则表达式中的一个。</p>
+<p>如果你想搜索文字“cat”或“dog”，你可以用<<cat|dog>>。如果你想有更多的选择，你只要扩展列表<<cat|dog|mouse|fish>>。</p>
+<p>选择符在正则表达式中具有最低的优先级，也就是说，它告诉引擎要么匹配选择符左边的所有表达式，要么匹配右边的所有表达式。你也可以用圆括号来限制选择符的作用范围。如<<(cat|dog)>>，这样告诉正则引擎把(cat|dog)当成一个正则表达式单位来处理。</p>
+<p>·注意正则引擎的“急于表功”性</p>
+<p>正则引擎是急切的，当它找到一个有效的匹配时，它会停止搜索。因此在一定条件下，选择符两边的表达式的顺序对结果会有影响。假设你想用正则表达式搜索一个编程语言的函数列表：Get，GetValue，Set或SetValue。一个明显的解决方案是<<Get|GetValue|Set|SetValue>>。让我们看看当搜索SetValue时的结果。</p>
+<p>因为<<Get>>和<<GetValue>>都失败了，而<<Set>>匹配成功。因为正则导向的引擎都是“急切”的，所以它会返回第一个成功的匹配，就是“Set”，而不去继续搜索是否有其他更好的匹配。</p>
+<p>和我们期望的相反，正则表达式并没有匹配整个字符串。有几种可能的解决办法。一是考虑到正则引擎的“急切”性，改变选项的顺序，例如我们使用<<GetValue|Get|SetValue|Set>>，这样我们就可以优先搜索最长的匹配。我们也可以把四个选项结合起来成两个选项：<<Get(Value)?|Set(Value)?>>。因为问号重复符是贪婪的，所以SetValue总会在Set之前被匹配。</p>
+<p>一个更好的方案是使用单词边界：<<(Get|GetValue|Set|SetValue)>>或<<(Get(Value)?|Set(Value)?>>。更进一步，既然所有的选择都有相同的结尾，我们可以把正则表达式优化为<<(Get|Set)(Value)?>>。</p>
+<p>11.组与向后引用</p>
+<p>把正则表达式的一部分放在圆括号内，你可以将它们形成组。然后你可以对整个组使用一些正则操作，例如重复操作符。</p>
+<p>要注意的是，只有圆括号“()”才能用于形成组。“[]”用于定义字符集。“{}”用于定义重复操作。</p>
+<p>当用“()”定义了一个正则表达式组后，正则引擎则会把被匹配的组按照顺序编号，存入缓存。当对被匹配的组进行向后引用的时候，可以用“数字”的方式进行引用。<<1>>引用第一个匹配的后向引用组，<<2>>引用第二个组，以此类推，<<
+>>引用第n个组。而<< >>则引用整个被匹配的正则表达式本身。我们看一个例子。</p>
+<p>假设你想匹配一个HTML标签的开始标签和结束标签，以及标签中间的文本。比如<b>This is a test</b>，我们要匹配<b>和</b>以及中间的文字。我们可以用如下正则表达式：“<([A-Z][A-Z0-9]*)[^>]*>.*?</1>”</p>
+<p>首先，“<”将会匹配“<B>”的第一个字符“<”。然后[A-Z]匹配B，[A-Z0-9]*将会匹配0到多次字母数字，后面紧接着0到多个非“>”的字符。最后正则表达式的“>”将会匹配“<b>”的“>”。接下来正则引擎将对结束标签之前的字符进行惰性匹配，直到遇到一个“</”符号。然后正则表达式中的“1”表示对前面匹配的组“([A-Z][A-Z0-9]*)”进行引用，在本例中，被引用的是标签名“B”。所以需要被匹配的结尾标签为“</B>”</p>
+<p>你可以对相同的后向引用组进行多次引用，<<([a-c])x1x1>>将匹配“axaxa”、“bxbxb”以及“cxcxc”。如果用数字形式引用的组没有有效的匹配，则引用到的内容简单的为空。</p>
+<p>一个后向引用不能用于它自身。<<([abc]1)>>是错误的。因此你不能将<< >>用于一个正则表达式匹配本身，它只能用于替换操作中。</p>
+<p>后向引用不能用于字符集内部。<<(a)[1b]>>中的<<1>>并不表示后向引用。在字符集内部，<<1>>可以被解释为八进制形式的转码。</p>
+<p>向后引用会降低引擎的速度，因为它需要存储匹配的组。如果你不需要向后引用，你可以告诉引擎对某个组不存储。例如：<<Get(?:Value)>>。其中“(”后面紧跟的“?:”会告诉引擎对于组(Value)，不存储匹配的值以供后向引用。</p>
+<p>·重复操作与后向引用</p>
+<p>当对组使用重复操作符时，缓存里后向引用内容会被不断刷新，只保留最后匹配的内容。例如：<<([abc]+)=1>>将匹配“cab=cab”，但是<<([abc])+=1>>却不会。因为([abc])第一次匹配“c”时，“1”代表“c”；然后([abc])会继续匹配“a”和“b”。最后“1”代表“b”，所以它会匹配“cab=b”。</p>
+<p>应用：检查重复单词&#8211;当编辑文字时，很容易就会输入重复单词，例如“the the”。使用<<(w+)s+1>>可以检测到这些重复单词。要删除第二个单词，只要简单的利用替换功能替换掉“1”就可以了。</p>
+<p>·组的命名和引用</p>
+<p>在PHP，Python中，可以用<<(?P<name>group)>>来对组进行命名。在本例中，词法?P<name>就是对组(group)进行了命名。其中name是你对组的起的名字。你可以用(?P=name)进行引用。</p>
+<p>.NET的命名组</p>
+<p>.NET framework也支持命名组。不幸的是，微软的程序员们决定发明他们自己的语法，而不是沿用Perl、Python的规则。目前为止，还没有任何其他的正则表达式实现支持微软发明的语法。</p>
+<p>下面是.NET中的例子：</p>
+<p>(?<first>group)(?’second’group)</p>
+<p>正如你所看到的，.NET提供两种词法来创建命名组：一是用尖括号“<>”，或者用单引号“’’”。尖括号在字符串中使用更方便，单引号在ASP代码中更有用，因为ASP代码中“<>”被用作HTML标签。</p>
+<p>要引用一个命名组，使用k<name>或k’name’.</p>
+<p>当进行搜索替换时，你可以用“${name}”来引用一个命名组。</p>
+<p>12.正则表达式的匹配模式</p>
+<p>本教程所讨论的正则表达式引擎都支持三种匹配模式：</p>
+<p><</i>>使正则表达式对大小写不敏感，</p>
+<p><</s>>开启“单行模式”，即点号“.”匹配新行符</p>
+<p><</m>>开启“多行模式”，即“^”和“$”匹配新行符的前面和后面的位置。</p>
+<p>·在正则表达式内部打开或关闭模式</p>
+<p>如果你在正则表达式内部插入修饰符(?ism)，则该修饰符只对其右边的正则表达式起作用。(?-i)是关闭大小写不敏感。你可以很快的进行测试。<<(?i)te(?-i)st>>应该匹配TEst，但是不能匹配teST或TEST.</p>
+<p>13.原子组与防止回溯</p>
+<p>在一些特殊情况下，因为回溯会使得引擎的效率极其低下。</p>
+<p>让我们看一个例子：要匹配这样的字串，字串中的每个字段间用逗号做分隔符，第12个字段由P开头。</p>
+<p>我们容易想到这样的正则表达式<<^(.*?,)___noise___ 1077P>>。这个正则表达式在正常情况下工作的很好。但是在极端情况下，如果第12个字段不是由P开头，则会发生灾难性的回溯。如要搜索的字串为“1,2,3,4,5,6,7,8,9,10,11,12,13”。首先，正则表达式一直成功匹配直到第12个字符。这时，前面的正则表达式消耗的字串为“1,2,3,4,5,6,7,8,9,10,11,”，到了下一个字符，<<P>>并不匹配“12”。所以引擎进行回溯，这时正则表达式消耗的字串为“1,2,3,4,5,6,7,8,9,10,11”。继续下一次匹配过程，下一个正则符号为点号<<.>>，可以匹配下一个逗号“,”。然而<<，>>并不匹配字符“12”中的“1”。匹配失败，继续回溯。大家可以想象，这样的回溯组合是个非常大的数量。因此可能会造成引擎崩溃。</p>
+<p>用于阻止这样巨大的回溯有几种方案：</p>
+<p>一种简单的方案是尽可能的使匹配精确。用取反字符集代替点号。例如我们用如下正则表达式<<^([^,
+]*,){11}P>>，这样可以使失败回溯的次数下降到11次。</p>
+<p>另一种方案是使用原子组。</p>
+<p>原子组的目的是使正则引擎失败的更快一点。因此可以有效的阻止海量回溯。原子组的语法是<<(?>正则表达式)>>。位于(?>)之间的所有正则表达式都会被认为是一个单一的正则符号。一旦匹配失败，引擎将会回溯到原子组前面的正则表达式部分。前面的例子用原子组可以表达成<<^(?>(.*?,){11})P>>。一旦第十二个字段匹配失败，引擎回溯到原子组前面的<<^>>。</p>
+<p>14.向前查看与向后查看</p>
+<p>Perl 5 引入了两个强大的正则语法：“向前查看”和“向后查看”。他们也被称作“零长度断言”。他们和锚定一样都是零长度的（所谓零长度即指该正则表达式不消耗被匹配的字符串）。不同之处在于“前后查看”会实际匹配字符，只是他们会抛弃匹配只返回匹配结果：匹配或不匹配。这就是为什么他们被称作“断言”。他们并不实际消耗字符串中的字符，而只是断言一个匹配是否可能。</p>
+<p>几乎本文讨论的所有正则表达式的实现都支持“向前向后查看”。唯一的一个例外是Javascript只支持向前查看。</p>
+<p>·肯定和否定式的向前查看</p>
+<p>如我们前面提过的一个例子：要查找一个q，后面没有紧跟一个u。也就是说，要么q后面没有字符，要么后面的字符不是u。采用否定式向前查看后的一个解决方案为<<q(?!u)>>。否定式向前查看的语法是<<(?!查看的内容)>>。</p>
+<p>肯定式向前查看和否定式向前查看很类似：<<(?=查看的内容)>>。</p>
+<p>如果在“查看的内容”部分有组，也会产生一个向后引用。但是向前查看本身并不会产生向后引用，也不会被计入向后引用的编号中。这是因为向前查看本身是会被抛弃掉的，只保留匹配与否的判断结果。如果你想保留匹配的结果作为向后引用，你可以用<<(?=(regex))>>来产生一个向后引用。</p>
+<p>·肯定和否定式的先后查看</p>
+<p>向后查看和向前查看有相同的效果，只是方向相反<br />
+否定式向后查看的语法是：<<(?<!查看内容)>><br />
+肯定式向后查看的语法是：<<(?<=查看内容)>><br />
+我们可以看到，和向前查看相比，多了一个表示方向的左尖括号。</p>
+<p>例：<<(?<!a)b>>将会匹配一个没有“a”作前导字符的“b”。</p>
+<p>值得注意的是：向前查看从当前字符串位置开始对“查看”正则表达式进行匹配；向后查看则从当前字符串位置开始先后回溯一个字符，然后再开始对“查看”正则表达式进行匹配。</p>
+<p>·深入正则表达式引擎内部</p>
+<p>让我们看一个简单例子。</p>
+<p>把正则表达式<<q(?!u)>>应用到字符串“Iraq”。正则表达式的第一个符号是<<q>>。正如我们知道的，引擎在匹配<<q>>以前会扫过整个字符串。当第四个字符“q”被匹配后，“q”后面是空字符(void)。而下一个正则符号是向前查看。引擎注意到已经进入了一个向前查看正则表达式部分。下一个正则符号是<<u>>，和空字符不匹配，从而导致向前查看里的正则表达式匹配失败。因为是一个否定式的向前查看，意味着整个向前查看结果是成功的。于是匹配结果“q”被返回了。</p>
+<p>我们在把相同的正则表达式应用到“quit”。<<q>>匹配了“q”。下一个正则符号是向前查看部分的<<u>>，它匹配了字符串中的第二个字符“i”。引擎继续走到下个字符“i”。然而引擎这时注意到向前查看部分已经处理完了，并且向前查看已经成功。于是引擎抛弃被匹配的字符串部分，这将导致引擎回退到字符“u”。</p>
+<p>因为向前查看是否定式的，意味着查看部分的成功匹配导致了整个向前查看的失败，因此引擎不得不进行回溯。最后因为再没有其他的“q”和<<q>>匹配，所以整个匹配失败了。</p>
+<p>为了确保你能清楚地理解向前查看的实现，让我们把<<q(?=u)i>>应用到“quit”。<<q>>首先匹配“q”。然后向前查看成功匹配“u”，匹配的部分被抛弃，只返回可以匹配的判断结果。引擎从字符“i”回退到“u”。由于向前查看成功了，引擎继续处理下一个正则符号<<i>>。结果发现<<i>>和“u”不匹配。因此匹配失败了。由于后面没有其他的“q”，整个正则表达式的匹配失败了。</p>
+<p>·更进一步理解正则表达式引擎内部机制</p>
+<p>让我们把<<(?<=a)b>>应用到“thingamabob”。引擎开始处理向后查看部分的正则符号和字符串中的第一个字符。在这个例子中，向后查看告诉正则表达式引擎回退一个字符，然后查看是否有一个“a”被匹配。因为在“t”前面没有字符，所以引擎不能回退。因此向后查看失败了。引擎继续走到下一个字符“h”。再一次，引擎暂时回退一个字符并检查是否有个“a”被匹配。结果发现了一个“t”。向后查看又失败了。</p>
+<p>向后查看继续失败，直到正则表达式到达了字符串中的“m”，于是肯定式的向后查看被匹配了。因为它是零长度的，字符串的当前位置仍然是“m”。下一个正则符号是<<b>>，和“m”匹配失败。下一个字符是字符串中的第二个“a”。引擎向后暂时</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/83.html" rel="bookmark"><time class="entry-date published" datetime="2007-06-30T19:20:36+00:00">2007年6月30日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" rel="category tag">网站技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/83.html#respond"><span class="screen-reader-text">于深入浅出之正则表达式（二）</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-82" class="post-82 post type-post status-publish format-standard hentry category-9">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/82.html" rel="bookmark">深入浅出之正则表达式（一）</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　正则表达式是个很好的东西。做为一个程序员，掌握正则表达式是很有必要的。经人介绍，发现这个文章写得还是不错的，就转摘了过来。<br />
+　　感谢翻译者的劳动和分享。下面是正文：</p>
+<p>前言：<br />
+    半年前我对正则表达式产生了兴趣，在网上查找过不少资料，看过不少的教程，最后在使用一个正则表达式工具RegexBuddy时发现他的教程写的非常好，可以说是我目前见过最好的正则表达式教程。于是一直想把他翻译过来。这个愿望直到这个五一长假才得以实现，结果就有了这篇文章。关于本文的名字，使用“深入浅出”似乎已经太俗。但是通读原文以后，觉得只有用“深入浅出”才能准确的表达出该教程给我的感受，所以也就不能免俗了。<br />
+    本文是Jan Goyvaerts为RegexBuddy写的教程的译文，版权归原作者所有，欢迎转载。但是为了尊重原作者和译者的劳动，请注明出处！谢谢！</p>
+<p>1.什么是正则表达式</p>
+<p>基本说来，正则表达式是一种用来描述一定数量文本的模式。Regex代表Regular Express。本文将用<<regex>>来表示一段具体的正则表达式。</p>
+<p>一段文本就是最基本的模式，简单的匹配相同的文本。</p>
+<p>2.不同的正则表达式引擎</p>
+<p>正则表达式引擎是一种可以处理正则表达式的软件。通常，引擎是更大的应用程序的一部分。在软件世界，不同的正则表达式并不互相兼容。本教程会集中讨论Perl 5 类型的引擎，因为这种引擎是应用最广泛的引擎。同时我们也会提到一些和其他引擎的区别。许多近代的引擎都很类似，但不完全一样。例如.NET正则库，JDK正则包。</p>
+<p>3.文字符号</p>
+<p>最基本的正则表达式由单个文字符号组成。如<<a>>，它将匹配字符串中第一次出现的字符“a”。如对字符串“Jack is a boy”。“J”后的“a”将被匹配。而第二个“a”将不会被匹配。</p>
+<p>正则表达式也可以匹配第二个“a”，这必须是你告诉正则表达式引擎从第一次匹配的地方开始搜索。在文本编辑器中，你可以使用“查找下一个”。在编程语言中，会有一个函数可以使你从前一次匹配的位置开始继续向后搜索。</p>
+<p>类似的，<<cat>>会匹配“About cats and dogs”中的“cat”。这等于是告诉正则表达式引擎，找到一个<<c>>，紧跟一个<<a>>，再跟一个<<t>>。</p>
+<p>要注意，正则表达式引擎缺省是大小写敏感的。除非你告诉引擎忽略大小写，否则<<cat>>不会匹配“Cat”。</p>
+<p>·特殊字符</p>
+<p>对于文字字符，有11个字符被保留作特殊用途。他们是：</p>
+<p>[ ]  ^ $ . | ? * + ( )</p>
+<p>这些特殊字符也被称作元字符。</p>
+<p>如果你想在正则表达式中将这些字符用作文本字符，你需要用反斜杠“”对其进行换码 (escape)。例如你想匹配“1+1=2”，正确的表达式为<<1+1=2>>.</p>
+<p>需要注意的是，<<1+1=2>>也是有效的正则表达式。但它不会匹配“1+1=2”，而会匹配“123+111=234”中的“111=2”。因为“+”在这里表示特殊含义（重复1次到多次）。</p>
+<p>在编程语言中，要注意，一些特殊的字符会先被编译器处理，然后再传递给正则引擎。因此正则表达式<<1+2=2>>在C++中要写成“1\+1=2”。为了匹配“C:	emp”，你要用正则表达式<<C:\temp>>。而在C++中，正则表达式则变成了“C:\\temp”。</p>
+<p>·不可显示字符</p>
+<p>可以使用特殊字符序列来代表某些不可显示字符：</p>
+<p><<	>>代表Tab(0x09)<br />
+<<
+>>代表回车符(0x0D)<br />
+<<
+>>代表换行符(0x0A)</p>
+<p>要注意的是Windows中文本文件使用“<br />
+”来结束一行而Unix使用“<br />
+”。</p>
+<p>4.正则表达式引擎的内部工作机制</p>
+<p>知道正则表达式引擎是如何工作的有助于你很快理解为何某个正则表达式不像你期望的那样工作。</p>
+<p>有两种类型的引擎：文本导向(text-directed)的引擎和正则导向(regex-directed)的引擎。Jeffrey Friedl把他们称作DFA和NFA引擎。本文谈到的是正则导向的引擎。这是因为一些非常有用的特性，如“惰性”量词(lazy quantifiers)和反向引用(backreferences)，只能在正则导向的引擎中实现。所以毫不意外这种引擎是目前最流行的引擎。</p>
+<p>你可以轻易分辨出所使用的引擎是文本导向还是正则导向。如果反向引用或“惰性”量词被实现，则可以肯定你使用的引擎是正则导向的。你可以作如下测试：将正则表达式<<regex|regex not>>应用到字符串“regex not”。如果匹配的结果是regex，则引擎是正则导向的。如果结果是regex not，则是文本导向的。因为正则导向的引擎是“猴急”的，它会很急切的进行表功，报告它找到的第一个匹配 。</p>
+<p>·正则导向的引擎总是返回最左边的匹配</p>
+<p>这是需要你理解的很重要的一点：即使以后有可能发现一个“更好”的匹配，正则导向的引擎也总是返回最左边的匹配。</p>
+<p>当把<<cat>>应用到“He captured a catfish for his cat”，引擎先比较<<c>>和“H”，结果失败了。于是引擎再比较<<c>>和“e”，也失败了。直到第四个字符，<<c>>匹配了“c”。<<a>>匹配了第五个字符。到第六个字符<<t>>没能匹配“p”，也失败了。引擎再继续从第五个字符重新检查匹配性。直到第十五个字符开始，<<cat>>匹配上了“catfish”中的“cat”，正则表达式引擎急切的返回第一个匹配的结果，而不会再继续查找是否有其他更好的匹配。</p>
+<p>5.字符集</p>
+<p>字符集是由一对方括号“[]”括起来的字符集合。使用字符集，你可以告诉正则表达式引擎仅仅匹配多个字符中的一个。如果你想匹配一个“a”或一个“e”，使用<<[ae]>>。你可以使用<<gr[ae]y>>匹配gray或grey。这在你不确定你要搜索的字符是采用美国英语还是英国英语时特别有用。相反，<<gr[ae]y>>将不会匹配graay或graey。字符集中的字符顺序并没有什么关系，结果都是相同的。</p>
+<p>你可以使用连字符“-”定义一个字符范围作为字符集。<<[0-9]>>匹配0到9之间的单个数字。你可以使用不止一个范围。<<[0-9a-fA-F] >>匹配单个的十六进制数字，并且大小写不敏感。你也可以结合范围定义与单个字符定义。<<[0-9a-fxA-FX]>>匹配一个十六进制数字或字母X。再次强调一下，字符和范围定义的先后顺序对结果没有影响。</p>
+<p>·字符集的一些应用</p>
+<p>查找一个可能有拼写错误的单词，比如<<sep[ae]r[ae]te>> 或 <<li[cs]en[cs]e>>。</p>
+<p>查找程序语言的标识符，<<A-Za-z_][A-Za-z_0-9]*>>。(*表示重复0或多次)</p>
+<p>查找C风格的十六进制数<<0[xX][A-Fa-f0-9]+>>。(+表示重复一次或多次)</p>
+<p>·取反字符集</p>
+<p>在左方括号“[”后面紧跟一个尖括号“^”，将会对字符集取反。结果是字符集将匹配任何不在方括号中的字符。不像“.”，取反字符集是可以匹配回车换行符的。</p>
+<p>需要记住的很重要的一点是，取反字符集必须要匹配一个字符。<<q[^u]>>并不意味着：匹配一个q，后面没有u跟着。它意味着：匹配一个q，后面跟着一个不是u的字符。所以它不会匹配“Iraq”中的q，而会匹配“Iraq is a country”中的q和一个空格符。事实上，空格符是匹配中的一部分，因为它是一个“不是u的字符”。</p>
+<p>如果你只想匹配一个q，条件是q后面有一个不是u的字符，我们可以用后面将讲到的向前查看来解决。</p>
+<p>·字符集中的元字符</p>
+<p>需要注意的是，在字符集中只有4个 字符具有特殊含义。它们是：“]  ^ -”。“]”代表字符集定义的结束；“”代表转义；“^”代表取反；“-”代表范围定义。其他常见的元字符在字符集定义内部都是正常字符，不需要转义。例如，要搜索星号*或加号+，你可以用<<[+*]>>。当然，如果你对那些通常的元字符进行转义，你的正则表达式一样会工作得很好，但是这会降低可读性。</p>
+<p>在字符集定义中为了将反斜杠“”作为一个文字字符而非特殊含义的字符，你需要用另一个反斜杠对它进行转义。<<[\x]>>将会匹配一个反斜杠和一个X。“]^-”都可以用反斜杠进行转义，或者将他们放在一个不可能使用到他们特殊含义的位置。我们推荐后者，因为这样可以增加可读性。比如对于字符“^”，将它放在除了左括号“[”后面的位置，使用的都是文字字符含义而非取反含义。如<<[x^]>>会匹配一个x或^。<<[]x]>>会匹配一个“]”或“x”。<<[-x]>>或<<[x-]>>都会匹配一个“-”或“x”。</p>
+<p>·字符集的简写</p>
+<p>因为一些字符集非常常用，所以有一些简写方式。</p>
+<p><<d>>代表<<[0-9]>>;<br />
+<<w>>代表单词字符。这个是随正则表达式实现的不同而有些差异。绝大多数的正则表达式实现的单词字符集都包含了<<A-Za-z0-9_]>>。<br />
+<<s>>代表“白字符”。这个也是和不同的实现有关的。在绝大多数的实现中，都包含了空格符和Tab符，以及回车换行符<<
+>>。</p>
+<p>字符集的缩写形式可以用在方括号之内或之外。<<sd>>匹配一个白字符后面紧跟一个数字。<<[sd]>>匹配单个白字符或数字。<<[da-fA-F]>>将匹配一个十六进制数字。</p>
+<p>取反字符集的简写</p>
+<p><<[S]>> = <<[^s]>><br />
+<<[W]>> = <<[^w]>><br />
+<<[D]>> = <<[^d]>></p>
+<p>·字符集的重复</p>
+<p>如果你用“?*+”操作符来重复一个字符集，你将会重复整个字符集。而不仅是它匹配的那个字符。正则表达式<<[0-9]+>>会匹配837以及222。</p>
+<p>如果你仅仅想重复被匹配的那个字符，可以用向后引用达到目的。我们以后将讲到向后引用。</p>
+<p>6.使用?*或+ 进行重复</p>
+<p>?：告诉引擎匹配前导字符0次或一次。事实上是表示前导字符是可选的。<br />
++：告诉引擎匹配前导字符1次或多次<br />
+*：告诉引擎匹配前导字符0次或多次</p>
+<p><[A-Za-z][A-Za-z0-9]*>匹配没有属性的HTML标签，“<”以及“>”是文字符号。第一个字符集匹配一个字母，第二个字符集匹配一个字母或数字。</p>
+<p>我们似乎也可以用<[A-Za-z0-9]+>。但是它会匹配<1>。但是这个正则表达式在你知道你要搜索的字符串不包含类似的无效标签时还是足够有效的。</p>
+<p>·限制性重复</p>
+<p>许多现代的正则表达式实现，都允许你定义对一个字符重复多少次。词法是：{min,max}。min和max都是非负整数。如果逗号有而max被忽略了，则max没有限制。如果逗号和max都被忽略了，则重复min次。</p>
+<p>因此{0,}和*一样，{1，}和+ 的作用一样。</p>
+<p>你可以用<<[1-9][0-9]___noise___ 1071>>匹配1000~9999之间的数字(“”表示单词边界)。<<[1-9][0-9]___noise___ 1070>>匹配一个在100~99999之间的数字。</p>
+<p>·注意贪婪性</p>
+<p>假设你想用一个正则表达式匹配一个HTML标签。你知道输入将会是一个有效的HTML文件，因此正则表达式不需要排除那些无效的标签。所以如果是在两个尖括号之间的内容，就应该是一个HTML标签。</p>
+<p>许多正则表达式的新手会首先想到用正则表达式<< <.+> >>，他们会很惊讶的发现，对于测试字符串，“This is a <em>first</em> test”，你可能期望会返回<em>，然后继续进行匹配的时候，返回</em>。</p>
+<p>但事实是不会。正则表达式将会匹配“<em>first</em>”。很显然这不是我们想要的结果。原因在于“+”是贪婪的。也就是说，“+”会导致正则表达式引擎试图尽可能的重复前导字符。只有当这种重复会引起整个正则表达式匹配失败的情况下，引擎会进行回溯。也就是说，它会放弃最后一次的“重复”，然后处理正则表达式余下的部分。</p>
+<p>和“+”类似，“?*”的重复也是贪婪的。</p>
+<p>·深入正则表达式引擎内部</p>
+<p>让我们来看看正则引擎如何匹配前面的例子。第一个记号是“<”，这是一个文字符号。第二个符号是“.”，匹配了字符“E”，然后“+”一直可以匹配其余的字符，直到一行的结束。然后到了换行符，匹配失败(“.”不匹配换行符)。于是引擎开始对下一个正则表达式符号进行匹配。也即试图匹配“>”。到目前为止，“<.+”已经匹配了“<EM>first</EM> test”。引擎会试图将“>”与换行符进行匹配，结果失败了。于是引擎进行回溯。结果是现在“<.+”匹配“<EM>first</EM> tes”。于是引擎将“>”与“t”进行匹配。显然还是会失败。这个过程继续，直到“<.+”匹配“<EM>first</EM”，“>”与“>”匹配。于是引擎找到了一个匹配“<em>first</em>”。记住，正则导向的引擎是“急切的”，所以它会急着报告它找到的第一个匹配。而不是继续回溯，即使可能会有更好的匹配，例如“<em>”。所以我们可以看到，由于“+”的贪婪性，使得正则表达式引擎返回了一个最左边的最长的匹配。</p>
+<p>·用懒惰性取代贪婪性</p>
+<p>一个用于修正以上问题的可能方案是用“+”的惰性代替贪婪性。你可以在“+”后面紧跟一个问号“?”来达到这一点。“*”，“{}”和“?”表示的重复也可以用这个方案。因此在上面的例子中我们可以使用“<.+?>”。让我们再来看看正则表达式引擎的处理过程。</p>
+<p>再一次，正则表达式记号“<”会匹配字符串的第一个“<”。下一个正则记号是“.”。这次是一个懒惰的“+”来重复上一个字符。这告诉正则引擎，尽可能少的重复上一个字符。因此引擎匹配“.”和字符“E”，然后用“>”匹配“M”，结果失败了。引擎会进行回溯，和上一个例子不同，因为是惰性重复，所以引擎是扩展惰性重复而不是减少，于是“<.+”现在被扩展为“<EM”。引擎继续匹配下一个记号“>”。这次得到了一个成功匹配。引擎于是报告“<em>”是一个成功的匹配。整个过程大致如此。</p>
+<p>·惰性扩展的一个替代方案</p>
+<p>我们还有一个更好的替代方案。可以用一个贪婪重复与一个取反字符集：“<[^>]+>”。之所以说这是一个更好的方案在于使用惰性重复时，引擎会在找到一个成功匹配前对每一个字符进行回溯。而使用取反字符集则不需要进行回溯。</p>
+<p>最后要记住的是，本教程仅仅谈到的是正则导向的引擎。文本导向的引擎是不回溯的。但是同时他们也不支持惰性重复操作。</p>
+<p>7.使用“.”匹配几乎任意字符</p>
+<p>在正则表达式中，“.”是最常用的符号之一。不幸的是，它也是最容易被误用的符号之一。</p>
+<p>“.”匹配一个单个的字符而不用关心被匹配的字符是什么。唯一的例外是新行符。在本教程中谈到的引擎，缺省情况下都是不匹配新行符的。因此在缺省情况下，“.”等于是字符集[^</p>
+<p>](Window)或[^<br />
+]( Unix)的简写。</p>
+<p>这个例外是因为历史的原因。因为早期使用正则表达式的工具是基于行的。它们都是一行一行的读入一个文件，将正则表达式分别应用到每一行上去。在这些工具中，字符串是不包含新行符的。因此“.”也就从不匹配新行符。</p>
+<p>现代的工具和语言能够将正则表达式应用到很大的字符串甚至整个文件上去。本教程讨论的所有正则表达式实现都提供一个选项，可以使“.”匹配所有的字符，包括新行符。在RegexBuddy, EditPad Pro或PowerGREP等工具中，你可以简单的选中“点号匹配新行符”。在Perl中，“.”可以匹配新行符的模式被称作“单行模式”。很不幸，这是一个很容易混淆的名词。因为还有所谓“多行模式”。多行模式只影响行首行尾的锚定(anchor)，而单行模式只影响“.”。</p>
+<p>其他语言和正则</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/82.html" rel="bookmark"><time class="entry-date published" datetime="2007-06-30T19:15:22+00:00">2007年6月30日</time><time class="updated" datetime="2007-07-04T12:44:00+00:00">2007年7月4日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" rel="category tag">网站技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/82.html#respond"><span class="screen-reader-text">于深入浅出之正则表达式（一）</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-81" class="post-81 post type-post status-publish format-standard hentry category-9">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/81.html" rel="bookmark">增加PJBlog2 v2.6 build 02 的重置用户密码功能</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　今天一朋友在这我这博客上的用户名的密码忘了，让我找回来。我去后台用户管理里一看，没有修改用户信息的功能，再到数据库和程序里一看，也不是一般的加密，就干脆用他自带的加密再做一个重置用户密码的功能。<br />
+　　做的过程中，对这个博客的后台管理程序的写法又熟悉了一点。<br />
+　　东西做出来了，虽不是什么好东西，也不敢独享，将修改步骤写出来供大家参考：<br />
+　　1、在common文件夹下的control.js里添加一函数：[code] function rePwd(id){<br />
+  if (confirm(&#39;是否重置该用户的密码？&#39;)){<br />
+   document.forms[0].whatdo.value=&#34;RePwd&#34;<br />
+   document.forms[0].DelID.value=id<br />
+   document.forms[0].submit()<br />
+   }<br />
+ }<br />
+[/code]<br />
+　　2、修改根目录下的ConContent.asp<br />
+　　在帐户管理的帐户列表的适当处增加一列，在其中增加一个链接，代码如下：[code]<a href=http://www.biglee.cn/page/&#34;javascript:rePwd(<%=bMember(&#34;mem_ID&#34;)%>)&#34;>重置密码</a>[/code]<br />
+　　若想作得美观点，可以像删除一样做一个小图片，再加上链接。<br />
+　　在ConContent.asp找到以下代码（大概在2330行）[code]    session(CookieName&amp;&#34;_ShowMsg&#34;)=true<br />
+    session(CookieName&amp;&#34;_MsgText&#34;)=&#34;<span style=&#34;&#34;color:#900&#34;&#34;>“&#34;&amp;DelUserName&amp;&#34;”</span> 删除成功!&#34;<br />
+    Response.Redirect(&#34;ConContent.asp?Fmenu=Members&amp;Smenu=Users&#34;)<br />
+[/code]<br />
+在后面加上以下代码：[code]  &#39;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;重置密码为123456,By Lee 2007.06.29<br />
+  elseif Request.form(&#34;whatdo&#34;)=&#34;RePwd&#34; then<br />
+      dim ReUserID,ReUserName,strSalt,password<br />
+      ReUserID=Request.form(&#34;DelID&#34;)<br />
+      strSalt=randomStr(6)<br />
+      password=SHA1(&#34;123456&#34;&amp;strSalt)<br />
+      ReUserName=conn.execute(&#34;sel&#101;ct mem_Name from blog_Member wh&#101;re mem_ID=&#34;&amp;ReUserID)(0)<br />
+      conn.execute(&#34;up&#100;ate blog_Member set mem_Password=&#39;&#34;&amp;password&amp;&#34;&#39;,mem_salt=&#39;&#34;&amp;strSalt&amp;&#34;&#39; wh&#101;re mem_ID=&#34;&amp;ReUserID)<br />
+      session(CookieName&amp;&#34;_ShowMsg&#34;)=true<br />
+      session(CookieName&amp;&#34;_MsgText&#34;)=&#34;<span style=&#34;&#34;color:#900&#34;&#34;>“&#34;&amp;ReUserName&amp;&#34;”</span> 的密码成功重置为123456!&#34;<br />
+      Response.Redirect(&#34;ConContent.asp?Fmenu=Members&amp;Smenu=Users&#34;)<br />
+[/code]<br />
+　　好了，大功告成了！</p>
+<p>　　和我用同个版本的朋友且自己没有修改过这两个文件的也可以下载下面的附件覆盖一下相同的文件。<br />
+common文件夹下的control.js：<br />
+[down=attachments/month_0706/82007629224123.rar]点击下载此文件[/down]<br />
+根目录下的ConContent.asp<br />
+[down=attachments/month_0706/t2007629224135.rar]点击下载此文件[/down]</p>
+<p>　　适用于PJBlog2 v2.6 build 02 ，其它版本的，可以按此思路来做。<br />
+　　希望此文能解你破密码之苦。<br />
+　　有问题请留言！</p>
+<p>[color=Blue]更新：[/color]<br />
+无需登录，重置用户密码，对于忘了管理员密码的朋友很有帮助：<br />
+[down=attachments/month_0706/resetPwd.rar]点击下载此文件[/down]</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/81.html" rel="bookmark"><time class="entry-date published" datetime="2007-06-29T22:57:29+00:00">2007年6月29日</time><time class="updated" datetime="2007-12-04T01:30:00+00:00">2007年12月4日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" rel="category tag">网站技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/81.html#comments"><span class="screen-reader-text">增加PJBlog2 v2.6 build 02 的重置用户密码功能</span>有3条评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-80" class="post-80 post type-post status-publish format-standard hentry category-PC">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/80.html" rel="bookmark">盗版xp成功验证成正版,享受正版增值服务</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　你的盗版xp通过微软的正版验证了吗？是不是安装了WGA正版验证补丁KB905474后，就有个盗版提示呢？你知道吧，如果你的XP通过正版验证,就会享有更新到IE7和WMP11等正版增值服务！就算是安装了WGA正版验证补丁，也不会出现那个盗版提示了，因为你已经是正版啦！那赶快把你的XP验证成正版吧！<br />
+　　下载下面的工具其一，可以把你的盗版xp成功验证成正版,享受正版增值服务！等验证成正版后，为了感受正版增值体验，咱装个中文正版的IE7先吧！</p>
+<p>必要的下载（任意其一即可）：   [url=http://ishare.iask.sina.com.cn/cgi-bin/fileid.cgi?fileid=1625848]推荐下载1[/url]     [url=http://dl4.ohshare.com/v/7694490/xp_patch.rar.html]推荐下载2[/url]      [url=http://zhaodx.dearinfo.com/files/download.php?id=18caec5a8b35723549edda80d8240532]下载3[/url]       [url=http://www.mydatabus.com/public/zhaodx/xp_patch.rar]下载4[/url]       [url=http://www.box.net/rssdownload/63322860/xp_patch.rar]下载5[/url]   本文出自：http//hi.baidu.com/zhaodx</p>
+<p>1。在连网状态下，点“验证XP是否为正版”，许可并安装插件，等待一会！如果出现“感谢您使用 Windows 正版增值计划 计划。现在您可以访问正版 Windows 用户资源。”即为正版，否则就是盗版！若不放心，去官网验证：http://www.microsoft.com/genuine/selfhelp/support.aspx</p>
+<p>2。如果验证为盗版，运行“XP_VLK序列号更换器.VBS”，然后再次点“验证XP是否为正版”，验证通过就可享有安装IE7等其它正版服务！不能通过请再次运行“XP_VLK序列号更换器.VBS”并更改默认序列号为最下★处提供的其它序列号，直到验证成功为止！</p>
+<p>3。下载中文正式版IE7， 地址：<br />
+天空下载（速度快）http://www4.skycn.com/soft/30276.html<br />
+官网下载（稍慢） http://download.microsoft.com/download/4/1/8/418981A4-6EF9-4DE6-BEFC-1A53E886CB62/ie7-windowsxp-x86-chs.exe</p>
+<p>4。安装IE7不用断网和卸载IE6，直接运行下载的IE7-WindowsXP-x86-chs.exe就行，安装过程中要求验证，尽管放心验证，因为你已经是正版了！</p>
+<p>5。装好了，怎么看不到“菜单栏”啊，原来IE7“菜单栏”默认为不显示，在IE7窗口，点击“工具”按钮，勾点“菜单栏”，可显示“菜单栏”，但默认“菜单栏”在“地址栏”下面，而且不能常规修改，对于习惯IE6的朋友很别扭!解压“IE7菜单栏置顶.rar”吧，里面有详细的修改方法！</p>
+<p>6。如何让“链接”在同一窗口中的新选项卡中打开：用鼠标的中间滚轮键点链接或Ctrl+左键点链接</p>
+<p>【提问】我不注意安装了微软最新WGA正版验证补丁KB905474，屏幕右下角总有有个盗版提示的蓝色五角星，咋办啊？<br />
+                                            如上，通过改序列号，验证成正版，盗版提示自然就没啦！你还可以解压KillWGA-KB905474.rar 运行里面的“installer.bat”，重启，也可去除盗版提示！</p>
+<p>【提问】说了半天我更本就不能验证成变成正版,咋安装IE7啊？<br />
+                                            不能验证成正版同样装IE7: 解压“破解IE7.rar”，运行“破解IE7验证.exe”,断网安装IE7就可以了！记得一定要断网安装哦！</p>
+<p>【提问】IE7有啥新功能啊？<br />
+　　IE7支持流行的单窗口多卡式浏览，不仅加强了安全功能，还支持一键清除全部上网纪录，及RSS订阅等新功能。笔者测试比原IE6打开网页稍快！注意安装IE7首先保证你是SP2系统</p>
+<p>【提问】为何我的验证无法通过（无法进行）啊？<br />
+　　首次验证将要求您安装ActiveX 控件的，请许可下载并安装ActiveX控件！无法顺利进行验证的可能是你的浏览器禁用了Active控件运行！请打开http://www.microsoft.com/Genuine/diag/default.aspx?displaylang=zh-cn点‘开始诊断’！需要一点时间哦！最后按提示完成验证！<br />
+　　如果还不行点此，打开后直接点‘运行’。或用这个RemoveWGA也能去掉星号。<br />
+【提问】我的不知是不是vol版xp啊，无法验证成正版啊？<br />
+　　有部分精简版的 xp 竟然把 VBScript 给精简了，导致更新失败，下载微软正版验证安装离线包或使用木蚂蚁的XP正版验证补丁试试。<br />
+访问东东藏宝阁查询更多相关 http://hi.baidu.com/zhaodx</p>
+<p>本页出处（转载请保留） http://hi.baidu.com/zhaodx/blog/item/78219e503dc5826385352446.html</p>
+<p>还有任何疑问进QQ群咨询： 入QQ群: 23760346   或 18080520</p>
+<p>★下面是Windows xp pro sp2 vlk 微软授权正版序列号，笔者2007.4.17测试通过！</p>
+<p>用法：点“XP_VLK序列号更换器.VBS”换号，点“验证XP是否为正版.hta”验证!</p>
+<p>如果用默认的序列号不能验证为正版时，偿式更换以下序列号：</p>
+<p>CM3HY-26VYW-6JRYC-X66GX-JVY2D</p>
+<p>BYCMB-R844W-KJBQX-J3D9F-V3Y6G</p>
+<p>DDQXW-THQ8M-79V6K-2YFGH-R793Q</p>
+<p>DP7CM-PD6MC-6BKXT-M8JJ6-RPXGJ</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/80.html" rel="bookmark"><time class="entry-date published" datetime="2007-06-29T20:49:44+00:00">2007年6月29日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF" rel="category tag">PC技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/80.html#respond"><span class="screen-reader-text">于盗版xp成功验证成正版,享受正版增值服务</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-79" class="post-79 post type-post status-publish format-standard hentry category-14">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/79.html" rel="bookmark">八尾猫</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　“在古埃及的神话中，猫扮演着很重要的角色。据说在很久以前，猫统治着人类，它们狡诈，残忍而非常聪明。它们把人类当成奴隶驱使。知道最后狗的出现，他们赶走了猫，并让猫从统治者变成了人类的宠物。于是狗被埃及人当成了生活中最重要的朋友。而且埃及人深信猫会带来死亡。”朋友喝着茶，缓缓道来。<br />
+　　“只有埃及的神话涉及到猫么？”我四下望了望，那可爱的小猫又出去鬼混了。<br />
+　　“当然不，我今天讲的就是一只东方猫的故事。”朋友笑着叙说。<br />
+　　“据说当时佛祖说过，世间反是有七窍者皆可修炼成仙。所谓七窍其实按今天的话说就是生物吧。猫自然也算其中。而且据记载。修炼的猫每过二十年就能多长出一条尾巴，当尾巴长到第九条的时候，它就能修到一定的境界了。<br />
+　　但这第九条尾巴可不好长，当一只猫拥有八条尾巴的时候，它会得到一个提示，它必须去满足一个人的愿望。而每实现一个愿望，猫就必须消失掉一条尾巴来实现。所以这几乎成了一个死循环。但我所说的猫确非常虔诚的完成这个循环。所以它虽然一直是八条尾巴，但已经不知道活了多少年，也不知道帮多少人达成过愿望了。它也曾经向佛祖抱怨过，这样下去如何才能修炼得道？佛祖去笑而不答。”朋友停了一下，神秘地说：“其实上面的话我只是听我的祖辈们谈起罢了。因为八尾猫不会随便帮助人，它只会帮它第一人主人的后代实现愿望。在我的家乡，八尾猫的传闻是很普遍的，大家都希望可以遇见它，因为它如果愿意帮助你的话，你能实现任何愿望，任何愿望。”<br />
+　　我望着，隐约记起他继承遗产前去过一次家乡，我不禁问他：“难道你有见过它？所以你才能继承这样一笔遗产？”<br />
+　　“傻瓜，我父母早去世了，遗产只是我到了父母规定的大学毕业就能接受的。”朋友大笑。笑的我也有些窘迫。<br />
+　　“不过那次我回去，的确知道了些八尾猫的故事。”<br />
+　　“我的家乡是个物产十分丰富的地方，当然老鼠也很多，为了解决鼠患，从很早以前家家户户都会养猫。很奇怪，我们当地没有一个人养狗，我们也从来不吃狗肉。猫的存在给了当地人很大的实惠。没有老鼠的侵扰，粮食丰收，也不会传播疾病。所以大家对猫都疼爱有加。而猫的传说自然也很多。<br />
+　　我所知道的第一个是我的叔祖父告诉我的。他去年已经过世了。当时他和我叙述这个事的时候依然健硕，老人虽然将近八十了，但鹤发童颜，说话清楚利落。只是眼睛深深的凹陷，猛一看有些吓人，因为有严重的白内障，他又及不愿做手术，也只好这样。<br />
+　　为了方便叙述，下面是以他的口气来说的。<br />
+　　“那年我和你阿公（我祖父）才十来岁。村子后面有座山。我们经常上山去玩，或者运气好可以打到一些小动物，要知道，农村的孩子很早就会自己养活自己了。当然，我们知道山上有狼，可我们一般不走远，只在山腰，而且你阿公很会辨别狼的领地，他知道那些地方是去不得，那些地方可以去。<br />
+　　在以前我们也听说过村子里有八尾猫的传说，据说它是几百年前村子的一位少年饲养的，是一只身材非常大的猫。大到几乎可以和普通的狗一般。而且全身通体雪白，尾巴有粗又长。当时的人对这只猫都很敬畏。他们认为这只猫可能就是猫里面的猫妖。<br />
+　　在少年去世后，这只猫就不见了，然后陆续有人宣称看过这只猫，而这个少年的后代无一不是飞黄腾达。最后成了村子里有名的望族。大家都认为这是猫妖的福赐。但少年的后代决口不提。因为在禁忌中，如果把你和八尾猫的故事告诉旁人会折寿的。不过反正我也活够了，告诉你也无所谓（说到这里，叔祖父爽朗的笑着）。<br />
+　　那天天气本来是很好的，但六月份的天气在树分钟内都会变化，即便像我这样观察天气的好手也疏忽了。那次我没有叫你阿公同去。因为他已经要去省城上学堂了。不能像我这样野了。所以我独自一人想去山上摘点口菇或者打点野味。可没等我走到山腰。就下了好大的雨，回想我这几十年从来没再遇见过那样的暴雨。我只好找了个树叶比较茂密的地方躲了一下。天空灰暗的紧，空气也很压抑。我几乎忘记这是早上了。就在暴雨和闪电交加的时候，我隐约听见狼的叫声。照理这个时候，而且又在下暴雨狼是决不可能出来觅食的。但很快第二声狼嚎证实了我的猜测。<br />
+　　还没等我走，我已经看见四只狼已经把我包围起来。我不是第一次见狼，以前随父亲上山打过狼。但那时后只是跟着大人后面玩玩。但这次我可能真要沦为狼果腹的食物了。我开始打抖，也说不清楚是害怕，还是被雨浇得。<br />
+　　四只狼都是成狼，在雨水中他们的毛发都紧紧粘在一起，这让他们的身形很彻底的展示出来。我甚至可以数的清他们的肋骨有几跟，看来他们是饿了很久了。我就这样和他们对持着，我知道狼不会一下攻击你。它们会细心的，有耐心的观察，寻找最好的机会保证一击必中。我自己也不知道或许下一秒我的喉咙可能就会被撕开了。<br />
+　　这时候，我看见狼忽然在退缩，口中还不时的发出低吼，我知道那是带着威胁和恐惧的吼叫。我四处望去。果然我看见了它。<br />
+　　它的身长几乎超出我的想象，几乎可以算是一头小狮子了。但浑身雪白，雨似乎根本碰不到它漂亮的毛发。眼睛如同两颗黑色玛瑙，泛着不详的光。而且最醒目的是它的尾巴。是八跟，就像皇帝出巡的依仗一样散立在后面。<br />
+　　我突然想起，村里人都说，八尾猫通常会在不寻常的暴雨中出现，而且会寻找需要实现愿望的人。<br />
+　　狼很快被吓跑了。八尾猫也信步走到我面前。在它面前我几乎忘记自己是一个人，一个本应该凌驾与众多生物的人。我觉得自己很渺小。但我又渴望拥有它，因为它实在太美了。（说到这里，叔祖父的眼神很柔和，望着前方，几乎沉浸在以前的记忆中）<br />
+　　它轻摇了下尾巴，然后摇了摇头，伸了个极长的懒腰，然后望着我。<br />
+　　我知道它在等我提出要求。原来我们家就是那个少年的后裔，这让我又激动又兴奋。但它突如其来的到达又让我手足无措，我真的没想好我该让它帮我实现什么愿望。我小心的问它：“我可以摸摸你么？”<br />
+　　它没有表情的眯着双眼，这个时候雨已经停了。太阳很快又出来了。它白色的毛发居然在阳光下成了半透明的状态。可能它答应了。所以我用颤抖的双手摸了摸它脖子附近的毛发。<br />
+　　人一生会摸过很多东西，那些手感好的有丝绸，缎子，光华的瓷器，或者年轻女人的皮肤。但八尾猫的毛摸起来感觉和我所摸过的毛发不一样。不像普通的猫毛那样杂乱，也不像别人送给我们狐狸皮毛那样柔软。不知道是什么一种感觉，但摸着很舒服。我的手仿佛粘在那里了。我甚至想就这样枕着它的皮毛睡过去。<br />
+　　不过它很快就躲开了，或许它不喜欢太靠近人累。我知道它还在等我的愿望，它的八跟尾巴在不安分的晃来晃去。我实在不知道要实现什么愿望，只好对它说要不先跟我回家，等我想到在告诉你。<br />
+　　八尾猫望着我，忽然全身闪耀了一下，几乎晃的我睁不开眼睛。然后我在地上看到了一只猫。一只和普通毛没什么两样的白猫，而且，只有一只尾巴。<br />
+　　我知道它是八尾，我高兴得把它抱起来，兴奋的往家里回去了。<br />
+　　接下来的日子我几乎每天都和八尾猫玩耍。村子里的大人不会干涉孩子和猫玩。反正那时候我又不愿意和你父亲一样去读书，家里又富足，也就由着我性子瞎混呗。但八尾起初很不愿意这种玩耍。每当我像逗其他猫一样把纸团毛线球之类的扔给它。它总是无动于衷的望着我。就像一个老人看幼稚的孩子一样。我终于意识到这样逗它其实是对它的不尊敬呢。<br />
+　　它每天都对我叫唤，要不就摇着尾巴蹲在门口。我知道它不想呆在这里。它想尽快满足我的愿望，少一跟尾巴，然后又重复那样无休止的修炼。望着它的背影我觉得它很可怜。<br />
+　　那天我坐在它面前问它：“是不是所以愿望都能实现？”<br />
+　　它没做声，只是懒洋洋的望着我。<br />
+　　“那，我的愿望就是你能有九跟尾巴。”我一字一顿的说。<br />
+　　八尾猫呆住了。黑色玛瑙般的眼睛充满了疑惑，随后是一种后来我知道名为感恩的眼神。或许它终于明白佛祖的意思，只有遇见个肯让它圆满的人所提的愿望，它才能有九条尾巴。以前的人都自私的为自己考虑，他们认为八尾猫为他们实现任何愿望都是因该的，他们不会考虑八尾的感受，因为每一条尾巴都必须经历几十年的修炼。<br />
+　　八尾猫慢慢的起身，伏在我面前，舔了下我的手，很温暖。我看见它的眼睛有些湿，或许是眼泪吧<br />
+　　八尾不能在叫八尾了，我看见它长出了九条尾巴，是那样华美壮丽，它的身体闪烁着白光。以至后来同村的铁蛋一直赌咒说那天看见我家闪着白色的强光。<br />
+　　我目送着它离去，还是有些失落的。我知道我这辈子不会在和它见面了。<br />
+　　不过似乎以后的日子冥冥之中都受到了它的庇护吧，我这一辈子没什么作为反而过的快乐而安详，我的子女都很孝顺，我的身体非常健康。或许都是托它的福，还有，昨天我梦见它了，它说它就要来接我了。”<br />
+　　上面就是叔祖父的叙述，当时的我听完只能将信将疑，我知道医学上有种病是意想。多发为老人身上，他们身体很健康，但记忆却混乱。他们往往把一些不相干的事串联在一起组合我自己所谓的记忆。我不知道是否叔祖父也有这种病。<br />
+　　但很快，在我离开家乡前他老人家就过世了。走的非常之安详。就是白天睡在藤椅上走的。家里人也说了，这，叫喜丧。<br />
+　　在葬礼上，我是我那辈最长的。所以第一天的灵是我来守，那晚发生的事证实了叔祖父的故事。<br />
+　　大概凌晨两点后，大部分人都散去了，只有几个守灵的人还在，不过大都已经睡死过去。但我却出奇的清醒。一想到前几天还和我谈笑风生的亲人一下就阴阳两隔我多少有点悲伤。但在寂静的夜晚，我却听见了一声猫叫。并非像电影里的那样恐怖诡异，却充满了温柔的叫声。<br />
+　　我也看见了，看见了八尾猫，不，应该称它为九尾了。如叔祖父描述的一样，第一次见它的人都会惊叹与它的美丽。白色如雪般的毛发却有着漆黑如墨玉般的双眼。而且那漂浮的九条白色的尾巴更加显的雍容华贵。<br />
+　　它向我径直走来，全然没有理会我的惊讶。我很想叫醒其他人。但嘴却什么也说不出来。<br />
+　　我就看着它走到叔祖父的灵柩前，像叔祖父当年和他离开时一样，舔了舔他的手，然后就如一阵烟一样消失了。<br />
+　　过了很久，我发现我才能说出声来。但我没告诉其他人，我知道这无非招惹一顿嘲笑而已，而且在这样严肃的丧葬期间说这个在我们那里是很避讳的。结束叔祖父的葬礼后我才又回到家。而且以后我也再没见过八尾猫了。它的传说似乎也终止了。”<br />
+　　“好神奇的猫啊。”我忍不住感叹道。<br />
+　　“的确，不过你相信么？”朋友问我。<br />
+　　“当然，如果别人说我可能不会相信，但你说的再离奇我也是确信的。”我坚定地说。<br />
+　　“那就好，人生得一知己死而无憾，有你相信就够了。”朋友笑着拍拍我肩膀，示意我早点休息。我知道今晚的故事结束了。当朋友出去后。房间又恢复我一个人的寂静。这时，朋友那只猫又从外面回来了。我看着这只可爱的猫咪，心想，它会不会就是那只八尾呢。如果谁有缘看到八尾猫的话，记住一定要向它提让它有九条尾巴的愿望，因为徘徊在人世的他们是很孤单寂寞的。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/79.html" rel="bookmark"><time class="entry-date published" datetime="2007-06-29T14:12:53+00:00">2007年6月29日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98" rel="category tag">文摘</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/79.html#respond"><span class="screen-reader-text">于八尾猫</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-78" class="post-78 post type-post status-publish format-standard hentry category-14">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2007/78.html" rel="bookmark">高效程序员应该养成的七个习惯</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>高效程序员应该养成的七个习惯<br />
+2006.02.05  来自：zeali　   </p>
+<p>对于软件工程师来说，工作也许意味着许多东西 &#8212; 稳定的收入、做自己感兴趣的项目、找一份更好工作的跳板，或者你只是喜欢与其他程序员共事。但说到“效率”，强调的是在一定时间内按质完成项目的能力。</p>
+<p>理解你的需求<br />
+成为一个有效率的程序员首先要知道如何正确的支配自己的时间。对时间最大的浪费莫过于去做那些没有用处或者永远不会上线的项目。而导致这种结果的根源往往是对需求理解的偏差。<br />
+要最大程度避免这种情况的发生，最好的办法是快速建模，尽可能让演示系统早点出来。对于客户来说，只有看得到摸得着的产品摆在面前，他们才会有兴趣去试用观察，才会在实际的操作中发现供需双方在需求理解上的偏差。否则即使你写上几百页的需求分析文档也只能是自己的一面之词，客户可没耐心去检查这些文档写的是否准确。<br />
+另一方面，你应该让每一个阶段的开发成果都能够尽早的提交给客户。让他们以完全不考虑操作合理性和业务逻辑性的傻瓜级操作来发现程序员编程中的固有思维局限。尤其必须让QA尽早的介入到项目开发中来。如果能够每天提交一份测试版本给QA自然是最理想的了，但大多数项目开发做不到这样的粒度，那么就争取每周提交一份可测试版本。重要的是应该让QA和开发能够保持交错并行状态。只有这样，才能让QA尽早发现bug，降低每个bug的修复成本，同时缩减独立测试周期的跨度。<br />
+程序员往往不愿意把半成品代码交付给测试人员，相反他们更喜欢在所有代码都完工，达到自己满意的程度之后再让别人来测试。因为在这之前的代码往往存在很多程序员自己知道需要修改（或者故意留待后续补全）的流程缺失和Bug，测试人员并不知道哪些是真正的Bug，哪些只是临时性的运行错误，每次都会一股脑儿作为Bug反馈给程序员。这往往让程序员们心烦。同时测试人员有时候也不喜欢测试这种很多分支都走不通的中间版本。<br />
+但不管喜不喜欢，测试并发现问题是测试人员的工作；程序员则应该认识到，Bug反馈得越早就越是件好事情。QA和开发之间的关系往往很敌对，可实际上双方的目标是一致的。“忠言逆耳”古训有之，对于程序员来说就应该“有则改之，无则加勉”。总好过项目完成之后才发现一堆的问题，到那时候再要做修改，基本上都会牵一发而动全身，痛苦的还是程序员自己。 </p>
+<p>保持真实性<br />
+尽可能让你的系统运行在最接近真实环境配置下面，使用有实际意义的数据和真实的编译版本，并经常性进行模块整合。如果你的测试环境使用的数据都是些胡乱添加的东西，那么将来和测试数据大相径庭的真实数据这块大冰山早晚会撞沉你的程序。另一方面如果你只在开发环境来编译运行测试，会发现正式发布之后有各种各样莫名其妙的问题产生，到最后原来都是因为环境配置与开发环境有些不起眼的差异所导致。把所有模块整合进行编译联调，看上去应该是最后作的一项附加工作，但实际上这是一项需要在开发过程中经常性进行的工作。只有这样QA才能有最完整的东西拿来测试，得到更多的Bug反馈，同时降低模块整合的难度。 </p>
+<p>理解你的代码<br />
+书写规范的代码，并保持代码的整洁。Coding是一门艺术。正如写作一样，同样的文字在文豪的笔下就能够熠熠生辉，读起来赏心悦目；在普通人的笔下大概就只是词能达意的效果了；在某些人的笔下或许就需要研究半天才能猜出个大概来。当然不可能人人都成为艺术家，但至少你可以学会欣赏艺术、学习艺术。书写漂亮的代码是对自己工作的尊重，也是对其他程序员的尊重。如果你的代码中间充斥着大段过时的注释、可读性差的变量/函数，怎么去要求别人或者自己以后能够理解它们？ </p>
+<p>最优编程<br />
+把你的时间花在代码的功能上, 而不是去把现有的代码改得对自己胃口（尤其对于那些copy/paste过来的代码）；要找到系统的瓶颈进行优化，而不是对那些无益于系统整体性能提高的地方做无用功。<br />
+管理好你自己<br />
+也许有人会说计划和进度控制是PM的事情，但一个好的程序员应该比PM更了解自己目前工作的进度。不论上头给的进度计划是否合理，你都应该有自己的原则和概念，清楚知道每天该做什么怎么去做。 </p>
+<p>持续教育<br />
+只有不断的学习、实践、犯错误，你才会真正有所提高。在我看来，对于程序员来说最好的老师不在学校，而在书本、网络、社区。学会自我学习才能保持与时俱进。 </p>
+<p>R-E-S-P-E-C-T<br />
+互相尊重是一切的基础。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/78.html" rel="bookmark"><time class="entry-date published" datetime="2007-06-28T21:12:26+00:00">2007年6月28日</time><time class="updated" datetime="2007-06-28T09:14:00+00:00">2007年6月28日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98" rel="category tag">文摘</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2007/78.html#respond"><span class="screen-reader-text">于高效程序员应该养成的七个习惯</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="http://www.biglee.cn/page/21">上一页</a>
+<a class='page-numbers' href='http://www.biglee.cn/'><span class="meta-nav screen-reader-text">页 </span>1</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='http://www.biglee.cn/page/21'><span class="meta-nav screen-reader-text">页 </span>21</a>
+<span class='page-numbers current'><span class="meta-nav screen-reader-text">页 </span>22</span>
+<a class='page-numbers' href='http://www.biglee.cn/page/23'><span class="meta-nav screen-reader-text">页 </span>23</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='http://www.biglee.cn/page/30'><span class="meta-nav screen-reader-text">页 </span>30</a>
+<a class="next page-numbers" href="http://www.biglee.cn/page/23">下一页</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="http://www.biglee.cn/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="http://www.biglee.cn/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="http://www.biglee.cn/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="http://www.biglee.cn/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='http://www.biglee.cn/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="http://www.biglee.cn/blog/category/.Net" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="http://www.biglee.cn/wp-login.php">登录</a></li>
+			<li><a href="http://www.biglee.cn/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.biglee.cn/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

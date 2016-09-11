@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="http://www.biglee.cn/xmlrpc.php">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>.NET Framework 开发人员指南 之 使用连接池 &#8211; 网站建设技术集锦</title>
+<link rel='dns-prefetch' href='http://www.biglee.cn'>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="http://www.biglee.cn/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="http://www.biglee.cn/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; .NET Framework 开发人员指南 之 使用连接池评论Feed" href="http://www.biglee.cn/blog/2008/127.html/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.biglee.cn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://www.biglee.cn/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.biglee.cn/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.biglee.cn/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='ADO.NET 2.0技术内幕 之 连接池' href='http://www.biglee.cn/blog/2008/126.html' />
+<link rel='next' title='免费杀毒软件：德国小红伞AntiVir 个人版' href='http://www.biglee.cn/blog/2008/128.html' />
+<meta name="generator" content="WordPress 4.6" />
+<link rel="canonical" href="http://www.biglee.cn/blog/2008/127.html" />
+<link rel='shortlink' href='http://www.biglee.cn/?p=127' />
+<link rel="alternate" type="application/json+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.biglee.cn%2Fblog%2F2008%2F127.html" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.biglee.cn%2Fblog%2F2008%2F127.html&#038;format=xml" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="single single-post postid-127 single-format-standard">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+<article id="post-127" class="post-127 post type-post status-publish format-standard hentry category-Net">
+	<header class="entry-header">
+		<h1 class="entry-title">.NET Framework 开发人员指南 之 使用连接池</h1>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　连接到数据库服务器通常由几个需要很长时间的步骤组成。必须建立物理通道（例如套接字或命名管道），必须与服务器进行初次握手，必须分析连接字符串信息，必须由服务器对连接进行身份验证，必须运行检查以便在当前事务中登记，等等。 </p>
+<p>　　实际上，大多数应用程序仅使用一个或几个不同的连接配置。这意味着在执行应用程序期间，许多相同的连接将反复地打开和关闭。为了使打开的连接成本最低，ADO.NET 使用称为<strong>连接池</strong>的优化方法。</p>
+<p>　　连接池减少新连接需要打开的次数。<strong>池进程</strong>保持物理连接的所有权。通过为每个给定的连接配置保留一组活动连接来管理连接。只要用户在连接上调用 Open，池进程就会检查池中是否有可用的连接。如果某个池连接可用，会将该连接返回给调用者，而不是打开新连接。应用程序在该连接上调用 Close 时，池进程会将连接返回到活动连接池集中，而不是真正关闭连接。连接返回到池中之后，即可在下一个 Open 调用中重复使用。</p>
+<p>　　只有配置相同的连接可以建立池连接。ADO.NET 同时保留多个池，每个配置一个池。连接由连接字符串以及 Windows 标识（在使用集成的安全性时）分为多个池。</p>
+<p>　　池连接可以大大提高应用程序的性能和可缩放性。默认情况下，ADO.NET 中启用连接池。除非显式禁用，否则，连接在应用程序中打开和关闭时，池进程将对连接进行优化。还可以提供几个连接字符串修饰符来控制连接池的行为。有关更多信息，请参见本主题后面的&amp;ldquo;使用连接字符串关键字控制连接池&amp;rdquo;。</p>
+<h1 class=&#34;heading&#34;>池的创建和分配</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection0&#34;>
+<p>　　在初次打开连接时，将根据完全匹配算法创建连接池，该算法将池与连接中的连接字符串关联。每个连接池与不同的连接字符串关联。打开新连接时，如果连接字符串并非与现有池完全匹配，将创建一个新池。按进程、按应用程序域、按连接字符串以及（在使用集成的安全性时）按 Windows 标识来建立池连接。</p>
+<p>　　在以下 C# 示例中创建了三个新的 <a id=&#34;ctl00_rs1_mainContentContainer_ctl01&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl01&#39;,this);&#34; href=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection(VS.80).aspx&#34;>SqlConnection</a> 对象，但是管理时只需要两个连接池。注意，根据为 <tt>Initial Catalog</tt> 分配的值，第一个和第二个连接字符串有所不同。</p>
+<div class=&#34;&#34; id=&#34;ctl00_rs1_mainContentContainer_ctl02_other&#34;>
+<div class=&#34;CodeSnippetTitleBar&#34;>
+<div class=&#34;CodeDisplayLanguage&#34;>&amp;nbsp;</div>
+<div class=&#34;CopyCodeButton&#34;>using (SqlConnection connection = new SqlConnection(<br />&amp;nbsp; &amp;quot;Integrated Security=SSPI;Initial Catalog=Northwind&amp;quot;))<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; connection.Open();&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; <br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // Pool A is cr&#101;ated.<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }</p>
+<p>using (SqlConnection connection = new SqlConnection(<br />&amp;nbsp; &amp;quot;Integrated Security=SSPI;Initial Catalog=pubs&amp;quot;))<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; connection.Open();&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; <br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // Pool B is cr&#101;ated because the connection strings differ.<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }</p>
+<p>using (SqlConnection connection = new SqlConnection(<br />&amp;nbsp; &amp;quot;Integrated Security=SSPI;Initial Catalog=Northwind&amp;quot;))<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; connection.Open();&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; <br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // The connection string matches pool A.<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }</div>
+</div>
+</div>
+<p>　　如果 MinPoolSize 在连接字符串中未指定或指定为零，池中的连接将在一段时间不活动后关闭。但是，如果指定的 MinPoolSize 大于零，在 AppDomain 被卸载并且进程结束之前，连接池不会被破坏。非活动或空池的维护只需要最少的系统开销。</p>
+<div class=&#34;alert&#34;>
+<table width=&#34;100%&#34;>
+<tbody>
+<tr>
+<th align=&#34;left&#34;><img class=&#34;note&#34; alt=&#34;Note&#34; src=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/library/8xx3tyca.note(zh-cn,VS.80).gif&#34; />注意</th>
+</tr>
+<tr>
+<td>
+<p>如果发生致命错误（例如故障转移或注册表中的别名更改），池将自动清除。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 class=&#34;heading&#34;>添加连接</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection1&#34;>
+<p>　　连接池是为每个唯一的连接字符串创建的。当创建一个池后，将创建多个连接对象并将其添加到该池中，以满足最小池大小的要求。连接根据需要添加到池中，但是不能超过指定的最大池大小（默认值为 100）。连接在关闭或断开时释放回池中。 </p>
+<p>　　在请求 SqlConnection 对象时，如果存在可用的连接，将从池中获取该对象。连接要可用，必须未使用，具有匹配的事务上下文或未与任何事务上下文关联，并且具有与服务器的有效链接。</p>
+<p>　　连接池进程通过在连接释放回池中时重新分配连接，来满足这些连接请求。如果已达到最大池大小且不存在可用的连接，则该请求将会排队。然后，池进程尝试重新建立任何连接，直到到达超时时间（默认值为 15 秒）。如果池进程在连接超时之前无法满足请求，将引发异常。 </p>
+<div class=&#34;alert&#34;>
+<table width=&#34;100%&#34;>
+<tbody>
+<tr>
+<th align=&#34;left&#34;><img class=&#34;note&#34; alt=&#34;Caution note&#34; src=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/library/8xx3tyca.Caution(zh-cn,VS.80).gif&#34; />警告</th>
+</tr>
+<tr>
+<td>
+<p>我们建议您在使用完连接时一定要关闭连接，以便连接可以返回池。要关闭连接，可以使用 Connection 对象的 Close 或 Dispose 方法，也可以通过在 C# 的 using 语句中或在 Visual Basic 的 Using 语句中打开所有连接。不是显式关闭的连接可能不会添加或返回到池中。例如，如果连接已超出范围但没有显式关闭，则仅当达到最大池大小而该连接仍然有效时，该连接才会返回到连接池中。有关更多信息，请参见 Visual Basic 的<a id=&#34;ctl00_rs1_mainContentContainer_ctl03&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl03&#39;,this);&#34; href=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/library/yh598w02(VS.80).aspx&#34;>using 语句（C# 参考）</a>或<a id=&#34;ctl00_rs1_mainContentContainer_ctl04&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl04&#39;,this);&#34; href=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/library/wydd5hkd(VS.80).aspx&#34;>如何：释放系统资源</a>。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=&#34;alert&#34;>
+<table width=&#34;100%&#34;>
+<tbody>
+<tr>
+<th align=&#34;left&#34;><img class=&#34;note&#34; alt=&#34;Note&#34; src=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/library/8xx3tyca.note(zh-cn,VS.80).gif&#34; />注意</th>
+</tr>
+<tr>
+<td>
+<p>不要在类的 Finalize 方法中对 Connection、DataReader 或任何其他托管对象调用 Close 或 Dispose。在终结器中，仅释放类直接拥有的非托管资源。如果类不拥有任何非托管资源，则不要在类定义中包含 Finalize 方法。有关更多信息，请参见<a id=&#34;ctl00_rs1_mainContentContainer_ctl05&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl05&#39;,this);&#34; href=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/library/0xy59wtx(VS.80).aspx&#34;>垃圾回收</a>。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 class=&#34;heading&#34;>移除连接</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection2&#34;>
+<p>　　连接池进程定期扫描连接池，查找没有通过 Close 或 Dispose 关闭的未用连接，并重新建立找到的连接。如果应用程序没有显式关闭或断开其连接，连接池进程可能需要很长时间才能重新建立连接，所以，最好确保在连接中显式调用 Close 和 Dispose。</p>
+<p>　　如果连接长时间空闲，或池进程检测到与服务器的连接已断开，连接池进程会将该连接从池中移除。注意，只有在尝试与服务器进行通信之后才能检测到断开的连接。如果发现某连接不再连接到服务器，则会将其标记为无效。无效连接只有在关闭或重新建立后，才会从连接池中移除。</p>
+<p>　　如果存在与已消失的服务器的连接，那么即使连接池管理程序未检测到已断开的连接并将其标记为无效，仍有可能将此连接从池中取出。这种情况是因为检查连接是否仍有效的系统开销将造成与服务器的另一次往返，从而抵消了池进程的优势。发生此情况时，初次尝试使用该连接将检测连接是否曾断开，并引发异常。</p>
+</div>
+<h1 class=&#34;heading&#34;>清除池</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection3&#34;>
+<p>　　ADO.NET 2.0 引入了两种新的方法来清除池：<a id=&#34;ctl00_rs1_mainContentContainer_ctl06&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl06&#39;,this);&#34; href=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.clearallpools(VS.80).aspx&#34;>ClearAllPools</a> 和 <a id=&#34;ctl00_rs1_mainContentContainer_ctl07&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl07&#39;,this);&#34; href=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.clearpool(VS.80).aspx&#34;>ClearPool</a>。ClearAllPools 清除给定提供程序的连接池，ClearPool 清除与特定连接关联的连接池。如果在调用时连接正在使用，将进行相应的标记。连接关闭时，将被丢弃，而不是返回池中。</p>
+</div>
+<h1 class=&#34;heading&#34;>事务支持</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection4&#34;>
+<p>　　连接是根据事务上下文来从池中取出并进行分配的。除非在连接字符串中指定了 <tt>Enlist=false</tt>，否则，连接池将确保连接在 <a id=&#34;ctl00_rs1_mainContentContainer_ctl08&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl08&#39;,this);&#34; href=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/library/system.transactions.transaction.current(VS.80).aspx&#34;>Current</a> 上下文中登记。如果连接使用登记的 System.Transactions 事务关闭并返回池中，连接将保留在池中，以便使用相同 System.Transactions 事务对该连接池的下一次请求将返回相同的连接。如果该事务没有可用连接，在该连接打开时，将自动注册该连接。</p>
+<p>　　当连接关闭时，它将被释放回池中，并根据其事务上下文放入相应的子部分。因此，即使分布式事务仍然挂起，仍可以关闭该连接而不会生成错误。这样，您就可以在随后提交或中止分布式事务。</p>
+</div>
+<h1 class=&#34;heading&#34;>使用连接字符串关键字控制连接池</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection5&#34;>
+<p>　　SqlConnection 对象的 ConnectionString 属性支持连接字符串键/值对，可以用于调整连接池逻辑的行为。有关更多信息，请参见 <a id=&#34;ctl00_rs1_mainContentContainer_ctl09&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl09&#39;,this);&#34; href=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.connectionstring(VS.80).aspx&#34;>ConnectionString</a>。</p>
+</div>
+<h1 class=&#34;heading&#34;>池碎片</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection6&#34;>
+<p>　　池碎片是许多 Web 应用程序中的一个常见问题，应用程序可能会创建大量在进程退出后才会释放的池。这样，将打开大量的连接，占用许多内存，从而影响性能。</p>
+<h3 class=&#34;subHeading&#34;>因为集成安全性产生的池碎片</h3>
+<div class=&#34;subSection&#34;>
+<p>　　连接根据连接字符串以及用户标识来建立池连接。因此，如果使用网站上的基本身份验证或 Windows 身份验证以及集成的安全登录，每个用户将获得一个池。尽管这样可以提高单个用户的后续数据库请求的性能，但是该用户无法利用其他用户建立的连接。这样还使每个用户至少产生一个与数据库服务器的连接。这对特定 Web 应用程序结构会产生副作用，因为开发人员需要衡量安全性和审计要求。</p>
+</div>
+<h3 class=&#34;subHeading&#34;>因为许多数据库产生的池碎片</h3>
+<div class=&#34;subSection&#34;>
+<p>　　许多 Internet 服务提供商在一台服务器上托管多个网站。他们可能使用单个数据库确认窗体身份验证登录，然后为该用户或用户组打开与特定数据库的连接。与身份验证数据库的连接将建立池连接，供每个用户使用。但是，每个数据库的连接存在一个独立的池，因此增加了与服务器的连接数。</p>
+<p>　　这也会对应用程序设计产生副作用。但是，可以通过一个相对简单的方式避免此副作用，而又不会影响连接 SQL Server 时的安全性。不是为每个用户或组连接独立的数据库，而是连接到服务器上的相同数据库，然后执行 Transact-SQL USE 语句来切换为所需的数据库。以下代码段演示入如何创建与 master 数据库的初始连接，然后切换到 <tt>databaseName</tt> 字符串变量中指定的所需数据库。 </p>
+<div class=&#34;libCScode&#34; id=&#34;ctl00_rs1_mainContentContainer_ctl10_VisualBasic&#34; style=&#34;DISPLAY: none&#34;>
+<div class=&#34;CodeSnippetTitleBar&#34;>
+<div class=&#34;CodeDisplayLanguage&#34;>Visual Basic</div>
+</div>
+<pre class=&#34;libCScode&#34; id=&#34;ctl00_rs1_mainContentContainer_ctl10VisualBasic&#34; space=&#34;preserve&#34;><span style=&#34;COLOR: green&#34;>&#39; Assumes that command is a valid SqlCommand object.</span>
+Using connection <span style=&#34;COLOR: blue&#34;>As</span> <span style=&#34;COLOR: blue&#34;>New</span> SqlConnection( _
+<span style=&#34;COLOR: maroon&#34;>&amp;quot;Server=MSSQL1;uid=xxx;pwd=xxx;database=master&amp;quot;</span>)
+connection.Open()
+command.ExecuteNonQuery(<span style=&#34;COLOR: maroon&#34;>&amp;quot;USE &amp;quot;</span> &amp;amp; databaseName)
+<span style=&#34;COLOR: blue&#34;>End</span> Using</pre>
+</div>
+<div class=&#34;libCScode&#34; id=&#34;ctl00_rs1_mainContentContainer_ctl11_CSharp&#34;>
+<div class=&#34;CodeSnippetTitleBar&#34;>
+<div class=&#34;CodeD 
+
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2008/127.html" rel="bookmark"><time class="entry-date published" datetime="2008-06-23T10:07:13+00:00">2008年6月23日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/.Net" rel="category tag">.Net</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+	
+					<div id="respond" class="comment-respond">
+			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.biglee.cn/blog/2008/127.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="http://www.biglee.cn/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表评论" /> <input type='hidden' name='comment_post_ID' value='127' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="http://www.biglee.cn/blog/2008/126.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">ADO.NET 2.0技术内幕 之 连接池</span></a></div><div class="nav-next"><a href="http://www.biglee.cn/blog/2008/128.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">免费杀毒软件：德国小红伞AntiVir 个人版</span></a></div></div>
+	</nav>
+	</main><!-- .site-main -->
+
+	
+</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="http://www.biglee.cn/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="http://www.biglee.cn/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="http://www.biglee.cn/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="http://www.biglee.cn/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='http://www.biglee.cn/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="http://www.biglee.cn/blog/category/.Net" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="http://www.biglee.cn/wp-login.php">登录</a></li>
+			<li><a href="http://www.biglee.cn/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.biglee.cn/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/PC%E6%8A%80%E6%9C%AF">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/%E6%9D%82%E8%B4%A7%E9%93%BA">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/%E5%BD%B1%E9%9F%B3%E5%A8%B1%E4%B9%90">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E7%94%9F%E6%B4%BB">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/%E6%96%87%E6%91%98">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/%E6%95%B0%E6%8D%AE%E5%BA%93">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/%E7%AE%A1%E7%90%86%E8%90%A5%E8%BF%90">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-318"><a href="http://www.biglee.cn/blog/category/.Net">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
