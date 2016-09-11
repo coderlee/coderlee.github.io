@@ -24,7 +24,7 @@ if(id>118 && id<154){
 }else if(id>304){
     year = 2016;
 }
-url = '/blog/'.year.'/'.id.'.html';
+url = '/blog/'+year+'/'+id+'.html';
 location.href=url;
 
 function GetRequest() {  
