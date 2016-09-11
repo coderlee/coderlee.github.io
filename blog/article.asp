@@ -1,0 +1,41 @@
+<html>
+<title></title>
+<script language=javascript>
+var get = new Object();
+get = GetRequest();
+var year=2007;
+id = get['id'];
+if(id>118 && id<154){
+    year = 2008;
+}else if(id>153 && id<176){
+    year = 2009;
+}else if(id>175 && id<182){
+    year = 2010;
+}else if(id>181 && id<198){
+    year = 2011;
+}else if(id>197 && id<231){
+    year = 2012;
+}else if(id>230 && id<253){
+    year = 2013;
+}else if(id>252 && id<304){
+    year = 2014;
+}else if(id==304){
+    year = 2015;
+}else if(id>304){
+    year = 2016;
+}
+location.href='/blog/'.year.'/'.id.'.html';
+
+function GetRequest() {  
+  var url = location.search; //获取url中"?"符后的字串
+   var theRequest = new Object();
+   if (url.indexOf("?") != -1) {
+      var str = url.substr(1);
+      strs = str.split("&");
+      for(var i = 0; i < strs.length; i ++) {
+         theRequest[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
+      }
+   }
+   return theRequest;
+}
+</script>
