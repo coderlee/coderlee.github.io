@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>PC技术 &#8211; 网站建设技术集锦</title>
+	<atom:link href="http://www.biglee.cn/blog/category/pc_technology/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.biglee.cn</link>
+	<description>涉及网站建设、服务器维护等IT技术的博客</description>
+	<lastBuildDate>Sun, 11 Sep 2016 06:49:31 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6</generator>
+	<item>
+		<title>ssh连接速度很慢的解决方法</title>
+		<link>http://www.biglee.cn/blog/2014/300.html</link>
+		<comments>http://www.biglee.cn/blog/2014/300.html#respond</comments>
+		<pubDate>Tue, 04 Nov 2014 19:58:58 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[问题现象： 公司有几台服务器，SSH连接的时候很慢，半天才连接上，连上后一切操作正常，网络速度没问题。 处理方 &#8230; <a href="http://www.biglee.cn/blog/2014/300.html" class="more-link">继续阅读<span class="screen-reader-text">“ssh连接速度很慢的解决方法”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>问题现象：</p>
+<p>公司有几台服务器，SSH连接的时候很慢，半天才连接上，连上后一切操作正常，网络速度没问题。</p>
+<p>处理方法：</p>
+<p>用命令：ssh -v  服务器IP或者域名</p>
+<p>参数v能显示连接过程中的一系列步骤，看看在哪一步完成后卡得比较久，就是那一步出问题了。</p>
+<p>发现卡得比较久的有</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>debug1:&nbsp;Authentications&nbsp;that&nbsp;can&nbsp;continue:&nbsp;publickey,gssapi-keyex,gssapi-with-mic,password&nbsp;&nbsp;</span></span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;gssapi-keyex&nbsp;&nbsp;</span></li>
+<li class="alt"><span>debug1:&nbsp;No&nbsp;valid&nbsp;Key&nbsp;exchange&nbsp;context&nbsp;&nbsp;</span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;gssapi-with-mic&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>说明卡在了尝试gssapi认证过程上，编辑服务器上的SSH配置文件</p>
+<p>vi&nbsp;/etc/ssh/sshd_config</p>
+<p>将#GSSAPIAuthentication no这一行前面的#号删除，同时在GSSAPIAuthentication yes这行前面加上#号，禁用gssapi认证。</p>
+<p>重启SSH服务：service sshd restart</p>
+<p>再次连接，发现还是有点慢，但是比之前快了一些，继续用ssh -v 跟踪，卡在这：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>debug1:&nbsp;Authentications&nbsp;that&nbsp;can&nbsp;continue:&nbsp;publickey,password&nbsp;&nbsp;</span></span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;publickey&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>这是因为服务器要将客户机的IP解析成域名，再次编辑SSH配置文件，将</p>
+<p>#UseDNS yes</p>
+<p>这行改成</p>
+<p>UseDNS no</p>
+<p>重启SSH服务，再次连接，终于是飞一般的感觉。</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2014/300.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>各种SSH终端软件对比</title>
+		<link>http://www.biglee.cn/blog/2014/298.html</link>
+		<comments>http://www.biglee.cn/blog/2014/298.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[Xshell 收费软件 ssh secure shell 免费软件 secureCRT Secure[1] C &#8230; <a href="http://www.biglee.cn/blog/2014/298.html" class="more-link">继续阅读<span class="screen-reader-text">“各种SSH终端软件对比”</span></a>]]></description>
+				<content:encoded><![CDATA[<p><strong>Xshell</strong></p>
+<p>收费软件</p>
+<p><strong>ssh secure shell</strong></p>
+<p>免费软件</p>
+<p><strong>secureCRT</strong></p>
+<p>Secure[1] CRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单的说是Windows下登录UNIX或Linux服务器主机的软件。SecureCRT支持SSH，同时支持Telnet和rlogin协议。SecureCRT是一款用于连接运行包括Windows、UNIX和VMS的理想工具。通过使用内含的VCP命令行程序可以进行加密文件的传输。有流行CRTTelnet客户机的所有特点,包括:自动注册、对不同主机保持不同的特性、打印功能、颜色设置、可变屏幕尺寸、用户定义的键位图和优良的VT100,VT102,VT220和ANSI竞争.能从命令行中运行或从浏览器中运行.其它特点包括文本手稿、易于使用的工具条、用户的键位图编辑器、可定制的ANSI颜色等.SecureCRT的SSH协议支持DES,3DES和RC4密码和密码与RSA鉴别。</p>
+<p>SecureCRT也是一个收费软件</p>
+<p><strong>PuTTY</strong></p>
+<p>Putty是一个免费的、Windows 32平台下的telnet、rlogin和ssh客户端，但是功能丝毫不逊色于商业的telnet类工具。<br />
+用它来远程管理Linux十分好用，其主要优点如下：<br />
+◆ 完全免费;<br />
+◆ 支持公钥认证;<br />
+◆ 全面支持ssh1和ssh2；<br />
+◆ 绿色软件，无需安装，下载后在桌面建个快捷方式即可使用；<br />
+◆ 体积很小，仅484KB(0.63 版本)；<br />
+◆ 操作简单，所有的操作都在一个控制面板中实现。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2014/298.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>11个rsync使用实例</title>
+		<link>http://www.biglee.cn/blog/2014/297.html</link>
+		<comments>http://www.biglee.cn/blog/2014/297.html#respond</comments>
+		<pubDate>Thu, 31 Jul 2014 04:16:44 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[rsync表示 remote sync，其用于在本地或与远程主机间进行文件或目录备份。相比较scp等工具，rs &#8230; <a href="http://www.biglee.cn/blog/2014/297.html" class="more-link">继续阅读<span class="screen-reader-text">“11个rsync使用实例”</span></a>]]></description>
+				<content:encoded><![CDATA[<p><span style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">rsync表示 remote sync，其用于在本地或与远程主机间进行文件或目录备份。相比较scp等工具，rsync有以下优点：</span></p>
+<ol style="padding-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">
+<li style="list-style-type: decimal;">速度：除首次全拷贝外，其他时候实现增量拷贝，加快传输速度</li>
+<li style="list-style-type: decimal;">安全：传输数据时可用ssh加密传输</li>
+<li style="list-style-type: decimal;">带宽占用：rsync可对数据进行分块压缩传输，相比其他文件传输工具占用更少带宽</li>
+<li style="list-style-type: decimal;">权限限制：非root用户也可安转和执行rsync命令</li>
+</ol>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">rsync执行方式如下：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync options source destination</pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">source 和 destination 既可以指示本地，也可以是远程机器。下面通过实例说明rsync的用法。</p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;"><strong>1.在本地两个目录间进行数据同步</strong></p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">以下命令用于在两个目录间完成文件拷贝：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; ; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ <span style="color: #ff0000; line-height: 1.5 !important;">rsync -zvr /var/opt/lx/ /root/temp/</span>
+sending incremental file list
+a.c
+b.c
+
+sent 211 bytes  received 50 bytes  522.00 bytes/sec
+total size is 81  speedup is 0.31</pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">以上选项表示意思如下：</p>
+<ul style="margin-left: 45px; padding-left: 0px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">
+<li style="list-style: inherit !important;">-z 传输前进行压缩</li>
+<li style="list-style: inherit !important;">-v 显示命令执行详细信息</li>
+<li style="list-style: inherit !important;">-r 递归拷贝目录</li>
+</ul>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">此时我们看本地和目的地两个文件属性，注意到两者的时间戳是不同的：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ ll /var/opt/lx/a.c /root/temp/a.c 
+-rw-r--r-- 1 root root 73 04-06 21:11 /root/temp/a.c
+-rw-r--r-- 1 root root 73 04-06 21:05 /var/opt/lx/a.c
+</pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">若要保留原文件时间戳、属主/属组、权限属性，我们可以使用 -a 选项：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ <span style="color: #ff0000; line-height: 1.5 !important;">rsync -azv /var/opt/lx/ /root/temp/</span></pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">-a选项亦包含递归的作用，因而可以替代-r选项。</p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;"><strong>2.本地与远程主机间完成数据同步</strong></p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">我们可以用rsync将本地的文件，同步到远程机器：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ <span style="color: #ff0000; line-height: 1.5 !important;">rsync -avz /root/temp/ lx@192.168.1.103:/home/lx/tmp/</span>
+Password:  
+sending incremental file list
+created directory /home/lx/tmp
+./
+a.c
+b.c
+
+sent 216 bytes  received 53 bytes  21.52 bytes/sec
+total size is 81  speedup is 0.30
+</pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">以上我们指明了目的机器ip、登录用户以及所路径，并且需要输入相应用户的登录密码。以上命令完成本地到远程机器的同步，调换source和destination的位置，我们亦可完成远程机器到本地的数据同步。</p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;"><strong>3.使用ssh通道进行数据同步</strong></p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">在与远端进行数据同步时，我们一般采用ssh通道，使用 -e ssh 选项可以完成该功能：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ <span style="color: #ff0000; line-height: 1.5 !important;">rsync -avz -e ssh /root/temp/ lx@192.168.1.103:/home/lx/tmp/</span></pre>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;"><strong>4.不覆盖目的地对文件已作的修改</strong></p>
+<p style="margin: 10px auto; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">经常出现这样的场景，我们对源文件和目的地文件均作了修改，同时想将源文件作的修改同步到目的地，但又保留对目的地文件的更改，此时可以使用 -u 选项：</p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ ls -l /root/temp/b.c 
+-rw-r--r-- 1 root root 12 04-06 22:19 /root/temp/b.c
+$ ls -l /var/opt/lx/b.c 
+-rw-r--r-- 1 root root 8 04-06 21:06 /var/opt/lx/b.c
+$ rsync -avzu /var/opt/lx/ /root/temp/
+sending incremental file list
+./
+a.c
+
+sent 172 bytes  received 34 bytes  412.00 bytes/sec
+total size is 101  speedup is 0.49 
+</pre>
+<p class="p1"><span class="s1">以上目的地 b.c 文件经过修改，与源文件不相同，此时使用 -u 选项，可以看到对 b.c 并不进行同步，目的地 b.c 的修改得以保存。</span></p>
+<p class="p1"><span class="s1"><b>5.删除不存在于源目录的目的地文件</b></span></p>
+<p class="p1"><span class="s1">对于不存在于源目录，但存在于目的地的文件，有时我们想在做文件同步时删除它们，&#8211;delete 选项可以满足要求：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avz --delete /var/opt/lx/ /root/temp/
+sending incremental file list
+./
+deleting c.c
+b.c
+
+sent 101 bytes  received 34 bytes  270.00 bytes/sec
+total size is 101  speedup is 0.75</pre>
+<p class="p1"><span class="s1">以上目的地相比源目录多了c.c文件，同步时 &#8211;delete 将该文件删除。</span><span class="s1"> </span></p>
+<p class="p1"><span class="s1"><b>6.在同步时不在目的地创建新文件</b></span></p>
+<p class="p1"><span class="s1">有时我们只想对目的地已经有的文件进行同步，而不理会源目录新增的文件，此时可以使用 &#8211;existing 选项：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avz --existing /var/opt/lx/ /root/temp/</pre>
+<p class="p1"><span class="s1"><b>7.显示执行进度</b></span></p>
+<p class="p1"><span class="s1">使用 &#8211;progress 选项可以显示同步的进度，包括文件传输完成进度、传输速率信息：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avz --progress /var/opt/lx/ /root/temp/
+sending incremental file list
+./
+a.c
+          93 100%    0.00kB/s    0:00:00 (xfer#1, to-check=1/3)
+b.c
+           8 100%    7.81kB/s    0:00:00 (xfer#2, to-check=0/3)
+
+sent 220 bytes  received 53 bytes  546.00 bytes/sec
+total size is 101  speedup is 0.37
+</pre>
+<p class="p1"><span class="s1"><b>8.查看 source 和 destination 间的区别</b></span></p>
+<p class="p1"><span class="s1">rsync完成源目录到目的地的拷贝，若能查看到源目录与目的地间的差异，这对同步十分有帮助，-i 选项可以显示源目录与目的地间的差异，示例如下。</span></p>
+<p class="p1"><span class="s1">source:</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ ls -l /var/opt/lx/
+总计 8
+-rw-r--r-- 1 root root 145 04-06 23:11 a.c
+-rw-r--r-- 1 root root   8 04-06 21:06 b.c
+</pre>
+<p class="p1"><span class="s1">destination:</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ ls -l /root/temp/
+总计 8
+-rw-r--r-- 1 root root 93 04-06 22:20 a.c
+-rw-r--r-- 1 lx   root  8 04-06 21:06 b.c
+</pre>
+<p class="p6"><span class="s5">-rw-r&#8211;r&#8211; </span><span class="s6">1</span><span class="s5"> lx <span class="Apple-converted-space">  </span>root<span class="Apple-converted-space">  </span></span><span class="s6">8</span> <span class="s6">04</span><span class="s5">&#8211;</span><span class="s6">06</span> <span class="s6">21</span><span class="s5">:</span><span class="s6">06</span><span class="s5"> b.c</span></p>
+<p class="p1"><span class="s1">可以看到 source 与 destination 有两处不同，一处为 a.c 的文件大小，第二处为 b.c 的属主，此时添加 -i 选项进行数据同步，有以下输出：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avzi /var/opt/lx/ /root/temp/
+sending incremental file list
+.d..t...... ./
+&gt;f.st...... a.c
+.f....o.... b.c
+
+sent 175 bytes  received 37 bytes  424.00 bytes/sec
+total size is 153  speedup is 0.72
+</pre>
+<p class="p1"><span class="s1">对于同步的每个文件，均对应有一条输出，有11个标志位指示源文件与目的地文件的区别，在以上例子中，各标志位意义如下：</span></p>
+<ul class="ul1">
+<li class="li1"><span class="s1">&gt; 指示传输到本地</span></li>
+<li class="li1"><span class="s1">f  指示所传为文件</span></li>
+<li class="li1"><span class="s1">s  指示文件大小不一致</span></li>
+<li class="li1"><span class="s1">t  指示时间戳不一致</span></li>
+<li class="li1"><span class="s1">o  指示属主不一致</span></li>
+</ul>
+<p class="p1"><span class="s1"> </span><span class="s1"><b>9.按指定模式进行同步</b></span></p>
+<p class="p1"><span class="s1">使用 &#8211;include 和 &#8211;exclude 选项，可以帮助我们完成只同步特定文件的目的，例如以下只同步以 &#8216;a&#8217; 开头的文件：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avz --include 'a*' --exclude '*' /var/opt/lx/ /root/temp/
+sending incremental file list
+./
+a.c
+aa.c
+
+sent 220 bytes  received 53 bytes  546.00 bytes/sec
+total size is 148  speedup is 0.54
+</pre>
+<p class="p1"><span class="s1"><b>10.限制传输文件的大小</b></span></p>
+<p class="p1"><span class="s1">使用 &#8211;max-size 选项，我们可以限制传输文件的最大大小：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$rsync -avz --max-size='100K' /var/opt/lx/ /root/temp/</pre>
+<p class="p1"><span class="s1">以上命令限制传输的文件大小只能小于或等于100K，另可以使用 M 和 G 作为大小单位。</span></p>
+<p class="p1"><span class="s1"><b>11.全拷贝</b></span></p>
+<p class="p1"><span class="s1">默认情况下 rsync 采用增量拷贝，这样能节省带宽，在所同步文件不大的情况下，我们可以通过 -W 选项实现全拷贝：</span></p>
+<pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avzW /var/opt/lx/ /root/temp/</pre>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2014/297.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>linux下which、wh&#101;reis、locate、find 命令的区别</title>
+		<link>http://www.biglee.cn/blog/2014/296.html</link>
+		<comments>http://www.biglee.cn/blog/2014/296.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[&#160;我们经常在linux要查找某个文件，但不知道放在哪里了，可以使用下面的一些命令来搜索。 1、whi &#8230; <a href="http://www.biglee.cn/blog/2014/296.html" class="more-link">继续阅读<span class="screen-reader-text">“linux下which、wh&#101;reis、locate、find 命令的区别”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>&nbsp;我们经常在linux要查找某个文件，但不知道放在哪里了，可以使用下面的一些命令来搜索。<br />
+1、which <br />
+语法： <br />
+[root@redhat ~]# which 可执行文件名称</p>
+<p>which是通过 PATH环境变量到该路径内查找可执行文件，每个用户的环境变量可能不同，所以搜索出来的结果也可能不同。可能用echo $PATH查看当前环境变量。-a可以列出所有PATH目录下存在的文件，而不仅仅是找到的第一个文件。默认只显示找到的第一个文件。注意：which只会搜寻可执行文件，普通文件即使在$PATH变量路径中，也是查找不到的。</p>
+<p>例如： <br />
+[root@redhat ~]# which passwd <br />
+/usr/bin/passwd</p>
+<p>
+2、whereis <br />
+语法： <br />
+[root@redhat ~]# whereis [-bmsu] 文件名</p>
+<p>查找名中含有查找串的文件</p>
+<p>参数说 明： <br />
+-b ： 只找二进制文件 <br />
+-m： 只找在说明文件manual路径下的文件 <br />
+-s ： 只找source源文件 <br />
+-u ： 没有说明文档的文件 <br />
+例如： <br />
+[root@redhat ~]# whereis passwd <br />
+passwd: /usr/bin/passwd /etc/passwd /usr/share/man/man1/passwd.1.gz /usr/share/man/man5/passwd.5.gz <br />
+将和passwd文件相关的文件都查找出来</p>
+<p>[root@redhat ~]# whereis -b passwd <br />
+passwd: /usr/bin/passwd /etc/passwd <br />
+只将二进制文件 查找出来</p>
+<p>和find相比，whereis查找的速度非常快，这是因为linux系统会将 系统内的所有文件都记录在一个数据库文件中，当使用whereis和下面即将介绍的locate时，会从数据库中查找数据，而不是像find命令那样，通 过遍历硬盘来查找，效率自然会很高。 <br />
+但是该数据库文件并不是实时更新，默认情况下RHDL和centos一天更新一次，因此，我们在用whereis和locate 查找文件时，有时会找到已经被删除的数据，或者刚刚建立文件，却无法查找到，原因就是因为数据库文件没有被更新。</p>
+<p>3、 locate <br />
+语法： <br />
+[root@redhat ~]# locate 文件或者目录名称</p>
+<p>查找含有查找字串的文件和目录，如果是目录，就会将目录下的所有文件列举一遍分别作为一个查找结果。</p>
+<p>例 如： <br />
+[root@redhat ~]# locate passwd <br />
+/home/weblogic/bea/user_projects/domains/zhanggongzhe112/myserver/stage/_appsdir_DB_war/DB.war/jsp/as/user/passwd.jsp<br />
+/home/weblogic/bea/user_projects/domains/zhanggongzhe112/myserver/stage/_appsdir_admin_war/admin.war/jsp/platform/passwd.jsp<br />
+/lib/security/pam_unix_passwd.so <br />
+/lib/security/pam_passwdqc.so <br />
+/usr/include/rpcsvc/yppasswd.x <br />
+/usr/include/rpcsvc/yppasswd.h <br />
+/usr/lib/perl5/5.8.5/i386-linux-thread-multi/rpcsvc/yppasswd.ph <br />
+/usr/lib/kde3/kded_kpasswdserver.la <br />
+/usr/lib/kde3/kded_kpasswdserver.so <br />
+/usr/lib/ruby/1.8/webrick/httpauth/htpasswd.rb <br />
+/usr/bin/vncpasswd <br />
+/usr/bin/userpasswd <br />
+/usr/bin/yppasswd <br />
+&hellip;&hellip;&hellip;&hellip;</p>
+<p>4、 find <br />
+语法： <br />
+[root@redhat ~]# find  路径  参数 <br />
+参数说明： <br />
+时间查找参数： <br />
+-atime n :将n*24小时内存取过的的文件列出来 <br />
+-ctime n :将n*24小时内改变、新增的文件或者目录列出来 <br />
+-mtime n :将n*24小时内修改过的文件或者目录列出来 <br />
+-newer file ：把比file还要新的文件列出来 <br />
+名称查找参数： <br />
+-gid n       ：寻找群组ID为n的文件 <br />
+-group name  ：寻找群组名称为name的文件 <br />
+-uid n       ：寻找拥有者ID为n的文件 <br />
+-user name   ：寻找用户者名称为name的文件 <br />
+-name file   ：寻找文件名为file的文件（可以使用通配符） <br />
+例 如： <br />
+[root@redhat ~]# find / -name zgz <br />
+/home/zgz <br />
+/home/zgz/zgz <br />
+/home/weblogic/bea/user_projects/domains/zgz <br />
+/home/oracle/product/10g/cfgtoollogs/dbca/zgz <br />
+/home/oracle/product/10g/cfgtoollogs/emca/zgz <br />
+/home/oracle/oradata/zgz</p>
+<p>[root@redhat ~]# find / -name &#39;*zgz*&#39; <br />
+/home/zgz <br />
+/home/zgz/zgz1 <br />
+/home/zgz/zgzdirzgz <br />
+/home/zgz/zgz <br />
+/home/zgz/zgzdir <br />
+/home/weblogic/bea/user_projects/domains/zgz <br />
+/home/weblogic/bea/user_projects/domains/zgz/zgz.log00006 <br />
+/home/weblogic/bea/user_projects/domains/zgz/zgz.log00002 <br />
+/home/weblogic/bea/user_projects/domains/zgz/zgz.log00004 <br />
+/home/weblogic/bea/user_projects/domains/zgz/zgz.log <br />
+/home/weblogic/bea/user_projects/domains/zgz/zgz.log00008 <br />
+/home/weblogic/bea/user_projects/domains/zgz/zgz.log00005</p>
+<p>当我们用whereis和locate无法查找到我们需要的文件时，可以使用find，但是find是在硬盘上遍历查 找，因此非常消耗硬盘的资源，而且效率也非常低，因此建议大家优先使用whereis和locate。</p>
+<p>&nbsp;</p>
+<p>locate 是在数据库里查找，可以查找含有字符串的文件和目录<br />
+whereis 在数据库中查找，可以查找含有字符串的文件，可以找到可执行命令和man page <br />
+find 就是根据条件查找文件<br />
+which 根据环境变量PATH查找，一般只查找可执行文件，可以找到可执行文件和别名(alias)</p>
+<p><strong><span style="color: rgb(128, 0, 128);">Lee补充：用locate命令的话，如果磁盘上文件有更改，需要执行updatedb命令来更新数据库，否则结果可能会与实际不符合。</span></strong></p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2014/296.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>历尽艰辛的putty免密码SSH登陆服务器的配置</title>
+		<link>http://www.biglee.cn/blog/2014/295.html</link>
+		<comments>http://www.biglee.cn/blog/2014/295.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　前段时间在虚拟机上装了个CentOS，然后用puttyl连接上去操作，为了方便，不用每次登陆输入密码，我就 &#8230; <a href="http://www.biglee.cn/blog/2014/295.html" class="more-link">继续阅读<span class="screen-reader-text">“历尽艰辛的putty免密码SSH登陆服务器的配置”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　前段时间在虚拟机上装了个CentOS，然后用puttyl连接上去操作，为了方便，不用每次登陆输入密码，我就想配置用密钥免密码直接登陆，下面是配置过程：</p>
+<p>　　1、在服务器的用户目录下建立一个文件夹.ssh，注意有一个句点，用来存储密钥用。</p>
+<p>　　2、生成密钥，然后用如下命令：</p>
+<p>ssh-keygen -t rsa</p>
+<p>　　生成的过程中先会问你要存成什么文件，直接回车用默认的，就是储存在上一步建立的.ssh目录里。</p>
+<p>　　然后会让你输入passphrase（即口令，如果设置了，登陆时要输入这个口令），可以为空。最后会生成两个文件id_rsa和id_rsa.pub。</p>
+<p>　　3、公钥文件名authorized_keys。进入.ssh目录，用如下命令生成：</p>
+<p>cp id_rsa.pub authorized_keys</p>
+<p>　　如果你不想保留id_rsa.pub，也可以直接用mv命令。</p>
+<p>　　4、更改文件权限，以用户root为例：<br />
+chmod 700 /root<br />
+chmod 700 /root/.ssh<br />
+chmod 600 /root/.ssh/authorized_keys</p>
+<p>　　<strong>用户目录root的权限设置一般会被忽略掉，</strong>导致登陆时日志文件/var/log/secure里会有这样的信息：<br />
+Authentication refused: bad ownership or modes for directory /root</p>
+<p>　　我就是在这里吃了亏，到处找解决方案，不断地尝试各种权限设置，有人说是Selinux造成的，于是我也去关闭，同样不行，最后还是设置了用户目录的权限才成功。</p>
+<p>　　5、SSH服务的配置。更改配置文件/etc/ssh/sshd_config，找到以下三行：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>#RSAAuthentication&nbsp;yes&nbsp;&nbsp;</span></span></li>
+<li><span>#PubkeyAuthentication&nbsp;yes&nbsp;&nbsp;</span></li>
+<li class="alt"><span>#AuthorizedKeysFile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.ssh/authorized_keys&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>将前面的#删除，其中第三行的authorized_keys一定要确认与第3步里生成的文件名一致。保存后重启SSH服务：<br />
+service sshd restart</p>
+<p>　　6、PuTTY上的私钥配置</p>
+<p>　　由于CentOS是OpenSSH，生成的私钥与putty和格式不同，所以不能直接拿来使用，先把第2步中在服务器上生成的私钥文件id_rsa下载到本地，然后用PuTTYgen转换一下：用菜单File-&gt;Load private key导入私钥文件id_rsa，然后点击Save private key，保存好的新私钥文件就能用来给PuTTY登陆使用了。PuTTY的具体设置我就不说了，不过有个方法可以方便使用，建立一个PuTTY快捷方式，然后更改快捷方式的属性里的目标一栏加上如下参数：<br />
+-i &quot;私钥文件路径&quot; root@192.168.10.60</p>
+<p>保存后就能直接双击这个快捷方式登陆了。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2014/295.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>phpstorm 快捷键</title>
+		<link>http://www.biglee.cn/blog/2014/288.html</link>
+		<comments>http://www.biglee.cn/blog/2014/288.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[phpstorm是个很好用的PHP开发工具，工欲善其事必先利其器，熟悉下软件的操作快捷键能提高工作效率。 ct &#8230; <a href="http://www.biglee.cn/blog/2014/288.html" class="more-link">继续阅读<span class="screen-reader-text">“phpstorm 快捷键”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>phpstorm是个很好用的PHP开发工具，工欲善其事必先利其器，熟悉下软件的操作快捷键能提高工作效率。</p>
+<p>ctrl+shift+n 查找文件<br />
+ctrl+j 插入活动代码提示<br />
+ctrl+alt+t 当前位置插入环绕代码<br />
+alt+insert 生成代码菜单</p>
+<p>ctrl+q 查看代码注释<br />
+ctrl+d 复制当前行<br />
+ctrl+y 删除当前行<br />
+shift+F6 重命名<br />
+ctrl+shift+u 字母大小写转换<br />
+ctrl+f 查找<br />
+ctrl+r 替换<br />
+F4 查看源码<br />
+ctrl+shift+i 查看变量或方法定义源<br />
+ctrl+g 跳转行<br />
+ctrl+alt+F12 跳转至当前文件在磁盘上的位置<br />
+alt+down 查看下一个方法<br />
+alt+up 查看上一个方法<br />
+ctrl+alt+l 重新格式化代码<br />
+ctrl+shift+down statement向下移动<br />
+ctrl+shift+up statement向上移动<br />
+alt+shift+down line向下移动<br />
+alt+shift+up line向上移动<br />
+ctrl+/ 行注释<br />
+ctrl+shift+/ 块注释</p>
+<p>ctrl+shift+n 打开工程中的文件<br />
+ctrl+b 跳到变量申明处<br />
+ctrl+[] 匹配 {}[]<br />
+ctrl+shift+]/[ 选中块代码</p>
+<p>ctrl+x 剪切行<br />
+ctrl+shift+v 复制多个文本<br />
+alt+left/right 标签切换<br />
+ctrl+p 显示默认参数<br />
+ctrl+F12 在当前类文件里快速查找方法</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2014/288.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Teach Yourself Programming in Ten Years</title>
+		<link>http://www.biglee.cn/blog/2014/268.html</link>
+		<comments>http://www.biglee.cn/blog/2014/268.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[Why is everyone in such a rush? Walk into any bookstore &#8230; <a href="http://www.biglee.cn/blog/2014/268.html" class="more-link">继续阅读<span class="screen-reader-text">“Teach Yourself Programming in Ten Years”</span></a>]]></description>
+				<content:encoded><![CDATA[<h2>Why is everyone in such a rush?</h2>
+<p>Walk into any bookstore, and you&#39;ll see how to&nbsp;<i>Teach Yourself Java in 7 Days</i>&nbsp;alongside endless variations offering to teach Visual Basic, Windows, the Internet, and so on in a few days or hours. I did the following&nbsp;<a href="http://www.amazon.com/exec/obidos/tg/browse/-/468558/104-5938873-6579160">power search</a>&nbsp;at&nbsp;<a href="http://www.amazon.com/">Amazon.com</a>:</p>
+<pre>
+     <a href="http://www.amazon.com/exec/obidos/search-handle-url/ix=books&amp;rank=%2Bfeaturedrank&amp;fqp=power%01pubdate%3A%20after%201992%20and%20title%3A%20days%20and%0D%20%28title%3A%20learn%20or%20title%3A%20teach%20yourself%29&amp;sz=25&amp;pg=1/ref=s_b_np">pubdate: after 1992 and title: days and</a>
+      <a href="http://www.amazon.com/exec/obidos/search-handle-url/ix=books&amp;rank=%2Bfeaturedrank&amp;fqp=power%01pubdate%3A%20after%201992%20and%20title%3A%20days%20and%0D%20%28title%3A%20learn%20or%20title%3A%20teach%20yourself%29&amp;sz=25&amp;pg=1/ref=s_b_np">(title: learn or title: teach yourself)</a></pre>
+<p>and got back 248 hits. The first 78 were computer books (number 79 was&nbsp;<a href="http://www.amazon.com/exec/obidos/ASIN/0781802245/"><i>Learn Bengali in 30 days</i></a>). I replaced &quot;days&quot; with&nbsp;<a href="http://www.amazon.com/exec/obidos/search-handle-url/ix=books&amp;rank=%2Bfeaturedrank&amp;fqp=power%01pubdate%3A%20after%201992%20and%20title%3A%20hours%20and%0D%20%28title%3A%20learn%20or%20title%3A%20teach%20yourself%29&amp;sz=25&amp;pg=3/ref=s_b_np">&quot;hours&quot;</a>&nbsp;and got remarkably similar results: 253 more books, with 77 computer books followed by&nbsp;<a href="http://www.amazon.com/exec/obidos/ASIN/0028638999/"><i>Teach Yourself Grammar and Style in 24 Hours</i></a>&nbsp;at number 78. Out of the top 200 total, 96% were computer books.</p>
+<p>The conclusion is that either people are in a big rush to learn about computers, or that computers are somehow fabulously easier to learn than anything else. There are no books on how to learn Beethoven, or Quantum Physics, or even Dog Grooming in a few days. Felleisen&nbsp;<i>et al.</i>&nbsp;give a nod to this trend in their book&nbsp;<i><a href="http://www.ccs.neu.edu/home/matthias/HtDP2e/index.html">How to Design Programs</a></i>, when they say &quot;Bad programming is easy.&nbsp;<i>Idiots</i>&nbsp;can learn it in&nbsp;<i>21 days</i>, even if they are&nbsp;<i>dummies</i>.</p>
+<p>Let&#39;s analyze what a title like&nbsp;<i><a href="http://www.amazon.com/Learn-C-Three-Days-Rachele/dp/1556227078">Learn C++ in Three Days</a></i>&nbsp;could mean:</p>
+<ul>
+<li><b>Learn:</b>&nbsp;In 3 days you won&#39;t have time to write several significant programs, and learn from your successes and failures with them. You won&#39;t have time to work with an experienced programmer and understand what it is like to live in a C++ environment. In short, you won&#39;t have time to learn much. So the book can only be talking about a superficial familiarity, not a deep understanding. As Alexander Pope said, a little learning is a dangerous thing.
+<p>&nbsp;</p>
+</li>
+<li><b>C++:</b>&nbsp;In 3 days you might be able to learn some of the syntax of C++ (if you already know another language), but you couldn&#39;t learn much about how to use the language. In short, if you were, say, a Basic programmer, you could learn to write programs in the style of Basic using C++ syntax, but you couldn&#39;t learn what C++ is actually good (and bad) for. So what&#39;s the point?&nbsp;<a href="http://www-pu.informatik.uni-tuebingen.de/users/klaeren/epigrams.html">Alan Perlis</a>&nbsp;once said: &quot;A language that doesn&#39;t affect the way you think about programming, is not worth knowing&quot;. One possible point is that you have to learn a tiny bit of C++ (or more likely, something like Javascript or Flash&#39;s Flex) because you need to interface with an existing tool to accomplish a specific task. But then you&#39;re not learning how to program; you&#39;re learning to accomplish that task.
+<p>&nbsp;</p>
+</li>
+<li><b>in Three Days:</b>&nbsp;Unfortunately, this is not enough, as the next section shows.</li>
+</ul>
+<h2>Teach Yourself Programming in Ten Years</h2>
+<p>Researchers (<a href="http://www.amazon.com/exec/obidos/ASIN/034531509X/">Bloom (1985)</a>,&nbsp;<a href="http://norvig.com/21-days.html?foo#bh">Bryan &amp; Harter (1899)</a>,&nbsp;<a href="http://www.amazon.com/exec/obidos/ASIN/0805803092">Hayes (1989)</a>,&nbsp;<a href="http://norvig.com/21-days.html?foo#sc">Simmon &amp; Chase (1973)</a>) have shown it takes about ten years to develop expertise in any of a wide variety of areas, including chess playing, music composition, telegraph operation, painting, piano playing, swimming, tennis, and research in neuropsychology and topology. The key is&nbsp;<i>deliberative</i>&nbsp;practice: not just doing it again and again, but challenging yourself with a task that is just beyond your current ability, trying it, analyzing your performance while and after doing it, and correcting any mistakes. Then repeat. And repeat again. There appear to be no real shortcuts: even Mozart, who was a musical prodigy at age 4, took 13 more years before he began to produce world-class music. In another genre, the Beatles seemed to burst onto the scene with a string of #1 hits and an appearance on the Ed Sullivan show in 1964. But they had been playing small clubs in Liverpool and Hamburg since 1957, and while they had mass appeal early on, their first great critical success,&nbsp;<i>Sgt. Peppers</i>, was released in 1967.&nbsp;<a href="http://www.amazon.com/Outliers-Story-Success-Malcolm-Gladwell/dp/0316017922">Malcolm Gladwell</a>&nbsp;reports that a study of students at the Berlin Academy of Music compared the top, middle, and bottom third of the class and asked them how much they had practiced:</p>
+<blockquote style="background-color: rgb(255, 255, 255);"><p>Everyone, from all three groups, started playing at roughly the same time &#8211; around the age of five. In those first few years, everyone practised roughly the same amount &#8211; about two or three hours a week. But around the age of eight real differences started to emerge. The students who would end up as the best in their class began to practise more than everyone else: six hours a week by age nine, eight by age 12, 16 a week by age 14, and up and up, until by the age of 20 they were practising well over 30 hours a week. By the age of 20, the elite performers had all totalled 10,000 hours of practice over the course of their lives. The merely good students had totalled, by contrast, 8,000 hours, and the future music teachers just over 4,000 hours.</p></blockquote>
+<p>So it may be that 10,000 hours, not 10 years, is the magic number. (Henri Cartier-Bresson (1908-2004) said &quot;Your first 10,000 photographs are your worst,&quot; but he shot more than one an hour.) Samuel Johnson (1709-1784) thought it took even longer: &quot;Excellence in any department can be attained only by the labor of a lifetime; it is not to be purchased at a lesser price.&quot; And Chaucer (1340-1400) complained &quot;the lyf so short, the craft so long to lerne.&quot; Hippocrates (c. 400BC) is known for the excerpt &quot;ars longa, vita brevis&quot;, which is part of the longer quotation &quot;Ars longa, vita brevis, occasio praeceps, experimentum periculosum, iudicium difficile&quot;, which in English renders as &quot;Life is short, [the] craft long, opportunity fleeting, experiment treacherous, judgment difficult.&quot; Although in Latin,&nbsp;<i>ars</i>&nbsp;can mean either art or craft, in the original Greek the word &quot;techne&quot; can only mean &quot;skill&quot;, not &quot;art&quot;.</p>
+<h2>So You Want to be a Programmer</h2>
+<p>Here&#39;s my recipe for programming success:</p>
+<ul>
+<li>Get&nbsp;<b>interested</b>&nbsp;in programming, and do some because it is fun. Make sure that it keeps being enough fun so that you will be willing to put in your ten years/10,000 hours.
+<p>&nbsp;</p>
+</li>
+<li><b>Program</b>. The best kind of learning is&nbsp;<a href="http://www.engines4ed.org/hyperbook/nodes/NODE-120-pg.html">learning by doing</a>. To put it more technically, &quot;the maximal level of performance for individuals in a given domain is not attained automatically as a function of extended experience, but the level of performance can be increased even by highly experienced individuals as a result of deliberate efforts to improve.&quot;&nbsp;<a href="http://www2.umassd.edu/swpi/DesignInCS/expertise.html">(p. 366)</a>&nbsp;and &quot;the most effective learning requires a well-defined task with an appropriate difficulty level for the particular individual, informative feedback, and opportunities for repetition and corrections of errors.&quot; (p. 20-21) The book&nbsp;<i><a href="http://www.amazon.com/exec/obidos/ASIN/0521357349">Cognition in Practice: Mind, Mathematics, and Culture in Everyday Life</a></i>&nbsp;is an interesting reference for this viewpoint.
+<p>&nbsp;</p>
+</li>
+<li><b>Talk with</b>&nbsp;other programmers; read other programs. This is more important than any book or training course.
+<p>&nbsp;</p>
+</li>
+<li>If you want, put in four years at a&nbsp;<b>college</b>&nbsp;(or more at a graduate school). This will give you access to some jobs that require credentials, and it will give you a deeper understanding of the field, but if you don&#39;t enjoy school, you can (with some dedication) get similar experience on your own or on the job. In any case, book learning alone won&#39;t be enough. &quot;Computer science education cannot make anybody an expert programmer any more than studying brushes and pigment can make somebody an expert painter&quot; says Eric Raymond, author of<i>The New Hacker&#39;s Dictionary</i>. One of the best programmers I ever hired had only a High School degree; he&#39;s produced a lot of&nbsp;<a href="http://www.xemacs.org/">great</a><a href="http://www.mozilla.org/">software</a>, has his own&nbsp;<a href="http://groups.google.com/groups?q=alt.fan.jwz&amp;meta=site%3Dgroups">news group</a>, and made enough in stock options to buy his own&nbsp;<a href="http://en.wikipedia.org/wiki/DNA_Lounge">nightclub</a>.
+<p>&nbsp;</p>
+</li>
+<li>Work on&nbsp;<b>projects with</b>&nbsp;other programmers. Be the best programmer on some projects; be the worst on some others. When you&#39;re the best, you get to test your abilities to lead a project, and to inspire others with your vision. When you&#39;re the worst, you learn what the masters do, and you learn what they don&#39;t like to do (because they make you do it for them).
+<p>&nbsp;</p>
+</li>
+<li>Work on&nbsp;<b>projects&nbsp;<i>after</i></b>&nbsp;other programmers. Understand a program written by someone else. See what it takes to understand and fix it when the original programmers are not around. Think about how to design your programs to make it easier for those who will maintain them after you.
+<p>&nbsp;</p>
+</li>
+<li>Learn at least a half dozen&nbsp;<b>programming languages</b>. Include one language that supports class abstractions (like Java or C++), one that supports functional abstraction (like Lisp or ML), one that supports syntactic abstraction (like Lisp), one that supports declarative specifications (like Prolog or C++ templates), one that supports coroutines (like Icon or Scheme), and one that supports parallelism (like Sisal).
+<p>&nbsp;</p>
+</li>
+<li>Remember that there is a &quot;<b>computer</b>&quot; in &quot;computer science&quot;. Know how long it takes your computer to execute an instruction, fetch a word from memory (with and without a cache miss), read consecutive words from disk, and seek to a new location on disk. (<a href="http://norvig.com/21-days.html?foo#answers">Answers here.</a>)
+<p>&nbsp;</p>
+</li>
+<li>Get involved in a language&nbsp;<b>standardization</b>&nbsp;effort. It could be the ANSI C++ committee, or it could be deciding if your local coding style will have 2 or 4 space indentation levels. Either way, you learn about what other people like in a language, how deeply they feel so, and perhaps even a little about why they feel so.
+<p>&nbsp;</p>
+</li>
+<li>Have the good sense to&nbsp;<b>get off</b>&nbsp;the language standardization effort as quickly as possible.</li>
+</ul>
+<p>With all that in mind, its questionable how far you can get just by book learning. Before my first child was born, I read all the&nbsp;<i>How To</i>books, and still felt like a clueless novice. 30 Months later, when my second child was due, did I go back to the books for a refresher? No. Instead, I relied on my personal experience, which turned out to be far more useful and reassuring to me than the thousands of pages written by experts.</p>
+<p>Fred Brooks, in his essay&nbsp;<i><a href="http://en.wikipedia.org/wiki/No_Silver_Bullet">No Silver Bullet</a></i>&nbsp;identified a three-part plan for finding great software designers:</p>
+<ol>
+<li>Systematically identify top designers as early as possible.
+<p>&nbsp;</p>
+</li>
+<li>Assign a career mentor to be responsible for the development of the prospect and carefully keep a career file.
+<p>&nbsp;</p>
+</li>
+<li>Provide opportunities for growing designers to interact and stimulate each other.
+<p>&nbsp;</p>
+</li>
+</ol>
+<p>This assumes that some people already have the qualities necessary for being a great designer; the job is to properly coax them along.&nbsp;<a href="http://www-pu.informatik.uni-tuebingen.de/users/klaeren/epigrams.html">Alan Perlis</a>&nbsp;put it more succinctly: &quot;Everyone can be taught to sculpt: Michelangelo would have had to be taught how not to. So it is with the great programmers&quot;. Perlis is saying that the greats have some internal quality that transcends their training. But where does the quality come from? Is it innate? or do they develop it through diligence? As Auguste Gusteau (the fictional chef in&nbsp;<i>Ratatouille</i>) puts it, &quot;anyone can cook, but only the fearless can be great.&quot; I think of it more as willingness to de</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2014/268.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>直接下载的CHM文件打开无法显示内容的解决办法</title>
+		<link>http://www.biglee.cn/blog/2014/255.html</link>
+		<comments>http://www.biglee.cn/blog/2014/255.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[今天下载了个CHM文档，打开后一片空白，原以为下载的文件有问题，去下载页面重新时发现上面附有一个解决方案的链接 &#8230; <a href="http://www.biglee.cn/blog/2014/255.html" class="more-link">继续阅读<span class="screen-reader-text">“直接下载的CHM文件打开无法显示内容的解决办法”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>今天下载了个CHM文档，打开后一片空白，原以为下载的文件有问题，去下载页面重新时发现上面附有一个解决方案的链接，摘抄整理如下，以供参考。</p>
+<p>&nbsp;下载的CHM文档，在NTFS分区打开无法显示其内容，点开任何一个页面都是一片空白。解决办法：</p>
+<p>1、上传文件时将chm打包为rar、zip或7z等压缩文件格式</p>
+<p>2、修改直接下载后的CHM文件属性：鼠标右键菜单打开文件属性，你会发现下面有这样的安全提示：&ldquo;此文件来自其他计算机 可能被阻止以帮助保护该计算机&rdquo;，右边有个解除锁定的按钮，点击一下，再点确定按钮，再次打开这个CHM文档，就一切正常了。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2014/255.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>PXE网络启动PE维护工具：小小强Pe工具箱PXE版</title>
+		<link>http://www.biglee.cn/blog/2013/249.html</link>
+		<comments>http://www.biglee.cn/blog/2013/249.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[如果电脑出问题了，手上没光盘也没U盘，怎么办？ 现在大部分网卡都支持网络启动，在BIOS里开启网卡的网络启动， &#8230; <a href="http://www.biglee.cn/blog/2013/249.html" class="more-link">继续阅读<span class="screen-reader-text">“PXE网络启动PE维护工具：小小强Pe工具箱PXE版”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>如果电脑出问题了，手上没光盘也没U盘，怎么办？</p>
+<p>现在大部分网卡都支持网络启动，在BIOS里开启网卡的网络启动，并设为第一启动项。然后就可以用PXE来启动PE进行维护操作了。</p>
+<p>自己折腾比较麻烦，有好多现成的可以使用，如：</p>
+<p>小小强Pe工具箱PXE版V4.0，度娘上找了好久没找到，最后在GG上找到下载地址：<a href="http://dl.dbank.com/c09nr3vubg">http://dl.dbank.com/c09nr3vubg</a></p>
+<p>&nbsp;测试了下，用自带的haneWINDHCP客户机无法启动，改用TFTPd32，根据使用说明设置引导文件，能启动。功能挺丰富的。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2013/249.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>VirtualBox 网络设置详解</title>
+		<link>http://www.biglee.cn/blog/2013/246.html</link>
+		<comments>http://www.biglee.cn/blog/2013/246.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[VirtualBox 有6种网络模式，下面将逐一讲解。 1、NAT〈网络地址转换模式〉 　　VirtualBo &#8230; <a href="http://www.biglee.cn/blog/2013/246.html" class="more-link">继续阅读<span class="screen-reader-text">“VirtualBox 网络设置详解”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>VirtualBox 有6种网络模式，下面将逐一讲解。</p>
+<p>1、NAT〈网络地址转换模式〉</p>
+<p>　　VirtualBox 中虚拟的主机（以下简称：虚拟主机）并不真实存在于网络中，宿主机和宿主机网络中的任何主机都不能直接访问虚拟主机，各虚拟主机也互不相通。虚拟主机能访 问宿主机，以及宿主机能访问的任何主机。虚拟主机访问网络是先通过 VirtualBox 转换后再发送出去的，数据接收也是先由 VirtualBox 接收后再转换转发到虚拟主机。</p>
+<p>　　为了解决其它主机不能访问虚拟主机的问题，VirtualBox 提供了端口转发功能，使得我们可以设置特定的端口供实体网络访问。</p>
+<p>　　虚拟主机网络参数默认从 VirtualBox 的虚拟 DHCP&nbsp;服务器 获取。</p>
+<p>2、Bridged Adapter〈桥接模式〉</p>
+<p>　　虚拟主机通过 VirtualBox 桥接到宿主机的一个网卡中，就像真实存在于宿主机网络中的一台主机一样。虚拟主机能与宿主机和宿主机网络中的主机完美互通。被桥接的网卡会开启混杂模式。</p>
+<p>　　虚拟主机网络参数 ： 手动配置成桥接的宿主机网卡的同一网段，或通过宿主机网络中的 DHCP Ser 获取。</p>
+<p>　　注意：1.需要加载模块vboxnetflt；2.如果宿主机在一个受限制的网络虚拟主机是不能访问互联网的，如：宿主机使用ADSL、使用使用代理或VPN、宿主机网关做了MAC地址限制&hellip;&hellip;</p>
+<p>3、Internal〈内部模式〉</p>
+<p>　　虚拟机与外界完全分开，虚拟机与宿主机网络不能互通，只有 <strong>同一名称（如：intnet）</strong><strong>的内部网络模式的虚拟机之间才能互相访问</strong> ，还有一个条件是在同一网段。</p>
+<p>　　虚拟主机网络参数 ： 默认不分配IP，需要自已手动设置。</p>
+<p>4、Host-only Adapter〈宿主机模式〉</p>
+<p>　　VirtualBox 在宿主机中虚拟一个 host-only 网卡，然后把虚拟主机桥接到 host-only 网卡上，我们可以通过设置 host-only 网卡（共享、桥接）来实现网络连接。</p>
+<p>　　虚拟主机网络参数 ：默认从 VirtualBox 的虚拟 DHCP 服务器 获取，IP段为192.168.56.0/24</p>
+<p>5、未指定</p>
+<p>　　如果你选择&ldquo;未指定&rdquo;，你将不能和任何主机通信，只能够自已 ping 自已</p>
+<p>6、通用驱动</p>
+<p>　　这个不知道具体怎么用，有空再研究研究。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2013/246.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>
