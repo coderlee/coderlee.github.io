@@ -5,7 +5,7 @@ var get = new Object();
 get = GetRequest();
 var year=2007;
 id = get['id'];
-if(id == 'undefined')
+if(typeof(id) == 'undefined')
   location.href = '/';
 if(id>118 && id<154){
     year = 2008;
