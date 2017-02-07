@@ -8,43 +8,43 @@
 	>
 
 <channel>
-	<title>网站技术 &#8211; 网站建设技术集锦</title>
-	<atom:link href="http://www.biglee.cn/blog/category/web_development/feed" rel="self" type="application/rss+xml" />
-	<link>http://www.biglee.cn</link>
+	<title>Lee &#8211; 网站建设技术集锦</title>
+	<atom:link href="/blog/author/lee/feed" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>涉及网站建设、服务器维护等IT技术的博客</description>
-	<lastBuildDate>Sun, 11 Sep 2016 06:49:31 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 07 Feb 2017 02:46:28 +0000</lastBuildDate>
 	<language>zh-CN</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.6</generator>
 	<item>
 		<title>curl与file_get_contents访问远程接口慢的解决</title>
-		<link>http://www.biglee.cn/blog/2016/307.html</link>
-		<comments>http://www.biglee.cn/blog/2016/307.html#respond</comments>
+		<link>/blog/2016/307.html</link>
+		<comments>/blog/2016/307.html#respond</comments>
 		<pubDate>Sat, 09 Jan 2016 10:35:30 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网站技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　这几天在协调处理短信接口调用失败的问题，处理完后发现发送短信很耗时，要5秒左右，是PHP调用 file_g &#8230; <a href="http://www.biglee.cn/blog/2016/307.html" class="more-link">继续阅读<span class="screen-reader-text">“curl与file_get_contents访问远程接口慢的解决”</span></a>]]></description>
+		<description><![CDATA[　　这几天在协调处理短信接口调用失败的问题，处理完后发现发送短信很耗时，要5秒左右，是PHP调用 file_g &#8230; <a href="/blog/2016/307.html" class="more-link">继续阅读<span class="screen-reader-text">“curl与file_get_contents访问远程接口慢的解决”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　这几天在协调处理短信接口调用失败的问题，处理完后发现发送短信很耗时，要5秒左右，是PHP调用 file_get_contents访问远程接口的的，而我前面处理调用失败问题时最后测试短信接口时是直接用的Linux命令curl调用，速度是非常快的。</p>
 <p>　　先从代码入手，刚开始以为是file_get_contents比curl慢，虽然觉得也不至于慢到这种程度，但是总得试试看，于是换成curl，依旧很慢。</p>
 <p>　　难道是域名解析问题？于是在hosts文件里写好本地解析，再试，果真正常了，秒发。看来真是域名解析问题，但又不知为何Shell里没问题，独独PHP里有问题。虽然把域名写死在hosts里能解决问题，但是总不是办法。</p>
 <p>　　上网查，有人说是PHP缓存了域名解析，重启PHP即可。我马上去重启PHP，还真好了。但是有一点我不明白，既然是缓存，那应该是速度更快才对。在一个技术群里讨论时我突然想起来昨天测试接口时发现服务器设置的首选DNS是不能用的，然后我改了。难道PHP缓存的不是域名解析，而是域名解析服务器（DNS）？看来只有这个解释了，有空可以做个测试验证一下。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2016/307.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2016/307.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>PHP中Notice: iconv(): Unknown error (84) 的解决办法</title>
-		<link>http://www.biglee.cn/blog/2016/306.html</link>
-		<comments>http://www.biglee.cn/blog/2016/306.html#respond</comments>
+		<link>/blog/2016/306.html</link>
+		<comments>/blog/2016/306.html#respond</comments>
 		<pubDate>Thu, 07 Jan 2016 10:51:03 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网站技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[ 　　今天在写一个导出数据到csv的功能，为了防止中文乱码，需要将utf8转码，我使用了这样的语句： #这里先 &#8230; <a href="http://www.biglee.cn/blog/2016/306.html" class="more-link">继续阅读<span class="screen-reader-text">“PHP中Notice: iconv(): Unknown error (84) 的解决办法”</span></a>]]></description>
+		<description><![CDATA[ 　　今天在写一个导出数据到csv的功能，为了防止中文乱码，需要将utf8转码，我使用了这样的语句： #这里先 &#8230; <a href="/blog/2016/306.html" class="more-link">继续阅读<span class="screen-reader-text">“PHP中Notice: iconv(): Unknown error (84) 的解决办法”</span></a>]]></description>
 				<content:encoded><![CDATA[<p> 　　今天在写一个导出数据到csv的功能，为了防止中文乱码，需要将utf8转码，我使用了这样的语句：</p>
 <div class="codeText">
 <pre class="prettyprint linenums:1">#这里先是把csv文件的内容生成，然后下面转码
@@ -57,19 +57,54 @@ $csv=iconv(&#039;utf-8&#039;,&#039;gb2312&#039;,$csv);</pre>
 </div>
 <p>再运行，没报错了。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2016/306.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2016/306.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>微信大文件的清理</title>
+		<link>/blog/2016/305.html</link>
+		<comments>/blog/2016/305.html#respond</comments>
+		<pubDate>Mon, 04 Jan 2016 07:23:33 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网络生活]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　 最近手机可用空间越来越小了，新软件都没办法安装。前几天都是用手机自带的垃圾清理软件清理一些缓存之类的才能 &#8230; <a href="/blog/2016/305.html" class="more-link">继续阅读<span class="screen-reader-text">“微信大文件的清理”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　 最近手机可用空间越来越小了，新软件都没办法安装。前几天都是用手机自带的垃圾清理软件清理一些缓存之类的才能安装新软件，老是这样，太麻烦了。</p>
+<p>　　今天决定动手解决这个问题。用软件分析过文件占用后发现微信APP的文件夹里有几个文件异常的大，其中85f22adb&#8230;(很长就不抄完了)/sfs文件夹下有一个文件名叫sns.block.00001，大小达到1.3G。不知道这文件是干什么用的，删除怕聊天记录也没了，上网搜索了下，也没有人能说出个所以然。看这文件名，带有sns，我猜测与朋友圈有关系，于是退出微信，先重命名备份这个文件，然后再打开微信，发现聊天记录正常，没丢，通讯录也正常。再进入sfs文件夹，发现微信已经新建了一个文件sns.block.00000，为了验证我的想法，我刷了下朋友圈，再去看这个文件，发现变大了一些，再往下拉，加载更多的朋友圈内容，每加载一些内容，这个文件就会变大，观看朋友圈视频后也一样会增加此文件大小。由此可见此文件是保存朋友圈信息用的。</p>
+<p>　　总结：类似sns.block.00000，sns.block.00001这样的文件是保存朋友圈信息用的，以便回看历史信息能快速加载，少耗费流量。所以可以大胆放心地删除，最多是查看近日朋友圈内容的时候再下载一次而已。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2016/305.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>博客貌似被黑了，有空换PHP的</title>
+		<link>/blog/2015/304.html</link>
+		<comments>/blog/2015/304.html#respond</comments>
+		<pubDate>Thu, 24 Sep 2015 06:51:41 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网络安全]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[&#160;　　由于近来工作比较忙，所以有大半年没关注我这个博客站了。 　　前两天发现站点打不开了，于是找朋友 &#8230; <a href="/blog/2015/304.html" class="more-link">继续阅读<span class="screen-reader-text">“博客貌似被黑了，有空换PHP的”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>&nbsp;　　由于近来工作比较忙，所以有大半年没关注我这个博客站了。</p>
+<p>　　前两天发现站点打不开了，于是找朋友要了个小地方，放上去，今天发现一堆的垃圾评论与留言，想登录后台管理，结果发现登录不上，提示密码错误。以为自己记错了，试了几个可能的密码，都不行，于量拿出很早已经写的重置用户密码的代码，重置，再登录，也不行，傻眼了，难道管理员用户有另外的表，记得没有啊，查看数据库确认表，才发现我的用户名被改了。看来是已经被黑了。</p>
+<p>　　这个博客站是8年前架的，那时用的是ASP，现在早就改行做PHP了，正好可以抽空把这个站也改成PHP的。</p>
+<p>　　除了用户名被改，还有恶意注册与留言，得抓紧时间换了。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2015/304.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>使用socket方式连接Nginx优化php-fpm性能</title>
-		<link>http://www.biglee.cn/blog/2014/303.html</link>
-		<comments>http://www.biglee.cn/blog/2014/303.html#respond</comments>
+		<link>/blog/2014/303.html</link>
+		<comments>/blog/2014/303.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网站技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[Nginx连接fastcgi的方式有2种：TCP和unix domain socket 什么是Unix dom &#8230; <a href="http://www.biglee.cn/blog/2014/303.html" class="more-link">继续阅读<span class="screen-reader-text">“使用socket方式连接Nginx优化php-fpm性能”</span></a>]]></description>
+		<description><![CDATA[Nginx连接fastcgi的方式有2种：TCP和unix domain socket 什么是Unix dom &#8230; <a href="/blog/2014/303.html" class="more-link">继续阅读<span class="screen-reader-text">“使用socket方式连接Nginx优化php-fpm性能”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Nginx连接fastcgi的方式有2种：TCP和unix domain socket</p>
 <p>什么是Unix domain socket？&mdash;&mdash; 维基百科<br />
 Unix domain socket 或者 IPC socket是一种终端，可以使同一台操作系统上的两个或多个进程进行数据通信。与管道相比，Unix domain sockets 既可以使用字节流和数据队列，而管道通信则只能通过字节流。Unix domain sockets的接口和Internet socket很像，但它不使用网络底层协议来通信。Unix domain socket 的功能是POSIX操作系统里的一种组件。</p>
@@ -159,19 +194,19 @@ listen.mode = 0666</p>
 </div>
 <p>&nbsp;</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/303.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/303.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>xhprof与Xdebug的奇怪问题</title>
-		<link>http://www.biglee.cn/blog/2014/302.html</link>
-		<comments>http://www.biglee.cn/blog/2014/302.html#respond</comments>
+		<link>/blog/2014/302.html</link>
+		<comments>/blog/2014/302.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网站技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　为了查找项目中比较耗性能的PHP代码，这两天在装xhprof用来跟踪代码，结果遇到了一个很奇怪的问题。安装 &#8230; <a href="http://www.biglee.cn/blog/2014/302.html" class="more-link">继续阅读<span class="screen-reader-text">“xhprof与Xdebug的奇怪问题”</span></a>]]></description>
+		<description><![CDATA[　　为了查找项目中比较耗性能的PHP代码，这两天在装xhprof用来跟踪代码，结果遇到了一个很奇怪的问题。安装 &#8230; <a href="/blog/2014/302.html" class="more-link">继续阅读<span class="screen-reader-text">“xhprof与Xdebug的奇怪问题”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　为了查找项目中比较耗性能的PHP代码，这两天在装xhprof用来跟踪代码，结果遇到了一个很奇怪的问题。安装配置好xhprof后，用来跟踪简单的代码没一点问题，但是在项目中一跟踪，PHP-FPM进程直接就挂了，查看各种日志，并且开了内核转储，折腾了半天也没找到挂了的原因。</p>
 <p>　　没办法，只好换Xdebug。安装，配置，很快就搞定了。</p>
 <p>　　在使用Xdebug前我突发奇想，不知道Xdebug能不能跟踪到xhprof导致PHP-FPM挂了的的问题，于是同时启用两者，结果意外地发现xhprof也能用了。为了证明是不是Xdebug导致xhprof可以用了，我禁用了Xdebug，xhprof又导致PHP-FPM挂了，重新启用又好了。</p>
@@ -237,19 +272,127 @@ listen.mode = 0666</p>
 </div>
 <p>&nbsp;</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/302.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/302.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>mysql主从同步配置</title>
+		<link>/blog/2014/301.html</link>
+		<comments>/blog/2014/301.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[数据库]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[前两天配置了Mysql主从，再记录如下，以备下次查看。 &#160; 主服务器设置 1、登录Master服务器 &#8230; <a href="/blog/2014/301.html" class="more-link">继续阅读<span class="screen-reader-text">“mysql主从同步配置”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>前两天配置了Mysql主从，再记录如下，以备下次查看。</p>
+<p>&nbsp;</p>
+<p><strong>主服务器设置</strong></p>
+<p>1、登录Master服务器,修改my.cnf,添加如下内容； <br />
+[mysqld]<br />
+server-id = 53 #//数据库ID号， 为1时表示为Master,其中master_id必须为1到232&ndash;1之间的一个正整数值; <br />
+log-bin=mysql-bin #//启用二进制日志； <br />
+binlog-do-db=dbname #//需要同步的二进制数据库名； <br />
+binlog-ignore-db=mysql /#/不同步的二进制数据库名;这个同步后听说很麻烦，不同步； <br />
+log-slave-updates #//把更新的记录写到二进制文件中； <br />
+slave-skip-errors=all #//跳过错误，继续执行复制；</p>
+<p>2、建立同步用mysql账号，指定允许访问的IP为从服务器IP<br />
+mysql&gt;&nbsp;#GRANT REPLICATION SLAVE,RELOAD,SUPER ON *.* to rslave@192.168.33.54 identified by &#39;83ea4e19efe34874b50&#39;;<br />
+mysql&gt; FLUSH PRIVILEGES;</p>
+<p>到从服务器上验证登陆：<br />
+mysql -urslave -p83ea4e19efe34874b50 -h192.168.33.53</p>
+<p>3、写锁定 flush tables with read lock;<br />
+4、导出数据mysqldump -uroot -p dbname &gt; webdb.sql</p>
+<p><strong>从服务器设置</strong></p>
+<p>新版本与老版本的Mysql从服务器设置方式不一样，据说是以5.1.7版为分界线，具体请自己尝试。</p>
+<p>老版本的Mysql配置文件[mysqld]后添加：<br />
+server-id = 54<br />
+log-bin=mysql-bin<br />
+master-host = 192.168.33.53<br />
+master-user = rslave<br />
+master-password = 83ea4e19efe34874b50<br />
+master-port = 3306<br />
+master-connect-retry=60 #//如果发现主服务器断线，重新连接的时间差<br />
+replicate-ignore-db=mysql #//不需要备份的数据库； <br />
+replicate-do-db=dbname #//需要备份的数据库 <br />
+log-slave-update<br />
+slave-skip-errors = all #//跳过错误，继续执行复制；</p>
+<p>重启Mysql服务后执行：<br />
+mysql&gt; start slave;</p>
+<p>新版本的Mysql配置文件[mysqld]后添加：<br />
+server-id = 61<br />
+log-bin=mysql-bin</p>
+<p>并执行下面命令：（每次重启都要重新配置）<br />
+mysql&gt; stop slave;<br />
+mysql&gt; change master to master_host=&#39;192.168.33.53&#39;,master_user=&#39;rslave&#39;,master_password=&#39;83ea4e19efe34874b50&#39;;<br />
+mysql&gt; start slave;<br type="_moz" /><br />
+&nbsp;</p>
+<p>验证设置是否正确：<br />
+mysql&gt; show slave statusG;<br />
+主要是看以下两项是否为YES：<br />
+Slave_IO_Running: Yes<br />
+Slave_SQL_Running: Yes</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/301.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>ssh连接速度很慢的解决方法</title>
+		<link>/blog/2014/300.html</link>
+		<comments>/blog/2014/300.html#respond</comments>
+		<pubDate>Tue, 04 Nov 2014 19:58:58 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[问题现象： 公司有几台服务器，SSH连接的时候很慢，半天才连接上，连上后一切操作正常，网络速度没问题。 处理方 &#8230; <a href="/blog/2014/300.html" class="more-link">继续阅读<span class="screen-reader-text">“ssh连接速度很慢的解决方法”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>问题现象：</p>
+<p>公司有几台服务器，SSH连接的时候很慢，半天才连接上，连上后一切操作正常，网络速度没问题。</p>
+<p>处理方法：</p>
+<p>用命令：ssh -v  服务器IP或者域名</p>
+<p>参数v能显示连接过程中的一系列步骤，看看在哪一步完成后卡得比较久，就是那一步出问题了。</p>
+<p>发现卡得比较久的有</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>debug1:&nbsp;Authentications&nbsp;that&nbsp;can&nbsp;continue:&nbsp;publickey,gssapi-keyex,gssapi-with-mic,password&nbsp;&nbsp;</span></span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;gssapi-keyex&nbsp;&nbsp;</span></li>
+<li class="alt"><span>debug1:&nbsp;No&nbsp;valid&nbsp;Key&nbsp;exchange&nbsp;context&nbsp;&nbsp;</span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;gssapi-with-mic&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>说明卡在了尝试gssapi认证过程上，编辑服务器上的SSH配置文件</p>
+<p>vi&nbsp;/etc/ssh/sshd_config</p>
+<p>将#GSSAPIAuthentication no这一行前面的#号删除，同时在GSSAPIAuthentication yes这行前面加上#号，禁用gssapi认证。</p>
+<p>重启SSH服务：service sshd restart</p>
+<p>再次连接，发现还是有点慢，但是比之前快了一些，继续用ssh -v 跟踪，卡在这：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>debug1:&nbsp;Authentications&nbsp;that&nbsp;can&nbsp;continue:&nbsp;publickey,password&nbsp;&nbsp;</span></span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;publickey&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>这是因为服务器要将客户机的IP解析成域名，再次编辑SSH配置文件，将</p>
+<p>#UseDNS yes</p>
+<p>这行改成</p>
+<p>UseDNS no</p>
+<p>重启SSH服务，再次连接，终于是飞一般的感觉。</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/300.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>Ajax返回结果中文乱码的解决办法</title>
-		<link>http://www.biglee.cn/blog/2014/299.html</link>
-		<comments>http://www.biglee.cn/blog/2014/299.html#respond</comments>
+		<link>/blog/2014/299.html</link>
+		<comments>/blog/2014/299.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网站技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[情景：用JQuery的Ajax调用他站接口查询数据。 代码： Javascript代码 $.getJSON(&#038; &#8230; <a href="http://www.biglee.cn/blog/2014/299.html" class="more-link">继续阅读<span class="screen-reader-text">“Ajax返回结果中文乱码的解决办法”</span></a>]]></description>
+		<description><![CDATA[情景：用JQuery的Ajax调用他站接口查询数据。 代码： Javascript代码 $.getJSON(&#038; &#8230; <a href="/blog/2014/299.html" class="more-link">继续阅读<span class="screen-reader-text">“Ajax返回结果中文乱码的解决办法”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>情景：用JQuery的Ajax调用他站接口查询数据。</p>
 <p>代码：</p>
 <div class="codeText">
@@ -273,148 +416,37 @@ listen.mode = 0666</p>
 </div>
 <p>&nbsp;</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/299.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/299.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
-		<title>PHP5.5编译安装之后设定PHP-FPM自启动及服务控制</title>
-		<link>http://www.biglee.cn/blog/2014/294.html</link>
-		<comments>http://www.biglee.cn/blog/2014/294.html#respond</comments>
+		<title>各种SSH终端软件对比</title>
+		<link>/blog/2014/298.html</link>
+		<comments>/blog/2014/298.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
-				<category><![CDATA[网站技术]]></category>
+				<category><![CDATA[PC技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[&#160;　　PHP-5.3.3版本以后PHP已经包含了PHP-FPM，编译时加上参数&#8211;enab &#8230; <a href="http://www.biglee.cn/blog/2014/294.html" class="more-link">继续阅读<span class="screen-reader-text">“PHP5.5编译安装之后设定PHP-FPM自启动及服务控制”</span></a>]]></description>
-				<content:encoded><![CDATA[<p>&nbsp;　　PHP-5.3.3版本以后PHP已经包含了PHP-FPM，编译时加上参数&#8211;enable-fpm就会安装PHP-fpm。</p>
-<p>　　php-fpm装完后默认没有自动启动，需要设置自动启动。PHP-5.3.3版本以后源代码包中已经自带启动脚本，复制到/etc/init.d目录下，并更改权限，命令如下：</p>
-<p>cp &lt;php-source-dir&gt;/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm<br />
-chmod 755 /etc/init.d/php-fpm</p>
-<p>然后使用chkconfig设定开机启动：</p>
-<p>chkconfig php-fpm on</p>
-<p>修改php-fpm配置文件，如果PID文件配置被注释了，就删除pid = run/php-fpm.pid前面的分号。</p>
-<p>这样设置完后同时也能用/etc/init.d/php-fpm来控制php-fpm了，参数有：start|stop|force-quit|restart|reload|status，如重启就用命令：/etc/init.d/php-fpm&nbsp;restart</p>
-<p>如果启动时报路径错误，就检查下/etc/init.d/php-fpm里的相关路径。</p>
+		<description><![CDATA[Xshell 收费软件 ssh secure shell 免费软件 secureCRT Secure[1] C &#8230; <a href="/blog/2014/298.html" class="more-link">继续阅读<span class="screen-reader-text">“各种SSH终端软件对比”</span></a>]]></description>
+				<content:encoded><![CDATA[<p><strong>Xshell</strong></p>
+<p>收费软件</p>
+<p><strong>ssh secure shell</strong></p>
+<p>免费软件</p>
+<p><strong>secureCRT</strong></p>
+<p>Secure[1] CRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单的说是Windows下登录UNIX或Linux服务器主机的软件。SecureCRT支持SSH，同时支持Telnet和rlogin协议。SecureCRT是一款用于连接运行包括Windows、UNIX和VMS的理想工具。通过使用内含的VCP命令行程序可以进行加密文件的传输。有流行CRTTelnet客户机的所有特点,包括:自动注册、对不同主机保持不同的特性、打印功能、颜色设置、可变屏幕尺寸、用户定义的键位图和优良的VT100,VT102,VT220和ANSI竞争.能从命令行中运行或从浏览器中运行.其它特点包括文本手稿、易于使用的工具条、用户的键位图编辑器、可定制的ANSI颜色等.SecureCRT的SSH协议支持DES,3DES和RC4密码和密码与RSA鉴别。</p>
+<p>SecureCRT也是一个收费软件</p>
+<p><strong>PuTTY</strong></p>
+<p>Putty是一个免费的、Windows 32平台下的telnet、rlogin和ssh客户端，但是功能丝毫不逊色于商业的telnet类工具。<br />
+用它来远程管理Linux十分好用，其主要优点如下：<br />
+◆ 完全免费;<br />
+◆ 支持公钥认证;<br />
+◆ 全面支持ssh1和ssh2；<br />
+◆ 绿色软件，无需安装，下载后在桌面建个快捷方式即可使用；<br />
+◆ 体积很小，仅484KB(0.63 版本)；<br />
+◆ 操作简单，所有的操作都在一个控制面板中实现。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/294.html/feed</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>nginx与php-fpm打开PHP页面报错File not found</title>
-		<link>http://www.biglee.cn/blog/2014/293.html</link>
-		<comments>http://www.biglee.cn/blog/2014/293.html#respond</comments>
-		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
-		<dc:creator><![CDATA[Lee]]></dc:creator>
-				<category><![CDATA[网站技术]]></category>
-
-		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　 最近在虚拟机上装了个CentOS6.5，由于是以最小化的方式装的，装LNMP环境时缺少好多东西，特别是安 &#8230; <a href="http://www.biglee.cn/blog/2014/293.html" class="more-link">继续阅读<span class="screen-reader-text">“nginx与php-fpm打开PHP页面报错File not found”</span></a>]]></description>
-				<content:encoded><![CDATA[<p>　　 最近在虚拟机上装了个CentOS6.5，由于是以最小化的方式装的，装LNMP环境时缺少好多东西，特别是安装PHP时缺少很多东西，过程是非常的曲折。</p>
-<p>　　我装的版本分别是：Nginx 1.6.0，Mysql 5.6.19，PHP 5.5.14。前两个用Yumj装起来还比较顺利，装PHP的时候我采用自己编译的方式安装，以php-fpm的方式与Nginx配合，装完后写了个php文件，一访问提示File not found，查看Nginx日志，有错误信息：</p>
-<p>[error] &quot;1842#0&quot; *7 connect() failed (111: Connection refused)</p>
-<p>用命令netstat -ano | grep 9000查了一下，发现9000端口没开，应该是php-fpm没有启动。马上去启动：</p>
-<p>#/usr/local/sbin/php-fpm</p>
-<p>启动php-fpm后还是提示File not found。再查看Nginx的错误日志，这回的错误信息是：</p>
-<p>FastCGI sent in stderr: &quot;Primary script unknown&quot; while reading response header from upstream</p>
-<p>折腾了半天，发现Nginx默认的配置文件是站点的root写在了各个location配置块里了，之前只改了根目录的配置，没注意php配置这块里也有一个，将root这个参数移到server块下，将配置PHP的那块location改成：</p>
-<div class="codeText">
-<div class="codeHead">XML/HTML代码</div>
-<ol start="1" class="dp-xml">
-<li class="alt"><span><span>location&nbsp;~&nbsp;.php$&nbsp;{&nbsp;&nbsp;</span></span></li>
-<li><span>&nbsp;&nbsp;&nbsp;&nbsp;try_files&nbsp;$<span class="attribute">uri</span><span>&nbsp;=</span><span class="attribute-value">404</span><span>;&nbsp;&nbsp;</span></span></li>
-<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_pass&nbsp;&nbsp;&nbsp;127.0.0.1:9000;&nbsp;&nbsp;</span></li>
-<li><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_index&nbsp;&nbsp;index.php;&nbsp;&nbsp;</span></li>
-<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_param&nbsp;&nbsp;SCRIPT_FILENAME&nbsp;&nbsp;$document_root$fastcgi_script_name;&nbsp;&nbsp;</span></li>
-<li><span>&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_params;&nbsp;&nbsp;</span></li>
-<li class="alt"><span>}&nbsp;&nbsp;</span></li>
-</ol>
-</div>
-<p>其中try_files $uri =404;这个配置项是为了让Nginx判断文件不存在就直接返回404，而不用再发给php-fpm去处理。</p>
-<p>重启Nginx：</p>
-<p>#service nginx restart</p>
-]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/293.html/feed</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>CentOS下yum安装Nginx</title>
-		<link>http://www.biglee.cn/blog/2014/292.html</link>
-		<comments>http://www.biglee.cn/blog/2014/292.html#respond</comments>
-		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
-		<dc:creator><![CDATA[Lee]]></dc:creator>
-				<category><![CDATA[网站技术]]></category>
-
-		<guid isPermaLink="false"></guid>
-		<description><![CDATA[&#160;CentOS里直接用yum安装Nginx是不会成功的，要先做一些处理。 先到http://ngin &#8230; <a href="http://www.biglee.cn/blog/2014/292.html" class="more-link">继续阅读<span class="screen-reader-text">“CentOS下yum安装Nginx”</span></a>]]></description>
-				<content:encoded><![CDATA[<p>&nbsp;CentOS里直接用yum安装Nginx是不会成功的，要先做一些处理。</p>
-<p>先到http://nginx.org/en/linux_packages.html找到适合你的CentOS版本的rpm包，记下路径</p>
-<p>执行：</p>
-<p>rpm -ivh&nbsp;http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm</p>
-<p>系统就会开始自动下载这个rpm包，然后安装。你也可以先用wget下载这个包，然后再运行rpm命令来安装。</p>
-<p>然后就可以直接用yum install nginx来安装Nginx了。</p>
-<p>安装完后在浏览器里打开127.0.0.1，如果看到Welcome to nginx!这样的内容，说明安装成功了。</p>
-]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/292.html/feed</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>Centos 6的单网卡多IP设置</title>
-		<link>http://www.biglee.cn/blog/2014/291.html</link>
-		<comments>http://www.biglee.cn/blog/2014/291.html#respond</comments>
-		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
-		<dc:creator><![CDATA[Lee]]></dc:creator>
-				<category><![CDATA[网站技术]]></category>
-
-		<guid isPermaLink="false"></guid>
-		<description><![CDATA[cd /etc/sysconfig/network-scripts #进入网卡配置目录 cp ifcfg-et &#8230; <a href="http://www.biglee.cn/blog/2014/291.html" class="more-link">继续阅读<span class="screen-reader-text">“Centos 6的单网卡多IP设置”</span></a>]]></description>
-				<content:encoded><![CDATA[<p>cd /etc/sysconfig/network-scripts #进入网卡配置目录<br />
-cp ifcfg-eth0 ifcfg-eth0:0 ＃拷贝一个网卡配置文件<br />
-vi ifcfg-eth0:0   ＃用vi编辑器编辑<br />
-内容如下：<br />
-DEVICE=eth0:0 #此处添加:0，保持和文件名一致，添加多个IP依次递增<br />
-ONBOOT=yes #是否开机激活<br />
-BOOTPROTO=static #静态IP，如果需要DHCP获取请输入dhcp<br />
-IPADDR=192.168.1.2 #此处修改为要添加的IP<br />
-NETMASK=255.255.255.0 #子网掩码根据你的实际情况作修改</p>
-<p>保存完之后重启网卡让设置生效，也可以重启服务器。</p>
-<p>重启网卡命令：service network restart<br />
-重启服务器命令：reboot</p>
-<p>只要设置没有问题，重启之后新添加的ip就生效了。用ifconfig查看IP</p>
-<p><strong>加IP段：</strong><br />
-vi ifcfg-eth0-range0 #用Vi编辑配置文件<br />
-内容如下：<br />
-DEVICE=eth0<br />
-ONBOOT=yes<br />
-BOOTPROTO=static<br />
-IPADDR_START=192.168.2.2 #起始IP<br />
-IPADDR_END=192.168.2.254 #结束IP<br />
-CLONENUM_START=1 #表示这段IP网卡号从eth0:1开始<br />
-NETMASK=255.255.255.0</p>
-]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/291.html/feed</wfw:commentRss>
-		<slash:comments>0</slash:comments>
-		</item>
-		<item>
-		<title>Centos 6 最小化安装后的网络设置</title>
-		<link>http://www.biglee.cn/blog/2014/290.html</link>
-		<comments>http://www.biglee.cn/blog/2014/290.html#respond</comments>
-		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
-		<dc:creator><![CDATA[Lee]]></dc:creator>
-				<category><![CDATA[网站技术]]></category>
-
-		<guid isPermaLink="false"></guid>
-		<description><![CDATA[&#160;在centos最小化安装刚安装完毕的时候。如果不经过设置是无法联网的， 不能联网的原因基本就是以下 &#8230; <a href="http://www.biglee.cn/blog/2014/290.html" class="more-link">继续阅读<span class="screen-reader-text">“Centos 6 最小化安装后的网络设置”</span></a>]]></description>
-				<content:encoded><![CDATA[<p>&nbsp;在centos最小化安装刚安装完毕的时候。如果不经过设置是无法联网的，</p>
-<p>不能联网的原因基本就是以下的3个。</p>
-<p>1.没有网卡驱动。<br />
-如果ifconfig中只有lo，并且sudo ifconfig eth0 up都找不到网卡，那基本就是网卡没有驱动起来了。</p>
-<p>2.网卡没有开机启动<br />
-这种情况挺多的，貌似在安装系统后才添加的网卡都不是默认启动的。这时候可以试试sudo ifconfig eth0 up （具体是eth几要看你是第几块网卡）。如果up成功了，ifconfig看看有没有对应的网卡的信息。如果有信息，那就说明网卡没有开机自动加载，只要在对应网卡的配置文件中加入 ONBOOT=yes 就ok了。如果up不成功，驱动又已经装好了，那这个问题就不在本文的讨论范围内了。</p>
-<p>3.DHCP<br />
-如果centos的dhclient没有开机启动。这时候就要根据你的网络情况开启dhclient或手动设置ip。试着输入sudo dhclient eth1 (同上，网卡编号看情况),如果启动后获得了ip，那么就是这个问题了。解决的方法也很简单，一种是在开机脚本中写入dhclient，另一种则是在网卡的配置文件中加入BOOTPROTO=dhcp。个人推荐第二种。</p>
-<p>&nbsp;</p>
-]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/290.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/298.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>

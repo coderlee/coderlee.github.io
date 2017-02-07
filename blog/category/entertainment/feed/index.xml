@@ -9,57 +9,57 @@
 
 <channel>
 	<title>影音娱乐 &#8211; 网站建设技术集锦</title>
-	<atom:link href="http://www.biglee.cn/blog/category/entertainment/feed" rel="self" type="application/rss+xml" />
-	<link>http://www.biglee.cn</link>
+	<atom:link href="/blog/category/entertainment/feed" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>涉及网站建设、服务器维护等IT技术的博客</description>
-	<lastBuildDate>Sun, 11 Sep 2016 06:49:31 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 07 Feb 2017 02:46:28 +0000</lastBuildDate>
 	<language>zh-CN</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.6</generator>
 	<item>
 		<title>WM系统手机“此铃声文件已损坏或不可用”解决办法</title>
-		<link>http://www.biglee.cn/blog/2010/176.html</link>
-		<comments>http://www.biglee.cn/blog/2010/176.html#comments</comments>
+		<link>/blog/2010/176.html</link>
+		<comments>/blog/2010/176.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[影音娱乐]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　昨天早上，一直以来叫我起床的手机音乐消失了，以为是闹钟软件出错了，没在意。到后来朋友打我电话，也没有铃声了 &#8230; <a href="http://www.biglee.cn/blog/2010/176.html" class="more-link">继续阅读<span class="screen-reader-text">“WM系统手机“此铃声文件已损坏或不可用”解决办法”</span></a>]]></description>
+		<description><![CDATA[　　昨天早上，一直以来叫我起床的手机音乐消失了，以为是闹钟软件出错了，没在意。到后来朋友打我电话，也没有铃声了 &#8230; <a href="/blog/2010/176.html" class="more-link">继续阅读<span class="screen-reader-text">“WM系统手机“此铃声文件已损坏或不可用”解决办法”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　昨天早上，一直以来叫我起床的手机音乐消失了，以为是闹钟软件出错了，没在意。到后来朋友打我电话，也没有铃声了，重启手机也一样，我就知道问题的严重性了。刚开始以为是前几天装的钢琴软件惹的祸，因为那软件自动待机后再开始会没声音，要调下音量声音才会恢复，我依法试了下，不是不起作用。<br />
 　　后来想，是不是铃声设置有问题，于是进入铃声设置，发现还真不是我原来设置的铃声了，改回我原来的设置，点OK，意外的出外提示：“此铃声文件已损坏或不可用”。换了好多铃声也是同样的错误提示，难道真是铃声文件破坏了？但也不至于全部都坏了吧？打开铃声文件夹用系统自带的WINDOWS MEDIA PLAYER也无法播放。中病毒了？<br />
 　　没一点头绪了，自己摸索太浪费时间了，还是问搜索引擎吧。搜索了下，有人提到他曾经改动过临时路径导致wmp无法启动，改回手机内存上就恢复了，具体操作是修改注册表：HKLMSystemFileSys下的TempPath的值。我打开注册表，看到这个值是：application datavolatile。进入这个文件夹一看，里面好多临时文件夹。这时我想，难道是因为文件夹太多的原因？马上把所有文件夹删除，再试WMP，果然能启动了。但是设置铃声还是有错误提示，不着急，重启下手机看看，应该可以的。重启完手机后，进入铃声设置，一切正常了！</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2010/176.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2010/176.html/feed</wfw:commentRss>
 		<slash:comments>1</slash:comments>
 		</item>
 		<item>
 		<title>铃声</title>
-		<link>http://www.biglee.cn/blog/2009/173.html</link>
-		<comments>http://www.biglee.cn/blog/2009/173.html#respond</comments>
+		<link>/blog/2009/173.html</link>
+		<comments>/blog/2009/173.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[影音娱乐]]></category>
 
 		<guid isPermaLink="false"></guid>
 		<description><![CDATA[下载链接：y20091018135321.mp3]]></description>
-				<content:encoded><![CDATA[<p><object id=&#34;MediaPlayer&#34; height=&#34;70&#34; width=&#34;450&#34; classid=&#34;CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95&#34;><param value=&#34;False&#34; name=&#34;AutoStart&#34; /><param value=&#34;http://www.biglee.cn/blog/attachments/month_0910/y20091018135321.mp3&#34; name=&#34;Filename&#34; /></object></p>
-<p>下载链接：<a href=&#34;attachments/month_0910/y20091018135321.mp3&#34;>y20091018135321.mp3</a></p>
+				<content:encoded><![CDATA[<p><object id="MediaPlayer" height="70" width="450" classid="CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95"><param value="False" name="AutoStart" /><param value="http://www.biglee.cn/blog/attachments/month_0910/y20091018135321.mp3" name="Filename" /></object></p>
+<p>下载链接：<a href="attachments/month_0910/y20091018135321.mp3">y20091018135321.mp3</a></p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2009/173.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2009/173.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>数码摄影中的测光方法和测光技巧</title>
-		<link>http://www.biglee.cn/blog/2009/159.html</link>
-		<comments>http://www.biglee.cn/blog/2009/159.html#respond</comments>
+		<link>/blog/2009/159.html</link>
+		<comments>/blog/2009/159.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[影音娱乐]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　一、相机的测光原理 　　 相机（数码和各种胶片）的测光原理并不复杂，最重要的是我们要明白，相机的测光系统（ &#8230; <a href="http://www.biglee.cn/blog/2009/159.html" class="more-link">继续阅读<span class="screen-reader-text">“数码摄影中的测光方法和测光技巧”</span></a>]]></description>
+		<description><![CDATA[　　一、相机的测光原理 　　 相机（数码和各种胶片）的测光原理并不复杂，最重要的是我们要明白，相机的测光系统（ &#8230; <a href="/blog/2009/159.html" class="more-link">继续阅读<span class="screen-reader-text">“数码摄影中的测光方法和测光技巧”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　一、相机的测光原理</p>
 <p>　　 相机（数码和各种胶片）的测光原理并不复杂，最重要的是我们要明白，相机的测光系统（或测光表）是以何为测量基准的！通俗地讲，就是相机在测量一个场景的光线时，它怎样“想”自己看到的东西？ </p>
 <p>　　 记住：所有的相机在测光过程中，会将“看到”的所有物体都默认为反射率为18%的灰色（摄影的专业术语叫“中级灰”），并以此作为测光的基准。也就是说，在相机的“眼”中，所有的被摄体都是灰色的，曝光的目的是为了正确还原这种灰色。</p>
@@ -147,35 +147,35 @@
 <p>    ㈢、混合光测光</p>
 <p>    混合光是指发光性质不同的光源混合使用。它在摄影中其实并不常用，主要是因为不同光源的色温不同，会给被摄对象各区域色彩的准确还原带来困难，另外，性质不同的光源混合使用，尤其是连续光和闪光混合使用，也会给影像的曝光控制带来困难。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2009/159.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2009/159.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>记性力测试－测试你的脑年龄</title>
-		<link>http://www.biglee.cn/blog/2008/141.html</link>
-		<comments>http://www.biglee.cn/blog/2008/141.html#comments</comments>
+		<link>/blog/2008/141.html</link>
+		<comments>/blog/2008/141.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[影音娱乐]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[[swf]http://www.ai-su.com/attachments/month_0803/200803 &#8230; <a href="http://www.biglee.cn/blog/2008/141.html" class="more-link">继续阅读<span class="screen-reader-text">“记性力测试－测试你的脑年龄”</span></a>]]></description>
+		<description><![CDATA[[swf]http://www.ai-su.com/attachments/month_0803/200803 &#8230; <a href="/blog/2008/141.html" class="more-link">继续阅读<span class="screen-reader-text">“记性力测试－测试你的脑年龄”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>[swf]http://www.ai-su.com/attachments/month_0803/20080309_4b942146634fa21577c56XPLOzQFtgXX.swf[/swf]<br />
 测试你的瞬时记忆能力。有兴趣的试试吧。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2008/141.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2008/141.html/feed</wfw:commentRss>
 		<slash:comments>1</slash:comments>
 		</item>
 		<item>
 		<title>[视频]电影《投名状》（刺马）7分钟超长精彩片花</title>
-		<link>http://www.biglee.cn/blog/2007/118.html</link>
-		<comments>http://www.biglee.cn/blog/2007/118.html#respond</comments>
+		<link>/blog/2007/118.html</link>
+		<comments>/blog/2007/118.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[影音娱乐]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　由陈可辛执导、李连杰、刘德华和金城武主演的电影《投名状》（又称：刺马）即将于12月12日18时开始全面上映 &#8230; <a href="http://www.biglee.cn/blog/2007/118.html" class="more-link">继续阅读<span class="screen-reader-text">“[视频]电影《投名状》（刺马）7分钟超长精彩片花”</span></a>]]></description>
+		<description><![CDATA[　　由陈可辛执导、李连杰、刘德华和金城武主演的电影《投名状》（又称：刺马）即将于12月12日18时开始全面上映 &#8230; <a href="/blog/2007/118.html" class="more-link">继续阅读<span class="screen-reader-text">“[视频]电影《投名状》（刺马）7分钟超长精彩片花”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　由陈可辛执导、李连杰、刘德华和金城武主演的电影《投名状》（又称：刺马）即将于12月12日18时开始全面上映。<br />
 　　大家先看看片花：<br />
 [swf]http://vhead.blog.sina.com.cn/player/bnplayer.swf?vid=http://vhead.blog.sina.com.cn/player/outer_player.swf?auto=0&amp;vid=8704696&amp;uid=1290055681&amp;chn1=28&amp;ref=http%3A%2F%2Fbn.sina.com.cn%2Fent%2Fm%2Fc%2F2007-11-26%2F18265157.shtml&amp;title=%E8%A7%86%E9%A2%91%EF%BC%9A%E3%80%8A%E6%8A%95%E5%90%8D%E7%8A%B6%E3%80%8B7%E5%88%86%E9%92%9F%E8%B6%85%E9%95%BF%E7%B2%BE%E5%BD%A9%E7%89%87%E8%8A%B1%E9%9C%87%E6%92%BC%E9%A6%96%E5%8F%91&amp;auto=1&amp;src=1000831789[/swf]</p>
@@ -196,19 +196,19 @@
 <p>　　金城武：金城武饰演的姜午阳，十三岁便跟随赵二虎，性格刚烈。视兄弟情比生命更重要。为替义兄讨回公道，在庞青云就任江苏巡抚大典上，行刺对方。</p>
 <p>　　徐静蕾：徐静蕾饰演的莲生，当年被赵二虎所救。成为赵妻后，虽不用再当歌妓，但山寨夫人的生活并非她所愿。不能扮美女，徐静蕾经常要涂黑脸，她还自己安慰自己说，想不到自己也有另一种美。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/118.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/118.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>Flash智力小游戏bloxorz</title>
-		<link>http://www.biglee.cn/blog/2007/113.html</link>
-		<comments>http://www.biglee.cn/blog/2007/113.html#comments</comments>
+		<link>/blog/2007/113.html</link>
+		<comments>/blog/2007/113.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[影音娱乐]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[智力游戏，Flash做的，点击下面的在线播放打开游戏 [swf=640,260]file/turningsqu &#8230; <a href="http://www.biglee.cn/blog/2007/113.html" class="more-link">继续阅读<span class="screen-reader-text">“Flash智力小游戏bloxorz”</span></a>]]></description>
+		<description><![CDATA[智力游戏，Flash做的，点击下面的在线播放打开游戏 [swf=640,260]file/turningsqu &#8230; <a href="/blog/2007/113.html" class="more-link">继续阅读<span class="screen-reader-text">“Flash智力小游戏bloxorz”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>智力游戏，Flash做的，点击下面的在线播放打开游戏<br />
 [swf=640,260]file/turningsqure.swf[/swf]<br />
 我把游戏说明翻译整理了一下：<br />
@@ -221,94 +221,94 @@
 　　还有一种开关的形状是“（）”，如果砖块立在它上面，会被分成两部分。这时，可以用空格键来切换被控制的部分。当两部分相邻时，它们又会合在一起。<br />
 　　在右上角，都写有每关的代码（6个数字），记住他，你能在下次继续玩游戏时通过“Load Stage”菜单直接加载这一关。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/113.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/113.html/feed</wfw:commentRss>
 		<slash:comments>1</slash:comments>
 		</item>
 		<item>
 		<title>中秋夜游江心屿，拍下音乐烧烤</title>
-		<link>http://www.biglee.cn/blog/2007/110.html</link>
-		<comments>http://www.biglee.cn/blog/2007/110.html#comments</comments>
+		<link>/blog/2007/110.html</link>
+		<comments>/blog/2007/110.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[影音娱乐]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[中秋之夜，游江心屿，遇好玩事，相机摄影： [swf]http://video.qq.com/res/qqpla &#8230; <a href="http://www.biglee.cn/blog/2007/110.html" class="more-link">继续阅读<span class="screen-reader-text">“中秋夜游江心屿，拍下音乐烧烤”</span></a>]]></description>
+		<description><![CDATA[中秋之夜，游江心屿，遇好玩事，相机摄影： [swf]http://video.qq.com/res/qqpla &#8230; <a href="/blog/2007/110.html" class="more-link">继续阅读<span class="screen-reader-text">“中秋夜游江心屿，拍下音乐烧烤”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>中秋之夜，游江心屿，遇好玩事，相机摄影：<br />
 [swf]http://video.qq.com/res/qqplayerout.swf?vid=2v54c8s2XrW[/swf]<br />
 由于是用数码相机的短片拍摄功能，效果一般，但还可以看。感觉挺好玩的。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/110.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/110.html/feed</wfw:commentRss>
 		<slash:comments>1</slash:comments>
 		</item>
 		<item>
 		<title>[转载]街头作画，他做了人做不到的事</title>
-		<link>http://www.biglee.cn/blog/2007/109.html</link>
-		<comments>http://www.biglee.cn/blog/2007/109.html#comments</comments>
+		<link>/blog/2007/109.html</link>
+		<comments>/blog/2007/109.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[影音娱乐]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[老外在街头画的高仿真立体画，今天从网上看到的，感觉很棒，收藏了！ 作画工具只是简单的彩色粉笔而已 先用粉笔打底 &#8230; <a href="http://www.biglee.cn/blog/2007/109.html" class="more-link">继续阅读<span class="screen-reader-text">“[转载]街头作画，他做了人做不到的事”</span></a>]]></description>
+		<description><![CDATA[老外在街头画的高仿真立体画，今天从网上看到的，感觉很棒，收藏了！ 作画工具只是简单的彩色粉笔而已 先用粉笔打底 &#8230; <a href="/blog/2007/109.html" class="more-link">继续阅读<span class="screen-reader-text">“[转载]街头作画，他做了人做不到的事”</span></a>]]></description>
 				<content:encoded><![CDATA[<p><strong>老外在街头画的高仿真立体画，今天从网上看到的，感觉很棒，收藏了！</strong></p>
-<p><strong>作画工具只是简单的彩色粉笔而已<br /></strong><a href=&#34;http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322059.jpg&#34; target=&#34;_blank&#34;><strong><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322059.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></strong></a></p>
-<p><strong>先用粉笔打底稿</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/3/30/30476D58251730D0186E2B03C76B935B.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/3/30/30476D58251730D0186E2B03C76B935B.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>测量一下比例是否正确</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/F/FC/FCE1F6CDB5F39DA39F2056FB9DEA3A41.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/F/FC/FCE1F6CDB5F39DA39F2056FB9DEA3A41.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>给路人讲解</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/7/78/78A8C89D3C4A512EC717B0FBDDE314D6.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/7/78/78A8C89D3C4A512EC717B0FBDDE314D6.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>立体画草稿</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/C/C4/C44C94ABF469E5D52B06947F1A5D263E.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/C/C4/C44C94ABF469E5D52B06947F1A5D263E.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>开始绘画</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/4/4D/4DF47677CBADAEC55C2B99CDB8530E1C.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/4/4D/4DF47677CBADAEC55C2B99CDB8530E1C.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>用手涂抹</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/5/58/5899E78571D9ABC7D9F8546AD17DB61B.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/5/58/5899E78571D9ABC7D9F8546AD17DB61B.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>初见雏形</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/0/0F/0F7E218ACA86E56DA237581229430ED2.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/0/0F/0F7E218ACA86E56DA237581229430ED2.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>调颜色<br /></strong><a href=&#34;http://cimg2.163.com/catchpic/E/EE/EE0E4B129736B930244DDDFF2397BC2A.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/E/EE/EE0E4B129736B930244DDDFF2397BC2A.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>刷涂大面积的颜色</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/A/AB/ABEB93F254555095A1CCE25C8011DC98.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/A/AB/ABEB93F254555095A1CCE25C8011DC98.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>画的是felix猫</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/A/AE/AE7686EE83537DAEFBE686149FBDD3C4.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/A/AE/AE7686EE83537DAEFBE686149FBDD3C4.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>画面的另一半</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/B/BA/BAAB07AC1500516106ABC6080B1CEF89.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/B/BA/BAAB07AC1500516106ABC6080B1CEF89.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>细节需要精心刻画<br /></strong><a href=&#34;http://cimg2.163.com/catchpic/0/09/093D727FCBFB1FDCA4CCD41A83EA0295.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/0/09/093D727FCBFB1FDCA4CCD41A83EA0295.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>主要形象已经完成，看出来是什么了么？<br /></strong><a href=&#34;http://cimg2.163.com/catchpic/A/AF/AF7B846A3C7D9A90890E45737087839C.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/A/AF/AF7B846A3C7D9A90890E45737087839C.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>开始完善画面</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/B/B9/B9076EB51896B1734BE49D154619CFAB.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/B/B9/B9076EB51896B1734BE49D154619CFAB.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>累了，坐下来画</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/2/23/23E9A5348A7CAC0810DAC718A77F0012.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/2/23/23E9A5348A7CAC0810DAC718A77F0012.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>中国舞狮和felix猫，呼之欲出</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/8/86/86973984DDA55197A67F713605B9B027.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/8/86/86973984DDA55197A67F713605B9B027.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>换个角<br /></strong><a href=&#34;http://cimg2.163.com/catchpic/9/9E/9E5F8CD864779EC36414CFFC7D1DC0F3.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/9/9E/9E5F8CD864779EC36414CFFC7D1DC0F3.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>即将完成</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/0/05/05378A7060B6C95332F85E168D3887C5.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/0/05/05378A7060B6C95332F85E168D3887C5.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>大功告成</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/F/F0/F0D1ECD79527792751FBAB083F51009A.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/F/F0/F0D1ECD79527792751FBAB083F51009A.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><a href=&#34;http://cimg2.163.com/catchpic/B/B4/B4DF3EE326C411FA952C0C79E9C0E7DF.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/B/B4/B4DF3EE326C411FA952C0C79E9C0E7DF.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><a href=&#34;http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322083.jpg&#34; target=&#34;_blank&#34;><img height=&#34;353&#34; alt=&#34;&#34; src=&#34;http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322083.jpg&#34; width=&#34;470&#34; border=&#34;0&#34; /></a></p>
-<p><strong>其他作品&amp;mdash;&amp;mdash;可乐瓶子</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/1/1F/1F89CB0FECC2120F8C25B69DA5B51E53.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/1/1F/1F89CB0FECC2120F8C25B69DA5B51E53.jpg&#34; width=&#34;455&#34; border=&#34;0&#34; /></a></p>
-<p><strong>地狱</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/1/1B/1BBAFFBB8BC630B004A4916BF7E49A59.jpg&#34; target=&#34;_blank&#34;><img height=&#34;430&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/1/1B/1BBAFFBB8BC630B004A4916BF7E49A59.jpg&#34; width=&#34;400&#34; border=&#34;0&#34; /></a></p>
-<p><strong>天使</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/F/F0/F00DA3F0083FB66AB74FB9CCB89FFC35.jpg&#34; target=&#34;_blank&#34;><img height=&#34;500&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/F/F0/F00DA3F0083FB66AB74FB9CCB89FFC35.jpg&#34; width=&#34;338&#34; border=&#34;0&#34; /></a></p>
-<p><strong>海豹</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/8/85/854DE742059B12733455B1170B27EE88.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/8/85/854DE742059B12733455B1170B27EE88.jpg&#34; width=&#34;441&#34; border=&#34;0&#34; /></a></p>
-<p><strong>帆船<br /></strong><a href=&#34;http://cimg2.163.com/catchpic/F/F0/F005053BEDBDF7FAFDC6061A06803266.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/F/F0/F005053BEDBDF7FAFDC6061A06803266.jpg&#34; width=&#34;450&#34; border=&#34;0&#34; /></a></p>
-<p><strong>浴</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/E/E6/E6B61E7DB3CFA6114FB69620A7EE22B6.jpg&#34; target=&#34;_blank&#34;><img height=&#34;460&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/E/E6/E6B61E7DB3CFA6114FB69620A7EE22B6.jpg&#34; width=&#34;300&#34; border=&#34;0&#34; /></a></p>
-<p><strong>笔记本电脑</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/0/02/020C09553186271532299CA760490B71.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/0/02/020C09553186271532299CA760490B71.jpg&#34; width=&#34;455&#34; border=&#34;0&#34; /></a></p>
-<p><strong>哪个是真人?</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/F/FA/FA1A90CFD8A22D59164CE700E6DDA744.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/F/FA/FA1A90CFD8A22D59164CE700E6DDA744.jpg&#34; width=&#34;450&#34; border=&#34;0&#34; /></a></p>
-<p><strong>这张画是倒立看的</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/8/80/8050824A6B02D79447C313277C350E99.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/8/80/8050824A6B02D79447C313277C350E99.jpg&#34; width=&#34;458&#34; border=&#34;0&#34; /></a></p>
-<p><strong>被杀虫剂杀死的苍蝇</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/5/5C/5C94F2A72C487C828E9F495AD475C0FD.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/5/5C/5C94F2A72C487C828E9F495AD475C0FD.jpg&#34; width=&#34;449&#34; border=&#34;0&#34; /></a></p>
-<p><strong>蜘蛛侠</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/E/E9/E955260217ADFA8DEA5B60859C41B83C.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/E/E9/E955260217ADFA8DEA5B60859C41B83C.jpg&#34; width=&#34;450&#34; border=&#34;0&#34; /></a></p>
-<p><strong>街头陷阱</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/3/3C/3C9EFF313BC75EE6CB74A8DEC7708C49.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/3/3C/3C9EFF313BC75EE6CB74A8DEC7708C49.jpg&#34; width=&#34;414&#34; border=&#34;0&#34; /></a></p>
-<p><strong>被撬开的地板,路过的人不由自主的要避开</strong><br /><a href=&#34;http://photo4.yupoo.com/20061211/200347_1183492236_khfglkge.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://photo4.yupoo.com/20061211/200347_1183492236_khfglkge.jpg&#34; width=&#34;451&#34; border=&#34;0&#34; /></a></p>
-<p><font size=&#34;4&#34;><wbr></wbr></font><strong>街头探测金矿组图</strong><wbr></wbr><br /><a href=&#34;http://cimg2.163.com/catchpic/1/1C/1CAB931F81A2A57DB14D3E0E8A101ACB.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/1/1C/1CAB931F81A2A57DB14D3E0E8A101ACB.jpg&#34; width=&#34;450&#34; border=&#34;0&#34; /></a></p>
-<p><strong>发现金矿 开始挖掘<br /></strong><a href=&#34;http://cimg2.163.com/catchpic/5/5C/5C3D16051DE15682E60AE8877DC76E05.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/5/5C/5C3D16051DE15682E60AE8877DC76E05.jpg&#34; width=&#34;450&#34; border=&#34;0&#34; /></a></p>
-<p><strong>继续探测 发现大金矿了<br /></strong><a href=&#34;http://cimg2.163.com/catchpic/8/83/839B822CA551B690ADFC0D55E9B4C01B.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/8/83/839B822CA551B690ADFC0D55E9B4C01B.jpg&#34; width=&#34;450&#34; border=&#34;0&#34; /></a></p>
-<p><strong>挖出大金矿了</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/E/EA/EA0F644F2CBB68398973333FA2A14173.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/E/EA/EA0F644F2CBB68398973333FA2A14173.jpg&#34; width=&#34;450&#34; border=&#34;0&#34; /></a></p>
-<p><strong>作者已经和他的作品融为一体</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/1/1D/1DE80C6998272BC0551BD1BB21D52603.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/1/1D/1DE80C6998272BC0551BD1BB21D52603.jpg&#34; width=&#34;450&#34; border=&#34;0&#34; /></a></p>
-<p><strong>一盒画笔</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/0/00/0035486FA1DA5A1ED5EFD391926F3F91.jpg&#34; target=&#34;_blank&#34;><img height=&#34;300&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/0/00/0035486FA1DA5A1ED5EFD391926F3F91.jpg&#34; width=&#34;428&#34; border=&#34;0&#34; /></a></p>
-<p><strong>高楼</strong><br /><a href=&#34;http://cimg2.163.com/catchpic/1/19/1946FF55A4CEF180A1B9699C53EAE519.jpg&#34; target=&#34;_blank&#34;><img height=&#34;450&#34; alt=&#34;&#34; src=&#34;http://cimg2.163.com/catchpic/1/19/1946FF55A4CEF180A1B9699C53EAE519.jpg&#34; width=&#34;300&#34; border=&#34;0&#34; /></a></p>
-<div class=&#34;invisible&#34; id=&#34;reference&#34;>&amp;nbsp;</div>
+<p><strong>作画工具只是简单的彩色粉笔而已<br /></strong><a href="http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322059.jpg" target="_blank"><strong><img height="353" alt="" src="http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322059.jpg" width="470" border="0" /></strong></a></p>
+<p><strong>先用粉笔打底稿</strong><br /><a href="http://cimg2.163.com/catchpic/3/30/30476D58251730D0186E2B03C76B935B.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/3/30/30476D58251730D0186E2B03C76B935B.jpg" width="470" border="0" /></a></p>
+<p><strong>测量一下比例是否正确</strong><br /><a href="http://cimg2.163.com/catchpic/F/FC/FCE1F6CDB5F39DA39F2056FB9DEA3A41.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/F/FC/FCE1F6CDB5F39DA39F2056FB9DEA3A41.jpg" width="470" border="0" /></a></p>
+<p><strong>给路人讲解</strong><br /><a href="http://cimg2.163.com/catchpic/7/78/78A8C89D3C4A512EC717B0FBDDE314D6.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/7/78/78A8C89D3C4A512EC717B0FBDDE314D6.jpg" width="470" border="0" /></a></p>
+<p><strong>立体画草稿</strong><br /><a href="http://cimg2.163.com/catchpic/C/C4/C44C94ABF469E5D52B06947F1A5D263E.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/C/C4/C44C94ABF469E5D52B06947F1A5D263E.jpg" width="470" border="0" /></a></p>
+<p><strong>开始绘画</strong><br /><a href="http://cimg2.163.com/catchpic/4/4D/4DF47677CBADAEC55C2B99CDB8530E1C.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/4/4D/4DF47677CBADAEC55C2B99CDB8530E1C.jpg" width="470" border="0" /></a></p>
+<p><strong>用手涂抹</strong><br /><a href="http://cimg2.163.com/catchpic/5/58/5899E78571D9ABC7D9F8546AD17DB61B.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/5/58/5899E78571D9ABC7D9F8546AD17DB61B.jpg" width="470" border="0" /></a></p>
+<p><strong>初见雏形</strong><br /><a href="http://cimg2.163.com/catchpic/0/0F/0F7E218ACA86E56DA237581229430ED2.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/0/0F/0F7E218ACA86E56DA237581229430ED2.jpg" width="470" border="0" /></a></p>
+<p><strong>调颜色<br /></strong><a href="http://cimg2.163.com/catchpic/E/EE/EE0E4B129736B930244DDDFF2397BC2A.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/E/EE/EE0E4B129736B930244DDDFF2397BC2A.jpg" width="470" border="0" /></a></p>
+<p><strong>刷涂大面积的颜色</strong><br /><a href="http://cimg2.163.com/catchpic/A/AB/ABEB93F254555095A1CCE25C8011DC98.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/A/AB/ABEB93F254555095A1CCE25C8011DC98.jpg" width="470" border="0" /></a></p>
+<p><strong>画的是felix猫</strong><br /><a href="http://cimg2.163.com/catchpic/A/AE/AE7686EE83537DAEFBE686149FBDD3C4.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/A/AE/AE7686EE83537DAEFBE686149FBDD3C4.jpg" width="470" border="0" /></a></p>
+<p><strong>画面的另一半</strong><br /><a href="http://cimg2.163.com/catchpic/B/BA/BAAB07AC1500516106ABC6080B1CEF89.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/B/BA/BAAB07AC1500516106ABC6080B1CEF89.jpg" width="470" border="0" /></a></p>
+<p><strong>细节需要精心刻画<br /></strong><a href="http://cimg2.163.com/catchpic/0/09/093D727FCBFB1FDCA4CCD41A83EA0295.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/0/09/093D727FCBFB1FDCA4CCD41A83EA0295.jpg" width="470" border="0" /></a></p>
+<p><strong>主要形象已经完成，看出来是什么了么？<br /></strong><a href="http://cimg2.163.com/catchpic/A/AF/AF7B846A3C7D9A90890E45737087839C.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/A/AF/AF7B846A3C7D9A90890E45737087839C.jpg" width="470" border="0" /></a></p>
+<p><strong>开始完善画面</strong><br /><a href="http://cimg2.163.com/catchpic/B/B9/B9076EB51896B1734BE49D154619CFAB.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/B/B9/B9076EB51896B1734BE49D154619CFAB.jpg" width="470" border="0" /></a></p>
+<p><strong>累了，坐下来画</strong><br /><a href="http://cimg2.163.com/catchpic/2/23/23E9A5348A7CAC0810DAC718A77F0012.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/2/23/23E9A5348A7CAC0810DAC718A77F0012.jpg" width="470" border="0" /></a></p>
+<p><strong>中国舞狮和felix猫，呼之欲出</strong><br /><a href="http://cimg2.163.com/catchpic/8/86/86973984DDA55197A67F713605B9B027.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/8/86/86973984DDA55197A67F713605B9B027.jpg" width="470" border="0" /></a></p>
+<p><strong>换个角<br /></strong><a href="http://cimg2.163.com/catchpic/9/9E/9E5F8CD864779EC36414CFFC7D1DC0F3.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/9/9E/9E5F8CD864779EC36414CFFC7D1DC0F3.jpg" width="470" border="0" /></a></p>
+<p><strong>即将完成</strong><br /><a href="http://cimg2.163.com/catchpic/0/05/05378A7060B6C95332F85E168D3887C5.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/0/05/05378A7060B6C95332F85E168D3887C5.jpg" width="470" border="0" /></a></p>
+<p><strong>大功告成</strong><br /><a href="http://cimg2.163.com/catchpic/F/F0/F0D1ECD79527792751FBAB083F51009A.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/F/F0/F0D1ECD79527792751FBAB083F51009A.jpg" width="470" border="0" /></a></p>
+<p><a href="http://cimg2.163.com/catchpic/B/B4/B4DF3EE326C411FA952C0C79E9C0E7DF.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/B/B4/B4DF3EE326C411FA952C0C79E9C0E7DF.jpg" width="470" border="0" /></a></p>
+<p><a href="http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322083.jpg" target="_blank"><img height="353" alt="" src="http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322083.jpg" width="470" border="0" /></a></p>
+<p><strong>其他作品&amp;mdash;&amp;mdash;可乐瓶子</strong><br /><a href="http://cimg2.163.com/catchpic/1/1F/1F89CB0FECC2120F8C25B69DA5B51E53.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/1/1F/1F89CB0FECC2120F8C25B69DA5B51E53.jpg" width="455" border="0" /></a></p>
+<p><strong>地狱</strong><br /><a href="http://cimg2.163.com/catchpic/1/1B/1BBAFFBB8BC630B004A4916BF7E49A59.jpg" target="_blank"><img height="430" alt="" src="http://cimg2.163.com/catchpic/1/1B/1BBAFFBB8BC630B004A4916BF7E49A59.jpg" width="400" border="0" /></a></p>
+<p><strong>天使</strong><br /><a href="http://cimg2.163.com/catchpic/F/F0/F00DA3F0083FB66AB74FB9CCB89FFC35.jpg" target="_blank"><img height="500" alt="" src="http://cimg2.163.com/catchpic/F/F0/F00DA3F0083FB66AB74FB9CCB89FFC35.jpg" width="338" border="0" /></a></p>
+<p><strong>海豹</strong><br /><a href="http://cimg2.163.com/catchpic/8/85/854DE742059B12733455B1170B27EE88.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/8/85/854DE742059B12733455B1170B27EE88.jpg" width="441" border="0" /></a></p>
+<p><strong>帆船<br /></strong><a href="http://cimg2.163.com/catchpic/F/F0/F005053BEDBDF7FAFDC6061A06803266.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/F/F0/F005053BEDBDF7FAFDC6061A06803266.jpg" width="450" border="0" /></a></p>
+<p><strong>浴</strong><br /><a href="http://cimg2.163.com/catchpic/E/E6/E6B61E7DB3CFA6114FB69620A7EE22B6.jpg" target="_blank"><img height="460" alt="" src="http://cimg2.163.com/catchpic/E/E6/E6B61E7DB3CFA6114FB69620A7EE22B6.jpg" width="300" border="0" /></a></p>
+<p><strong>笔记本电脑</strong><br /><a href="http://cimg2.163.com/catchpic/0/02/020C09553186271532299CA760490B71.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/0/02/020C09553186271532299CA760490B71.jpg" width="455" border="0" /></a></p>
+<p><strong>哪个是真人?</strong><br /><a href="http://cimg2.163.com/catchpic/F/FA/FA1A90CFD8A22D59164CE700E6DDA744.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/F/FA/FA1A90CFD8A22D59164CE700E6DDA744.jpg" width="450" border="0" /></a></p>
+<p><strong>这张画是倒立看的</strong><br /><a href="http://cimg2.163.com/catchpic/8/80/8050824A6B02D79447C313277C350E99.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/8/80/8050824A6B02D79447C313277C350E99.jpg" width="458" border="0" /></a></p>
+<p><strong>被杀虫剂杀死的苍蝇</strong><br /><a href="http://cimg2.163.com/catchpic/5/5C/5C94F2A72C487C828E9F495AD475C0FD.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/5/5C/5C94F2A72C487C828E9F495AD475C0FD.jpg" width="449" border="0" /></a></p>
+<p><strong>蜘蛛侠</strong><br /><a href="http://cimg2.163.com/catchpic/E/E9/E955260217ADFA8DEA5B60859C41B83C.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/E/E9/E955260217ADFA8DEA5B60859C41B83C.jpg" width="450" border="0" /></a></p>
+<p><strong>街头陷阱</strong><br /><a href="http://cimg2.163.com/catchpic/3/3C/3C9EFF313BC75EE6CB74A8DEC7708C49.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/3/3C/3C9EFF313BC75EE6CB74A8DEC7708C49.jpg" width="414" border="0" /></a></p>
+<p><strong>被撬开的地板,路过的人不由自主的要避开</strong><br /><a href="http://photo4.yupoo.com/20061211/200347_1183492236_khfglkge.jpg" target="_blank"><img height="300" alt="" src="http://photo4.yupoo.com/20061211/200347_1183492236_khfglkge.jpg" width="451" border="0" /></a></p>
+<p><font size="4"><wbr></wbr></font><strong>街头探测金矿组图</strong><wbr></wbr><br /><a href="http://cimg2.163.com/catchpic/1/1C/1CAB931F81A2A57DB14D3E0E8A101ACB.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/1/1C/1CAB931F81A2A57DB14D3E0E8A101ACB.jpg" width="450" border="0" /></a></p>
+<p><strong>发现金矿 开始挖掘<br /></strong><a href="http://cimg2.163.com/catchpic/5/5C/5C3D16051DE15682E60AE8877DC76E05.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/5/5C/5C3D16051DE15682E60AE8877DC76E05.jpg" width="450" border="0" /></a></p>
+<p><strong>继续探测 发现大金矿了<br /></strong><a href="http://cimg2.163.com/catchpic/8/83/839B822CA551B690ADFC0D55E9B4C01B.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/8/83/839B822CA551B690ADFC0D55E9B4C01B.jpg" width="450" border="0" /></a></p>
+<p><strong>挖出大金矿了</strong><br /><a href="http://cimg2.163.com/catchpic/E/EA/EA0F644F2CBB68398973333FA2A14173.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/E/EA/EA0F644F2CBB68398973333FA2A14173.jpg" width="450" border="0" /></a></p>
+<p><strong>作者已经和他的作品融为一体</strong><br /><a href="http://cimg2.163.com/catchpic/1/1D/1DE80C6998272BC0551BD1BB21D52603.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/1/1D/1DE80C6998272BC0551BD1BB21D52603.jpg" width="450" border="0" /></a></p>
+<p><strong>一盒画笔</strong><br /><a href="http://cimg2.163.com/catchpic/0/00/0035486FA1DA5A1ED5EFD391926F3F91.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/0/00/0035486FA1DA5A1ED5EFD391926F3F91.jpg" width="428" border="0" /></a></p>
+<p><strong>高楼</strong><br /><a href="http://cimg2.163.com/catchpic/1/19/1946FF55A4CEF180A1B9699C53EAE519.jpg" target="_blank"><img height="450" alt="" src="http://cimg2.163.com/catchpic/1/19/1946FF55A4CEF180A1B9699C53EAE519.jpg" width="300" border="0" /></a></p>
+<div class="invisible" id="reference">&amp;nbsp;</div>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/109.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/109.html/feed</wfw:commentRss>
 		<slash:comments>1</slash:comments>
 		</item>
 		<item>
 		<title>[桌面游戏]卡卡松</title>
-		<link>http://www.biglee.cn/blog/2007/100.html</link>
-		<comments>http://www.biglee.cn/blog/2007/100.html#respond</comments>
+		<link>/blog/2007/100.html</link>
+		<comments>/blog/2007/100.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[影音娱乐]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　卡卡松是一座法国南部的美丽古城，参加者扮演中古时代的君主，派手下的亲信去开疆拓土，亲信扮演不同的脚色，去占 &#8230; <a href="http://www.biglee.cn/blog/2007/100.html" class="more-link">继续阅读<span class="screen-reader-text">“[桌面游戏]卡卡松”</span></a>]]></description>
+		<description><![CDATA[　　卡卡松是一座法国南部的美丽古城，参加者扮演中古时代的君主，派手下的亲信去开疆拓土，亲信扮演不同的脚色，去占 &#8230; <a href="/blog/2007/100.html" class="more-link">继续阅读<span class="screen-reader-text">“[桌面游戏]卡卡松”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　卡卡松是一座法国南部的美丽古城，参加者扮演中古时代的君主，派手下的亲信去开疆拓土，亲信扮演不同的脚色，去占领或管理领地。看谁的策略运用得当，就能赢得最后的胜利。这个合作即竞争的策略性版图游戏。每次玩都会激荡出不同的策略或同盟关系，除了对图像的敏锐感觉外，开放的合作态度更是致胜的关键！</p>
 <p>　　卡卡松是一个评价超过五星级的版图拼放游戏。这个游戏荣获2001年所有的大奖，它不但能训练各年龄层朋友的思考策略，更能培养朋友与家人之间的合作及互动，最适合全家同乐及朋友聚会！所以它受到各方面的极力推荐，被誉为接触德国桌上游戏必备游戏！</p>
 <p>　　每个人轮流抽出地图片，然后按照规则摆到地图，每次摆完地图片都可以选择把自己的小人放上去，放在不同的地方代表不同的职业，有骑士、农夫、盗贼以及寺僧，每种职业有简单的算分方法，全部地图片都摆放结束后，看谁的得分最高即为胜者。  </p>
@@ -316,24 +316,24 @@
 <p>　　此游戏可单机玩，也可联网玩。<br />
 　　游戏下载地址：http://hx.hxgame.net/getdown.asp?id=1442</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/100.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/100.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>Come From the Heart</title>
-		<link>http://www.biglee.cn/blog/2007/95.html</link>
-		<comments>http://www.biglee.cn/blog/2007/95.html#respond</comments>
+		<link>/blog/2007/95.html</link>
+		<comments>/blog/2007/95.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[影音娱乐]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[Come From the Heart [wmv]http://www.lsty.cn/bbs/ufs1/20 &#8230; <a href="http://www.biglee.cn/blog/2007/95.html" class="more-link">继续阅读<span class="screen-reader-text">“Come From the Heart”</span></a>]]></description>
+		<description><![CDATA[Come From the Heart [wmv]http://www.lsty.cn/bbs/ufs1/20 &#8230; <a href="/blog/2007/95.html" class="more-link">继续阅读<span class="screen-reader-text">“Come From the Heart”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Come From the Heart<br />
 [wmv]http://www.lsty.cn/bbs/ufs1/2006-7/2006722154944805.mp3[/wmv]</p>
 <p>Come From the Heart<br />
 Written by Susanna Clark and Richard Leigh<br />
-Performed by Kathy Mattea on &#34;Willow in the Wind&#34; </p>
+Performed by Kathy Mattea on &#8220;Willow in the Wind&#8221; </p>
 <p>My daddy told me when I was a young man<br />
 A lesson he learned, a long time ago<br />
 If you want to have someone to hold onto<br />
@@ -357,7 +357,7 @@ Love like you&#39;ll never get hurt<br />
 You got to dance, dance, dance like nobody&#39;s watching<br />
 It&#39;s gotta come from the heart if you want it to work</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/95.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/95.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>

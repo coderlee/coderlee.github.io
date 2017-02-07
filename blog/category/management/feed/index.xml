@@ -9,24 +9,24 @@
 
 <channel>
 	<title>管理营运 &#8211; 网站建设技术集锦</title>
-	<atom:link href="http://www.biglee.cn/blog/category/management/feed" rel="self" type="application/rss+xml" />
-	<link>http://www.biglee.cn</link>
+	<atom:link href="/blog/category/management/feed" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>涉及网站建设、服务器维护等IT技术的博客</description>
-	<lastBuildDate>Sun, 11 Sep 2016 06:49:31 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 07 Feb 2017 02:46:28 +0000</lastBuildDate>
 	<language>zh-CN</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.6</generator>
 	<item>
 		<title>推荐 30 款最好的免费项目管理软件</title>
-		<link>http://www.biglee.cn/blog/2014/257.html</link>
-		<comments>http://www.biglee.cn/blog/2014/257.html#respond</comments>
+		<link>/blog/2014/257.html</link>
+		<comments>/blog/2014/257.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[管理营运]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[本文向你推荐30款免费的项目管理软件，其中有些是桌面应用，还有一些基于Web的平台，其中不乏优秀开源软件。 T &#8230; <a href="http://www.biglee.cn/blog/2014/257.html" class="more-link">继续阅读<span class="screen-reader-text">“推荐 30 款最好的免费项目管理软件”</span></a>]]></description>
+		<description><![CDATA[本文向你推荐30款免费的项目管理软件，其中有些是桌面应用，还有一些基于Web的平台，其中不乏优秀开源软件。 T &#8230; <a href="/blog/2014/257.html" class="more-link">继续阅读<span class="screen-reader-text">“推荐 30 款最好的免费项目管理软件”</span></a>]]></description>
 				<content:encoded><![CDATA[<p style="margin: 0px 0px 15pt; padding: 0px; font-family: 微软雅黑, Verdana, sans-serif, 宋体; font-size: 14px; line-height: 22.399999618530273px;">本文向你推荐30款免费的项目管理软件，其中有些是桌面应用，还有一些基于Web的平台，其中不乏优秀开源软件。</p>
 <h3 style="margin: 0px 0px 10pt; padding: 0px; font-size: 12pt; font-family: 微软雅黑, Verdana, sans-serif, 宋体;"><a href="http://www.oschina.net/p/teamlab" target="_blank" style="margin: 0px; padding: 0px; color: rgb(62, 98, 166); outline: 0px;">TeamLab</a></h3>
 <p style="margin: 0px 0px 15pt; padding: 0px; font-family: 微软雅黑, Verdana, sans-serif, 宋体; font-size: 14px; line-height: 22.399999618530273px;"><em style="margin: 0px; padding: 0px;">TeamLab</em>&nbsp;是一个免费开源的商业协作和项目管理的平台。TeamLab 主要功能包括：项目管理、里程碑管理、任务、报表、事件、博客、论坛、书签、Wiki、即时消息等等。</p>
@@ -79,19 +79,19 @@
 <p style="margin: 0px 0px 15pt; padding: 0px; font-family: 微软雅黑, Verdana, sans-serif, 宋体; font-size: 14px; line-height: 22.399999618530273px;"><img src="http://static.oschina.net/uploads/img/201105/11000109_DuK8.jpg" alt="" style="margin: 0px; padding: 0px; border: 0px; max-width: 640px;" /></p>
 <p style="margin: 0px 0px 15pt; padding: 0px; font-family: 微软雅黑, Verdana, sans-serif, 宋体; font-size: 14px; line-height: 22.399999618530273px;">Project HQ 是一个协作式的开源项目管理软件，类似 Basec</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/257.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/257.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>SVN的trunk、branch与tag的用法</title>
-		<link>http://www.biglee.cn/blog/2013/252.html</link>
-		<comments>http://www.biglee.cn/blog/2013/252.html#respond</comments>
+		<link>/blog/2013/252.html</link>
+		<comments>/blog/2013/252.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[管理营运]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[&#160;Subversion有一个很标准的目录结构，是这样的。 比如项目是proj，svn地址为svn:/ &#8230; <a href="http://www.biglee.cn/blog/2013/252.html" class="more-link">继续阅读<span class="screen-reader-text">“SVN的trunk、branch与tag的用法”</span></a>]]></description>
+		<description><![CDATA[&#160;Subversion有一个很标准的目录结构，是这样的。 比如项目是proj，svn地址为svn:/ &#8230; <a href="/blog/2013/252.html" class="more-link">继续阅读<span class="screen-reader-text">“SVN的trunk、branch与tag的用法”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>&nbsp;Subversion有一个很标准的目录结构，是这样的。</p>
 <p>比如项目是proj，svn地址为svn://proj/，那么标准的svn布局是</p>
 <p>svn://proj/|+-trunk+-branches+-tags</p>
@@ -162,19 +162,19 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2013/252.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2013/252.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>产品经理的十大顶级错误</title>
-		<link>http://www.biglee.cn/blog/2013/238.html</link>
-		<comments>http://www.biglee.cn/blog/2013/238.html#respond</comments>
+		<link>/blog/2013/238.html</link>
+		<comments>/blog/2013/238.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[管理营运]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[【7哥导读】做好一个产品经理非常不容易，经常容易犯错误。本文详细描述了产品经理经常犯的十大顶级错误。对产品经理 &#8230; <a href="http://www.biglee.cn/blog/2013/238.html" class="more-link">继续阅读<span class="screen-reader-text">“产品经理的十大顶级错误”</span></a>]]></description>
+		<description><![CDATA[【7哥导读】做好一个产品经理非常不容易，经常容易犯错误。本文详细描述了产品经理经常犯的十大顶级错误。对产品经理 &#8230; <a href="/blog/2013/238.html" class="more-link">继续阅读<span class="screen-reader-text">“产品经理的十大顶级错误”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>【7哥导读】做好一个产品经理非常不容易，经常容易犯错误。本文详细描述了产品经理经常犯的十大顶级错误。对产品经理、技术负责人、创业者，都可以借鉴。</p>
 <p>作者：无招、鬼脚七。无招是一淘网的资深产品专家，对电子商务、数据挖掘类、互联网产品有丰富经验；鬼脚七曾经负责过大淘宝搜索产品，对产品设计和产品管理有自己的思考。</p>
 <p>说明：本文首发于天下网商，请所有转载注明来源于天下网商。</p>
@@ -234,19 +234,19 @@
 <p>以上10条顶级错误，是Marty  Cagan根据他十几年的产品管理经验总结出来的，对互联网产品的开发很值得参考。特别是一些中大型的互联网公司，有多条产品线，技术分工越来越细，类似的错误就越来越多。Marty  Cagan 原文写的是产品设计的十大顶级错误，本文这里改成了产品经理，会适合国情一些。</p>
 <p>当然，不同的人总结出来的十大顶级错误可能不一样，如果让我来总结，可能还有其他的一些错误。本文中提到的这些错误不是适用所有的公司，如果你对产品设计感兴趣，或者你本来就是一名产品经理，你可以把这篇文章收藏起来，每过一段时间拿出来看看，对照一下自己是否犯了同样的错误。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2013/238.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2013/238.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>互联网如何做流量</title>
-		<link>http://www.biglee.cn/blog/2012/216.html</link>
-		<comments>http://www.biglee.cn/blog/2012/216.html#respond</comments>
+		<link>/blog/2012/216.html</link>
+		<comments>/blog/2012/216.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[管理营运]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[做流量、做用户不是一劳永逸的，必须是一个机动化、持久化、长期的运作。 为什么要做流量? 首先，做流量本质上是做 &#8230; <a href="http://www.biglee.cn/blog/2012/216.html" class="more-link">继续阅读<span class="screen-reader-text">“互联网如何做流量”</span></a>]]></description>
+		<description><![CDATA[做流量、做用户不是一劳永逸的，必须是一个机动化、持久化、长期的运作。 为什么要做流量? 首先，做流量本质上是做 &#8230; <a href="/blog/2012/216.html" class="more-link">继续阅读<span class="screen-reader-text">“互联网如何做流量”</span></a>]]></description>
 				<content:encoded><![CDATA[<p style="padding-bottom: 0px; line-height: 26px; border-right-width: 0px; background-color: rgb(255,255,255); text-indent: 2em; margin: 0px; padding-left: 0px; outline-width: 0px; padding-right: 0px; font-family: simsun, &quot;Arial narrow&quot;; border-top-width: 0px; border-bottom-width: 0px; color: rgb(80,80,80); vertical-align: baseline; border-left-width: 0px; padding-top: 0px">做流量、做用户不是一劳永逸的，必须是一个机动化、持久化、长期的运作。</p>
 <p style="text-align: center; padding-bottom: 0px; line-height: 26px; border-right-width: 0px; background-color: rgb(255,255,255); text-indent: 2em; margin: 0px; padding-left: 0px; outline-width: 0px; padding-right: 0px; font-family: simsun, &quot;Arial narrow&quot;; border-top-width: 0px; border-bottom-width: 0px; color: rgb(80,80,80); vertical-align: baseline; border-left-width: 0px; padding-top: 0px"><strong style="padding-bottom: 0px; border-right-width: 0px; text-indent: 2em; margin: 0px; padding-left: 0px; outline-width: 0px; padding-right: 0px; font-family: inherit; border-top-width: 0px; border-bottom-width: 0px; vertical-align: baseline; border-left-width: 0px; padding-top: 0px">为什么要做流量?</strong></p>
 <p style="padding-bottom: 0px; line-height: 26px; border-right-width: 0px; background-color: rgb(255,255,255); text-indent: 2em; margin: 0px; padding-left: 0px; outline-width: 0px; padding-right: 0px; font-family: simsun, &quot;Arial narrow&quot;; border-top-width: 0px; border-bottom-width: 0px; color: rgb(80,80,80); vertical-align: baseline; border-left-width: 0px; padding-top: 0px">首先，做流量本质上是做用户，做产品。这不是雇几个小孩，花钱买广告, 或雇几个商务运营就可以自动解决的事情。本质上需要CEO、产品经理自己去想，而这里面其实误区非常多。</p>
@@ -271,19 +271,19 @@
 <p style="padding-bottom: 0px; line-height: 26px; border-right-width: 0px; background-color: rgb(255,255,255); text-indent: 2em; margin: 0px; padding-left: 0px; outline-width: 0px; padding-right: 0px; font-family: simsun, &quot;Arial narrow&quot;; border-top-width: 0px; border-bottom-width: 0px; color: rgb(80,80,80); vertical-align: baseline; border-left-width: 0px; padding-top: 0px"><strong style="padding-bottom: 0px; border-right-width: 0px; margin: 0px; padding-left: 0px; outline-width: 0px; padding-right: 0px; font-family: inherit; border-top-width: 0px; border-bottom-width: 0px; vertical-align: baseline; border-left-width: 0px; padding-top: 0px">1、有效用户是谁?</strong
 </p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2012/216.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2012/216.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>把个人Blog打造成一个成功品牌的10个步骤</title>
-		<link>http://www.biglee.cn/blog/2007/96.html</link>
-		<comments>http://www.biglee.cn/blog/2007/96.html#respond</comments>
+		<link>/blog/2007/96.html</link>
+		<comments>/blog/2007/96.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[管理营运]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　俄亥俄州一家名为eStrategyOne的在线营销方案解决公司的经理Rich Ottum，围绕着Busin &#8230; <a href="http://www.biglee.cn/blog/2007/96.html" class="more-link">继续阅读<span class="screen-reader-text">“把个人Blog打造成一个成功品牌的10个步骤”</span></a>]]></description>
+		<description><![CDATA[　　俄亥俄州一家名为eStrategyOne的在线营销方案解决公司的经理Rich Ottum，围绕着Busin &#8230; <a href="/blog/2007/96.html" class="more-link">继续阅读<span class="screen-reader-text">“把个人Blog打造成一个成功品牌的10个步骤”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　俄亥俄州一家名为eStrategyOne的在线营销方案解决公司的经理Rich Ottum，围绕着Business Weblogs的营销策略，给出了十个步骤；而在个人看来，要想把Blog作成一个成功的品牌，这些步骤，也是非常必要的；下面围绕作者的主要论点，结合我个人的观点，提出针对个人 blog的10个步骤：</p>
 <p>1、保持常新（Make it New）：你的Blog不仅仅是你的站点，你必须时不时提供新鲜的内容和独特的观点，你必须用心经营深入进去挖掘而不是用常规手段去随意放点什么敷衍读者。</p>
 <p>2、发出自己的声音（Give it Voice）：你的Blog必须有一个坚定的呼声——来自真实个人的声音，对于某个事物你必须有自己的态度；对于你提供的信息和内容，必须做到真实、广博、生动、高品位。</p>
@@ -294,15 +294,15 @@
 <p>7、武装你的读者（Equip Your Readers）：不是人人都象你那样精通技术，你的读者们也许不知道XML，不知道RSS，不知道Blog延伸出的种种先进技术——你要做的，是用最大众化的语言告诉他们那些技术分别是什么，让他们懂得有哪些好处，提供给他们使用的方法，比如写个说明告诉他们如何利用RSS功能去使用NewsReader，当然你必须首先告诉他们哪里去下载这个软件。最好能建立邮件列表，让你的读者们通过EMail与你的内容保持同步。</p>
 <p>8、多渠道传播（Promote in Multiple Channels）：不是人人都懂得用Aggregator（新闻聚合器）去获取你Blog的信息，要注意利用传统方法去推广你的Blog，如在T-Shirt上印上你的站点、发送邮件的签名传播、在Blog目录站点登记。</p>
 <p>9、与他人进行对话（join Another Conversation）：你应该站起来走出去看看其他的Blog，不管你感不感兴趣，尝试与他们进行沟通交流，这样你会开阔视野开放思维——当然你在别人站点上留下的URL也是很好的推广。</p>
-<p>10、要有耐心（Be Patient）：Blog技术并无大的创新之处,RSS也只是&#34;推技术&#34;的一个再利用；许多早先的网络应用者会谨慎地看待Blog和 RSS，甚至不屑一顾，你必须以自己的实践去做个好的说服材料，去打动他们融入进来，从而推广了你的Blog和你自己——对你来说，那将是你的个人品牌</p>
+<p>10、要有耐心（Be Patient）：Blog技术并无大的创新之处,RSS也只是&#8221;推技术&#8221;的一个再利用；许多早先的网络应用者会谨慎地看待Blog和 RSS，甚至不屑一顾，你必须以自己的实践去做个好的说服材料，去打动他们融入进来，从而推广了你的Blog和你自己——对你来说，那将是你的个人品牌</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/96.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/96.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>[讲义]同理心</title>
-		<link>http://www.biglee.cn/blog/2007/87.html</link>
-		<comments>http://www.biglee.cn/blog/2007/87.html#respond</comments>
+		<link>/blog/2007/87.html</link>
+		<comments>/blog/2007/87.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[管理营运]]></category>
@@ -315,7 +315,7 @@
 三重概念：<br />
 1.   辩识：分辩、抓住当事人的内心世界；<br />
 2.   反馈：将此辩识反馈给当事人；<br />
-3.   非赞同，不一定代表赞同当事人的观点；（与&#34;同情心&#34;的区别）<br />
+3.   非赞同，不一定代表赞同当事人的观点；（与&#8221;同情心&#8221;的区别）<br />
 两大步骤<br />
 辨识     反馈<br />
 同理心两条准则：<br />
@@ -335,9 +335,9 @@ LL——最低分阶段<br />
 3、 挑剔其见解<br />
 4、 自我辩护<br />
 5、 自述以满足自我需要<br />
-6、 完全忽视发话?br />
+6、 完全忽视发话�<br />
 结果：致使说话者觉得受伤害，造成沟通隔阂。<br />
-L——低分阶段（没错但也不等于对，离好有距离，离高明还差一截），今天的核心领导力是&#34;亲和力&#34;。<br />
+L——低分阶段（没错但也不等于对，离好有距离，离高明还差一截），今天的核心领导力是&#8221;亲和力&#8221;。<br />
 受话者：<br />
 1、 提出问题<br />
 2、 给予忠告（忠告多会形成代沟，母亲的唠唠叨叨太多也会形成代沟）<br />
@@ -351,7 +351,7 @@ L——低分阶段（没错但也不等于对，离好有距离，离高明还�
 1、  准确辨认说话者重要的感受<br />
 2、  准确反馈说话者重要而明显的感受<br />
 结果：因为正确了解说话者重要而明显的感受，使说话者觉得有被人了解的感觉，乐意继续倾诉其感受。<br />
-5、HH——最高分阶段（非常潜在的东西，有一语惊醒梦中人的感觉，也就是将语言进行了恰当的&#34;修饰&#34;）；<br />
+5、HH——最高分阶段（非常潜在的东西，有一语惊醒梦中人的感觉，也就是将语言进行了恰当的&#8221;修饰&#8221;）；<br />
 受话者：一针见血指出说话者未表达甚至自己都未完全明白的感受，如<br />
 *各种复杂感受中的潜在感受<br />
 *潜在需求<br />
@@ -359,7 +359,7 @@ L——低分阶段（没错但也不等于对，离好有距离，离高明还�
 *潜意识<br />
 *暗示<br />
 相关形容词：心领神会 心心相印 心在灵犀一点通 恍然大悟  一针见血  默契 知己<br />
-结果：因受话者能超越其明显感受，且能明白其隐含感受，使说话者觉得被深入了解，产生&#34;真是如此&#34;感受，愿意更深入地与对方沟通。<br />
+结果：因受话者能超越其明显感受，且能明白其隐含感受，使说话者觉得被深入了解，产生&#8221;真是如此&#8221;感受，愿意更深入地与对方沟通。<br />
 *著名案例：家庭夫妻（未用同理心）<br />
 珍：你晚上还要加班吗？<br />
 明：是啊！没办法！<br />
@@ -385,19 +385,19 @@ L——低分阶段（没错但也不等于对，离好有距离，离高明还�
 *这六天回去，可练习同理心，回去同上司做同理心，上司首先想看到的是结果；<br />
 *一个人的层次越低，就越不考虑对方的感受；一个人的层次越高，同理心修炼的越好。 </p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/87.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/87.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>策划人凭什么策划</title>
-		<link>http://www.biglee.cn/blog/2007/69.html</link>
-		<comments>http://www.biglee.cn/blog/2007/69.html#respond</comments>
+		<link>/blog/2007/69.html</link>
+		<comments>/blog/2007/69.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[管理营运]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　“凡事预则立，不预则废”。对于策划，古代早已有知，所谓策划就是一个谋划达成目标或事情的成功而先发的设想及其 &#8230; <a href="http://www.biglee.cn/blog/2007/69.html" class="more-link">继续阅读<span class="screen-reader-text">“策划人凭什么策划”</span></a>]]></description>
+		<description><![CDATA[　　“凡事预则立，不预则废”。对于策划，古代早已有知，所谓策划就是一个谋划达成目标或事情的成功而先发的设想及其 &#8230; <a href="/blog/2007/69.html" class="more-link">继续阅读<span class="screen-reader-text">“策划人凭什么策划”</span></a>]]></description>
 				<content:encoded><![CDATA[<p> 　　“凡事预则立，不预则废”。对于策划，古代早已有知，所谓策划就是一个谋划达成目标或事情的成功而先发的设想及其创造思维的过程，也是确保实现会管理活动决策和计划而进行有科学运作程序的谋划、构思和设计过程，是运用脑力的理性行为。策划已成为当今社会非常时髦的词语，与此产生的策划人也成了市场的高薪群体和关注度较高的人物，但对于策划人，凭什么策划？  </p>
 <p>　　当前市场的策划人员，主要由以下几个方面的人群组成，一是出自媒体、记者行业的，由于长期在市场一线，拥有广泛的接触和见识，具有敏锐的洞察与思考；二是来自“海龟”，在国外接触了较新的理念和模式，认为可以指导企业实际；三是一批从国内知名企业或国外大公司出来的，认为掌握了先进的管理理念和市场运作，可以模仿创新运用；四是来自高校和研究机构的，将研究成果、理论与实际有限结合起来。由于背景、经历和学识各有不同，造成市场策划人士风格间的差异性，那么，是不是谁都可以成为策划人呢？策划人凭什么策划？ </p>
 <p>　　一、从策划人的能力分析 </p>
@@ -416,19 +416,19 @@ L——低分阶段（没错但也不等于对，离好有距离，离高明还�
 <p>　　总之，策划人是凭借脑力进行思考和生存的，策划人凭的是阅历和创新能力，凭借的是敏锐的洞察与分析能力。随着社会的不断向前发展，策划行业会面临来自不同方面的竞争，竞争的日趋激烈，策划正在朝区域化、专业化的方向发展，策划人因相应地进行转型与重新定位，而且随着客户整体素质和实力地提升，门槛会越练越高，希望策划行业中杜绝李鬼与李逵并存、滥竽充数的现象，少一些欺骗，多务实和创新，真正提升客户的价值，创造价值，让生活因策划而更加精彩。</p>
 <p>作者：王唤明 </p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/69.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/69.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>微软资深经理人的网站项目管理经验</title>
-		<link>http://www.biglee.cn/blog/2007/67.html</link>
-		<comments>http://www.biglee.cn/blog/2007/67.html#respond</comments>
+		<link>/blog/2007/67.html</link>
+		<comments>/blog/2007/67.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[管理营运]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[这是微软资深项目经理人Stephen Maguire的项目管理经验。软件开发和网站开发有极其相似的地方，我们可 &#8230; <a href="http://www.biglee.cn/blog/2007/67.html" class="more-link">继续阅读<span class="screen-reader-text">“微软资深经理人的网站项目管理经验”</span></a>]]></description>
+		<description><![CDATA[这是微软资深项目经理人Stephen Maguire的项目管理经验。软件开发和网站开发有极其相似的地方，我们可 &#8230; <a href="/blog/2007/67.html" class="more-link">继续阅读<span class="screen-reader-text">“微软资深经理人的网站项目管理经验”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>这是微软资深项目经理人Stephen Maguire的项目管理经验。软件开发和网站开发有极其相似的地方，我们可以从中学习领会许多知识。 </p>
 <p>第一章 有效团队的基础</p>
 <p>1、专心改善产品 </p>
@@ -502,7 +502,7 @@ L——低分阶段（没错但也不等于对，离好有距离，离高明还�
 <p>记住：是你在为项目负责，不要让任何人的建议阻碍项目的进行，包括上级的建议。 </p>
 <p>想确保项目按计划进行，其关键就在于项目经理完全明白该做什么，并且不让该做的事受到不当的干扰。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/67.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/67.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>

@@ -9,60 +9,60 @@
 
 <channel>
 	<title>网络安全 &#8211; 网站建设技术集锦</title>
-	<atom:link href="http://www.biglee.cn/blog/category/network/feed" rel="self" type="application/rss+xml" />
-	<link>http://www.biglee.cn</link>
+	<atom:link href="/blog/category/network/feed" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>涉及网站建设、服务器维护等IT技术的博客</description>
-	<lastBuildDate>Sun, 11 Sep 2016 06:49:31 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 07 Feb 2017 02:46:28 +0000</lastBuildDate>
 	<language>zh-CN</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.6</generator>
 	<item>
 		<title>博客貌似被黑了，有空换PHP的</title>
-		<link>http://www.biglee.cn/blog/2015/304.html</link>
-		<comments>http://www.biglee.cn/blog/2015/304.html#respond</comments>
+		<link>/blog/2015/304.html</link>
+		<comments>/blog/2015/304.html#respond</comments>
 		<pubDate>Thu, 24 Sep 2015 06:51:41 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络安全]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[&#160;　　由于近来工作比较忙，所以有大半年没关注我这个博客站了。 　　前两天发现站点打不开了，于是找朋友 &#8230; <a href="http://www.biglee.cn/blog/2015/304.html" class="more-link">继续阅读<span class="screen-reader-text">“博客貌似被黑了，有空换PHP的”</span></a>]]></description>
+		<description><![CDATA[&#160;　　由于近来工作比较忙，所以有大半年没关注我这个博客站了。 　　前两天发现站点打不开了，于是找朋友 &#8230; <a href="/blog/2015/304.html" class="more-link">继续阅读<span class="screen-reader-text">“博客貌似被黑了，有空换PHP的”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>&nbsp;　　由于近来工作比较忙，所以有大半年没关注我这个博客站了。</p>
 <p>　　前两天发现站点打不开了，于是找朋友要了个小地方，放上去，今天发现一堆的垃圾评论与留言，想登录后台管理，结果发现登录不上，提示密码错误。以为自己记错了，试了几个可能的密码，都不行，于量拿出很早已经写的重置用户密码的代码，重置，再登录，也不行，傻眼了，难道管理员用户有另外的表，记得没有啊，查看数据库确认表，才发现我的用户名被改了。看来是已经被黑了。</p>
 <p>　　这个博客站是8年前架的，那时用的是ASP，现在早就改行做PHP了，正好可以抽空把这个站也改成PHP的。</p>
 <p>　　除了用户名被改，还有恶意注册与留言，得抓紧时间换了。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2015/304.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2015/304.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>点击任何链接弹出很多广告窗口问题的解决</title>
-		<link>http://www.biglee.cn/blog/2013/247.html</link>
-		<comments>http://www.biglee.cn/blog/2013/247.html#respond</comments>
+		<link>/blog/2013/247.html</link>
+		<comments>/blog/2013/247.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络安全]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　前几天，有一个反应同事电脑有问题，经常点击网页上的一个链接出现的不是该链接的页面，而是出现一个广告页面，同 &#8230; <a href="http://www.biglee.cn/blog/2013/247.html" class="more-link">继续阅读<span class="screen-reader-text">“点击任何链接弹出很多广告窗口问题的解决”</span></a>]]></description>
+		<description><![CDATA[　　前几天，有一个反应同事电脑有问题，经常点击网页上的一个链接出现的不是该链接的页面，而是出现一个广告页面，同 &#8230; <a href="/blog/2013/247.html" class="more-link">继续阅读<span class="screen-reader-text">“点击任何链接弹出很多广告窗口问题的解决”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　前几天，有一个反应同事电脑有问题，经常点击网页上的一个链接出现的不是该链接的页面，而是出现一个广告页面，同时还会弹出好多其它广告页面，经过杀毒软件查杀也没查出什么。</p>
 <p>　　我用其它工具也没找到可疑的文件，查看浏览器加载项，也没有不正常的项目。一时束手无策，只好暂时搁置。</p>
 <p>　　今天又有一个同事来反应也有这样的问题，这时另一个同事听到了，也反应说也遇到这问题。我想，难道是局域网里里病毒，劫持了网络？但是又有好多同事没问题。</p>
 <p>　　进到网关里，查看WAN状态，发现获取到的DNS服务器为106.186.28.68，查了下，是个日本的IP，看来问题出在这了，手动设定下，搞定。但是这个是拨号连接自动从电信那获取，为什么是这个呢？</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2013/247.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2013/247.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>virtualbox虚拟机DHCP服务的关闭与开启设置</title>
-		<link>http://www.biglee.cn/blog/2013/245.html</link>
-		<comments>http://www.biglee.cn/blog/2013/245.html#respond</comments>
+		<link>/blog/2013/245.html</link>
+		<comments>/blog/2013/245.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络安全]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[&#160;　　今天有几个同事说上不了网，我发现是网卡设置为自动获取IP，获取到的IP段是192.168.56 &#8230; <a href="http://www.biglee.cn/blog/2013/245.html" class="more-link">继续阅读<span class="screen-reader-text">“virtualbox虚拟机DHCP服务的关闭与开启设置”</span></a>]]></description>
+		<description><![CDATA[&#160;　　今天有几个同事说上不了网，我发现是网卡设置为自动获取IP，获取到的IP段是192.168.56 &#8230; <a href="/blog/2013/245.html" class="more-link">继续阅读<span class="screen-reader-text">“virtualbox虚拟机DHCP服务的关闭与开启设置”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>&nbsp;　　今天有几个同事说上不了网，我发现是网卡设置为自动获取IP，获取到的IP段是192.168.56.0，且没有网关。原来是这几天我在用virtualbox研究ROS，virtualbox带有DHCP服务。网络上查了半天也没找到在哪关闭这个DHCP服务。后来摸索了半天，终于找到了设置的地方。</p>
 <p>　　在virtualbox管理器&ldquo;管理&rdquo;菜单下有个全局设定，在网络选项里编辑你的仅主机网络适配器(VirtualBox Host-Only)设置，将DHCP服务选项里启用服务器前的勾选去掉。如图：</p>
 <p><img alt="" src="http://www.biglee.cn/blog/download.asp?id=3" /></p>
@@ -70,63 +70,63 @@
 <p>　　如果你给虚拟主机添加了多个仅主机网络类型的虚拟网卡，都要按此方法设置。</p>
 <p>　　通过以上设置，VirtualBox的DHCP服务就被关闭了。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2013/245.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2013/245.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>多线路环境virtualbox虚拟机装ROS当中转路由</title>
-		<link>http://www.biglee.cn/blog/2013/244.html</link>
-		<comments>http://www.biglee.cn/blog/2013/244.html#respond</comments>
+		<link>/blog/2013/244.html</link>
+		<comments>/blog/2013/244.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络安全]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[局域网里有两个出口，网关分别为192.168.1.1和192.168.1.2，没有多网卡电脑可用来装ROS，怎 &#8230; <a href="http://www.biglee.cn/blog/2013/244.html" class="more-link">继续阅读<span class="screen-reader-text">“多线路环境virtualbox虚拟机装ROS当中转路由”</span></a>]]></description>
+		<description><![CDATA[局域网里有两个出口，网关分别为192.168.1.1和192.168.1.2，没有多网卡电脑可用来装ROS，怎 &#8230; <a href="/blog/2013/244.html" class="more-link">继续阅读<span class="screen-reader-text">“多线路环境virtualbox虚拟机装ROS当中转路由”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>局域网里有两个出口，网关分别为192.168.1.1和192.168.1.2，没有多网卡电脑可用来装ROS，怎么样用一台电脑来实现多出口的负载均衡呢？为了测试，我在我的电脑上的虚拟机里装上了ROS来测试，然后其它电脑将网关设置成该ROS的IP，成功实现负载均衡。设置要点：</p>
 <p>1、虚拟机里ROS系统网卡IP要和局域网及各出口接入设备的局域网端IP要在同个网段</p>
 <p>2、虚拟机网卡设置成桥接网卡。如果设置成仅主机(Host-Only)，则需要桥接虚拟网卡和宿主机能上网的网卡。</p>
 <p>3、ROS的IP设置里，设置两个网关（通过策略等进行负载平衡，探索中）</p>
 <p>4、将其它电脑的网关设置为ROS的IP，或者配置ROS的DHCP，其它电脑自动获取，同时关闭各出口接入设备及其它设备的DHCP服务（或者将这些DHCP服务器的网设为ROS的IP，且IP范围不重复）。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2013/244.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2013/244.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>商务领航定制网关(EG692HW)电信管理员密码获取方法</title>
-		<link>http://www.biglee.cn/blog/2013/240.html</link>
-		<comments>http://www.biglee.cn/blog/2013/240.html#comments</comments>
+		<link>/blog/2013/240.html</link>
+		<comments>/blog/2013/240.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络安全]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[打开http://192.168.1.1/userInfo.html（如果设备IP不是默认的请自行修改网址）  &#8230; <a href="http://www.biglee.cn/blog/2013/240.html" class="more-link">继续阅读<span class="screen-reader-text">“商务领航定制网关(EG692HW)电信管理员密码获取方法”</span></a>]]></description>
+		<description><![CDATA[打开http://192.168.1.1/userInfo.html（如果设备IP不是默认的请自行修改网址）  &#8230; <a href="/blog/2013/240.html" class="more-link">继续阅读<span class="screen-reader-text">“商务领航定制网关(EG692HW)电信管理员密码获取方法”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>打开<a href="http://192.168.1.1/userInfo.html">http://192.168.1.1/userInfo.html</a>（如果设备IP不是默认的请自行修改网址）</p>
 <p>会显示类似以下字符串：telecomadmin/857/0/0/1/946691208/946691312/telecomadmin26260773|useradmin/0/3/0/0/946690587/946691312/admin!@#$%^|</p>
 <p>第一个&ldquo;/&rdquo;前就是电信管理员用户名：telecomadmin</p>
 <p>第一个&ldquo;|&rdquo;前&ldquo;/&rdquo;后面就是密码：telecomadmin26260773<br />
 &nbsp;</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2013/240.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2013/240.html/feed</wfw:commentRss>
 		<slash:comments>1</slash:comments>
 		</item>
 		<item>
 		<title>IIS 6曝新漏洞</title>
-		<link>http://www.biglee.cn/blog/2009/165.html</link>
-		<comments>http://www.biglee.cn/blog/2009/165.html#respond</comments>
+		<link>/blog/2009/165.html</link>
+		<comments>/blog/2009/165.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络安全]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[Microsoft Internet Infomation Server 6.0 ISAPI Filename &#8230; <a href="http://www.biglee.cn/blog/2009/165.html" class="more-link">继续阅读<span class="screen-reader-text">“IIS 6曝新漏洞”</span></a>]]></description>
+		<description><![CDATA[Microsoft Internet Infomation Server 6.0 ISAPI Filename &#8230; <a href="/blog/2009/165.html" class="more-link">继续阅读<span class="screen-reader-text">“IIS 6曝新漏洞”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>Microsoft Internet Infomation Server 6.0 ISAPI Filename Analytic Vulnerability</p>
 <p>function Copyright()<br />
 {</p>
 <p>var Author=”80sec”;<br />
 var Email=”kEvin#80sec.com”.replace(”#”,”@”)<br />
-var Site=”http://www.80sec.com”;<br />
+var Site=”http://www.80sec.com”;/<br />
 var Date=new Date(2009,4,24).toLocaleString();<br />
 var Reference=”http://www.80sec.com/Microsoft-Internet-Infomation-Server-6-ISAPI-filename-analytic-Vulnerabilitie.html”;<br />
 return Reference;</p>
@@ -135,26 +135,26 @@ return Reference;</p>
 <p>漏洞描述:</p>
 <p>IIS6 (Internet Infomation Server 6.0) 是微软出品的一款WEB服务器系统, 广泛用于各种个人/商业信息发布/网站架设领域。80sec在测试中发现, IIS设计上在处理畸形文件名的时候存在一个严重的安全漏洞, 可能绕过web程序的逻辑检查从而能导致服务器以IIS进程权限执行任意恶意用户定义的脚本, 黑客可以通过制造畸形的服务器文件来触发该 漏洞, 并从而控制服务器.</p>
 <p>漏洞厂商: </p>
-<p>Microsoft [ http://www.microsoft.com ]</p>
+<p>Microsoft [ http://www.microsoft.com/ ]</p>
 <p>漏洞测试:</p>
 <p>Undefined</p>
 <p>解决方案:</p>
 <p>等待微软更新官方补丁.</p>
 <p>*/</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2009/165.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2009/165.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>ROS，软路由软件介绍</title>
-		<link>http://www.biglee.cn/blog/2009/161.html</link>
-		<comments>http://www.biglee.cn/blog/2009/161.html#respond</comments>
+		<link>/blog/2009/161.html</link>
+		<comments>/blog/2009/161.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络安全]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　专业路由设备动不动就几千上万的，本着节省的原则，我们可以用老爷机DIY一个路由器，这就需要用到ROS软路由 &#8230; <a href="http://www.biglee.cn/blog/2009/161.html" class="more-link">继续阅读<span class="screen-reader-text">“ROS，软路由软件介绍”</span></a>]]></description>
+		<description><![CDATA[　　专业路由设备动不动就几千上万的，本着节省的原则，我们可以用老爷机DIY一个路由器，这就需要用到ROS软路由 &#8230; <a href="/blog/2009/161.html" class="more-link">继续阅读<span class="screen-reader-text">“ROS，软路由软件介绍”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　专业路由设备动不动就几千上万的，本着节省的原则，我们可以用老爷机DIY一个路由器，这就需要用到ROS软路由软件，也就是软件路由器软件。<br />
 　　根据使用的操作不同可以分为基于windows平台和基于Linux/bsd平台开发的软件路由器，基于Windows平台的软件防火墙比较常见的有ISA Server、Winroute Firewall等，这些软件都是商业化的，通常根据授权用户数不同收费而不同，购买正版的软件防火墙的费用对许多中小型企业来说无疑是一笔不小的开支。有而基于Unix/Linux平台的软件防火墙大家一般接触较少，受益于开放源码运行，目前基于Unix/Linux平台的软件防火墙如雨后春笋般不断推出，这些软件防火墙大多是免费的，常见的有RouterOS、m0n0Wall、SmoothWall、Ipcop、CoyoteLinux等，这些系统共有的特点是一般对硬件要求较低，甚至只需要一台486电脑，一张软盘，两块网卡就可以安装出一台非常专业的软件防火墙，这对很多有淘汰下来的低档电脑的朋友来说，意味着拿一台淘汰的电脑，安装一套免费的防火墙软件，不花一分钱就DIY出一台专业的防火墙，而且这些系统自身也包含了NAT功能，同时可以实现宽带共享，这意味着这台免费的防火墙其实也是一台出色的宽带路由器，这是多么令人激动的事情。<br />
 　　我整理收集了几款功能比较强大，比较好用的软路由软件。</p>
@@ -164,19 +164,19 @@ return Reference;</p>
 　　RouterOS能将多张网卡组建为一个桥模式，是路由器变成一个透明的桥设备，同样也实行三层交换的作用，MAC层的以太网桥、EoIP 、Prism、Atheros和RadioLAN 等都是支持的。所有802.11b和802.11a 客户端的无线网卡（如station模式的无线）受802.11 的限制无法支持桥模式，但可以通过EoIP协议的桥接方式实现。<br />
 　　RouterOS的功能很强大，不过，是收费软件。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2009/161.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2009/161.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>黑客根据IP就能控制用户电脑 微软破例紧急公布严重漏洞</title>
-		<link>http://www.biglee.cn/blog/2008/145.html</link>
-		<comments>http://www.biglee.cn/blog/2008/145.html#respond</comments>
+		<link>/blog/2008/145.html</link>
+		<comments>/blog/2008/145.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络安全]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　Windows操作系统的安全性再次受到严峻挑战！10月24日凌晨，微软紧急发布了一项重要的安全更新（KB9 &#8230; <a href="http://www.biglee.cn/blog/2008/145.html" class="more-link">继续阅读<span class="screen-reader-text">“黑客根据IP就能控制用户电脑 微软破例紧急公布严重漏洞”</span></a>]]></description>
+		<description><![CDATA[　　Windows操作系统的安全性再次受到严峻挑战！10月24日凌晨，微软紧急发布了一项重要的安全更新（KB9 &#8230; <a href="/blog/2008/145.html" class="more-link">继续阅读<span class="screen-reader-text">“黑客根据IP就能控制用户电脑 微软破例紧急公布严重漏洞”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　Windows操作系统的安全性再次受到严峻挑战！10月24日凌晨，微软紧急发布了一项重要的安全更新（KB958644），涉及Windows2000/XP/Vista等桌面操作系统的绝大多数版本。其危害程度毫不逊于当年波及80%以上Windows用户的“冲击波”病毒。</p>
 <p>　　微软公告称，黑客可以利用该漏洞向网络中的电脑发出远程的特制RPC请求，无需身份验证便可在电脑中任意执行远程代码。这就是说，即便你的电脑设置了管理员密码，也只能任由黑客摆布。</p>
 <p>　　截至目前，网上已出现了利用该漏洞的蠕虫病毒(Win32/MS08067.gen!A)。这一漏洞的危害极为严重，黑客仅根据IP地址便可随意发起攻击，简直是“指哪打哪”，而且感染性非常强，只要远程执行一段下载恶意程序的代码，不但能随意弹出广告、盗取用户账号，还可以控制本机进而攻击其他用户，使破坏力持续放大，局域网的用户一旦有一个中招病毒就会迅速扩散。</p>
@@ -184,13 +184,13 @@ return Reference;</p>
 <p>　　点击下面链接，详细了解该漏洞的技术内幕。</p>
 <p>　　http://www.microsoft.com/china/technet/security/bulletin/MS08-067.mspx</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2008/145.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2008/145.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>ARP协议及ARP欺骗详解</title>
-		<link>http://www.biglee.cn/blog/2008/137.html</link>
-		<comments>http://www.biglee.cn/blog/2008/137.html#respond</comments>
+		<link>/blog/2008/137.html</link>
+		<comments>/blog/2008/137.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络安全]]></category>
@@ -313,34 +313,34 @@ C. 您需要知道冲突的MAC地址，Windows会记录这些错误。查看具�
 　　可能你会有疑问：我们也可以发送比欺骗者更多更快正确的ARP信息啊？如果攻击者每秒发送1000个ARP欺骗包，那我们就每秒发送1500个正确的ARP信息！<br />
 　　面对上面的疑问，我们仔细想想，如果网络拓扑很大，网络中接了很多网络设备和主机，大量的设备都去处理这些广播信息，那网络使用起来好不爽，再说了会影响到我们工作和学习。ARP广播会造成网络资源的浪费和占用。如果该网络出了问题，我们抓包分析，数据包中也会出现很多这类ARP广播包，对分析也会造成一定的影响。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2008/137.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2008/137.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>卡巴斯基中国公司推出3台双线升级服务器</title>
-		<link>http://www.biglee.cn/blog/2007/33.html</link>
-		<comments>http://www.biglee.cn/blog/2007/33.html#respond</comments>
+		<link>/blog/2007/33.html</link>
+		<comments>/blog/2007/33.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络安全]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[卡巴斯基中国公司推出3台双线升级服务器, 三台服务器均为 电信/网通 的双线服务器, ping 值都在 42m &#8230; <a href="http://www.biglee.cn/blog/2007/33.html" class="more-link">继续阅读<span class="screen-reader-text">“卡巴斯基中国公司推出3台双线升级服务器”</span></a>]]></description>
+		<description><![CDATA[卡巴斯基中国公司推出3台双线升级服务器, 三台服务器均为 电信/网通 的双线服务器, ping 值都在 42m &#8230; <a href="/blog/2007/33.html" class="more-link">继续阅读<span class="screen-reader-text">“卡巴斯基中国公司推出3台双线升级服务器”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>卡巴斯基中国公司推出3台双线升级服务器, 三台服务器均为 电信/网通 的双线服务器, ping 值都在 42ms 左右, 速度相当快!<br />
 以下为新更新地址:<br />
-http://dnl-cn1.kaspersky-labs.com<br />
-http://dnl-cn2.kaspersky-labs.com<br />
-http://dnl-cn3.kaspersky-labs.com<br />
+http://dnl-cn1.kaspersky-labs.com/<br />
+http://dnl-cn2.kaspersky-labs.com/<br />
+http://dnl-cn3.kaspersky-labs.com/<br />
 使用升级站点步骤 (仅适用于6.0个人版用户) :<br />
-1、在 &#34;服务&#34; -〉 &#34;更新&#34; 上点鼠标右键, 选择 &#34;设置&#34; ;<br />
-2、在 &#34;更新设置&#34; 中选择 &#34;自定义&#34; 按钮;<br />
-3、在弹出的对话框中, 选择 &#34;更新服务器&#34; 标签;<br />
-4、点击 &#34;添加&#34; 按钮, 在 &#34;源&#34; 后的方框中加入&#34;http://dnl-cn1.kaspersky-labs.com<br />
-&#34;或 &#34;http://dnl-cd1.kaspersky-labs.com&#34; , 点击 &#34;确定&#34; ;<br />
-5、退回到 &#34;更新服务器&#34; 标签下, 去掉 &#34;卡巴斯基实验室更新服务器&#34; 前面的勾. 如果之前使用了离线升级包的方式进行升级, 也请去掉相应的离线升级包前的勾, 选择确定 </p>
+1、在 &#8220;服务&#8221; -〉 &#8220;更新&#8221; 上点鼠标右键, 选择 &#8220;设置&#8221; ;<br />
+2、在 &#8220;更新设置&#8221; 中选择 &#8220;自定义&#8221; 按钮;<br />
+3、在弹出的对话框中, 选择 &#8220;更新服务器&#8221; 标签;<br />
+4、点击 &#8220;添加&#8221; 按钮, 在 &#8220;源&#8221; 后的方框中加入&#8221;http://dnl-cn1.kaspersky-labs.com/<br />
+&#8220;或 &#8220;http://dnl-cd1.kaspersky-labs.com&/#8221; , 点击 &#8220;确定&#8221; ;<br />
+5、退回到 &#8220;更新服务器&#8221; 标签下, 去掉 &#8220;卡巴斯基实验室更新服务器&#8221; 前面的勾. 如果之前使用了离线升级包的方式进行升级, 也请去掉相应的离线升级包前的勾, 选择确定 </p>
 <p>我试了下，速度超快。。。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/33.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/33.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>

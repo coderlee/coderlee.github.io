@@ -9,24 +9,24 @@
 
 <channel>
 	<title>PC技术 &#8211; 网站建设技术集锦</title>
-	<atom:link href="http://www.biglee.cn/blog/category/pc_technology/feed" rel="self" type="application/rss+xml" />
-	<link>http://www.biglee.cn</link>
+	<atom:link href="/blog/category/pc_technology/feed" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>涉及网站建设、服务器维护等IT技术的博客</description>
-	<lastBuildDate>Sun, 11 Sep 2016 06:49:31 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 07 Feb 2017 02:46:28 +0000</lastBuildDate>
 	<language>zh-CN</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.6</generator>
 	<item>
 		<title>ssh连接速度很慢的解决方法</title>
-		<link>http://www.biglee.cn/blog/2014/300.html</link>
-		<comments>http://www.biglee.cn/blog/2014/300.html#respond</comments>
+		<link>/blog/2014/300.html</link>
+		<comments>/blog/2014/300.html#respond</comments>
 		<pubDate>Tue, 04 Nov 2014 19:58:58 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[PC技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[问题现象： 公司有几台服务器，SSH连接的时候很慢，半天才连接上，连上后一切操作正常，网络速度没问题。 处理方 &#8230; <a href="http://www.biglee.cn/blog/2014/300.html" class="more-link">继续阅读<span class="screen-reader-text">“ssh连接速度很慢的解决方法”</span></a>]]></description>
+		<description><![CDATA[问题现象： 公司有几台服务器，SSH连接的时候很慢，半天才连接上，连上后一切操作正常，网络速度没问题。 处理方 &#8230; <a href="/blog/2014/300.html" class="more-link">继续阅读<span class="screen-reader-text">“ssh连接速度很慢的解决方法”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>问题现象：</p>
 <p>公司有几台服务器，SSH连接的时候很慢，半天才连接上，连上后一切操作正常，网络速度没问题。</p>
 <p>处理方法：</p>
@@ -61,19 +61,19 @@
 <p>重启SSH服务，再次连接，终于是飞一般的感觉。</p>
 <p>&nbsp;</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/300.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/300.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>各种SSH终端软件对比</title>
-		<link>http://www.biglee.cn/blog/2014/298.html</link>
-		<comments>http://www.biglee.cn/blog/2014/298.html#respond</comments>
+		<link>/blog/2014/298.html</link>
+		<comments>/blog/2014/298.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[PC技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[Xshell 收费软件 ssh secure shell 免费软件 secureCRT Secure[1] C &#8230; <a href="http://www.biglee.cn/blog/2014/298.html" class="more-link">继续阅读<span class="screen-reader-text">“各种SSH终端软件对比”</span></a>]]></description>
+		<description><![CDATA[Xshell 收费软件 ssh secure shell 免费软件 secureCRT Secure[1] C &#8230; <a href="/blog/2014/298.html" class="more-link">继续阅读<span class="screen-reader-text">“各种SSH终端软件对比”</span></a>]]></description>
 				<content:encoded><![CDATA[<p><strong>Xshell</strong></p>
 <p>收费软件</p>
 <p><strong>ssh secure shell</strong></p>
@@ -91,19 +91,19 @@
 ◆ 体积很小，仅484KB(0.63 版本)；<br />
 ◆ 操作简单，所有的操作都在一个控制面板中实现。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/298.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/298.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>11个rsync使用实例</title>
-		<link>http://www.biglee.cn/blog/2014/297.html</link>
-		<comments>http://www.biglee.cn/blog/2014/297.html#respond</comments>
+		<link>/blog/2014/297.html</link>
+		<comments>/blog/2014/297.html#respond</comments>
 		<pubDate>Thu, 31 Jul 2014 04:16:44 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[PC技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[rsync表示 remote sync，其用于在本地或与远程主机间进行文件或目录备份。相比较scp等工具，rs &#8230; <a href="http://www.biglee.cn/blog/2014/297.html" class="more-link">继续阅读<span class="screen-reader-text">“11个rsync使用实例”</span></a>]]></description>
+		<description><![CDATA[rsync表示 remote sync，其用于在本地或与远程主机间进行文件或目录备份。相比较scp等工具，rs &#8230; <a href="/blog/2014/297.html" class="more-link">继续阅读<span class="screen-reader-text">“11个rsync使用实例”</span></a>]]></description>
 				<content:encoded><![CDATA[<p><span style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">rsync表示 remote sync，其用于在本地或与远程主机间进行文件或目录备份。相比较scp等工具，rsync有以下优点：</span></p>
 <ol style="padding-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; line-height: 25.200000762939453px;">
 <li style="list-style-type: decimal;">速度：除首次全拷贝外，其他时候实现增量拷贝，加快传输速度</li>
@@ -248,19 +248,19 @@ total size is 148  speedup is 0.54
 <p class="p1"><span class="s1">默认情况下 rsync 采用增量拷贝，这样能节省带宽，在所同步文件不大的情况下，我们可以通过 -W 选项实现全拷贝：</span></p>
 <pre style="margin-top: 0px; margin-bottom: 0px; white-space: pre-wrap; word-wrap: break-word; font-family: 'Courier New' !important;">$ rsync -avzW /var/opt/lx/ /root/temp/</pre>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/297.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/297.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>linux下which、wh&#101;reis、locate、find 命令的区别</title>
-		<link>http://www.biglee.cn/blog/2014/296.html</link>
-		<comments>http://www.biglee.cn/blog/2014/296.html#respond</comments>
+		<link>/blog/2014/296.html</link>
+		<comments>/blog/2014/296.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[PC技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[&#160;我们经常在linux要查找某个文件，但不知道放在哪里了，可以使用下面的一些命令来搜索。 1、whi &#8230; <a href="http://www.biglee.cn/blog/2014/296.html" class="more-link">继续阅读<span class="screen-reader-text">“linux下which、wh&#101;reis、locate、find 命令的区别”</span></a>]]></description>
+		<description><![CDATA[&#160;我们经常在linux要查找某个文件，但不知道放在哪里了，可以使用下面的一些命令来搜索。 1、whi &#8230; <a href="/blog/2014/296.html" class="more-link">继续阅读<span class="screen-reader-text">“linux下which、wh&#101;reis、locate、find 命令的区别”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>&nbsp;我们经常在linux要查找某个文件，但不知道放在哪里了，可以使用下面的一些命令来搜索。<br />
 1、which <br />
 语法： <br />
@@ -352,19 +352,19 @@ find 就是根据条件查找文件<br />
 which 根据环境变量PATH查找，一般只查找可执行文件，可以找到可执行文件和别名(alias)</p>
 <p><strong><span style="color: rgb(128, 0, 128);">Lee补充：用locate命令的话，如果磁盘上文件有更改，需要执行updatedb命令来更新数据库，否则结果可能会与实际不符合。</span></strong></p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/296.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/296.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>历尽艰辛的putty免密码SSH登陆服务器的配置</title>
-		<link>http://www.biglee.cn/blog/2014/295.html</link>
-		<comments>http://www.biglee.cn/blog/2014/295.html#respond</comments>
+		<link>/blog/2014/295.html</link>
+		<comments>/blog/2014/295.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[PC技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　前段时间在虚拟机上装了个CentOS，然后用puttyl连接上去操作，为了方便，不用每次登陆输入密码，我就 &#8230; <a href="http://www.biglee.cn/blog/2014/295.html" class="more-link">继续阅读<span class="screen-reader-text">“历尽艰辛的putty免密码SSH登陆服务器的配置”</span></a>]]></description>
+		<description><![CDATA[　　前段时间在虚拟机上装了个CentOS，然后用puttyl连接上去操作，为了方便，不用每次登陆输入密码，我就 &#8230; <a href="/blog/2014/295.html" class="more-link">继续阅读<span class="screen-reader-text">“历尽艰辛的putty免密码SSH登陆服务器的配置”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　前段时间在虚拟机上装了个CentOS，然后用puttyl连接上去操作，为了方便，不用每次登陆输入密码，我就想配置用密钥免密码直接登陆，下面是配置过程：</p>
 <p>　　1、在服务器的用户目录下建立一个文件夹.ssh，注意有一个句点，用来存储密钥用。</p>
 <p>　　2、生成密钥，然后用如下命令：</p>
@@ -397,19 +397,19 @@ service sshd restart</p>
 -i &quot;私钥文件路径&quot; root@192.168.10.60</p>
 <p>保存后就能直接双击这个快捷方式登陆了。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/295.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/295.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>phpstorm 快捷键</title>
-		<link>http://www.biglee.cn/blog/2014/288.html</link>
-		<comments>http://www.biglee.cn/blog/2014/288.html#respond</comments>
+		<link>/blog/2014/288.html</link>
+		<comments>/blog/2014/288.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[PC技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[phpstorm是个很好用的PHP开发工具，工欲善其事必先利其器，熟悉下软件的操作快捷键能提高工作效率。 ct &#8230; <a href="http://www.biglee.cn/blog/2014/288.html" class="more-link">继续阅读<span class="screen-reader-text">“phpstorm 快捷键”</span></a>]]></description>
+		<description><![CDATA[phpstorm是个很好用的PHP开发工具，工欲善其事必先利其器，熟悉下软件的操作快捷键能提高工作效率。 ct &#8230; <a href="/blog/2014/288.html" class="more-link">继续阅读<span class="screen-reader-text">“phpstorm 快捷键”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>phpstorm是个很好用的PHP开发工具，工欲善其事必先利其器，熟悉下软件的操作快捷键能提高工作效率。</p>
 <p>ctrl+shift+n 查找文件<br />
 ctrl+j 插入活动代码提示<br />
@@ -445,19 +445,19 @@ alt+left/right 标签切换<br />
 ctrl+p 显示默认参数<br />
 ctrl+F12 在当前类文件里快速查找方法</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/288.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/288.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>Teach Yourself Programming in Ten Years</title>
-		<link>http://www.biglee.cn/blog/2014/268.html</link>
-		<comments>http://www.biglee.cn/blog/2014/268.html#respond</comments>
+		<link>/blog/2014/268.html</link>
+		<comments>/blog/2014/268.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[PC技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[Why is everyone in such a rush? Walk into any bookstore &#8230; <a href="http://www.biglee.cn/blog/2014/268.html" class="more-link">继续阅读<span class="screen-reader-text">“Teach Yourself Programming in Ten Years”</span></a>]]></description>
+		<description><![CDATA[Why is everyone in such a rush? Walk into any bookstore &#8230; <a href="/blog/2014/268.html" class="more-link">继续阅读<span class="screen-reader-text">“Teach Yourself Programming in Ten Years”</span></a>]]></description>
 				<content:encoded><![CDATA[<h2>Why is everyone in such a rush?</h2>
 <p>Walk into any bookstore, and you&#39;ll see how to&nbsp;<i>Teach Yourself Java in 7 Days</i>&nbsp;alongside endless variations offering to teach Visual Basic, Windows, the Internet, and so on in a few days or hours. I did the following&nbsp;<a href="http://www.amazon.com/exec/obidos/tg/browse/-/468558/104-5938873-6579160">power search</a>&nbsp;at&nbsp;<a href="http://www.amazon.com/">Amazon.com</a>:</p>
 <pre>
@@ -526,56 +526,56 @@ ctrl+F12 在当前类文件里快速查找方法</p>
 </ol>
 <p>This assumes that some people already have the qualities necessary for being a great designer; the job is to properly coax them along.&nbsp;<a href="http://www-pu.informatik.uni-tuebingen.de/users/klaeren/epigrams.html">Alan Perlis</a>&nbsp;put it more succinctly: &quot;Everyone can be taught to sculpt: Michelangelo would have had to be taught how not to. So it is with the great programmers&quot;. Perlis is saying that the greats have some internal quality that transcends their training. But where does the quality come from? Is it innate? or do they develop it through diligence? As Auguste Gusteau (the fictional chef in&nbsp;<i>Ratatouille</i>) puts it, &quot;anyone can cook, but only the fearless can be great.&quot; I think of it more as willingness to de</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/268.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/268.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>直接下载的CHM文件打开无法显示内容的解决办法</title>
-		<link>http://www.biglee.cn/blog/2014/255.html</link>
-		<comments>http://www.biglee.cn/blog/2014/255.html#respond</comments>
+		<link>/blog/2014/255.html</link>
+		<comments>/blog/2014/255.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[PC技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[今天下载了个CHM文档，打开后一片空白，原以为下载的文件有问题，去下载页面重新时发现上面附有一个解决方案的链接 &#8230; <a href="http://www.biglee.cn/blog/2014/255.html" class="more-link">继续阅读<span class="screen-reader-text">“直接下载的CHM文件打开无法显示内容的解决办法”</span></a>]]></description>
+		<description><![CDATA[今天下载了个CHM文档，打开后一片空白，原以为下载的文件有问题，去下载页面重新时发现上面附有一个解决方案的链接 &#8230; <a href="/blog/2014/255.html" class="more-link">继续阅读<span class="screen-reader-text">“直接下载的CHM文件打开无法显示内容的解决办法”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>今天下载了个CHM文档，打开后一片空白，原以为下载的文件有问题，去下载页面重新时发现上面附有一个解决方案的链接，摘抄整理如下，以供参考。</p>
 <p>&nbsp;下载的CHM文档，在NTFS分区打开无法显示其内容，点开任何一个页面都是一片空白。解决办法：</p>
 <p>1、上传文件时将chm打包为rar、zip或7z等压缩文件格式</p>
 <p>2、修改直接下载后的CHM文件属性：鼠标右键菜单打开文件属性，你会发现下面有这样的安全提示：&ldquo;此文件来自其他计算机 可能被阻止以帮助保护该计算机&rdquo;，右边有个解除锁定的按钮，点击一下，再点确定按钮，再次打开这个CHM文档，就一切正常了。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/255.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/255.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>PXE网络启动PE维护工具：小小强Pe工具箱PXE版</title>
-		<link>http://www.biglee.cn/blog/2013/249.html</link>
-		<comments>http://www.biglee.cn/blog/2013/249.html#respond</comments>
+		<link>/blog/2013/249.html</link>
+		<comments>/blog/2013/249.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[PC技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[如果电脑出问题了，手上没光盘也没U盘，怎么办？ 现在大部分网卡都支持网络启动，在BIOS里开启网卡的网络启动， &#8230; <a href="http://www.biglee.cn/blog/2013/249.html" class="more-link">继续阅读<span class="screen-reader-text">“PXE网络启动PE维护工具：小小强Pe工具箱PXE版”</span></a>]]></description>
+		<description><![CDATA[如果电脑出问题了，手上没光盘也没U盘，怎么办？ 现在大部分网卡都支持网络启动，在BIOS里开启网卡的网络启动， &#8230; <a href="/blog/2013/249.html" class="more-link">继续阅读<span class="screen-reader-text">“PXE网络启动PE维护工具：小小强Pe工具箱PXE版”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>如果电脑出问题了，手上没光盘也没U盘，怎么办？</p>
 <p>现在大部分网卡都支持网络启动，在BIOS里开启网卡的网络启动，并设为第一启动项。然后就可以用PXE来启动PE进行维护操作了。</p>
 <p>自己折腾比较麻烦，有好多现成的可以使用，如：</p>
 <p>小小强Pe工具箱PXE版V4.0，度娘上找了好久没找到，最后在GG上找到下载地址：<a href="http://dl.dbank.com/c09nr3vubg">http://dl.dbank.com/c09nr3vubg</a></p>
 <p>&nbsp;测试了下，用自带的haneWINDHCP客户机无法启动，改用TFTPd32，根据使用说明设置引导文件，能启动。功能挺丰富的。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2013/249.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2013/249.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>VirtualBox 网络设置详解</title>
-		<link>http://www.biglee.cn/blog/2013/246.html</link>
-		<comments>http://www.biglee.cn/blog/2013/246.html#respond</comments>
+		<link>/blog/2013/246.html</link>
+		<comments>/blog/2013/246.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[PC技术]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[VirtualBox 有6种网络模式，下面将逐一讲解。 1、NAT〈网络地址转换模式〉 　　VirtualBo &#8230; <a href="http://www.biglee.cn/blog/2013/246.html" class="more-link">继续阅读<span class="screen-reader-text">“VirtualBox 网络设置详解”</span></a>]]></description>
+		<description><![CDATA[VirtualBox 有6种网络模式，下面将逐一讲解。 1、NAT〈网络地址转换模式〉 　　VirtualBo &#8230; <a href="/blog/2013/246.html" class="more-link">继续阅读<span class="screen-reader-text">“VirtualBox 网络设置详解”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>VirtualBox 有6种网络模式，下面将逐一讲解。</p>
 <p>1、NAT〈网络地址转换模式〉</p>
 <p>　　VirtualBox 中虚拟的主机（以下简称：虚拟主机）并不真实存在于网络中，宿主机和宿主机网络中的任何主机都不能直接访问虚拟主机，各虚拟主机也互不相通。虚拟主机能访 问宿主机，以及宿主机能访问的任何主机。虚拟主机访问网络是先通过 VirtualBox 转换后再发送出去的，数据接收也是先由 VirtualBox 接收后再转换转发到虚拟主机。</p>
@@ -596,7 +596,7 @@ ctrl+F12 在当前类文件里快速查找方法</p>
 <p>6、通用驱动</p>
 <p>　　这个不知道具体怎么用，有空再研究研究。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2013/246.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2013/246.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>

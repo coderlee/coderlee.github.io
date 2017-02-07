@@ -9,24 +9,24 @@
 
 <channel>
 	<title>文摘 &#8211; 网站建设技术集锦</title>
-	<atom:link href="http://www.biglee.cn/blog/category/digest/feed" rel="self" type="application/rss+xml" />
-	<link>http://www.biglee.cn</link>
+	<atom:link href="/blog/category/digest/feed" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>涉及网站建设、服务器维护等IT技术的博客</description>
-	<lastBuildDate>Sun, 11 Sep 2016 06:49:31 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 07 Feb 2017 02:46:28 +0000</lastBuildDate>
 	<language>zh-CN</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.6</generator>
 	<item>
 		<title>面试时，如何向公司提问？</title>
-		<link>http://www.biglee.cn/blog/2014/284.html</link>
-		<comments>http://www.biglee.cn/blog/2014/284.html#respond</comments>
+		<link>/blog/2014/284.html</link>
+		<comments>/blog/2014/284.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[文摘]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[&#160;原文：http://voltsteve.blogspot.com/2011/12/assessin &#8230; <a href="http://www.biglee.cn/blog/2014/284.html" class="more-link">继续阅读<span class="screen-reader-text">“面试时，如何向公司提问？”</span></a>]]></description>
+		<description><![CDATA[&#160;原文：http://voltsteve.blogspot.com/2011/12/assessin &#8230; <a href="/blog/2014/284.html" class="more-link">继续阅读<span class="screen-reader-text">“面试时，如何向公司提问？”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>&nbsp;原文：http://voltsteve.blogspot.com/2011/12/assessing-company-questions-you-need-to.html</p>
 <p>原作者：硅谷招聘经理Steve Buckley</p>
 <div>　　很多人将面试看作一种单向选择，事实上，面试是一种双向选择：不仅是公司挑选你，也是你挑选公司。面试就是为双方提供互相了解的机会，公司在评估你，你也在评估公司。</div>
@@ -79,19 +79,19 @@
 <div>相关法规规定工资是要在10号之前发上月的工资，有些单位会稍晚几天，但是只要按时发，不拖欠也还可以接受，经常拖欠的，说明公司财务状况不好，或者不重视员工权益。</div>
 <p>&nbsp;</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/284.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/284.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>俞敏洪：我让女儿主动学习的秘密</title>
-		<link>http://www.biglee.cn/blog/2011/186.html</link>
-		<comments>http://www.biglee.cn/blog/2011/186.html#respond</comments>
+		<link>/blog/2011/186.html</link>
+		<comments>/blog/2011/186.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[文摘]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　我之所以能够在这谈谈家庭教育的心得，确实是因为我接触的孩子太多了。从我在北大开始教书，一直到后来办新东方， &#8230; <a href="http://www.biglee.cn/blog/2011/186.html" class="more-link">继续阅读<span class="screen-reader-text">“俞敏洪：我让女儿主动学习的秘密”</span></a>]]></description>
+		<description><![CDATA[　　我之所以能够在这谈谈家庭教育的心得，确实是因为我接触的孩子太多了。从我在北大开始教书，一直到后来办新东方， &#8230; <a href="/blog/2011/186.html" class="more-link">继续阅读<span class="screen-reader-text">“俞敏洪：我让女儿主动学习的秘密”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　我之所以能够在这谈谈家庭教育的心得，确实是因为我接触的孩子太多了。从我在北大开始教书，一直到后来办新东方，到现在从新东方走出去的700多万学生。我看到过很多幸福的学生，也看到了很多被耽误的学生；看到了很多家长因为孩子的成功感到无比的幸福，也看到了很多家长因为孩子的不成功而痛不欲生；我看到很多贫困家庭最后因为孩子有出息而生活的满心幸福；我也看到很多亿万富翁的家庭，最后因为孩子问题父母甚至患上精神分裂症。好多父母都和我说，俞老师，我把我所有的钱都捐给你，只要你能把我的孩子变成正常的、幸福的孩子。我常常对他们说，现在你们说这个已经太晚了，因为孩子是从一出生开始到18岁就基本定型了，所有的事情都要在18岁以前做完。<br />
 　　<br />
 　　中国有句古话说：3岁看大，7岁看老。现在中国社会处于巨大的转型期中，从农业社会一下进入了商业社会。而现在的中国对商业道德和商业伦理本身的认识又不完整，中国人在商业社会里坑蒙拐骗的现象比比皆是。很多小企业都陷入这样一个慌乱中间，而在这样一个慌乱中我们应该怎样教育孩子？比如说我们教育孩子诚恳，但孩子诚恳后又在外面受别人欺负；我们教育孩子善良，结果我们发现善良的孩子得不到社会的认可。我们就会反思，是不是该教孩子投机取巧一点，是不是该教孩子更加凶悍一点。我们成人做的一些事情，有些时候会不知不觉给孩子展示了不好的东西，对孩子本身的价值观、世界观、人生观的形成带来重大影响。因此，我们教育孩子的方针出了问题。<br />
@@ -125,19 +125,19 @@
 <p>　　变成了美国最有名的股票经纪人，实现了亿万富翁的梦想。</p>
 <p>　　这个电影是根据真人真事改编的，在影片的最后，这个人用了半个小时的时间讲述他自己的故事。他启发我们每一个人，真正的幸福不是别人送来的，而是自己努力争取来的。而现在的家长对孩子是十分娇惯的，孩子要什么就给什么。比如孩子看上一个玩具，家长不买他就不走，最后家长没办法只能给买了。于是孩子就有了这样的心理，只要他坚持家长就会让步。我在给</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2011/186.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2011/186.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>俞敏洪：度过生命的意义</title>
-		<link>http://www.biglee.cn/blog/2010/181.html</link>
-		<comments>http://www.biglee.cn/blog/2010/181.html#respond</comments>
+		<link>/blog/2010/181.html</link>
+		<comments>/blog/2010/181.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[文摘]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[同济大学的同学们大家晚上好： 　　其实人活着就挺好，至于生命有没有意义另当别论。活着每天都会有太阳升起来，每天 &#8230; <a href="http://www.biglee.cn/blog/2010/181.html" class="more-link">继续阅读<span class="screen-reader-text">“俞敏洪：度过生命的意义”</span></a>]]></description>
+		<description><![CDATA[同济大学的同学们大家晚上好： 　　其实人活着就挺好，至于生命有没有意义另当别论。活着每天都会有太阳升起来，每天 &#8230; <a href="/blog/2010/181.html" class="more-link">继续阅读<span class="screen-reader-text">“俞敏洪：度过生命的意义”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>同济大学的同学们大家晚上好：<br />
 　　其实人活着就挺好，至于生命有没有意义另当别论。活着每天都会有太阳升起来，每天都会看到太阳落下去。你就可以看到朝霞，看到晚霞，看到月亮升起和落下，看到满天的繁星，这就是活着的最美好的意义所在。<br />
 　　没想到同济大学的同学们把我如此“高大”的形象放在大屏幕上，这就是理想与现实的差距。所以我相信同学们看到我的第一眼一定感到非常的失望。实际上，每一个人都是非常普通的，我们很多时候会发现生命中非常重要的东西跟我们未来的幸福和成功其实没有太多的联系。比如，有人认为，相貌跟未来的成功会有很多的联系；有人认为，自己的家庭背景会跟成功有必然的联；有人认为，上名牌大学的人会成功，在大学里成绩好的人比学习成绩差的人更加容易取得成功……所有这些因素可能有部分是对的，但大部分基本无效，比如说相貌。<br />
@@ -164,56 +164,56 @@
 　　大家都知道，只要你不断的超越地平线一定会有很多的风景在你眼前展示出来。这跟你有没有钱没关系。而我曾怀揣100元人民币，走到了泰山，走到了黄山，走到了九华山，走到了庐山。我一边走一边帮人家干活，走到九华山发现没钱了，就睡到一个农民家里。那个农民在江边给我弄了个床，还找我要钱，而我口袋里只有5块钱。于是，我就说帮他一起插秧来抵消住宿费。他左看右看说，大学生怎么会插秧呢？结果插了一天我插了四分之三，而他只插了四分之一，把他感动的半死不活。他说，你怎么会插的那么快呢？我说，我14岁那年就获得过我们县的插秧冠军。然后，他晚上杀了一只鸡要我一起喝酒。他越聊越觉得我不像大学生更像农民。第二天我走的时候，他居然掏了10块钱给我说，我知道你口袋里没钱了，明天还要去庐山，这点钱就给你当路费。<br />
 　　生命是有各种活法的，但是哪怕你坐到书斋中间，一辈子也要让自己的生命变的伟大。陈景润一</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2010/181.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2010/181.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>素食如何防癌</title>
-		<link>http://www.biglee.cn/blog/2009/164.html</link>
-		<comments>http://www.biglee.cn/blog/2009/164.html#respond</comments>
+		<link>/blog/2009/164.html</link>
+		<comments>/blog/2009/164.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[文摘]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　美国德州大学安德森医院的约翰逊博士经过多年研究，发现了一个事实，凡是平日摄取大量钾的地区，人们患癌者总是偏 &#8230; <a href="http://www.biglee.cn/blog/2009/164.html" class="more-link">继续阅读<span class="screen-reader-text">“素食如何防癌”</span></a>]]></description>
+		<description><![CDATA[　　美国德州大学安德森医院的约翰逊博士经过多年研究，发现了一个事实，凡是平日摄取大量钾的地区，人们患癌者总是偏 &#8230; <a href="/blog/2009/164.html" class="more-link">继续阅读<span class="screen-reader-text">“素食如何防癌”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　美国德州大学安德森医院的约翰逊博士经过多年研究，发现了一个事实，凡是平日摄取大量钾的地区，人们患癌者总是偏低。原来人体细胞里，钾的含量时常是钠的十倍，细胞在分裂之时，钾含量下降而钠含量上升。癌细胞也不例外，每次细胞受伤时，钾由细胞之中漏出来，癌细胞即开始繁殖。人若有办法提高体内细胞的钾含量，生癌的机会则减少。相反，老年人体内的钾特别容易由细胞膜漏出来，所以患癌的机会随年龄而增加。医学研究进一步发现，如果在有些癌细胞的培养液中加进了钾，它会突然变成正常细胞。由此证明，钾和钠的比例是癌细胞形成的关键，近年食疗防癌的秘诀，正是根据这个原理，多钾少盐。食盐和味精都含有大量的钠，而蔬菜与豆类则含有大量的钾，所以多吃蔬果豆类少吃盐和味精，是防止癌症、血压高、糖尿病的重要举措。</p>
 <p>　　含钾高的食物有：全谷类（小米、大米）、小麦肧芽（小麦粉）、奶类、部分海鱼（如沙丁鱼）、豆类（红豆、绿豆、黄豆、黑豆、蚕豆）、蔬菜类（土豆和尤其是深色蔬菜，如甘蓝、菠菜、花椰菜、番茄、紫菜、海带、胡萝卜、香菇）、水果类（香蕉、哈密瓜、柿子、橘子、木瓜、龙眼、香瓜、大枣、橙子、芒果、葡萄）果壳类（花生、瓜子、核桃、榛子、腰果、松子、栗子）等。 </p>
 <p>　　现代医学研究证明，对人类健康威胁最大的高血压、糖尿病、心脑血管疾病、肿瘤等，都与体液的酸化有关。因此只有严格控制酸性食物的摄入，从源头上堵住促成酸性体质的条件，并且改掉生活中的不良恶习，养成健康的饮食习惯，这才是远离酸性体质达到人体酸碱平衡的有效途径，才是保证人体健康重要保证。而肉类是属于伤害人体严重的酸性食物，应尽量避免。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2009/164.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2009/164.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>有关学习的15个习惯</title>
-		<link>http://www.biglee.cn/blog/2009/160.html</link>
-		<comments>http://www.biglee.cn/blog/2009/160.html#comments</comments>
+		<link>/blog/2009/160.html</link>
+		<comments>/blog/2009/160.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[文摘]]></category>
 
 		<guid isPermaLink="false"></guid>
 		<description><![CDATA[]]></description>
-				<content:encoded><![CDATA[<p>&#34;真正的发现的航程，并非是在寻找新的土地,而且用新的视界去寻找&#34;&#8211;普鲁斯特 </p>
-<p>&#34;智慧日进者方值得尊敬。&#34;-林肯 </p>
-<p>&#34;我从不让我在学校所学的干扰我的教育&#34;-马克吐温 </p>
+				<content:encoded><![CDATA[<p>&#8220;真正的发现的航程，并非是在寻找新的土地,而且用新的视界去寻找&#8221;&#8211;普鲁斯特 </p>
+<p>&#8220;智慧日进者方值得尊敬。&#8221;-林肯 </p>
+<p>&#8220;我从不让我在学校所学的干扰我的教育&#8221;-马克吐温 </p>
 <p>　　如果公立学校尚未摧残你的灵魂，那么学习是一项极佳的活动。它扩大了你的观点。它给予你用来改善生活的新知识,。即使你对世俗的利益不满足,但是学习也可以是一种乐趣的来源。但在忙碌的世界里, 我们总是很难有合适的时间去学习那些并非必需的知识。唯一学到的东西,就是那些必须要学的。而其他的一切,被认为是无聊的。即使是那些欣赏终身学习实践的人,也很难做出成绩。 </p>
 <p>这里有一些让你养成终身学习习惯的小提示: </p>
 <p>1)总带一本书<br />
 无论你花一年或者一周去读一本书，这都无所谓。随身带着它，当你有时间的时候就努力去阅读,通读。每天只需花挤出来的几分钟，一周就能读一本。那么一年至少就能读50本。 </p>
-<p>2)建一个&#34;要学习什么&#34;的名单<br />
-我们都有需要做的事情的清单。这些就是我们需要完成的任务。努力建立一个&#34;要学习什么&#34;的清单。你可以把想要学习新领域的思路写在上面。或许你想掌握一门新语言,学习新技能,或者读莎士比亚全集。无论是什么激励你的,都要把它写下来。 </p>
+<p>2)建一个&#8221;要学习什么&#8221;的名单<br />
+我们都有需要做的事情的清单。这些就是我们需要完成的任务。努力建立一个&#8221;要学习什么&#8221;的清单。你可以把想要学习新领域的思路写在上面。或许你想掌握一门新语言,学习新技能,或者读莎士比亚全集。无论是什么激励你的,都要把它写下来。 </p>
 <p>3)寻找更多明智的朋友<br />
 开始花更多的时间与那些善于思考的人在一起。并不仅因为他们聪明,而且是因为他们投入了很多时间学习新的技能。他们的好习惯也会在你的身上摩擦出火花。甚至更好的,他们可能会与你分享他的知识。 </p>
 <p>4)指导自己的思想<br />
-爱因斯坦曾经说过:&#34;任何读多思少的人都会养成懒惰思维的习惯&#34;。只是简单的学习别人的东西，这样的智慧是不够的,你要在此之上建立自己的想法。多花点时间写日记,把你对这些学到的知识的思考和想法记录下来。 </p>
+爱因斯坦曾经说过:&#8221;任何读多思少的人都会养成懒惰思维的习惯&#8221;。只是简单的学习别人的东西，这样的智慧是不够的,你要在此之上建立自己的想法。多花点时间写日记,把你对这些学到的知识的思考和想法记录下来。 </p>
 <p>5)付诸实践<br />
 如果不使用,学来的技能也是无用的。读一本C++的书,和写一个相同的程序,是完全不同的两码事。学画画可不是简单的拿起画笔。如果你的知识能被应用,那就付诸实践吧。 </p>
 <p>6)教导别人<br />
 寓学于教。如果你能把知识教给别人,你也可以巩固学习。建立一个博客,开导别人或者与朋友们讨论想法。 </p>
-<p>7)整理你的博客订?br />
+<p>7)整理你的博客订�<br />
 有些形式的学习很容易消化,但往往缺乏实质内容。我就经常定期清理我订阅的博客。伟大的博客就是一个新思路的巨大源泉。但每隔几个月,我就意识到我总是收到那些我不关注的博客的信息。每隔几个月,清理你们的订阅,就可以节省时间,注意重点. </p>
-<p>8 )在群体中学?br />
+<p>8 )在群体中学�<br />
 终身学习并不意味着让自己陷于一堆落满灰尘的课本。加入教授技能的组织。这种群体学习和小组学习活动,都可以培养自己的乐趣和社会经验。 </p>
 <p>9)将假设忘掉 【把你脑中先入为主的观念忘掉】<br />
 杯子满了就不能再往里面倒水了。所以我总是尽量与任何想法保持距离。学到了太多的信念，就意味着太少产生新想法的机会。积极寻找那些能改变你的世界观的想法。 </p>
@@ -230,19 +230,19 @@
 <p>15)把它作为首要任务<br />
 很少有外部力量能说服你去学习。渴望应该来自内部。一旦你决定把终身学习作为一种习惯,你就应该把它作为你生命里的首要任务。 </p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2009/160.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2009/160.html/feed</wfw:commentRss>
 		<slash:comments>1</slash:comments>
 		</item>
 		<item>
 		<title>为人处世的经验？仅供参考！</title>
-		<link>http://www.biglee.cn/blog/2008/122.html</link>
-		<comments>http://www.biglee.cn/blog/2008/122.html#respond</comments>
+		<link>/blog/2008/122.html</link>
+		<comments>/blog/2008/122.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[文摘]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[1. 人之所以痛苦，在于追求错误的东西。 2. 如果你不给自己烦恼，别人也永远不可能给你烦恼。因为你自己的内心 &#8230; <a href="http://www.biglee.cn/blog/2008/122.html" class="more-link">继续阅读<span class="screen-reader-text">“为人处世的经验？仅供参考！”</span></a>]]></description>
+		<description><![CDATA[1. 人之所以痛苦，在于追求错误的东西。 2. 如果你不给自己烦恼，别人也永远不可能给你烦恼。因为你自己的内心 &#8230; <a href="/blog/2008/122.html" class="more-link">继续阅读<span class="screen-reader-text">“为人处世的经验？仅供参考！”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>1. 人之所以痛苦，在于追求错误的东西。<br />
 2. 如果你不给自己烦恼，别人也永远不可能给你烦恼。因为你自己的内心，你放不下。<br />
 3. 你永远要感谢给你逆境的众生。<br />
@@ -310,19 +310,19 @@
 65. 世界原本就不是属于你，因此你用不着抛弃，要抛弃的是一切的执著。万物皆为我所用，但非我所属。<br />
 66. 虽然我们不能改变周遭的世界，我们就只好改变自己，用慈悲心和智慧心来面对这一切。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2008/122.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2008/122.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>你在忙什么？</title>
-		<link>http://www.biglee.cn/blog/2007/114.html</link>
-		<comments>http://www.biglee.cn/blog/2007/114.html#respond</comments>
+		<link>/blog/2007/114.html</link>
+		<comments>/blog/2007/114.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[文摘]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[第一阶段：忙 　　“你平时工作忙吗？” 　　99%的人都会条件反射般回答：“忙！” 　　再接着问：“忙什么？” &#8230; <a href="http://www.biglee.cn/blog/2007/114.html" class="more-link">继续阅读<span class="screen-reader-text">“你在忙什么？”</span></a>]]></description>
+		<description><![CDATA[第一阶段：忙 　　“你平时工作忙吗？” 　　99%的人都会条件反射般回答：“忙！” 　　再接着问：“忙什么？” &#8230; <a href="/blog/2007/114.html" class="more-link">继续阅读<span class="screen-reader-text">“你在忙什么？”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>第一阶段：忙</p>
 <p>　　“你平时工作忙吗？”</p>
 <p>　　99%的人都会条件反射般回答：“忙！”</p>
@@ -343,22 +343,22 @@
 <p>　　为什么？为什么会感觉到美好呢？自认为在弄清楚自己想成为一个什么样的人（人生目标）后，一切都变的简单，我做的所有所有的一切都只是为了做自己想成为的那个人。明确的知道自己在忙什么 ；为何而忙？如何而忙？  其次就是心态非常重要，你会发现积极的心态，学习的心态，进步的心态是串联在一起的。而消极的心态，抱怨的心态，不知进取的心态也是串联在一起的。你愿意选择那种呢？其选择不言自明。所以在此希望我的朋友们也能从这篇文章中感悟点东西，知道自己想成为什么样的人，知道自己在忙什么，知道为何而忙，如何忙？</p>
 <p>　　我曾在《如何做一名合格的销售总监》文中写到：“不是自己去做事情，而是组织大家去做事情”，一路走来接触过的很多职业经理人，管理者甚至老板都还是习惯自己去做事情，不放心员工去做事情。导致自己一个人很忙很忙，员工很闲很闲。企业一方面做不大，员工也一方面因为得不到发展而纷纷要离开！这个问题大约在很多企业公司或团队中比较普遍。延伸来讲，作为一个职业经理人，作为一个团队的领导者更应该知道那个位置上应该忙的是什么？下次再细讨，希望得到点评与交流！</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/114.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/114.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>[经典]要如此爱国（转台湾忠信中学校长演讲）</title>
-		<link>http://www.biglee.cn/blog/2007/86.html</link>
-		<comments>http://www.biglee.cn/blog/2007/86.html#respond</comments>
+		<link>/blog/2007/86.html</link>
+		<comments>/blog/2007/86.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[文摘]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[现在的国人大都变得越来越自私自利，遇事推卸责任，很大一部分原因是教育的问题。转摘一演讲，让各位看看： 台湾一校 &#8230; <a href="http://www.biglee.cn/blog/2007/86.html" class="more-link">继续阅读<span class="screen-reader-text">“[经典]要如此爱国（转台湾忠信中学校长演讲）”</span></a>]]></description>
+		<description><![CDATA[现在的国人大都变得越来越自私自利，遇事推卸责任，很大一部分原因是教育的问题。转摘一演讲，让各位看看： 台湾一校 &#8230; <a href="/blog/2007/86.html" class="more-link">继续阅读<span class="screen-reader-text">“[经典]要如此爱国（转台湾忠信中学校长演讲）”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>现在的国人大都变得越来越自私自利，遇事推卸责任，很大一部分原因是教育的问题。转摘一演讲，让各位看看：</p>
 <p>台湾一校长震动所有中国人的演讲</p>
-<p>台湾有这么一所学校，学生年龄在15－18之间，每年三千多学生中，因违反校规校纪被校方开除的二、三百人。学校没有工人，没有保卫，没有大师傅，一切必要工种都由学生自己去做。学校实行学长制，三年级学生带一年级学生。全校集合只需3分钟。学生见到老师七米外要敬礼。学生没有寒署假作业，没有一个考不上大学的。这就是台湾享誉30年以道德教育为本的忠信高级工商学校。在台湾各大报纸招聘广告上，经常出现&#34;只招忠信毕业生”字样。<br />
+<p>台湾有这么一所学校，学生年龄在15－18之间，每年三千多学生中，因违反校规校纪被校方开除的二、三百人。学校没有工人，没有保卫，没有大师傅，一切必要工种都由学生自己去做。学校实行学长制，三年级学生带一年级学生。全校集合只需3分钟。学生见到老师七米外要敬礼。学生没有寒署假作业，没有一个考不上大学的。这就是台湾享誉30年以道德教育为本的忠信高级工商学校。在台湾各大报纸招聘广告上，经常出现&#8221;只招忠信毕业生”字样。<br />
     以下是校长高震东在国内的讲演： </p>
 <p>    同学们，你们说“天下兴亡”的下一句是什么？（台下声音：“匹夫有责”）──不，是“我的责任”。如果今年高考每个人都额外加10分，那不等于没加吗？“天下兴亡，匹夫有责”等于大家无责。“匹夫有责”要改成“我的责任”，我是这样教我的学生的。所以说，现在我们大陆教育办得不好，是我高震东的责任，只因为这样，我才回祖国专门举办道德方面演讲。（掌声）“以天下兴亡为已任”是孟子思想。 禹是人，舜是人，我也是人！他们能做到的，我为什么不能呢？ “天下兴亡，我的责任”，唯有这个思想，我们的国家才有希望。我们每个学生如果人人都说：学校秩序不好，是我的责任；国家教育办不好，是我的责任；国家不强盛，我的责任……人人都能主动负责，天下哪有不兴盛的国家？哪有不团结的团体？所以说，每个学生都应该把责任拉到自己身上来，而不是推出去。我在台湾办学校就是这样，如果教室很脏，我问“怎么回事？”假如有个学生站起来说：“报告老师，今天是32号同学值日，他没打扫卫生”。那样，这个学生是要挨揍的。在我的学校，学生会这样说：“老师，对不起，这是我的责任”，然后马上去打扫。灯泡坏了，哪个学生看见了，自己就会掏钱去买个安上，窗户玻璃坏了，学生自己马上买一块换上它──这才是教育，不把责任推出去，而是揽过来。也许有些人说这是吃亏，我告诉你，吃亏就是占便宜，这种教育要牢牢记在心里，我们每个中国人都要记住！<br />
     学校更应该训练学生这种“天下兴亡，我的责任”的思想。校园不干净，就应该是大家的责任。你想，这么大的一个校园，你不破坏，我不破坏，它会脏吗？脏了之后，人人都去弄干净，它会脏吗？你只指望几个工人做这个工作，说：“这是他们的事。我是来读书的，不是扫地的。”──这是什么观念？你读书干什么？读书不是为国家服务吗？眼前的务你都不服，你还能为未来服务？当前的责任你都不负，未来的责任你能负吗？水龙头漏水，你不能堵住吗？有人会说：“那不是我的事，那是总务处的事。”这是错误的。一般人最坏的毛病是这样：打开水龙头后，发现没水，又去开第二个，第二个也没有，又去开第三个 ──这样的学生，在我学校是要被开除的！连举一反三都不懂，第一个没水，第二个会有吗？你就没想到水会来吗？人无远虑怎么能行？作为一个干部，作为一个人，都要想到后果，后果看得越远的人，越是一个成功的人。一个只管眼前，不顾将来的人，不是一个好干部，不是一个有用的人。水管不关，来了水后让它哗哗哗满池子去流，仍不去关注：“反正是国家的水，不是我的自己的！”──浪费国家的，就是“汉奸”！你为什么浪费国家的水？你为什么浪费国家的资源？我每天洗脸都为国家省一盆水，一年省多少水，你算算，你们学校六千多学生，每个每天节省一盆水，一年省多少水？省水就是省电，就是节省国家资源。爱国可有两种，一种是积极爱国，一种是消极爱国。积极爱国是为国家创造财富，消极爱国是为国家节省财富。国家用那么多百姓的民脂民膏来供你读书，你还浪费国家的财富，你良心何在？你上大学都如此，怎么能期望于中学生、小学生呢？怎么能期望于一般老百姓呢？你高级知识分子都不爱国，怎么能让老百姓去爱国呢？从自己身边做起，我们国家才有希望──这就是“天下兴亡，我的责任”积极负责的道德观念，这就是道德教育。<br />
@@ -371,19 +371,19 @@
     我看是我们需要这座房子。这座房子就是我们的国家，再破再烂是我们的家，再穷再破，是我们的家，我们要爱她！（掌声）你怎么可以羡慕外国人呢？“唉呀，你看外国人多好！我不当中国人，我想当外国人！”那是不对的。我们国家不如别人，我们承认，但是我们有决心，我们会慢慢把它搞好，但我们一定要牺牲自己，有热爱国家的观念。<br />
     人人在砍国家、吃国家、拿国家，这个国家怎么会好呢？人人都贪污、腐败，这国家会好吗？外国有个加拿大！中国有个“大家拿”，再大的国家也会被你拿穷了。（掌声）我走到哪里，绝对拒绝招待。我走到哪里吃自己，用自己，坐你的汽车给车钱，住你的旅馆给你旅馆钱，吃你的饭给饭钱，绝对不沾国家一毛钱。我就是要做个示范给你看！（掌声）什么叫爱国，是我们把东西把钱把命给国家，这叫爱国，你总是把国家的东西往家拿，这叫什么爱国？有些人偷国家、拿国家，还拿得津津有味，拿得大言不惭，拿得毫不要脸，这怎么得了？（掌声） 有人说：老师，你让我爱国，我可以爱国，不过，国家在哪里？我找不着！“不识庐山真面目，只缘身在此山中。”你在国家里头，不知国家在哪。当老师的，国家就是你面前的学生。你往讲台上一站，下边的学生就是你的国家，找国家太容易了。今天我往这儿一站，下面1500人就是我的国家，我必须对你们尽心尽责，就要产生教化作用，影响作用，你就是我的国家，我爱你，就是我爱国，把我的思想传播给你，就是爱国！（掌声）那你以后往你的学生面前一站，那就是你的国家。你不能浪费他的时间，他的生命，你要好好为国家培养下一代，你给他这种爱国思想，你就是一个爱国者，不给他，你就是不爱国，你就是叛国者！（掌声）同学们，将来你也有留学的机会，你要注意到，不要让自己丢了中国人</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/86.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/86.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>八尾猫</title>
-		<link>http://www.biglee.cn/blog/2007/79.html</link>
-		<comments>http://www.biglee.cn/blog/2007/79.html#respond</comments>
+		<link>/blog/2007/79.html</link>
+		<comments>/blog/2007/79.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[文摘]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　“在古埃及的神话中，猫扮演着很重要的角色。据说在很久以前，猫统治着人类，它们狡诈，残忍而非常聪明。它们把人 &#8230; <a href="http://www.biglee.cn/blog/2007/79.html" class="more-link">继续阅读<span class="screen-reader-text">“八尾猫”</span></a>]]></description>
+		<description><![CDATA[　　“在古埃及的神话中，猫扮演着很重要的角色。据说在很久以前，猫统治着人类，它们狡诈，残忍而非常聪明。它们把人 &#8230; <a href="/blog/2007/79.html" class="more-link">继续阅读<span class="screen-reader-text">“八尾猫”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　“在古埃及的神话中，猫扮演着很重要的角色。据说在很久以前，猫统治着人类，它们狡诈，残忍而非常聪明。它们把人类当成奴隶驱使。知道最后狗的出现，他们赶走了猫，并让猫从统治者变成了人类的宠物。于是狗被埃及人当成了生活中最重要的朋友。而且埃及人深信猫会带来死亡。”朋友喝着茶，缓缓道来。<br />
 　　“只有埃及的神话涉及到猫么？”我四下望了望，那可爱的小猫又出去鬼混了。<br />
 　　“当然不，我今天讲的就是一只东方猫的故事。”朋友笑着叙说。<br />
@@ -435,19 +435,19 @@
 　　“当然，如果别人说我可能不会相信，但你说的再离奇我也是确信的。”我坚定地说。<br />
 　　“那就好，人生得一知己死而无憾，有你相信就够了。”朋友笑着拍拍我肩膀，示意我早点休息。我知道今晚的故事结束了。当朋友出去后。房间又恢复我一个人的寂静。这时，朋友那只猫又从外面回来了。我看着这只可爱的猫咪，心想，它会不会就是那只八尾呢。如果谁有缘看到八尾猫的话，记住一定要向它提让它有九条尾巴的愿望，因为徘徊在人世的他们是很孤单寂寞的。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/79.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/79.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>高效程序员应该养成的七个习惯</title>
-		<link>http://www.biglee.cn/blog/2007/78.html</link>
-		<comments>http://www.biglee.cn/blog/2007/78.html#respond</comments>
+		<link>/blog/2007/78.html</link>
+		<comments>/blog/2007/78.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[文摘]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[高效程序员应该养成的七个习惯 2006.02.05 来自：zeali　 对于软件工程师来说，工作也许意味着许多 &#8230; <a href="http://www.biglee.cn/blog/2007/78.html" class="more-link">继续阅读<span class="screen-reader-text">“高效程序员应该养成的七个习惯”</span></a>]]></description>
+		<description><![CDATA[高效程序员应该养成的七个习惯 2006.02.05 来自：zeali　 对于软件工程师来说，工作也许意味着许多 &#8230; <a href="/blog/2007/78.html" class="more-link">继续阅读<span class="screen-reader-text">“高效程序员应该养成的七个习惯”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>高效程序员应该养成的七个习惯<br />
 2006.02.05  来自：zeali　   </p>
 <p>对于软件工程师来说，工作也许意味着许多东西 &#8212; 稳定的收入、做自己感兴趣的项目、找一份更好工作的跳板，或者你只是喜欢与其他程序员共事。但说到“效率”，强调的是在一定时间内按质完成项目的能力。</p>
@@ -470,7 +470,7 @@
 <p>R-E-S-P-E-C-T<br />
 互相尊重是一切的基础。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/78.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/78.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>

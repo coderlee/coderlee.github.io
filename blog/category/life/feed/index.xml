@@ -9,41 +9,41 @@
 
 <channel>
 	<title>网络生活 &#8211; 网站建设技术集锦</title>
-	<atom:link href="http://www.biglee.cn/blog/category/life/feed" rel="self" type="application/rss+xml" />
-	<link>http://www.biglee.cn</link>
+	<atom:link href="/blog/category/life/feed" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>涉及网站建设、服务器维护等IT技术的博客</description>
-	<lastBuildDate>Sun, 11 Sep 2016 06:49:31 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 07 Feb 2017 02:46:28 +0000</lastBuildDate>
 	<language>zh-CN</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.6</generator>
 	<item>
 		<title>微信大文件的清理</title>
-		<link>http://www.biglee.cn/blog/2016/305.html</link>
-		<comments>http://www.biglee.cn/blog/2016/305.html#respond</comments>
+		<link>/blog/2016/305.html</link>
+		<comments>/blog/2016/305.html#respond</comments>
 		<pubDate>Mon, 04 Jan 2016 07:23:33 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络生活]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　 最近手机可用空间越来越小了，新软件都没办法安装。前几天都是用手机自带的垃圾清理软件清理一些缓存之类的才能 &#8230; <a href="http://www.biglee.cn/blog/2016/305.html" class="more-link">继续阅读<span class="screen-reader-text">“微信大文件的清理”</span></a>]]></description>
+		<description><![CDATA[　　 最近手机可用空间越来越小了，新软件都没办法安装。前几天都是用手机自带的垃圾清理软件清理一些缓存之类的才能 &#8230; <a href="/blog/2016/305.html" class="more-link">继续阅读<span class="screen-reader-text">“微信大文件的清理”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　 最近手机可用空间越来越小了，新软件都没办法安装。前几天都是用手机自带的垃圾清理软件清理一些缓存之类的才能安装新软件，老是这样，太麻烦了。</p>
 <p>　　今天决定动手解决这个问题。用软件分析过文件占用后发现微信APP的文件夹里有几个文件异常的大，其中85f22adb&#8230;(很长就不抄完了)/sfs文件夹下有一个文件名叫sns.block.00001，大小达到1.3G。不知道这文件是干什么用的，删除怕聊天记录也没了，上网搜索了下，也没有人能说出个所以然。看这文件名，带有sns，我猜测与朋友圈有关系，于是退出微信，先重命名备份这个文件，然后再打开微信，发现聊天记录正常，没丢，通讯录也正常。再进入sfs文件夹，发现微信已经新建了一个文件sns.block.00000，为了验证我的想法，我刷了下朋友圈，再去看这个文件，发现变大了一些，再往下拉，加载更多的朋友圈内容，每加载一些内容，这个文件就会变大，观看朋友圈视频后也一样会增加此文件大小。由此可见此文件是保存朋友圈信息用的。</p>
 <p>　　总结：类似sns.block.00000，sns.block.00001这样的文件是保存朋友圈信息用的，以便回看历史信息能快速加载，少耗费流量。所以可以大胆放心地删除，最多是查看近日朋友圈内容的时候再下载一次而已。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2016/305.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2016/305.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>IT 圈里有哪些经常被读错的词？</title>
-		<link>http://www.biglee.cn/blog/2011/196.html</link>
-		<comments>http://www.biglee.cn/blog/2011/196.html#respond</comments>
+		<link>/blog/2011/196.html</link>
+		<comments>/blog/2011/196.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络生活]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[===总结版=== *感谢各位朋友在评论中的指正。本贴旨在纠正各种明显的发音错误。如@梁海，@依云，@汤海所说 &#8230; <a href="http://www.biglee.cn/blog/2011/196.html" class="more-link">继续阅读<span class="screen-reader-text">“IT 圈里有哪些经常被读错的词？”</span></a>]]></description>
+		<description><![CDATA[===总结版=== *感谢各位朋友在评论中的指正。本贴旨在纠正各种明显的发音错误。如@梁海，@依云，@汤海所说 &#8230; <a href="/blog/2011/196.html" class="more-link">继续阅读<span class="screen-reader-text">“IT 圈里有哪些经常被读错的词？”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>===总结版===<br />
 *感谢各位朋友在评论中的指正。本贴旨在纠正各种明显的发音错误。如@梁海，@依云，@汤海所说，拿中文近似肯定会存在误差——对于这些误差，请直接参考音标或者真人发音。</p>
 <p>()标相应英文单词<br />
@@ -84,19 +84,19 @@ JSON (jason) 念 zhei森<br />
 Processing [ˈprəʊsesɪŋ] 重音在Pro上<br />
 avatar [ˌævə&#39;tɑr] 念 艾瓦塌儿</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2011/196.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2011/196.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>重回图书馆</title>
-		<link>http://www.biglee.cn/blog/2008/133.html</link>
-		<comments>http://www.biglee.cn/blog/2008/133.html#comments</comments>
+		<link>/blog/2008/133.html</link>
+		<comments>/blog/2008/133.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络生活]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　很早就想办一张温州图书馆的读者证。由于各种原因，一拖再拖，拖到现在。 　　前几天和QQ上一朋友聊到图书馆， &#8230; <a href="http://www.biglee.cn/blog/2008/133.html" class="more-link">继续阅读<span class="screen-reader-text">“重回图书馆”</span></a>]]></description>
+		<description><![CDATA[　　很早就想办一张温州图书馆的读者证。由于各种原因，一拖再拖，拖到现在。 　　前几天和QQ上一朋友聊到图书馆， &#8230; <a href="/blog/2008/133.html" class="more-link">继续阅读<span class="screen-reader-text">“重回图书馆”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　很早就想办一张温州图书馆的读者证。由于各种原因，一拖再拖，拖到现在。<br />
 　　前几天和QQ上一朋友聊到图书馆，而且，现在住的地方离图书馆很近，于是，办证事件又提上了我的日常议程。<br />
 　　前天，去温图网站下载申请单，了解办证要求，填写好表单。今天早上一早就带着证件直奔图书馆。到了那，发现已经有几个人在排除办理办证年审等事项。一切顺利，半小时不到就拿到了我期盼已久的读者证。<br />
@@ -104,19 +104,19 @@ avatar [ˌævə&#39;tɑr] 念 艾瓦塌儿</p>
 　　自从出校后，已经没去过图书馆了，今天重回图书馆，感觉真好。<br />
 　　以后我会继续发扬在学校里泡图书馆的精神，好好学习，天天向上。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2008/133.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2008/133.html/feed</wfw:commentRss>
 		<slash:comments>2</slash:comments>
 		</item>
 		<item>
 		<title>警惕：白领最短命的十种生活方式！</title>
-		<link>http://www.biglee.cn/blog/2007/117.html</link>
-		<comments>http://www.biglee.cn/blog/2007/117.html#respond</comments>
+		<link>/blog/2007/117.html</link>
+		<comments>/blog/2007/117.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络生活]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　“忙忙忙，忙到白了头”。忙碌的白领阶层在“金钱”与“健康”的物物交换中，损失掉的是什么呢？他们究竟选择什么 &#8230; <a href="http://www.biglee.cn/blog/2007/117.html" class="more-link">继续阅读<span class="screen-reader-text">“警惕：白领最短命的十种生活方式！”</span></a>]]></description>
+		<description><![CDATA[　　“忙忙忙，忙到白了头”。忙碌的白领阶层在“金钱”与“健康”的物物交换中，损失掉的是什么呢？他们究竟选择什么 &#8230; <a href="/blog/2007/117.html" class="more-link">继续阅读<span class="screen-reader-text">“警惕：白领最短命的十种生活方式！”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　“忙忙忙，忙到白了头”。忙碌的白领阶层在“金钱”与“健康”的物物交换中，损失掉的是什么呢？他们究竟选择什么样的方式来对抗忙碌的工作和生活？</p>
 <p>　　危险方式1：极度缺乏体育锻炼。在932名被调查者中，只有96人每周都固定时间锻炼，68%的人选择了“几乎不锻炼”。这极易造成疲劳、昏眩等现象，引发肥胖和心脑血管疾病。</p>
 <p>    危险方式2：有病不求医。调查显示，将近一半的人在有病时自己买药解决，有三分之一的人则根本不理会任何表面的“小毛病”。许多上班一族的疾病被拖延，错过了最佳的治疗时间，一些疾病被药物表面缓解作用掩盖而积累成大病。</p>
@@ -129,19 +129,19 @@ avatar [ˌævə&#39;tɑr] 念 艾瓦塌儿</p>
 <p>    危险方式9：面对电脑过久。31%的人经常每天使用电脑超过8小时。过度使用和依赖电脑，除了辐射外，还使眼病、腰颈椎病、精神性疾病在办公室群体中十分普遍。</p>
 <p>    危险方式10：三餐饮食无规律。有超过1/3的人不能保证按时进食三餐，确保三餐定时定量的人不满半数。有病不能乱吃药，该吃什么药；怎么吃；应注意什么？直接关系到您的病情和健康。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/117.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/117.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>[转帖]天冷了，您有不穿的旧衣吗？</title>
-		<link>http://www.biglee.cn/blog/2007/116.html</link>
-		<comments>http://www.biglee.cn/blog/2007/116.html#respond</comments>
+		<link>/blog/2007/116.html</link>
+		<comments>/blog/2007/116.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络生活]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[[img]http://album.sina.com.cn/pic_3/499ed18943f549af95f &#8230; <a href="http://www.biglee.cn/blog/2007/116.html" class="more-link">继续阅读<span class="screen-reader-text">“[转帖]天冷了，您有不穿的旧衣吗？”</span></a>]]></description>
+		<description><![CDATA[[img]http://album.sina.com.cn/pic_3/499ed18943f549af95f &#8230; <a href="/blog/2007/116.html" class="more-link">继续阅读<span class="screen-reader-text">“[转帖]天冷了，您有不穿的旧衣吗？”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>[img]http://album.sina.com.cn/pic_3/499ed18943f549af95f3e[/img]</p>
 <p>     应博友小憩的要求,将此文转到我的博上</p>
 <p>      天冷了,旧衣服别扔,寄给需要的人好吗？</p>
@@ -273,35 +273,35 @@ E-mail：107082696@163.com </p>
 邮寄地址:甘肃省会宁县老君坡乡柳岔村下队社<br />
 收件人：张进勤（收）</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/116.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/116.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>百度重新开放我的博客的收录</title>
-		<link>http://www.biglee.cn/blog/2007/108.html</link>
-		<comments>http://www.biglee.cn/blog/2007/108.html#comments</comments>
+		<link>/blog/2007/108.html</link>
+		<comments>/blog/2007/108.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络生活]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　今天下班后查看了一下我的网站的访问统计，发现从百度上来了一个流量，打开来源网址一下，发现是从搜索“Bigl &#8230; <a href="http://www.biglee.cn/blog/2007/108.html" class="more-link">继续阅读<span class="screen-reader-text">“百度重新开放我的博客的收录”</span></a>]]></description>
+		<description><![CDATA[　　今天下班后查看了一下我的网站的访问统计，发现从百度上来了一个流量，打开来源网址一下，发现是从搜索“Bigl &#8230; <a href="/blog/2007/108.html" class="more-link">继续阅读<span class="screen-reader-text">“百度重新开放我的博客的收录”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　今天下班后查看了一下我的网站的访问统计，发现从百度上来了一个流量，打开来源网址一下，发现是从搜索“Biglee”这个关键词来的。看来百度重新开放我网站的收录了。我再查一下所有收录，发现只显示了两个页面，其中一个首页，是10月9日更新的，另有一个页面是6月18日更新的。<br />
 　　自7月初被K到今天解封，差不多三个月。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/108.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/108.html/feed</wfw:commentRss>
 		<slash:comments>1</slash:comments>
 		</item>
 		<item>
 		<title>月全食报道</title>
-		<link>http://www.biglee.cn/blog/2007/98.html</link>
-		<comments>http://www.biglee.cn/blog/2007/98.html#respond</comments>
+		<link>/blog/2007/98.html</link>
+		<comments>/blog/2007/98.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络生活]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　昨天晚上有月全食，只因天公不作美，无缘得见，下次再想观赏月全食就得等到2011年的6月16日了。 　　为了 &#8230; <a href="http://www.biglee.cn/blog/2007/98.html" class="more-link">继续阅读<span class="screen-reader-text">“月全食报道”</span></a>]]></description>
+		<description><![CDATA[　　昨天晚上有月全食，只因天公不作美，无缘得见，下次再想观赏月全食就得等到2011年的6月16日了。 　　为了 &#8230; <a href="/blog/2007/98.html" class="more-link">继续阅读<span class="screen-reader-text">“月全食报道”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　昨天晚上有月全食，只因天公不作美，无缘得见，下次再想观赏月全食就得等到2011年的6月16日了。<br />
 　　为了弥补遗憾，收集了一些此次月全食的视频和照片及文字。</p>
 <p>新民网月全食过程视频：<br />
@@ -320,19 +320,19 @@ E-mail：107082696@163.com </p>
 <p>　　据了解，此次月全食是今年出现的第二次月全食景观，上一次是在3月4日，不过同样因为天气状况不佳，让大多数天文爱好者未能观其“芳容”。 </p>
 <p>　　中科院紫金山天文台在28日早些时候向媒体表示，继2007年发生两次月全食之后，从2011年开始中国将进入新一轮月全食的高发期。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/98.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/98.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>白领们要了解草根互联网江湖</title>
-		<link>http://www.biglee.cn/blog/2007/49.html</link>
-		<comments>http://www.biglee.cn/blog/2007/49.html#respond</comments>
+		<link>/blog/2007/49.html</link>
+		<comments>/blog/2007/49.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络生活]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　今年4月我有幸应蔡文胜先生邀请，以嘉宾身份参加了厦门站长大会，开始深入接触中国互联网草根江湖。会上我身边坐 &#8230; <a href="http://www.biglee.cn/blog/2007/49.html" class="more-link">继续阅读<span class="screen-reader-text">“白领们要了解草根互联网江湖”</span></a>]]></description>
+		<description><![CDATA[　　今年4月我有幸应蔡文胜先生邀请，以嘉宾身份参加了厦门站长大会，开始深入接触中国互联网草根江湖。会上我身边坐 &#8230; <a href="/blog/2007/49.html" class="more-link">继续阅读<span class="screen-reader-text">“白领们要了解草根互联网江湖”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　今年4月我有幸应蔡文胜先生邀请，以嘉宾身份参加了厦门站长大会，开始深入接触中国互联网草根江湖。会上我身边坐的是李善友先生与庞升东。李先生是一个由互联网精英高层（搜狐原副总裁）投入互联网江湖（自己创办ku6网）的人，他在会上真诚的说，我原来居庙堂之高，以为自己很懂互联网，如果你深入到互联网江湖，才发现自己原来对互联网其实什么都不懂，就像现在主流互联网公司的白领高层其实并不懂互联网一样。李先生这种甘心深入互联网江湖的心态，导致了先生的成功（刚刚看到李善友先生拿到500万美元投资），他创业前曾去拜访互联网江湖的影子大哥李兴平先生，去过李兴平在梅州的家里，这种心态值得所有白领互联网人士学习。李善友在站长大会上只要提到李兴平，总会用“伟大的李兴平”称呼。在李善友先生眼里，那些baidu/sina以及已经那些所谓web2.0等主流互联网公司的OO/VP们都是不懂互联网的，都只能做这些中国草根创业精英站长的学生。李先生说他最在乎的称号是“站长”这个互联网江湖的名号，他在站长大会的出彩的、“干货”的主持，以及对互联网江湖的“敬畏”奠定了李成为互联网江湖的新“军师”或“师爷”的定位。<br />
 　　所以这篇小文就是带这些主流互联网的白领们去认识一下他们原来并不了解的互联网“江湖”。连力求本土化的谷歌全程赞助了此次互联网江湖聚会，向互联网江湖示好，互联网白领们也应该了解一些。你要知道你们这些白领们每年拿着老板投入的上千万推广费用才能作出一个几万uv流量的网站，而这些互联网江湖的高手只要一个人运营网站、0推广费用就可以做到20万到30万uv流量的网站，难道你们不需要放下架子去了解多一点吗。<br />
 　　一、认识互联网江湖人物<br />
@@ -374,42 +374,42 @@ E-mail：107082696@163.com </p>
 <p>可以预计的是相信下一轮站长洗牌开始了，娱乐流量现在不行了，看谁转型做商业流量成功才能成活，2年后互联网江湖的武林大会将是商业流量为王的大会。<br />
 作者:龚文祥 </p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/49.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/49.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>赛博数据的服务真差</title>
-		<link>http://www.biglee.cn/blog/2007/44.html</link>
-		<comments>http://www.biglee.cn/blog/2007/44.html#comments</comments>
+		<link>/blog/2007/44.html</link>
+		<comments>/blog/2007/44.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络生活]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　前段时间我朋友让我帮忙买个空间，我找来找去，找到了赛博数据（好像是原来的秀网数据），花了320元，买了个3 &#8230; <a href="http://www.biglee.cn/blog/2007/44.html" class="more-link">继续阅读<span class="screen-reader-text">“赛博数据的服务真差”</span></a>]]></description>
+		<description><![CDATA[　　前段时间我朋友让我帮忙买个空间，我找来找去，找到了赛博数据（好像是原来的秀网数据），花了320元，买了个3 &#8230; <a href="/blog/2007/44.html" class="more-link">继续阅读<span class="screen-reader-text">“赛博数据的服务真差”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　前段时间我朋友让我帮忙买个空间，我找来找去，找到了赛博数据（好像是原来的秀网数据），花了320元，买了个300MB的企业型空间，带Sqlserver和邮局。<br />
 　　刚开始的三天试用由于比较忙，没有仔细试用。正式用时发现FTP速度是不错的（一般有两三百KB），但Web速度就一般了（只三四十KB），打开网站，半天才能显示完图片，我联系他们的在线客服，一直没有回复我。<br />
 　　郁闷中。准备找他们的客服经理去。<br />
 　　这空间上面的站点：http://cnc.westlakehostel.com（电信线路），http://www3.westlakehostel.com（网通线路）大家自己测试。<br />
 　　建议以后不要买他们的空间了。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/44.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/44.html/feed</wfw:commentRss>
 		<slash:comments>3</slash:comments>
 		</item>
 		<item>
 		<title>服务器网络故障</title>
-		<link>http://www.biglee.cn/blog/2007/43.html</link>
-		<comments>http://www.biglee.cn/blog/2007/43.html#respond</comments>
+		<link>/blog/2007/43.html</link>
+		<comments>/blog/2007/43.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[网络生活]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　昨天上午服务器网络出现故障，到昨天晚上11点多了都还没好。昨天中午就联系了服务商那边的客服，说是受到了DO &#8230; <a href="http://www.biglee.cn/blog/2007/43.html" class="more-link">继续阅读<span class="screen-reader-text">“服务器网络故障”</span></a>]]></description>
+		<description><![CDATA[　　昨天上午服务器网络出现故障，到昨天晚上11点多了都还没好。昨天中午就联系了服务商那边的客服，说是受到了DO &#8230; <a href="/blog/2007/43.html" class="more-link">继续阅读<span class="screen-reader-text">“服务器网络故障”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　昨天上午服务器网络出现故障，到昨天晚上11点多了都还没好。昨天中午就联系了服务商那边的客服，说是受到了DOS攻击，整个网络都不通了，基本上都已经修复，就我所在的这台服务器还没修好，真是倒霉！<br />
 　　早上一上网就来看看，终于好了。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2007/43.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2007/43.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>

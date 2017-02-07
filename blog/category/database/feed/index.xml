@@ -9,24 +9,24 @@
 
 <channel>
 	<title>数据库 &#8211; 网站建设技术集锦</title>
-	<atom:link href="http://www.biglee.cn/blog/category/database/feed" rel="self" type="application/rss+xml" />
-	<link>http://www.biglee.cn</link>
+	<atom:link href="/blog/category/database/feed" rel="self" type="application/rss+xml" />
+	<link>/</link>
 	<description>涉及网站建设、服务器维护等IT技术的博客</description>
-	<lastBuildDate>Sun, 11 Sep 2016 06:49:31 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 07 Feb 2017 02:46:28 +0000</lastBuildDate>
 	<language>zh-CN</language>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.6</generator>
 	<item>
 		<title>mysql主从同步配置</title>
-		<link>http://www.biglee.cn/blog/2014/301.html</link>
-		<comments>http://www.biglee.cn/blog/2014/301.html#respond</comments>
+		<link>/blog/2014/301.html</link>
+		<comments>/blog/2014/301.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[数据库]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[前两天配置了Mysql主从，再记录如下，以备下次查看。 &#160; 主服务器设置 1、登录Master服务器 &#8230; <a href="http://www.biglee.cn/blog/2014/301.html" class="more-link">继续阅读<span class="screen-reader-text">“mysql主从同步配置”</span></a>]]></description>
+		<description><![CDATA[前两天配置了Mysql主从，再记录如下，以备下次查看。 &#160; 主服务器设置 1、登录Master服务器 &#8230; <a href="/blog/2014/301.html" class="more-link">继续阅读<span class="screen-reader-text">“mysql主从同步配置”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>前两天配置了Mysql主从，再记录如下，以备下次查看。</p>
 <p>&nbsp;</p>
 <p><strong>主服务器设置</strong></p>
@@ -75,36 +75,36 @@ mysql&gt; show slave statusG;<br />
 Slave_IO_Running: Yes<br />
 Slave_SQL_Running: Yes</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2014/301.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2014/301.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>mysql管理工具</title>
-		<link>http://www.biglee.cn/blog/2013/250.html</link>
-		<comments>http://www.biglee.cn/blog/2013/250.html#comments</comments>
+		<link>/blog/2013/250.html</link>
+		<comments>/blog/2013/250.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[数据库]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[1、navicat for mysql 2、PHPMyAdmin　有名的网页版管理系统。 3、Sqlyog　比 &#8230; <a href="http://www.biglee.cn/blog/2013/250.html" class="more-link">继续阅读<span class="screen-reader-text">“mysql管理工具”</span></a>]]></description>
+		<description><![CDATA[1、navicat for mysql 2、PHPMyAdmin　有名的网页版管理系统。 3、Sqlyog　比 &#8230; <a href="/blog/2013/250.html" class="more-link">继续阅读<span class="screen-reader-text">“mysql管理工具”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>1、<span style="font: 12px/17px Verdana, Tahoma, &quot;BitStream vera Sans&quot;, Arial, Helvetica, sans-serif; text-align: left; color: rgb(51, 51, 51); text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; float: none; display: inline !important; white-space: normal; background-color: rgb(255, 255, 255); -webkit-text-stroke-width: 0px;">navicat for mysql</span></p>
 <p><span style="font: 12px/17px Verdana, Tahoma, &quot;BitStream vera Sans&quot;, Arial, Helvetica, sans-serif; text-align: left; color: rgb(51, 51, 51); text-transform: none; text-indent: 0px; letter-spacing: normal; word-spacing: 0px; float: none; display: inline !important; white-space: normal; background-color: rgb(255, 255, 255); -webkit-text-stroke-width: 0px;">2、PHPMyAdmin　有名的网页版管理系统。</span></p>
 <p>3、Sqlyog　比较好用的客户端</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2013/250.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2013/250.html/feed</wfw:commentRss>
 		<slash:comments>1</slash:comments>
 		</item>
 		<item>
 		<title>windows下MySQL忘记root密码修改密码的办法</title>
-		<link>http://www.biglee.cn/blog/2013/242.html</link>
-		<comments>http://www.biglee.cn/blog/2013/242.html#respond</comments>
+		<link>/blog/2013/242.html</link>
+		<comments>/blog/2013/242.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[数据库]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[好久没用MySQL了，都忘了Root用户的密码了，Windows环境，mysql5.1的版本，找到了解决办法， &#8230; <a href="http://www.biglee.cn/blog/2013/242.html" class="more-link">继续阅读<span class="screen-reader-text">“windows下MySQL忘记root密码修改密码的办法”</span></a>]]></description>
+		<description><![CDATA[好久没用MySQL了，都忘了Root用户的密码了，Windows环境，mysql5.1的版本，找到了解决办法， &#8230; <a href="/blog/2013/242.html" class="more-link">继续阅读<span class="screen-reader-text">“windows下MySQL忘记root密码修改密码的办法”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>好久没用MySQL了，都忘了Root用户的密码了，Windows环境，mysql5.1的版本，找到了解决办法，记录如下。</p>
 <p>步骤如下：<br />
 1.停止mysql服务(以管理员身份,在cmd命令行下运行) net stop mysql<br />
@@ -120,38 +120,38 @@ Rows matched: 2 Changed: 1 Warnings: 0<br />
 <p>4.打开任务管理器，停止mysql,mysqld进程，使用net start mysql启动mysqld服务，就可以使用root用户 和修改后的密码进入数据库了<br />
 &nbsp;</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2013/242.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2013/242.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>SQL Server 2000数据库迁移到SQL Server 2005各方法实践</title>
-		<link>http://www.biglee.cn/blog/2013/231.html</link>
-		<comments>http://www.biglee.cn/blog/2013/231.html#respond</comments>
+		<link>/blog/2013/231.html</link>
+		<comments>/blog/2013/231.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[数据库]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　最近要把一个服务器上的数据库迁移到另一个数据库上。老的数据库是SQL Server 2000的，新服务器上 &#8230; <a href="http://www.biglee.cn/blog/2013/231.html" class="more-link">继续阅读<span class="screen-reader-text">“SQL Server 2000数据库迁移到SQL Server 2005各方法实践”</span></a>]]></description>
+		<description><![CDATA[　　最近要把一个服务器上的数据库迁移到另一个数据库上。老的数据库是SQL Server 2000的，新服务器上 &#8230; <a href="/blog/2013/231.html" class="more-link">继续阅读<span class="screen-reader-text">“SQL Server 2000数据库迁移到SQL Server 2005各方法实践”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　最近要把一个服务器上的数据库迁移到另一个数据库上。老的数据库是SQL Server 2000的，新服务器上是SQL Server 2005的。</p>
 <p>　　按常规思路，数据库迁移主要有三种方法：备份－还原、分离－附加及导出－导入。网上介绍的方法也基本上都是这三种方法。</p>
 <p>　　先试了备份还原，无论是直接在还原时直接命名新建一个数据库还是先新建一个数据库再还原上去，都提示备份文件格式不正确。不知道是什么原因。</p>
 <p>　　接着就试试分离附加的方法。先将SQL Server 2000服务器上在SQL Server企业处理器里将要转移的数据库分离出来，然后将数据库文件夹里的MDF和LDF文件拷到新服务器上，在SQL Server Management Studio里将数据库文件附加上去，成一个新数据库。附加时可能会报错，说无法访问数据库文件，此时只需将这两个文件的完全控制权限赋予SQL Server 2005的运行用户（一般名为：SQLServer2005MSSQLUser$计算机名$计算机名）。</p>
 <p>　　至于导出导入的方法，基本上不会出什么问题，只是操作起来相对麻烦一些。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2013/231.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2013/231.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>mysql大数据转移解决方案</title>
-		<link>http://www.biglee.cn/blog/2012/230.html</link>
-		<comments>http://www.biglee.cn/blog/2012/230.html#respond</comments>
+		<link>/blog/2012/230.html</link>
+		<comments>/blog/2012/230.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[数据库]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[首先在原来的phpmyadmin中分两步导出mysql数据库 请分两个步骤导出 第一步：导出数据库结构。数据库 &#8230; <a href="http://www.biglee.cn/blog/2012/230.html" class="more-link">继续阅读<span class="screen-reader-text">“mysql大数据转移解决方案”</span></a>]]></description>
+		<description><![CDATA[首先在原来的phpmyadmin中分两步导出mysql数据库 请分两个步骤导出 第一步：导出数据库结构。数据库 &#8230; <a href="/blog/2012/230.html" class="more-link">继续阅读<span class="screen-reader-text">“mysql大数据转移解决方案”</span></a>]]></description>
 				<content:encoded><![CDATA[<h4>首先在原来的phpmyadmin中<span style="color: rgb(0, 0, 255);">分两步</span>导出mysql数据库</h4>
 <p>请分两个步骤导出</p>
 <p><strong>第一步：导出数据库结构。</strong>数据库结构文件一般很小，几乎不可能超过2M，所以可以直接在另外一个phpmyadmin的上面直接恢复；</p>
@@ -261,19 +261,19 @@ Rows matched: 2 Changed: 1 Warnings: 0<br />
 </li>
 </ol>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2012/230.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2012/230.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>使用PHPMYADMIN操作mysql数据库添加新用户和数据库的方法</title>
-		<link>http://www.biglee.cn/blog/2012/228.html</link>
-		<comments>http://www.biglee.cn/blog/2012/228.html#respond</comments>
+		<link>/blog/2012/228.html</link>
+		<comments>/blog/2012/228.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[数据库]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　在Mysql中创建多用户，为了让每个用户在使用phpmyadmin管理数据库时，只能看到自己同名的数据库， &#8230; <a href="http://www.biglee.cn/blog/2012/228.html" class="more-link">继续阅读<span class="screen-reader-text">“使用PHPMYADMIN操作mysql数据库添加新用户和数据库的方法”</span></a>]]></description>
+		<description><![CDATA[　　在Mysql中创建多用户，为了让每个用户在使用phpmyadmin管理数据库时，只能看到自己同名的数据库， &#8230; <a href="/blog/2012/228.html" class="more-link">继续阅读<span class="screen-reader-text">“使用PHPMYADMIN操作mysql数据库添加新用户和数据库的方法”</span></a>]]></description>
 				<content:encoded><![CDATA[<div id="art_demo">　　在Mysql中创建多用户，为了让每个用户在使用phpmyadmin管理数据库时，只能看到自己同名的数据库，所以在设置用户权限时要特别注意！可以参考以下步骤设置用户权限。</div>
 <div><strong>1、新建数据库：</strong><br />
 进入phpmyadmin管理界面以后，找到如下文字&ldquo;创建一个新的数据库&rdquo;，然后在下面填上要新建的数据库的名称，在后面的下拉列表中选择数据库的编码，如&ldquo;utf8_general_ci&rdquo;，点击&ldquo;创建&rdquo;按钮，这样就新建了一个数据库。</div>
@@ -289,19 +289,19 @@ Rows matched: 2 Changed: 1 Warnings: 0<br />
 <p>&nbsp;</p></div>
 <p>&nbsp;</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2012/228.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2012/228.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</title>
-		<link>http://www.biglee.cn/blog/2012/207.html</link>
-		<comments>http://www.biglee.cn/blog/2012/207.html#comments</comments>
+		<link>/blog/2012/207.html</link>
+		<comments>/blog/2012/207.html#comments</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[数据库]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　前几天拿到的一套网络销售系统原来还有个类似ERP的管理后台，折腾了半天才架设起来并找到入口，类似http: &#8230; <a href="http://www.biglee.cn/blog/2012/207.html" class="more-link">继续阅读<span class="screen-reader-text">“Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法”</span></a>]]></description>
+		<description><![CDATA[　　前几天拿到的一套网络销售系统原来还有个类似ERP的管理后台，折腾了半天才架设起来并找到入口，类似http: &#8230; <a href="/blog/2012/207.html" class="more-link">继续阅读<span class="screen-reader-text">“Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　前几天拿到的一套网络销售系统原来还有个类似ERP的管理后台，折腾了半天才架设起来并找到入口，类似http://IP:7778/forms/frmservlet?config=webutil&amp;form=main，初步了解了下，好像是用Oracle Form builder开发的。在原来就安装好Jinitiator控件的一台服务器上（Windwos Server 2003操作系统）用IE打开这个网址，然后会弹出个类似JVM的界面，但界面上的汉字都是乱码的，就是显示成黑色线的方框。<br />
 　　网上搜索了下，说是将Jinitiator安装目录C:Program FilesOracleJInitiator 1.3.1.22下的lib文件夹里的font.properties.zh.5.1复制一份，重命名为font.properties.zh.5.2即可解决，试了下，果然成功了。<br />
 　　为了方便查看系统，同事就在他的办公电脑（Windows 7）上也浏览器那个网址，并按提示安装了Jinitiator控件，但是安装完成后用IE浏览器这个网址直接就崩溃了。我也在自己的笔记本上（Windows Server 2008）安装此控件，用IE打开也直接崩溃，用Maxthon打开，提示：<br />
@@ -319,45 +319,45 @@ filename.u5b8bu4f53=SIMSUN.TTC<br />
 即可<br />
 　　折腾了半天，解决了两个问题，现将解决办法记录在此，供遇到相同问题的朋友参考。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2012/207.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2012/207.html/feed</wfw:commentRss>
 		<slash:comments>1</slash:comments>
 		</item>
 		<item>
 		<title>Oracle数据库出错ORA-01033的解决办法之一</title>
-		<link>http://www.biglee.cn/blog/2012/206.html</link>
-		<comments>http://www.biglee.cn/blog/2012/206.html#respond</comments>
+		<link>/blog/2012/206.html</link>
+		<comments>/blog/2012/206.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[数据库]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　这几天拿到一套网络销售系统（连电脑一起搬过来），要架设起来看看。开机后发现是Windows Server  &#8230; <a href="http://www.biglee.cn/blog/2012/206.html" class="more-link">继续阅读<span class="screen-reader-text">“Oracle数据库出错ORA-01033的解决办法之一”</span></a>]]></description>
+		<description><![CDATA[　　这几天拿到一套网络销售系统（连电脑一起搬过来），要架设起来看看。开机后发现是Windows Server  &#8230; <a href="/blog/2012/206.html" class="more-link">继续阅读<span class="screen-reader-text">“Oracle数据库出错ORA-01033的解决办法之一”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　这几天拿到一套网络销售系统（连电脑一起搬过来），要架设起来看看。开机后发现是Windows Server 2003的操作系统，IIS下的ASP站点，用的是Oracle数据库。打开站点发现报错：ORA-01033:oracle initializationg o&#114; shutdown in progress ，是数据库连接问题。通过PL/SQL Developer连接Oracle时也报ORA-01033:oracle initializationg o&#114; shutdown in progress 错误提示。经过一番折腾解决了问题。解决思路为：用命令行模式启动数据库服务，看看初始化与装载数据库时具体提示哪个地方出错。过程如下：</p>
 <p>1、进入CMD，执行set o&#114;ACLE_SID=db（要确保连接到正确的SID）<br />
-2、执行sqlplus &#34;/as sysdba&#34;<br />
+2、执行sqlplus &#8220;/as sysdba&#8221;<br />
 　　SQL&gt;shutdown immediate　　（先停止服务）<br />
 　　SQL&gt;startup 　　　　　　　　　（启动服务）<br />
 数据库装载完毕，但是报错：<br />
 o&#114;A-16038：日志 3 序列号 290 无法归档<br />
-o&#114;A-19504：无法创建文件&#34;&#34;<br />
+o&#114;A-19504：无法创建文件&#8221;&#8221;<br />
 o&#114;A-00312：联机日志线程1：&#39;F:ORACLEORADATADBREDO03.LOG&#39;</p>
 <p>3、联想到之前系统提示F盘空间不足，虽然我之前已经清理了一些，但是我看了下才几十M的可用空间了，难道是这个原因？再次清理了下F盘，然后再次停止服务后启动服务，此次正常。<br />
 4、进入PL/SQL Developer检查，没有再提示错误。<br />
 　　至此，问题解决，打开站点访问也没有报错了。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2012/206.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2012/206.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>PHP利用SMTP发送邮件（Mail）的类与函数</title>
-		<link>http://www.biglee.cn/blog/2012/205.html</link>
-		<comments>http://www.biglee.cn/blog/2012/205.html#respond</comments>
+		<link>/blog/2012/205.html</link>
+		<comments>/blog/2012/205.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[数据库]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　很多情况下，服务器都没有建邮件服务器，因为PHP自带的Mail函数基本上起不了什么作用。废话不多说，分享一 &#8230; <a href="http://www.biglee.cn/blog/2012/205.html" class="more-link">继续阅读<span class="screen-reader-text">“PHP利用SMTP发送邮件（Mail）的类与函数”</span></a>]]></description>
+		<description><![CDATA[　　很多情况下，服务器都没有建邮件服务器，因为PHP自带的Mail函数基本上起不了什么作用。废话不多说，分享一 &#8230; <a href="/blog/2012/205.html" class="more-link">继续阅读<span class="screen-reader-text">“PHP利用SMTP发送邮件（Mail）的类与函数”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　很多情况下，服务器都没有建邮件服务器，因为PHP自带的Mail函数基本上起不了什么作用。废话不多说，分享一个用SMTP可以发信的类和函数。<br />
 SMTP类代码：<br />
 [code]class smtp<br />
@@ -375,7 +375,7 @@ SMTP类代码：<br />
 <p>	/* Private Variables */<br />
 	var $sock;</p>
 <p>	/* Constractor */<br />
-	function smtp($relay_host = &#34;&#34;, $smtp_port = 25,$auth = false,$user,$pass)<br />
+	function smtp($relay_host = &#8220;&#8221;, $smtp_port = 25,$auth = false,$user,$pass)<br />
 	{<br />
 		$this-&gt;debug = FALSE;<br />
 		$this-&gt;smtp_port = $smtp_port;<br />
@@ -386,109 +386,109 @@ SMTP类代码：<br />
 		$this-&gt;user = $user;<br />
 		$this-&gt;pass = $pass;<br />
 		#<br />
-		$this-&gt;host_name = &#34;localhost&#34;; //is used in HELO command<br />
-		$this-&gt;log_file = &#34;&#34;;</p>
+		$this-&gt;host_name = &#8220;localhost&#8221;; //is used in HELO command<br />
+		$this-&gt;log_file = &#8220;&#8221;;</p>
 <p>		$this-&gt;sock = FALSE;<br />
 	}</p>
 <p>	/* Main Function */<br />
-	function sendmail($to, $from, $subject = &#34;&#34;, $body = &#34;&#34;, $mailtype, $cc = &#34;&#34;, $bcc = &#34;&#34;, $additional_headers = &#34;&#34;)<br />
+	function sendmail($to, $from, $subject = &#8220;&#8221;, $body = &#8220;&#8221;, $mailtype, $cc = &#8220;&#8221;, $bcc = &#8220;&#8221;, $additional_headers = &#8220;&#8221;)<br />
 	{<br />
 		$mail_from = $this-&gt;get_address($this-&gt;strip_comment($from));<br />
-		$body = ereg_replace(&#34;(^|(<br />
-))(\.)&#34;, &#34;\1.\3&#34;, $body);<br />
-		$header .= &#34;MIME-Version:1.0<br />
-&#34;;<br />
-		if($mailtype==&#34;HTML&#34;){<br />
-			$header .= &#34;Content-Type:text/html<br />
-&#34;;<br />
+		$body = ereg_replace(&#8220;(^|(<br />
+))(\.)&#8221;, &#8220;\1.\3&#8221;, $body);<br />
+		$header .= &#8220;MIME-Version:1.0<br />
+&#8220;;<br />
+		if($mailtype==&#8221;HTML&#8221;){<br />
+			$header .= &#8220;Content-Type:text/html<br />
+&#8220;;<br />
 		}<br />
-		$header .= &#34;To: &#34;.$to.&#34;<br />
-&#34;;<br />
-		if ($cc != &#34;&#34;) {<br />
-			$header .= &#34;Cc: &#34;.$cc.&#34;<br />
-&#34;;<br />
+		$header .= &#8220;To: &#8220;.$to.&#8221;<br />
+&#8220;;<br />
+		if ($cc != &#8220;&#8221;) {<br />
+			$header .= &#8220;Cc: &#8220;.$cc.&#8221;<br />
+&#8220;;<br />
 		}<br />
-		$header .= &#34;From: $from&lt;&#34;.$from.&#34;&gt;;<br />
-&#34;;<br />
-		$header .= &#34;Subject: &#34;.$subject.&#34;<br />
-&#34;;<br />
+		$header .= &#8220;From: $from&lt;&#8220;.$from.&#8221;&gt;;<br />
+&#8220;;<br />
+		$header .= &#8220;Subject: &#8220;.$subject.&#8221;<br />
+&#8220;;<br />
 		$header .= $additional_headers;<br />
-		$header .= &#34;Date: &#34;.date(&#34;r&#34;).&#34;<br />
-&#34;;<br />
-		$header .= &#34;X-Mailer:By Redhat (PHP/&#34;.phpversion().&#34;)<br />
-&#34;;<br />
-		list($msec, $sec) = explode(&#34; &#34;, microtime());<br />
-		$header .= &#34;Message-ID: &lt;&#34;.date(&#34;YmdHis&#34;, $sec).&#34;.&#34;.($msec*1000000).&#34;.&#34;.$mail_from.&#34;&gt;;<br />
-&#34;;<br />
-		$TO = explode(&#34;,&#34;, $this-&gt;strip_comment($to));</p>
-<p>		if ($cc != &#34;&#34;) {<br />
-		$TO = array_merge($TO, explode(&#34;,&#34;, $this-&gt;strip_comment($cc)));<br />
+		$header .= &#8220;Date: &#8220;.date(&#8220;r&#8221;).&#8221;<br />
+&#8220;;<br />
+		$header .= &#8220;X-Mailer:By Redhat (PHP/&#8221;.phpversion().&#8221;)<br />
+&#8220;;<br />
+		list($msec, $sec) = explode(&#8221; &#8220;, microtime());<br />
+		$header .= &#8220;Message-ID: &lt;&#8220;.date(&#8220;YmdHis&#8221;, $sec).&#8221;.&#8221;.($msec*1000000).&#8221;.&#8221;.$mail_from.&#8221;&gt;;<br />
+&#8220;;<br />
+		$TO = explode(&#8220;,&#8221;, $this-&gt;strip_comment($to));</p>
+<p>		if ($cc != &#8220;&#8221;) {<br />
+		$TO = array_merge($TO, explode(&#8220;,&#8221;, $this-&gt;strip_comment($cc)));<br />
 		}</p>
-<p>		if ($bcc != &#34;&#34;) {<br />
-			$TO = array_merge($TO, explode(&#34;,&#34;, $this-&gt;strip_comment($bcc)));<br />
+<p>		if ($bcc != &#8220;&#8221;) {<br />
+			$TO = array_merge($TO, explode(&#8220;,&#8221;, $this-&gt;strip_comment($bcc)));<br />
 		}</p>
 <p>		$sent = TRUE;<br />
 		foreach ($TO as $rcpt_to) {<br />
 			$rcpt_to = $this-&gt;get_address($rcpt_to);<br />
 			if (!$this-&gt;smtp_sockopen($rcpt_to)) {<br />
-				$this-&gt;log_write(&#34;Error: Cannot send email to &#34;.$rcpt_to.&#34;<br />
-&#34;);<br />
+				$this-&gt;log_write(&#8220;Error: Cannot send email to &#8220;.$rcpt_to.&#8221;<br />
+&#8220;);<br />
 				$sent = FALSE;<br />
 				continue;<br />
 			}<br />
 			if ($this-&gt;smtp_send($this-&gt;host_name, $mail_from, $rcpt_to, $header, $body)) {<br />
-				$this-&gt;log_write(&#34;E-mail has been sent to &lt;&#34;.$rcpt_to.&#34;&gt;;<br />
-&#34;);<br />
+				$this-&gt;log_write(&#8220;E-mail has been sent to &lt;&#8220;.$rcpt_to.&#8221;&gt;;<br />
+&#8220;);<br />
 			} else {<br />
-				$this-&gt;log_write(&#34;Error: Cannot send email to &lt;&#34;.$rcpt_to.&#34;&gt;;<br />
-&#34;);<br />
+				$this-&gt;log_write(&#8220;Error: Cannot send email to &lt;&#8220;.$rcpt_to.&#8221;&gt;;<br />
+&#8220;);<br />
 				$sent = FALSE;<br />
 			}<br />
 			fclose($this-&gt;sock);<br />
-			$this-&gt;log_write(&#34;Disconnected from remote host<br />
-&#34;);<br />
+			$this-&gt;log_write(&#8220;Disconnected from remote host<br />
+&#8220;);<br />
 		}<br />
 		return $sent;<br />
 	}</p>
 <p>/* Private Functions */</p>
-<p>        function smtp_send($helo, $from, $to, $header, $body = &#34;&#34;)<br />
+<p>        function smtp_send($helo, $from, $to, $header, $body = &#8220;&#8221;)<br />
         {<br />
-                if (!$this-&gt;smtp_putcmd(&#34;HELO&#34;, $helo)) {<br />
-                        return $this-&gt;smtp_error(&#34;sending HELO command&#34;);<br />
+                if (!$this-&gt;smtp_putcmd(&#8220;HELO&#8221;, $helo)) {<br />
+                        return $this-&gt;smtp_error(&#8220;sending HELO command&#8221;);<br />
                 }<br />
                 #auth<br />
                 if($this-&gt;auth){<br />
-                        if (!$this-&gt;smtp_putcmd(&#34;AUTH LOGIN&#34;, base64_encode($this-&gt;user))) {<br />
-                                return $this-&gt;smtp_error(&#34;sending HELO command&#34;);<br />
+                        if (!$this-&gt;smtp_putcmd(&#8220;AUTH LOGIN&#8221;, base64_encode($this-&gt;user))) {<br />
+                                return $this-&gt;smtp_error(&#8220;sending HELO command&#8221;);<br />
                         }</p>
-<p>                        if (!$this-&gt;smtp_putcmd(&#34;&#34;, base64_encode($this-&gt;pass))) {<br />
-                                return $this-&gt;smtp_error(&#34;sending HELO command&#34;);<br />
+<p>                        if (!$this-&gt;smtp_putcmd(&#8220;&#8221;, base64_encode($this-&gt;pass))) {<br />
+                                return $this-&gt;smtp_error(&#8220;sending HELO command&#8221;);<br />
                         }<br />
                 }<br />
                 #<br />
-                if (!$this-&gt;smtp_putcmd(&#34;MAIL&#34;, &#34;FROM:&lt;&#34;.$from.&#34;&gt;;&#34;)) {<br />
-                        return $this-&gt;smtp_error(&#34;sending MAIL FROM command&#34;);<br />
+                if (!$this-&gt;smtp_putcmd(&#8220;MAIL&#8221;, &#8220;FROM:&lt;&#8220;.$from.&#8221;&gt;;&#8221;)) {<br />
+                        return $this-&gt;smtp_error(&#8220;sending MAIL FROM command&#8221;);<br />
                 }</p>
-<p>                if (!$this-&gt;smtp_putcmd(&#34;RCPT&#34;, &#34;TO:&lt;&#34;.$to.&#34;&gt;;&#34;)) {<br />
-                        return $this-&gt;smtp_error(&#34;sending RCPT TO command&#34;);<br />
+<p>                if (!$this-&gt;smtp_putcmd(&#8220;RCPT&#8221;, &#8220;TO:&lt;&#8220;.$to.&#8221;&gt;;&#8221;)) {<br />
+                        return $this-&gt;smtp_error(&#8220;sending RCPT TO command&#8221;);<br />
                 }</p>
-<p>                if (!$this-&gt;smtp_putcmd(&#34;DATA&#34;)) {<br />
-                        return $this-&gt;smtp_error(&#34;sending DATA command&#34;);<br />
+<p>                if (!$this-&gt;smtp_putcmd(&#8220;DATA&#8221;)) {<br />
+                        return $this-&gt;smtp_error(&#8220;sending DATA command&#8221;);<br />
                 }</p>
 <p>                if (!$this-&gt;smtp_message($header, $body)) {<br />
-                        return $this-&gt;smtp_error(&#34;sending message&#34;);<br />
+                        return $this-&gt;smtp_error(&#8220;sending message&#8221;);<br />
                 }</p>
 <p>                if (!$this-&gt;smtp_eom()) {<br />
-                        return $this-&gt;smtp_error(&#34;sending &lt;CR&gt;;&lt;LF&gt;;.&lt;CR&gt;;&lt;LF&gt;; [EOM]&#34;);<br />
+                        return $this-&gt;smtp_error(&#8220;sending &lt;CR&gt;;&lt;LF&gt;;.&lt;CR&gt;;&lt;LF&gt;; [EOM]&#8221;);<br />
                 }</p>
-<p>                if (!$this-&gt;smtp_putcmd(&#34;QUIT&#34;)) {<br />
-                        return $this-&gt;smtp_error(&#34;sending QUIT command&#34;);<br />
+<p>                if (!$this-&gt;smtp_putcmd(&#8220;QUIT&#8221;)) {<br />
+                        return $this-&gt;smtp_error(&#8220;sending QUIT command&#8221;);<br />
                 }</p>
 <p>                return TRUE;<br />
         }</p>
 <p>        function smtp_sockopen($address)<br />
         {<br />
-                if ($this-&gt;relay_host == &#34;&#34;) {<br />
+                if ($this-&gt;relay_host == &#8220;&#8221;) {<br />
                         return $this-&gt;smtp_sockopen_mx($address);<br />
                 } else {<br />
                         return $this-&gt;smtp_sockopen_relay();<br />
@@ -496,111 +496,111 @@ SMTP类代码：<br />
         }</p>
 <p>        function smtp_sockopen_relay()<br />
         {<br />
-                $this-&gt;log_write(&#34;Trying to &#34;.$this-&gt;relay_host.&#34;:&#34;.$this-&gt;smtp_port.&#34;<br />
-&#34;);<br />
+                $this-&gt;log_write(&#8220;Trying to &#8220;.$this-&gt;relay_host.&#8221;:&#8221;.$this-&gt;smtp_port.&#8221;<br />
+&#8220;);<br />
                 $this-&gt;sock = @fsockopen($this-&gt;relay_host, $this-&gt;smtp_port, $errno, $errstr, $this-&gt;time_out);<br />
                 if (!($this-&gt;sock &amp;&amp; $this-&gt;smtp_ok())) {<br />
-                        $this-&gt;log_write(&#34;Error: Cannot connenct to relay host &#34;.$this-&gt;relay_host.&#34;<br />
-&#34;);<br />
-                        $this-&gt;log_write(&#34;Error: &#34;.$errstr.&#34; (&#34;.$errno.&#34;)<br />
-&#34;);<br />
+                        $this-&gt;log_write(&#8220;Error: Cannot connenct to relay host &#8220;.$this-&gt;relay_host.&#8221;<br />
+&#8220;);<br />
+                        $this-&gt;log_write(&#8220;Error: &#8220;.$errstr.&#8221; (&#8220;.$errno.&#8221;)<br />
+&#8220;);<br />
                         return FALSE;<br />
                 }<br />
-                $this-&gt;log_write(&#34;Connected to relay host &#34;.$this-&gt;relay_host.&#34;<br />
-&#34;);<br />
+                $this-&gt;log_write(&#8220;Connected to relay host &#8220;.$this-&gt;relay_host.&#8221;<br />
+&#8220;);<br />
                 return TRUE;<br />
         }</p>
 <p>        function smtp_sockopen_mx($address)<br />
         {<br />
-                $domain = ereg_replace(&#34;^.+@([^@]+)$&#34;, &#34;\1&#34;, $address);<br />
+                $domain = ereg_replace(&#8220;^.+@([^@]+)$&#8221;, &#8220;\1&#8221;, $address);<br />
                 if (!@getmxrr($domain, $MXHOSTS)) {<br />
-                        $this-&gt;log_write(&#34;Error: Cannot resolve MX &#34;&#34;.$domain.&#34;&#34;<br />
-&#34;);<br />
+                        $this-&gt;log_write(&#8220;Error: Cannot resolve MX &#8220;&#8221;.$domain.&#8221;&#8221;<br />
+&#8220;);<br />
                         return FALSE;<br />
                 }<br />
                 foreach ($MXHOSTS as $host) {<br />
-                        $this-&gt;log_write(&#34;Trying to &#34;.$host.&#34;:&#34;.$this-&gt;smtp_port.&#34;<br />
-&#34;);<br />
+                        $this-&gt;log_write(&#8220;Trying to &#8220;.$host.&#8221;:&#8221;.$this-&gt;smtp_port.&#8221;<br />
+&#8220;);<br />
                         $this-&gt;sock = @fsockopen($host, $this-&gt;smtp_port, $errno, $errstr, $this-&gt;time_out);<br />
                         if (!($this-&gt;sock &amp;&amp; $this-&gt;smtp_ok())) {<br />
-                                $this-&gt;log_write(&#34;Warning: Cannot connect to mx host &#34;.$host.&#34;<br />
-&#34;);<br />
-                                $this-&gt;log_write(&#34;Error: &#34;.$errstr.&#34; (&#34;.$errno.&#34;)<br />
-&#34;);<br />
+                                $this-&gt;log_write(&#8220;Warning: Cannot connect to mx host &#8220;.$host.&#8221;<br />
+&#8220;);<br />
+                                $this-&gt;log_write(&#8220;Error: &#8220;.$errstr.&#8221; (&#8220;.$errno.&#8221;)<br />
+&#8220;);<br />
                                 continue;<br />
                         }<br />
-                        $this-&gt;log_write(&#34;Connected to mx host &#34;.$host.&#34;<br />
-&#34;);<br />
+                        $this-&gt;log_write(&#8220;Connected to mx host &#8220;.$host.&#8221;<br />
+&#8220;);<br />
                         return TRUE;<br />
                 }<br />
-                $this-&gt;log_write(&#34;Error: Cannot connect to any mx hosts (&#34;.implode(&#34;, &#34;, $MXHOSTS).&#34;)<br />
-&#34;);<br />
+                $this-&gt;log_write(&#8220;Error: Cannot connect to any mx hosts (&#8220;.implode(&#8220;, &#8220;, $MXHOSTS).&#8221;)<br />
+&#8220;);<br />
                 return FALSE;<br />
         }</p>
 <p>        function smtp_message($header, $body)<br />
         {<br />
-                fputs($this-&gt;sock, $header.&#34;<br />
-&#34;.$body);<br />
-                $this-&gt;smtp_debug(&#34;&gt;; &#34;.str_replace(&#34;<br />
-&#34;, &#34;<br />
-&#34;.&#34;&gt;; &#34;, $header.&#34;<br />
-&gt;; &#34;.$body.&#34;<br />
-&gt;; &#34;));</p>
+                fputs($this-&gt;sock, $header.&#8221;<br />
+&#8220;.$body);<br />
+                $this-&gt;smtp_debug(&#8220;&gt;; &#8220;.str_replace(&#8221;<br />
+&#8220;, &#8221;<br />
+&#8220;.&#8221;&gt;; &#8220;, $header.&#8221;<br />
+&gt;; &#8220;.$body.&#8221;<br />
+&gt;; &#8220;));</p>
 <p>                return TRUE;<br />
         }</p>
 <p>        function smtp_eom()<br />
         {<br />
-                fputs($this-&gt;sock, &#34;<br />
+                fputs($this-&gt;sock, &#8221;<br />
 .<br />
-&#34;);<br />
-                $this-&gt;smtp_debug(&#34;. [EOM]<br />
-&#34;);</p>
+&#8220;);<br />
+                $this-&gt;smtp_debug(&#8220;. [EOM]<br />
+&#8220;);</p>
 <p>                return $this-&gt;smtp_ok();<br />
         }</p>
 <p>        function smtp_ok()<br />
         {<br />
-                $response = str_replace(&#34;<br />
-&#34;, &#34;&#34;, fgets($this-&gt;sock, 512));<br />
-                $this-&gt;smtp_debug($response.&#34;<br />
-&#34;);</p>
-<p>                if (!ereg(&#34;^[23]&#34;, $response)) {<br />
-                        fputs($this-&gt;sock, &#34;QUIT<br />
-&#34;);<br />
+                $response = str_replace(&#8221;<br />
+&#8220;, &#8220;&#8221;, fgets($this-&gt;sock, 512));<br />
+                $this-&gt;smtp_debug($response.&#8221;<br />
+&#8220;);</p>
+<p>                if (!ereg(&#8220;^[23]&#8221;, $response)) {<br />
+                        fputs($this-&gt;sock, &#8220;QUIT<br />
+&#8220;);<br />
                         fgets($this-&gt;sock, 512);<br />
-                        $this-&gt;log_write(&#34;Error: Remote host returned &#34;&#34;.$response.&#34;&#34;<br />
-&#34;);<br />
+                        $this-&gt;log_write(&#8220;Error: Remote host returned &#8220;&#8221;.$response.&#8221;&#8221;<br />
+&#8220;);<br />
                         return FALSE;<br />
                 }<br />
                 return TRUE;<br />
         }</p>
-<p>        function smtp_putcmd($cmd, $arg = &#34;&#34;)<br />
+<p>        function smtp_putcmd($cmd, $arg = &#8220;&#8221;)<br />
         {<br />
-                if ($arg != &#34;&#34;) {<br />
-                        if($cmd==&#34;&#34;) $cmd = $arg;<br />
-                        else $cmd = $cmd.&#34; &#34;.$arg;<br />
+                if ($arg != &#8220;&#8221;) {<br />
+                        if($cmd==&#8221;&#8221;) $cmd = $arg;<br />
+                        else $cmd = $cmd.&#8221; &#8220;.$arg;<br />
                 }</p>
-<p>                fputs($this-&gt;sock, $cmd.&#34;<br />
-&#34;);<br />
-                $this-&gt;smtp_debug(&#34;&gt;; &#34;.$cmd.&#34;<br />
-&#34;);</p>
+<p>                fputs($this-&gt;sock, $cmd.&#8221;<br />
+&#8220;);<br />
+                $this-&gt;smtp_debug(&#8220;&gt;; &#8220;.$cmd.&#8221;<br />
+&#8220;);</p>
 <p>                return $this-&gt;smtp_ok();<br />
         }</p>
 <p>        function smtp_error($string)<br />
         {<br />
-                $this-&gt;log_write(&#34;Error: Error occurred while &#34;.$string.&#34;.<br />
-&#34;);<br />
+                $this-&gt;log_write(&#8220;Error: Error occurred while &#8220;.$string.&#8221;.<br />
+&#8220;);<br />
                 return FALSE;<br />
         }</p>
 <p>        function log_write($message)<br />
         {<br />
                 $this-&gt;smtp_debug($message);</p>
-<p>                if ($this-&gt;log_file == &#34;&#34;) {<br />
+<p>                if ($this-&gt;log_file == &#8220;&#8221;) {<br />
                         return TRUE;<br />
                 }</p>
-<p>                $message = date(&#34;M d H:i:s &#34;).get_current_user().&#34;[&#34;.getmypid().&#34;]: &#34;.$message;<br />
-                if (!@file_exists($this-&gt;log_file) || !($fp = @fopen($this-&gt;log_file, &#34;a&#34;))) {<br />
-                        $this-&gt;smtp_debug(&#34;Warning: Cannot open log file &#34;&#34;.$this-&gt;log_file.&#34;&#34;<br />
-&#34;);<br />
+<p>                $message = date(&#8220;M d H:i:s &#8220;).get_current_user().&#8221;[&#8220;.getmypid().&#8221;]: &#8220;.$message;<br />
+                if (!@file_exists($this-&gt;log_file) || !($fp = @fopen($this-&gt;log_file, &#8220;a&#8221;))) {<br />
+                        $this-&gt;smtp_debug(&#8220;Warning: Cannot open log file &#8220;&#8221;.$this-&gt;log_file.&#8221;&#8221;<br />
+&#8220;);<br />
                         return FALSE;<br />
                 }<br />
                 flock($fp, LOCK_EX);<br />
@@ -610,17 +610,17 @@ SMTP类代码：<br />
         }</p>
 <p>        function strip_comment($address)<br />
         {<br />
-                $comment = &#34;\([^()]*\)&#34;;<br />
+                $comment = &#8220;\([^()]*\)&#8221;;<br />
                 while (ereg($comment, $address)) {<br />
-                        $address = ereg_replace($comment, &#34;&#34;, $address);<br />
+                        $address = ereg_replace($comment, &#8220;&#8221;, $address);<br />
                 }</p>
 <p>                return $address;<br />
         }</p>
 <p>        function get_address($address)<br />
         {<br />
-                $address = ereg_replace(&#34;([<br />
-])+&#34;, &#34;&#34;, $address);<br />
-                $address = ereg_replace(&#34;^.*&lt;(.+)&gt;;.*$&#34;, &#34;\1&#34;, $address);</p>
+                $address = ereg_replace(&#8220;([<br />
+])+&#8221;, &#8220;&#8221;, $address);<br />
+                $address = ereg_replace(&#8220;^.*&lt;(.+)&gt;;.*$&#8221;, &#8220;\1&#8221;, $address);</p>
 <p>                return $address;<br />
         }</p>
 <p>        function smtp_debug($message)<br />
@@ -634,31 +634,31 @@ SMTP类代码：<br />
 [code]function sendmail($smtpserver,$smtpuser,$smtppass,$smtpemailto,$smtpusermail, $mailsubject, $mailbody){<br />
         $smtp = new smtp($smtpserver,25,true,$smtpuser,$smtppass);<br />
         //$smtp-&gt;debug = TRUE;<br />
-        $smtp-&gt;sendmail($smtpemailto, $smtpusermail, $mailsubject, $mailbody, &#34;HTML&#34;);<br />
+        $smtp-&gt;sendmail($smtpemailto, $smtpusermail, $mailsubject, $mailbody, &#8220;HTML&#8221;);<br />
 }[/code]<br />
 调用函数发送邮件：<br />
-$body=&#34;邮件内容。。。。。&#34;;<br />
-sendmail(&#34;smtp.exmail.qq.com&#34;,&#34;邮箱登录名&#34;,&#34;邮箱密码&#34;,&#34;收件邮箱&#34;,&#34;发件邮箱&#34;,&#34;主题&#34;,$body);</p>
+$body=&#8221;邮件内容。。。。。&#8221;;<br />
+sendmail(&#8220;smtp.exmail.qq.com&#8221;,&#8221;邮箱登录名&#8221;,&#8221;邮箱密码&#8221;,&#8221;收件邮箱&#8221;,&#8221;发件邮箱&#8221;,&#8221;主题&#8221;,$body);</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2012/205.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2012/205.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 		<item>
 		<title>各种SQLite数据库管理工具使用经历</title>
-		<link>http://www.biglee.cn/blog/2011/187.html</link>
-		<comments>http://www.biglee.cn/blog/2011/187.html#respond</comments>
+		<link>/blog/2011/187.html</link>
+		<comments>/blog/2011/187.html#respond</comments>
 		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
 		<dc:creator><![CDATA[Lee]]></dc:creator>
 				<category><![CDATA[数据库]]></category>
 
 		<guid isPermaLink="false"></guid>
-		<description><![CDATA[　　今天在研究一个PHP企业站系统，用的是SQLite数据库。于是，去找了几款SQLite数据库管理工具。 　 &#8230; <a href="http://www.biglee.cn/blog/2011/187.html" class="more-link">继续阅读<span class="screen-reader-text">“各种SQLite数据库管理工具使用经历”</span></a>]]></description>
+		<description><![CDATA[　　今天在研究一个PHP企业站系统，用的是SQLite数据库。于是，去找了几款SQLite数据库管理工具。 　 &#8230; <a href="/blog/2011/187.html" class="more-link">继续阅读<span class="screen-reader-text">“各种SQLite数据库管理工具使用经历”</span></a>]]></description>
 				<content:encoded><![CDATA[<p>　　今天在研究一个PHP企业站系统，用的是SQLite数据库。于是，去找了几款SQLite数据库管理工具。<br />
 　　第一个出场的是Navicat for SQLite。我用的是9.0.15版。顺利连接上数据库文件，并打开数据库。只是，当我查看数据库里的内容里，遇到了点小问题，字段内容里的中文都成乱码了。暂时未找到解决办法。<br />
 　　接着又找来了SQLite Developer。版本3.5.8。结果，直接报错，打不开我那个2.1版的数据库文件。<br />
 　　夜深了，有空再继续测试，继续写。</p>
 ]]></content:encoded>
-			<wfw:commentRss>http://www.biglee.cn/blog/2011/187.html/feed</wfw:commentRss>
+			<wfw:commentRss>/blog/2011/187.html/feed</wfw:commentRss>
 		<slash:comments>0</slash:comments>
 		</item>
 	</channel>
