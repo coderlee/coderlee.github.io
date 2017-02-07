@@ -2,17 +2,18 @@
 <html lang="zh-CN" class="no-js">
 <head>
 	<meta charset="UTF-8">
+	<base href="https://www.biglee.cn/">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="pingback" href="http://www.biglee.cn/xmlrpc.php">
+		<link rel="pingback" href="/xmlrpc.php">
 		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
 <title>Asp.Net Web 部署项目 &#8211; 网站建设技术集锦</title>
 <link rel='dns-prefetch' href='//s.w.org'>
-<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="http://www.biglee.cn/feed" />
-<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="http://www.biglee.cn/comments/feed" />
-<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Asp.Net Web 部署项目评论Feed" href="http://www.biglee.cn/blog/2008/124.html/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Asp.Net Web 部署项目评论Feed" href="/blog/2008/124.html/feed" />
 		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.biglee.cn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
 			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
 		</script>
 		<style type="text/css">
@@ -29,32 +30,32 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-<link rel='stylesheet' id='genericons-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
-<link rel='stylesheet' id='twentysixteen-style-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
 <!--[if lt IE 10]>
-<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
 <![endif]-->
 <!--[if lt IE 9]>
-<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
 <![endif]-->
 <!--[if lt IE 8]>
-<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
 <![endif]-->
 <!--[if lt IE 9]>
-<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
 <![endif]-->
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<link rel='https://api.w.org/' href='http://www.biglee.cn/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.biglee.cn/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.biglee.cn/wp-includes/wlwmanifest.xml" /> 
-<link rel='prev' title='域名带来的流量' href='http://www.biglee.cn/blog/2008/123.html' />
-<link rel='next' title='GridView 72般绝技' href='http://www.biglee.cn/blog/2008/125.html' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='域名带来的流量' href='/blog/2008/123.html' />
+<link rel='next' title='GridView 72般绝技' href='/blog/2008/125.html' />
 <meta name="generator" content="WordPress 4.6" />
-<link rel="canonical" href="http://www.biglee.cn/blog/2008/124.html" />
-<link rel='shortlink' href='http://www.biglee.cn/?p=124' />
-<link rel="alternate" type="application/json+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fword.my%2Fblog%2F2008%2F124.html" />
-<link rel="alternate" type="text/xml+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fword.my%2Fblog%2F2008%2F124.html&#038;format=xml" />
+<link rel="canonical" href="/blog/2008/124.html" />
+<link rel='shortlink' href='/?p=124' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2008%2F124.html" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2008%2F124.html&#038;format=xml" />
 		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
 		</head>
 
@@ -67,7 +68,7 @@ img.emoji {
 			<div class="site-header-main">
 				<div class="site-branding">
 					
-											<p class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-title"><a href="/" rel="home">网站建设技术集锦</a></p>
 											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
 									</div><!-- .site-branding -->
 
@@ -75,17 +76,17 @@ img.emoji {
 
 					<div id="site-header-menu" class="site-header-menu">
 													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
-								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/web_development">网站技术</a></li>
-<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/pc_technology">PC技术</a></li>
-<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/orther">杂货铺</a></li>
-<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/entertainment">影音娱乐</a></li>
-<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/life">网络生活</a></li>
-<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/digest">文摘</a></li>
-<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/database">数据库</a></li>
-<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/network">网络安全</a></li>
-<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/management">管理营运</a></li>
-<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-318"><a href="http://www.biglee.cn/blog/category/dotnet">.Net</a></li>
-<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
 </ul></div>							</nav><!-- .main-navigation -->
 						
 											</div><!-- .site-header-menu -->
@@ -106,61 +107,61 @@ img.emoji {
 	
 	<div class="entry-content">
 		<div>
-<div class=&#34;MTPS_CollapsibleRegion&#34; id=&#34;ctl00_ContentPlaceHolder1_cpe55532&#34;>
-<div class=&#34;CollapseRegionLink&#34; id=&#34;ctl00_ContentPlaceHolder1_cpe55532_h&#34;><img id=&#34;ctl00_ContentPlaceHolder1_cpe55532_i&#34; style=&#34;BORDER-TOP-WIDTH: 0px; border-left-width: border-bottom-width: vertical-align: middle; border-right-width: 0px&#34; alt =&#34;&#34; src =http://www.biglee.cn/blog/2008/&#34;http://i.msdn.microsoft.com/platform/Controls/CollapsibleArea/resources/minus.gif&#34; />&amp;nbsp;目录 </div>
-<div class=&#34;MTPS_CollapsibleSection&#34; id=&#34;ctl00_ContentPlaceHolder1_cpe55532_c&#34; style=&#34;DISPLAY: block; overflow: hidden; width: auto; height: auto&#34; olddisplay=&#34;null&#34;>
-<div class=&#34;MTPS_CollapsibleSection&#34; id=&#34;&#34; style=&#34;BORDER-RIGHT: medium none; border-top: display: block; border-left: border-bottom: none&#34;><a href=http://www.biglee.cn/blog/2008/&#34;#S1&#34;>在 ASP.NET 2.0 中部署</a> <br /><a href=http://www.biglee.cn/blog/2008/&#34;#S2&#34;>Web 部署项目</a> <br /><a href=http://www.biglee.cn/blog/2008/&#34;#S3&#34;>合并程序集</a> <br /><a href=http://www.biglee.cn/blog/2008/&#34;#S4&#34;>可插入配置文件</a> <br /><a href=http://www.biglee.cn/blog/2008/&#34;#S5&#34;>创建可重用用户控件</a> <br /><a href=http://www.biglee.cn/blog/2008/&#34;#S6&#34;>总结</a> </div>
+<div class="MTPS_CollapsibleRegion" id="ctl00_ContentPlaceHolder1_cpe55532">
+<div class="CollapseRegionLink" id="ctl00_ContentPlaceHolder1_cpe55532_h"><img id="ctl00_ContentPlaceHolder1_cpe55532_i" style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; VERTICAL-ALIGN: middle; BORDER-RIGHT-WIDTH: 0px" alt="" src="http://i.msdn.microsoft.com/platform/Controls/CollapsibleArea/resources/minus.gif" />&amp;nbsp;目录 </div>
+<div class="MTPS_CollapsibleSection" id="ctl00_ContentPlaceHolder1_cpe55532_c" style="DISPLAY: block; OVERFLOW: hidden; WIDTH: auto; HEIGHT: auto" olddisplay="null">
+<div class="MTPS_CollapsibleSection" id="" style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; DISPLAY: block; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none"><a href="#S1">在 ASP.NET 2.0 中部署</a> <br /><a href="#S2">Web 部署项目</a> <br /><a href="#S3">合并程序集</a> <br /><a href="#S4">可插入配置文件</a> <br /><a href="#S5">创建可重用用户控件</a> <br /><a href="#S6">总结</a> </div>
 </div>
 </div>
 <p></div>
-<div class=&#34;ArticleNormalPara&#34;>当 ASP 第一次发布时，Web 编程还比较困难，因为需要 IIS 来处理 ASP 页。后来，ASP.NET 2.0 和 Visual Studio<span class=&#34;superscript&#34;><font size=&#34;1&#34;>&amp;reg;</font></span> 2005 通过引入网站开发模型使一切工作都变得容易了。借助该网站模型，您不必在 Visual Studio 中创建新项目，而是可以指向一个目录并开始编写网页和代码。此外，您还可以使用内置的 ASP.NET Development Server 快速测试站点，ASP.NET Development Server 将 ASP.NET 寄宿在一个本地进程中，并消除了必须安装 IIS 才能进行开发这一先决条件。该网站模型的魅力在于您在开发 Web 应用程序时无需考虑打包和部署。需要其他类时怎么办？向 App_Code 目录添加一个 .cs 文件即可开始编写。希望将可本地化的字符串存储在资源文件中时怎么办？向 App_GlobalResources 目录添加一个 .resx 文件并键入字符串。一切都顺顺当当；您根本就不必考虑编译和部署方面的事情。</div>
-<div class=&#34;ArticleNormalPara&#34;>在准备进行部署时，您有多种可选方案。最简单的方案是将文件复制到主运行服务器并按要求编译每一个文件（和在测试环境中一样）。第二种方案是使用 aspnet_compiler.exe 实用工具将应用程序预编译为二进制版本，之后将只剩下要放到服务器上的一组程序集、静态内容和配置文件。第三种方案也使用 aspnet_compiler.exe，但要创建一个可更新的二进制部署，其中 .as*x 文件保持不变（并且可修改），而所有代码文件都编译为二进制程序集。</div>
-<div class=&#34;ArticleNormalPara&#34;>这似乎涵盖了每一种可能的情况，开发人员可以一心一意地编写 Web 应用程序，而在以后实际部署时再作打包和部署决定。不过，此模型也遭到了相当大的反对，特别是那些习惯了自己开发的 Web 项目是在实际项目文件中指定的实际项目的开发人员的反对，这些项目允许注入生成前和生成后函数、从生成过程排除文件以及使用命令行开关在调试和发布版本之间进行切换等操作。有鉴于此，Microsoft 迅速推出了 Web 应用程序项目（即 WAP），最初它是作为 Visual Studio 2005 的插件发布的，现在包含在 Visual Studio 2005 Service Pack 1 (SP1) 中，Visual Studio 2005 Service Pack 1 (SP1) 可从 <a href=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/vstudio/support/vs2005sp1&#34;><font color=&#34;#0033cc&#34;>msdn.microsoft.com/vstudio/support/vs2005sp1</font></a> 下载。</div>
-<div class=&#34;ArticleNormalPara&#34;>WAP 可替代与 Visual Studio .NET 2003 Web 项目模型非常接近的网站模型。新的 WAP 模型会在生成过程中编译所有源代码文件，并在本地的 /bin 目录中生成一个用于部署的程序集。WAP 还使得增量采用 ASP.NET 2.0 引入的新的分部类代码隐藏模型变得更加容易，因为现在您可以打开 Visual Studio .NET 2003 项目，并且在转换过程中只修改 .sln 和 .csproj（或 .vbproj）文件。然后可将每个文件及其代码隐藏类转换为与项目中任何其他文件都无关的新的分部类模型（操作方法是：在解决方案资源管理器中右键单击各个文件并选择&amp;ldquo;转换为 Web 应用程序&amp;rdquo;），也可以让它们仍然使用旧模型。这与将 Visual Studio .NET 2003 Web 项目转换为网站模型大不相同，转换为网站模型会同时转换所有文件，并且不支持增量采用。</div>
-<div class=&#34;ArticleNormalPara&#34;>最后，还有一个称为&amp;ldquo;Web 部署项目&amp;rdquo;（本专栏的主题）的新项目类型，它引入了许多既针对网站项目又针对 Web 应用程序项目的附加部署选项。 Web 部署项目弥补了既针对网站应用程序又针对 Web 应用程序项目的部署选项中的遗留漏洞，并且可以简单而又可扩展地实现几乎任何部署方案。 为确切了解这一新项目类型增加了哪些内容，我们先来回顾一下在 Web 部署项目推出之前的情况。</div>
+<div class="ArticleNormalPara">当 ASP 第一次发布时，Web 编程还比较困难，因为需要 IIS 来处理 ASP 页。后来，ASP.NET 2.0 和 Visual Studio<span class="superscript"><font size="1">&amp;reg;</font></span> 2005 通过引入网站开发模型使一切工作都变得容易了。借助该网站模型，您不必在 Visual Studio 中创建新项目，而是可以指向一个目录并开始编写网页和代码。此外，您还可以使用内置的 ASP.NET Development Server 快速测试站点，ASP.NET Development Server 将 ASP.NET 寄宿在一个本地进程中，并消除了必须安装 IIS 才能进行开发这一先决条件。该网站模型的魅力在于您在开发 Web 应用程序时无需考虑打包和部署。需要其他类时怎么办？向 App_Code 目录添加一个 .cs 文件即可开始编写。希望将可本地化的字符串存储在资源文件中时怎么办？向 App_GlobalResources 目录添加一个 .resx 文件并键入字符串。一切都顺顺当当；您根本就不必考虑编译和部署方面的事情。</div>
+<div class="ArticleNormalPara">在准备进行部署时，您有多种可选方案。最简单的方案是将文件复制到主运行服务器并按要求编译每一个文件（和在测试环境中一样）。第二种方案是使用 aspnet_compiler.exe 实用工具将应用程序预编译为二进制版本，之后将只剩下要放到服务器上的一组程序集、静态内容和配置文件。第三种方案也使用 aspnet_compiler.exe，但要创建一个可更新的二进制部署，其中 .as*x 文件保持不变（并且可修改），而所有代码文件都编译为二进制程序集。</div>
+<div class="ArticleNormalPara">这似乎涵盖了每一种可能的情况，开发人员可以一心一意地编写 Web 应用程序，而在以后实际部署时再作打包和部署决定。不过，此模型也遭到了相当大的反对，特别是那些习惯了自己开发的 Web 项目是在实际项目文件中指定的实际项目的开发人员的反对，这些项目允许注入生成前和生成后函数、从生成过程排除文件以及使用命令行开关在调试和发布版本之间进行切换等操作。有鉴于此，Microsoft 迅速推出了 Web 应用程序项目（即 WAP），最初它是作为 Visual Studio 2005 的插件发布的，现在包含在 Visual Studio 2005 Service Pack 1 (SP1) 中，Visual Studio 2005 Service Pack 1 (SP1) 可从 <a href="http://msdn.microsoft.com/vstudio/support/vs2005sp1"><font color="#0033cc">msdn.microsoft.com/vstudio/support/vs2005sp1</font></a> 下载。</div>
+<div class="ArticleNormalPara">WAP 可替代与 Visual Studio .NET 2003 Web 项目模型非常接近的网站模型。新的 WAP 模型会在生成过程中编译所有源代码文件，并在本地的 /bin 目录中生成一个用于部署的程序集。WAP 还使得增量采用 ASP.NET 2.0 引入的新的分部类代码隐藏模型变得更加容易，因为现在您可以打开 Visual Studio .NET 2003 项目，并且在转换过程中只修改 .sln 和 .csproj（或 .vbproj）文件。然后可将每个文件及其代码隐藏类转换为与项目中任何其他文件都无关的新的分部类模型（操作方法是：在解决方案资源管理器中右键单击各个文件并选择&amp;ldquo;转换为 Web 应用程序&amp;rdquo;），也可以让它们仍然使用旧模型。这与将 Visual Studio .NET 2003 Web 项目转换为网站模型大不相同，转换为网站模型会同时转换所有文件，并且不支持增量采用。</div>
+<div class="ArticleNormalPara">最后，还有一个称为&amp;ldquo;Web 部署项目&amp;rdquo;（本专栏的主题）的新项目类型，它引入了许多既针对网站项目又针对 Web 应用程序项目的附加部署选项。 Web 部署项目弥补了既针对网站应用程序又针对 Web 应用程序项目的部署选项中的遗留漏洞，并且可以简单而又可扩展地实现几乎任何部署方案。 为确切了解这一新项目类型增加了哪些内容，我们先来回顾一下在 Web 部署项目推出之前的情况。</div>
 <p></p>
-<div class=&#34;ArticleTypeTitle&#34; id=&#34;S1&#34;>在 ASP.NET 2.0 中部署</div>
-<div class=&#34;ArticleNormalPara&#34;>使用网站模型生成应用程序时，您可以选择对部署站点进行预编译。通过 Visual Studio 2005 中的&amp;ldquo;生成&amp;rdquo;|&amp;ldquo;发布&amp;rdquo;菜单或直接通过命令行实用工具 aspnet_compiler.exe，您可以访问预编译实用工具。<strong>图 1</strong> 显示了 Visual Studio 所显示的此工具的界面。</div>
-<div class=&#34;ArticleImageSpacer&#34;><img onmouseover=&#34;this.style.cursor=&#39;pointer&#39;;&#34; style=&#34;CURSOR: pointer&#34; onclick=&#34;var large=&#39;cc163448.fig01_L.gif&#39;; var small=&#39;cc163448.fig01.gif&#39;; current =this.src; if  (current.indexof(large) &amp;gt; 0) this.src =small; (current.indexof(small) 0)this.src =large;&#34; alt =&#34;&#34; src =http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig01.gif&#34; /></p>
-<div class=&#34;ArticleImageCaptionText&#34;>图 1<strong>&amp;nbsp;网站发布实用工具&amp;nbsp;</strong>(单击该图像获得较大视图)</div>
+<div class="ArticleTypeTitle" id="S1">在 ASP.NET 2.0 中部署</div>
+<div class="ArticleNormalPara">使用网站模型生成应用程序时，您可以选择对部署站点进行预编译。通过 Visual Studio 2005 中的&amp;ldquo;生成&amp;rdquo;|&amp;ldquo;发布&amp;rdquo;菜单或直接通过命令行实用工具 aspnet_compiler.exe，您可以访问预编译实用工具。<strong>图 1</strong> 显示了 Visual Studio 所显示的此工具的界面。</div>
+<div class="ArticleImageSpacer"><img onmouseover="this.style.cursor=&#39;pointer&#39;;" style="CURSOR: pointer" onclick="var large=&#39;cc163448.fig01_L.gif&#39;; var small=&#39;cc163448.fig01.gif&#39;; var current=this.src;  if (current.indexOf(large) &amp;gt; 0) this.src=small; if (current.indexOf(small) &amp;gt; 0)this.src=large;" alt="" src="http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig01.gif" /></p>
+<div class="ArticleImageCaptionText">图 1<strong>&amp;nbsp;网站发布实用工具&amp;nbsp;</strong>(单击该图像获得较大视图)</div>
 </div>
-<div class=&#34;ArticleNormalPara&#34;>使用发布实用工具时必须作出的第一个决定是 .as*x 文件在部署后是否可更新（在 aspnet_compiler.exe 命令行实用工具中使用 -u 开关的&amp;ldquo;允许更新此预编译站点&amp;rdquo;选项）。 此决定取决于在部署后是否希望能够在不重复整个部署过程的情况下对网页进行较少更改。事实上，您可能希望明确禁止对已部署网页进行任何修改，并要求所有修改都要遵循标准的部署（也希望遵循标准的测试）过程，在这种情况下，应选择将站点发布为不可更新。</div>
-<div class=&#34;ArticleNormalPara&#34;>将站点发布为不可更新时，您可以完全删除所有 .as*x 文件，而只发布二进制程序集（以及配置文件和静态内容）。不过，如果没有物理文件，ASP.NET 将无法确定哪些类要用于哪些端点请求。例如，如果您的应用程序收到一个请求 Page1.aspx 的请求，而您已经使用了不可更新的二进制部署，则磁盘上很可能没有任何 Page1.aspx 文件，并且现有配置文件中没有任何内容来指示部署到 /bin 目录的程序集集合中哪个类应是该请求的实际处理程序。为弥补这一缺陷，编译过程还将生成一个 .compiled 文件集合，这些文件以简单的 XML 格式包含端点-类型映射和文件依赖关系信息，同时这些文件必须与所部署站点的 /bin 目录中的二进制程序集一起发布。例如，如果应用程序中原来有一个名为 Page1.aspx 的页，则 aspnet_compiler.exe 实用工具会生成一个名为 page1.aspx.cdcab7d2.compiled（哈希代码不定）的文件，其中包含以下 XML：</p>
-<div class=&#34;&#34; id=&#34;ctl00_ContentPlaceHolder1_ctl04_&#34;>
-<div class=&#34;CodeSnippetTitleBar&#34;>
-<div class=&#34;CodeDisplayLanguage&#34;>&amp;nbsp;</div>
-<div class=&#34;CopyCodeButton&#34;>&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;<br />&amp;lt;preserve resultType=&amp;quot;3&amp;quot;<br />virtualPath=&amp;quot;/SampleWebSite/Page1.aspx&amp;quot;<br />hash=&amp;quot;8a8da6c5a&amp;quot; filehash=&amp;quot;42c4a74221152888&amp;quot;<br />flags=&amp;quot;110000&amp;quot; assembly=&amp;quot;App_Web_aq9bt8mj&amp;quot;<br />type=&amp;quot;ASP.page1_aspx&amp;quot;&amp;gt;<br />&amp;lt;filedeps&amp;gt;<br />&amp;lt;filedep name=&amp;quot;/SampleWebSite/Page1.aspx&amp;quot; /&amp;gt;<br />&amp;lt;filedep name=&amp;quot;/SampleWebSite/Page1.aspx.cs&amp;quot; /&amp;gt;<br />&amp;lt;/filedeps&amp;gt;<br />&amp;lt;/preserve&amp;gt;</div>
+<div class="ArticleNormalPara">使用发布实用工具时必须作出的第一个决定是 .as*x 文件在部署后是否可更新（在 aspnet_compiler.exe 命令行实用工具中使用 -u 开关的&amp;ldquo;允许更新此预编译站点&amp;rdquo;选项）。 此决定取决于在部署后是否希望能够在不重复整个部署过程的情况下对网页进行较少更改。事实上，您可能希望明确禁止对已部署网页进行任何修改，并要求所有修改都要遵循标准的部署（也希望遵循标准的测试）过程，在这种情况下，应选择将站点发布为不可更新。</div>
+<div class="ArticleNormalPara">将站点发布为不可更新时，您可以完全删除所有 .as*x 文件，而只发布二进制程序集（以及配置文件和静态内容）。不过，如果没有物理文件，ASP.NET 将无法确定哪些类要用于哪些端点请求。例如，如果您的应用程序收到一个请求 Page1.aspx 的请求，而您已经使用了不可更新的二进制部署，则磁盘上很可能没有任何 Page1.aspx 文件，并且现有配置文件中没有任何内容来指示部署到 /bin 目录的程序集集合中哪个类应是该请求的实际处理程序。为弥补这一缺陷，编译过程还将生成一个 .compiled 文件集合，这些文件以简单的 XML 格式包含端点-类型映射和文件依赖关系信息，同时这些文件必须与所部署站点的 /bin 目录中的二进制程序集一起发布。例如，如果应用程序中原来有一个名为 Page1.aspx 的页，则 aspnet_compiler.exe 实用工具会生成一个名为 page1.aspx.cdcab7d2.compiled（哈希代码不定）的文件，其中包含以下 XML：</p>
+<div class="" id="ctl00_ContentPlaceHolder1_ctl04_">
+<div class="CodeSnippetTitleBar">
+<div class="CodeDisplayLanguage">&amp;nbsp;</div>
+<div class="CopyCodeButton">&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;<br />&amp;lt;preserve resultType=&amp;quot;3&amp;quot;<br />virtualPath=&amp;quot;/SampleWebSite/Page1.aspx&amp;quot;<br />hash=&amp;quot;8a8da6c5a&amp;quot; filehash=&amp;quot;42c4a74221152888&amp;quot;<br />flags=&amp;quot;110000&amp;quot; assembly=&amp;quot;App_Web_aq9bt8mj&amp;quot;<br />type=&amp;quot;ASP.page1_aspx&amp;quot;&amp;gt;<br />&amp;lt;filedeps&amp;gt;<br />&amp;lt;filedep name=&amp;quot;/SampleWebSite/Page1.aspx&amp;quot; /&amp;gt;<br />&amp;lt;filedep name=&amp;quot;/SampleWebSite/Page1.aspx.cs&amp;quot; /&amp;gt;<br />&amp;lt;/filedeps&amp;gt;<br />&amp;lt;/preserve&amp;gt;</div>
 </div>
 </div>
 </div>
-<div class=&#34;ArticleNormalPara&#34;>使用此实用工具发布网站时必须作出的另一个重要决定是确定生成的程序集的打包粒度。通过选中&amp;ldquo;使用固定命名和单页程序集&amp;rdquo;（或在 aspnet_compiler.exe 命令行实用工具中使用 -fixednames），既可为站点中的每个目录创建单独的程序集，又可为站点中的每个可编译文件创建单独的程序集。作出该决定并不像您可能想像的那么容易，因为每个选项都有其潜在问题。如果决定不使用 -fixednames 选项，则每次发布应用程序时都会生成一组全新的程序集，并且它们的名称与之前发布的程序集不同。这意味着部署更加复杂，因为在部署新的程序集之前必须删除主运行服务器上所有以前发布的程序集，否则在处理下一个请求时将生成冗余的类定义错误。使用 -fixednames 选项可以解决此问题，因为每个文件都将与命名清晰的程序集对应，而这些程序集在一次编译和下次编译中不会发生变化。不过，如果站点规模较大，则为每个网页、控件和母版页分别生成单独的程序集，很明显意味着您要管理成百上千个程序集的发布。Web 部署项目非常圆满地解决了部署中程序集粒度这一问题，如下所示。</div>
-<div class=&#34;ArticleNormalPara&#34;>您还可以将程序集签名引入编译过程，以便创建具有强名称的不同版本的程序集，如果需要这也适用于全局程序集缓存 (GAC) 中的部署。通过使用 -aptca 选项，您可以使用程序集级别的属性 AllowPartiallyTrustedCallers 来标记生成的程序集，在将任何程序集部署到 GAC 并且以低等或中等信任级别运行 ASP.NET 的情况下，这是必要的。（请注意，此属性应仅应用于已证明不会暴露任何安全漏洞的程序集，因为如有漏洞，使用此属性可能招致引诱攻击。）</div>
-<div class=&#34;ArticleNormalPara&#34;>有关发布站点的另一个细节是如果决定使用 Web 应用程序项目而不使用网站模型，则&amp;ldquo;生成&amp;rdquo;|&amp;ldquo;发布&amp;rdquo;对话框的外观将大不相同，如<strong>图 2</strong> 所示。Web 应用程序项目假定您希望将应用程序发布为可更新的 .as*x 文件和预编译的源文件（开发中它所使用的同一模型），因此仅针对二进制的部署选项不可用。此实用工具实质上更接近于&amp;ldquo;复制网站&amp;rdquo;实用工具（随网站一起提供）而不是&amp;ldquo;发布网站&amp;rdquo;实用工具，因为它需要复制由标准生成过程生成的文件。</div>
-<div class=&#34;ArticleImageSpacer&#34;><img onmouseover=&#34;this.style.cursor=&#39;pointer&#39;;&#34; style=&#34;CURSOR: pointer&#34; onclick=&#34;var large=&#39;cc163448.fig02_L.gif&#39;; var small=&#39;cc163448.fig02.gif&#39;; current =this.src; if  (current.indexof(large) &amp;gt; 0) this.src =small; (current.indexof(small) 0)this.src =large;&#34; alt =&#34;&#34; src =http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig02.gif&#34; /></p>
-<div class=&#34;ArticleImageCaptionText&#34;>图 2<strong>&amp;nbsp;Web 应用程序项目的发布 Web 实用工具&amp;nbsp;</strong>(单击该图像获得较大视图)</div>
+<div class="ArticleNormalPara">使用此实用工具发布网站时必须作出的另一个重要决定是确定生成的程序集的打包粒度。通过选中&amp;ldquo;使用固定命名和单页程序集&amp;rdquo;（或在 aspnet_compiler.exe 命令行实用工具中使用 -fixednames），既可为站点中的每个目录创建单独的程序集，又可为站点中的每个可编译文件创建单独的程序集。作出该决定并不像您可能想像的那么容易，因为每个选项都有其潜在问题。如果决定不使用 -fixednames 选项，则每次发布应用程序时都会生成一组全新的程序集，并且它们的名称与之前发布的程序集不同。这意味着部署更加复杂，因为在部署新的程序集之前必须删除主运行服务器上所有以前发布的程序集，否则在处理下一个请求时将生成冗余的类定义错误。使用 -fixednames 选项可以解决此问题，因为每个文件都将与命名清晰的程序集对应，而这些程序集在一次编译和下次编译中不会发生变化。不过，如果站点规模较大，则为每个网页、控件和母版页分别生成单独的程序集，很明显意味着您要管理成百上千个程序集的发布。Web 部署项目非常圆满地解决了部署中程序集粒度这一问题，如下所示。</div>
+<div class="ArticleNormalPara">您还可以将程序集签名引入编译过程，以便创建具有强名称的不同版本的程序集，如果需要这也适用于全局程序集缓存 (GAC) 中的部署。通过使用 -aptca 选项，您可以使用程序集级别的属性 AllowPartiallyTrustedCallers 来标记生成的程序集，在将任何程序集部署到 GAC 并且以低等或中等信任级别运行 ASP.NET 的情况下，这是必要的。（请注意，此属性应仅应用于已证明不会暴露任何安全漏洞的程序集，因为如有漏洞，使用此属性可能招致引诱攻击。）</div>
+<div class="ArticleNormalPara">有关发布站点的另一个细节是如果决定使用 Web 应用程序项目而不使用网站模型，则&amp;ldquo;生成&amp;rdquo;|&amp;ldquo;发布&amp;rdquo;对话框的外观将大不相同，如<strong>图 2</strong> 所示。Web 应用程序项目假定您希望将应用程序发布为可更新的 .as*x 文件和预编译的源文件（开发中它所使用的同一模型），因此仅针对二进制的部署选项不可用。此实用工具实质上更接近于&amp;ldquo;复制网站&amp;rdquo;实用工具（随网站一起提供）而不是&amp;ldquo;发布网站&amp;rdquo;实用工具，因为它需要复制由标准生成过程生成的文件。</div>
+<div class="ArticleImageSpacer"><img onmouseover="this.style.cursor=&#39;pointer&#39;;" style="CURSOR: pointer" onclick="var large=&#39;cc163448.fig02_L.gif&#39;; var small=&#39;cc163448.fig02.gif&#39;; var current=this.src;  if (current.indexOf(large) &amp;gt; 0) this.src=small; if (current.indexOf(small) &amp;gt; 0)this.src=large;" alt="" src="http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig02.gif" /></p>
+<div class="ArticleImageCaptionText">图 2<strong>&amp;nbsp;Web 应用程序项目的发布 Web 实用工具&amp;nbsp;</strong>(单击该图像获得较大视图)</div>
 </div>
-<div class=&#34;ArticleNormalPara&#34;>从技术上讲，即使您使用 Web 应用程序项目，也不会限制您使用仅针对二进制（不可更新）的部署。其实，WAP 生成的输出是一个有效的网站，然后您可以传递 aspnet_compiler.exe 实用工具来生成创建二进制部署。幸运的是，您只是不能从 Web 部署项目调整过的 Visual Studio 2005 界面调用它而已。</div>
+<div class="ArticleNormalPara">从技术上讲，即使您使用 Web 应用程序项目，也不会限制您使用仅针对二进制（不可更新）的部署。其实，WAP 生成的输出是一个有效的网站，然后您可以传递 aspnet_compiler.exe 实用工具来生成创建二进制部署。幸运的是，您只是不能从 Web 部署项目调整过的 Visual Studio 2005 界面调用它而已。</div>
 <p></p>
-<div class=&#34;ArticleTypeTitle&#34; id=&#34;S2&#34;>Web 部署项目</div>
-<div class=&#34;ArticleNormalPara&#34;>那么迄今为止所有现有的编译和部署选项中缺少什么呢？主要缺少两种功能：控制程序集命名（特别是为了进行部署）的功能，以及将所有输出的程序集合并为一个程序集从而简化部署的功能。Web 部署项目可以解决这两个问题。但或许更重要的是，它们还与网站应用程序和 Web 应用程序项目的部署问题中的许多遗留问题有关。</div>
-<div class=&#34;ArticleNormalPara&#34;>它们的核心是，Web 部署项目（可从 <a href=http://www.biglee.cn/blog/2008/&#34;http://msdn2.microsoft.com/aa336619.aspx&#34;><font color=&#34;#0033cc&#34;>msdn2.microsoft.com/aa336619.aspx</font></a> 下载）代表的只是向您解决方案中添加的另一个项目类型。与所有 Visual Studio 项目文件一样，Web 部署项目也是可在 IDE 中直接编译或从命令行运行的 MSBuild 脚本。不过，Web 部署项目包含用于编译和打包网站（或 Web 应用程序项目）的生成命令，而不指定要编译的源代码文件集合。这意味着它们会调用 aspnet_compiler.exe 实用工具（以及其他实用工具）来创建特定 Web 应用程序的部署。Web 部署项目是作为 Visual Studio 插件包提供的，其中包含了一个用于注入新项目的易用菜单项和一个用于控制所有可用设置的完整属性页集。若要向现有应用程序中添加新项目，可右键单击现有网站（或 Web 应用程序项目），然后选择&amp;ldquo;添加 Web 部署项目&amp;rdquo;项，如<strong>图 3</strong> 所示。此操作将把一个包含 MSBuild 脚本的新 .wdproj 文件添加到您的解决方案中，并会生成您所创建的应用程序的部署。</div>
-<div class=&#34;ArticleImageSpacer&#34;><img alt=&#34;&#34; src=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03.gif&#34; /></p>
-<div class=&#34;ArticleImageCaptionText&#34;>图 3<strong>&amp;nbsp;添加 Web 部署项目&amp;nbsp;</strong></div>
+<div class="ArticleTypeTitle" id="S2">Web 部署项目</div>
+<div class="ArticleNormalPara">那么迄今为止所有现有的编译和部署选项中缺少什么呢？主要缺少两种功能：控制程序集命名（特别是为了进行部署）的功能，以及将所有输出的程序集合并为一个程序集从而简化部署的功能。Web 部署项目可以解决这两个问题。但或许更重要的是，它们还与网站应用程序和 Web 应用程序项目的部署问题中的许多遗留问题有关。</div>
+<div class="ArticleNormalPara">它们的核心是，Web 部署项目（可从 <a href="http://msdn2.microsoft.com/aa336619.aspx"><font color="#0033cc">msdn2.microsoft.com/aa336619.aspx</font></a> 下载）代表的只是向您解决方案中添加的另一个项目类型。与所有 Visual Studio 项目文件一样，Web 部署项目也是可在 IDE 中直接编译或从命令行运行的 MSBuild 脚本。不过，Web 部署项目包含用于编译和打包网站（或 Web 应用程序项目）的生成命令，而不指定要编译的源代码文件集合。这意味着它们会调用 aspnet_compiler.exe 实用工具（以及其他实用工具）来创建特定 Web 应用程序的部署。Web 部署项目是作为 Visual Studio 插件包提供的，其中包含了一个用于注入新项目的易用菜单项和一个用于控制所有可用设置的完整属性页集。若要向现有应用程序中添加新项目，可右键单击现有网站（或 Web 应用程序项目），然后选择&amp;ldquo;添加 Web 部署项目&amp;rdquo;项，如<strong>图 3</strong> 所示。此操作将把一个包含 MSBuild 脚本的新 .wdproj 文件添加到您的解决方案中，并会生成您所创建的应用程序的部署。</div>
+<div class="ArticleImageSpacer"><img alt="" src="http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03.gif" /></p>
+<div class="ArticleImageCaptionText">图 3<strong>&amp;nbsp;添加 Web 部署项目&amp;nbsp;</strong></div>
 </div>
-<div class=&#34;ArticleImageSpacer&#34;><img alt=&#34;&#34; src=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03a.gif&#34; /></p>
-<div class=&#34;ArticleImageCaptionText&#34;>图 3a<strong>&amp;nbsp; &amp;nbsp;</strong></div>
+<div class="ArticleImageSpacer"><img alt="" src="http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03a.gif" /></p>
+<div class="ArticleImageCaptionText">图 3a<strong>&amp;nbsp; &amp;nbsp;</strong></div>
 </div>
-<div class=&#34;ArticleImageSpacer&#34;><img onmouseover=&#34;this.style.cursor=&#39;pointer&#39;;&#34; style=&#34;CURSOR: pointer&#34; onclick=&#34;var large=&#39;cc163448.fig03b_L.gif&#39;; var small=&#39;cc163448.fig03b.gif&#39;; current =this.src; if  (current.indexof(large) &amp;gt; 0) this.src =small; (current.indexof(small) 0)this.src =large;&#34; alt =&#34;&#34; src =http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03b.gif&#34; /></p>
-<div class=&#34;ArticleImageCaptionText&#34;>图 3b<strong>&amp;nbsp; &amp;nbsp;</strong>(单击该图像获得较大视图)</div>
+<div class="ArticleImageSpacer"><img onmouseover="this.style.cursor=&#39;pointer&#39;;" style="CURSOR: pointer" onclick="var large=&#39;cc163448.fig03b_L.gif&#39;; var small=&#39;cc163448.fig03b.gif&#39;; var current=this.src;  if (current.indexOf(large) &amp;gt; 0) this.src=small; if (current.indexOf(small) &amp;gt; 0)this.src=large;" alt="" src="http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03b.gif" /></p>
+<div class="ArticleImageCaptionText">图 3b<strong>&amp;nbsp; &amp;nbsp;</strong>(单击该图像获得较大视图)</div>
 </div>
-<div class=&#34;ArticleImageSpacer&#34;><img alt=&#34;&#34; src=http://www.biglee.cn/blog/2008/&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03c.gif&#34; /></p>
-<div class=&#34;ArticleImageCaptionText&#34;>图 3c<strong>&amp;nbsp; &amp;nbsp;</strong></div>
+<div class="ArticleImageSpacer"><img alt="" src="http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03c.gif" /></p>
+<div class="ArticleImageCaptionText">图 3c<strong>&amp;nbsp; &amp;nbsp;</strong></div>
 </div>
-<div class=&#34;ArticleNormalPara&#34;>将 Web 部署项目添加到您的解决方案之后，您就可以通过访问</p>
+<div class="ArticleNormalPara">将 Web 部署项目添加到您的解决方案之后，您就可以通过访问</p>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2008/124.html" rel="bookmark"><time class="entry-date published" datetime="2008-06-20T10:36:31+00:00">2008年6月20日</time><time class="updated" datetime="2008-06-23T09:46:00+00:00">2008年6月23日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/dotnet" rel="category tag">.Net</a></span>			</footer><!-- .entry-footer -->
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2008/124.html" rel="bookmark"><time class="entry-date published" datetime="2008-06-20T10:36:31+00:00">2008年6月20日</time><time class="updated" datetime="2008-06-23T09:46:00+00:00">2008年6月23日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/dotnet" rel="category tag">.Net</a></span>			</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
 <div id="comments" class="comments-area">
@@ -174,10 +175,10 @@ img.emoji {
 			<article id="div-comment-93" class="comment-body">
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
-						<img alt='' src='http://0.gravatar.com/avatar/?s=42&#038;d=mm&#038;r=g' srcset='http://1.gravatar.com/avatar/?s=84&amp;d=mm&amp;r=g 2x' class='avatar avatar-42 photo avatar-default' height='42' width='42' />						<b class="fn">ASP.NET爱好者</b><span class="says">说道：</span>					</div><!-- .comment-author -->
+						<img alt='' src='http://2.gravatar.com/avatar/?s=42&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=84&amp;d=mm&amp;r=g 2x' class='avatar avatar-42 photo avatar-default' height='42' width='42' />						<b class="fn">ASP.NET爱好者</b><span class="says">说道：</span>					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
-						<a href="http://www.biglee.cn/blog/2008/124.html#comment-93">
+						<a href="/blog/2008/124.html#comment-93">
 							<time datetime="2009-02-25T11:08:18+00:00">
 								2009年2月25日 11:08							</time>
 						</a>
@@ -189,7 +190,7 @@ img.emoji {
 					<p>真的太感谢你了，我找了好多都不合适.</p>
 				</div><!-- .comment-content -->
 
-				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.biglee.cn/blog/2008/124.html?replytocom=93#respond' onclick='return addComment.moveForm( "div-comment-93", "93", "respond", "124" )' aria-label='回复给ASP.NET爱好者'>回复</a></div>			</article><!-- .comment-body -->
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/blog/2008/124.html?replytocom=93#respond' onclick='return addComment.moveForm( "div-comment-93", "93", "respond", "124" )' aria-label='回复给ASP.NET爱好者'>回复</a></div>			</article><!-- .comment-body -->
 </li><!-- #comment-## -->
 		</ol><!-- .comment-list -->
 
@@ -197,7 +198,7 @@ img.emoji {
 	
 	
 					<div id="respond" class="comment-respond">
-			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.biglee.cn/blog/2008/124.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="http://www.biglee.cn/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/2008/124.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
 					<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
 <p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
 <p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
@@ -210,7 +211,7 @@ img.emoji {
 
 	<nav class="navigation post-navigation" role="navigation">
 		<h2 class="screen-reader-text">文章导航</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="http://www.biglee.cn/blog/2008/123.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">域名带来的流量</span></a></div><div class="nav-next"><a href="http://www.biglee.cn/blog/2008/125.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">GridView 72般绝技</span></a></div></div>
+		<div class="nav-links"><div class="nav-previous"><a href="/blog/2008/123.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">域名带来的流量</span></a></div><div class="nav-next"><a href="/blog/2008/125.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">GridView 72般绝技</span></a></div></div>
 	</nav>
 	</main><!-- .site-main -->
 
@@ -220,7 +221,7 @@ img.emoji {
 
 	<aside id="secondary" class="sidebar widget-area" role="complementary">
 		<section id="search-2" class="widget widget_search">
-<form role="search" method="get" class="search-form" action="http://www.biglee.cn/">
+<form role="search" method="get" class="search-form" action="/">
 	<label>
 		<span class="screen-reader-text">搜索：</span>
 		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
@@ -229,112 +230,112 @@ img.emoji {
 </form>
 </section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
 					<li>
-				<a href="http://www.biglee.cn/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+				<a href="/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+				<a href="/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2016/305.html">微信大文件的清理</a>
+				<a href="/blog/2016/305.html">微信大文件的清理</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+				<a href="/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+				<a href="/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
 						</li>
 				</ul>
-		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="http://www.biglee.cn/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="http://www.biglee.cn/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="http://www.biglee.cn/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
-			<li><a href='http://www.biglee.cn/blog/date/2016/01'>2016年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2015/09'>2015年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/11'>2014年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/10'>2014年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/07'>2014年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/06'>2014年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/05'>2014年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/04'>2014年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/03'>2014年三月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/02'>2014年二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/01'>2014年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/12'>2013年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/09'>2013年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/08'>2013年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/07'>2013年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/06'>2013年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/05'>2013年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/04'>2013年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/12'>2012年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/11'>2012年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/09'>2012年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/08'>2012年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/07'>2012年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/06'>2012年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/05'>2012年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/04'>2012年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/03'>2012年三月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/01'>2012年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/11'>2011年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/09'>2011年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/08'>2011年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/07'>2011年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/02'>2011年二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/09'>2010年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/08'>2010年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/07'>2010年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/06'>2010年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/12'>2009年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/10'>2009年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/08'>2009年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/06'>2009年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/05'>2009年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/04'>2009年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/03'>2009年三月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/01'>2009年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/12'>2008年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/11'>2008年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/10'>2008年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/09'>2008年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/08'>2008年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/07'>2008年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/06'>2008年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/04'>2008年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/02'>2008年二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/12'>2007年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/11'>2007年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/10'>2007年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/09'>2007年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/08'>2007年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/07'>2007年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/06'>2007年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/05'>2007年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/04'>2007年四月</a></li>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='/blog/date/2007/04'>2007年四月</a></li>
 		</ul>
 		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
-	<li class="cat-item cat-item-16"><a href="http://www.biglee.cn/blog/category/dotnet" >.Net</a>
+	<li class="cat-item cat-item-16"><a href="/blog/category/dotnet" >.Net</a>
 </li>
-	<li class="cat-item cat-item-8"><a href="http://www.biglee.cn/blog/category/pc_technology" >PC技术</a>
+	<li class="cat-item cat-item-8"><a href="/blog/category/pc_technology" >PC技术</a>
 </li>
-	<li class="cat-item cat-item-11"><a href="http://www.biglee.cn/blog/category/entertainment" >影音娱乐</a>
+	<li class="cat-item cat-item-11"><a href="/blog/category/entertainment" >影音娱乐</a>
 </li>
-	<li class="cat-item cat-item-15"><a href="http://www.biglee.cn/blog/category/database" >数据库</a>
+	<li class="cat-item cat-item-15"><a href="/blog/category/database" >数据库</a>
 </li>
-	<li class="cat-item cat-item-14"><a href="http://www.biglee.cn/blog/category/digest" >文摘</a>
+	<li class="cat-item cat-item-14"><a href="/blog/category/digest" >文摘</a>
 </li>
-	<li class="cat-item cat-item-13"><a href="http://www.biglee.cn/blog/category/orther" >杂货铺</a>
+	<li class="cat-item cat-item-13"><a href="/blog/category/orther" >杂货铺</a>
 </li>
-	<li class="cat-item cat-item-7"><a href="http://www.biglee.cn/blog/category/management" >管理营运</a>
+	<li class="cat-item cat-item-7"><a href="/blog/category/management" >管理营运</a>
 </li>
-	<li class="cat-item cat-item-9"><a href="http://www.biglee.cn/blog/category/web_development" >网站技术</a>
+	<li class="cat-item cat-item-9"><a href="/blog/category/web_development" >网站技术</a>
 </li>
-	<li class="cat-item cat-item-3"><a href="http://www.biglee.cn/blog/category/network" >网络安全</a>
+	<li class="cat-item cat-item-3"><a href="/blog/category/network" >网络安全</a>
 </li>
-	<li class="cat-item cat-item-4"><a href="http://www.biglee.cn/blog/category/life" >网络生活</a>
+	<li class="cat-item cat-item-4"><a href="/blog/category/life" >网络生活</a>
 </li>
 		</ul>
 </section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
-						<li><a href="http://www.biglee.cn/wp-login.php">登录</a></li>
-			<li><a href="http://www.biglee.cn/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="http://www.biglee.cn/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+						<li><a href="/wp-login.php">登录</a></li>
+			<li><a href="/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
 			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
 			</section>	</aside><!-- .sidebar .widget-area -->
 
@@ -342,37 +343,37 @@ img.emoji {
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
-					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/web_development">网站技术</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/pc_technology">PC技术</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/orther">杂货铺</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/entertainment">影音娱乐</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/life">网络生活</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/digest">文摘</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/database">数据库</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/network">网络安全</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/management">管理营运</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-318"><a href="http://www.biglee.cn/blog/category/dotnet">.Net</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
 </ul></div>				</nav><!-- .main-navigation -->
 			
 			
 			<div class="site-info">
-								<span class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></span>
+								<span class="site-title"><a href="/" rel="home">网站建设技术集锦</a></span>
 				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
 			</div><!-- .site-info -->
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
 </div><!-- .site -->
 
-<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
 <script>
 var _hmt = _hmt || [];
 (function() {

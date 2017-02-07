@@ -2,17 +2,18 @@
 <html lang="zh-CN" class="no-js">
 <head>
 	<meta charset="UTF-8">
+	<base href="https://www.biglee.cn/">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="pingback" href="http://www.biglee.cn/xmlrpc.php">
+		<link rel="pingback" href="/xmlrpc.php">
 		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
 <title>ADSL断流掉线问题分析及解决方法汇总 &#8211; 网站建设技术集锦</title>
 <link rel='dns-prefetch' href='//s.w.org'>
-<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="http://www.biglee.cn/feed" />
-<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="http://www.biglee.cn/comments/feed" />
-<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; ADSL断流掉线问题分析及解决方法汇总评论Feed" href="http://www.biglee.cn/blog/2007/46.html/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; ADSL断流掉线问题分析及解决方法汇总评论Feed" href="/blog/2007/46.html/feed" />
 		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.biglee.cn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
 			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
 		</script>
 		<style type="text/css">
@@ -29,32 +30,32 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-<link rel='stylesheet' id='genericons-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
-<link rel='stylesheet' id='twentysixteen-style-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
 <!--[if lt IE 10]>
-<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
 <![endif]-->
 <!--[if lt IE 9]>
-<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
 <![endif]-->
 <!--[if lt IE 8]>
-<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
 <![endif]-->
 <!--[if lt IE 9]>
-<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
 <![endif]-->
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<link rel='https://api.w.org/' href='http://www.biglee.cn/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.biglee.cn/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.biglee.cn/wp-includes/wlwmanifest.xml" /> 
-<link rel='prev' title='电脑蓝屏全解' href='http://www.biglee.cn/blog/2007/45.html' />
-<link rel='next' title='ajax资料收集-Ajax文章(教程和实例)-Ajax资源下载(源码和教程)-Ajax规范标准' href='http://www.biglee.cn/blog/2007/48.html' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='电脑蓝屏全解' href='/blog/2007/45.html' />
+<link rel='next' title='ajax资料收集-Ajax文章(教程和实例)-Ajax资源下载(源码和教程)-Ajax规范标准' href='/blog/2007/48.html' />
 <meta name="generator" content="WordPress 4.6" />
-<link rel="canonical" href="http://www.biglee.cn/blog/2007/46.html" />
-<link rel='shortlink' href='http://www.biglee.cn/?p=46' />
-<link rel="alternate" type="application/json+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fword.my%2Fblog%2F2007%2F46.html" />
-<link rel="alternate" type="text/xml+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fword.my%2Fblog%2F2007%2F46.html&#038;format=xml" />
+<link rel="canonical" href="/blog/2007/46.html" />
+<link rel='shortlink' href='/?p=46' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2007%2F46.html" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2007%2F46.html&#038;format=xml" />
 		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
 		</head>
 
@@ -67,7 +68,7 @@ img.emoji {
 			<div class="site-header-main">
 				<div class="site-branding">
 					
-											<p class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-title"><a href="/" rel="home">网站建设技术集锦</a></p>
 											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
 									</div><!-- .site-branding -->
 
@@ -75,17 +76,17 @@ img.emoji {
 
 					<div id="site-header-menu" class="site-header-menu">
 													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
-								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/web_development">网站技术</a></li>
-<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-310"><a href="http://www.biglee.cn/blog/category/pc_technology">PC技术</a></li>
-<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/orther">杂货铺</a></li>
-<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/entertainment">影音娱乐</a></li>
-<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/life">网络生活</a></li>
-<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/digest">文摘</a></li>
-<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/database">数据库</a></li>
-<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/network">网络安全</a></li>
-<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/management">管理营运</a></li>
-<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/dotnet">.Net</a></li>
-<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
 </ul></div>							</nav><!-- .main-navigation -->
 						
 											</div><!-- .site-header-menu -->
@@ -105,12 +106,12 @@ img.emoji {
 	
 	
 	<div class="entry-content">
-		<p><font face=&#34;宋体&#34; color=&#34;#339900&#34; size=&#34;4&#34;><b>八种常见的ADSL断流现象</b></font></p>
-<p><font face=&#34;宋体&#34;><b>出处：中国电脑教育报<br /></b></font></p>
+		<p><font face="宋体" color="#339900" size="4"><b>八种常见的ADSL断流现象</b></font></p>
+<p><font face="宋体"><b>出处：中国电脑教育报<br /></b></font></p>
 <p>　　网页打不开、下载中断、或者在线视、音频流中断，这些情况都是很多使用ADSL上网的人会遇到的麻烦。可是当仔细检查ADSL MODEM的状态时，又会发现拨号登录已经成功。那么问题究竟出在哪里？ADSL用户该如何排查呢？</p>
-<p><font face=&#34;宋体&#34;><b>线路不稳定</p>
+<p><font face="宋体"><b>线路不稳定</p>
 <p></b>　　如果住所离电信局太远（5公里以上）可以向电信部门申报。确保线路连接正确（不同的话音分离器的连接方法有所不同，请务必按照说明书指引正确连接）。同时确保线路通讯质量良好没有被干扰，没有连接其它会造成线路干扰的设备，例如电话分机，传真机等。并检查接线盒和水晶头有没有接触不良以及是否与其它电线串绕在一起。有条件最好用标准电话线，如果是符ITU国际电信联盟标准的三类、五类或超五类双绞线更好。电话线入户后就分开走。一线走电话、一线走电脑。如果居住的房间都希望安装电话分机，最好选用质量好的分线盒。</font></p>
-<p><font face=&#34;宋体&#34;>注意：手机一定不要放在ADSL Modem的旁边，因为每隔几分钟手机会自动查找网络，这时强大的电磁波干扰足以造成ADSL Modem断流。</p>
+<p><font face="宋体">注意：手机一定不要放在ADSL Modem的旁边，因为每隔几分钟手机会自动查找网络，这时强大的电磁波干扰足以造成ADSL Modem断流。</p>
 <p>　　<b>网卡选购有学问</b></p>
 <p>　　检查您的网卡，如果是ISA网卡最好能换成PCI的，并且选择质量好的网卡，太便宜的网卡可能是造成问题的罪魁祸首。10M或10M/100M自适应网卡都可。另外，双网卡引起冲突同样值得关注，这时，应当拔起连接局域网或其它电脑的网卡，只用连接ADSL的网卡上网测试，如果故障恢复正常，检查两块网卡有没有冲突 。</p>
 <p>　　<b>ADSL Modem或者网卡设置有误</b></p>
@@ -118,66 +119,66 @@ img.emoji {
 <p>　　另外，TCP/IP设置最容易引起不能浏览网页的情况，例如没有更改过设置，一直可以正常浏览，突然发现浏览不正常了，就可以试着删除TCP/IP协议后重新添加TCP/IP 协议。</p>
 <p>　　<b>ADSL Modem同步异常</b></p>
 <p>　　检查一下自己的电话线和ADSL连接的地方是否接触不良，或者是电话线出现了问题。如果怀疑分离器坏或ADSL Modem坏，尝试不使用分离器而直接将外线接入ADSL Modem。如果确定是分离器没有问题，要保证分离器与ADSL Modem的连线不应该过长，太长的话同步很困难。如果排除上述情况，只要重起ADSL Modem就可以解决同步问题。</font></p>
-<p><font face=&#34;宋体&#34;><b>操作系统有缺陷</p>
+<p><font face="宋体"><b>操作系统有缺陷</p>
 <p></b>　　有的操作系统可能对ADSL的相关组件存在兼容性问题，以Windows 98为例，它的网络组件存在重大缺陷，连网时都会出现莫名其妙的断流问题。遇到这种情况最好的解决方法是给系统打补丁，你可以直接连接到微软的官方网站，选择系统搜索到的补丁下载。待补丁安装完成后，再安装虚拟拨号软件打补丁解决。</p>
 <p>　　主要补丁有：Windows 98 SE版的补丁、Windows 98 拨号网络1.3升级1.4补丁、Windows 95当时用WinPoET,RasPPPoE这类依靠操作系统的拨号网络工作的软件请首先安装&amp;ldquo;微软拨号网络1.3&amp;rdquo;方能正常工作、微软拨号网络 MSDUN1.4。</p>
 <p>　　<b>拨号软件互扰</b></p>
 <p>　　ADSL接入Internet的方式有虚拟拨号和专线接入两种，现在个人用户的ADSL大都是采用前者。而PPPOE（Point-to-Point Protocol over Ethernet以太网上的点对点协议）虚拟拨号软件都有各自的优缺点。经过多方在不同操作系统的测试，如果使用的操作系统是Windows XP，推荐用它自带PPPOE拨号软件，断流现象较少，稳定性也相对提高。如果使用的是Windows ME或9x，可以用以下几种虚拟拨号软件&amp;mdash;&amp;mdash;EnterNet、WinPoET、RasPPPoE。其中，EnterNet是现在比较常用的一款，EnterNet 300适用于Windows 9x；EnterNet 500适用于Windows 2000/XP。当你用一个PPPOE拨号软件有问题时，不妨卸载这个软件后换用一个其它的PPPOE拨号软件，请务必注意不要同时装多个PPPOE软件，以免造成冲突。</p>
-<p></font><font face=&#34;宋体&#34;><b>其他软件冲突</p>
+<p></font><font face="宋体"><b>其他软件冲突</p>
 <p></b>　　卸载有可能引起断流的软件，现在发现某些软件例如QQ 2000b等，偶然会造成上网断流，具体什么条件下会引发，尚要进一步测试。不少网友卸载后就发现断流问题解决了，包括用普通Modem 163拨号上网的用户也有用这种方法解决了断流问题的情况，笔者也收到朋友的邮件反映卸载QQ后断流问题解决，所以如果你有QQ，不妨先卸载你的OICQ，然后再上网试试。当你发现打开某些软件就有断流现象，关闭该软件就一切正常时，卸载该软件试试。</p>
 <p>　　<b>病毒攻击和防火墙软件设置不当</b></p>
 <p>　　虽然受到黑客和病毒的攻击可能性较小，但也不排除可能性。病毒如果破坏了ADSL相关组件也会有发生断流现象。建议安装&amp;ldquo;天网防火墙&amp;rdquo;或者&amp;ldquo;金山网镖&amp;rdquo;网络防火墙，它们都可以实时监控你的计算机和网络的通讯情况，并警告提示莫名的网络访问方式，有效降低受攻击的危险性。如果能确定受到病毒的破坏和攻击，还发生断流现象时就应该检查安装的防火墙、共享上网的代理服务器软件、上网加速软件等，停止运行这类软件后，再上网测试，看速度是否恢复正常。</font></p>
-<p><font face=&#34;宋体&#34;>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</font></p>
-<p><font face=&#34;宋体&#34;><font face=&#34;宋体&#34; color=&#34;#339900&#34; size=&#34;4&#34;><b>ADSL掉线、断流问题解决一法</b></font></font></p>
-<p><font face=&#34;宋体&#34;><b>出处：中国电脑教育报<br />作者：吴军</b></font></p>
-<p><font face=&#34;宋体&#34;>ADSL在使用了一段时间之后，经常会出现掉线、断流的现象：有时明明看到ADSL Modem的指示灯显示连上线了，可是发现网络的连接速度很慢；一个网页半天打不开，甚至出现找不到网页地址的情况。而检查设备、线路却是正常的。其实遇到这种情况我们可以换个思路来考虑问题，也许就会迎刃而解的。</font></p>
-<p><font face=&#34;宋体&#34;>ADSL使用的是电话线路，很多已经有些年头了，线路可能已经产生老化，尤其是线路接头和接线盒处最容易生锈。</p>
+<p><font face="宋体">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</font></p>
+<p><font face="宋体"><font face="宋体" color="#339900" size="4"><b>ADSL掉线、断流问题解决一法</b></font></font></p>
+<p><font face="宋体"><b>出处：中国电脑教育报<br />作者：吴军</b></font></p>
+<p><font face="宋体">ADSL在使用了一段时间之后，经常会出现掉线、断流的现象：有时明明看到ADSL Modem的指示灯显示连上线了，可是发现网络的连接速度很慢；一个网页半天打不开，甚至出现找不到网页地址的情况。而检查设备、线路却是正常的。其实遇到这种情况我们可以换个思路来考虑问题，也许就会迎刃而解的。</font></p>
+<p><font face="宋体">ADSL使用的是电话线路，很多已经有些年头了，线路可能已经产生老化，尤其是线路接头和接线盒处最容易生锈。</p>
 <p>　　电话线路布线一般如图所示：</font></p>
-<p><font face=&#34;宋体&#34;><br /><a id=&#34;ImgSpan&#34; href=http://www.biglee.cn/blog/2007/&#34;http://www.sxworkroom.cn/image/blogchina/diaoxian_01.jpg&#34; target=&#34;_blank&#34;><img alt=&#34;按此在新窗口浏览图片&#34; src=http://www.biglee.cn/blog/2007/&#34;http://www.sxworkroom.cn/image/blogchina/diaoxian_01.jpg&#34; border=&#34;0&#34; /></a></font></p>
-<p><font face=&#34;宋体&#34;>下面对线路作简要说明。接线盒1是门外的接线盒，一边接外线，一边接通向户内的线路。接线盒2的一边连接入户后的电话线，另一边连接一个带水晶头的电话线。水晶头是用来插入分离器的LINE插孔的。</p>
+<p><font face="宋体"><br /><a id="ImgSpan" href="http://www.sxworkroom.cn/image/blogchina/diaoxian_01.jpg" target="_blank"><img alt="按此在新窗口浏览图片" src="http://www.sxworkroom.cn/image/blogchina/diaoxian_01.jpg" border="0" /></a></font></p>
+<p><font face="宋体">下面对线路作简要说明。接线盒1是门外的接线盒，一边接外线，一边接通向户内的线路。接线盒2的一边连接入户后的电话线，另一边连接一个带水晶头的电话线。水晶头是用来插入分离器的LINE插孔的。</p>
 <p>　　分离器还有两个插孔，一个是PHONE，接通往电话机的线路。另一个是Modem，接通往ADSL Modem的线路。这两个插孔都要使用水晶头。</p>
 <p>　　检查重点：检查所有的接线盒和线头绞合处是否生锈。</p>
 <p>　　笔者家中用了两个接线盒，经检查，两个接线盒都有一边发黑生锈了，而且锈的很厉害，螺丝都拧不动了。此外有两处绞合的线头处也发黑了，都是锈，可见正是因为导线生锈导致电阻增大，导致信号不能畅通，电话通过的音频信号，频带低，信号还能通过，只是电话里老是有啪啪的声音，而ADSL的信号使用的频带比较高，线头生锈了就很难通过，导致信号传输变慢或者断流。</p>
 <p>　　解决办法：更新接线盒；剪去绞合处生锈的线头，用焊锡焊接。如果可能的话，在接线盒的螺丝和线头处涂上点凡士林，以防再生锈。</font></p>
 <p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
-<p><b><font face=&#34;宋体&#34; color=&#34;#339900&#34; size=&#34;4&#34;>追根寻源，ADSL为何频繁掉线？</font></b></p>
-<p><font face=&#34;宋体&#34;><b>出处：中宽网<br />作者：佚名 <br />[04-8-13 10:08]</b> </font></p>
+<p><b><font face="宋体" color="#339900" size="4">追根寻源，ADSL为何频繁掉线？</font></b></p>
+<p><font face="宋体"><b>出处：中宽网<br />作者：佚名 <br />[04-8-13 10:08]</b> </font></p>
 <p>　　今年3月8日开始，全国范围(据网上了解，广东、广西、福州、天津、上海、江苏、黑龙江均在此范围内)陆续出现了部分ADSL MODEM出现突然断流及挂死的现象。 </p>
-<p><font face=&#34;宋体&#34;>一、故障现象 </p>
+<p><font face="宋体">一、故障现象 </p>
 <p>　　经过了解，发现出现故障的现象大致雷同，有如下问题： </p>
 <p>　　1. ADSL Modem内置拨号方式上网，出现上网频繁中断和上网不畅，甚至无法连接到Internet，拨号上网成功后频繁地以5-10分钟间隔掉线；</p>
 <p>　　2.出现网络中断后，此时在PC机上ping ADSL Modem网关(192.168.1.1)，表现为大量丢包或完全不通。如下图所示：</font></p>
-<p><font face=&#34;宋体&#34;></font><font face=&#34;宋体&#34;><br /><a id=&#34;ImgSpan&#34; href=http://www.biglee.cn/blog/2007/&#34;http://www.sxworkroom.cn/image/blogchina/diaoxian_02.gif&#34; target=&#34;_blank&#34;><img alt=&#34;按此在新窗口浏览图片&#34; src=http://www.biglee.cn/blog/2007/&#34;http://www.sxworkroom.cn/image/blogchina/diaoxian_02.gif&#34; border=&#34;0&#34; /></a></font></p>
-<p><font face=&#34;宋体&#34;>数据的丢包率在88%左右，返回值的最大时延达到1292ms，可用性很差。</font></p>
-<p><font face=&#34;宋体&#34;><br /><a id=&#34;ImgSpan&#34; href=http://www.biglee.cn/blog/2007/&#34;http://www.sxworkroom.cn/image/blogchina/diaoxian_03.gif&#34; target=&#34;_blank&#34;><img alt=&#34;按此在新窗口浏览图片&#34; src=http://www.biglee.cn/blog/2007/&#34;http://www.sxworkroom.cn/image/blogchina/diaoxian_03.gif&#34; border=&#34;0&#34; /></a></font></p>
-<p><font face=&#34;宋体&#34;>3.这时通过内网地址连接其www配置端口80无响应，但若将ADSL Modem的电源关掉再打开则可以重新拨号成功，并能正常上网。PING网关192.168.1.1也恢复正常，但是间隔大概5分钟到10分钟后又重新出现上述故障现象。用户如果将ADSL Modem的路由设置取消，改而使用终端PPPoE的方式，通过电脑采用第三方拨号软件直接拨号上网，则上网一直正常。 </p>
+<p><font face="宋体"></font><font face="宋体"><br /><a id="ImgSpan" href="http://www.sxworkroom.cn/image/blogchina/diaoxian_02.gif" target="_blank"><img alt="按此在新窗口浏览图片" src="http://www.sxworkroom.cn/image/blogchina/diaoxian_02.gif" border="0" /></a></font></p>
+<p><font face="宋体">数据的丢包率在88%左右，返回值的最大时延达到1292ms，可用性很差。</font></p>
+<p><font face="宋体"><br /><a id="ImgSpan" href="http://www.sxworkroom.cn/image/blogchina/diaoxian_03.gif" target="_blank"><img alt="按此在新窗口浏览图片" src="http://www.sxworkroom.cn/image/blogchina/diaoxian_03.gif" border="0" /></a></font></p>
+<p><font face="宋体">3.这时通过内网地址连接其www配置端口80无响应，但若将ADSL Modem的电源关掉再打开则可以重新拨号成功，并能正常上网。PING网关192.168.1.1也恢复正常，但是间隔大概5分钟到10分钟后又重新出现上述故障现象。用户如果将ADSL Modem的路由设置取消，改而使用终端PPPoE的方式，通过电脑采用第三方拨号软件直接拨号上网，则上网一直正常。 </p>
 <p>　　二、故障原因初步分析 </p>
 <p>　　经过故障现象的初步分析，发现出现故障现象的ADSL MODEM都具备以下两个特征： </p>
 <p>　　1.出现故障的ADSL MODEM品牌各异，包括华勤、华为、中兴、华硕、实达、晨星等部分型号的ADSL MODEM；但都使用GLOBESPAN的稍旧型号VIKING芯片(如华硕AAM6000EV A/J )； </p>
 <p>　　2.MODEM都启用了内置拨号的模式，即统称的ADSL路由模式； </p>
 <p>　　由于发现采用第三方拨号软件拨号上网ADSL MODEM能正常运行，但使用ADSL MODEM的内置拨号存在问题，则首先可以初步判定，GLOBESPAN的VIKING芯片或这套ADSL系统存在BUG或者存在漏洞遭到了病毒攻击。</font></p>
 <p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;</p>
-<p><b><font face=&#34;宋体&#34; color=&#34;#339900&#34; size=&#34;4&#34;>ADSL变慢原因查找和排除八项总结</font></b></p>
-<p><b><font face=&#34;宋体&#34;>作者：ptsn</font></b></p>
-<p><font face=&#34;宋体&#34;>有用户反映，ADSL高速宽带网在使用过程中，有时还不如原来的窄带MODEM（调制解调器）上网速度快。那么，上网速度慢主要由哪些原因造成的？如何快速查找和排除呢？ </p>
+<p><b><font face="宋体" color="#339900" size="4">ADSL变慢原因查找和排除八项总结</font></b></p>
+<p><b><font face="宋体">作者：ptsn</font></b></p>
+<p><font face="宋体">有用户反映，ADSL高速宽带网在使用过程中，有时还不如原来的窄带MODEM（调制解调器）上网速度快。那么，上网速度慢主要由哪些原因造成的？如何快速查找和排除呢？ </p>
 <p><b>　　1.网卡绑定的协议太多。</b> </p>
 <p>　　上网速度慢，在局域网用户中很常见，原因是网卡绑定的协议太多。网卡上如果绑定了许多协议，当数据通过网卡时，计算机就要花费很多时间来确定这个数据使用哪种协议来传送，这时用户就会感觉上网慢。解决方法是：让一块网卡只运行PPPOE协议来连接ADSL，提供上网的外部连接，另一块网卡运行局域网的其他协议，从而各尽其职提高性能，这样客户端上网速度就会改善。 </p>
 <p><b>　　2.ADSL设备散热不良。</b> </p>
 <p>　　ADSL设备工作时发热量比较大，平时要注意散热，许多用户把ADSL设备和路由器、集线器等放在一个机柜里，各种设备工作时一块散热，对ADSL的正常工作有影响。如刚上网时正常，5分钟左右，网速下降，下载速率与窄带56kMODEM一样，这时用手摸设备很烫，换一个ADSL设备，速度就上来了。所以，微机、ADSL等设备不可放在同一机柜内，要分散摆放，设备之间留有通风散热通道，微机房间最好做到恒温，一般环境温度应控制在10℃～30℃。相对湿度保持在40％～70％为好。</font></p>
-<p><font face=&#34;宋体&#34;><b>3.访问互联网接口错误。</b></font></p>
-<p><font face=&#34;宋体&#34;>　　这是由于Windows（窗口软件）的Internet连接向导给IE指定的访问互联网接口错误引起的，Enterhet300（虚拟拨号软件）使用的是局域网类型虚拟拨号，而IE缺省使用普通拨号，浏览的时候IE首先寻找拨号接口。找不到拨号以后就找局域网里面有没有代理服务器，最后才会找到Enternet300这个接口，所以会很慢，只需要重新运行一遍Internet（互联网）连接向导，选择局域网方式，并取消自动搜索代理服务器就可解决。 </p>
+<p><font face="宋体"><b>3.访问互联网接口错误。</b></font></p>
+<p><font face="宋体">　　这是由于Windows（窗口软件）的Internet连接向导给IE指定的访问互联网接口错误引起的，Enterhet300（虚拟拨号软件）使用的是局域网类型虚拟拨号，而IE缺省使用普通拨号，浏览的时候IE首先寻找拨号接口。找不到拨号以后就找局域网里面有没有代理服务器，最后才会找到Enternet300这个接口，所以会很慢，只需要重新运行一遍Internet（互联网）连接向导，选择局域网方式，并取消自动搜索代理服务器就可解决。 </p>
 <p><b>　　4.系统不支持多任务。</b> </p>
 <p>　　如果用户的计算机刚刚符合最低配置，故系统就不能支持同时浏览网页、下载软件、听音乐等多项任务。多种任务同时工作时就会感觉上网慢。因此，同时工作任务一般不超过两项为好。</font></p>
-<p><font face=&#34;宋体&#34;><b>　　5.未绑定TCP/IP协议</b>。 </p>
+<p><font face="宋体"><b>　　5.未绑定TCP/IP协议</b>。 </p>
 <p>　　未绑定TCP（传输控制协议）/IP（国际协议），多为网卡驱动程序没装好、网卡质量有问题、PCI（总线标准）插槽不好。应先把设备管理器里的网卡驱动删除，重启后安装驱动程序；如果不好，把网卡换一个PCI插槽，仍不好可再换一块网卡。 </font></p>
-<p><font face=&#34;宋体&#34;><b>6.电话线路质量低劣。</b> </p>
+<p><font face="宋体"><b>6.电话线路质量低劣。</b> </p>
 <p>　　ADSL技术对电话线路的质量要求较高，目前采用的ADSL是一种RADSL（即速率自适应ADSL），如果电话局到用户间的电话线路在某段时间受到外在因素干扰，RADSL会根据线路质量的优劣和传输距离的远近，动态地调整用户的访问速度。如访问的是国外站点，速度会受到出口带宽及对方站点线路、设备配置情况等因素影响，需要全网协调配合解决。线路问题主要有：因为施工时未遵循施工标准，遗留质量隐患，如没加塑料套管导致老鼠咬断线路；配线架或其他材料因质量问题，导致跳线接触不良；用户在装修时暗敷的室内线损坏等。 </p>
 <p><b>　　7.软件没有重新设置。</b> </p>
 <p>　　用户安装ADSL宽带后，上网条件已经发生变化，相应的工具软件却没有重新设置，也是造成速度慢的</p>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/46.html" rel="bookmark"><time class="entry-date published" datetime="2007-05-18T09:21:11+00:00">2007年5月18日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/pc_technology" rel="category tag">PC技术</a></span>			</footer><!-- .entry-footer -->
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2007/46.html" rel="bookmark"><time class="entry-date published" datetime="2007-05-18T09:21:11+00:00">2007年5月18日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/pc_technology" rel="category tag">PC技术</a></span>			</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
 <div id="comments" class="comments-area">
@@ -185,7 +186,7 @@ img.emoji {
 	
 	
 					<div id="respond" class="comment-respond">
-			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.biglee.cn/blog/2007/46.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="http://www.biglee.cn/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/2007/46.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
 					<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
 <p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
 <p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
@@ -198,7 +199,7 @@ img.emoji {
 
 	<nav class="navigation post-navigation" role="navigation">
 		<h2 class="screen-reader-text">文章导航</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="http://www.biglee.cn/blog/2007/45.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">电脑蓝屏全解</span></a></div><div class="nav-next"><a href="http://www.biglee.cn/blog/2007/48.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">ajax资料收集-Ajax文章(教程和实例)-Ajax资源下载(源码和教程)-Ajax规范标准</span></a></div></div>
+		<div class="nav-links"><div class="nav-previous"><a href="/blog/2007/45.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">电脑蓝屏全解</span></a></div><div class="nav-next"><a href="/blog/2007/48.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">ajax资料收集-Ajax文章(教程和实例)-Ajax资源下载(源码和教程)-Ajax规范标准</span></a></div></div>
 	</nav>
 	</main><!-- .site-main -->
 
@@ -208,7 +209,7 @@ img.emoji {
 
 	<aside id="secondary" class="sidebar widget-area" role="complementary">
 		<section id="search-2" class="widget widget_search">
-<form role="search" method="get" class="search-form" action="http://www.biglee.cn/">
+<form role="search" method="get" class="search-form" action="/">
 	<label>
 		<span class="screen-reader-text">搜索：</span>
 		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
@@ -217,112 +218,112 @@ img.emoji {
 </form>
 </section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
 					<li>
-				<a href="http://www.biglee.cn/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+				<a href="/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+				<a href="/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2016/305.html">微信大文件的清理</a>
+				<a href="/blog/2016/305.html">微信大文件的清理</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+				<a href="/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+				<a href="/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
 						</li>
 				</ul>
-		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="http://www.biglee.cn/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="http://www.biglee.cn/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="http://www.biglee.cn/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
-			<li><a href='http://www.biglee.cn/blog/date/2016/01'>2016年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2015/09'>2015年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/11'>2014年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/10'>2014年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/07'>2014年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/06'>2014年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/05'>2014年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/04'>2014年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/03'>2014年三月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/02'>2014年二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/01'>2014年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/12'>2013年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/09'>2013年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/08'>2013年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/07'>2013年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/06'>2013年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/05'>2013年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/04'>2013年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/12'>2012年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/11'>2012年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/09'>2012年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/08'>2012年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/07'>2012年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/06'>2012年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/05'>2012年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/04'>2012年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/03'>2012年三月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/01'>2012年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/11'>2011年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/09'>2011年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/08'>2011年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/07'>2011年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/02'>2011年二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/09'>2010年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/08'>2010年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/07'>2010年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/06'>2010年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/12'>2009年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/10'>2009年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/08'>2009年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/06'>2009年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/05'>2009年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/04'>2009年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/03'>2009年三月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/01'>2009年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/12'>2008年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/11'>2008年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/10'>2008年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/09'>2008年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/08'>2008年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/07'>2008年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/06'>2008年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/04'>2008年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/02'>2008年二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/12'>2007年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/11'>2007年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/10'>2007年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/09'>2007年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/08'>2007年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/07'>2007年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/06'>2007年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/05'>2007年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/04'>2007年四月</a></li>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='/blog/date/2007/04'>2007年四月</a></li>
 		</ul>
 		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
-	<li class="cat-item cat-item-16"><a href="http://www.biglee.cn/blog/category/dotnet" >.Net</a>
+	<li class="cat-item cat-item-16"><a href="/blog/category/dotnet" >.Net</a>
 </li>
-	<li class="cat-item cat-item-8"><a href="http://www.biglee.cn/blog/category/pc_technology" >PC技术</a>
+	<li class="cat-item cat-item-8"><a href="/blog/category/pc_technology" >PC技术</a>
 </li>
-	<li class="cat-item cat-item-11"><a href="http://www.biglee.cn/blog/category/entertainment" >影音娱乐</a>
+	<li class="cat-item cat-item-11"><a href="/blog/category/entertainment" >影音娱乐</a>
 </li>
-	<li class="cat-item cat-item-15"><a href="http://www.biglee.cn/blog/category/database" >数据库</a>
+	<li class="cat-item cat-item-15"><a href="/blog/category/database" >数据库</a>
 </li>
-	<li class="cat-item cat-item-14"><a href="http://www.biglee.cn/blog/category/digest" >文摘</a>
+	<li class="cat-item cat-item-14"><a href="/blog/category/digest" >文摘</a>
 </li>
-	<li class="cat-item cat-item-13"><a href="http://www.biglee.cn/blog/category/orther" >杂货铺</a>
+	<li class="cat-item cat-item-13"><a href="/blog/category/orther" >杂货铺</a>
 </li>
-	<li class="cat-item cat-item-7"><a href="http://www.biglee.cn/blog/category/management" >管理营运</a>
+	<li class="cat-item cat-item-7"><a href="/blog/category/management" >管理营运</a>
 </li>
-	<li class="cat-item cat-item-9"><a href="http://www.biglee.cn/blog/category/web_development" >网站技术</a>
+	<li class="cat-item cat-item-9"><a href="/blog/category/web_development" >网站技术</a>
 </li>
-	<li class="cat-item cat-item-3"><a href="http://www.biglee.cn/blog/category/network" >网络安全</a>
+	<li class="cat-item cat-item-3"><a href="/blog/category/network" >网络安全</a>
 </li>
-	<li class="cat-item cat-item-4"><a href="http://www.biglee.cn/blog/category/life" >网络生活</a>
+	<li class="cat-item cat-item-4"><a href="/blog/category/life" >网络生活</a>
 </li>
 		</ul>
 </section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
-						<li><a href="http://www.biglee.cn/wp-login.php">登录</a></li>
-			<li><a href="http://www.biglee.cn/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="http://www.biglee.cn/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+						<li><a href="/wp-login.php">登录</a></li>
+			<li><a href="/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
 			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
 			</section>	</aside><!-- .sidebar .widget-area -->
 
@@ -330,37 +331,37 @@ img.emoji {
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
-					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/web_development">网站技术</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-310"><a href="http://www.biglee.cn/blog/category/pc_technology">PC技术</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/orther">杂货铺</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/entertainment">影音娱乐</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/life">网络生活</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/digest">文摘</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/database">数据库</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/network">网络安全</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/management">管理营运</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/dotnet">.Net</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
 </ul></div>				</nav><!-- .main-navigation -->
 			
 			
 			<div class="site-info">
-								<span class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></span>
+								<span class="site-title"><a href="/" rel="home">网站建设技术集锦</a></span>
 				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
 			</div><!-- .site-info -->
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
 </div><!-- .site -->
 
-<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
 <script>
 var _hmt = _hmt || [];
 (function() {

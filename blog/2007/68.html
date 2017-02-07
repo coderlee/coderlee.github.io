@@ -2,17 +2,18 @@
 <html lang="zh-CN" class="no-js">
 <head>
 	<meta charset="UTF-8">
+	<base href="https://www.biglee.cn/">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="pingback" href="http://www.biglee.cn/xmlrpc.php">
+		<link rel="pingback" href="/xmlrpc.php">
 		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
 <title>web交互界面易用性设计和验收的指导性原则 &#8211; 网站建设技术集锦</title>
 <link rel='dns-prefetch' href='//s.w.org'>
-<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="http://www.biglee.cn/feed" />
-<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="http://www.biglee.cn/comments/feed" />
-<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; web交互界面易用性设计和验收的指导性原则评论Feed" href="http://www.biglee.cn/blog/2007/68.html/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; web交互界面易用性设计和验收的指导性原则评论Feed" href="/blog/2007/68.html/feed" />
 		<script type="text/javascript">
-			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.biglee.cn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
 			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
 		</script>
 		<style type="text/css">
@@ -29,32 +30,32 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-<link rel='stylesheet' id='genericons-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
-<link rel='stylesheet' id='twentysixteen-style-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
 <!--[if lt IE 10]>
-<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
 <![endif]-->
 <!--[if lt IE 9]>
-<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
 <![endif]-->
 <!--[if lt IE 8]>
-<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
 <![endif]-->
 <!--[if lt IE 9]>
-<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
 <![endif]-->
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
-<link rel='https://api.w.org/' href='http://www.biglee.cn/wp-json/' />
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.biglee.cn/xmlrpc.php?rsd" />
-<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.biglee.cn/wp-includes/wlwmanifest.xml" /> 
-<link rel='prev' title='微软资深经理人的网站项目管理经验' href='http://www.biglee.cn/blog/2007/67.html' />
-<link rel='next' title='策划人凭什么策划' href='http://www.biglee.cn/blog/2007/69.html' />
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='微软资深经理人的网站项目管理经验' href='/blog/2007/67.html' />
+<link rel='next' title='策划人凭什么策划' href='/blog/2007/69.html' />
 <meta name="generator" content="WordPress 4.6" />
-<link rel="canonical" href="http://www.biglee.cn/blog/2007/68.html" />
-<link rel='shortlink' href='http://www.biglee.cn/?p=68' />
-<link rel="alternate" type="application/json+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fword.my%2Fblog%2F2007%2F68.html" />
-<link rel="alternate" type="text/xml+oembed" href="http://www.biglee.cn/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fword.my%2Fblog%2F2007%2F68.html&#038;format=xml" />
+<link rel="canonical" href="/blog/2007/68.html" />
+<link rel='shortlink' href='/?p=68' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2007%2F68.html" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2007%2F68.html&#038;format=xml" />
 		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
 		</head>
 
@@ -67,7 +68,7 @@ img.emoji {
 			<div class="site-header-main">
 				<div class="site-branding">
 					
-											<p class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-title"><a href="/" rel="home">网站建设技术集锦</a></p>
 											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
 									</div><!-- .site-branding -->
 
@@ -75,17 +76,17 @@ img.emoji {
 
 					<div id="site-header-menu" class="site-header-menu">
 													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
-								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="http://www.biglee.cn/blog/category/web_development">网站技术</a></li>
-<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/pc_technology">PC技术</a></li>
-<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/orther">杂货铺</a></li>
-<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/entertainment">影音娱乐</a></li>
-<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/life">网络生活</a></li>
-<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/digest">文摘</a></li>
-<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/database">数据库</a></li>
-<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/network">网络安全</a></li>
-<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/management">管理营运</a></li>
-<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/dotnet">.Net</a></li>
-<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
 </ul></div>							</nav><!-- .main-navigation -->
 						
 											</div><!-- .site-header-menu -->
@@ -105,49 +106,49 @@ img.emoji {
 	
 	
 	<div class="entry-content">
-		<p><strong><font color=&#34;#565656&#34;>． 输入控件的自动聚焦和可用键盘切换输入焦点 </font></strong></p>
-<p><font color=&#34;#0000ff&#34;>使用JavaScript实现页面加载完成后立即自动聚焦(focus)到第一个输入控件。可用TAB键（IE缺省实现）或方向键切换聚焦到下一个输入控件。 </font></p>
+		<p><strong><font color="#565656">． 输入控件的自动聚焦和可用键盘切换输入焦点 </font></strong></p>
+<p><font color="#0000ff">使用JavaScript实现页面加载完成后立即自动聚焦(focus)到第一个输入控件。可用TAB键（IE缺省实现）或方向键切换聚焦到下一个输入控件。 </font></p>
 <p>　　输入控件指WEB页面表单(&amp;lt;form&amp;gt;)中显式的，需要用户进行修改、编辑操作的表单元素。对于这些控件，如果没有自动聚焦操作，不可避免的出现一次用户鼠标定位操作（如果用户此前处于键盘输入操作状态或鼠标定位后需要进行键盘输入操作，实际上是键盘鼠标切换操作）。如果鼠标定位后需要进行键盘输入操作，如果不能键盘切换输入焦点，那么不可避免的在切换输入焦点时需要反复的键盘鼠标切换操作，这是很繁琐的。</p>
 <p>　　如果实现了页面加载完成即自动聚焦到第一个输入控件，并且可以键盘切换输入焦点标定位操作，那么对于用户来说整个页面的输入操作可能都不需要鼠标操作，或次数较少，这是一种便利。毕竟频繁的键盘鼠标切换操作是比较累人的。</p>
 <p>　　对于有输入栏的对话框或网页，在不干预的情况下就应将当前控制焦点定位在待输入的输入栏上；如果输入栏在一般情况下不需要更改其中的内容，则应直接将焦点定在&amp;ldquo;确定&amp;rdquo;按钮上；在几个输入栏之间应支持tab，shift+tab切换操作，&amp;ldquo;确定&amp;rdquo;和&amp;ldquo;取消&amp;rdquo;应该是切换操作的终点，与具体所在位置无关。</p>
 <p><strong>　　2． 可用Enter（或Ctrl＋Enter）键提交，确保和点击提交按钮的效果是相同的 </strong></p>
-<p><font color=&#34;#0000ff&#34;>　　不要在提交按钮上加入onClick=&amp;rdquo;&amp;hellip;&amp;rdquo;这样的JavaScript代码。</font> </p>
+<p><font color="#0000ff">　　不要在提交按钮上加入onClick=&amp;rdquo;&amp;hellip;&amp;rdquo;这样的JavaScript代码。</font> </p>
 <p>　　用Enter键提交页面是原则1的自然延伸，而且这也是浏览器所缺省支持的。只所以单独列出来是因为实际上有些设计者设计的页面不能达到这种效果，结果导致使用Enter键提交和点击&amp;ldquo;确定&amp;rdquo;按钮提交带来的效果不一样。大部分情况下是设计者在&amp;ldquo;确定&amp;rdquo;按钮上加入了onClik=&amp;rdquo;&amp;hellip;&amp;rdquo;这样的代码，通过点击&amp;ldquo;确定&amp;rdquo;按钮后，会执行一段JavaScript代码，比如对某些hidden类型的input元素设值。而使用Enter键提交时就不会执行这段代码。</p>
 <p>　　正确的做法是把这段代码移到表单标签&amp;lt;form&amp;gt;中，以onSubmit=&amp;rdquo;&amp;hellip;&amp;rdquo;属性引入。</p>
 <p>　　对于&amp;lt;textarea&amp;gt;表单元素，它会消耗Enter键，因此会使得Enter键提交失效。可以引入JavaScript代码捕捉Ctrl+Enter复合键，一旦捕捉到即执行表单的submit()方法。对于需要频繁提交的场合，比如BBS上，这种代码是很有必要的。</p>
 <p><strong>　　3． 鼠标动作提示和回应 </strong></p>
-<p><font color=&#34;#0000ff&#34;>　　对用户的鼠标定位操作，当移动到可响应的位置上时，应给予视觉或听觉的提示。 </font></p>
+<p><font color="#0000ff">　　对用户的鼠标定位操作，当移动到可响应的位置上时，应给予视觉或听觉的提示。 </font></p>
 <p>　　动作回应的最简单形式就是鼠标ICON变成手状。浏览器只对具有href属性的HTML标签会自动进行这种变换ICON的行为。对于没有href属性（或没有设置href属性）的标签，可以通过JavaScript设置style属性的cursor为hand。</p>
 <p>　　目标区域发生变化是更为主动的响应形式。当鼠标指针移到目标区域，此时指针图形改变或文字颜色发生改变均能较大的减轻用户搜索定位目标区域的注意力负担。在按钮上增添直观的图形，尽可能的增大按钮面积；按钮间保持适当的距离，太近增加了用户区别它们之间界限以防误操作的负担，太远增加了用户搜索定位按钮的负担。</p>
 <p><strong>　　4．尽可能早的在客户端完成输入数据合法性验证 </strong></p>
-<p>　　<font color=&#34;#0000ff&#34;>输入数据的合法性检验应该在客户端使用JavaScript进行验证。除非验证只能在服务器端完成，否则验证工作应在最早能完成的情况下进行。 </font></p>
+<p>　　<font color="#0000ff">输入数据的合法性检验应该在客户端使用JavaScript进行验证。除非验证只能在服务器端完成，否则验证工作应在最早能完成的情况下进行。 </font></p>
 <p>　　在客户端完成数据合法性验证，可以避免一次服务器请求和回复通讯，这种通讯是需要用户等待的，如果用户等待很长时间后从服务器返回的结果提示出现的错误是在输入时即可发现的，那么这种设计就是不友好的。诸如密码长度限制，用户名允许字符限制等等，显然应该在客户端提交前就应该进行验证。</p>
 <p><strong>　　5． 根据应用场景决定在表单页面和提交后返回页面间是否使用中间过渡页面 </strong></p>
-<p><font color=&#34;#0000ff&#34;>　　根据应用场景，决定是否显示接收表单页面（表单页面和提交后返回页面间的中间过渡页面），以及使用何种方式显示接收表单页面。</font> </p>
+<p><font color="#0000ff">　　根据应用场景，决定是否显示接收表单页面（表单页面和提交后返回页面间的中间过渡页面），以及使用何种方式显示接收表单页面。</font> </p>
 <p>　　表单页面和接收表单页面是大部分WEB交互操作赖以实现的配合模式。关于表单页面和接收表单页面的相互关系的设计，要做如下几个方面的考虑。</p>
-<p>　　<font color=&#34;#003366&#34;>一，对于需要频繁操作的场合，从操作便利和快捷性出发，尽可能的减少服务器和客户端交互次数，应该避免使用中间过渡页面。提交完毕直接返回原来的表单页面或默认页面。在这种情况下要考虑到数据安全和可恢复性。</font></p>
+<p>　　<font color="#003366">一，对于需要频繁操作的场合，从操作便利和快捷性出发，尽可能的减少服务器和客户端交互次数，应该避免使用中间过渡页面。提交完毕直接返回原来的表单页面或默认页面。在这种情况下要考虑到数据安全和可恢复性。</font></p>
 <p>　　如果因为用户输入的数据不合格，需要重新输入，那么，去除中间页面，把错误信息直接显示在原表单页面上的设计方式，将是最简洁的处理方式。用户只需要根据错误提示进行更正即可。当然这样做稍微增加了编程负担。在表单接收页面上需要包含原表单页面的内容，而且输入数据项都必须用服务器端代码或客户端JavaScript设置成用户输入的值。为了开发快捷，可以这样做：表单页面和接收表单页面用同一个服务器端脚本页面实现。这个页面按如下流程完成原来两个页面的工作：</p>
 <p>页面脚本初始化<br />┃<br />检查&amp;ldquo;提交&amp;rdquo;变量是否设置<br />┠已设置，做数据验证<br />┃ ┠验证通过－&amp;gt;业务逻辑处理－&amp;gt;使用包含页面方式或重定向方式返回到特定页面&amp;nbsp;<br />┃ ┗验证不通过－&amp;gt;保存用户输入的数据－&amp;gt;退出表单提交处理到表单页面流程中<br />┗未设置，做表单页面流程，如有来自提交流程中产生的用户输入数据，则显示出来 </p>
 <p>　　其中，使用包含页面方式返回到特定页面可以避免一次客户端重定向过程，比客户端重定向过程还要快捷和稳定一些。但是有些情况下因为代码变量冲突或其他原因，使用包含页面方式可能并不方便，这时候可以使用服务器端重定向技术，在ASP里是Server.Transfer方法，在Java Servlet里是RequestDispatcher.forward()方法。不要使用Response.Redirect或者HttpServletResponse.sendRedirect()这种客户端HTTP重定向方法。不使用中间过渡页面也就意味着用户不能后退浏览原先已经填好的表单页面，因为使用的是同一个URL。所以在验证不通过情况下保存用户输入的数据就是必不可少的。 </p>
 <p>　　不使用中间过渡页面带来的另一个问题就是使用包含页面方式或服务器端重定向方式返回会使得URL和页面内容不能一一对应。对于用户可能会直接用这个URL（会收藏这个URL）访问返回页面的情况，他会发现实际上到达的是表单页面，不是他想要的那个返回结果页面。所以，去除中间过渡页面，确实会带来URL和内容含混不清的情况，因而不适合需要URL和页面内容一一对应的场合。 </p>
-<p>　　<font color=&#34;#003366&#34;>二，从技术角度考虑，使用中间过渡页面能保证URL和页面内容一一对应，简化页面开发工作。 </font></p>
+<p>　　<font color="#003366">二，从技术角度考虑，使用中间过渡页面能保证URL和页面内容一一对应，简化页面开发工作。 </font></p>
 <p>　　为了保证页面内容总是和固定的URL联系起来，必须使用客户端重定向： </p>
 <p>提交 业务逻辑处理 （中间过渡页面） <br />表单页面――――－&amp;gt;接收表单页面―――――――――&amp;gt;显示处理结果―――&amp;gt;客户端重定向到特定页面 </p>
 <p>　　客户端重定向分几种情况：1，使用HTTP Header重定向，Location:http://www.netall.com.cn，这种定向是最快的，在窗口一片空白的情况下就迅速访问（GET）另一个页面。这种方式实际上不能显示处理结果，只能说是向第一种快速重定向方式的一种折衷处理；2,HTML标签刷新，&amp;lt;META HTTP-EQUIV=&amp;quot;Refresh&amp;quot; CONTENT=&amp;quot;5;URL=http://www.netall.com.cn&amp;quot;&amp;gt;，这种定向比较友好，在这个页面加载完毕后访问另一个页面。很多设计者把这个作为一个技巧使用，在载入一个大页面前放置一个缓冲页面以避免用户乏味的等待；3，JavaScript重定向。由于是用代码控制重定向，可以做的更灵活。比如根据用户习惯，控制操作完毕后的转向流程。4，被动式的重定向。在页面上放置按钮或链接，由用户手动决定返回到特定页面。这种情况适合于处理结果的显示页面包含相当多的信息，需要用户仔细浏览，而决定下一步的操作。 </p>
 <p>　　在使用中间过渡页面的情况下，不能再使用页面过期失效了。否则一旦出现错误，需要用户重新输入表单数据，用户就不能用后退按钮恢复此前填写的表单数据了。除非设计者有意禁止这种恢复。 </p>
 <p><strong>　　6． 防止表单重复提交处理 </strong></p>
-<p><font color=&#34;#0000ff&#34;>　　对提交按钮点击后做变灰处理避免在网络响应较慢情况下用户重复提交同一个表单。使用页面过期失效避免用户后退浏览重复提交表单。 </font></p>
+<p><font color="#0000ff">　　对提交按钮点击后做变灰处理避免在网络响应较慢情况下用户重复提交同一个表单。使用页面过期失效避免用户后退浏览重复提交表单。 </font></p>
 <p>　　有些复杂的应用会导致需要较长时间的等待才会返回处理结果。而在较慢的网络环境中，这种情况更是频繁发生。焦急等待的用户往往会重复点击提交按钮。这种情况是设计者所不希望看到的。</p>
 <p>　　使用JavaScript在点击提交按钮后使按钮失效变灰是一个最直接的办法（根据原则2这段代码应该放在&amp;lt;form&amp;gt;标签里onSubmit=&amp;rdquo;&amp;hellip;&amp;rdquo;做）。此外，在表单页面上，用服务器端脚本设置HTTP Header的Expires为立即过期可以保证用户没办法使用后退浏览恢复表单页面。注意这样做的代价可能是用户辛辛苦苦填写很长的内容，结果一旦操作失误就没法恢复。所以应该避免在包含&amp;lt;textarea&amp;gt;表单元素的页面上使用页面过期失效。</p>
 <p>　　应该说，更严格的方法是，服务器端脚本就应该具备抵抗重复提交的能力。例如，为这个表单分配一个唯一ID或一个使用一次即失效的验证码。此外，这个表单处理还应具有事务性质，如果表单不被接受，所做的改变还是能恢复的。在金融应用场合，重复提交同一笔交易是肯定不被允许的。能在重复提交中获利的一方总是会想办法绕过浏览器的限制，所以不能依赖于客户端的技术。</p>
 <p><strong>　　7． 页面链接是打开新窗口、使用原窗口还是弹出窗口的原则 </strong></p>
-<p><font color=&#34;#0000ff&#34;>　　一般而言，首页上链接可以使用target=&amp;rdquo;_blank&amp;rdquo;属性打开新窗口，而其他页面上的链接都应使用原窗口或弹出窗口。如果链接页面内容相对原页面来说不重要，是附属性质的，可以使用弹出窗口方式。 </font></p>
+<p><font color="#0000ff">　　一般而言，首页上链接可以使用target=&amp;rdquo;_blank&amp;rdquo;属性打开新窗口，而其他页面上的链接都应使用原窗口或弹出窗口。如果链接页面内容相对原页面来说不重要，是附属性质的，可以使用弹出窗口方式。 </font></p>
 <p>　　一般情况下应该使用原窗口，把是否保留原窗口内容的权利留给用户。除非设计者相信原页面是如此重要，在用户发出点击指令后还有使用上的价值，以至于不能被随便更新或覆盖。一般来说，只有首页才会处于这样一个地位，用户在首页上打开一个链接后，一般还会在这个首页上去打开另一个链接。比如首页包含极多链接的门户网站，或者搜索引擎的搜索结果页面。Google.com以前的搜索结果页面上的链接是使用原窗口的，后来他们意识到用户会反复使用这个页面，而改成打开新窗口了。一般的网站如果首页链接不多，就不必使用新窗口，这是用户友好的设计原则。</p>
 <p>　　上述情形的一个极端情况就是新页面内容比起原页面内容的重要性差很多，以至于都未必需要打开一个新页面。这时候使用弹出窗口比较合适。用JavaScript弹出窗口有好几种：一个是window.open()函数。这里有个技巧。应该使用window.open()先打开一个空白窗口，再使用location.replace()用目标页面替换。这样做可以避免在打开新页面的过程中导致原页面失去响应。Window.open()将打开一个新的浏览器窗口进程，因此资源消耗比较大。另一个是由微软DynamicHTML规范中扩充的方法cr&#101;atePopup()。cr&#101;atePopup()可以创建无边框的弹出窗口，消耗系统资源较小。还有一个就是用页面中隐藏的层&amp;lt;div&amp;gt;来模拟一个弹出页面。后两种可以使用JavaScript代码填充弹出窗口内容。如果需要下载网页作为其内容的话，需要微软DynamicHTML规范中的&amp;lt;download&amp;gt;标签。</p>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2007/68.html" rel="bookmark"><time class="entry-date published" datetime="2007-06-08T14:11:27+00:00">2007年6月8日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/web_development" rel="category tag">网站技术</a></span>			</footer><!-- .entry-footer -->
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2007/68.html" rel="bookmark"><time class="entry-date published" datetime="2007-06-08T14:11:27+00:00">2007年6月8日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/web_development" rel="category tag">网站技术</a></span>			</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
 
 <div id="comments" class="comments-area">
@@ -155,7 +156,7 @@ img.emoji {
 	
 	
 					<div id="respond" class="comment-respond">
-			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.biglee.cn/blog/2007/68.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="http://www.biglee.cn/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/2007/68.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
 					<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
 <p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
 <p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
@@ -168,7 +169,7 @@ img.emoji {
 
 	<nav class="navigation post-navigation" role="navigation">
 		<h2 class="screen-reader-text">文章导航</h2>
-		<div class="nav-links"><div class="nav-previous"><a href="http://www.biglee.cn/blog/2007/67.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">微软资深经理人的网站项目管理经验</span></a></div><div class="nav-next"><a href="http://www.biglee.cn/blog/2007/69.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">策划人凭什么策划</span></a></div></div>
+		<div class="nav-links"><div class="nav-previous"><a href="/blog/2007/67.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">微软资深经理人的网站项目管理经验</span></a></div><div class="nav-next"><a href="/blog/2007/69.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">策划人凭什么策划</span></a></div></div>
 	</nav>
 	</main><!-- .site-main -->
 
@@ -178,7 +179,7 @@ img.emoji {
 
 	<aside id="secondary" class="sidebar widget-area" role="complementary">
 		<section id="search-2" class="widget widget_search">
-<form role="search" method="get" class="search-form" action="http://www.biglee.cn/">
+<form role="search" method="get" class="search-form" action="/">
 	<label>
 		<span class="screen-reader-text">搜索：</span>
 		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
@@ -187,112 +188,112 @@ img.emoji {
 </form>
 </section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
 					<li>
-				<a href="http://www.biglee.cn/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+				<a href="/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+				<a href="/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2016/305.html">微信大文件的清理</a>
+				<a href="/blog/2016/305.html">微信大文件的清理</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+				<a href="/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
 						</li>
 					<li>
-				<a href="http://www.biglee.cn/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+				<a href="/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
 						</li>
 				</ul>
-		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="http://www.biglee.cn/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="http://www.biglee.cn/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="http://www.biglee.cn/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
-			<li><a href='http://www.biglee.cn/blog/date/2016/01'>2016年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2015/09'>2015年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/11'>2014年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/10'>2014年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/07'>2014年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/06'>2014年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/05'>2014年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/04'>2014年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/03'>2014年三月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/02'>2014年二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2014/01'>2014年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/12'>2013年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/09'>2013年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/08'>2013年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/07'>2013年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/06'>2013年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/05'>2013年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2013/04'>2013年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/12'>2012年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/11'>2012年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/09'>2012年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/08'>2012年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/07'>2012年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/06'>2012年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/05'>2012年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/04'>2012年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/03'>2012年三月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2012/01'>2012年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/11'>2011年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/09'>2011年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/08'>2011年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/07'>2011年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2011/02'>2011年二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/09'>2010年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/08'>2010年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/07'>2010年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2010/06'>2010年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/12'>2009年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/10'>2009年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/08'>2009年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/06'>2009年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/05'>2009年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/04'>2009年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/03'>2009年三月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2009/01'>2009年一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/12'>2008年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/11'>2008年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/10'>2008年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/09'>2008年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/08'>2008年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/07'>2008年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/06'>2008年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/04'>2008年四月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2008/02'>2008年二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/12'>2007年十二月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/11'>2007年十一月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/10'>2007年十月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/09'>2007年九月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/08'>2007年八月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/07'>2007年七月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/06'>2007年六月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/05'>2007年五月</a></li>
-	<li><a href='http://www.biglee.cn/blog/date/2007/04'>2007年四月</a></li>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='/blog/date/2007/04'>2007年四月</a></li>
 		</ul>
 		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
-	<li class="cat-item cat-item-16"><a href="http://www.biglee.cn/blog/category/dotnet" >.Net</a>
+	<li class="cat-item cat-item-16"><a href="/blog/category/dotnet" >.Net</a>
 </li>
-	<li class="cat-item cat-item-8"><a href="http://www.biglee.cn/blog/category/pc_technology" >PC技术</a>
+	<li class="cat-item cat-item-8"><a href="/blog/category/pc_technology" >PC技术</a>
 </li>
-	<li class="cat-item cat-item-11"><a href="http://www.biglee.cn/blog/category/entertainment" >影音娱乐</a>
+	<li class="cat-item cat-item-11"><a href="/blog/category/entertainment" >影音娱乐</a>
 </li>
-	<li class="cat-item cat-item-15"><a href="http://www.biglee.cn/blog/category/database" >数据库</a>
+	<li class="cat-item cat-item-15"><a href="/blog/category/database" >数据库</a>
 </li>
-	<li class="cat-item cat-item-14"><a href="http://www.biglee.cn/blog/category/digest" >文摘</a>
+	<li class="cat-item cat-item-14"><a href="/blog/category/digest" >文摘</a>
 </li>
-	<li class="cat-item cat-item-13"><a href="http://www.biglee.cn/blog/category/orther" >杂货铺</a>
+	<li class="cat-item cat-item-13"><a href="/blog/category/orther" >杂货铺</a>
 </li>
-	<li class="cat-item cat-item-7"><a href="http://www.biglee.cn/blog/category/management" >管理营运</a>
+	<li class="cat-item cat-item-7"><a href="/blog/category/management" >管理营运</a>
 </li>
-	<li class="cat-item cat-item-9"><a href="http://www.biglee.cn/blog/category/web_development" >网站技术</a>
+	<li class="cat-item cat-item-9"><a href="/blog/category/web_development" >网站技术</a>
 </li>
-	<li class="cat-item cat-item-3"><a href="http://www.biglee.cn/blog/category/network" >网络安全</a>
+	<li class="cat-item cat-item-3"><a href="/blog/category/network" >网络安全</a>
 </li>
-	<li class="cat-item cat-item-4"><a href="http://www.biglee.cn/blog/category/life" >网络生活</a>
+	<li class="cat-item cat-item-4"><a href="/blog/category/life" >网络生活</a>
 </li>
 		</ul>
 </section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
-						<li><a href="http://www.biglee.cn/wp-login.php">登录</a></li>
-			<li><a href="http://www.biglee.cn/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="http://www.biglee.cn/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+						<li><a href="/wp-login.php">登录</a></li>
+			<li><a href="/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
 			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
 			</section>	</aside><!-- .sidebar .widget-area -->
 
@@ -300,37 +301,37 @@ img.emoji {
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
-					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="http://www.biglee.cn/blog/category/web_development">网站技术</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/pc_technology">PC技术</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/orther">杂货铺</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/entertainment">影音娱乐</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/life">网络生活</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/digest">文摘</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/database">数据库</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/network">网络安全</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/management">管理营运</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/dotnet">.Net</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
 </ul></div>				</nav><!-- .main-navigation -->
 			
 			
 			<div class="site-info">
-								<span class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></span>
+								<span class="site-title"><a href="/" rel="home">网站建设技术集锦</a></span>
 				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
 			</div><!-- .site-info -->
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
 </div><!-- .site -->
 
-<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
-<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
 <script>
 var _hmt = _hmt || [];
 (function() {
