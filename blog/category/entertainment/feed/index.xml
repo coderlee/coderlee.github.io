@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>影音娱乐 &#8211; 网站建设技术集锦</title>
+	<atom:link href="/blog/category/entertainment/feed" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>涉及网站建设、服务器维护等IT技术的博客</description>
+	<lastBuildDate>Tue, 07 Feb 2017 02:46:28 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6</generator>
+	<item>
+		<title>WM系统手机“此铃声文件已损坏或不可用”解决办法</title>
+		<link>/blog/2010/176.html</link>
+		<comments>/blog/2010/176.html#comments</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[影音娱乐]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　昨天早上，一直以来叫我起床的手机音乐消失了，以为是闹钟软件出错了，没在意。到后来朋友打我电话，也没有铃声了 &#8230; <a href="/blog/2010/176.html" class="more-link">继续阅读<span class="screen-reader-text">“WM系统手机“此铃声文件已损坏或不可用”解决办法”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　昨天早上，一直以来叫我起床的手机音乐消失了，以为是闹钟软件出错了，没在意。到后来朋友打我电话，也没有铃声了，重启手机也一样，我就知道问题的严重性了。刚开始以为是前几天装的钢琴软件惹的祸，因为那软件自动待机后再开始会没声音，要调下音量声音才会恢复，我依法试了下，不是不起作用。<br />
+　　后来想，是不是铃声设置有问题，于是进入铃声设置，发现还真不是我原来设置的铃声了，改回我原来的设置，点OK，意外的出外提示：“此铃声文件已损坏或不可用”。换了好多铃声也是同样的错误提示，难道真是铃声文件破坏了？但也不至于全部都坏了吧？打开铃声文件夹用系统自带的WINDOWS MEDIA PLAYER也无法播放。中病毒了？<br />
+　　没一点头绪了，自己摸索太浪费时间了，还是问搜索引擎吧。搜索了下，有人提到他曾经改动过临时路径导致wmp无法启动，改回手机内存上就恢复了，具体操作是修改注册表：HKLMSystemFileSys下的TempPath的值。我打开注册表，看到这个值是：application datavolatile。进入这个文件夹一看，里面好多临时文件夹。这时我想，难道是因为文件夹太多的原因？马上把所有文件夹删除，再试WMP，果然能启动了。但是设置铃声还是有错误提示，不着急，重启下手机看看，应该可以的。重启完手机后，进入铃声设置，一切正常了！</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2010/176.html/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>铃声</title>
+		<link>/blog/2009/173.html</link>
+		<comments>/blog/2009/173.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[影音娱乐]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[下载链接：y20091018135321.mp3]]></description>
+				<content:encoded><![CDATA[<p><object id="MediaPlayer" height="70" width="450" classid="CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95"><param value="False" name="AutoStart" /><param value="http://www.biglee.cn/blog/attachments/month_0910/y20091018135321.mp3" name="Filename" /></object></p>
+<p>下载链接：<a href="attachments/month_0910/y20091018135321.mp3">y20091018135321.mp3</a></p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2009/173.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>数码摄影中的测光方法和测光技巧</title>
+		<link>/blog/2009/159.html</link>
+		<comments>/blog/2009/159.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[影音娱乐]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　一、相机的测光原理 　　 相机（数码和各种胶片）的测光原理并不复杂，最重要的是我们要明白，相机的测光系统（ &#8230; <a href="/blog/2009/159.html" class="more-link">继续阅读<span class="screen-reader-text">“数码摄影中的测光方法和测光技巧”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　一、相机的测光原理</p>
+<p>　　 相机（数码和各种胶片）的测光原理并不复杂，最重要的是我们要明白，相机的测光系统（或测光表）是以何为测量基准的！通俗地讲，就是相机在测量一个场景的光线时，它怎样“想”自己看到的东西？ </p>
+<p>　　 记住：所有的相机在测光过程中，会将“看到”的所有物体都默认为反射率为18%的灰色（摄影的专业术语叫“中级灰”），并以此作为测光的基准。也就是说，在相机的“眼”中，所有的被摄体都是灰色的，曝光的目的是为了正确还原这种灰色。</p>
+<p>　　 为什么是这个特殊的18%灰？因为18%灰与人皮肤平均反射光（16～20％）的色调一样，而人是我们最常拍摄的对象。（其它物体的反射率，如银是96％，绘图白纸75％，纯黑是3％等。）</p>
+<p>　　 测光表工作时，要看被摄体的反射率是否为18%，如果反射率是18%，那它测量出来的数值就十分准确了，按此数值曝光，被摄体的色彩和影调就会得以真实地还原，所以，对我们的皮肤、平常的色彩斑斓的景物来说，这种以灰色基调为还原标准的曝光是非常准确的。</p>
+<p>　　 如果被摄体的反射率不是18%，那么相机测光系统测量出来的数值就不准确，若直接按此数值曝光，画面的影调和色彩就会出现失真：像拍摄白茫茫的雪原、黑漆漆的煤田，相机也把它们当作灰色来还原，直接对着它们测光聚焦，往往会拍出灰色的雪和煤。</p>
+<p>　　小窍门：数码拍摄中，合理测光的几个小技巧：</p>
+<p>　　① 拍雪景，你可以先对着你的手半按下快门，也就是对自己的皮肤进行测光，然后再对种你要拍的雪按下快门，那么雪就是白颜色了。同理，拍摄穿黑衣服的人像，也应先对脸部进行测光，然后再构图拍摄。）<br />
+　　② 当拍摄明亮物体时，应采用比测光表推荐的指数高1～2档的光圈，而对阴暗物体则要适当减少曝光量。<br />
+　　③ 在阳光很充足的季节拍照，将使照片产生很大的反差，所以必须要对景物的明亮、阴暗部位分别测光，并以两者的平均曝光指数进行拍照。</p>
+<p>　　大秘诀：记住下面的一些物质，它们的反射值接近18%，也许对大家在复杂的条件下拍摄非常有用：</p>
+<p>　　① 草（割后的草地！），但注意，不是墨绿、特别绿或发黄的草；<br />
+　　② 大部分浅绿的树叶或植物叶子；<br />
+　　③ 有些、但不是全部树干；<br />
+　　④ 旧的、修复的柏油路和混凝土（这个非常有用）；<br />
+　　⑤ 长期放置、没有刷油的木材；<br />
+　　⑥ 红/棕色的砖，包括水泥墙；<br />
+　　⑦ 干树叶。</p>
+<p>下图是我依据测光原理，用DC拍的两张PP，以便通俗地说明问题。<br />
+[img]attachments/month_0903/t200932220616.jpg[/img]</p>
+<p>同样，黑暗的背景也可能骗过相机的测光，造成错误的曝光，下面两幅照片对比说的就是这个道理。（上图，正确的曝光；下图，曝光过度。注：两幅PP引自相关书籍。）</p>
+<p>需提醒大家注意的是，在一个复杂的场景中拍摄，评价曝光是否准确还需视拍摄主题及我们想要突出的拍摄对象而定。除逆光时剪影拍摄外，一般要求，拍摄主体的曝光尽量准确，细节清晰。<br />
+[img]attachments/month_0903/h200932220938.jpg[/img]</p>
+<p>    二、相机的测光方式</p>
+<p>    由于各类相机的构造和功用不尽相同，因此，与之相适应的测光系统和方式也各有所异。</p>
+<p>    目前，几乎所有的数码相机测光方式都采用 TTL （Through the lens）、自动测光（Auto Exposure）系统经过镜头来测光。所以，我给大家主要介绍镜头（TTL）测光的一些基本知识，至于单独测光表测光的技巧得请部落的各位大侠出面给我们上课啦。</p>
+<p>    通过镜头（TTL）测光的方式具有携带、使用方便的特点，并在使用滤光镜或近摄皮腔时可以简便、直接地测量出光线经过滤光镜或近摄皮腔阻挡、衰减后的亮度值。基本上，数码相机的测光模式有四种：</p>
+<p>    1、平均测光 （又名“整体测光”）</p>
+<p>    这是最基本的一种测光方式，这种测光方式将被摄体在取景屏画面内的各种反射光线的亮度进行综合而获得平均亮度值。平均测光的特点是使用简单，但测光精度不高，在取景范围内明暗分布不均匀的状况下，较难直接依据测光数值来确定合适的曝光量。尤其是当画面中有大面积的白或黑色物质时，给我们提供的往往是一个不准确的曝光值。</p>
+<p>    这种类型的测光系统，主要是在一些低档的入门级数码相机中应用。</p>
+<p>    2、中央重点测光 （又名“中央均衡测光” Centerweighted averaging metering ）</p>
+<p>    中央重点测光主要是测量取景屏画面中央长方形或圆形（椭圆形）范围内的亮度，画面其它区域则给以平均测光，长方形或圆形（椭圆形）范围外的亮度对测光结果的影响较小。至于中央面积的多少，因相机不同而异，约占全画面的20-30%。</p>
+<p>    由于是依据画面中央最重要主体的光亮度来读取合适的曝光值，显然，这种测光系统的精度高于平均测光。</p>
+<p>    另一种中央测光的形式叫做“底部测光”，与中央测光相似，它是对画面的下半部测光，从而可减少对天空的过多注意而产生的错误。</p>
+<p>    中央重点测光系统一般用于中档小型数码相机，这种测光模式较适用于人像写真拍摄。</p>
+<p>    3、点测光 （Spot metering ）</p>
+<p>    点测光的测光范围是取景器画面中央占整个画面约2～3%面积的区域。点测光基本上不受测光区域外其它景物亮度的影响，因此，可以很方便地使用点测光对被摄体或背景的各个区域进行检测。</p>
+<p>    点测光具有较高的灵敏度和精度。但不管怎样，一定要记住，要想实现准确曝光，测光对象应该适合18%灰的要求。</p>
+<p>    4、矩阵测光 （又名“分区测光”、“多区域评价测光” Multi-zone evaluative metering ）</p>
+<p>    这种测光模式也称“智能化”测光，是一种高级的测光方式。测光系统将取景画面分成若干区域（不同的相机划分的形状、方式不同），分别设置测光元件进行测量，然后通过相机内的微电脑对各个区域的测光信息进行运算、比较，并参照被摄主体的位置，推测出被摄体的受光状态是逆光还是一般光照，从而决定每个区域的测光加权比重，全部衡量后，计算出合适的曝光值。</p>
+<p>    有些相机的矩阵测光系统在决定曝光需要量的同时，还把场景的色彩也计算在内。</p>
+<p>    矩阵测光目前较广泛地应用于一些高档数码相机，它能够使相机在各种光线条件下拍摄都取得较好的自动曝光系统。</p>
+<p>    强调：弄明白我们自己手中DC的测光方式非常重要！所以，建议大家好好查阅一下手头的说明书，如果说明书介绍不清楚，可在网上查阅相关技术数据或到你买相机的器材店咨询清楚。</p>
+<p>    三、不同测光模式下的测光技巧</p>
+<p>    ㈠、平均测光模式</p>
+<p>    这种测光模式最容易出现错误（庆幸的是，只采取这种测光模式的数码相机越来越少了），因为测光系统对每一个物体的测量，都假定为18%的灰。</p>
+<p>    为了防止错误地曝光，拍摄中可以考虑采用以下控制测光的方法：</p>
+<p>    1、现在不少数码相机具有“曝光锁定”功能，它的工作方式是，当我们用相机对准拍摄场景中的某一特殊部位（这部分的反光应该相当于10%灰）测光，得到正确的曝光数据后，用曝光锁定控制固定这个曝光条件，然后重新构图，按自己的画面要求取景，最后按下快门。</p>
+<p>    2、对于没有“曝光锁定”控制，但具有“手动控制”功能的数码相机，在这种测光模式下，同样也可按此方法拍摄：即靠近现场合适的拍摄主体，让它充满取景器，或者让相机对准反光值相当于18%的其它部分，按这时的曝光值设定光圈和快门，然后回来重新构图、拍摄。</p>
+<p>    注：当我们靠近拍摄物体去测光时，不要让自己挡住光线，而且要认准这部分被测光的景物反射值接近18%灰！还有，当测光物体与镜头的距离和被摄主体与镜头的距离不一致时，要注意控制好焦距。</p>
+<p>    ㈡、中央重点测光模式</p>
+<p>    中央重点测光比平均测光模式更准确，但仍然经常出现上面类似的问题，所以，仍然可以参照前面的测光控制方法和拍摄技巧。</p>
+<p>    ㈢、点测光模式</p>
+<p>    点测光模式能较好的计算曝光量。我们在拍摄中需要记住的是，寻找取景器画面中光线反射值相当于18%的那些地方，读取曝光量，最好用曝光锁定控制保持住，直到重新构图（如果需要的话）、按下快门。</p>
+<p>    注：数码相机在自动拍摄模式下，可先调整镜头准确测光后半按快门，然后移动相机构图、按快门！</p>
+<p>    ㈣、矩阵测光模式</p>
+<p>    使用矩阵测光模式，差不多可以得到95%左右很好曝光的效果，但即使是这样，也有可能出现被相机“骗”的遭遇。</p>
+<p>    此时，我们能做的事情，就是仔细研究一下“失败”的PP，总结经验，然后在遭遇类似拍摄情况时认真调整，补上（或减少）合适的曝光量。</p>
+<p>    四、测光复杂情况下的“分级曝光”技巧</p>
+<p>    有的时候，由于拍摄现场复杂、光线非常不好掌握，或拍摄时间比较紧张、根本来不及考虑太多的测光技巧。在这种情况下，为了避免错失一生难得的摄影机会，我们可以考虑采用“分级曝光”拍摄。</p>
+<p>    “分级曝光”是一项摄影技术，通俗地讲，就是在同一场景中拍摄多幅相同的照片，而每幅照片的曝光设定不是按测光系统测定的曝光值，相对于测光表的曝光值，有的曝光不足，有的曝光过度。</p>
+<p>    目前，一些先进的数码相机具备自动分级曝光功能（有些相机在说明书中，将这种技术称为“包围式曝光”）。启用该功能后，DC会连续拍摄三张照片，而这三张照片的曝光量相差一档或者两档，这样，三张照片中肯定会有一张是曝光正确的。</p>
+<p>    下面，我们通过举例来更形象地说明“手动控制”拍摄模式下的“分级曝光”技巧：</p>
+<p>    假定在一个光线复杂的拍摄场景中，相机的测光指示该场景的曝光值是f8、1/250秒，但我们无法肯定测光是否可靠。于是，可考虑采用下面的“分级曝光”技术拍摄。</p>
+<p>    1、首先按测光指示的曝光值设定（f8、1/250秒），拍摄一张照片；接下来，分别改用f11、1/250秒和f5.6、1/250秒各拍摄一张（为了保险起见，还可用f16、1/250秒和f4、1/250秒再多拍两张）；</p>
+<p>    2、现在，换到原来设定的f8光圈，改变快门速度，分别用1/500秒和1/125秒各拍摄一张（同理，仍可用f8、1/1000秒和f8、1/60秒再多拍两张）；</p>
+<p>    将上面拍摄的各张照片传到电脑上对比分析，我们就能逐渐轻松掌握复杂光线情况下的测光和曝光窍门啦。（由于数码相机的存储特性，多拍并不会造成浪费，嘿嘿，就就是我爱DC的最大理由！）</p>
+<p>    提醒：</p>
+<p>    ① 在“分级拍摄”情况下，改变光圈或快门的设定时，应注意“景深”的变化。同时，还需防止当相机的快门速度低于1/60秒时，相机的抖动和拍摄物体运动的问题。</p>
+<p>    ② 实际拍摄中，可不必按所有的光圈光圈分级，如果我们只是稍微地不确定曝光设定的正确性，用半档光圈分级会更好一些。</p>
+<p>    ③ 现在很多数码相机都预设有不同场景拍摄模式（我最近帮同事选购的卡西欧EX-Z40就有“人像、风景、风景中的人像、合成拍摄、预拍、儿童、烛光中的人像、聚会、宠物、花、自然绿、落日、夜景、夜景中的人像、烟火、食物、文字、收集品、黑白、古风、黎明和黄昏”等，整整21种场景模式可供选择！另外，如果觉得你场景不够灵活，还可以选择一张自己拍得比较好的照片，作为“自定义场景”），这样测光时就相对精确多了，求助于它们的帮助，可以得到正确的曝光补偿。</p>
+<p>    五、不同受光情况下的测光方法和技巧（有点太专业，我等“菜鸟”级色友看看即可）</p>
+<p>    根据光源的性质和照明状况，拍摄时被摄体的受光情况大致有三种：连续光、闪光和混合光。在这三种光照下，测光的方法和技巧是有所区别的。</p>
+<p>    ㈠、连续光测光</p>
+<p>    连续光的最大特点是稳定及便于观察照明效果，因为，它的测光方法是最多的，通常有机位测光法、接近主体测光法、平均测光法、中性灰卡测光法、被摄体主调测光法、最亮点与最暗点测光法以及多点测光法等。其中，最为实用的是中性灰卡测光法和被摄体主调测光法。</p>
+<p>    1、中性灰卡测光法</p>
+<p>    中性灰卡测光法是既简便又较为准确的测光法，它将反射率为18%的标准灰卡作为测光对象。用此法测光时，要尽量使中性灰卡靠近被摄体，并与之平行，灰卡正对照相机，与镜头光轴垂直，为避免灰卡反光，可将灰卡稍向前俯。中性灰卡测光法最大的好处是可以避免因对被摄体的测光部位选择不当而产生测光误差。</p>
+<p>    摄影小常识：一般摄影器材店都销售“灰卡”，买一个放在自己的相机包里，关键时刻会起作用的！</p>
+<p>    2、被摄体主调测光法</p>
+<p>    当被摄体的亮部和暗部分布均匀、照明均匀时，测光是很容易的；反之，测光就变得较难了。遇到这种情况，我们一般可采用被摄体主调测光法。该法是对被摄体的主要局部作“点测光”的测光方法，它的操作较简便，测光时的关键是选好被摄体的主调，即是以被摄体的亮部作为主调，还是以中间调部分或暗部作为主调。</p>
+<p>    被摄体测光法的优点是能确保被摄体主调部分有良好的层次与细节表现。</p>
+<p>    ㈡、闪光测光</p>
+<p>    闪光不同于连续光，它只是瞬间发光，因此，使用一般的连续光测光表是无法进行正确测光的，必须考虑带有闪光测光功能的测光表，并且将测光状态置于“闪光测光”状态。</p>
+<p>    目前对闪光的测光一般采用入射式测光表测量，测得的数值是闪光照明下反射率为18%的中性灰的曝光值。有关详细技巧可在以后的《数码相机的闪光摄影》中再做专题介绍。</p>
+<p>    ㈢、混合光测光</p>
+<p>    混合光是指发光性质不同的光源混合使用。它在摄影中其实并不常用，主要是因为不同光源的色温不同，会给被摄对象各区域色彩的准确还原带来困难，另外，性质不同的光源混合使用，尤其是连续光和闪光混合使用，也会给影像的曝光控制带来困难。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2009/159.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>记性力测试－测试你的脑年龄</title>
+		<link>/blog/2008/141.html</link>
+		<comments>/blog/2008/141.html#comments</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[影音娱乐]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[[swf]http://www.ai-su.com/attachments/month_0803/200803 &#8230; <a href="/blog/2008/141.html" class="more-link">继续阅读<span class="screen-reader-text">“记性力测试－测试你的脑年龄”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>[swf]http://www.ai-su.com/attachments/month_0803/20080309_4b942146634fa21577c56XPLOzQFtgXX.swf[/swf]<br />
+测试你的瞬时记忆能力。有兴趣的试试吧。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2008/141.html/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>[视频]电影《投名状》（刺马）7分钟超长精彩片花</title>
+		<link>/blog/2007/118.html</link>
+		<comments>/blog/2007/118.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[影音娱乐]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　由陈可辛执导、李连杰、刘德华和金城武主演的电影《投名状》（又称：刺马）即将于12月12日18时开始全面上映 &#8230; <a href="/blog/2007/118.html" class="more-link">继续阅读<span class="screen-reader-text">“[视频]电影《投名状》（刺马）7分钟超长精彩片花”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　由陈可辛执导、李连杰、刘德华和金城武主演的电影《投名状》（又称：刺马）即将于12月12日18时开始全面上映。<br />
+　　大家先看看片花：<br />
+[swf]http://vhead.blog.sina.com.cn/player/bnplayer.swf?vid=http://vhead.blog.sina.com.cn/player/outer_player.swf?auto=0&amp;vid=8704696&amp;uid=1290055681&amp;chn1=28&amp;ref=http%3A%2F%2Fbn.sina.com.cn%2Fent%2Fm%2Fc%2F2007-11-26%2F18265157.shtml&amp;title=%E8%A7%86%E9%A2%91%EF%BC%9A%E3%80%8A%E6%8A%95%E5%90%8D%E7%8A%B6%E3%80%8B7%E5%88%86%E9%92%9F%E8%B6%85%E9%95%BF%E7%B2%BE%E5%BD%A9%E7%89%87%E8%8A%B1%E9%9C%87%E6%92%BC%E9%A6%96%E5%8F%91&amp;auto=1&amp;src=1000831789[/swf]</p>
+<p>　　作为今年贺岁档最受期待的大片，《投名状》的登场，也将陆续揭开关于这部电影的四大悬念。　　</p>
+<p>　　悬念一：《投名状》到底惨烈到什么程度？</p>
+<p>　　《投名状》的导演陈可辛一直认为，拍古装片最重要的是贴近现实，即使《投名状》的武术指导是有“威亚王”之称的程小东，也严禁用威亚，不能乱飞，不能有武侠招式，不能以一敌百却毫发未伤，动作要快，要狠，血肉模糊。无论是打劫太平军，洗劫山村，还是李连杰等成立的“山字营”屠城场面，都有血有肉。其中一幕，金城武更以其擅长的短匕首割掉敌方首领的人头，拿在手上向敌人示威，堪称经典之作。</p>
+<p>　　悬念二：片酬一亿的李连杰如何脱胎换骨？</p>
+<p>　　片方此前公布李连杰出演该片的片酬是1亿元人民币，是其他三位主演片酬总和的三倍多，据说这些信息的披露曾经引起过三位男主演的失和。但是从最后的结果来看，李连杰无疑是主角之中的主角。李连杰曾说“庞青云”是自己电影生涯中最难猜、最难琢磨、最不接近自己的一个角色，因为他对权力、对兄弟、对爱情的态度都很复杂。李连杰在片中有很多近镜头，但是却经常面无表情，观众捉摸不透他到底是什么情绪。也许就因为这个角色太不像李连杰自己了，所以他的表演倒符合了“亦奸亦忠”的定义。很多看过该片的人士也表示，李连杰在《投名状》中的表演是脱胎换骨式的。</p>
+<p>　　悬念三：兄弟的恩怨情仇有多少种拍法？</p>
+<p>　　《投名状》开拍前，导演陈可辛曾经说过是翻拍已故导演张彻的《刺马》，不过，最近又改口说故事和背景都不同，总之，都是三个结义兄弟间的恩怨情仇，是换汤不换药。</p>
+<p>　　“投名状”源自《水浒传》中，宋朝八十万禁军教头林冲投奔梁山的情节。相传古人在结盟时，会以鲜血立誓，表达其诚信不渝，不能同生，但愿同死的精神。所谓“但凡好汉们入伙，需要纳投名状”，在古代，“投名状”即是结拜誓词。</p>
+<p>　　说到《投名状》和《水浒传》的关系，也不是后者仅仅为前者提供了片名这么简单，其中的兄弟恩怨，也没有脱离《水浒传》中的兄弟、兄嫂关系的套路——西门庆、武大郎、武松如果当初“纳投名状”，就是现在《投名状》中兄弟关系的雏形。</p>
+<p>　　悬念四：结义三兄弟谁是好人谁是坏人？</p>
+<p>　　电影有正面人物和反面人物之分，《投名状》中，结义三兄弟谁是好人谁是坏人？尽管李连杰做了很多残酷而有野心的决定，可是直到他被金城武“就地正法”之后，观众还是不能判断他究竟是好人还是坏人，因为背后牵扯的是那样错综复杂的政治关系。也许一切就像刘德华在片中所说的那样：“做坏人要杀人，但我没想到做好人也要杀人。”而影片的后半段也几乎把所有的笔墨都花在了这上面，因为利益关系而在一个很特殊氛围中结合在一起的三兄弟，最终在内力和外力的作用下土崩瓦解。</p>
+<p>　　四大人物简介：</p>
+<p>　　李连杰：李连杰饰演的庞青云，兵败之后投靠山贼，与匪帮首领赵二虎和姜午阳立“投名状”结义，青云借二虎之力成立“山字营”以集结军力，大权在握后不惜设计离间兄弟，下毒手杀害赵二虎。</p>
+<p>　　刘德华：刘德华饰演匪帮首领赵二虎，在一场围攻苏州城的战役中，他成功说服敌方投降献城，但庞青云为斩草除根，竟下令坑杀数千俘虏，陷赵二虎于不义。</p>
+<p>　　金城武：金城武饰演的姜午阳，十三岁便跟随赵二虎，性格刚烈。视兄弟情比生命更重要。为替义兄讨回公道，在庞青云就任江苏巡抚大典上，行刺对方。</p>
+<p>　　徐静蕾：徐静蕾饰演的莲生，当年被赵二虎所救。成为赵妻后，虽不用再当歌妓，但山寨夫人的生活并非她所愿。不能扮美女，徐静蕾经常要涂黑脸，她还自己安慰自己说，想不到自己也有另一种美。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2007/118.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Flash智力小游戏bloxorz</title>
+		<link>/blog/2007/113.html</link>
+		<comments>/blog/2007/113.html#comments</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[影音娱乐]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[智力游戏，Flash做的，点击下面的在线播放打开游戏 [swf=640,260]file/turningsqu &#8230; <a href="/blog/2007/113.html" class="more-link">继续阅读<span class="screen-reader-text">“Flash智力小游戏bloxorz”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>智力游戏，Flash做的，点击下面的在线播放打开游戏<br />
+[swf=640,260]file/turningsqure.swf[/swf]<br />
+我把游戏说明翻译整理了一下：<br />
+　　游戏的目的是把砖块放进那个方形的洞里。总共有33关。<br />
+　　用方向键来控制砖块的移动，将其移动到方形的洞边上，然后立在洞上面，一关就过了。</p>
+<p>　　在每一关里，都有一些桥和开关，开关是用来控制桥的开合的。开关有两种，圆形的，只需把砖块压上就能起作用，而X形的，要立在上面才能起作用。<br />
+　　开关的效果也不同，有的每次使用都能能使桥合上或者打开，有的打开后就不能再使其合上了。<br />
+　　闪烁的红色或绿色方块表示此方块正被开关控制着。<br />
+　　砖块不能立在橙色的方块上面，否则会掉下去。<br />
+　　还有一种开关的形状是“（）”，如果砖块立在它上面，会被分成两部分。这时，可以用空格键来切换被控制的部分。当两部分相邻时，它们又会合在一起。<br />
+　　在右上角，都写有每关的代码（6个数字），记住他，你能在下次继续玩游戏时通过“Load Stage”菜单直接加载这一关。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2007/113.html/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>中秋夜游江心屿，拍下音乐烧烤</title>
+		<link>/blog/2007/110.html</link>
+		<comments>/blog/2007/110.html#comments</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[影音娱乐]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[中秋之夜，游江心屿，遇好玩事，相机摄影： [swf]http://video.qq.com/res/qqpla &#8230; <a href="/blog/2007/110.html" class="more-link">继续阅读<span class="screen-reader-text">“中秋夜游江心屿，拍下音乐烧烤”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>中秋之夜，游江心屿，遇好玩事，相机摄影：<br />
+[swf]http://video.qq.com/res/qqplayerout.swf?vid=2v54c8s2XrW[/swf]<br />
+由于是用数码相机的短片拍摄功能，效果一般，但还可以看。感觉挺好玩的。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2007/110.html/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>[转载]街头作画，他做了人做不到的事</title>
+		<link>/blog/2007/109.html</link>
+		<comments>/blog/2007/109.html#comments</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[影音娱乐]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[老外在街头画的高仿真立体画，今天从网上看到的，感觉很棒，收藏了！ 作画工具只是简单的彩色粉笔而已 先用粉笔打底 &#8230; <a href="/blog/2007/109.html" class="more-link">继续阅读<span class="screen-reader-text">“[转载]街头作画，他做了人做不到的事”</span></a>]]></description>
+				<content:encoded><![CDATA[<p><strong>老外在街头画的高仿真立体画，今天从网上看到的，感觉很棒，收藏了！</strong></p>
+<p><strong>作画工具只是简单的彩色粉笔而已<br /></strong><a href="http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322059.jpg" target="_blank"><strong><img height="353" alt="" src="http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322059.jpg" width="470" border="0" /></strong></a></p>
+<p><strong>先用粉笔打底稿</strong><br /><a href="http://cimg2.163.com/catchpic/3/30/30476D58251730D0186E2B03C76B935B.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/3/30/30476D58251730D0186E2B03C76B935B.jpg" width="470" border="0" /></a></p>
+<p><strong>测量一下比例是否正确</strong><br /><a href="http://cimg2.163.com/catchpic/F/FC/FCE1F6CDB5F39DA39F2056FB9DEA3A41.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/F/FC/FCE1F6CDB5F39DA39F2056FB9DEA3A41.jpg" width="470" border="0" /></a></p>
+<p><strong>给路人讲解</strong><br /><a href="http://cimg2.163.com/catchpic/7/78/78A8C89D3C4A512EC717B0FBDDE314D6.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/7/78/78A8C89D3C4A512EC717B0FBDDE314D6.jpg" width="470" border="0" /></a></p>
+<p><strong>立体画草稿</strong><br /><a href="http://cimg2.163.com/catchpic/C/C4/C44C94ABF469E5D52B06947F1A5D263E.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/C/C4/C44C94ABF469E5D52B06947F1A5D263E.jpg" width="470" border="0" /></a></p>
+<p><strong>开始绘画</strong><br /><a href="http://cimg2.163.com/catchpic/4/4D/4DF47677CBADAEC55C2B99CDB8530E1C.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/4/4D/4DF47677CBADAEC55C2B99CDB8530E1C.jpg" width="470" border="0" /></a></p>
+<p><strong>用手涂抹</strong><br /><a href="http://cimg2.163.com/catchpic/5/58/5899E78571D9ABC7D9F8546AD17DB61B.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/5/58/5899E78571D9ABC7D9F8546AD17DB61B.jpg" width="470" border="0" /></a></p>
+<p><strong>初见雏形</strong><br /><a href="http://cimg2.163.com/catchpic/0/0F/0F7E218ACA86E56DA237581229430ED2.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/0/0F/0F7E218ACA86E56DA237581229430ED2.jpg" width="470" border="0" /></a></p>
+<p><strong>调颜色<br /></strong><a href="http://cimg2.163.com/catchpic/E/EE/EE0E4B129736B930244DDDFF2397BC2A.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/E/EE/EE0E4B129736B930244DDDFF2397BC2A.jpg" width="470" border="0" /></a></p>
+<p><strong>刷涂大面积的颜色</strong><br /><a href="http://cimg2.163.com/catchpic/A/AB/ABEB93F254555095A1CCE25C8011DC98.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/A/AB/ABEB93F254555095A1CCE25C8011DC98.jpg" width="470" border="0" /></a></p>
+<p><strong>画的是felix猫</strong><br /><a href="http://cimg2.163.com/catchpic/A/AE/AE7686EE83537DAEFBE686149FBDD3C4.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/A/AE/AE7686EE83537DAEFBE686149FBDD3C4.jpg" width="470" border="0" /></a></p>
+<p><strong>画面的另一半</strong><br /><a href="http://cimg2.163.com/catchpic/B/BA/BAAB07AC1500516106ABC6080B1CEF89.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/B/BA/BAAB07AC1500516106ABC6080B1CEF89.jpg" width="470" border="0" /></a></p>
+<p><strong>细节需要精心刻画<br /></strong><a href="http://cimg2.163.com/catchpic/0/09/093D727FCBFB1FDCA4CCD41A83EA0295.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/0/09/093D727FCBFB1FDCA4CCD41A83EA0295.jpg" width="470" border="0" /></a></p>
+<p><strong>主要形象已经完成，看出来是什么了么？<br /></strong><a href="http://cimg2.163.com/catchpic/A/AF/AF7B846A3C7D9A90890E45737087839C.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/A/AF/AF7B846A3C7D9A90890E45737087839C.jpg" width="470" border="0" /></a></p>
+<p><strong>开始完善画面</strong><br /><a href="http://cimg2.163.com/catchpic/B/B9/B9076EB51896B1734BE49D154619CFAB.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/B/B9/B9076EB51896B1734BE49D154619CFAB.jpg" width="470" border="0" /></a></p>
+<p><strong>累了，坐下来画</strong><br /><a href="http://cimg2.163.com/catchpic/2/23/23E9A5348A7CAC0810DAC718A77F0012.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/2/23/23E9A5348A7CAC0810DAC718A77F0012.jpg" width="470" border="0" /></a></p>
+<p><strong>中国舞狮和felix猫，呼之欲出</strong><br /><a href="http://cimg2.163.com/catchpic/8/86/86973984DDA55197A67F713605B9B027.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/8/86/86973984DDA55197A67F713605B9B027.jpg" width="470" border="0" /></a></p>
+<p><strong>换个角<br /></strong><a href="http://cimg2.163.com/catchpic/9/9E/9E5F8CD864779EC36414CFFC7D1DC0F3.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/9/9E/9E5F8CD864779EC36414CFFC7D1DC0F3.jpg" width="470" border="0" /></a></p>
+<p><strong>即将完成</strong><br /><a href="http://cimg2.163.com/catchpic/0/05/05378A7060B6C95332F85E168D3887C5.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/0/05/05378A7060B6C95332F85E168D3887C5.jpg" width="470" border="0" /></a></p>
+<p><strong>大功告成</strong><br /><a href="http://cimg2.163.com/catchpic/F/F0/F0D1ECD79527792751FBAB083F51009A.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/F/F0/F0D1ECD79527792751FBAB083F51009A.jpg" width="470" border="0" /></a></p>
+<p><a href="http://cimg2.163.com/catchpic/B/B4/B4DF3EE326C411FA952C0C79E9C0E7DF.jpg" target="_blank"><img height="353" alt="" src="http://cimg2.163.com/catchpic/B/B4/B4DF3EE326C411FA952C0C79E9C0E7DF.jpg" width="470" border="0" /></a></p>
+<p><a href="http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322083.jpg" target="_blank"><img height="353" alt="" src="http://gb.chinabroadcast.cn/mmsource/images/2006/03/22/pb060322083.jpg" width="470" border="0" /></a></p>
+<p><strong>其他作品&amp;mdash;&amp;mdash;可乐瓶子</strong><br /><a href="http://cimg2.163.com/catchpic/1/1F/1F89CB0FECC2120F8C25B69DA5B51E53.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/1/1F/1F89CB0FECC2120F8C25B69DA5B51E53.jpg" width="455" border="0" /></a></p>
+<p><strong>地狱</strong><br /><a href="http://cimg2.163.com/catchpic/1/1B/1BBAFFBB8BC630B004A4916BF7E49A59.jpg" target="_blank"><img height="430" alt="" src="http://cimg2.163.com/catchpic/1/1B/1BBAFFBB8BC630B004A4916BF7E49A59.jpg" width="400" border="0" /></a></p>
+<p><strong>天使</strong><br /><a href="http://cimg2.163.com/catchpic/F/F0/F00DA3F0083FB66AB74FB9CCB89FFC35.jpg" target="_blank"><img height="500" alt="" src="http://cimg2.163.com/catchpic/F/F0/F00DA3F0083FB66AB74FB9CCB89FFC35.jpg" width="338" border="0" /></a></p>
+<p><strong>海豹</strong><br /><a href="http://cimg2.163.com/catchpic/8/85/854DE742059B12733455B1170B27EE88.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/8/85/854DE742059B12733455B1170B27EE88.jpg" width="441" border="0" /></a></p>
+<p><strong>帆船<br /></strong><a href="http://cimg2.163.com/catchpic/F/F0/F005053BEDBDF7FAFDC6061A06803266.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/F/F0/F005053BEDBDF7FAFDC6061A06803266.jpg" width="450" border="0" /></a></p>
+<p><strong>浴</strong><br /><a href="http://cimg2.163.com/catchpic/E/E6/E6B61E7DB3CFA6114FB69620A7EE22B6.jpg" target="_blank"><img height="460" alt="" src="http://cimg2.163.com/catchpic/E/E6/E6B61E7DB3CFA6114FB69620A7EE22B6.jpg" width="300" border="0" /></a></p>
+<p><strong>笔记本电脑</strong><br /><a href="http://cimg2.163.com/catchpic/0/02/020C09553186271532299CA760490B71.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/0/02/020C09553186271532299CA760490B71.jpg" width="455" border="0" /></a></p>
+<p><strong>哪个是真人?</strong><br /><a href="http://cimg2.163.com/catchpic/F/FA/FA1A90CFD8A22D59164CE700E6DDA744.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/F/FA/FA1A90CFD8A22D59164CE700E6DDA744.jpg" width="450" border="0" /></a></p>
+<p><strong>这张画是倒立看的</strong><br /><a href="http://cimg2.163.com/catchpic/8/80/8050824A6B02D79447C313277C350E99.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/8/80/8050824A6B02D79447C313277C350E99.jpg" width="458" border="0" /></a></p>
+<p><strong>被杀虫剂杀死的苍蝇</strong><br /><a href="http://cimg2.163.com/catchpic/5/5C/5C94F2A72C487C828E9F495AD475C0FD.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/5/5C/5C94F2A72C487C828E9F495AD475C0FD.jpg" width="449" border="0" /></a></p>
+<p><strong>蜘蛛侠</strong><br /><a href="http://cimg2.163.com/catchpic/E/E9/E955260217ADFA8DEA5B60859C41B83C.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/E/E9/E955260217ADFA8DEA5B60859C41B83C.jpg" width="450" border="0" /></a></p>
+<p><strong>街头陷阱</strong><br /><a href="http://cimg2.163.com/catchpic/3/3C/3C9EFF313BC75EE6CB74A8DEC7708C49.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/3/3C/3C9EFF313BC75EE6CB74A8DEC7708C49.jpg" width="414" border="0" /></a></p>
+<p><strong>被撬开的地板,路过的人不由自主的要避开</strong><br /><a href="http://photo4.yupoo.com/20061211/200347_1183492236_khfglkge.jpg" target="_blank"><img height="300" alt="" src="http://photo4.yupoo.com/20061211/200347_1183492236_khfglkge.jpg" width="451" border="0" /></a></p>
+<p><font size="4"><wbr></wbr></font><strong>街头探测金矿组图</strong><wbr></wbr><br /><a href="http://cimg2.163.com/catchpic/1/1C/1CAB931F81A2A57DB14D3E0E8A101ACB.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/1/1C/1CAB931F81A2A57DB14D3E0E8A101ACB.jpg" width="450" border="0" /></a></p>
+<p><strong>发现金矿 开始挖掘<br /></strong><a href="http://cimg2.163.com/catchpic/5/5C/5C3D16051DE15682E60AE8877DC76E05.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/5/5C/5C3D16051DE15682E60AE8877DC76E05.jpg" width="450" border="0" /></a></p>
+<p><strong>继续探测 发现大金矿了<br /></strong><a href="http://cimg2.163.com/catchpic/8/83/839B822CA551B690ADFC0D55E9B4C01B.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/8/83/839B822CA551B690ADFC0D55E9B4C01B.jpg" width="450" border="0" /></a></p>
+<p><strong>挖出大金矿了</strong><br /><a href="http://cimg2.163.com/catchpic/E/EA/EA0F644F2CBB68398973333FA2A14173.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/E/EA/EA0F644F2CBB68398973333FA2A14173.jpg" width="450" border="0" /></a></p>
+<p><strong>作者已经和他的作品融为一体</strong><br /><a href="http://cimg2.163.com/catchpic/1/1D/1DE80C6998272BC0551BD1BB21D52603.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/1/1D/1DE80C6998272BC0551BD1BB21D52603.jpg" width="450" border="0" /></a></p>
+<p><strong>一盒画笔</strong><br /><a href="http://cimg2.163.com/catchpic/0/00/0035486FA1DA5A1ED5EFD391926F3F91.jpg" target="_blank"><img height="300" alt="" src="http://cimg2.163.com/catchpic/0/00/0035486FA1DA5A1ED5EFD391926F3F91.jpg" width="428" border="0" /></a></p>
+<p><strong>高楼</strong><br /><a href="http://cimg2.163.com/catchpic/1/19/1946FF55A4CEF180A1B9699C53EAE519.jpg" target="_blank"><img height="450" alt="" src="http://cimg2.163.com/catchpic/1/19/1946FF55A4CEF180A1B9699C53EAE519.jpg" width="300" border="0" /></a></p>
+<div class="invisible" id="reference">&amp;nbsp;</div>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2007/109.html/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>[桌面游戏]卡卡松</title>
+		<link>/blog/2007/100.html</link>
+		<comments>/blog/2007/100.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[影音娱乐]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　卡卡松是一座法国南部的美丽古城，参加者扮演中古时代的君主，派手下的亲信去开疆拓土，亲信扮演不同的脚色，去占 &#8230; <a href="/blog/2007/100.html" class="more-link">继续阅读<span class="screen-reader-text">“[桌面游戏]卡卡松”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　卡卡松是一座法国南部的美丽古城，参加者扮演中古时代的君主，派手下的亲信去开疆拓土，亲信扮演不同的脚色，去占领或管理领地。看谁的策略运用得当，就能赢得最后的胜利。这个合作即竞争的策略性版图游戏。每次玩都会激荡出不同的策略或同盟关系，除了对图像的敏锐感觉外，开放的合作态度更是致胜的关键！</p>
+<p>　　卡卡松是一个评价超过五星级的版图拼放游戏。这个游戏荣获2001年所有的大奖，它不但能训练各年龄层朋友的思考策略，更能培养朋友与家人之间的合作及互动，最适合全家同乐及朋友聚会！所以它受到各方面的极力推荐，被誉为接触德国桌上游戏必备游戏！</p>
+<p>　　每个人轮流抽出地图片，然后按照规则摆到地图，每次摆完地图片都可以选择把自己的小人放上去，放在不同的地方代表不同的职业，有骑士、农夫、盗贼以及寺僧，每种职业有简单的算分方法，全部地图片都摆放结束后，看谁的得分最高即为胜者。  </p>
+<p>　　游戏可以2-6个人玩，2个人玩的时候策略性较高，越多人玩随机性越大，运气成分也越高。什么时候破坏对方建设或是进行自己的建设以及什么时候把自己有限的小人资源摆上地图是游戏的关键。不过总体来说这个游戏还是相当的简单，要思考的也不多，因为谁也不知道自己下一块会摸到的地图片是什么，正所谓人算不如天算。看着每次大家摆出的不同的漂亮卡卡城，也是一种乐趣啊 </p>
+<p>　　此游戏可单机玩，也可联网玩。<br />
+　　游戏下载地址：http://hx.hxgame.net/getdown.asp?id=1442</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2007/100.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Come From the Heart</title>
+		<link>/blog/2007/95.html</link>
+		<comments>/blog/2007/95.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[影音娱乐]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[Come From the Heart [wmv]http://www.lsty.cn/bbs/ufs1/20 &#8230; <a href="/blog/2007/95.html" class="more-link">继续阅读<span class="screen-reader-text">“Come From the Heart”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Come From the Heart<br />
+[wmv]http://www.lsty.cn/bbs/ufs1/2006-7/2006722154944805.mp3[/wmv]</p>
+<p>Come From the Heart<br />
+Written by Susanna Clark and Richard Leigh<br />
+Performed by Kathy Mattea on &#8220;Willow in the Wind&#8221; </p>
+<p>My daddy told me when I was a young man<br />
+A lesson he learned, a long time ago<br />
+If you want to have someone to hold onto<br />
+You&#39;re gonna have to learn to let go<br />
+You got to sing like you don&#39;t need the money<br />
+Love like you&#39;ll never get hurt<br />
+You got to dance like nobody&#39;s watching<br />
+It&#39;s gotta come from the heart<br />
+If you want it to work<br />
+Now here is the one thing I keep forgettin&#39;<br />
+When everything is falling apart<br />
+In life as in love, I need to remember<br />
+There&#39;s such a thing as trying too hard<br />
+You got to sing like you don&#39;t need the money<br />
+Love like you&#39;ll never get hurt<br />
+You got to dance like nobody&#39;s watchin&#39;<br />
+It&#39;s gotta come from the heart<br />
+If you want it to work<br />
+You got to sing like you don&#39;t need the money<br />
+Love like you&#39;ll never get hurt<br />
+You got to dance, dance, dance like nobody&#39;s watching<br />
+It&#39;s gotta come from the heart if you want it to work</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2007/95.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

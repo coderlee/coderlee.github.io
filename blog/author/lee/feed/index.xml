@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Lee &#8211; 网站建设技术集锦</title>
+	<atom:link href="/blog/author/lee/feed" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>涉及网站建设、服务器维护等IT技术的博客</description>
+	<lastBuildDate>Tue, 07 Feb 2017 02:46:28 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6</generator>
+	<item>
+		<title>curl与file_get_contents访问远程接口慢的解决</title>
+		<link>/blog/2016/307.html</link>
+		<comments>/blog/2016/307.html#respond</comments>
+		<pubDate>Sat, 09 Jan 2016 10:35:30 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　这几天在协调处理短信接口调用失败的问题，处理完后发现发送短信很耗时，要5秒左右，是PHP调用 file_g &#8230; <a href="/blog/2016/307.html" class="more-link">继续阅读<span class="screen-reader-text">“curl与file_get_contents访问远程接口慢的解决”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　这几天在协调处理短信接口调用失败的问题，处理完后发现发送短信很耗时，要5秒左右，是PHP调用 file_get_contents访问远程接口的的，而我前面处理调用失败问题时最后测试短信接口时是直接用的Linux命令curl调用，速度是非常快的。</p>
+<p>　　先从代码入手，刚开始以为是file_get_contents比curl慢，虽然觉得也不至于慢到这种程度，但是总得试试看，于是换成curl，依旧很慢。</p>
+<p>　　难道是域名解析问题？于是在hosts文件里写好本地解析，再试，果真正常了，秒发。看来真是域名解析问题，但又不知为何Shell里没问题，独独PHP里有问题。虽然把域名写死在hosts里能解决问题，但是总不是办法。</p>
+<p>　　上网查，有人说是PHP缓存了域名解析，重启PHP即可。我马上去重启PHP，还真好了。但是有一点我不明白，既然是缓存，那应该是速度更快才对。在一个技术群里讨论时我突然想起来昨天测试接口时发现服务器设置的首选DNS是不能用的，然后我改了。难道PHP缓存的不是域名解析，而是域名解析服务器（DNS）？看来只有这个解释了，有空可以做个测试验证一下。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2016/307.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>PHP中Notice: iconv(): Unknown error (84) 的解决办法</title>
+		<link>/blog/2016/306.html</link>
+		<comments>/blog/2016/306.html#respond</comments>
+		<pubDate>Thu, 07 Jan 2016 10:51:03 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[ 　　今天在写一个导出数据到csv的功能，为了防止中文乱码，需要将utf8转码，我使用了这样的语句： #这里先 &#8230; <a href="/blog/2016/306.html" class="more-link">继续阅读<span class="screen-reader-text">“PHP中Notice: iconv(): Unknown error (84) 的解决办法”</span></a>]]></description>
+				<content:encoded><![CDATA[<p> 　　今天在写一个导出数据到csv的功能，为了防止中文乱码，需要将utf8转码，我使用了这样的语句：</p>
+<div class="codeText">
+<pre class="prettyprint linenums:1">#这里先是把csv文件的内容生成，然后下面转码
+$csv=iconv(&#039;utf-8&#039;,&#039;gb2312&#039;,$csv);</pre>
+</div>
+<p>结果报<span style="color: #ff0000;"><strong><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">Notice: </span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">iconv():</span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;"> </span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">Unknown</span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;"> </span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">error</span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;"> (22)</span></strong></span><span style="color: #333333; font-family: arial; font-size: 13px; line-height: 20.02px;">的错误，想起来$csv里带有换行，所以没办法转换，于是在各个数据项串成csv文件内容前转换，这时报了两个</span><span style="color: #ff0000;"><strong>iconv(): Unknown error (84)</strong></span>的错误，输出内容，发现报错时有一个是处理汉字“密菓”，第二个字不认得，生僻，我突然想到，难道是字符集不支持，于是换成gbk：</p>
+<div class="codeText">
+<pre class="prettyprint linenums:1">$csv .= iconv(&#039;utf-8&#039;,&#039;gbk&#039;,$val)
+</pre>
+</div>
+<p>再运行，没报错了。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2016/306.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>微信大文件的清理</title>
+		<link>/blog/2016/305.html</link>
+		<comments>/blog/2016/305.html#respond</comments>
+		<pubDate>Mon, 04 Jan 2016 07:23:33 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网络生活]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　 最近手机可用空间越来越小了，新软件都没办法安装。前几天都是用手机自带的垃圾清理软件清理一些缓存之类的才能 &#8230; <a href="/blog/2016/305.html" class="more-link">继续阅读<span class="screen-reader-text">“微信大文件的清理”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　 最近手机可用空间越来越小了，新软件都没办法安装。前几天都是用手机自带的垃圾清理软件清理一些缓存之类的才能安装新软件，老是这样，太麻烦了。</p>
+<p>　　今天决定动手解决这个问题。用软件分析过文件占用后发现微信APP的文件夹里有几个文件异常的大，其中85f22adb&#8230;(很长就不抄完了)/sfs文件夹下有一个文件名叫sns.block.00001，大小达到1.3G。不知道这文件是干什么用的，删除怕聊天记录也没了，上网搜索了下，也没有人能说出个所以然。看这文件名，带有sns，我猜测与朋友圈有关系，于是退出微信，先重命名备份这个文件，然后再打开微信，发现聊天记录正常，没丢，通讯录也正常。再进入sfs文件夹，发现微信已经新建了一个文件sns.block.00000，为了验证我的想法，我刷了下朋友圈，再去看这个文件，发现变大了一些，再往下拉，加载更多的朋友圈内容，每加载一些内容，这个文件就会变大，观看朋友圈视频后也一样会增加此文件大小。由此可见此文件是保存朋友圈信息用的。</p>
+<p>　　总结：类似sns.block.00000，sns.block.00001这样的文件是保存朋友圈信息用的，以便回看历史信息能快速加载，少耗费流量。所以可以大胆放心地删除，最多是查看近日朋友圈内容的时候再下载一次而已。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2016/305.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>博客貌似被黑了，有空换PHP的</title>
+		<link>/blog/2015/304.html</link>
+		<comments>/blog/2015/304.html#respond</comments>
+		<pubDate>Thu, 24 Sep 2015 06:51:41 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网络安全]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[&#160;　　由于近来工作比较忙，所以有大半年没关注我这个博客站了。 　　前两天发现站点打不开了，于是找朋友 &#8230; <a href="/blog/2015/304.html" class="more-link">继续阅读<span class="screen-reader-text">“博客貌似被黑了，有空换PHP的”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>&nbsp;　　由于近来工作比较忙，所以有大半年没关注我这个博客站了。</p>
+<p>　　前两天发现站点打不开了，于是找朋友要了个小地方，放上去，今天发现一堆的垃圾评论与留言，想登录后台管理，结果发现登录不上，提示密码错误。以为自己记错了，试了几个可能的密码，都不行，于量拿出很早已经写的重置用户密码的代码，重置，再登录，也不行，傻眼了，难道管理员用户有另外的表，记得没有啊，查看数据库确认表，才发现我的用户名被改了。看来是已经被黑了。</p>
+<p>　　这个博客站是8年前架的，那时用的是ASP，现在早就改行做PHP了，正好可以抽空把这个站也改成PHP的。</p>
+<p>　　除了用户名被改，还有恶意注册与留言，得抓紧时间换了。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2015/304.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>使用socket方式连接Nginx优化php-fpm性能</title>
+		<link>/blog/2014/303.html</link>
+		<comments>/blog/2014/303.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[Nginx连接fastcgi的方式有2种：TCP和unix domain socket 什么是Unix dom &#8230; <a href="/blog/2014/303.html" class="more-link">继续阅读<span class="screen-reader-text">“使用socket方式连接Nginx优化php-fpm性能”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Nginx连接fastcgi的方式有2种：TCP和unix domain socket</p>
+<p>什么是Unix domain socket？&mdash;&mdash; 维基百科<br />
+Unix domain socket 或者 IPC socket是一种终端，可以使同一台操作系统上的两个或多个进程进行数据通信。与管道相比，Unix domain sockets 既可以使用字节流和数据队列，而管道通信则只能通过字节流。Unix domain sockets的接口和Internet socket很像，但它不使用网络底层协议来通信。Unix domain socket 的功能是POSIX操作系统里的一种组件。</p>
+<p>Unix domain sockets 使用系统文件的地址来作为自己的身份。它可以被系统进程引用。所以两个进程可以同时打开一个Unix domain sockets来进行通信。不过这种通信方式是发生在系统内核里而不会在网络里传播。</p>
+<p>TCP和unix domain socket方式对比<br />
+TCP是使用TCP端口连接127.0.0.1:9000<br />
+Socket是使用unix domain socket连接套接字/dev/shm/php-cgi.sock（<span style="color: rgb(255, 0, 0);">很多教程使用路径/tmp，而路径/dev/shm是个tmpfs，速度比磁盘快得多</span>）</p>
+<p>测试机是个1核的centos5.4，2用户并发时系统资源消耗50%左右，10用户资源就跑得很满了。</p>
+<div>&nbsp;</div>
+<div>
+<table border="1" bordercolor="#000000" cellpadding="2" cellspacing="0" height="115" style="box-sizing: border-box; width: 557px; border-collapse: collapse; margin: 10px auto; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;">
+<tbody style="box-sizing: border-box;">
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">&nbsp;</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">&nbsp;</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">2users</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">10users</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.2.5</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">tcp</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1060</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1294</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.2.5</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">socket</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">997</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1487</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.3.10</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">tcp</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">906</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1082</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.3.10</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">socket</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">880</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1247</td>
+</tr>
+</tbody>
+</table>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;"><span style="box-sizing: border-box; color: rgb(229, 51, 51);">结论是在服务器压力不大的情况下，tcp和socket差别不大，但在压力比较满的时候，用套接字方式，效果确实比较好。</span></p>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;"><span style="box-sizing: border-box; color: rgb(0, 102, 0);"><strong style="box-sizing: border-box;">下面是php 5.3以上版本将TCP改成socket方式的配置方法：</strong></span><br style="box-sizing: border-box;" /><br />
+修改php-fpm.conf（/usr/local/php/etc/php-fpm.conf）</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>;</span><span class="attribute">listen</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">127</span><span>.0.0.1:9000&nbsp;&nbsp;</span></span></li>
+<li><span><span class="attribute">listen</span><span>&nbsp;=&nbsp;/dev/shm/php-cgi.sock&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;">修改nginx配置文件server段的配置，将http的方式改为socket方式</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>location&nbsp;~&nbsp;.php$&nbsp;{&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;#fastcgi_pass&nbsp;&nbsp;&nbsp;127.0.0.1:9000;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_pass&nbsp;unix:/dev/shm/php-cgi.sock;&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_index&nbsp;&nbsp;index.php;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_param&nbsp;&nbsp;SCRIPT_FILENAME&nbsp;&nbsp;$document_root$fastcgi_script_name;&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_params;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>}&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;">重启php-fpm与nginx</p>
+<p>service nginx restart<br />
+service php-fpm restart</p>
+<p>然后<br />
+ls -al /dev/shm<br />
+可以看到php-cgi.sock文件unix套接字类型</p>
+<p>参考：http://zh.wikipedia.org/wiki/Unix_domain_socket</p>
+<p>&nbsp;</p>
+<p>转载后记：我根据上文配置完后，访问PHP页面出现502，查看Nginx日志，有错误信息：nginx error connect to php-cgi.sock failed (13: Permission denied)</p>
+<p>编辑配置文件/usr/local/php/etc/php-fpm.conf</p>
+<p>将</p>
+<p>;listen.owner = nobody<br />
+;listen.group = nobody<br />
+;listen.mode = 0660<br />
+改为<br />
+listen.owner = nobody<br />
+listen.group = nobody<br />
+listen.mode = 0666</p>
+<p>保存，重启PHP-FPM即可</p>
+</div>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/303.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>xhprof与Xdebug的奇怪问题</title>
+		<link>/blog/2014/302.html</link>
+		<comments>/blog/2014/302.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　为了查找项目中比较耗性能的PHP代码，这两天在装xhprof用来跟踪代码，结果遇到了一个很奇怪的问题。安装 &#8230; <a href="/blog/2014/302.html" class="more-link">继续阅读<span class="screen-reader-text">“xhprof与Xdebug的奇怪问题”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　为了查找项目中比较耗性能的PHP代码，这两天在装xhprof用来跟踪代码，结果遇到了一个很奇怪的问题。安装配置好xhprof后，用来跟踪简单的代码没一点问题，但是在项目中一跟踪，PHP-FPM进程直接就挂了，查看各种日志，并且开了内核转储，折腾了半天也没找到挂了的原因。</p>
+<p>　　没办法，只好换Xdebug。安装，配置，很快就搞定了。</p>
+<p>　　在使用Xdebug前我突发奇想，不知道Xdebug能不能跟踪到xhprof导致PHP-FPM挂了的的问题，于是同时启用两者，结果意外地发现xhprof也能用了。为了证明是不是Xdebug导致xhprof可以用了，我禁用了Xdebug，xhprof又导致PHP-FPM挂了，重新启用又好了。</p>
+<p>　　真是好奇怪的问题，不知道是什么原因造成的，暂时也没时间深究了。</p>
+<p>附Xhprof的安装与使用方法：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>[root@localhost&nbsp;~]#&nbsp;tar&nbsp;-zxvf&nbsp;xhprof-0.9.4.tgz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span>[root@localhost&nbsp;~]#&nbsp;cd&nbsp;xhprof-0.9.4/extension/&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>[root@localhost&nbsp;extension]#&nbsp;phpize&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>[root@localhost&nbsp;extension]#&nbsp;./configure&nbsp;<span class="attribute">&#8211;with-php-config</span><span>=/usr/local/php/bin/php-config&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>[root@localhost&nbsp;extension]#&nbsp;make&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>[root@localhost&nbsp;extension]#&nbsp;make&nbsp;install&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>如果phpize执行不了，请先安装或者做链接：ln -s /usr/local/php/bin/phpize /usr/bin/phpize</p>
+<p>在php.ini文件中，添加如下配置：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>[xhprof]&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="attribute">extension</span><span>=</span><span class="attribute-value">xhprof</span><span>.so;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>;&nbsp;directory&nbsp;used&nbsp;by&nbsp;default&nbsp;implementation&nbsp;of&nbsp;the&nbsp;iXHProfRuns&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>;&nbsp;interface&nbsp;(namely,&nbsp;the&nbsp;XHProfRuns_Default&nbsp;class)&nbsp;for&nbsp;storing&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>;&nbsp;XHProf&nbsp;runs.&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>;<span class="attribute">xhprof.output_dir</span><span>=</span><span class="tag">&lt;</span><span class="tag-name">directory_for_storing_xhprof_runs</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="attribute">xhprof.output_dir</span><span>=/tmp/xhprof&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p>把xhprof-0.9.4目录下的目录xhprof_html 和 xhprof_lib 下的所有文件拷贝到你网站的主目录下</p>
+<div class="codeText">
+<div class="codeHead">PHP代码</div>
+<ol start="1" class="dp-c">
+<li class="alt"><span><span>&lt;?php&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//cpu:&nbsp;XHPROF_FLAGS_CPU&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//内存：&nbsp;XHPROF_FLAGS_MEMORY&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//如果都监控用XHPROF_FLAGS_CPU&nbsp;+&nbsp;XHPROF_FLAGS_MEMORY&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>xhprof_enable(XHPROF_FLAGS_CPU&nbsp;+&nbsp;XHPROF_FLAGS_MEMORY);&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">//这中间是需要性能分析的php代码</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">//停止性能分析&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="vars">$data</span><span>&nbsp;=&nbsp;xhprof_disable();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">//显示性能分析数据&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="keyword">include_once</span><span>&nbsp;</span><span class="string">&quot;xhprof_lib/utils/xhprof_lib.php&quot;</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="keyword">include_once</span><span>&nbsp;</span><span class="string">&quot;xhprof_lib/utils/xhprof_runs.php&quot;</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="vars">$objXhprofRun</span><span>&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;XHProfRuns_Default();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">//第一个参数&nbsp;是xhprof_disable()的返回值&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//第二个参数&nbsp;是自定义命名空间字符串&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//返回运行id，用这个id查看相关运行结果&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="vars">$run_id</span><span>&nbsp;=&nbsp;</span><span class="vars">$objXhprofRun</span><span>-&gt;save_run(</span><span class="vars">$data</span><span>,&nbsp;</span><span class="string">&quot;xhprof&quot;</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">//查看运行结果的url&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//run的值来源于save_run的返回值&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//source值来源于save_run的第二个参数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//www.abc.com&nbsp;需要用自己的域名替换&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="func">echo</span><span>&nbsp;</span><span class="string">&quot;&lt;a&nbsp;href=&#39;http://www.abc.com/xhprof_html/index.php?run=&quot;</span><span>.</span><span class="vars">$run_id</span><span>.</span><span class="string">&quot;&amp;source=xhprof&#39;&gt;查看结果&lt;/a&gt;&quot;</span><span>;&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/302.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>mysql主从同步配置</title>
+		<link>/blog/2014/301.html</link>
+		<comments>/blog/2014/301.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[数据库]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[前两天配置了Mysql主从，再记录如下，以备下次查看。 &#160; 主服务器设置 1、登录Master服务器 &#8230; <a href="/blog/2014/301.html" class="more-link">继续阅读<span class="screen-reader-text">“mysql主从同步配置”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>前两天配置了Mysql主从，再记录如下，以备下次查看。</p>
+<p>&nbsp;</p>
+<p><strong>主服务器设置</strong></p>
+<p>1、登录Master服务器,修改my.cnf,添加如下内容； <br />
+[mysqld]<br />
+server-id = 53 #//数据库ID号， 为1时表示为Master,其中master_id必须为1到232&ndash;1之间的一个正整数值; <br />
+log-bin=mysql-bin #//启用二进制日志； <br />
+binlog-do-db=dbname #//需要同步的二进制数据库名； <br />
+binlog-ignore-db=mysql /#/不同步的二进制数据库名;这个同步后听说很麻烦，不同步； <br />
+log-slave-updates #//把更新的记录写到二进制文件中； <br />
+slave-skip-errors=all #//跳过错误，继续执行复制；</p>
+<p>2、建立同步用mysql账号，指定允许访问的IP为从服务器IP<br />
+mysql&gt;&nbsp;#GRANT REPLICATION SLAVE,RELOAD,SUPER ON *.* to rslave@192.168.33.54 identified by &#39;83ea4e19efe34874b50&#39;;<br />
+mysql&gt; FLUSH PRIVILEGES;</p>
+<p>到从服务器上验证登陆：<br />
+mysql -urslave -p83ea4e19efe34874b50 -h192.168.33.53</p>
+<p>3、写锁定 flush tables with read lock;<br />
+4、导出数据mysqldump -uroot -p dbname &gt; webdb.sql</p>
+<p><strong>从服务器设置</strong></p>
+<p>新版本与老版本的Mysql从服务器设置方式不一样，据说是以5.1.7版为分界线，具体请自己尝试。</p>
+<p>老版本的Mysql配置文件[mysqld]后添加：<br />
+server-id = 54<br />
+log-bin=mysql-bin<br />
+master-host = 192.168.33.53<br />
+master-user = rslave<br />
+master-password = 83ea4e19efe34874b50<br />
+master-port = 3306<br />
+master-connect-retry=60 #//如果发现主服务器断线，重新连接的时间差<br />
+replicate-ignore-db=mysql #//不需要备份的数据库； <br />
+replicate-do-db=dbname #//需要备份的数据库 <br />
+log-slave-update<br />
+slave-skip-errors = all #//跳过错误，继续执行复制；</p>
+<p>重启Mysql服务后执行：<br />
+mysql&gt; start slave;</p>
+<p>新版本的Mysql配置文件[mysqld]后添加：<br />
+server-id = 61<br />
+log-bin=mysql-bin</p>
+<p>并执行下面命令：（每次重启都要重新配置）<br />
+mysql&gt; stop slave;<br />
+mysql&gt; change master to master_host=&#39;192.168.33.53&#39;,master_user=&#39;rslave&#39;,master_password=&#39;83ea4e19efe34874b50&#39;;<br />
+mysql&gt; start slave;<br type="_moz" /><br />
+&nbsp;</p>
+<p>验证设置是否正确：<br />
+mysql&gt; show slave statusG;<br />
+主要是看以下两项是否为YES：<br />
+Slave_IO_Running: Yes<br />
+Slave_SQL_Running: Yes</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/301.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>ssh连接速度很慢的解决方法</title>
+		<link>/blog/2014/300.html</link>
+		<comments>/blog/2014/300.html#respond</comments>
+		<pubDate>Tue, 04 Nov 2014 19:58:58 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[问题现象： 公司有几台服务器，SSH连接的时候很慢，半天才连接上，连上后一切操作正常，网络速度没问题。 处理方 &#8230; <a href="/blog/2014/300.html" class="more-link">继续阅读<span class="screen-reader-text">“ssh连接速度很慢的解决方法”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>问题现象：</p>
+<p>公司有几台服务器，SSH连接的时候很慢，半天才连接上，连上后一切操作正常，网络速度没问题。</p>
+<p>处理方法：</p>
+<p>用命令：ssh -v  服务器IP或者域名</p>
+<p>参数v能显示连接过程中的一系列步骤，看看在哪一步完成后卡得比较久，就是那一步出问题了。</p>
+<p>发现卡得比较久的有</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>debug1:&nbsp;Authentications&nbsp;that&nbsp;can&nbsp;continue:&nbsp;publickey,gssapi-keyex,gssapi-with-mic,password&nbsp;&nbsp;</span></span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;gssapi-keyex&nbsp;&nbsp;</span></li>
+<li class="alt"><span>debug1:&nbsp;No&nbsp;valid&nbsp;Key&nbsp;exchange&nbsp;context&nbsp;&nbsp;</span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;gssapi-with-mic&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>说明卡在了尝试gssapi认证过程上，编辑服务器上的SSH配置文件</p>
+<p>vi&nbsp;/etc/ssh/sshd_config</p>
+<p>将#GSSAPIAuthentication no这一行前面的#号删除，同时在GSSAPIAuthentication yes这行前面加上#号，禁用gssapi认证。</p>
+<p>重启SSH服务：service sshd restart</p>
+<p>再次连接，发现还是有点慢，但是比之前快了一些，继续用ssh -v 跟踪，卡在这：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>debug1:&nbsp;Authentications&nbsp;that&nbsp;can&nbsp;continue:&nbsp;publickey,password&nbsp;&nbsp;</span></span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;publickey&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>这是因为服务器要将客户机的IP解析成域名，再次编辑SSH配置文件，将</p>
+<p>#UseDNS yes</p>
+<p>这行改成</p>
+<p>UseDNS no</p>
+<p>重启SSH服务，再次连接，终于是飞一般的感觉。</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/300.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Ajax返回结果中文乱码的解决办法</title>
+		<link>/blog/2014/299.html</link>
+		<comments>/blog/2014/299.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[情景：用JQuery的Ajax调用他站接口查询数据。 代码： Javascript代码 $.getJSON(&#038; &#8230; <a href="/blog/2014/299.html" class="more-link">继续阅读<span class="screen-reader-text">“Ajax返回结果中文乱码的解决办法”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>情景：用JQuery的Ajax调用他站接口查询数据。</p>
+<p>代码：</p>
+<div class="codeText">
+<div class="codeHead">Javascript代码</div>
+<ol start="1" class="dp-c">
+<li class="alt"><span><span>$.getJSON(&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;$strurl&nbsp;+&nbsp;<span class="string">&quot;/fwqueryjson.asp?callback=?&quot;</span><span>,&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;FwCode:&nbsp;$FwCode.val()&nbsp;},&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">function</span><span>(data)&nbsp;{$CheckResult.html(data.QueryResult);}&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>);&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>现象：返回的结果里的中文是乱码，英文与数字正常。</p>
+<p>原因：本地是UTF-8编码，他站是GB2312编码，请求时默认以本地编码发起请求，与远端不一致，导致乱码。</p>
+<p>解决：先指定Ajax请求的编码，代码如下</p>
+<div class="codeText">
+<div class="codeHead">Javascript代码</div>
+<ol start="1" class="dp-c">
+<li class="alt"><span><span>$.ajaxSetup({&nbsp;scriptCharset:&nbsp;</span><span class="string">&quot;gb2312&quot;</span><span>&nbsp;,&nbsp;contentType:&nbsp;</span><span class="string">&quot;application/json;&nbsp;charset=gb2312&quot;</span><span>});&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/299.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>各种SSH终端软件对比</title>
+		<link>/blog/2014/298.html</link>
+		<comments>/blog/2014/298.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[PC技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[Xshell 收费软件 ssh secure shell 免费软件 secureCRT Secure[1] C &#8230; <a href="/blog/2014/298.html" class="more-link">继续阅读<span class="screen-reader-text">“各种SSH终端软件对比”</span></a>]]></description>
+				<content:encoded><![CDATA[<p><strong>Xshell</strong></p>
+<p>收费软件</p>
+<p><strong>ssh secure shell</strong></p>
+<p>免费软件</p>
+<p><strong>secureCRT</strong></p>
+<p>Secure[1] CRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单的说是Windows下登录UNIX或Linux服务器主机的软件。SecureCRT支持SSH，同时支持Telnet和rlogin协议。SecureCRT是一款用于连接运行包括Windows、UNIX和VMS的理想工具。通过使用内含的VCP命令行程序可以进行加密文件的传输。有流行CRTTelnet客户机的所有特点,包括:自动注册、对不同主机保持不同的特性、打印功能、颜色设置、可变屏幕尺寸、用户定义的键位图和优良的VT100,VT102,VT220和ANSI竞争.能从命令行中运行或从浏览器中运行.其它特点包括文本手稿、易于使用的工具条、用户的键位图编辑器、可定制的ANSI颜色等.SecureCRT的SSH协议支持DES,3DES和RC4密码和密码与RSA鉴别。</p>
+<p>SecureCRT也是一个收费软件</p>
+<p><strong>PuTTY</strong></p>
+<p>Putty是一个免费的、Windows 32平台下的telnet、rlogin和ssh客户端，但是功能丝毫不逊色于商业的telnet类工具。<br />
+用它来远程管理Linux十分好用，其主要优点如下：<br />
+◆ 完全免费;<br />
+◆ 支持公钥认证;<br />
+◆ 全面支持ssh1和ssh2；<br />
+◆ 绿色软件，无需安装，下载后在桌面建个快捷方式即可使用；<br />
+◆ 体积很小，仅484KB(0.63 版本)；<br />
+◆ 操作简单，所有的操作都在一个控制面板中实现。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/298.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

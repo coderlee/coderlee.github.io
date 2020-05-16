@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>网站技术 &#8211; 网站建设技术集锦</title>
+	<atom:link href="/blog/category/web_development/feed" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>涉及网站建设、服务器维护等IT技术的博客</description>
+	<lastBuildDate>Tue, 07 Feb 2017 02:46:28 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6</generator>
+	<item>
+		<title>curl与file_get_contents访问远程接口慢的解决</title>
+		<link>/blog/2016/307.html</link>
+		<comments>/blog/2016/307.html#respond</comments>
+		<pubDate>Sat, 09 Jan 2016 10:35:30 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　这几天在协调处理短信接口调用失败的问题，处理完后发现发送短信很耗时，要5秒左右，是PHP调用 file_g &#8230; <a href="/blog/2016/307.html" class="more-link">继续阅读<span class="screen-reader-text">“curl与file_get_contents访问远程接口慢的解决”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　这几天在协调处理短信接口调用失败的问题，处理完后发现发送短信很耗时，要5秒左右，是PHP调用 file_get_contents访问远程接口的的，而我前面处理调用失败问题时最后测试短信接口时是直接用的Linux命令curl调用，速度是非常快的。</p>
+<p>　　先从代码入手，刚开始以为是file_get_contents比curl慢，虽然觉得也不至于慢到这种程度，但是总得试试看，于是换成curl，依旧很慢。</p>
+<p>　　难道是域名解析问题？于是在hosts文件里写好本地解析，再试，果真正常了，秒发。看来真是域名解析问题，但又不知为何Shell里没问题，独独PHP里有问题。虽然把域名写死在hosts里能解决问题，但是总不是办法。</p>
+<p>　　上网查，有人说是PHP缓存了域名解析，重启PHP即可。我马上去重启PHP，还真好了。但是有一点我不明白，既然是缓存，那应该是速度更快才对。在一个技术群里讨论时我突然想起来昨天测试接口时发现服务器设置的首选DNS是不能用的，然后我改了。难道PHP缓存的不是域名解析，而是域名解析服务器（DNS）？看来只有这个解释了，有空可以做个测试验证一下。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2016/307.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>PHP中Notice: iconv(): Unknown error (84) 的解决办法</title>
+		<link>/blog/2016/306.html</link>
+		<comments>/blog/2016/306.html#respond</comments>
+		<pubDate>Thu, 07 Jan 2016 10:51:03 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[ 　　今天在写一个导出数据到csv的功能，为了防止中文乱码，需要将utf8转码，我使用了这样的语句： #这里先 &#8230; <a href="/blog/2016/306.html" class="more-link">继续阅读<span class="screen-reader-text">“PHP中Notice: iconv(): Unknown error (84) 的解决办法”</span></a>]]></description>
+				<content:encoded><![CDATA[<p> 　　今天在写一个导出数据到csv的功能，为了防止中文乱码，需要将utf8转码，我使用了这样的语句：</p>
+<div class="codeText">
+<pre class="prettyprint linenums:1">#这里先是把csv文件的内容生成，然后下面转码
+$csv=iconv(&#039;utf-8&#039;,&#039;gb2312&#039;,$csv);</pre>
+</div>
+<p>结果报<span style="color: #ff0000;"><strong><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">Notice: </span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">iconv():</span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;"> </span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">Unknown</span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;"> </span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">error</span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;"> (22)</span></strong></span><span style="color: #333333; font-family: arial; font-size: 13px; line-height: 20.02px;">的错误，想起来$csv里带有换行，所以没办法转换，于是在各个数据项串成csv文件内容前转换，这时报了两个</span><span style="color: #ff0000;"><strong>iconv(): Unknown error (84)</strong></span>的错误，输出内容，发现报错时有一个是处理汉字“密菓”，第二个字不认得，生僻，我突然想到，难道是字符集不支持，于是换成gbk：</p>
+<div class="codeText">
+<pre class="prettyprint linenums:1">$csv .= iconv(&#039;utf-8&#039;,&#039;gbk&#039;,$val)
+</pre>
+</div>
+<p>再运行，没报错了。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2016/306.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>使用socket方式连接Nginx优化php-fpm性能</title>
+		<link>/blog/2014/303.html</link>
+		<comments>/blog/2014/303.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[Nginx连接fastcgi的方式有2种：TCP和unix domain socket 什么是Unix dom &#8230; <a href="/blog/2014/303.html" class="more-link">继续阅读<span class="screen-reader-text">“使用socket方式连接Nginx优化php-fpm性能”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>Nginx连接fastcgi的方式有2种：TCP和unix domain socket</p>
+<p>什么是Unix domain socket？&mdash;&mdash; 维基百科<br />
+Unix domain socket 或者 IPC socket是一种终端，可以使同一台操作系统上的两个或多个进程进行数据通信。与管道相比，Unix domain sockets 既可以使用字节流和数据队列，而管道通信则只能通过字节流。Unix domain sockets的接口和Internet socket很像，但它不使用网络底层协议来通信。Unix domain socket 的功能是POSIX操作系统里的一种组件。</p>
+<p>Unix domain sockets 使用系统文件的地址来作为自己的身份。它可以被系统进程引用。所以两个进程可以同时打开一个Unix domain sockets来进行通信。不过这种通信方式是发生在系统内核里而不会在网络里传播。</p>
+<p>TCP和unix domain socket方式对比<br />
+TCP是使用TCP端口连接127.0.0.1:9000<br />
+Socket是使用unix domain socket连接套接字/dev/shm/php-cgi.sock（<span style="color: rgb(255, 0, 0);">很多教程使用路径/tmp，而路径/dev/shm是个tmpfs，速度比磁盘快得多</span>）</p>
+<p>测试机是个1核的centos5.4，2用户并发时系统资源消耗50%左右，10用户资源就跑得很满了。</p>
+<div>&nbsp;</div>
+<div>
+<table border="1" bordercolor="#000000" cellpadding="2" cellspacing="0" height="115" style="box-sizing: border-box; width: 557px; border-collapse: collapse; margin: 10px auto; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;">
+<tbody style="box-sizing: border-box;">
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">&nbsp;</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">&nbsp;</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">2users</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">10users</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.2.5</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">tcp</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1060</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1294</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.2.5</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">socket</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">997</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1487</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.3.10</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">tcp</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">906</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1082</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.3.10</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">socket</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">880</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1247</td>
+</tr>
+</tbody>
+</table>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;"><span style="box-sizing: border-box; color: rgb(229, 51, 51);">结论是在服务器压力不大的情况下，tcp和socket差别不大，但在压力比较满的时候，用套接字方式，效果确实比较好。</span></p>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;"><span style="box-sizing: border-box; color: rgb(0, 102, 0);"><strong style="box-sizing: border-box;">下面是php 5.3以上版本将TCP改成socket方式的配置方法：</strong></span><br style="box-sizing: border-box;" /><br />
+修改php-fpm.conf（/usr/local/php/etc/php-fpm.conf）</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>;</span><span class="attribute">listen</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">127</span><span>.0.0.1:9000&nbsp;&nbsp;</span></span></li>
+<li><span><span class="attribute">listen</span><span>&nbsp;=&nbsp;/dev/shm/php-cgi.sock&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;">修改nginx配置文件server段的配置，将http的方式改为socket方式</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>location&nbsp;~&nbsp;.php$&nbsp;{&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;#fastcgi_pass&nbsp;&nbsp;&nbsp;127.0.0.1:9000;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_pass&nbsp;unix:/dev/shm/php-cgi.sock;&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_index&nbsp;&nbsp;index.php;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_param&nbsp;&nbsp;SCRIPT_FILENAME&nbsp;&nbsp;$document_root$fastcgi_script_name;&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_params;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>}&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;">重启php-fpm与nginx</p>
+<p>service nginx restart<br />
+service php-fpm restart</p>
+<p>然后<br />
+ls -al /dev/shm<br />
+可以看到php-cgi.sock文件unix套接字类型</p>
+<p>参考：http://zh.wikipedia.org/wiki/Unix_domain_socket</p>
+<p>&nbsp;</p>
+<p>转载后记：我根据上文配置完后，访问PHP页面出现502，查看Nginx日志，有错误信息：nginx error connect to php-cgi.sock failed (13: Permission denied)</p>
+<p>编辑配置文件/usr/local/php/etc/php-fpm.conf</p>
+<p>将</p>
+<p>;listen.owner = nobody<br />
+;listen.group = nobody<br />
+;listen.mode = 0660<br />
+改为<br />
+listen.owner = nobody<br />
+listen.group = nobody<br />
+listen.mode = 0666</p>
+<p>保存，重启PHP-FPM即可</p>
+</div>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/303.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>xhprof与Xdebug的奇怪问题</title>
+		<link>/blog/2014/302.html</link>
+		<comments>/blog/2014/302.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　为了查找项目中比较耗性能的PHP代码，这两天在装xhprof用来跟踪代码，结果遇到了一个很奇怪的问题。安装 &#8230; <a href="/blog/2014/302.html" class="more-link">继续阅读<span class="screen-reader-text">“xhprof与Xdebug的奇怪问题”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　为了查找项目中比较耗性能的PHP代码，这两天在装xhprof用来跟踪代码，结果遇到了一个很奇怪的问题。安装配置好xhprof后，用来跟踪简单的代码没一点问题，但是在项目中一跟踪，PHP-FPM进程直接就挂了，查看各种日志，并且开了内核转储，折腾了半天也没找到挂了的原因。</p>
+<p>　　没办法，只好换Xdebug。安装，配置，很快就搞定了。</p>
+<p>　　在使用Xdebug前我突发奇想，不知道Xdebug能不能跟踪到xhprof导致PHP-FPM挂了的的问题，于是同时启用两者，结果意外地发现xhprof也能用了。为了证明是不是Xdebug导致xhprof可以用了，我禁用了Xdebug，xhprof又导致PHP-FPM挂了，重新启用又好了。</p>
+<p>　　真是好奇怪的问题，不知道是什么原因造成的，暂时也没时间深究了。</p>
+<p>附Xhprof的安装与使用方法：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>[root@localhost&nbsp;~]#&nbsp;tar&nbsp;-zxvf&nbsp;xhprof-0.9.4.tgz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span>[root@localhost&nbsp;~]#&nbsp;cd&nbsp;xhprof-0.9.4/extension/&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>[root@localhost&nbsp;extension]#&nbsp;phpize&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>[root@localhost&nbsp;extension]#&nbsp;./configure&nbsp;<span class="attribute">&#8211;with-php-config</span><span>=/usr/local/php/bin/php-config&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>[root@localhost&nbsp;extension]#&nbsp;make&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>[root@localhost&nbsp;extension]#&nbsp;make&nbsp;install&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>如果phpize执行不了，请先安装或者做链接：ln -s /usr/local/php/bin/phpize /usr/bin/phpize</p>
+<p>在php.ini文件中，添加如下配置：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>[xhprof]&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="attribute">extension</span><span>=</span><span class="attribute-value">xhprof</span><span>.so;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>;&nbsp;directory&nbsp;used&nbsp;by&nbsp;default&nbsp;implementation&nbsp;of&nbsp;the&nbsp;iXHProfRuns&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>;&nbsp;interface&nbsp;(namely,&nbsp;the&nbsp;XHProfRuns_Default&nbsp;class)&nbsp;for&nbsp;storing&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>;&nbsp;XHProf&nbsp;runs.&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>;<span class="attribute">xhprof.output_dir</span><span>=</span><span class="tag">&lt;</span><span class="tag-name">directory_for_storing_xhprof_runs</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="attribute">xhprof.output_dir</span><span>=/tmp/xhprof&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p>把xhprof-0.9.4目录下的目录xhprof_html 和 xhprof_lib 下的所有文件拷贝到你网站的主目录下</p>
+<div class="codeText">
+<div class="codeHead">PHP代码</div>
+<ol start="1" class="dp-c">
+<li class="alt"><span><span>&lt;?php&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//cpu:&nbsp;XHPROF_FLAGS_CPU&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//内存：&nbsp;XHPROF_FLAGS_MEMORY&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//如果都监控用XHPROF_FLAGS_CPU&nbsp;+&nbsp;XHPROF_FLAGS_MEMORY&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>xhprof_enable(XHPROF_FLAGS_CPU&nbsp;+&nbsp;XHPROF_FLAGS_MEMORY);&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">//这中间是需要性能分析的php代码</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">//停止性能分析&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="vars">$data</span><span>&nbsp;=&nbsp;xhprof_disable();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">//显示性能分析数据&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="keyword">include_once</span><span>&nbsp;</span><span class="string">&quot;xhprof_lib/utils/xhprof_lib.php&quot;</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="keyword">include_once</span><span>&nbsp;</span><span class="string">&quot;xhprof_lib/utils/xhprof_runs.php&quot;</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="vars">$objXhprofRun</span><span>&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;XHProfRuns_Default();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">//第一个参数&nbsp;是xhprof_disable()的返回值&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//第二个参数&nbsp;是自定义命名空间字符串&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//返回运行id，用这个id查看相关运行结果&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="vars">$run_id</span><span>&nbsp;=&nbsp;</span><span class="vars">$objXhprofRun</span><span>-&gt;save_run(</span><span class="vars">$data</span><span>,&nbsp;</span><span class="string">&quot;xhprof&quot;</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">//查看运行结果的url&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//run的值来源于save_run的返回值&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//source值来源于save_run的第二个参数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//www.abc.com&nbsp;需要用自己的域名替换&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="func">echo</span><span>&nbsp;</span><span class="string">&quot;&lt;a&nbsp;href=&#39;http://www.abc.com/xhprof_html/index.php?run=&quot;</span><span>.</span><span class="vars">$run_id</span><span>.</span><span class="string">&quot;&amp;source=xhprof&#39;&gt;查看结果&lt;/a&gt;&quot;</span><span>;&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/302.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Ajax返回结果中文乱码的解决办法</title>
+		<link>/blog/2014/299.html</link>
+		<comments>/blog/2014/299.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[情景：用JQuery的Ajax调用他站接口查询数据。 代码： Javascript代码 $.getJSON(&#038; &#8230; <a href="/blog/2014/299.html" class="more-link">继续阅读<span class="screen-reader-text">“Ajax返回结果中文乱码的解决办法”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>情景：用JQuery的Ajax调用他站接口查询数据。</p>
+<p>代码：</p>
+<div class="codeText">
+<div class="codeHead">Javascript代码</div>
+<ol start="1" class="dp-c">
+<li class="alt"><span><span>$.getJSON(&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;$strurl&nbsp;+&nbsp;<span class="string">&quot;/fwqueryjson.asp?callback=?&quot;</span><span>,&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;FwCode:&nbsp;$FwCode.val()&nbsp;},&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">function</span><span>(data)&nbsp;{$CheckResult.html(data.QueryResult);}&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>);&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>现象：返回的结果里的中文是乱码，英文与数字正常。</p>
+<p>原因：本地是UTF-8编码，他站是GB2312编码，请求时默认以本地编码发起请求，与远端不一致，导致乱码。</p>
+<p>解决：先指定Ajax请求的编码，代码如下</p>
+<div class="codeText">
+<div class="codeHead">Javascript代码</div>
+<ol start="1" class="dp-c">
+<li class="alt"><span><span>$.ajaxSetup({&nbsp;scriptCharset:&nbsp;</span><span class="string">&quot;gb2312&quot;</span><span>&nbsp;,&nbsp;contentType:&nbsp;</span><span class="string">&quot;application/json;&nbsp;charset=gb2312&quot;</span><span>});&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/299.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>PHP5.5编译安装之后设定PHP-FPM自启动及服务控制</title>
+		<link>/blog/2014/294.html</link>
+		<comments>/blog/2014/294.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[&#160;　　PHP-5.3.3版本以后PHP已经包含了PHP-FPM，编译时加上参数&#8211;enab &#8230; <a href="/blog/2014/294.html" class="more-link">继续阅读<span class="screen-reader-text">“PHP5.5编译安装之后设定PHP-FPM自启动及服务控制”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>&nbsp;　　PHP-5.3.3版本以后PHP已经包含了PHP-FPM，编译时加上参数&#8211;enable-fpm就会安装PHP-fpm。</p>
+<p>　　php-fpm装完后默认没有自动启动，需要设置自动启动。PHP-5.3.3版本以后源代码包中已经自带启动脚本，复制到/etc/init.d目录下，并更改权限，命令如下：</p>
+<p>cp &lt;php-source-dir&gt;/sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm<br />
+chmod 755 /etc/init.d/php-fpm</p>
+<p>然后使用chkconfig设定开机启动：</p>
+<p>chkconfig php-fpm on</p>
+<p>修改php-fpm配置文件，如果PID文件配置被注释了，就删除pid = run/php-fpm.pid前面的分号。</p>
+<p>这样设置完后同时也能用/etc/init.d/php-fpm来控制php-fpm了，参数有：start|stop|force-quit|restart|reload|status，如重启就用命令：/etc/init.d/php-fpm&nbsp;restart</p>
+<p>如果启动时报路径错误，就检查下/etc/init.d/php-fpm里的相关路径。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/294.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>nginx与php-fpm打开PHP页面报错File not found</title>
+		<link>/blog/2014/293.html</link>
+		<comments>/blog/2014/293.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　 最近在虚拟机上装了个CentOS6.5，由于是以最小化的方式装的，装LNMP环境时缺少好多东西，特别是安 &#8230; <a href="/blog/2014/293.html" class="more-link">继续阅读<span class="screen-reader-text">“nginx与php-fpm打开PHP页面报错File not found”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　 最近在虚拟机上装了个CentOS6.5，由于是以最小化的方式装的，装LNMP环境时缺少好多东西，特别是安装PHP时缺少很多东西，过程是非常的曲折。</p>
+<p>　　我装的版本分别是：Nginx 1.6.0，Mysql 5.6.19，PHP 5.5.14。前两个用Yumj装起来还比较顺利，装PHP的时候我采用自己编译的方式安装，以php-fpm的方式与Nginx配合，装完后写了个php文件，一访问提示File not found，查看Nginx日志，有错误信息：</p>
+<p>[error] &quot;1842#0&quot; *7 connect() failed (111: Connection refused)</p>
+<p>用命令netstat -ano | grep 9000查了一下，发现9000端口没开，应该是php-fpm没有启动。马上去启动：</p>
+<p>#/usr/local/sbin/php-fpm</p>
+<p>启动php-fpm后还是提示File not found。再查看Nginx的错误日志，这回的错误信息是：</p>
+<p>FastCGI sent in stderr: &quot;Primary script unknown&quot; while reading response header from upstream</p>
+<p>折腾了半天，发现Nginx默认的配置文件是站点的root写在了各个location配置块里了，之前只改了根目录的配置，没注意php配置这块里也有一个，将root这个参数移到server块下，将配置PHP的那块location改成：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>location&nbsp;~&nbsp;.php$&nbsp;{&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;try_files&nbsp;$<span class="attribute">uri</span><span>&nbsp;=</span><span class="attribute-value">404</span><span>;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_pass&nbsp;&nbsp;&nbsp;127.0.0.1:9000;&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_index&nbsp;&nbsp;index.php;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_param&nbsp;&nbsp;SCRIPT_FILENAME&nbsp;&nbsp;$document_root$fastcgi_script_name;&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_params;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>}&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>其中try_files $uri =404;这个配置项是为了让Nginx判断文件不存在就直接返回404，而不用再发给php-fpm去处理。</p>
+<p>重启Nginx：</p>
+<p>#service nginx restart</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/293.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>CentOS下yum安装Nginx</title>
+		<link>/blog/2014/292.html</link>
+		<comments>/blog/2014/292.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[&#160;CentOS里直接用yum安装Nginx是不会成功的，要先做一些处理。 先到http://ngin/ &#8230; <a href="/blog/2014/292.html" class="more-link">继续阅读<span class="screen-reader-text">“CentOS下yum安装Nginx”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>&nbsp;CentOS里直接用yum安装Nginx是不会成功的，要先做一些处理。</p>
+<p>先到http://nginx.org/en/linux_packages.html找到适合你的CentOS版本的rpm包，记下路径</p>
+<p>执行：</p>
+<p>rpm -ivh&nbsp;http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm</p>
+<p>系统就会开始自动下载这个rpm包，然后安装。你也可以先用wget下载这个包，然后再运行rpm命令来安装。</p>
+<p>然后就可以直接用yum install nginx来安装Nginx了。</p>
+<p>安装完后在浏览器里打开127.0.0.1，如果看到Welcome to nginx!这样的内容，说明安装成功了。</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/292.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Centos 6的单网卡多IP设置</title>
+		<link>/blog/2014/291.html</link>
+		<comments>/blog/2014/291.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[cd /etc/sysconfig/network-scripts #进入网卡配置目录 cp ifcfg-et &#8230; <a href="/blog/2014/291.html" class="more-link">继续阅读<span class="screen-reader-text">“Centos 6的单网卡多IP设置”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>cd /etc/sysconfig/network-scripts #进入网卡配置目录<br />
+cp ifcfg-eth0 ifcfg-eth0:0 ＃拷贝一个网卡配置文件<br />
+vi ifcfg-eth0:0   ＃用vi编辑器编辑<br />
+内容如下：<br />
+DEVICE=eth0:0 #此处添加:0，保持和文件名一致，添加多个IP依次递增<br />
+ONBOOT=yes #是否开机激活<br />
+BOOTPROTO=static #静态IP，如果需要DHCP获取请输入dhcp<br />
+IPADDR=192.168.1.2 #此处修改为要添加的IP<br />
+NETMASK=255.255.255.0 #子网掩码根据你的实际情况作修改</p>
+<p>保存完之后重启网卡让设置生效，也可以重启服务器。</p>
+<p>重启网卡命令：service network restart<br />
+重启服务器命令：reboot</p>
+<p>只要设置没有问题，重启之后新添加的ip就生效了。用ifconfig查看IP</p>
+<p><strong>加IP段：</strong><br />
+vi ifcfg-eth0-range0 #用Vi编辑配置文件<br />
+内容如下：<br />
+DEVICE=eth0<br />
+ONBOOT=yes<br />
+BOOTPROTO=static<br />
+IPADDR_START=192.168.2.2 #起始IP<br />
+IPADDR_END=192.168.2.254 #结束IP<br />
+CLONENUM_START=1 #表示这段IP网卡号从eth0:1开始<br />
+NETMASK=255.255.255.0</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/291.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Centos 6 最小化安装后的网络设置</title>
+		<link>/blog/2014/290.html</link>
+		<comments>/blog/2014/290.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[网站技术]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[&#160;在centos最小化安装刚安装完毕的时候。如果不经过设置是无法联网的， 不能联网的原因基本就是以下 &#8230; <a href="/blog/2014/290.html" class="more-link">继续阅读<span class="screen-reader-text">“Centos 6 最小化安装后的网络设置”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>&nbsp;在centos最小化安装刚安装完毕的时候。如果不经过设置是无法联网的，</p>
+<p>不能联网的原因基本就是以下的3个。</p>
+<p>1.没有网卡驱动。<br />
+如果ifconfig中只有lo，并且sudo ifconfig eth0 up都找不到网卡，那基本就是网卡没有驱动起来了。</p>
+<p>2.网卡没有开机启动<br />
+这种情况挺多的，貌似在安装系统后才添加的网卡都不是默认启动的。这时候可以试试sudo ifconfig eth0 up （具体是eth几要看你是第几块网卡）。如果up成功了，ifconfig看看有没有对应的网卡的信息。如果有信息，那就说明网卡没有开机自动加载，只要在对应网卡的配置文件中加入 ONBOOT=yes 就ok了。如果up不成功，驱动又已经装好了，那这个问题就不在本文的讨论范围内了。</p>
+<p>3.DHCP<br />
+如果centos的dhclient没有开机启动。这时候就要根据你的网络情况开启dhclient或手动设置ip。试着输入sudo dhclient eth1 (同上，网卡编号看情况),如果启动后获得了ip，那么就是这个问题了。解决的方法也很简单，一种是在开机脚本中写入dhclient，另一种则是在网卡的配置文件中加入BOOTPROTO=dhcp。个人推荐第二种。</p>
+<p>&nbsp;</p>
+]]></content:encoded>
+			<wfw:commentRss>/blog/2014/290.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

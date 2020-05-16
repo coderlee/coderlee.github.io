@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>网站建设技术集锦 &#8211; 第10页 &#8211; 涉及网站建设、服务器维护等IT技术的博客</title>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="http://www.biglee.cn/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="http://www.biglee.cn/comments/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.biglee.cn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://www.biglee.cn/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://www.biglee.cn/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.biglee.cn/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.biglee.cn/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="home blog paged paged-10 hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<h1 class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></h1>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/web_development">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/pc_technology">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/orther">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/entertainment">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/life">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/digest">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/database">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/network">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/management">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/dotnet">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+			
+<article id="post-212" class="post-212 post type-post status-publish format-standard hentry category-orther">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2012/212.html" rel="bookmark">IIS URL重写组件ISAPI_Rewrite3_0087 full版破解 .</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　IIS URL重写组件ISAPI_Rewrite是个很好用的东东，可惜Lite版功能有限制，只能全局应用，不能针对某个站点来设置。Full版没有此限制，我找到了ISAPI_Rewrite3_0087这个版本的破解文件，经本人实测，可以使用。</p>
+<p>　　ISAPI_Rewrite3_0087破解下载地址：<a target="_blank" href="http://www.biglee.cn/file/ISAPI_Rewrite3_0087cr.rar">http://www.biglee.cn/file/ISAPI_Rewrite3_0087cr.rar</a></p>
+<p>第一步：下载官方原版，地址：<a href="http://www.helicontech.com/download/isapi_rewrite/ISAPI_Rewrite3_0087.msi">http://www.helicontech.com/download/isapi_rewrite/ISAPI_Rewrite3_0087.msi</a></p>
+<p>在根目录的httpd.conf 用文本编辑器打开编辑，写上：</p>
+<p>RegistrationName= WWWWANG_Panda<br />
+RegistrationCode= 2EAD-35GH-66NN-ZYBA</p>
+<p>保存。</p>
+<p>第二步：把破解文件压缩包里的两个Dll文件覆盖到安装根目录</p>
+<p>　　破解完成！</p>
+<p>　　在要实现静态重写的网站根目录下放入.htaccess文件，在.htaccess里写网站的静态规则，即可。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2012/212.html" rel="bookmark"><time class="entry-date published" datetime="2012-05-30T09:07:38+00:00">2012年5月30日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/orther" rel="category tag">杂货铺</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2012/212.html#respond"><span class="screen-reader-text">于IIS URL重写组件ISAPI_Rewrite3_0087 full版破解 .</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-211" class="post-211 post type-post status-publish format-standard hentry category-web_development">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2012/211.html" rel="bookmark">使用Namecheap FreeDNS免费的DNS解析服务教程</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　由于需要URL转发等一些国内域名服务商不提供的域名解析服务，就需要寻找第三方的域名解析服务（即DNS服务）。经过查找与试用，我觉得Namecheap FreeDNS服务比较不错，免费且功能齐全，解析速度也挺快的。由于Namecheap的网站是英文的，可能有些朋友不知道如何使用，现将使用教程简单地写一下，供需要的朋友参考。</p>
+<p>　　先到<a href="https://www.namecheap.com/myaccount/signup.aspx">https://www.namecheap.com/myaccount/signup.aspx</a>注册一个账号，填写项目有：Username（用户名）、Password（密码）、Confirm Password（确认密码）、First Name（名）、Last Name（姓）和Email。填写完毕后点击Create Account 按钮即可注册完成。</p>
+<p>　　登录账号（在页面顶部导航栏上方有登录框）后点击菜单PRODUCTS下的Free DNS或者直接访问<a href="https://www.namecheap.com/products/freedns.aspx">https://www.namecheap.com/products/freedns.aspx</a>，输入要使用免费 DNS 服务的域名（不带www，如：biglee.cn）</p>
+<p>
+<img alt="" src="http://www.biglee.cn/blog/download.asp?id=1" /></p>
+<p>　　然后点 Get DNS 按钮，之后就会进入一个确认页面，检查域名无误后点击&ldquo;Add DNS Service for Selected Domains&rdquo;按钮，不出意外的话就会提示你添加成功，并且给出了你将要设置的DNS服务器的域名（freedns1.registrar-servers.com、freedns2.registrar-servers.com、freedns3.registrar-servers.com、freedns4.registrar-servers.com、freedns5.registrar-servers.com）。点击OK! Go to the Hosted Domains Page进入域名管理页面，就能看到你添加的域名。</p>
+<p>　　点击域名进入解析设置页面。如果尚未修改域名的DNS服务器记录，这里会显示无效：<b>Current DNS Status: </b><span style="background-color: yellow;">INACTIVE</span>，并提醒你修改DNS服务器。为了使域名快速生效，还要进行邮箱验证，点击select authorization email，会弹出一个窗口，上面有几个该域名下的邮箱地址（排在左侧）及从Whois信息里获取到的域名所有人邮箱地址（列在右侧），可以选择一个你能收到信的邮箱地址。如果无法从Whois信息里获取邮箱地址信息且你的域名还未建有相关邮箱，那只能等建立好邮箱（不知能否用Namecheap FreeDNS里的邮件转发功能来收信，未做测试，测试过的朋友烦请告知，谢谢）后再验证。</p>
+<p>　　域名解析设置非常地简单，填写好 	  HOST NAME（即主机头名或者二级域名，空主机头和www主机头两条记录它已经单独列出来），在 	  IP ADDRESS/ URL这栏填写好IP地址或者别名，同时选择记录类型（RECORD TYPE），然后点Save Changes按钮保存。如果有好多二级域名记录，一次写不下的话，你保存完后会自动新增5个空白记录。</p>
+<p>　　Email的MX记录设置有个地方要注意，一般我们都是用的企业邮箱，勾选第三项&nbsp;User中的第一项I will specify my own MX records（如果用的Google企业邮箱套件请选第三项，会自动配置），保存后才会出现MX记录填写框，填写好相关数据，保存即可。</p>
+<p>　　特别提醒：如果你的域名正在使用中，那么为了无缝转移解析，要先在Namecheap FreeDNS里做好相关解析再改你域名的DNS服务器记录。</p>
+<p>　　已经添加的域名，登录管理的路径为：菜单MY ACCOUNT<span class="loggedin managesite">&gt;  			Manage Domains，点击左侧导航的FreeDNS下的<span class="loggedin managesite">Hosted Domains就能进入域名管理列表。</span></span></p>
+<p><span class="loggedin managesite"><span class="loggedin managesite">　　另，这里还有动态域名解析服务（Dynamic DNS），我还没试用，等有机会试用了再写个教程。</span></span></p>
+<p>　　</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2012/211.html" rel="bookmark"><time class="entry-date published" datetime="2012-05-28T21:06:37+00:00">2012年5月28日</time><time class="updated" datetime="2012-05-29T01:40:00+00:00">2012年5月29日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/web_development" rel="category tag">网站技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2012/211.html#respond"><span class="screen-reader-text">于使用Namecheap FreeDNS免费的DNS解析服务教程</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-210" class="post-210 post type-post status-publish format-standard hentry category-web_development">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2012/210.html" rel="bookmark">pjblog升级到3.2.9.518后友情链接页面无数据的解决方法</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　前不久得空将博客程序升级到了V3.2.9.518版，今天和一网友交换友情链接时发现友情链接的更多页面里所有友情链接都消失了，只剩下一个友情链接申请提交表单。</p>
+<p>　　正好有点时间，于是分析了下程序和数据库，找到了问题的所在。</p>
+<p>　　先看BlogLink.asp的51行：server.Execute(&quot;post/link.html&quot;)，查看post/link.html文件，发现内容为空，这是直接原因。</p>
+<p>　　再看生成post/link.html文件的程序代码，是control/f_control.asp里的258行开始的这个Sub PostLink()。对应数据库表结构，可知这个代码是先读取友情链接分类，然后再按分类读取友情链接信息，然而我发现友情链接表里的分类ID都为0，也就是未分类，因此程序最终没有读取到任何信息。</p>
+<p>　　解决办法有两个，一个就是去后台将所有的友情链接分类。这是最简单的方法。</p>
+<p>　　还有一个办法就是修改程序，将未分类的友情链接也读取出来。之前一直未注意，不知道上一个版本有没有这样的问题，有的话也是类似的修改方法。附修改后的Sub PostLink()代码如下：</p>
+<p>Sub PostLink()<br />
+&nbsp;&nbsp;&nbsp;&nbsp; Dim LoadTemplate, Temp, SaveArticle<br />
+&nbsp; Dim Link_SplitArray, Link_Global_Temp, Link_Layout_Temp, LinkClassTemp, LinkTemp, AllTemp<br />
+&nbsp;&nbsp;&nbsp;&nbsp; LoadTemplate = LoadFromFile(&quot;Template/Link.asp&quot;)<br />
+&nbsp;&nbsp;&nbsp;&nbsp; If LoadTemplate(0) = 0 Then &#39;读取成功后写入信息<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Temp = LoadTemplate(1)<br />
+&nbsp;&nbsp; Link_SplitArray = Split(Temp, &quot;&lt;#ST(B)#&gt;&quot;)<br />
+&nbsp;&nbsp; Link_Global_Temp = Link_SplitArray(1)<br />
+&nbsp;&nbsp; Link_Layout_Temp = Link_SplitArray(2)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim blog_Links<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set blog_Links = conn.Execute(&quot;Select * From blog_LinkClass order by LinkClass_Order asc&quot;)<br />
+&nbsp;&nbsp; AllTemp = &quot;&quot;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Do Until blog_Links.EOF<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LinkClassTemp = Link_Global_Temp<br />
+&nbsp;&nbsp;&nbsp; LinkTemp = Link_Layout_Temp<br />
+&nbsp;&nbsp;&nbsp; Dim LinkSingContent<br />
+&nbsp;&nbsp;&nbsp; LinkSingContent = GetLinkSingleHtml(LinkTemp, Trim(blog_Links(&quot;LinkClass_ID&quot;)), 3)<br />
+&nbsp;&nbsp;&nbsp; If Len(LinkSingContent) &gt; 0 Then<br />
+&nbsp;&nbsp;&nbsp;&nbsp; LinkClassTemp = Replace(LinkClassTemp, &quot;&lt;$LinkClass_Name$&gt;&quot;, Trim(blog_Links(&quot;LinkClass_Name&quot;)))<br />
+&nbsp;&nbsp;&nbsp;&nbsp; LinkClassTemp = Replace(LinkClassTemp, &quot;&lt;$LinkClass_Title$&gt;&quot;, Trim(blog_Links(&quot;LinkClass_Title&quot;)))<br />
+&nbsp;&nbsp;&nbsp;&nbsp; LinkClassTemp = Replace(LinkClassTemp, &quot;&lt;$LoopLayout$&gt;&quot;, LinkSingContent)<br />
+&nbsp;&nbsp;&nbsp;&nbsp; AllTemp = AllTemp &amp; LinkClassTemp<br />
+&nbsp;&nbsp;&nbsp; End If<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; blog_Links.movenext<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Loop<br />
+&nbsp;&nbsp; LinkClassTemp = Link_Global_Temp<br />
+&nbsp;&nbsp; LinkTemp = Link_Layout_Temp<br />
+&nbsp;&nbsp; LinkSingContent = GetLinkSingleHtml(LinkTemp, 0, 3)<br />
+&nbsp;&nbsp; If Len(LinkSingContent) &gt; 0 Then<br />
+&nbsp;&nbsp;&nbsp; LinkClassTemp = Replace(LinkClassTemp, &quot;&lt;$LinkClass_Name$&gt;&quot;, &quot;其它&quot;)<br />
+&nbsp;&nbsp;&nbsp; LinkClassTemp = Replace(LinkClassTemp, &quot;&lt;$LinkClass_Title$&gt;&quot;, &quot;Orther&quot;)<br />
+&nbsp;&nbsp;&nbsp; LinkClassTemp = Replace(LinkClassTemp, &quot;&lt;$LoopLayout$&gt;&quot;, LinkSingContent)<br />
+&nbsp;&nbsp;&nbsp; AllTemp = AllTemp &amp; LinkClassTemp<br />
+&nbsp;&nbsp; End If<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SaveArticle = SaveToFile(AllTemp, &quot;post/link.html&quot;)<br />
+&nbsp;&nbsp;&nbsp;&nbsp; End If<br />
+&nbsp;End Sub</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2012/210.html" rel="bookmark"><time class="entry-date published" datetime="2012-05-18T22:01:17+00:00">2012年5月18日</time><time class="updated" datetime="2012-05-19T01:19:00+00:00">2012年5月19日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/web_development" rel="category tag">网站技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2012/210.html#respond"><span class="screen-reader-text">于pjblog升级到3.2.9.518后友情链接页面无数据的解决方法</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-209" class="post-209 post type-post status-publish format-standard hentry category-pc_technology">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2012/209.html" rel="bookmark">ubuntu desktop cd、server、alt&#101;rnate三个版本的区别</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>Newbies of Ubuntu/Kubuntu/Edubuntu will be confused by the name of her official released CDs &ndash; Desktop Live CD, Alternate CD and Server CD. Why she makes these different CDs?</p>
+<p>Desktop Live CD<br />
+Live CD allows user to boot it from CD-ROM and experience the power of Linux. Live CD is a complete operating system that running from CD. You can use it for testing hardwares and/or softwares compatibilty. You can use it to taste the new version of the distribution. You can use it for internet kiosks or libraries.</p>
+<p>You can install any software on the Live CD. Once you reboot or switch off, the change will be lost. Ubuntu Desktop Live CD provides the most common features to end-users, especially for newcomers. It is very easy to use and/or install. If you have no experience in Linux, you can install Ubuntu via the Live CD in a few steps. You can choose the default setting if you are in doubt. It requires more memory compare with Alternate CD.</p>
+<p>In addition, you can install Ubuntu by Live CD on a Windows system via Wubi. Wubi allows you to install Ubuntu in Windows system as a file. You can uninstall it just like other Windows softwares.</p>
+<p>Alternate CD<br />
+Unlike Live CD, Alternate CD is a text mode installer. It requires an experienced Linux user to operate. It provides more drivers, such as FakeRAID, software RAID and some other drivers and features. You can also choose LVM and encrytped directory too. It is more flexible and powerful compare with Live CD. The final product is a graphical desktop environment. It can install for a lesser memory machine, thanks to the text mode installer.</p>
+<p>Server CD<br />
+It is a text mode installer and similar to Alternate CD. You can choose some common servers to install, such as LAMP, mail server, DNS, SQL server and File Server. The servers that you have chosen are almost configured but some of them need to be tuned for different usage. It is targeted to experienced Linux users. The final product is a command line environment.</p>
+<p>Conclusion<br />
+Ubuntu makes 3 different CDs in order to keep it fit in a 700MB CD and targeted to different users. Although it may cause confusion, it is a good idea for different market and user.</p>
+<p>－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－</p>
+<div class="postbody"><span style="font-weight: bold">Desktop CD<br />
+</span><br />
+The desktop CD allows you to try Ubuntu without changing your computer at all, and at your option to install it permanently later. This type of CD is what most people will want to use. You will need at least 192MB of RAM to install from this CD. </p>
+<p><span style="font-weight: bold">Server install CD</span> </p>
+<p>The server install CD allows you to install Ubuntu permanently on a computer. <br />
+<span style="font-weight: bold"><br />
+Alternate install CD</span> </p>
+<p>The alternate install CD allows you to perform certain specialist installations of Ubuntu. It provides for the following situations: </p>
+<p>* creating pre-configured OEM systems; <br />
+* setting up automated deployments; <br />
+* upgrading from older installations without network access; <br />
+* LVM and/or RAID partitioning; <br />
+* installs on systems with less than about 192MB of RAM.</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="postbody">－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－</div>
+<div class="postbody">鉴于选择ubuntu做server的不多 </p>
+<p>Live CD可以免安装体验 也可以用于网络诊断 比较方便 <br />
+Live CD也可以用于在windows引导不了时做一些工作 <br />
+Live CD还可以用于备份系统 还可以用于安装gentoo lfs等发行版 <br />
+Live CD能干嘛 就看你的想象力了 <br />
+实乃是居家旅行 走亲访友 杀人越货之必备良药 </p>
+<p>单纯的安装角度来看 <br />
+alternate install cd是首选 占用资源小 兼容性好 速度快 定制性相对强</div>
+<p>ubuntu 发布的linux里面有一个非常具有迷惑性的版本-desktop。因为有一套server，所以desktop很容易从字面上被理解成桌面版。而这样理解的人通常会弄不明白剩下那个alternate是什么东西。</p>
+<p>其实desktop是Live CD的名字，也就是刻录在光盘上运行的Linux。是一套已经装好的系统。把它烧录到光盘上放进光驱就可以直接运行这套完整的linux。当然你也可以在运行之后把它&ldquo;安装&rdquo;到硬盘上，而这样的安装更像是一种拷贝或者还原，类似ghost。<br />
+真正意义上正统的安装版本则是alternate，它是由许多deb包组成的。可以详细的制定安装内容。是正宗的硬盘安装版。</p>
+<p>这两个版本还有一些速度上的区别。<br />
+因为类似系统还原，desktop的安装速度较快。而alternate正式的安装相比之下会慢一些。<br />
+而运行的时候恰好相反：desktop因为是既成的，可能会缺少对应软件环境的适应性，所以和灵活指定及安装的alternate相比会慢一些。</p>
+<p>desktopCD安装前可以看到基本界面和试用(liveCD功能), <br />
+alternate面向安装个性化需求更大的更专业一点点的用户. <br />
+desktop和alternate都有基本的软件包,要更多的软件包只要修改合适的源下载也是很快的.<br />
+desktop是一个live cd ,只用于桌面系统，也可以在LiveCD状态下安装。<br />
+alternate是标准的安装CD。包含了一些桌面程序，可以用高级安装模式安装，在安装时可以划分分区。也可以当作Server来用，不过一些Server 程序要自己通过网络来安装<br />
+Alternate安装过程会有高级分区以及grub安装选项,Desktop没有.<br />
+alternate既能安装desktop也能安装server<br />
+desktop是一个live cd ，在桌面环境里面 以向导的方式引导安装<br />
+live CD 就是把安装好的软件放到光盘中， 安装时就把其上的内容复制到硬盘再简单配置就行了。</p>
+<p>alternate CD上放的DEB的软件包，安装时要解压、配置</p>
+<p>只有在机子硬件配置很低时用 live CD安装较慢，其余都比alternate的要快。</p>
+<p>－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－</p>
+<p><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="postbody">&nbsp;</div>
+<div class="postbody">&nbsp;</div>
+</p>
+<p>The Desktop CD Install installs from within a nice graphical interface, and I believe previously had no repository on the CD, it just copies the files across from the cd and eats up memory because it is running a live version as it installs. Excellent if you do not want to install via a menu driven intreface or a command line system.</p>
+<p>The Alternative CD installs in a command line environment or menu driven interface, is easy to customize as you go along if you know what you are doing, making it easy to install on low system requirement and does not cause many of the failed installations as the Desktop CD. The alternative CD has a repository on the CD.</p>
+<p>The Server CD does not install any desktop environment, such as kde or gnome, and installs a kernel that is less responsive to user inputs (via mouse or keyboard) and is more responsive to disk activity. IE it installs a slightly different kernel. With a server cd if you want a desktop you have to install it via the repositories by apt-get install ubuntu-desktop. The server cd has repository sources on the CD.</p>
+<p>That I think are the main diffrences.<!-- / message --></p>
+<p>&nbsp;</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2012/209.html" rel="bookmark"><time class="entry-date published" datetime="2012-05-12T06:09:09+00:00">2012年5月12日</time><time class="updated" datetime="2012-05-30T09:25:00+00:00">2012年5月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/pc_technology" rel="category tag">PC技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2012/209.html#respond"><span class="screen-reader-text">于ubuntu desktop cd、server、alt&#101;rnate三个版本的区别</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-208" class="post-208 post type-post status-publish format-standard hentry category-pc_technology">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2012/208.html" rel="bookmark">VideoShot.exe停止工作的解决办法</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　正专心查找资料，突然接连冒出两个“VideoShot.exe停止工作”的错误提示，上网搜索了下，这个是迅雷的一个插件，有人说是视频下载完成后就会出这个错。这才想起来刚才应GF之请，在下载几集电视剧以备五一旅途消磨时间用，查看了下下载进度，正好有两集下载完成了。<br />
+　　既然是视频下载完成后出这个错误提示，这插件应该是个视频预览插件。再看下迅雷，发现迅雷在下载完成后自动切换到下载完成列表，右边有个视频信息一栏，貌似就是预览视频的，但是由于出错了，没信息。那我去禁用或者删除这个插件好了，反正我又不想用迅雷这个预览功能。打开迅雷7，找了设置中心等各个角落也没找到插件管理的地方。<br />
+　　该死的迅雷，好吧，我自己去你老巢把这个插件给揪出来。在迅雷安装目录搜索了下VideoShot.exe，果真在addinsVideoAddin目录中找到了它。直接删除的话，应该会有什么问题的，那我搜索下配置文件，看看能不能找到相关的信息，搜索包含字符串“VideoShot.exe”的文件，只找到一个unins000.dat，不应该是它，再搜索目录名：VideoAddin，这下找到了好几个文件。其中两个文件比较可疑，一个是Thunderaddins目录下的addins_cache.xml，一个是skindefault目录下的skin.xml。<br />
+　　用记事本等文本编辑器打开addins_cache.xml，搜索字符串“VideoAddin”，找到了“&amp;lt;addin  name=&#39;VideoAddin&#39; /&amp;gt;”，删除掉，保存文件。<br />
+　　再打开skin.xml，同样搜索字符串“VideoAddin”，先是找到一行这样的字符串：<br />
+　　&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoaddin.bgpanel.bg&amp;quot;   /&amp;gt;<br />
+为了方便调试与恢复，我不删除，先注释掉，改为：<br />
+　　&amp;lt;!&#8211;&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoaddin.bgpanel.bg&amp;quot;   /&amp;gt;&#8211;&amp;gt;<br />
+　　继续搜索字符串“VideoAddin”，找到几行这样的字符串：<br />
+[quote]<br />
+视频信息面板<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoaddin.snap.bottompanel&amp;quot;   /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoaddin.line&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoaddin.bottompanel&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapbtn.play.normal&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapbtn.play.down&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapbtn.play.hover&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.taskvideoinfo.reftabsbkg&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapRightbtn.play.normal&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapRightbtn.play.down&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapRightbtn.play.hover&amp;quot; /&amp;gt;<br />
+&amp;lt;bitmap id=&amp;quot;VideoAddin::bitmap.taskvideoinfo.ExtendTabs.Splitter&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::VideoInfo.NineInOne.bkg&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapRightbtn.play.disable&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.bkg.addBtn&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoInfo.AddNormal&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoInfo.AddHover&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoInfo.AddDown&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin.TaskList.DapBtn.FluencyNormal&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin.TaskList.DapBtn.FluencyHover&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin.TaskList.DapBtn.FluencyDown&amp;quot; /&amp;gt;<br />
+[/quote]<br />
+　　一看就知道是视频信息那栏一配置信息了，也给注释掉，改成：[quote]&amp;lt;!&#8211;视频信息面板<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoaddin.snap.bottompanel&amp;quot;   /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoaddin.line&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoaddin.bottompanel&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapbtn.play.normal&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapbtn.play.down&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapbtn.play.hover&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.taskvideoinfo.reftabsbkg&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapRightbtn.play.normal&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapRightbtn.play.down&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapRightbtn.play.hover&amp;quot; /&amp;gt;<br />
+&amp;lt;bitmap id=&amp;quot;VideoAddin::bitmap.taskvideoinfo.ExtendTabs.Splitter&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::VideoInfo.NineInOne.bkg&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.viewsnapRightbtn.play.disable&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.bkg.addBtn&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoInfo.AddNormal&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoInfo.AddHover&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin::texture.videoInfo.AddDown&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin.TaskList.DapBtn.FluencyNormal&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin.TaskList.DapBtn.FluencyHover&amp;quot; /&amp;gt;<br />
+&amp;lt;texture id=&amp;quot;VideoAddin.TaskList.DapBtn.FluencyDown&amp;quot; /&amp;gt;&#8211;&amp;gt;<br />
+[/quote]<br />
+　　保存文件，退出并重新打开迅雷，再去下载一个视频，下载完成后再也没有错误提示了。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2012/208.html" rel="bookmark"><time class="entry-date published" datetime="2012-04-27T21:27:06+00:00">2012年4月27日</time><time class="updated" datetime="2012-04-27T09:55:00+00:00">2012年4月27日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/pc_technology" rel="category tag">PC技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2012/208.html#comments"><span class="screen-reader-text">VideoShot.exe停止工作的解决办法</span>有1条评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-207" class="post-207 post type-post status-publish format-standard hentry category-database">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2012/207.html" rel="bookmark">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　前几天拿到的一套网络销售系统原来还有个类似ERP的管理后台，折腾了半天才架设起来并找到入口，类似http://IP:7778/forms/frmservlet?config=webutil&amp;form=main，初步了解了下，好像是用Oracle Form builder开发的。在原来就安装好Jinitiator控件的一台服务器上（Windwos Server 2003操作系统）用IE打开这个网址，然后会弹出个类似JVM的界面，但界面上的汉字都是乱码的，就是显示成黑色线的方框。<br />
+　　网上搜索了下，说是将Jinitiator安装目录C:Program FilesOracleJInitiator 1.3.1.22下的lib文件夹里的font.properties.zh.5.1复制一份，重命名为font.properties.zh.5.2即可解决，试了下，果然成功了。<br />
+　　为了方便查看系统，同事就在他的办公电脑（Windows 7）上也浏览器那个网址，并按提示安装了Jinitiator控件，但是安装完成后用IE浏览器这个网址直接就崩溃了。我也在自己的笔记本上（Windows Server 2008）安装此控件，用IE打开也直接崩溃，用Maxthon打开，提示：<br />
+Maxthon 阻止了一个错误.<br />
+Fault address:  6D4AC228 03:00014228 C:PROGRA~1OracleJINITI~1.22inhotspotjvm.dll<br />
+然后就崩溃了。<br />
+同事说难道Win7之类的系统与这个控件不兼容？找了台装有Windows XP的电脑试了下，依旧崩溃。<br />
+　　网上查了下资料，看到有人说Jinitiator和JVM其实是差不多的东西，我就想尝试下安装个JDK看看能不能解决。先是把Jinitiator卸载了，然后安装JDK，试了下还是失败，再把Jinitiator装上去，依旧不成功。<br />
+　　回顾了下整个过程，我又注意到Maxthon下的错误提示，是与jvm.dll有关的，那把JDK下的jvm.dll复制过来替换了，是否能行呢？搜索下JDK安装目录，找到三个jvm.dll文件，分别在“Javajre6inclient”、“Javajdk1.6.0_10jreinclient”和“Javajdk1.6.0_10jreinserver”目录下，前两个文件大小是一样的，我猜是同样的文件，还有一个文件稍大，用哪个好呢？既然是在运行客户端，那就用client目录下的吧，替换后，再次打开那个网址，再也不崩溃了。<br />
+　　一波刚平一波又起，IE是不崩溃了，打开的界面同样是乱码的，并且用刚刚那个办法无法解决。再次上网搜索，很快找到解决办法：<br />
+在Jinitiator安装目录的lib文件夹中找到font.properties.zh，把里面的<br />
+filename.u5b8bu4f53=SIMSUN.TTF<br />
+改为<br />
+filename.u5b8bu4f53=SIMSUN.TTC<br />
+即可<br />
+　　折腾了半天，解决了两个问题，现将解决办法记录在此，供遇到相同问题的朋友参考。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2012/207.html" rel="bookmark"><time class="entry-date published" datetime="2012-04-27T08:54:09+00:00">2012年4月27日</time><time class="updated" datetime="2012-04-27T08:58:00+00:00">2012年4月27日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/database" rel="category tag">数据库</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2012/207.html#comments"><span class="screen-reader-text">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</span>有1条评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-206" class="post-206 post type-post status-publish format-standard hentry category-database">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2012/206.html" rel="bookmark">Oracle数据库出错ORA-01033的解决办法之一</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　这几天拿到一套网络销售系统（连电脑一起搬过来），要架设起来看看。开机后发现是Windows Server 2003的操作系统，IIS下的ASP站点，用的是Oracle数据库。打开站点发现报错：ORA-01033:oracle initializationg o&#114; shutdown in progress ，是数据库连接问题。通过PL/SQL Developer连接Oracle时也报ORA-01033:oracle initializationg o&#114; shutdown in progress 错误提示。经过一番折腾解决了问题。解决思路为：用命令行模式启动数据库服务，看看初始化与装载数据库时具体提示哪个地方出错。过程如下：</p>
+<p>1、进入CMD，执行set o&#114;ACLE_SID=db（要确保连接到正确的SID）<br />
+2、执行sqlplus &#34;/as sysdba&#34;<br />
+　　SQL&gt;shutdown immediate　　（先停止服务）<br />
+　　SQL&gt;startup 　　　　　　　　　（启动服务）<br />
+数据库装载完毕，但是报错：<br />
+o&#114;A-16038：日志 3 序列号 290 无法归档<br />
+o&#114;A-19504：无法创建文件&#34;&#34;<br />
+o&#114;A-00312：联机日志线程1：&#39;F:ORACLEORADATADBREDO03.LOG&#39;</p>
+<p>3、联想到之前系统提示F盘空间不足，虽然我之前已经清理了一些，但是我看了下才几十M的可用空间了，难道是这个原因？再次清理了下F盘，然后再次停止服务后启动服务，此次正常。<br />
+4、进入PL/SQL Developer检查，没有再提示错误。<br />
+　　至此，问题解决，打开站点访问也没有报错了。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2012/206.html" rel="bookmark"><time class="entry-date published" datetime="2012-04-26T01:01:09+00:00">2012年4月26日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/database" rel="category tag">数据库</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2012/206.html#respond"><span class="screen-reader-text">于Oracle数据库出错ORA-01033的解决办法之一</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-205" class="post-205 post type-post status-publish format-standard hentry category-database">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2012/205.html" rel="bookmark">PHP利用SMTP发送邮件（Mail）的类与函数</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　很多情况下，服务器都没有建邮件服务器，因为PHP自带的Mail函数基本上起不了什么作用。废话不多说，分享一个用SMTP可以发信的类和函数。<br />
+SMTP类代码：<br />
+[code]class smtp<br />
+{<br />
+	/* Public Variables */<br />
+	var $smtp_port;<br />
+	var $time_out;<br />
+	var $host_name;<br />
+	var $log_file;<br />
+	var $relay_host;<br />
+	var $debug;<br />
+	var $auth;<br />
+	var $user;<br />
+	var $pass;</p>
+<p>	/* Private Variables */<br />
+	var $sock;</p>
+<p>	/* Constractor */<br />
+	function smtp($relay_host = &#34;&#34;, $smtp_port = 25,$auth = false,$user,$pass)<br />
+	{<br />
+		$this-&gt;debug = FALSE;<br />
+		$this-&gt;smtp_port = $smtp_port;<br />
+		$this-&gt;relay_host = $relay_host;<br />
+		$this-&gt;time_out = 30; //is used in fsockopen()<br />
+		#<br />
+		$this-&gt;auth = $auth;//auth<br />
+		$this-&gt;user = $user;<br />
+		$this-&gt;pass = $pass;<br />
+		#<br />
+		$this-&gt;host_name = &#34;localhost&#34;; //is used in HELO command<br />
+		$this-&gt;log_file = &#34;&#34;;</p>
+<p>		$this-&gt;sock = FALSE;<br />
+	}</p>
+<p>	/* Main Function */<br />
+	function sendmail($to, $from, $subject = &#34;&#34;, $body = &#34;&#34;, $mailtype, $cc = &#34;&#34;, $bcc = &#34;&#34;, $additional_headers = &#34;&#34;)<br />
+	{<br />
+		$mail_from = $this-&gt;get_address($this-&gt;strip_comment($from));<br />
+		$body = ereg_replace(&#34;(^|(<br />
+))(\.)&#34;, &#34;\1.\3&#34;, $body);<br />
+		$header .= &#34;MIME-Version:1.0<br />
+&#34;;<br />
+		if($mailtype==&#34;HTML&#34;){<br />
+			$header .= &#34;Content-Type:text/html<br />
+&#34;;<br />
+		}<br />
+		$header .= &#34;To: &#34;.$to.&#34;<br />
+&#34;;<br />
+		if ($cc != &#34;&#34;) {<br />
+			$header .= &#34;Cc: &#34;.$cc.&#34;<br />
+&#34;;<br />
+		}<br />
+		$header .= &#34;From: $from&lt;&#34;.$from.&#34;&gt;;<br />
+&#34;;<br />
+		$header .= &#34;Subject: &#34;.$subject.&#34;<br />
+&#34;;<br />
+		$header .= $additional_headers;<br />
+		$header .= &#34;Date: &#34;.date(&#34;r&#34;).&#34;<br />
+&#34;;<br />
+		$header .= &#34;X-Mailer:By Redhat (PHP/&#34;.phpversion().&#34;)<br />
+&#34;;<br />
+		list($msec, $sec) = explode(&#34; &#34;, microtime());<br />
+		$header .= &#34;Message-ID: &lt;&#34;.date(&#34;YmdHis&#34;, $sec).&#34;.&#34;.($msec*1000000).&#34;.&#34;.$mail_from.&#34;&gt;;<br />
+&#34;;<br />
+		$TO = explode(&#34;,&#34;, $this-&gt;strip_comment($to));</p>
+<p>		if ($cc != &#34;&#34;) {<br />
+		$TO = array_merge($TO, explode(&#34;,&#34;, $this-&gt;strip_comment($cc)));<br />
+		}</p>
+<p>		if ($bcc != &#34;&#34;) {<br />
+			$TO = array_merge($TO, explode(&#34;,&#34;, $this-&gt;strip_comment($bcc)));<br />
+		}</p>
+<p>		$sent = TRUE;<br />
+		foreach ($TO as $rcpt_to) {<br />
+			$rcpt_to = $this-&gt;get_address($rcpt_to);<br />
+			if (!$this-&gt;smtp_sockopen($rcpt_to)) {<br />
+				$this-&gt;log_write(&#34;Error: Cannot send email to &#34;.$rcpt_to.&#34;<br />
+&#34;);<br />
+				$sent = FALSE;<br />
+				continue;<br />
+			}<br />
+			if ($this-&gt;smtp_send($this-&gt;host_name, $mail_from, $rcpt_to, $header, $body)) {<br />
+				$this-&gt;log_write(&#34;E-mail has been sent to &lt;&#34;.$rcpt_to.&#34;&gt;;<br />
+&#34;);<br />
+			} else {<br />
+				$this-&gt;log_write(&#34;Error: Cannot send email to &lt;&#34;.$rcpt_to.&#34;&gt;;<br />
+&#34;);<br />
+				$sent = FALSE;<br />
+			}<br />
+			fclose($this-&gt;sock);<br />
+			$this-&gt;log_write(&#34;Disconnected from remote host<br />
+&#34;);<br />
+		}<br />
+		return $sent;<br />
+	}</p>
+<p>/* Private Functions */</p>
+<p>        function smtp_send($helo, $from, $to, $header, $body = &#34;&#34;)<br />
+        {<br />
+                if (!$this-&gt;smtp_putcmd(&#34;HELO&#34;, $helo)) {<br />
+                        return $this-&gt;smtp_error(&#34;sending HELO command&#34;);<br />
+                }<br />
+                #auth<br />
+                if($this-&gt;auth){<br />
+                        if (!$this-&gt;smtp_putcmd(&#34;AUTH LOGIN&#34;, base64_encode($this-&gt;user))) {<br />
+                                return $this-&gt;smtp_error(&#34;sending HELO command&#34;);<br />
+                        }</p>
+<p>                        if (!$this-&gt;smtp_putcmd(&#34;&#34;, base64_encode($this-&gt;pass))) {<br />
+                                return $this-&gt;smtp_error(&#34;sending HELO command&#34;);<br />
+                        }<br />
+                }<br />
+                #<br />
+                if (!$this-&gt;smtp_putcmd(&#34;MAIL&#34;, &#34;FROM:&lt;&#34;.$from.&#34;&gt;;&#34;)) {<br />
+                        return $this-&gt;smtp_error(&#34;sending MAIL FROM command&#34;);<br />
+                }</p>
+<p>                if (!$this-&gt;smtp_putcmd(&#34;RCPT&#34;, &#34;TO:&lt;&#34;.$to.&#34;&gt;;&#34;)) {<br />
+                        return $this-&gt;smtp_error(&#34;sending RCPT TO command&#34;);<br />
+                }</p>
+<p>                if (!$this-&gt;smtp_putcmd(&#34;DATA&#34;)) {<br />
+                        return $this-&gt;smtp_error(&#34;sending DATA command&#34;);<br />
+                }</p>
+<p>                if (!$this-&gt;smtp_message($header, $body)) {<br />
+                        return $this-&gt;smtp_error(&#34;sending message&#34;);<br />
+                }</p>
+<p>                if (!$this-&gt;smtp_eom()) {<br />
+                        return $this-&gt;smtp_error(&#34;sending &lt;CR&gt;;&lt;LF&gt;;.&lt;CR&gt;;&lt;LF&gt;; [EOM]&#34;);<br />
+                }</p>
+<p>                if (!$this-&gt;smtp_putcmd(&#34;QUIT&#34;)) {<br />
+                        return $this-&gt;smtp_error(&#34;sending QUIT command&#34;);<br />
+                }</p>
+<p>                return TRUE;<br />
+        }</p>
+<p>        function smtp_sockopen($address)<br />
+        {<br />
+                if ($this-&gt;relay_host == &#34;&#34;) {<br />
+                        return $this-&gt;smtp_sockopen_mx($address);<br />
+                } else {<br />
+                        return $this-&gt;smtp_sockopen_relay();<br />
+                }<br />
+        }</p>
+<p>        function smtp_sockopen_relay()<br />
+        {<br />
+                $this-&gt;log_write(&#34;Trying to &#34;.$this-&gt;relay_host.&#34;:&#34;.$this-&gt;smtp_port.&#34;<br />
+&#34;);<br />
+                $this-&gt;sock = @fsockopen($this-&gt;relay_host, $this-&gt;smtp_port, $errno, $errstr, $this-&gt;time_out);<br />
+                if (!($this-&gt;sock &amp;&amp; $this-&gt;smtp_ok())) {<br />
+                        $this-&gt;log_write(&#34;Error: Cannot connenct to relay host &#34;.$this-&gt;relay_host.&#34;<br />
+&#34;);<br />
+                        $this-&gt;log_write(&#34;Error: &#34;.$errstr.&#34; (&#34;.$errno.&#34;)<br />
+&#34;);<br />
+                        return FALSE;<br />
+                }<br />
+                $this-&gt;log_write(&#34;Connected to relay host &#34;.$this-&gt;relay_host.&#34;<br />
+&#34;);<br />
+                return TRUE;<br />
+        }</p>
+<p>        function smtp_sockopen_mx($address)<br />
+        {<br />
+                $domain = ereg_replace(&#34;^.+@([^@]+)$&#34;, &#34;\1&#34;, $address);<br />
+                if (!@getmxrr($domain, $MXHOSTS)) {<br />
+                        $this-&gt;log_write(&#34;Error: Cannot resolve MX &#34;&#34;.$domain.&#34;&#34;<br />
+&#34;);<br />
+                        return FALSE;<br />
+                }<br />
+                foreach ($MXHOSTS as $host) {<br />
+                        $this-&gt;log_write(&#34;Trying to &#34;.$host.&#34;:&#34;.$this-&gt;smtp_port.&#34;<br />
+&#34;);<br />
+                        $this-&gt;sock = @fsockopen($host, $this-&gt;smtp_port, $errno, $errstr, $this-&gt;time_out);<br />
+                        if (!($this-&gt;sock &amp;&amp; $this-&gt;smtp_ok())) {<br />
+                                $this-&gt;log_write(&#34;Warning: Cannot connect to mx host &#34;.$host.&#34;<br />
+&#34;);<br />
+                                $this-&gt;log_write(&#34;Error: &#34;.$errstr.&#34; (&#34;.$errno.&#34;)<br />
+&#34;);<br />
+                                continue;<br />
+                        }<br />
+                        $this-&gt;log_write(&#34;Connected to mx host &#34;.$host.&#34;<br />
+&#34;);<br />
+                        return TRUE;<br />
+                }<br />
+                $this-&gt;log_write(&#34;Error: Cannot connect to any mx hosts (&#34;.implode(&#34;, &#34;, $MXHOSTS).&#34;)<br />
+&#34;);<br />
+                return FALSE;<br />
+        }</p>
+<p>        function smtp_message($header, $body)<br />
+        {<br />
+                fputs($this-&gt;sock, $header.&#34;<br />
+&#34;.$body);<br />
+                $this-&gt;smtp_debug(&#34;&gt;; &#34;.str_replace(&#34;<br />
+&#34;, &#34;<br />
+&#34;.&#34;&gt;; &#34;, $header.&#34;<br />
+&gt;; &#34;.$body.&#34;<br />
+&gt;; &#34;));</p>
+<p>                return TRUE;<br />
+        }</p>
+<p>        function smtp_eom()<br />
+        {<br />
+                fputs($this-&gt;sock, &#34;<br />
+.<br />
+&#34;);<br />
+                $this-&gt;smtp_debug(&#34;. [EOM]<br />
+&#34;);</p>
+<p>                return $this-&gt;smtp_ok();<br />
+        }</p>
+<p>        function smtp_ok()<br />
+        {<br />
+                $response = str_replace(&#34;<br />
+&#34;, &#34;&#34;, fgets($this-&gt;sock, 512));<br />
+                $this-&gt;smtp_debug($response.&#34;<br />
+&#34;);</p>
+<p>                if (!ereg(&#34;^[23]&#34;, $response)) {<br />
+                        fputs($this-&gt;sock, &#34;QUIT<br />
+&#34;);<br />
+                        fgets($this-&gt;sock, 512);<br />
+                        $this-&gt;log_write(&#34;Error: Remote host returned &#34;&#34;.$response.&#34;&#34;<br />
+&#34;);<br />
+                        return FALSE;<br />
+                }<br />
+                return TRUE;<br />
+        }</p>
+<p>        function smtp_putcmd($cmd, $arg = &#34;&#34;)<br />
+        {<br />
+                if ($arg != &#34;&#34;) {<br />
+                        if($cmd==&#34;&#34;) $cmd = $arg;<br />
+                        else $cmd = $cmd.&#34; &#34;.$arg;<br />
+                }</p>
+<p>                fputs($this-&gt;sock, $cmd.&#34;<br />
+&#34;);<br />
+                $this-&gt;smtp_debug(&#34;&gt;; &#34;.$cmd.&#34;<br />
+&#34;);</p>
+<p>                return $this-&gt;smtp_ok();<br />
+        }</p>
+<p>        function smtp_error($string)<br />
+        {<br />
+                $this-&gt;log_write(&#34;Error: Error occurred while &#34;.$string.&#34;.<br />
+&#34;);<br />
+                return FALSE;<br />
+        }</p>
+<p>        function log_write($message)<br />
+        {<br />
+                $this-&gt;smtp_debug($message);</p>
+<p>                if ($this-&gt;log_file == &#34;&#34;) {<br />
+                        return TRUE;<br />
+                }</p>
+<p>                $message = date(&#34;M d H:i:s &#34;).get_current_user().&#34;[&#34;.getmypid().&#34;]: &#34;.$message;<br />
+                if (!@file_exists($this-&gt;log_file) || !($fp = @fopen($this-&gt;log_file, &#34;a&#34;))) {<br />
+                        $this-&gt;smtp_debug(&#34;Warning: Cannot open log file &#34;&#34;.$this-&gt;log_file.&#34;&#34;<br />
+&#34;);<br />
+                        return FALSE;<br />
+                }<br />
+                flock($fp, LOCK_EX);<br />
+                fputs($fp, $message);<br />
+                fclose($fp);</p>
+<p>                return TRUE;<br />
+        }</p>
+<p>        function strip_comment($address)<br />
+        {<br />
+                $comment = &#34;\([^()]*\)&#34;;<br />
+                while (ereg($comment, $address)) {<br />
+                        $address = ereg_replace($comment, &#34;&#34;, $address);<br />
+                }</p>
+<p>                return $address;<br />
+        }</p>
+<p>        function get_address($address)<br />
+        {<br />
+                $address = ereg_replace(&#34;([<br />
+])+&#34;, &#34;&#34;, $address);<br />
+                $address = ereg_replace(&#34;^.*&lt;(.+)&gt;;.*$&#34;, &#34;\1&#34;, $address);</p>
+<p>                return $address;<br />
+        }</p>
+<p>        function smtp_debug($message)<br />
+        {<br />
+                if ($this-&gt;debug) {<br />
+                        echo $message;<br />
+                }<br />
+        }<br />
+}[/code]<br />
+再写个发邮件函数，方便调用，代码：<br />
+[code]function sendmail($smtpserver,$smtpuser,$smtppass,$smtpemailto,$smtpusermail, $mailsubject, $mailbody){<br />
+        $smtp = new smtp($smtpserver,25,true,$smtpuser,$smtppass);<br />
+        //$smtp-&gt;debug = TRUE;<br />
+        $smtp-&gt;sendmail($smtpemailto, $smtpusermail, $mailsubject, $mailbody, &#34;HTML&#34;);<br />
+}[/code]<br />
+调用函数发送邮件：<br />
+$body=&#34;邮件内容。。。。。&#34;;<br />
+sendmail(&#34;smtp.exmail.qq.com&#34;,&#34;邮箱登录名&#34;,&#34;邮箱密码&#34;,&#34;收件邮箱&#34;,&#34;发件邮箱&#34;,&#34;主题&#34;,$body);</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2012/205.html" rel="bookmark"><time class="entry-date published" datetime="2012-04-20T14:35:45+00:00">2012年4月20日</time><time class="updated" datetime="2012-04-26T01:27:00+00:00">2012年4月26日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/database" rel="category tag">数据库</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2012/205.html#respond"><span class="screen-reader-text">于PHP利用SMTP发送邮件（Mail）的类与函数</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-204" class="post-204 post type-post status-publish format-standard hentry category-web_development">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2012/204.html" rel="bookmark">发送邮件提示“551 User not local; please try ”错误的原因及解决办法</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　一网站要嵌入一个客户反馈系统。为了方便收集反馈信息，并能及时查看信息，我决定以将反馈内容提交到邮箱。<br />
+　　用了一个之前收集的<a target="_blank" href="http://www.biglee.cn/blog/article.asp?id=205">PHP写的SMTP发邮件类函数</a>，很快就搞定了，本地测试正常。传到服务器后发现收不到信，看了下函数，发现有Debug功能，开启Debug，反馈的信息如下：</p>
+<blockquote>
+<p>&nbsp;eG15Ym94MTQ3ODk2MzI1 235 Authentication successful &gt;;<br />
+&nbsp;MAIL FROM:; 250 Ok &gt;;<br />
+&nbsp;RCPT TO:; 551 User not local; please try Error: Remote host returned &quot;551 User not local; <br />
+&nbsp;please try &quot; Error: Error occurred while sending RCPT TO command. Error: Cannot send email to ;<br />
+&nbsp;Disconnected from remote host</p>
+</blockquote>
+<p>　　查了些资料，说出现以上错误信息的原因和所发邮件有没有内容、内容大小等都没有关系，是中国政府的国家防火墙(GFW，又名&ldquo;金盾工程&rdquo;)做了过滤的原因，它（金盾工程）定义了大陆的IP连接到大陆以外（如香港、台湾、欧洲等）的邮件服务器是不可以自己发邮件给自己的！</p>
+<p>　　相反的，我是用PHP写的发送邮件程序，在海外主机上用腾讯企业邮箱的SMTP发送邮件。看来也是被墙了。再仔细看了下上面那个解释，我注意到&ldquo;不可以自己发邮件给自己&rdquo;，正好我为了方便，就是用自己和邮箱账号发给自己的邮箱来收集反馈信息，那我就换个用户来发送试试看，登录腾讯企业邮箱管理，新建了一个专门发送邮件的邮箱账号，再上传测试，成功了。</p>
+<p>　　问题是解决了，但是我不明白的是，为什么自己邮箱给自己的邮箱发送就被阻止了，而发给同个服务器同个域下的另一个账号就没问题呢？不知道是出于什么目的。。。。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2012/204.html" rel="bookmark"><time class="entry-date published" datetime="2012-04-18T11:17:14+00:00">2012年4月18日</time><time class="updated" datetime="2012-04-26T01:29:00+00:00">2012年4月26日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/web_development" rel="category tag">网站技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2012/204.html#comments"><span class="screen-reader-text">发送邮件提示“551 User not local; please try ”错误的原因及解决办法</span>有1条评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-203" class="post-203 post type-post status-publish format-standard hentry category-pc_technology">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="http://www.biglee.cn/blog/2012/203.html" rel="bookmark">VisualSVN 破解方法</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><strong>一、VisualSVN 通用破解方法</strong></p>
+<p><span style="font-family: Verdana"><span style="font-family: Verdana">1. <a href="http://www.visualsvn.com/visualsvn/download"><font color="#ca0000">http://www.visualsvn.com/visualsvn/download</font></a>，下载1.5.x版安装(需要SVN1.5或以上环境)。<br />
+2. 进入.NET Framework命令提示符，输入</span></span></p>
+<p><span style="color: #000000">ildasm&nbsp;</span><span style="color: #800000">&quot;</span><span style="color: #800000">C:/Program&nbsp;Files/VisualSVN/bin/VisualSVN.Core.dll</span><span style="color: #800000">&quot;</span><span style="color: #000000">&nbsp;</span><span style="color: #000000">/</span><span style="color: #000000">out</span><span style="color: #000000">=</span><span style="color: #800000">&quot;</span><span style="color: #800000">C:/Program&nbsp;Files/VisualSVN/bin/VisualSVN.Core.il</span><span style="color: #800000">&quot;</span></p>
+<p><span style="color: #800000">或者用 DotNetHelper 工具，将VisualSVN.Core.dll 反编译成 VisualSVN.Core.il文件，再用记事本（最好是Editplus）打开这个文件</span></p>
+<p><span style="color: #800000">在这个文件中找到：</span><span style="color: #800000"><span style="color: #000000">&ldquo;.method&nbsp;public&nbsp;hidebysig&nbsp;static&nbsp;bool&nbsp;&nbsp;IsValid( &rdquo;这行</span></span></p>
+<p><span style="color: #800000"><span style="color: #000000">3、把里函数里面的内容改为：</span></span></p>
+<p><span style="color: #800000"><span style="color: #000000"><span style="color: #000000">.maxstack&nbsp;&nbsp;</span><span style="color: #000000">8</span><span style="color: #000000"><br />
+IL_0000:&nbsp;&nbsp;ldc.i4.</span><span style="color: #000000">1</span><span style="color: #000000"><br />
+IL_0001:&nbsp;&nbsp;ret</span></span></span></p>
+<p><span style="color: #800000"><span style="color: #000000"><span style="color: #000000">注意：&ldquo;<span style="color: #800000"><span style="color: #000000"><span style="color: #000000">.maxstack&nbsp;&nbsp;</span><span style="color: #000000">8</span></span></span>&rdquo;里面的&ldquo;8&rdquo;，要看看上下文中的同样标志，是否是8，我的是2</span></span></span></p>
+<p><span style="color: #800000"><span style="color: #000000"><span style="color: #000000">(去掉Lincense判断直接return true)。</span></span></span></p>
+<p><span style="color: #800000"><span style="color: #000000"><span style="color: #000000">或者用<span style="color: #800000">DotNetHelper工具，直接编译成.dll文件，注意，默认的文件名称是 VisualSVN.Core_Out.dll</span></span></span></span></p>
+<p><span style="color: #800000"><span style="color: #000000"><span style="color: #000000"><span style="color: #800000">把原有的 VisualSVN.Core.dll 删除，再把VisualSVN.Core_Out.dll(新编译的dll文件)改名成 VisualSVN.Core.dll</span></span></span></span></p>
+<p><span style="color: #800000"><span style="color: #000000"><span style="color: #000000"><span style="color: #800000"><font color="#000000">4. 回到命令行输入</font></span></span></span></span></p>
+<p><span style="color: #000000">ilasm&nbsp;</span><span style="color: #800000">&quot;</span><span style="color: #800000">C:/Program&nbsp;Files/VisualSVN/bin/VisualSVN.Core.il</span><span style="color: #800000">&quot;</span><span style="color: #000000">&nbsp;</span><span style="color: #000000">/</span><span style="color: #000000">dll</span></p>
+<p>5、再启动vs2005，看看Visualsvn 是不是可用了</p>
+<p><strong>二、关于&ldquo;VisualSVN-2.5.2&rdquo;的破解<br />
+</strong></p>
+<p>这个软件的核心部分是.net写的，而且没有加密和混淆，使用Reflector很容易反编译。</p>
+<p>原来打算写一个Keygen程序，但是分析代码后发现注册信息部分使用了RSA加密，没有私钥就没办法生成注册码。</p>
+<p>所以想到另一个方法，修改判断注册码有效性的函数&ldquo;IsValid&rdquo;，让其直接返回TRUE，这时无论输什么注册码，都会提示注册成功，但是无法生成有效的license，导致30天后失效。</p>
+<p>最后想了一个笨办法，即延长有效期30年，这个方法有效</p>
+<p>源码文件如下，请自行编译后覆盖原文件。</p>
+<p>http://files.cnblogs.com/anotherstone/VisualSVN.Core.L_Crack.rar</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="http://www.biglee.cn/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="http://www.biglee.cn/blog/2012/203.html" rel="bookmark"><time class="entry-date published" datetime="2012-04-12T14:20:14+00:00">2012年4月12日</time><time class="updated" datetime="2012-04-12T02:22:00+00:00">2012年4月12日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="http://www.biglee.cn/blog/category/pc_technology" rel="category tag">PC技术</a></span><span class="comments-link"><a href="http://www.biglee.cn/blog/2012/203.html#respond"><span class="screen-reader-text">于VisualSVN 破解方法</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><a class="prev page-numbers" href="http://www.biglee.cn/page/9">上一页</a>
+<a class='page-numbers' href='http://www.biglee.cn/'><span class="meta-nav screen-reader-text">页 </span>1</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='http://www.biglee.cn/page/9'><span class="meta-nav screen-reader-text">页 </span>9</a>
+<span class='page-numbers current'><span class="meta-nav screen-reader-text">页 </span>10</span>
+<a class='page-numbers' href='http://www.biglee.cn/page/11'><span class="meta-nav screen-reader-text">页 </span>11</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='http://www.biglee.cn/page/30'><span class="meta-nav screen-reader-text">页 </span>30</a>
+<a class="next page-numbers" href="http://www.biglee.cn/page/11">下一页</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="http://www.biglee.cn/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="http://www.biglee.cn/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="http://www.biglee.cn/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="http://www.biglee.cn/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="http://www.biglee.cn/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="http://www.biglee.cn/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='http://www.biglee.cn/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='http://www.biglee.cn/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="http://www.biglee.cn/blog/category/dotnet" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.biglee.cn/blog/category/pc_technology" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://www.biglee.cn/blog/category/entertainment" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://www.biglee.cn/blog/category/database" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.biglee.cn/blog/category/digest" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.biglee.cn/blog/category/orther" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://www.biglee.cn/blog/category/management" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.biglee.cn/blog/category/web_development" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.biglee.cn/blog/category/network" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.biglee.cn/blog/category/life" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="http://www.biglee.cn/wp-login.php">登录</a></li>
+			<li><a href="http://www.biglee.cn/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.biglee.cn/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="http://www.biglee.cn/blog/category/web_development">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="http://www.biglee.cn/blog/category/pc_technology">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="http://www.biglee.cn/blog/category/orther">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="http://www.biglee.cn/blog/category/entertainment">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="http://www.biglee.cn/blog/category/life">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="http://www.biglee.cn/blog/category/digest">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="http://www.biglee.cn/blog/category/database">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="http://www.biglee.cn/blog/category/network">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="http://www.biglee.cn/blog/category/management">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="http://www.biglee.cn/blog/category/dotnet">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="http://www.biglee.cn/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="http://www.biglee.cn/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='http://www.biglee.cn/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

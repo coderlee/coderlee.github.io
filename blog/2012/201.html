@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<base href="https://www.biglee.cn/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="/xmlrpc.php">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>10位顶级PHP大师的开发原则 &#8211; 网站建设技术集锦</title>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 10位顶级PHP大师的开发原则评论Feed" href="/blog/2012/201.html/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='PJBlog日志删除后访问页面出错的解决方案' href='/blog/2012/200.html' />
+<link rel='next' title='成就PHP高手的五个必由之路' href='/blog/2012/202.html' />
+<meta name="generator" content="WordPress 4.6" />
+<link rel="canonical" href="/blog/2012/201.html" />
+<link rel='shortlink' href='/?p=201' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2012%2F201.html" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2012%2F201.html&#038;format=xml" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="single single-post postid-201 single-format-standard">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+<article id="post-201" class="post-201 post type-post status-publish format-standard hentry category-web_development">
+	<header class="entry-header">
+		<h1 class="entry-title">10位顶级PHP大师的开发原则</h1>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　1. 在合适的时候使用PHP – Rasmus Lerdorf</p>
+<p>　　没有谁比PHP的创建者Rasmus Lerdorf明白PHP用在什么地方是更合理的，他于1995年发布了PHP这门语言，从那时起，PHP就像燎原之火，烧遍了整个开发阵营，改变了互联网的世界。可是，Rasmus并不是因此而创建PHP的。PHP是为了解决web开发者的实际问题而诞生的。</p>
+<p>　　和许多开源项目一样，PHP变得流行，流行的动机并不能用正常的哲学来进行解释，甚至流行得有些孤芳自赏。它完全可以作为一个案例，一个解决各种Web问题的工具需求所引起的案例，因此当PHP刚出现的时候，这种工具需求全部聚焦到PHP的身上。</p>
+<p>　　但是，你不能奢望PHP可以解决所有问题。Lerdorf是第一个承认PHP只是一种工具的人，并且PHP也有很多力所不能及的情况。</p>
+<p>　　根据工作的不同来选择合适的工具。我跑了很多家公司，为了说服他们部署和使用PHP，但是这并不意味着PHP对所有问题都适用。它只是可以一个解决大部分问题的front-end脚步语言。</p>
+<p>　　作为一个web开发者，尝试用PHP解决所有问题是不科学的，同时也会浪费你的时间。当PHP玩不转的时候，不要犹豫，试用一下其他的语言吧。</p>
+<p>　　2. 使用多表存储提高规模伸缩性 – Matt Mullenweg</p>
+<p>　　没有人愿意质疑Matt Mullenweg在PHP方面的权威性，他开发了这个星球上最流行的blog系统,(依靠一个强大的社区力量支持)： WordPress. 创建Wordpress以后，Matt和他的团队启动了WordPress.com平台，一个基于WordPress MU的免费blog站点。现在，Wordpress.com已经拥有大约400万用户， 这些用户每天提供超过 140,000篇的日志。 </p>
+<p>　　如果有人知道如何让网站的规模伸缩自如，这个人一定是Matt Mullenweg。2006年的时候 Matt对Wordpress的数据结构进行了前瞻性的改进，并且解释了为什么Wordpress MU对每个blog使用独立的MYSQL表格， 而不是把所有的blog数据都塞进一个巨大的表格。</p>
+<p>　　我们测试过这个方法，但是发现如果要扩展它的伸缩性，代价太高。如果用一个整体的数据结构，在大流量面前，你将会面临服务器 硬件的问题。在MU里面。用户们都被分布到独立的表格当中，并且可以轻易地组织起来。举个例子，WordPress.com把用户的数据分散存储到4096个数据库中，这些数据库可以分散大规模的数据访问，实现流量和压力分流。</p>
+<p>　　数据表的可迁移性让代码(blog)可以运行得更快，并且让系统具备更强的伸缩性。依靠强大的缓存策略和灵活的数据库运用策略， Matt向人们展示了时下最流行的Facebook和Wordpress.com都可以在PHP下稳定运行，并且处理惊人的访问量。</p>
+<p>　　3. 千万不要相信用户 – Dave Child</p>
+<p>　　Dave Child是Added Bytes (previously ilovejackdaniels.com) 网站的核心人物，这个网站以他出色的《cheat sheets for many programming languages》而闻名。 Dave为很多英国的公司服务，并且已经在编程世界里树立起相当的权威。</p>
+<p>　　Dave为PHP开发者提供了很多深谋远虑的建议，并总结成了《writing secure code in PHP》：千万不要相信你的用户，他们甚至可能会伤害你。</p>
+<p>　　有一条web开发的基本原则，我重复多少遍都觉得不够，那就是：千万不要相信你的用户，同时要假设你网站中的每个数据单元都是从用户那里收集来的恶意代码。很多时候，你必须用javascri&#112;t在客户端检验表单提交过来的内容， 如果你习惯了如此，那么，这是一个好习惯。如果安全性对你来说很重要，这就是最重要最需要学习的原则。</p>
+<p>　　Dave目前正致力于为它的《Writing Secure PHP》系列书籍整理实例，书的最后他说:</p>
+<p>　　最后，变得偏执一点吧。除非你认为你的站点永远不会受到攻击，否则就正视所有的问题，当问题真正发生的时候，你的情况会变得很糟。你需要把每个用户都看成会带来一场攻防站的黑客，想尽一切办法来保护站点的安全，同时想好相应问题的解决方案。</p>
+<p>　　4. 多使用PHP缓存 – Ben Balbo</p>
+<p>　　Ben Balbo开发了Site Point，一个为developers和designers提供指导的网站。他是墨尔本PHP开发和开源俱乐部的成员， 因此他对PHP有一定的了解，同时对PHP caching有一定的想法和经验。</p>
+<p>　　如果你拥有一个访问量很大，但更新并不频繁的站点(比如blog，基于某种CMS)，或许它需要进行一些改造，这些改造不会花费太多的时间，但是对性能有突出的贡献。 如果要为一个复杂/更新频率很快的站点建立缓存机制，过程可能会很曲折，但是好处也是显而易见的。</p>
+<p>　　PHP缓存技术有很多种，Ben为我们推荐了如下一些:</p>
+<p>　　◆缓存函数的运行结果</p>
+<p>　　◆设置过期时间</p>
+<p>　　◆缓存IE下载的文件</p>
+<p>　　◆模板缓存技术</p>
+<p>　　◆Cache_Lite</p>
+<p>　　由于PHP作为动态语言的特性，缓存机制对于更新频率并不快的站点来说非常重要。</p>
+<p>　　5. 使用IDE, Templates和Snippets加速PHP开发 – Chad Kieffer</p>
+<p>　　当Chad Kieffer从UI设计和数据库优化的工作中抽身出来的时候，他会在他的博客2 tablespoons上分享很多技术经验。由于Chad多方面的全面发展，他经常可以发现其他程序员不能发现的问题，并形成相关经验，尤其是他开发网站的方法。他参与了网站开发的各个环节，因此他的建议对于提高网站开发的大局观非常有用。</p>
+<p>　　Chad认为使用Eclipse PDT(Eclipse’s PHP development package) 这样的IDE，同时使用一些模板技术和开源项目可以有效地提高PHP的开发速度。</p>
+<p>　　紧凑的计划，长长的to do lists以及deadlines让开发人员非常苦闷。不过有些功能，比如Eclipse Templates，可以有效减少编码的时间和出错的几率。</p>
+<p>　　通常来说，任何项目都可以自动化，自动化程度越高， 你完成项目的时间就越短。花时间来开发使用频率很高的框架和模板，将会节省你以后更多时间。同时，使用像Eclipse and the PDT package这样的IDE，你会发现效率得到明显提高，IDE可以自动闭合，补全分号并且可以在本地debug。</p>
+<p>　　6. 利用好PHP的过滤函数 – Joey Sochacki</p>
+<p>　　或许Joey Sochacki并不像Matt Mullenweg那样有名 ，但他也是一个经验丰富的开发者，并且通过他的博客Devolio分享了很多技术经验</p>
+<p>　　Joey发现在编写php代码的过程中有很多地方需要进行过滤，但却并没有太多的coder关注php的内置过滤函数。</p>
+<p>　　过滤数据是我们经常需要做的事情，但是很多功能丰富的PHP内置过滤函数却不为人知。使用类似filter_* 的PHP内置函数，我们几乎可以处理所有的过滤任务，包括数据类型验证/URL/email和IP地址验证/特殊字符处理等等。</p>
+<p>　　过滤是一件复杂的事情，但是我相信joey的发现会给你很多启发，让你认识到PHP强大的过滤功能。</p>
+<p>　　7. 使用PHP框架 – Josh Sharp</p>
+<p>　　对于是否应该使用Zend, CakePHP, Code Igniter, 或者 其他PHP框架，一直存在着很多争议，但是在web开发者的心中，他们有自己衡量的标准。</p>
+<p>　　Josh Sharp自己创建了一家提供面包和黄油服务的网站，因此他对于使用PHP框架来开发网站有一定的经验。他认为使用一个PHP框架来进行项目开发(use a PHP framework )，可以有效地节省时间，并且减少出错的几率。为什么?因为他觉得PHP实在是太好上手了。</p>
+<p>　　PHP的易于使用有时候也有缺陷，因为并不严格的语法，经常会导致很多错误代码的诞生。但如果使用一个PHP框架，出错的几率就会大大减少。</p>
+<p>　　PHP框架可以让你的代码结构更加规范，并且节省大量时间。</p>
+<p>　　8. 不要使用PHP框架 – Rasmus Lerdorf</p>
+<p>　　与Josh的观点恰恰相反，PHP的鼻祖Rasmus Lerdorf却认为最好不要使用PHP框架，为什么?因为不基于框架的PHP性能更好。Rasmus在Drupalcon 2008的演讲上，用“Hello World”的例子来对比了一些框架PHP和简单PHP之间的性能，结果显示框架PHP的性能要远远落后。</p>
+<p>　　9. 使用批处理 – Jack D. Herrington</p>
+<p>　　Jack Herrington对PHP世界并不陌生， 并且为大名鼎鼎的IBM developerWorks贡献过超过30篇的专搞， 同时出版过《PHP Hacks》的书，因此他是一个真正的专家。</p>
+<p>　　Herrington推荐使用批处理和Cron来代替那些可以运行在后台的程序脚步，Web用户并不愿意在线等待你的处理过程，所以有些事情更适合放到后台来处理。</p>
+<p>　　诚然，在某些情况下，这有点大材小用了，但是你可以清楚地看到，使用Cron, MySQL, PHP面向对象的方法以及Pear::DB这些便捷的工具来创建一个批处理工具并不是一件复杂的事情。</p>
+<p>　　Jack认为使用cron, PHP和MySQL在后台处理一些任务，比起多进程的业务逻辑要划算得多。</p>
+<p>　　两种方法我都尝试过，我认为Cron非常符合”Keep It Simple, Stupid” (KISS) 的原则，它让后台处理变得简单。与多进程的业务逻辑相比，它没有内存 溢出的风险。你可以创建一个简单的批处理脚本，并且在cron中运行，这个脚本会定时检查是否有任务需要处理，处理完之后就会自动退出，因此你不用担心是否有进程卡壳，或者陷入死循环。</p>
+<p>　　10. 及时启用错误报告 – David Cummings</p>
+<p>　　David Cummings有一个专门提供CMS软件服务的公司 ，并且获得过几次奖 ，他有非常丰富的PHP开发经验。David曾经写过《two PHP tips he wished he’d learned in the beginning》，其中一点就是：及时启用错误报告，这会节省大量的时间。</p>
+<p>　　我告诉人们，最重要的事情就是最大程度地开启PHP的错误报告，为什么?因为PHP可能会隐藏很多小问题：</p>
+<p>　　◆变量没有预定义</p>
+<p>　　◆在代码片段中引用了不可用的变量</p>
+<p>　　◆使用了未定义的常量这些因素看起来并不是什么大事，除非你在使用面向对象的方法编写一些类库。通常，关闭错误报告将可能使你付出更大的成本来维护你的代码。</p>
+<p>　　错误报告可以帮你轻易地找到代码的问题所在，如果错误报告的等级够高，细微的错误都能被立即发现，帮助你节省整体debug的时间。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2012/201.html" rel="bookmark"><time class="entry-date published" datetime="2012-03-28T16:04:57+00:00">2012年3月28日</time><time class="updated" datetime="2012-03-28T04:38:00+00:00">2012年3月28日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/web_development" rel="category tag">网站技术</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+	
+					<div id="respond" class="comment-respond">
+			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/2012/201.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表评论" /> <input type='hidden' name='comment_post_ID' value='201' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="/blog/2012/200.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">PJBlog日志删除后访问页面出错的解决方案</span></a></div><div class="nav-next"><a href="/blog/2012/202.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">成就PHP高手的五个必由之路</span></a></div></div>
+	</nav>
+	</main><!-- .site-main -->
+
+	
+</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="/blog/category/dotnet" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/pc_technology" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/entertainment" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/blog/category/database" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/blog/category/digest" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/orther" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/blog/category/management" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/web_development" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/blog/category/network" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/blog/category/life" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="/wp-login.php">登录</a></li>
+			<li><a href="/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

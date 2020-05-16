@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>.Net &#8211; 网站建设技术集锦</title>
+	<atom:link href="http://www.biglee.cn/blog/category/dotnet/feed" rel="self" type="application/rss+xml" />
+	<link>http://www.biglee.cn</link>
+	<description>涉及网站建设、服务器维护等IT技术的博客</description>
+	<lastBuildDate>Sun, 11 Sep 2016 06:49:31 +0000</lastBuildDate>
+	<language>zh-CN</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.6</generator>
+	<item>
+		<title>Ext.NET从IIS6迁移到IIS7后无法显示的解决方案</title>
+		<link>http://www.biglee.cn/blog/2013/235.html</link>
+		<comments>http://www.biglee.cn/blog/2013/235.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[.Net]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[前段时间把公司的一个用Ext.Net开发的Web系统从Windows Server 2003迁移到了Windo &#8230; <a href="http://www.biglee.cn/blog/2013/235.html" class="more-link">继续阅读<span class="screen-reader-text">“Ext.NET从IIS6迁移到IIS7后无法显示的解决方案”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>前段时间把公司的一个用Ext.Net开发的Web系统从Windows Server 2003迁移到了Windows Server 2008下面，然后发现有些功能不能用了。点击后没有内容，一片空白。用开发者工具检查发现http://test.cn/extjs/adapter/ext/ext-base-js/ext.axd?v=36328<br />
+这类ext.axd文件找不到，原以为是ext.axd等文件丢失，到开发机上也找不到extjs等文件夹，搜索整个站点文件夹，也找不到ext.axd。看来这些文件是动态生成或者资源重定向了。应该是IIS6下能正常运行的配置在IIS7下出现问题了。</p>
+<p>百度Google了半天，Ext.net官网也去过了，都找不到解决办法。还是自立更生吧。解读站点的Web.config配置文件，发现有这么一个说明：</p>
+<blockquote>
+<p>&lt;!&#8211; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在 Internet 信息服务 7.0 下运行 ASP.NET AJAX 需要 system.webServer<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 节。对早期版本的 IIS 来说则不需要此节。<br />
+&nbsp;&nbsp;&nbsp; &#8211;&gt;</p>
+</blockquote>
+<p>看来是system.webServer下面缺少了某些配置项，导致这个问题。去Ext.net官网下载了带实例的Ext.NET发行包，查看其中的示例配置文件，发现system.webServer有这么两节：</p>
+<blockquote>
+<p>&nbsp;&nbsp;&nbsp; &lt;modules&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;add name=&quot;DirectRequestModule&quot; preCondition=&quot;managedHandler&quot; type=&quot;Ext.Net.DirectRequestModule, Ext.Net&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;/modules&gt;</p>
+<p>&nbsp;&nbsp;&nbsp; &lt;handlers&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;add name=&quot;DirectRequestHandler&quot; verb=&quot;*&quot; path=&quot;*/ext.axd&quot; preCondition=&quot;integratedMode&quot; type=&quot;Ext.Net.ResourceHandler&quot; /&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;/handlers&gt;<br />
+&nbsp;</p>
+</blockquote>
+<p>对照我的配置文件，没有找到这两节，马上添加上去。再去试试那些有问题的功能，正常了。</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2013/235.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>浪曦视频在线ASP.NET AJAX视频教程(By后浪)下载</title>
+		<link>http://www.biglee.cn/blog/2009/168.html</link>
+		<comments>http://www.biglee.cn/blog/2009/168.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[.Net]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　相信很多人对Ajax在Asp.net中的应用步骤不是很清楚，我找了些视频教程，和大家一起学习。 　　下面是 &#8230; <a href="http://www.biglee.cn/blog/2009/168.html" class="more-link">继续阅读<span class="screen-reader-text">“浪曦视频在线ASP.NET AJAX视频教程(By后浪)下载”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　相信很多人对Ajax在Asp.net中的应用步骤不是很清楚，我找了些视频教程，和大家一起学习。<br />
+　　下面是来自浪曦视频在线的ASP.NET AJAX视频教程，感谢浪曦视频在线！<br />
+1、ASP.NET AJAX基本原理<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A008jcft20070123.rar]ftp://Anonymous@203.191.150.171/A008jcft20070123.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A008jcft20070123.rar]ftp://Anonymous@210.21.110.140/A008jcft20070123.rar[/url]<br />
+2、ASP.NET AJAX控件之HoverMenu<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A023dseo20070204.rar]ftp://Anonymous@203.191.150.171/A023dseo20070204.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A023dseo20070204.rar]ftp://Anonymous@210.21.110.140/A023dseo20070204.rar[/url]<br />
+3、ASP.NET AJAX控件之Dro&#112;Down<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A019dhki20070129.rar]ftp://Anonymous@203.191.150.171/A019dhki20070129.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A019dhki20070129.rar]ftp://Anonymous@210.21.110.140/A019dhki20070129.rar[/url]<br />
+4、ASP.NET AJAX控件之CollapsiblePanel<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A016opik20070129.rar]ftp://Anonymous@203.191.150.171/A016opik20070129.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A016opik20070129.rar]ftp://Anonymous@210.21.110.140/A016opik20070129.rar[/url]<br />
+5、ASP.NET AJAX控件之ToggleButton<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A039jkhg20070213.rar]ftp://Anonymous@203.191.150.171/A039jkhg20070213.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A039jkhg20070213.rar]ftp://Anonymous@210.21.110.140/A039jkhg20070213.rar[/url]<br />
+6、ASP.NET AJAX控件之Slider<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A036lkfd20070211.rar]ftp://Anonymous@203.191.150.171/A036lkfd20070211.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A036lkfd20070211.rar]ftp://Anonymous@210.21.110.140/A036lkfd20070211.rar[/url]<br />
+7、ASP.NET AJAX控件之MaskedEdit<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A024ghjr20070207.rar]ftp://Anonymous@203.191.150.171/A024ghjr20070207.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A024ghjr20070207.rar]ftp://Anonymous@210.21.110.140/A024ghjr20070207.rar[/url]<br />
+8、ASP.NET AJAX控件之ResizableControl<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A034jkaq20070211.rar]ftp://Anonymous@203.191.150.171/A034jkaq20070211.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A034jkaq20070211.rar]ftp://Anonymous@210.21.110.140/A034jkaq20070211.rar[/url]<br />
+9、ASP.NET AJAX控件之DynamicPopulate<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A021hfrt20070201.rar]ftp://Anonymous@203.191.150.171/A021hfrt20070201.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A021hfrt20070201.rar]ftp://Anonymous@210.21.110.140/A021hfrt20070201.rar[/url]<br />
+10、ASP.NET AJAX控件Tabs<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A037bvdf20070213.rar]ftp://Anonymous@203.191.150.171/A037bvdf20070213.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A037bvdf20070213.rar]ftp://Anonymous@210.21.110.140/A037bvdf20070213.rar[/url]<br />
+11、ASP.NET AJAX控件应用配置<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A043cwpv20070215.rar]ftp://Anonymous@203.191.150.171/A043cwpv20070215.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A043cwpv20070215.rar]ftp://Anonymous@210.21.110.140/A043cwpv20070215.rar[/url]<br />
+12、ASP.NET AJAX控件之NumericUpDown<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A028hgfe20070210.rar]ftp://Anonymous@203.191.150.171/A028hgfe20070210.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A028hgfe20070210.rar]ftp://Anonymous@210.21.110.140/A028hgfe20070210.rar[/url]<br />
+13、ASP.NET AJAX控件之AutoComplete<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A013asxc20070128.rar]ftp://Anonymous@203.191.150.171/A013asxc20070128.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A013asxc20070128.rar]ftp://Anonymous@210.21.110.140/A013asxc20070128.rar[/url]<br />
+14、ASP.NET AJAX基础示例<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A009hfsd20070124.rar]ftp://Anonymous@203.191.150.171/A009hfsd20070124.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A009hfsd20070124.rar]ftp://Anonymous@210.21.110.140/A009hfsd20070124.rar[/url]<br />
+15、ASP.NET AJAX控件之AlwaysVisibleControlExtender<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A011gfht20070125.rar]ftp://Anonymous@203.191.150.171/A011gfht20070125.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A011gfht20070125.rar]ftp://Anonymous@210.21.110.140/A011gfht20070125.rar[/url]<br />
+16、ASP.NET AJAX控件之ConfirmButton<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A017hrte20070129.rar]ftp://Anonymous@203.191.150.171/A017hrte20070129.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A017hrte20070129.rar]ftp://Anonymous@210.21.110.140/A017hrte20070129.rar[/url]<br />
+17、ASP.NET AJAX控件之MutuallyExclusiveCheckBox<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A026hgft20070208.rar]ftp://Anonymous@203.191.150.171/A026hgft20070208.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A026hgft20070208.rar]ftp://Anonymous@210.21.110.140/A026hgft20070208.rar[/url]<br />
+18、ASP.NET AJAX控件之Dro&#112;Shadow<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A020efdq20070201.rar]ftp://Anonymous@203.191.150.171/A020efdq20070201.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A020efdq20070201.rar]ftp://Anonymous@210.21.110.140/A020efdq20070201.rar[/url]<br />
+19、ASP.NET AJAX控件之Rating<br />
+电信下载：[url=ftp://Anonymous@203.191.150.171/A032hfgd20070210.rar]ftp://Anonymous@203.191.150.171/A032hfgd20070210.rar[/url]<br />
+网通下载：[url=ftp://Anonymous@210.21.110.140/A032hfgd20070210.rar]ftp://Anonymous@210.21.110.140/A032hfgd20070210.rar[/url]</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2009/168.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>VS2005快捷键大全</title>
+		<link>http://www.biglee.cn/blog/2009/163.html</link>
+		<comments>http://www.biglee.cn/blog/2009/163.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[.Net]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[]]></description>
+				<content:encoded><![CDATA[<p>快捷键 功能<br />
+CTRL + SHIFT + B	生成解决方案<br />
+CTRL + F7 		生成编译<br />
+CTRL + O 		打开文件<br />
+CTRL + SHIFT + O	打开项目<br />
+CTRL + SHIFT + C	显示类视图窗口<br />
+F4 			显示属性窗口<br />
+SHIFT + F4		显示项目属性窗口<br />
+CTRL + SHIFT + E	显示资源视图<br />
+F12 			转到定义<br />
+CTRL + F12		转到声明<br />
+CTRL + ALT + J		对象浏览<br />
+CTRL + ALT + F1		帮助目录<br />
+CTRL + F1 		动态帮助<br />
+F1 			帮助<br />
+SHIFT + F1		当前窗口帮助<br />
+CTRL + ALT + F3		帮助-搜索<br />
+SHIFT + ALT + ENTER	全屏显示<br />
+CTRL + &#8211;		向后定位<br />
+CTRL + SHIFT + &#8211;	向前定位<br />
+CTRL + F4		关闭文档窗口<br />
+CTRL + PAGE DOWN	光标定位到窗口上方<br />
+CTRL + PAGE UP		光标定位到窗口下方<br />
+CTRL + F6<br />
+CTRL + TAB		下一个文档窗口<br />
+CTRL + SHIFT + F6<br />
+CTRL + SHIFT + TAB	上一个文档窗口<br />
+ALT + F6		下一个面板窗口<br />
+CTRL + K, CTRL + L	取消remark<br />
+CTRL + K, CTRL + C	注释选择的代码<br />
+CTRL + K, CTRL + U	取消对选择代码的注释<br />
+CTRL + M, CTRL + O	折叠代码定义<br />
+CTRL + M, CTRL + L	展开代码定义<br />
+CTRL + Del&#101;te		删除至词尾<br />
+CTRL + BACKSPACE	删除至词头<br />
+SHIFT + TAB		取消制表符<br />
+CTRL + U		转小写<br />
+CTRL + SHIFT + U	转大写<br />
+CTRL + SHIFT + END	选择至文档末尾<br />
+CTRL + SHIFT + HOME	选择至文档末尾开始<br />
+SHIFT + END		选择至行尾<br />
+SHIFT + HOME		选择至行开始处<br />
+SHIFT + ALT + END	垂直选择到最后尾<br />
+SHIFT + ALT + HOME	垂直选择到最前面<br />
+CTRL + A		全选<br />
+CTRL + W		选择当前单词<br />
+CTRL + SHIFT + PAGE UP	选择至本页前面<br />
+CTRL + SHIFT + PAGE DOWN选择至本页后面<br />
+CTRL + END		文档定位到最后<br />
+CTRL + HOME		文档定位到最前<br />
+CTRL + G		转到…<br />
+CTRL + K, CTRL + P	上一个标签<br />
+CTRL + K, CTRL + N	下一个标签<br />
+ALT + F10		调试-ApplyCodeChanges<br />
+CTRL + ALT+ Break	停止调试<br />
+CTRL + SHIFT + F9 	取消所有断点<br />
+CTRL + F9		允许中断<br />
+CTRL + SHIFT + F5	调试-重新开始<br />
+F5			运行调试<br />
+CTRL + F5		运行不调试<br />
+F10			跨过程序执行<br />
+F11			单步逐句执行<br />
+CTRL + J		列出成员<br />
+CTRL + PAGE DOWN	下一个视图<br />
+CTRL + B		格式-粗体<br />
+CTRL + SHIFT + T	格式-文字缩进  </p>
+<p>调试快捷键 </p>
+<p>F6: 		生成解决方案<br />
+Ctrl+F6: 	生成当前项目<br />
+F7: 		查看代码<br />
+Shift+F7: 	查看窗体设计器<br />
+F5: 		启动调试<br />
+Ctrl+F5: 	开始执行(不调试)<br />
+Shift+F5: 	停止调试<br />
+Ctrl+Shift+F5: 	重启调试<br />
+F9: 		切换断点<br />
+Ctrl+F9: 	启用/停止断点<br />
+Ctrl+Shift+F9: 	删除全部断点<br />
+F10: 		逐过程<br />
+Ctrl+F10: 	运行到光标处<br />
+F11: 		逐语句 </p>
+<p>编辑快捷键 </p>
+<p>Shift+Alt+Enter: 	切换全屏编辑<br />
+Ctrl+B,T / Ctrl+K,K: 	切换书签开关<br />
+Ctrl+B,N / Ctrl+K,N: 	移动到下一书签<br />
+Ctrl+B,P: 		移动到上一书签<br />
+Ctrl+B,C: 		清除全部标签<br />
+Ctrl+I: 		渐进式搜索<br />
+Ctrl+Shift+I: 		反向渐进式搜索<br />
+Ctrl+F: 		查找<br />
+Ctrl+Shift+F: 		在文件中查找<br />
+F3: 			查找下一个<br />
+Shift+F3: 		查找上一个<br />
+Ctrl+H: 		替换<br />
+Ctrl+Shift+H: 		在文件中替换<br />
+Alt+F12: 		查找符号(列出所有查找结果)<br />
+Ctrl+Shift+V: 		剪贴板循环<br />
+Ctrl+左右箭头键: 	一次可以移动一个单词<br />
+Ctrl+上下箭头键: 	滚动代码屏幕，但不移动光标位置。<br />
+Ctrl+Shift+L: 		删除当前行<br />
+Ctrl+M,M: 		隐藏或展开当前嵌套的折叠状态<br />
+Ctrl+M,L: 		将所有过程设置为相同的隐藏或展开状态<br />
+Ctrl+M,P: 		停止大纲显示<br />
+Ctrl+E,S: 		查看空白<br />
+Ctrl+E,W: 		自动换行<br />
+Ctrl+G: 		转到指定行<br />
+Shift+Alt+箭头键: 	选择矩形文本<br />
+Alt+鼠标左按钮: 	选择矩形文本<br />
+Ctrl+Shift+U: 		全部变为大写<br />
+Ctrl+U: 		全部变为小写 </p>
+<p>代码快捷键 </p>
+<p>Ctrl+J / Ctrl+K,L: 	列出成员<br />
+Ctrl+Shift+空格键 / Ctrl+K,P: 参数信息<br />
+Ctrl+K,I: 		快速信息<br />
+Ctrl+E,C / Ctrl+K,C: 	注释选定内容<br />
+Ctrl+E,U / Ctrl+K,U: 	取消选定注释内容<br />
+Ctrl+K,M: 		生成方法存根<br />
+Ctrl+K,X: 		插入代码段<br />
+Ctrl+K,S: 		插入外侧代码<br />
+F12: 			转到所调用过程或变量的定义 </p>
+<p>窗口快捷键 </p>
+<p>Ctrl+W,W: 浏览器窗口<br />
+Ctrl+W,S: 解决方案管理器<br />
+Ctrl+W,C: 类视图<br />
+Ctrl+W,E: 错误列表<br />
+Ctrl+W,O: 输出视图<br />
+Ctrl+W,P: 属性窗口<br />
+Ctrl+W,T: 任务列表<br />
+Ctrl+W,X: 工具箱<br />
+Ctrl+W,B: 书签窗口<br />
+Ctrl+W,U: 文档大纲<br />
+Ctrl+D,B: 断点窗口<br />
+Ctrl+D,I: 即时窗口<br />
+Ctrl+Tab: 活动窗体切换<br />
+Ctrl+Shift+N: 新建项目<br />
+Ctrl+Shift+O: 打开项目<br />
+Ctrl+Shift+S: 全部保存<br />
+Shift+Alt+C: 新建类<br />
+Ctrl+Shift+A: 新建项 </p>
+<p>VS2005的隐藏快捷键  </p>
+<p>1、Ctrl+Space直接完成类或函数（本来这个并不算隐藏的快捷键，但是因为中文输入法抢占这个快捷键，所以。。。，替代的快捷键是Alt+Right）<br />
+2、Shift+Del&#101;te整行删除，并且将这一行放到剪贴板（这时候不能选中一段内容，否则将删除选中内容）<br />
+3、Ctrl+Up，Ctrl+Down滚动编辑器，但尽量不移动光标，光标保证在可见范围�<br />
+4、Ctrl+BackSpace，Ctrl+Del&#101;te：从光标处删除到词头或词尾，有的时候很有用<br />
+5、Ctrl+Left，Ctrl+Right按整词移动光标（不算隐藏，和前面几条加起来就是Ctrl光标控制套件了）<br />
+6、Alt+Shift+F10打开执行改名，实现接口和抽象类的小窗口（还可以用Ctrl+.，不过有的中文输入法用到这个）<br />
+7、Shift+F9调试是打开QuickWatch，内容是当前光标所在处的内容<br />
+8、Alt+F11新开VS2005并编辑宏<br />
+9、Alt+F12查找=Ctrl+F<br />
+10、Shift+F12查找所有引用<br />
+11、Ctrl+F10=F5，开始Debug<br />
+12、Ctrl+F6循环察看代码窗口，有点Ctrl+Tab的感觉<br />
+13、Ctrl+F3查找当前光标选中的内容，可以和F3配合使用<br />
+14、Ctrl+F2将焦点转移到类的下拉框上<br />
+15、Alt+F7=Ctrl+Tab</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2009/163.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Asp.Net学习书籍推荐</title>
+		<link>http://www.biglee.cn/blog/2009/158.html</link>
+		<comments>http://www.biglee.cn/blog/2009/158.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[.Net]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[[b]ASP.NET 2.0电子商务高级编程：C# 2005版 [/b] 作者: 萨克雷斯 译者：高猛 王海涛 &#8230; <a href="http://www.biglee.cn/blog/2009/158.html" class="more-link">继续阅读<span class="screen-reader-text">“Asp.Net学习书籍推荐”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>[b]ASP.NET 2.0电子商务高级编程：C# 2005版 [/b]<br />
+作者:  萨克雷斯   译者：高猛 王海涛<br />
+清华大学出版社，2007</p>
+<p>[b]摘要: [/b] 本书将使用真实的案例来演示如何构造一个在线销售商品的多层ASP.NET应用程序，书中运用真实的案例教学法，从搜集需求开始，然后设计和建立数据库模型，构建体系结构，完成代码库，最后编译并部署到产品环境中。</p>
+<p>[b]ASP.NET 2.0揭秘（英文共同题名：ASP.NET 2.0 unleashed ）[/b]<br />
+作者:  沃尔瑟   译者：谭振林，黎志，朱兴林，马士杰<br />
+人民邮电出版社，2007</p>
+<p>[b]摘要: [/b] 本书包含了用VB.NET和C#两种语言写成的上百段程序代码，覆盖了ASP.NET 2.0 Framework的方方面面。分两卷，卷1主要包括创建ASP.NET页面、设计ASP.NET网站、数据访问、创建组件、站点导航等。  卷2内容包括安全、创建ASP.NET应用、使用Web部件应用、创建自定义控件等。</p>
+<p>[b]开发更安全的ASP.NET2.0应用程序[/b]<br />
+作者: （美）拜尔（Baier，D.）　译者: 华中宇 / 田亮君 / 陈文<br />
+人民邮电出版社，2008</p>
+<p>[b]摘要: [/b] 本书讲解有关构建更为安全的ASP．NET 2．0应用程序的专业技术。在本书中，顶尖的安全专家将介绍极有价值的经验、实际建议和大量的使用Microsoft VistJal C#编写的代码示例。这些内容将帮助读者开发更健壮、更可靠和更可防御攻击的Web应用程序。<br />
+　　核心内容：<br />
+　　加强Web服务器、操作系统、通信协议和ASP．NET的安全；使用正则表达式、沙盒和其他技术验证输入数据；理解各种加密方法的设计方法和安全内涵；集成Microsoft Wirldows安全特性的方法，例如模拟、委托和协议转换；实现Web场、单点登录和混合模式验证：<br />
+　　使用基于提供程序的功能实现用户和角色的管理与验证；<br />
+　　使用错误处理、日志和规范跟踪攻击行为；<br />
+　　使用部分信任锁定应用程序。</p>
+<p>　　本书以作者的实际经验为主，介绍了关于开发更安全的ASP.NET 2.0应用的各方面的内容。全书共10章，内容包括：Web应用程序安全、ASP.NET 2.0构架、输入验证、存储机密、身份验证和授权、安全提供程序和控件、日志和监测、部分信任ASP.NET、部署和配置以及工具和资源。附录部分提供了创建自定义受保护配置提供程序、会话状态、分拆ASP.NET应用程序、安全的Web服务和使用Visual Studio Team Edition进行安全测试等内容。<br />
+　　本书提供的示例简练易懂，书中代码示例都经过认真的编写，读者无需记住所有的内容，而可以将本书的实例很容易地引入到现实的应用程序中。本书适用于使用ASP.NET 2.0技术同时关注安全性的各方面读者。</p>
+<p>[b] .NET设计规范：.NET约定、惯用法与模式<br />
+Framework Design Guidelines:<br />
+conventions, idioms, and patterns for reusable .NET libraries[/b]<br />
+作者:  克瓦林纳  艾布拉姆斯   葛子昂<br />
+人民邮电出版社，2006</p>
+<p>摘要:  本书为框架设计师和广大开发人员设计高质量的软件提供了权威的指南。书中介绍了在设计框架时的最佳实践，提供了自顶向下的规范，其中所描述的规范普遍适用于规模不同、可重用程序不同的框架和软件。这些规范经历.NET框架三个版本的长斯开发，凝聚了数千名开发人员的经验和智慧。微软的各开发组正在使用这些规范开发下一代影响世界的软件产品。<br />
+　　本书适用于框架设计以及相关的专业技术人员，也适用于高等院校相关专业的学生和教师阅读参考。<br />
+　　本书包含许多评注，它们有的解释了相应规范的利弊权衡，有的介绍了其历史，有的给出了进一步的说明，有的提出了自己的批评意见。所有评注都来自经验丰富的框架设计师、业界专家及用户，这些源于开发一线的故事，为书中的许多规范增色不少。</p>
+<p>　　[color=Blue]如果您也有好的书籍推荐，请在下面留言，大家交流交流。[/color]</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2009/158.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>.NET Framework 开发人员指南 之 使用连接池</title>
+		<link>http://www.biglee.cn/blog/2008/127.html</link>
+		<comments>http://www.biglee.cn/blog/2008/127.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[.Net]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[　　连接到数据库服务器通常由几个需要很长时间的步骤组成。必须建立物理通道（例如套接字或命名管道），必须与服务器 &#8230; <a href="http://www.biglee.cn/blog/2008/127.html" class="more-link">继续阅读<span class="screen-reader-text">“.NET Framework 开发人员指南 之 使用连接池”</span></a>]]></description>
+				<content:encoded><![CDATA[<p>　　连接到数据库服务器通常由几个需要很长时间的步骤组成。必须建立物理通道（例如套接字或命名管道），必须与服务器进行初次握手，必须分析连接字符串信息，必须由服务器对连接进行身份验证，必须运行检查以便在当前事务中登记，等等。 </p>
+<p>　　实际上，大多数应用程序仅使用一个或几个不同的连接配置。这意味着在执行应用程序期间，许多相同的连接将反复地打开和关闭。为了使打开的连接成本最低，ADO.NET 使用称为<strong>连接池</strong>的优化方法。</p>
+<p>　　连接池减少新连接需要打开的次数。<strong>池进程</strong>保持物理连接的所有权。通过为每个给定的连接配置保留一组活动连接来管理连接。只要用户在连接上调用 Open，池进程就会检查池中是否有可用的连接。如果某个池连接可用，会将该连接返回给调用者，而不是打开新连接。应用程序在该连接上调用 Close 时，池进程会将连接返回到活动连接池集中，而不是真正关闭连接。连接返回到池中之后，即可在下一个 Open 调用中重复使用。</p>
+<p>　　只有配置相同的连接可以建立池连接。ADO.NET 同时保留多个池，每个配置一个池。连接由连接字符串以及 Windows 标识（在使用集成的安全性时）分为多个池。</p>
+<p>　　池连接可以大大提高应用程序的性能和可缩放性。默认情况下，ADO.NET 中启用连接池。除非显式禁用，否则，连接在应用程序中打开和关闭时，池进程将对连接进行优化。还可以提供几个连接字符串修饰符来控制连接池的行为。有关更多信息，请参见本主题后面的&amp;ldquo;使用连接字符串关键字控制连接池&amp;rdquo;。</p>
+<h1 class=&#34;heading&#34;>池的创建和分配</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection0&#34;>
+<p>　　在初次打开连接时，将根据完全匹配算法创建连接池，该算法将池与连接中的连接字符串关联。每个连接池与不同的连接字符串关联。打开新连接时，如果连接字符串并非与现有池完全匹配，将创建一个新池。按进程、按应用程序域、按连接字符串以及（在使用集成的安全性时）按 Windows 标识来建立池连接。</p>
+<p>　　在以下 C# 示例中创建了三个新的 <a id=&#34;ctl00_rs1_mainContentContainer_ctl01&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl01&#39;,this);&#34; href=&#34;http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection(VS.80).aspx&#34;>SqlConnection</a> 对象，但是管理时只需要两个连接池。注意，根据为 <tt>Initial Catalog</tt> 分配的值，第一个和第二个连接字符串有所不同。</p>
+<div class=&#34;&#34; id=&#34;ctl00_rs1_mainContentContainer_ctl02_other&#34;>
+<div class=&#34;CodeSnippetTitleBar&#34;>
+<div class=&#34;CodeDisplayLanguage&#34;>&amp;nbsp;</div>
+<div class=&#34;CopyCodeButton&#34;>using (SqlConnection connection = new SqlConnection(<br />&amp;nbsp; &amp;quot;Integrated Security=SSPI;Initial Catalog=Northwind&amp;quot;))<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; connection.Open();&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; <br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // Pool A is cr&#101;ated.<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }</p>
+<p>using (SqlConnection connection = new SqlConnection(<br />&amp;nbsp; &amp;quot;Integrated Security=SSPI;Initial Catalog=pubs&amp;quot;))<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; connection.Open();&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; <br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // Pool B is cr&#101;ated because the connection strings differ.<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }</p>
+<p>using (SqlConnection connection = new SqlConnection(<br />&amp;nbsp; &amp;quot;Integrated Security=SSPI;Initial Catalog=Northwind&amp;quot;))<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; connection.Open();&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; <br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; // The connection string matches pool A.<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }</div>
+</div>
+</div>
+<p>　　如果 MinPoolSize 在连接字符串中未指定或指定为零，池中的连接将在一段时间不活动后关闭。但是，如果指定的 MinPoolSize 大于零，在 AppDomain 被卸载并且进程结束之前，连接池不会被破坏。非活动或空池的维护只需要最少的系统开销。</p>
+<div class=&#34;alert&#34;>
+<table width=&#34;100%&#34;>
+<tbody>
+<tr>
+<th align=&#34;left&#34;><img class=&#34;note&#34; alt=&#34;Note&#34; src=&#34;http://msdn.microsoft.com/zh-cn/library/8xx3tyca.note(zh-cn,VS.80).gif&#34; />注意</th>
+</tr>
+<tr>
+<td>
+<p>如果发生致命错误（例如故障转移或注册表中的别名更改），池将自动清除。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 class=&#34;heading&#34;>添加连接</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection1&#34;>
+<p>　　连接池是为每个唯一的连接字符串创建的。当创建一个池后，将创建多个连接对象并将其添加到该池中，以满足最小池大小的要求。连接根据需要添加到池中，但是不能超过指定的最大池大小（默认值为 100）。连接在关闭或断开时释放回池中。 </p>
+<p>　　在请求 SqlConnection 对象时，如果存在可用的连接，将从池中获取该对象。连接要可用，必须未使用，具有匹配的事务上下文或未与任何事务上下文关联，并且具有与服务器的有效链接。</p>
+<p>　　连接池进程通过在连接释放回池中时重新分配连接，来满足这些连接请求。如果已达到最大池大小且不存在可用的连接，则该请求将会排队。然后，池进程尝试重新建立任何连接，直到到达超时时间（默认值为 15 秒）。如果池进程在连接超时之前无法满足请求，将引发异常。 </p>
+<div class=&#34;alert&#34;>
+<table width=&#34;100%&#34;>
+<tbody>
+<tr>
+<th align=&#34;left&#34;><img class=&#34;note&#34; alt=&#34;Caution note&#34; src=&#34;http://msdn.microsoft.com/zh-cn/library/8xx3tyca.Caution(zh-cn,VS.80).gif&#34; />警告</th>
+</tr>
+<tr>
+<td>
+<p>我们建议您在使用完连接时一定要关闭连接，以便连接可以返回池。要关闭连接，可以使用 Connection 对象的 Close 或 Dispose 方法，也可以通过在 C# 的 using 语句中或在 Visual Basic 的 Using 语句中打开所有连接。不是显式关闭的连接可能不会添加或返回到池中。例如，如果连接已超出范围但没有显式关闭，则仅当达到最大池大小而该连接仍然有效时，该连接才会返回到连接池中。有关更多信息，请参见 Visual Basic 的<a id=&#34;ctl00_rs1_mainContentContainer_ctl03&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl03&#39;,this);&#34; href=&#34;http://msdn.microsoft.com/zh-cn/library/yh598w02(VS.80).aspx&#34;>using 语句（C# 参考）</a>或<a id=&#34;ctl00_rs1_mainContentContainer_ctl04&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl04&#39;,this);&#34; href=&#34;http://msdn.microsoft.com/zh-cn/library/wydd5hkd(VS.80).aspx&#34;>如何：释放系统资源</a>。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class=&#34;alert&#34;>
+<table width=&#34;100%&#34;>
+<tbody>
+<tr>
+<th align=&#34;left&#34;><img class=&#34;note&#34; alt=&#34;Note&#34; src=&#34;http://msdn.microsoft.com/zh-cn/library/8xx3tyca.note(zh-cn,VS.80).gif&#34; />注意</th>
+</tr>
+<tr>
+<td>
+<p>不要在类的 Finalize 方法中对 Connection、DataReader 或任何其他托管对象调用 Close 或 Dispose。在终结器中，仅释放类直接拥有的非托管资源。如果类不拥有任何非托管资源，则不要在类定义中包含 Finalize 方法。有关更多信息，请参见<a id=&#34;ctl00_rs1_mainContentContainer_ctl05&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl05&#39;,this);&#34; href=&#34;http://msdn.microsoft.com/zh-cn/library/0xy59wtx(VS.80).aspx&#34;>垃圾回收</a>。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h1 class=&#34;heading&#34;>移除连接</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection2&#34;>
+<p>　　连接池进程定期扫描连接池，查找没有通过 Close 或 Dispose 关闭的未用连接，并重新建立找到的连接。如果应用程序没有显式关闭或断开其连接，连接池进程可能需要很长时间才能重新建立连接，所以，最好确保在连接中显式调用 Close 和 Dispose。</p>
+<p>　　如果连接长时间空闲，或池进程检测到与服务器的连接已断开，连接池进程会将该连接从池中移除。注意，只有在尝试与服务器进行通信之后才能检测到断开的连接。如果发现某连接不再连接到服务器，则会将其标记为无效。无效连接只有在关闭或重新建立后，才会从连接池中移除。</p>
+<p>　　如果存在与已消失的服务器的连接，那么即使连接池管理程序未检测到已断开的连接并将其标记为无效，仍有可能将此连接从池中取出。这种情况是因为检查连接是否仍有效的系统开销将造成与服务器的另一次往返，从而抵消了池进程的优势。发生此情况时，初次尝试使用该连接将检测连接是否曾断开，并引发异常。</p>
+</div>
+<h1 class=&#34;heading&#34;>清除池</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection3&#34;>
+<p>　　ADO.NET 2.0 引入了两种新的方法来清除池：<a id=&#34;ctl00_rs1_mainContentContainer_ctl06&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl06&#39;,this);&#34; href=&#34;http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.clearallpools(VS.80).aspx&#34;>ClearAllPools</a> 和 <a id=&#34;ctl00_rs1_mainContentContainer_ctl07&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl07&#39;,this);&#34; href=&#34;http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.clearpool(VS.80).aspx&#34;>ClearPool</a>。ClearAllPools 清除给定提供程序的连接池，ClearPool 清除与特定连接关联的连接池。如果在调用时连接正在使用，将进行相应的标记。连接关闭时，将被丢弃，而不是返回池中。</p>
+</div>
+<h1 class=&#34;heading&#34;>事务支持</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection4&#34;>
+<p>　　连接是根据事务上下文来从池中取出并进行分配的。除非在连接字符串中指定了 <tt>Enlist=false</tt>，否则，连接池将确保连接在 <a id=&#34;ctl00_rs1_mainContentContainer_ctl08&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl08&#39;,this);&#34; href=&#34;http://msdn.microsoft.com/zh-cn/library/system.transactions.transaction.current(VS.80).aspx&#34;>Current</a> 上下文中登记。如果连接使用登记的 System.Transactions 事务关闭并返回池中，连接将保留在池中，以便使用相同 System.Transactions 事务对该连接池的下一次请求将返回相同的连接。如果该事务没有可用连接，在该连接打开时，将自动注册该连接。</p>
+<p>　　当连接关闭时，它将被释放回池中，并根据其事务上下文放入相应的子部分。因此，即使分布式事务仍然挂起，仍可以关闭该连接而不会生成错误。这样，您就可以在随后提交或中止分布式事务。</p>
+</div>
+<h1 class=&#34;heading&#34;>使用连接字符串关键字控制连接池</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection5&#34;>
+<p>　　SqlConnection 对象的 ConnectionString 属性支持连接字符串键/值对，可以用于调整连接池逻辑的行为。有关更多信息，请参见 <a id=&#34;ctl00_rs1_mainContentContainer_ctl09&#34; onclick=&#34;javascript:Track(&#39;ctl00_rs1_mainContentContainer_ctl00|ctl00_rs1_mainContentContainer_ctl09&#39;,this);&#34; href=&#34;http://msdn.microsoft.com/zh-cn/library/system.data.sqlclient.sqlconnection.connectionstring(VS.80).aspx&#34;>ConnectionString</a>。</p>
+</div>
+<h1 class=&#34;heading&#34;>池碎片</h1>
+<div class=&#34;seeAlsoNoToggleSection&#34; id=&#34;sectionSection6&#34;>
+<p>　　池碎片是许多 Web 应用程序中的一个常见问题，应用程序可能会创建大量在进程退出后才会释放的池。这样，将打开大量的连接，占用许多内存，从而影响性能。</p>
+<h3 class=&#34;subHeading&#34;>因为集成安全性产生的池碎片</h3>
+<div class=&#34;subSection&#34;>
+<p>　　连接根据连接字符串以及用户标识来建立池连接。因此，如果使用网站上的基本身份验证或 Windows 身份验证以及集成的安全登录，每个用户将获得一个池。尽管这样可以提高单个用户的后续数据库请求的性能，但是该用户无法利用其他用户建立的连接。这样还使每个用户至少产生一个与数据库服务器的连接。这对特定 Web 应用程序结构会产生副作用，因为开发人员需要衡量安全性和审计要求。</p>
+</div>
+<h3 class=&#34;subHeading&#34;>因为许多数据库产生的池碎片</h3>
+<div class=&#34;subSection&#34;>
+<p>　　许多 Internet 服务提供商在一台服务器上托管多个网站。他们可能使用单个数据库确认窗体身份验证登录，然后为该用户或用户组打开与特定数据库的连接。与身份验证数据库的连接将建立池连接，供每个用户使用。但是，每个数据库的连接存在一个独立的池，因此增加了与服务器的连接数。</p>
+<p>　　这也会对应用程序设计产生副作用。但是，可以通过一个相对简单的方式避免此副作用，而又不会影响连接 SQL Server 时的安全性。不是为每个用户或组连接独立的数据库，而是连接到服务器上的相同数据库，然后执行 Transact-SQL USE 语句来切换为所需的数据库。以下代码段演示入如何创建与 master 数据库的初始连接，然后切换到 <tt>databaseName</tt> 字符串变量中指定的所需数据库。 </p>
+<div class=&#34;libCScode&#34; id=&#34;ctl00_rs1_mainContentContainer_ctl10_VisualBasic&#34; style=&#34;DISPLAY: none&#34;>
+<div class=&#34;CodeSnippetTitleBar&#34;>
+<div class=&#34;CodeDisplayLanguage&#34;>Visual Basic</div>
+</div>
+<pre class=&#34;libCScode&#34; id=&#34;ctl00_rs1_mainContentContainer_ctl10VisualBasic&#34; space=&#34;preserve&#34;><span style=&#34;COLOR: green&#34;>&#39; Assumes that command is a valid SqlCommand object.</span>
+Using connection <span style=&#34;COLOR: blue&#34;>As</span> <span style=&#34;COLOR: blue&#34;>New</span> SqlConnection( _
+<span style=&#34;COLOR: maroon&#34;>&amp;quot;Server=MSSQL1;uid=xxx;pwd=xxx;database=master&amp;quot;</span>)
+connection.Open()
+command.ExecuteNonQuery(<span style=&#34;COLOR: maroon&#34;>&amp;quot;USE &amp;quot;</span> &amp;amp; databaseName)
+<span style=&#34;COLOR: blue&#34;>End</span> Using</pre>
+</div>
+<div class=&#34;libCScode&#34; id=&#34;ctl00_rs1_mainContentContainer_ctl11_CSharp&#34;>
+<div class=&#34;CodeSnippetTitleBar&#34;>
+<div class=&#34;CodeD 
+
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2008/127.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>ADO.NET 2.0技术内幕 之 连接池</title>
+		<link>http://www.biglee.cn/blog/2008/126.html</link>
+		<comments>http://www.biglee.cn/blog/2008/126.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[.Net]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[&#38;nbsp;连&#38;nbsp; 接&#38;nbsp; 池 与微软以前的数据访问技术类似，ADO. &#8230; <a href="http://www.biglee.cn/blog/2008/126.html" class="more-link">继续阅读<span class="screen-reader-text">“ADO.NET 2.0技术内幕 之 连接池”</span></a>]]></description>
+				<content:encoded><![CDATA[<h3>&amp;nbsp;连&amp;nbsp; 接&amp;nbsp; 池</h3>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>与微软以前的数据访问技术类似，ADO.NET包括对连接池的内置支持。</p>
+<h3 style=&#34;LINE-HEIGHT: 16.5pt&#34;>1&amp;nbsp; 连接句柄和物理连接</h3>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt&#34;>如果正在使用Visual Studio，可以使用Visual Studio调试工具检查对象的一些内部私有属性。例如，编写一些代码来打开一个SqlConnection，并在调用Open方法的地方设置断点。右击代码中的对象，并选择【添加监视】，将该对象添加到【监视】窗口。在【监视】窗口中，展开标有Non-Pubic Members的区域。向下滚动，将会看到一个称为InnerConnection的私有属性。</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt&#34;>从结构上讲，InnerConnection属性的内容是一个非常薄的层，位于数据库的物理连接之上。为在这里进行讨论，InnerConnection属性和到该数据库的物理连接是可交换的。在逐步执行代码时，将会看到在打开和关闭连接时，InnerConnection属性的值发生变化。当调用Open方法时，SQL Client .NET数据提供程序将SqlConnection对象关联至该数据库的物理连接，所以可以执行查询并返回结果。</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt&#34;>打开和关闭数据库连接的代价非常高。为了帮助节省资源并提高性能，.NET Framework中的.NET数据提供程序在默认情况下均使用连接池。</p>
+<h3 style=&#34;LINE-HEIGHT: 16.5pt&#34;>2&amp;nbsp; 连接池是什么</h3>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt&#34;>连接池是一种在打开数据存储区的连接时提高应用程序性能的机制。在调用SqlConnection对象的Close方法时，SQL Client .NET数据提供程序并不实际关闭内部连接。相反，数据提供程序将该内部连接存储到一个池中，以便在以后再次使用。甚至在SqlConnection对象被处理之后，该内部连接也保留在池中。如果在以后使用相同连接字符串和凭据调用SqlConnection对象的Open方法，将会再次使用同一内部连接与数据库进行通信。</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt&#34;>如果希望确认是否真正再次利用了同一内部连接，可以使用.NET Reflection中的功能以可编程方式访问私有InnerConnection属性的内容。以下代码(其需要对System.Reflection命名空间的引用)在Using代码块中打开一个SqlConnection，并存储SqlConnection的InnerConnection属性的值。通过利用Using代码块，在该代码块的末尾隐式处理了SqlConnection。此代码在Using代码块中打开另一个SqlConnection，并存储SqlConnection的InnerConnection属性的值。最后，此代码对比InnerConnection属性的内容，确认它们实际上为同一对象。</p>
+<p class=&#34;a7&#34;>Visual Basic</p>
+<p class=&#34;ab&#34; style=&#34;MARGIN-LEFT: 21pt&#34;>Dim strConn As String = &amp;quot;Data Source=.SQLExpress;Integrated Security=True;&amp;quot;<br />Dim propInnerConn As PropertyInfo<br />propInnerConn = GetType(SqlConnection).GetProperty(&amp;quot;InnerConnection&amp;quot;, _<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BindingFlags.NonPublic o&#114; BindingFlags.Instance)<br />Dim objInnerConn1, objInnerConn2 As Object<br />Using cn As New SqlConnection(strConn)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open()<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; objInnerConn1 = propInnerConn.GetValue(cn, Nothing)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close()<br />End Using</p>
+<p class=&#34;ab&#34; style=&#34;MARGIN-LEFT: 21pt&#34;>Using cn As New SqlConnection(strConn)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open()<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; objInnerConn2 = propInnerConn.GetValue(cn, Nothing)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close()<br />End Using</p>
+<p class=&#34;ab&#34; style=&#34;MARGIN-LEFT: 21pt&#34;>Console.WriteLine(objInnerConn1 Is objInnerConn2)</p>
+<p class=&#34;a7&#34;>Visual C#</p>
+<p class=&#34;ab&#34; style=&#34;MARGIN-LEFT: 21pt&#34;>string strConn = @&amp;quot;Data Source=.SQLExpress;Integrated Security=True;&amp;quot;;<br />PropertyInfo propInnerConn;<br />propInnerConn = typeof(SqlConnection).GetProperty(&amp;quot;InnerConnection&amp;quot;,<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BindingFlags.NonPublic | BindingFlags.Instance);<br />object objInnerConn1, objInnerConn2;<br />using (SqlConnection cn = new SqlConnection(strConn))<br />{<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; objInnerConn1 = propInnerConn.GetValue(cn, null);<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close();<br />}</p>
+<p class=&#34;ab&#34; style=&#34;MARGIN-LEFT: 21pt&#34;>using (SqlConnection cn = new SqlConnection(strConn))<br />{<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; objInnerConn2 = propInnerConn.GetValue(cn, null);<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close();<br />}</p>
+<p class=&#34;ab&#34; style=&#34;MARGIN-LEFT: 21pt&#34;>Console.WriteLine(objInnerConn1 == objInnerConn2);</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt&#34;>两个SqlConnection对象是在不同的Using代码块中创建的，所以其资源将在每个Using代码块的末尾被清除。InnerConnection属性的内容及其所封装的物理连接没有被处理，而是存储在池中，以便在以后被再次利用。</p>
+<p class=&#34;MsoList2&#34; style=&#34;MARGIN: 6pt 0cm 6pt 52.5pt; TEXT-INDENT: -52.5pt; LINE-HEIGHT: 16.5pt&#34;><sub><img height=&#34;27&#34; alt=&#34;&#34; src=&#34;http://book.csdn.net/BookFiles/396/img/image026.jpg&#34; width=&#34;18&#34; /></sub>&amp;nbsp;注意&amp;nbsp;&amp;nbsp;&amp;nbsp; 如果在连接字符串中禁用了连接池(稍后将解释如何禁用)，将会看到此内部连接不能被重复利用。</p>
+<h3 style=&#34;LINE-HEIGHT: 16.5pt&#34;>3&amp;nbsp; 连接池如何改进代码</h3>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt&#34;>考虑一个访问SQL Server数据库的典型ASP.NET或WebServices应用程序。客户端应用程序每次需要查询数据库时，就会在服务器端代码中进行往返，以打开SqlConnection来执行查询。在许多此类应用程序中，这一代码以相同凭据一次又一次地连接到相同数据库。理论上，这意味着客户端应用程序每次需要执行查询时，服务器端代码需要执行三个操 作&amp;mdash;&amp;mdash;登录到数据库(需要检查所提供的凭据)、执行查询、然后注销。</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt&#34;>连接池可以真正地提高此类应用程序的性能。通过将内部连接存储在池中，并在以后进行重复利用，就不再因为登录数据库以及从中注销而降低性能。对SqlConnection对象的Open和Close方法的调用可以短时间内返回，从而可以提高代码的性能和响应速度(请参见图3.4)。</p>
+<p align=&#34;center&#34;><img height=&#34;298&#34; alt=&#34;&#34; src=&#34;http://book.csdn.net/BookFiles/396/img/image030.jpg&#34; width=&#34;379&#34; /></p>
+<p align=&#34;center&#34;>图3.4&amp;nbsp; 典型ASP.NET或WebServices应用程序中的连接池</p>
+<h3>4&amp;nbsp; 启用连接池</h3>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>在ADO.NET中，连接池是默认启用的。以下代码段将同一SqlConnection对象打开和关闭5次。由于连接池是默认启用的，所以当调用Close方法时，到数据库的实际连接没有被实际关闭，而是将该数据库连接发送到池中，以便在以后重复利用。</p>
+<p class=&#34;a7&#34;>Visual Basic</p>
+<p class=&#34;ab&#34; style=&#34;MARGIN-LEFT: 21pt&#34;>Dim strConn As String<br />strConn = &amp;quot;Data Source=.SQLExpress;Integrated Security=True;&amp;quot;<br />Dim cn As New SqlConnection(strConn)<br />For intCounter As Integer = 1 To 5<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open()<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close()<br />Next intCounter</p>
+<p class=&#34;ab&#34; style=&#34;MARGIN-LEFT: 21pt&#34;>Visual C#</p>
+<p class=&#34;ab&#34; style=&#34;MARGIN-LEFT: 21pt&#34;>string strConn;<br />strConn = @&amp;quot;Data Source=.SQLExpress;Integrated Security=True;&amp;quot;;<br />SqlConnection cn = new SqlConnection(strConn);<br />for (int intCounter = 1; intCounter &amp;lt;= 5; intCounter++)<br />{&amp;nbsp;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close();<br />}</p>
+<h3>5&amp;nbsp; 放入池中的连接何时关闭</h3>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>在调用Close方法时，SqlClient将该连接返回到池中。假定该连接没有被再次使用，将在大约5分钟后将其从池中删除。但具体在多少秒后删除，并没有确切的数值。其行为取决于所生成的随机数以及创建该池时的相对湿度(relative humidity)。当然，如果在退出应用程序时存在已打开的连接池，那么作为应用程序正常清除过程的一部分，这些连接将被关闭和处理。</p>
+<h3>6&amp;nbsp; 禁用连接池</h3>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>您可能不希望使用连接池。例如，如果正在使用一个直接与数据库进行通信的简单Windows应用程序，那么可能希望禁用连接池。在采用这一架构时，各个客户端应用程序需要自己的连接。在启用连接池时，每个应用程序的连接被放入池中，如果在清除连接池之前重新打开该连接，将重复利用放入池中的连接。所以，如果应用程序频繁重复使用连接，那么在启用连接池的情况下，对SqlConnection.Open的调用将会更快速地返回。但是，这种方法将会导致在任意给定时刻存在许多活动的数据库连接。禁用连接池将会降低任意时刻的活动数据库连接数目，但这样会强制所有对SqlConnection.Open的调用都建立一个新的数据库连接。</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>如果希望禁用连接池，可以通过向连接字符串中添加Pooling=False，逐个连接地禁用连接池。</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>幸运的是，在ADO.NET 2.0中不再需要记忆诸如此类的属性。如果存在疑问，可以检查SqlConnectionStringBuilder类的选项。在这个类中可以找到一个Pooling属性，其取值为Boolean类型。默认情况下，此值被设置为True。将该值设置为False将会禁止将该连接放入池中。因此，在调用SqlConnection对象的Close方法时，将会关闭与数据库的实际连接。</p>
+<p class=&#34;MsoList2&#34; style=&#34;MARGIN: 6pt 0cm 6pt 52.5pt; TEXT-INDENT: -52.5pt&#34;><sub><img height=&#34;27&#34; alt=&#34;&#34; src=&#34;http://book.csdn.net/BookFiles/396/img/image005.jpg&#34; width=&#34;18&#34; /></sub>&amp;nbsp;注意&amp;nbsp;&amp;nbsp;&amp;nbsp; 在&amp;ldquo;偶尔进行连接&amp;rdquo;的Windows应用程序中，使用连接池可能很有帮助，具体取决于应用程序。如果应用程序希望定期重新连接到数据库，则可以发挥连接池的作用，将与数据库的物理连接保持打开状态，至少暂时如此。如果在从池中删除该物理连接之前，应用程序尝试重新连接到该数据库，则连接池逻辑(pooling logic)将会重新使用与该数据库的物理连接。</p>
+<h3>7&amp;nbsp; 有关连接池的常见问题</h3>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>学习连接池的开发人员越多，出现的问题也会越多。例如，在我听到的连接池相关问题中，最常见的一个是&amp;ldquo;我怎样才能知道与数据库的物理连接是被真正关闭了，还是仅仅被放入池中了？&amp;rdquo;，另一个常见问题是&amp;ldquo;我怎样才能分辨刚刚打开的连接是建立了一个新物理连接，还是重新利用了一个被放在池中的连接？&amp;rdquo;。</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>有许多工具可以帮助回答有关连接池的问题。其中一些工具更出色一些。我定期使用SQL Server事件探查器来监视对SQL Server数据库的连接和查询。在ADO.NET的2.0版中，还可以使用Windows中的【性能监视器】。</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>ADO.NET 2.0中的SQL Client .NET数据提供程序包括用于连接池的性能计数器。现在可以使用诸如【性能监视器】等工具来查看以下数目：放入池中的连接、活动连接、自由连接、活动与非活动连接池及活动与非活动连接池组。还可以搜集有关在每秒内进行连接和断开连接数目的信息。</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>在某些情况下，维护性能计数器会产生一些性能影响。为此，SQL Client .NET数据提供程序没有维护以下性能计数器：活动或自由连接的数目，或者每秒内放入池中的连接数目或断开连接的数目。可以通过向应用程序的配置文件中添加一项，以启用应用程序中的这些性能计数器。如需有关使用这些性能计数器的详细信息，请参阅MSDN网站上的文章&amp;ldquo;Using ADO.NET Performance Counters&amp;rdquo;(使用ADO.NET性能计数器)。</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>为便于您提出有关连接池的问题，也便于我回答这些问题，我已经开发了一个示例应用程序，如图3.5所示，它可以作为本书示例代码中的一部分进行下载。这一应用程序允许使用如图3.3所示的SqlConnectionStringBuilder/PropertyGrid对话框生成连接字符串。可以很容易地生成新的SqlConnection，打开和关闭现有连接，以及调用ClearPool和ClearAllPools方法。此示例还可以通过【性能监视器】访问SQL Client性能计数器，而不需要以手动方式添加性能计数器。此应用程序的配置文件中包含一项，其能够启用在默认情况下被关闭的性能计数器。在每次创建、打开或关闭SqlConnection或关闭一个或所有连接池时，此示例中的性能计数器都会被更新。</p>
+<p align=&#34;center&#34;><img height=&#34;277&#34; alt=&#34;&#34; src=&#34;http://book.csdn.net/BookFiles/396/img/image031.jpg&#34; width=&#34;284&#34; /></p>
+<p align=&#34;center&#34;>图3.5&amp;nbsp; 研究连接池</p>
+<h3>8&amp;nbsp; ADO.NET如何确定是否使用放入池中的连接</h3>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>简单地说，假定连接池未被禁用，则SQL Client .NET数据提供程序在您调用SqlConnection对象的Open方法时检查ConnectionString，并确定池中是否存在可用连接。如果存在可用连接，则SQL Client使用该连接。否则，打开一个到数据库的新连接。</p>
+<p class=&#34;MsoNormal&#34; style=&#34;TEXT-INDENT: 21pt&#34;>实际上还有一些需要说明的内容。设想一个ASP.NET应用程序，其中有多位用户以模拟(impersonation)登录同一数据库，每位用户都使用自己的凭据访问SQL Server数据库。每位用户的连接字符串都是相同的，但他们的凭据有很大不同。由于SQL Client考虑了用户权限，所以用于确定池中有哪些连接可供使用的逻辑要稍微复杂一些。</p>
+<h3>9&amp;nbsp; 强制ADO.NET使用新</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2008/126.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>GridView 72般绝技</title>
+		<link>http://www.biglee.cn/blog/2008/125.html</link>
+		<comments>http://www.biglee.cn/blog/2008/125.html#respond</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[.Net]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[GridView无代码分页排序GridView选中，编辑，取消，删除GridView正反双向排序GridVie &#8230; <a href="http://www.biglee.cn/blog/2008/125.html" class="more-link">继续阅读<span class="screen-reader-text">“GridView 72般绝技”</span></a>]]></description>
+				<content:encoded><![CDATA[<p><strong><font size=&#34;2&#34;>GridView无代码分页排序<br />GridView选中，编辑，取消，删除<br />GridView正反双向排序<br />GridView和下拉菜单Dro&#112;DownList结合<br />GridView和CheckBox结合<br />鼠标移到GridView某一行时改变该行的背景色方法一<br />鼠标移到GridView某一行时改变该行的背景色方法二<br />GridView实现删除时弹出确认对话框<br />GridView实现自动编号<br />GridView实现自定义时间货币等字符串格式<br /></font></strong><strong><font size=&#34;2&#34;>GridView实现用&amp;ldquo;&#8230;&amp;rdquo;代替超长字符串<br />GridView一般换行与强制换行<br />GridView显示隐藏某一列<br />GridView弹出新页面/弹出新窗口<br />GridView固定表头(不用javascript只用CSS，2行代码，很好用)<br />GridView合并表头多重表头无错完美版（以合并3列3行举例）<br />GridView突出显示某一单元格（例如金额低于多少，分数不及格等）<br />GridView加入自动求和求平均值小计<br />GridView数据导入Excel/Excel数据读入GridView</p>
+<p></font></strong></p>
+<p align=&#34;left&#34;><strong>1.GridView无代码分页排序</strong>：</p>
+<p align=&#34;left&#34;>效果图：<br /><img alt=&#34;&#34; src=&#34;http://p.blog.csdn.net/images/p_blog_csdn_net/21aspnet/286353/o_gv5.gif&#34; /><br />1.AllowSorting设为True，aspx代码中是AllowSorting=&amp;quot;True&amp;quot;；<br />2.默认1页10条，如果要修改每页条数，修改PageSize即可，在aspx代码中是PageSize=&amp;quot;12&amp;quot;。<br />3.默认的是单向排序的，右击GridView弹出&amp;ldquo;属性&amp;rdquo;，选择AllowSorting为True即可。</p>
+<p></p>
+<p align=&#34;left&#34;><strong>2.GridView选中，编辑，取消，删除：</strong></p>
+<p align=&#34;left&#34;>效果图：<br /><img alt=&#34;&#34; src=&#34;http://p.blog.csdn.net/images/p_blog_csdn_net/21aspnet/286353/o_gv6.gif&#34; /></p>
+<p align=&#34;left&#34;><strong>后台代码：<br /></strong>你可以使用sqlhelper,本文没用。代码如下：<br />using System;<br />using System.Data;<br />using System.Configuration;<br />using System.Web;<br />using System.Web.Security;<br />using System.Web.UI;<br />using System.Web.UI.WebControls;<br />using System.Web.UI.WebControls.WebParts;<br />using System.Web.UI.HtmlControls;<br />using System.Data.SqlClient;</p>
+<p align=&#34;left&#34;>public partial class _Default : System.Web.UI.Page <br />{</p>
+<p align=&#34;left&#34;>//清清月儿<a href=&#34;http://blog.csdn.net/21aspnet&#34; target=&#34;_new&#34;><font color=&#34;#000000&#34;>http://blog.csdn.net/21aspnet</font></a>&amp;nbsp;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; SqlConnection sqlcon;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; SqlCommand sqlcom;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; string strCon = &amp;quot;Data Source=(local);Database=数据库名;Uid=帐号;Pwd=密码&amp;quot;;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; protected void Page_Load(object sender, EventArgs e)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; if (!IsPostBack)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; bind();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; }<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; GridView1.EditIndex = e.NewEditIndex;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; bind();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }</p>
+<p align=&#34;left&#34;>//删除<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; protected void GridView1_RowDeleting(object sender, GridViewDel&#101;teEventArgs e)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; string sqlstr = &amp;quot;del&#101;te from&amp;nbsp;表 wh&#101;re id=&#39;&amp;quot; + GridView1.DataKeys[e.RowIndex].Value.ToString() + &amp;quot;&#39;&amp;quot;;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcon = new SqlConnection(strCon);<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcom = new SqlCommand(sqlstr,sqlcon);<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcon.Open();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcom.ExecuteNonQuery();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcon.Close();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; bind();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }</p>
+<p align=&#34;left&#34;>//更新<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; protected void GridView1_RowUpdating(object sender, GridViewUp&#100;ateEventArgs e)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcon = new SqlConnection(strCon);<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; string sqlstr = &amp;quot;up&#100;ate 表 set 字段1=&#39;&amp;quot;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; + ((TextBox)(GridView1.Rows[e.RowIndex].Cells[1].Controls[0])).Text.ToString().Trim() + &amp;quot;&#39;,字段2=&#39;&amp;quot;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; + ((TextBox)(GridView1.Rows[e.RowIndex].Cells[2].Controls[0])).Text.ToString().Trim() + &amp;quot;&#39;,字段3=&#39;&amp;quot;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; + ((TextBox)(GridView1.Rows[e.RowIndex].Cells[3].Controls[0])).Text.ToString().Trim() + &amp;quot;&#39; wh&#101;re id=&#39;&amp;quot; <br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; + GridView1.DataKeys[e.RowIndex].Value.ToString() + &amp;quot;&#39;&amp;quot;;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcom=new SqlCommand(sqlstr,sqlcon);<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcon.Open();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcom.ExecuteNonQuery();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcon.Close();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; GridView1.EditIndex = -1;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; bind();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }</p>
+<p align=&#34;left&#34;>//取消<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; GridView1.EditIndex = -1;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; bind();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }</p>
+<p align=&#34;left&#34;>//绑定<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; public void bind()<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; {<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; string sqlstr = &amp;quot;sel&#101;ct * from 表&amp;quot;;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcon = new SqlConnection(strCon);<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; SqlDataAdapter myda = new SqlDataAdapter(sqlstr, sqlcon);<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; DataSet myds = new DataSet();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcon.Open();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; myda.Fill(myds, &amp;quot;表<font size=&#34;2&#34;>&amp;quot;);</font><br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; GridView1.DataSource = myds;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; GridView1.DataKeyNames = new string[] { &amp;quot;id&amp;quot; };//主键<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; GridView1.DataBind();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; sqlcon.Close();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; }<br />}</p>
+<p><strong>前台主要代码：<br /></strong>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &#8230; &#8230;<br />&amp;lt;asp:GridView ID=&amp;quot;GridView1&amp;quot; runat=&amp;quot;server&amp;quot; AutoGenerateColumns=&amp;quot;False&amp;quot; CellPadding=&amp;quot;4&amp;quot;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; ForeColor=&amp;quot;#333333&amp;quot; GridLines=&amp;quot;None&amp;quot; OnRowDeleting=&amp;quot;GridView1_RowDeleting&amp;quot; OnRowEditing=&amp;quot;GridView1_RowEditing&amp;quot;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; OnRowUpdating=&amp;quot;GridView1_RowUpdating&amp;quot; OnRowCancelingEdit=&amp;quot;GridView1_RowCancelingEdit&amp;quot;&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;FooterStyle BackColor=&amp;quot;#990000&amp;quot; Font-Bold=&amp;quot;True&amp;quot; ForeColor=&amp;quot;White&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;Columns&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;asp:BoundField DataField=&amp;quot;身份证号码&amp;quot; HeaderText=&amp;quot;用户ID&amp;quot; ReadOnly=&amp;quot;True&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;asp:BoundField DataField=&amp;quot;姓名&amp;quot; HeaderText=&amp;quot;用户姓名&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;asp:BoundField DataField=&amp;quot;员工性别&amp;quot; HeaderText=&amp;quot;性别&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;asp:BoundField DataField=&amp;quot;家庭住址&amp;quot; HeaderText=&amp;quot;家庭住址&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;asp:CommandField HeaderText=&amp;quot;选择&amp;quot; ShowSel&#101;ctButton=&amp;quot;True&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;asp:CommandField HeaderText=&amp;quot;编辑&amp;quot; ShowEditButton=&amp;quot;True&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;asp:CommandField HeaderText=&amp;quot;删除&amp;quot; ShowDel&#101;teButton=&amp;quot;True&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;/Columns&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;RowStyle ForeColor=&amp;quot;#000066&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;Sel&#101;ctedRowStyle BackColor=&amp;quot;#669999&amp;quot; Font-Bold=&amp;quot;True&amp;quot; ForeColor=&amp;quot;White&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;PagerStyle BackColor=&amp;quot;White&amp;quot; ForeColor=&amp;quot;#000066&amp;quot; HorizontalAlign=&amp;quot;Left&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;HeaderStyle BackColor=&amp;quot;#006699&amp;quot; Font-Bold=&amp;quot;True&amp;quot; ForeColor=&amp;quot;White&amp;quot; /&amp;gt;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;/asp:GridView&amp;gt;</p>
+<p align=&#34;left&#34;><strong>3.GridView正反双向排序：<br /></strong>效果图：点姓名各2次的排序，点其他也一样可以。<br /><img alt=&#34;&#34; src=&#34;http://p.blog.csdn.net/images/p_blog_csdn_net/21aspnet/286353/o_gv7.gif&#34; /><img alt=&#34;&#34; src=&#34;http://p.blog.csdn.net/images/p_blog_csdn_net/21aspnet/286353/o_gv8.gif&#34; /><br /><strong>后台代码：</strong><br />using System;<br />using System.Data;<br />using System.Configuration;<br />using System.Collections;<br />using System.Web;<br />using System.Web.Security;<br />using System.Web.UI;<br />using System.Web.UI.WebControls;<br />using System.Web.UI.WebControls.WebParts;<br />using System.Web.UI.HtmlControls;<br />using System.Data.SqlClient;<br />public partial class Default3 : System.Web.UI.Page<br />{</p>
+<p align=&#34;left&#34;>//清清月儿的博客<a href=&#34;http://blog.csdn.net/21aspnet&#34; target=&#34;_new&#34;><font color=&#34;#000000&#34;>http://blog.csdn.net/21as</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2008/125.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Asp.Net Web 部署项目</title>
+		<link>http://www.biglee.cn/blog/2008/124.html</link>
+		<comments>http://www.biglee.cn/blog/2008/124.html#comments</comments>
+		<pubDate>Mon, 30 Nov -0001 00:00:00 +0000</pubDate>
+		<dc:creator><![CDATA[Lee]]></dc:creator>
+				<category><![CDATA[.Net]]></category>
+
+		<guid isPermaLink="false"></guid>
+		<description><![CDATA[&#38;nbsp;目录 在 ASP.NET 2.0 中部署 Web 部署项目 合并程序集 可插入配置文件 创 &#8230; <a href="http://www.biglee.cn/blog/2008/124.html" class="more-link">继续阅读<span class="screen-reader-text">“Asp.Net Web 部署项目”</span></a>]]></description>
+				<content:encoded><![CDATA[<div>
+<div class=&#34;MTPS_CollapsibleRegion&#34; id=&#34;ctl00_ContentPlaceHolder1_cpe55532&#34;>
+<div class=&#34;CollapseRegionLink&#34; id=&#34;ctl00_ContentPlaceHolder1_cpe55532_h&#34;><img id=&#34;ctl00_ContentPlaceHolder1_cpe55532_i&#34; style=&#34;BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; VERTICAL-ALIGN: middle; BORDER-RIGHT-WIDTH: 0px&#34; alt=&#34;&#34; src=&#34;http://i.msdn.microsoft.com/platform/Controls/CollapsibleArea/resources/minus.gif&#34; />&amp;nbsp;目录 </div>
+<div class=&#34;MTPS_CollapsibleSection&#34; id=&#34;ctl00_ContentPlaceHolder1_cpe55532_c&#34; style=&#34;DISPLAY: block; OVERFLOW: hidden; WIDTH: auto; HEIGHT: auto&#34; olddisplay=&#34;null&#34;>
+<div class=&#34;MTPS_CollapsibleSection&#34; id=&#34;&#34; style=&#34;BORDER-RIGHT: medium none; BORDER-TOP: medium none; DISPLAY: block; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none&#34;><a href=&#34;#S1&#34;>在 ASP.NET 2.0 中部署</a> <br /><a href=&#34;#S2&#34;>Web 部署项目</a> <br /><a href=&#34;#S3&#34;>合并程序集</a> <br /><a href=&#34;#S4&#34;>可插入配置文件</a> <br /><a href=&#34;#S5&#34;>创建可重用用户控件</a> <br /><a href=&#34;#S6&#34;>总结</a> </div>
+</div>
+</div>
+<p></div>
+<div class=&#34;ArticleNormalPara&#34;>当 ASP 第一次发布时，Web 编程还比较困难，因为需要 IIS 来处理 ASP 页。后来，ASP.NET 2.0 和 Visual Studio<span class=&#34;superscript&#34;><font size=&#34;1&#34;>&amp;reg;</font></span> 2005 通过引入网站开发模型使一切工作都变得容易了。借助该网站模型，您不必在 Visual Studio 中创建新项目，而是可以指向一个目录并开始编写网页和代码。此外，您还可以使用内置的 ASP.NET Development Server 快速测试站点，ASP.NET Development Server 将 ASP.NET 寄宿在一个本地进程中，并消除了必须安装 IIS 才能进行开发这一先决条件。该网站模型的魅力在于您在开发 Web 应用程序时无需考虑打包和部署。需要其他类时怎么办？向 App_Code 目录添加一个 .cs 文件即可开始编写。希望将可本地化的字符串存储在资源文件中时怎么办？向 App_GlobalResources 目录添加一个 .resx 文件并键入字符串。一切都顺顺当当；您根本就不必考虑编译和部署方面的事情。</div>
+<div class=&#34;ArticleNormalPara&#34;>在准备进行部署时，您有多种可选方案。最简单的方案是将文件复制到主运行服务器并按要求编译每一个文件（和在测试环境中一样）。第二种方案是使用 aspnet_compiler.exe 实用工具将应用程序预编译为二进制版本，之后将只剩下要放到服务器上的一组程序集、静态内容和配置文件。第三种方案也使用 aspnet_compiler.exe，但要创建一个可更新的二进制部署，其中 .as*x 文件保持不变（并且可修改），而所有代码文件都编译为二进制程序集。</div>
+<div class=&#34;ArticleNormalPara&#34;>这似乎涵盖了每一种可能的情况，开发人员可以一心一意地编写 Web 应用程序，而在以后实际部署时再作打包和部署决定。不过，此模型也遭到了相当大的反对，特别是那些习惯了自己开发的 Web 项目是在实际项目文件中指定的实际项目的开发人员的反对，这些项目允许注入生成前和生成后函数、从生成过程排除文件以及使用命令行开关在调试和发布版本之间进行切换等操作。有鉴于此，Microsoft 迅速推出了 Web 应用程序项目（即 WAP），最初它是作为 Visual Studio 2005 的插件发布的，现在包含在 Visual Studio 2005 Service Pack 1 (SP1) 中，Visual Studio 2005 Service Pack 1 (SP1) 可从 <a href=&#34;http://msdn.microsoft.com/vstudio/support/vs2005sp1&#34;><font color=&#34;#0033cc&#34;>msdn.microsoft.com/vstudio/support/vs2005sp1</font></a> 下载。</div>
+<div class=&#34;ArticleNormalPara&#34;>WAP 可替代与 Visual Studio .NET 2003 Web 项目模型非常接近的网站模型。新的 WAP 模型会在生成过程中编译所有源代码文件，并在本地的 /bin 目录中生成一个用于部署的程序集。WAP 还使得增量采用 ASP.NET 2.0 引入的新的分部类代码隐藏模型变得更加容易，因为现在您可以打开 Visual Studio .NET 2003 项目，并且在转换过程中只修改 .sln 和 .csproj（或 .vbproj）文件。然后可将每个文件及其代码隐藏类转换为与项目中任何其他文件都无关的新的分部类模型（操作方法是：在解决方案资源管理器中右键单击各个文件并选择&amp;ldquo;转换为 Web 应用程序&amp;rdquo;），也可以让它们仍然使用旧模型。这与将 Visual Studio .NET 2003 Web 项目转换为网站模型大不相同，转换为网站模型会同时转换所有文件，并且不支持增量采用。</div>
+<div class=&#34;ArticleNormalPara&#34;>最后，还有一个称为&amp;ldquo;Web 部署项目&amp;rdquo;（本专栏的主题）的新项目类型，它引入了许多既针对网站项目又针对 Web 应用程序项目的附加部署选项。 Web 部署项目弥补了既针对网站应用程序又针对 Web 应用程序项目的部署选项中的遗留漏洞，并且可以简单而又可扩展地实现几乎任何部署方案。 为确切了解这一新项目类型增加了哪些内容，我们先来回顾一下在 Web 部署项目推出之前的情况。</div>
+<p></p>
+<div class=&#34;ArticleTypeTitle&#34; id=&#34;S1&#34;>在 ASP.NET 2.0 中部署</div>
+<div class=&#34;ArticleNormalPara&#34;>使用网站模型生成应用程序时，您可以选择对部署站点进行预编译。通过 Visual Studio 2005 中的&amp;ldquo;生成&amp;rdquo;|&amp;ldquo;发布&amp;rdquo;菜单或直接通过命令行实用工具 aspnet_compiler.exe，您可以访问预编译实用工具。<strong>图 1</strong> 显示了 Visual Studio 所显示的此工具的界面。</div>
+<div class=&#34;ArticleImageSpacer&#34;><img onmouseover=&#34;this.style.cursor=&#39;pointer&#39;;&#34; style=&#34;CURSOR: pointer&#34; onclick=&#34;var large=&#39;cc163448.fig01_L.gif&#39;; var small=&#39;cc163448.fig01.gif&#39;; var current=this.src;  if (current.indexOf(large) &amp;gt; 0) this.src=small; if (current.indexOf(small) &amp;gt; 0)this.src=large;&#34; alt=&#34;&#34; src=&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig01.gif&#34; /></p>
+<div class=&#34;ArticleImageCaptionText&#34;>图 1<strong>&amp;nbsp;网站发布实用工具&amp;nbsp;</strong>(单击该图像获得较大视图)</div>
+</div>
+<div class=&#34;ArticleNormalPara&#34;>使用发布实用工具时必须作出的第一个决定是 .as*x 文件在部署后是否可更新（在 aspnet_compiler.exe 命令行实用工具中使用 -u 开关的&amp;ldquo;允许更新此预编译站点&amp;rdquo;选项）。 此决定取决于在部署后是否希望能够在不重复整个部署过程的情况下对网页进行较少更改。事实上，您可能希望明确禁止对已部署网页进行任何修改，并要求所有修改都要遵循标准的部署（也希望遵循标准的测试）过程，在这种情况下，应选择将站点发布为不可更新。</div>
+<div class=&#34;ArticleNormalPara&#34;>将站点发布为不可更新时，您可以完全删除所有 .as*x 文件，而只发布二进制程序集（以及配置文件和静态内容）。不过，如果没有物理文件，ASP.NET 将无法确定哪些类要用于哪些端点请求。例如，如果您的应用程序收到一个请求 Page1.aspx 的请求，而您已经使用了不可更新的二进制部署，则磁盘上很可能没有任何 Page1.aspx 文件，并且现有配置文件中没有任何内容来指示部署到 /bin 目录的程序集集合中哪个类应是该请求的实际处理程序。为弥补这一缺陷，编译过程还将生成一个 .compiled 文件集合，这些文件以简单的 XML 格式包含端点-类型映射和文件依赖关系信息，同时这些文件必须与所部署站点的 /bin 目录中的二进制程序集一起发布。例如，如果应用程序中原来有一个名为 Page1.aspx 的页，则 aspnet_compiler.exe 实用工具会生成一个名为 page1.aspx.cdcab7d2.compiled（哈希代码不定）的文件，其中包含以下 XML：</p>
+<div class=&#34;&#34; id=&#34;ctl00_ContentPlaceHolder1_ctl04_&#34;>
+<div class=&#34;CodeSnippetTitleBar&#34;>
+<div class=&#34;CodeDisplayLanguage&#34;>&amp;nbsp;</div>
+<div class=&#34;CopyCodeButton&#34;>&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;<br />&amp;lt;preserve resultType=&amp;quot;3&amp;quot;<br />virtualPath=&amp;quot;/SampleWebSite/Page1.aspx&amp;quot;<br />hash=&amp;quot;8a8da6c5a&amp;quot; filehash=&amp;quot;42c4a74221152888&amp;quot;<br />flags=&amp;quot;110000&amp;quot; assembly=&amp;quot;App_Web_aq9bt8mj&amp;quot;<br />type=&amp;quot;ASP.page1_aspx&amp;quot;&amp;gt;<br />&amp;lt;filedeps&amp;gt;<br />&amp;lt;filedep name=&amp;quot;/SampleWebSite/Page1.aspx&amp;quot; /&amp;gt;<br />&amp;lt;filedep name=&amp;quot;/SampleWebSite/Page1.aspx.cs&amp;quot; /&amp;gt;<br />&amp;lt;/filedeps&amp;gt;<br />&amp;lt;/preserve&amp;gt;</div>
+</div>
+</div>
+</div>
+<div class=&#34;ArticleNormalPara&#34;>使用此实用工具发布网站时必须作出的另一个重要决定是确定生成的程序集的打包粒度。通过选中&amp;ldquo;使用固定命名和单页程序集&amp;rdquo;（或在 aspnet_compiler.exe 命令行实用工具中使用 -fixednames），既可为站点中的每个目录创建单独的程序集，又可为站点中的每个可编译文件创建单独的程序集。作出该决定并不像您可能想像的那么容易，因为每个选项都有其潜在问题。如果决定不使用 -fixednames 选项，则每次发布应用程序时都会生成一组全新的程序集，并且它们的名称与之前发布的程序集不同。这意味着部署更加复杂，因为在部署新的程序集之前必须删除主运行服务器上所有以前发布的程序集，否则在处理下一个请求时将生成冗余的类定义错误。使用 -fixednames 选项可以解决此问题，因为每个文件都将与命名清晰的程序集对应，而这些程序集在一次编译和下次编译中不会发生变化。不过，如果站点规模较大，则为每个网页、控件和母版页分别生成单独的程序集，很明显意味着您要管理成百上千个程序集的发布。Web 部署项目非常圆满地解决了部署中程序集粒度这一问题，如下所示。</div>
+<div class=&#34;ArticleNormalPara&#34;>您还可以将程序集签名引入编译过程，以便创建具有强名称的不同版本的程序集，如果需要这也适用于全局程序集缓存 (GAC) 中的部署。通过使用 -aptca 选项，您可以使用程序集级别的属性 AllowPartiallyTrustedCallers 来标记生成的程序集，在将任何程序集部署到 GAC 并且以低等或中等信任级别运行 ASP.NET 的情况下，这是必要的。（请注意，此属性应仅应用于已证明不会暴露任何安全漏洞的程序集，因为如有漏洞，使用此属性可能招致引诱攻击。）</div>
+<div class=&#34;ArticleNormalPara&#34;>有关发布站点的另一个细节是如果决定使用 Web 应用程序项目而不使用网站模型，则&amp;ldquo;生成&amp;rdquo;|&amp;ldquo;发布&amp;rdquo;对话框的外观将大不相同，如<strong>图 2</strong> 所示。Web 应用程序项目假定您希望将应用程序发布为可更新的 .as*x 文件和预编译的源文件（开发中它所使用的同一模型），因此仅针对二进制的部署选项不可用。此实用工具实质上更接近于&amp;ldquo;复制网站&amp;rdquo;实用工具（随网站一起提供）而不是&amp;ldquo;发布网站&amp;rdquo;实用工具，因为它需要复制由标准生成过程生成的文件。</div>
+<div class=&#34;ArticleImageSpacer&#34;><img onmouseover=&#34;this.style.cursor=&#39;pointer&#39;;&#34; style=&#34;CURSOR: pointer&#34; onclick=&#34;var large=&#39;cc163448.fig02_L.gif&#39;; var small=&#39;cc163448.fig02.gif&#39;; var current=this.src;  if (current.indexOf(large) &amp;gt; 0) this.src=small; if (current.indexOf(small) &amp;gt; 0)this.src=large;&#34; alt=&#34;&#34; src=&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig02.gif&#34; /></p>
+<div class=&#34;ArticleImageCaptionText&#34;>图 2<strong>&amp;nbsp;Web 应用程序项目的发布 Web 实用工具&amp;nbsp;</strong>(单击该图像获得较大视图)</div>
+</div>
+<div class=&#34;ArticleNormalPara&#34;>从技术上讲，即使您使用 Web 应用程序项目，也不会限制您使用仅针对二进制（不可更新）的部署。其实，WAP 生成的输出是一个有效的网站，然后您可以传递 aspnet_compiler.exe 实用工具来生成创建二进制部署。幸运的是，您只是不能从 Web 部署项目调整过的 Visual Studio 2005 界面调用它而已。</div>
+<p></p>
+<div class=&#34;ArticleTypeTitle&#34; id=&#34;S2&#34;>Web 部署项目</div>
+<div class=&#34;ArticleNormalPara&#34;>那么迄今为止所有现有的编译和部署选项中缺少什么呢？主要缺少两种功能：控制程序集命名（特别是为了进行部署）的功能，以及将所有输出的程序集合并为一个程序集从而简化部署的功能。Web 部署项目可以解决这两个问题。但或许更重要的是，它们还与网站应用程序和 Web 应用程序项目的部署问题中的许多遗留问题有关。</div>
+<div class=&#34;ArticleNormalPara&#34;>它们的核心是，Web 部署项目（可从 <a href=&#34;http://msdn2.microsoft.com/aa336619.aspx&#34;><font color=&#34;#0033cc&#34;>msdn2.microsoft.com/aa336619.aspx</font></a> 下载）代表的只是向您解决方案中添加的另一个项目类型。与所有 Visual Studio 项目文件一样，Web 部署项目也是可在 IDE 中直接编译或从命令行运行的 MSBuild 脚本。不过，Web 部署项目包含用于编译和打包网站（或 Web 应用程序项目）的生成命令，而不指定要编译的源代码文件集合。这意味着它们会调用 aspnet_compiler.exe 实用工具（以及其他实用工具）来创建特定 Web 应用程序的部署。Web 部署项目是作为 Visual Studio 插件包提供的，其中包含了一个用于注入新项目的易用菜单项和一个用于控制所有可用设置的完整属性页集。若要向现有应用程序中添加新项目，可右键单击现有网站（或 Web 应用程序项目），然后选择&amp;ldquo;添加 Web 部署项目&amp;rdquo;项，如<strong>图 3</strong> 所示。此操作将把一个包含 MSBuild 脚本的新 .wdproj 文件添加到您的解决方案中，并会生成您所创建的应用程序的部署。</div>
+<div class=&#34;ArticleImageSpacer&#34;><img alt=&#34;&#34; src=&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03.gif&#34; /></p>
+<div class=&#34;ArticleImageCaptionText&#34;>图 3<strong>&amp;nbsp;添加 Web 部署项目&amp;nbsp;</strong></div>
+</div>
+<div class=&#34;ArticleImageSpacer&#34;><img alt=&#34;&#34; src=&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03a.gif&#34; /></p>
+<div class=&#34;ArticleImageCaptionText&#34;>图 3a<strong>&amp;nbsp; &amp;nbsp;</strong></div>
+</div>
+<div class=&#34;ArticleImageSpacer&#34;><img onmouseover=&#34;this.style.cursor=&#39;pointer&#39;;&#34; style=&#34;CURSOR: pointer&#34; onclick=&#34;var large=&#39;cc163448.fig03b_L.gif&#39;; var small=&#39;cc163448.fig03b.gif&#39;; var current=this.src;  if (current.indexOf(large) &amp;gt; 0) this.src=small; if (current.indexOf(small) &amp;gt; 0)this.src=large;&#34; alt=&#34;&#34; src=&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03b.gif&#34; /></p>
+<div class=&#34;ArticleImageCaptionText&#34;>图 3b<strong>&amp;nbsp; &amp;nbsp;</strong>(单击该图像获得较大视图)</div>
+</div>
+<div class=&#34;ArticleImageSpacer&#34;><img alt=&#34;&#34; src=&#34;http://msdn.microsoft.com/zh-cn/magazine/cc163448.fig03c.gif&#34; /></p>
+<div class=&#34;ArticleImageCaptionText&#34;>图 3c<strong>&amp;nbsp; &amp;nbsp;</strong></div>
+</div>
+<div class=&#34;ArticleNormalPara&#34;>将 Web 部署项目添加到您的解决方案之后，您就可以通过访问</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.biglee.cn/blog/2008/124.html/feed</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

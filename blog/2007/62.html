@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<base href="https://www.biglee.cn/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="/xmlrpc.php">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>十步学会用CSS+DIV建站 &#8211; 网站建设技术集锦</title>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 十步学会用CSS+DIV建站评论Feed" href="/blog/2007/62.html/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='CSS 禅意花园主人 Dave Shea 访谈' href='/blog/2007/61.html' />
+<link rel='next' title='.net 学习资源收集' href='/blog/2007/63.html' />
+<meta name="generator" content="WordPress 4.6" />
+<link rel="canonical" href="/blog/2007/62.html" />
+<link rel='shortlink' href='/?p=62' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2007%2F62.html" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2007%2F62.html&#038;format=xml" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="single single-post postid-62 single-format-standard">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+<article id="post-62" class="post-62 post type-post status-publish format-standard hentry category-web_development">
+	<header class="entry-header">
+		<h1 class="entry-title">十步学会用CSS+DIV建站</h1>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<div class="post_body" id="fontjs">
+<p>原作者<a href="http://subcide.com/">Steve Dennis</a>，翻译<a href="http://jorux.com/">Jorux</a></p>
+<p><strong>目录：</strong> </p>
+<p><a href="/blog/2007/article.asp?id=62#c1">第一步：规划网站，本教程将以图示为例构建网站；</a></p>
+<p><a href="/blog/2007/article.asp?id=62#c2">第二步：创建html模板及文件目录等；</a></p>
+<p><a href="/blog/2007/article.asp?id=62#c3">第三步：将网站分为五个div，网页基本布局的基础；</a></p>
+<p><a href="/blog/2007/article.asp?id=62#c4">第四步：网页布局与div浮动等；</a></p>
+<p><a href="/blog/2007/article.asp?id=62#c5">第五步：网页主要框架之外的附加结构的布局与表现；</a></p>
+<p><a href="/blog/2007/article.asp?id=62#c6">第六步：页面内的基本文本的样式(css)设置；</a></p>
+<p><a href="/blog/2007/article.asp?id=62#c7">第七步：网站头部图标与logo部分的设计；</a></p>
+<p><a href="/blog/2007/article.asp?id=62#c8">第八步：页脚信息(版权等)的表现设置；</a></p>
+<p><a href="/blog/2007/article.asp?id=62#c9">第九步：导航条的制作(较难)；</a></p>
+<p><a href="/blog/2007/article.asp?id=62#c10">第十步：解决IE浏览器的显示BUG；</a></p>
+<p id="c1"><strong>第一步：规划网站，本教程将以图示为例构建网站</strong> <a name="c1"></a></p>
+<p>1.规划网站，本教程将以下图为例构建网站。 </p>
+<p align="center"><a href="http://static.flickr.com/122/263487282_5c400053cd_o.jpg" target="_blank"><img class="body_img" height="120" alt="divlayout" src="http://www.360s.cn/uploadfiles/10bucss/263487282_5c400053cd_m.jpg" width="140" border="0" /></a></p>
+<p>点击看大图 </p>
+<p>其基本布局见下图： </p>
+<p align="center"><a href="http://static.flickr.com/113/263494491_497bf9e42f_o.jpg" target="_blank"><img class="body_img" height="120" alt="divlayout" src="http://www.360s.cn/uploadfiles/10bucss/263494491_497bf9e42f_m.jpg" width="140" border="0" /></a></p>
+<p>点击看大图 </p>
+<p>主要由五个部分构成： </p>
+<p><strong>1.Main Navigation</strong> 导航条，具有按钮特效。 Width: 760px Height: 50px </p>
+<p><strong>2.Header</strong> 网站头部图标，包含网站的logo和站名。 Width: 760px Height: 150px </p>
+<p><strong>3.Content</strong> 网站的主要内容。 Width: 480px Height: Changes depending on content </p>
+<p><strong>4.Sidebar</strong> 边框，一些附加信息。 Width: 280px Height: Changes depending on </p>
+<p><strong>5.Footer</strong> 网站底栏，包含版权信息等。 Width: 760px Height: 66px </p>
+<p id="c2"><strong>第二步：创建html模板及文件目录等</strong> <a name="c2"></a></p>
+<p>1.创建html模板。代码如下：</p>
+<p class="script">&amp;lt;!DOCTYPE html PUBLIC &amp;quot;-//W3C//DTD XHTML 1.0 Transitional//EN&amp;quot;<br />&amp;quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&amp;quot;&amp;gt;<br />&amp;lt;html&amp;gt;<br />&amp;lt;head&amp;gt;<br />&amp;lt;meta http-equiv=&amp;quot;Content-type&amp;quot; content=&amp;quot;text/html; charset=UTF-8&amp;quot; /&amp;gt;<br />&amp;lt;title&amp;gt;CompanyName &#8211; PageName&amp;lt;/title&amp;gt;<br />&amp;lt;meta http-equiv=&amp;quot;Content-Language&amp;quot; content=&amp;quot;en-us&amp;quot; /&amp;gt; <br />&amp;lt;meta http-equiv=&amp;quot;imagetoolbar&amp;quot; content=&amp;quot;no&amp;quot; /&amp;gt;<br />&amp;lt;meta name=&amp;quot;MSSmartTagsPreventParsing&amp;quot; content=&amp;quot;true&amp;quot; /&amp;gt; <br />&amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;Description&amp;quot; /&amp;gt;<br />&amp;lt;meta name=&amp;quot;keywords&amp;quot; content=&amp;quot;Keywords&amp;quot; /&amp;gt; <br />&amp;lt;meta name=&amp;quot;author&amp;quot; content=&amp;quot;Enlighten Designs&amp;quot; /&amp;gt;<br />&amp;lt;style type=&amp;quot;text/css&amp;quot; media=&amp;quot;all&amp;quot;&amp;gt;@import &amp;quot;css/master.css&amp;quot;;&amp;lt;/style&amp;gt;<br />&amp;lt;/head&amp;gt;<br />&amp;lt;body&amp;gt;<br />&amp;lt;/body&amp;gt;<br />&amp;lt;/html&amp;gt;</p>
+<p>将其保存为index.html,并创建文件夹css，images，网站结构如下：</p>
+<p><img height="60" alt="layout" src="http://www.360s.cn/uploadfiles/10bucss/263494623_6be1d2a6f2_m.jpg" width="88" border="0" /></p>
+<p>2.创建网站的大框，即建立一个宽760px的盒子，它将包含网站的所有元素。<br />在html文件的&amp;lt;body&amp;gt;和&amp;lt;/body&amp;gt;之间写入</p>
+<p class="script">&amp;lt;div id=&amp;quot;page-container&amp;quot;&amp;gt;<br />Hello world.<br />&amp;lt;/div&amp;gt;</p>
+<p>创建css文件，命名为master.css,保存在/css/文件夹下。写入：</p>
+<p class="script">#page-container {<br />width: 760px;<br />background: red;<br />}</p>
+<p>控制html的id为page-container的盒子的宽为760px，背景为红色。表现如下：<br /><a href="http://static.flickr.com/27/263494840_7e996e50a9_o.gif"><img style="WIDTH: 600px" alt="layout" src="http://www.360s.cn/uploadfiles/10bucss/263494840_7e996e50a9.jpg" border="0" /></a><br />现在为了让盒子居中，写入margin: auto;，使css文件为：</p>
+<p class="script">#page-container {<br />width: 760px;<br />margin: auto;<br />background: red;<br />}</p>
+<p>现在你可以看到盒子和浏览器的顶端有8px宽的空隙。这是由于浏览器的默认的填充和边界造成的。消除这个空隙，就需要在css文件中写入：</p>
+<p class="script">html, body {<br />margin: 0;<br />padding: 0;<br />}</p>
+<p id="c3"><strong>第三步：将网站分为五个div，网页基本布局的基础:<a name="c3"></a></strong></p>
+<p class="script">&amp;nbsp;</p>
+<p>1.将&amp;ldquo;第一步&amp;rdquo;提到的五个部分都放入盒子中，在html文件中写入：</p>
+<p class="script">&amp;lt;div id=&amp;quot;page-container&amp;quot;&amp;gt;<br />&amp;lt;div id=&amp;quot;main-nav&amp;quot;&amp;gt;Main Nav&amp;lt;/div&amp;gt; <br />&amp;lt;div id=&amp;quot;header&amp;quot;&amp;gt;Header&amp;lt;/div&amp;gt; <br />&amp;lt;div id=&amp;quot;sidebar-a&amp;quot;&amp;gt;Sidebar A&amp;lt;/div&amp;gt; <br />&amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;Content&amp;lt;/div&amp;gt; <br />&amp;lt;div id=&amp;quot;footer&amp;quot;&amp;gt;Footer&amp;lt;/div&amp;gt;<br />&amp;lt;/div&amp;gt;</p>
+<p>表现如下：<br /><a href="http://static.flickr.com/99/263506567_b11257233b_o.gif"><img style="WIDTH: 600px" alt="lay" src="http://www.360s.cn/uploadfiles/10bucss/263506567_b11257233b.jpg" border="0" /></a><br />2.为了将五个部分区分开来，我们将这五个部分用不同的背景颜色标示出来，在css文件写入：</p>
+<p class="script">#main-nav {<br />background: red;<br />height: 50px;<br />}<br />#header {<br />background: blue;<br />height: 150px;<br />}<br />#sidebar-a {<br />background: darkgreen;<br />}<br />#content {<br />background: green;<br />}<br />#footer {<br />background: o&#114;ange;<br />height: 66px;<br />}</p>
+<p>表现如下：<br /><a href="http://static.flickr.com/121/263507866_41e474975d_o.gif"><img style="WIDTH: 600px" alt="lay" src="http://www.360s.cn/uploadfiles/10bucss/263507866_41e474975d.jpg" border="0" /></a></p>
+<p id="c4" style="FONT-WEIGHT: bold">第四步：网页布局与div浮动等：<a name="c4"></a></p>
+<p>1.浮动，首先让边框浮动到主要内容的右边。用css控制浮动:</p>
+<p class="script">#sidebar-a {<br />float: right;<br />width: 280px;<br />background: darkgreen;<br />}</p>
+<p>表现如下：<br /><a href="http://static.flickr.com/102/263508120_fa4fd34369_o.gif"><img style="WIDTH: 600px" alt="lay" src="http://www.360s.cn/uploadfiles/10bucss/263508120_fa4fd34369.jpg" border="0" /></a></p>
+<p>2.往主要内容的盒子中写入一些文字。在html文件中写入：</p>
+<p class="script">&amp;lt;div id=&amp;quot;content&amp;quot;&amp;gt;<br />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam gravida enim ut risus. <br />Praesent sapien purus, ultrices a, varius ac, suscipit ut, enim. Maecenas in lectus.<br />Donec in sapien in nibh rutrum gravida. Sed ut mauris. Fusce malesuada enim vitae lacus <br />euismod vulputate. Nullam rhoncus mauris ac metus. Maecenas vulputate aliquam odio. <br />Duis scelerisque justo a pede. Nam augue lorem, semper at, porta eget, placerat eget, <br />purus. Suspendisse mattis nunc vestibulum ligula. In hac habitasse platea dictumst.<br />&amp;lt;/div&amp;gt;</p>
+<p>表现如下：<br /><a href="http://static.flickr.com/89/263508325_eef5f40b2f_o.gif"><img style="WIDTH: 600px" alt="lay" src="http://www.360s.cn/uploadfiles/10bucss/263508325_eef5f40b2f.jpg" border="0" /></a><br />但是你可以看到主要内容的盒子占据了整个page-container的宽度，我们需要将#content的右边界设为280px。以使其不和边框发生冲突。<br />css代码如下：</p>
+<p class="script">#content {<br />margin-right: 280px;<br />background: green;<br />}</p>
+<p>同时往边框里写入一些文字。在html文件中写入：</p>
+<p class="script">&amp;lt;div id=&amp;quot;sidebar-a&amp;quot;&amp;gt;<br />Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam gravida enim ut risus. <br />Praesent sapien purus, ultrices a, varius ac, suscipit ut, enim. Maecenas in lectus. <br />Donec in sapien in nibh rutrum gravida. Sed ut mauris. Fusce malesuada enim vitae lacus <br />euismod vulputate. Nullam rhoncus mauris ac metus. Maecenas vulputate aliquam odio. <br />Duis scelerisque justo a pede. Nam augue lorem, semper at, porta eget, placerat eget, <br />purus. Suspendisse mattis nunc vestibulum ligula. In hac habitasse platea dictumst.<br />&amp;lt;/div&amp;gt;</p>
+<p>表现如下：<br /><a href="http://static.flickr.com/108/263508507_f7282631ed_o.gif"><img style="WIDTH: 600px" alt="lay" src="http://www.360s.cn/uploadfiles/10bucss/263508507_f7282631ed.jpg" border="0" /></a><br />这也不是我们想要的，网站的底框跑到边框的下边去了。这是由于我们将边框向右浮动，由于是浮动，所以可以理解为它位于整个盒子之上的另一层。因此，底框和内容盒子对齐了。<br />因此我们往css中写入：</p>
+<p class="script">#footer {<br />clear: both;<br />background: o&#114;ange;<br />height: 66px;<br />}</p>
+<p>表现如下：<br /><a href="http://static.flickr.com/118/263508621_5eefd6b3ff_o.gif"><img style="WIDTH: 600px" alt="lay" src="http://www.360s.cn/uploadfiles/10bucss/263508621_5eefd6b3ff.jpg" border="0" /></a> </p>
+<p id="c5" style="FONT-WEIGHT: bold">第五步：网页主要框架之外的附加结构的布局与表现：<a name="c5"></a></p>
+<p>第五步主要介绍除网页主要框架之外的附加结构的表现(Layout),包括以下内容:<br />1.主导航条；<br />2.标题(heading),包括网站名和内容标题；<br />3.内容；<br />4.页脚信息,包括版权,认证,副导航条(可选)。</p>
+<p>加入这些结构时，为了不破坏原有框架，我们需要在css文件&amp;quot;body&amp;quot;标签(TAG)下加入:</p>
+<p class="script">.hidden {<br />display: none;<br />}</p>
+<p>&amp;quot;.hidden&amp;quot;即我们加入的类(class),这个类可以使页面上任意属于hidden类的元素(element)不显示。这些会在稍后使用，现在请暂时忘记它。</p>
+<p><strong>现在我们加入标题(heading):</strong><br />先回到HTML的代码，&amp;lt;h1&amp;gt;到&amp;lt; h6&amp;gt;是我们常用的html标题代码。比如我们一般用&amp;lt;h1&amp;gt;网站名&amp;lt;/h1&amp;gt;，&amp;lt;h2&amp;gt;网站副标题&amp;lt; /h2&amp;gt;,&amp;lt;h3&amp;gt;内容主标题&amp;lt;/h3&amp;gt;等。我们往html文件的Header层(Div)加入:</p>
+<p class="script">&amp;lt;div id=&amp;quot;header&amp;quot;&amp;gt;<br /><font color="#ff0000">&amp;lt;h1&amp;gt;Enlighten Designs&amp;lt;/h1&amp;gt;</font><br />&amp;lt;/div&amp;gt;</p>
+<p>刷新一下页面，你就可以看到巨大的标题，和标题周围的空白，这是因为&amp;lt;h1&amp;gt;&amp;gt;标签的默认大小和边距(margin)造成的，先要消除这些空白,需要加入：</p>
+<p class="script">h1 {<br />margin: 0;<br />padding: 0;<br />}</p>
+<p><strong>接下来是导航条</strong>：<br />控制导航条表现的css代码相对比较复杂，我们将在第九步或是第十步中详细介绍。现在html文件加入导航代码：</p>
+<p class="script">&amp;lt;div id=&amp;quot;main-nav&amp;quot;&amp;gt;<br />&amp;lt;ul&amp;gt;<br />&amp;lt;li id=&amp;quot;about&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;<br />&amp;lt;li id=&amp;quot;services&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;Services&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;<br />&amp;lt;li id=&amp;quot;portfolio&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;Portfolio&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;<br />&amp;lt;li id=&amp;quot;contact&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;Contact Us&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;<br />&amp;lt;/ul&amp;gt;<br />&amp;lt;/div&amp;gt;</p>
+<p>(注：原教程使用了dl和dt，jorux在这使用了更常用的ul和li标签)<br />目前导航条的表现比较糟糕，但是要在以后的教程中介绍其特殊表现，故需要暂时隐藏导航条,于是加入：</p>
+<p class="script">&amp;lt;div id=&amp;quot;main-nav&amp;quot;&amp;gt;<br /><font color="#ff0000">&amp;lt;dl class=&amp;quot;hidden&amp;quot;&amp;gt;</font><br />&amp;lt;dt id=&amp;quot;about&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;About&amp;lt;/a&amp;gt;&amp;lt;/dt&amp;gt;<br />&amp;lt;dt id=&amp;quot;services&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;Services&amp;lt;/a&amp;gt;&amp;lt;/dt&amp;gt;<br />&amp;lt;dt id=&amp;quot;portfolio&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;Portfolio&amp;lt;/a&amp;gt;&amp;lt;/dt&amp;gt;<br />&amp;lt;dt id=&amp;quot;contact&amp;quot;&amp;gt;&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;Contact Us&amp;lt;/a&amp;gt;&amp;lt;/dt&amp;gt;<br />&amp;lt;/dl&amp;gt;<br />&amp;lt;/div&amp;gt;</p>
+<p><strong>我们跳一步，先到页脚：</strong><br />页脚包括两部分：左边的版权,认证和右边的副导航条。<br />我们先要让副导航条向右浮动，就像之前处理Sidebar和Content关系的一样，需要加入一个新的层(div):</p>
+<p class="script">&amp;lt;div id=&amp;quot;footer&amp;quot;&amp;gt;<br /><font color="#ff0000">&amp;lt;div id=&amp;quot;altnav&amp;quot;&amp;gt;<br />&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;About&amp;lt;/a&amp;gt; &#8211; <br />&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;Services&amp;lt;/a&amp;gt; &#8211; <br />&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;Portfolio&amp;lt;/a&amp;gt; &#8211; <br />&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;Contact Us&amp;lt;/a&amp;gt; &#8211; <br />&amp;lt;a href=&amp;quot;http://css.jorux.com/wp-admin/post.php#&amp;quot; &amp;gt;Terms of Trade&amp;lt;/a&amp;gt;<br />&amp;lt</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2007/62.html" rel="bookmark"><time class="entry-date published" datetime="2007-06-04T10:27:10+00:00">2007年6月4日</time><time class="updated" datetime="2007-06-04T10:29:00+00:00">2007年6月4日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/web_development" rel="category tag">网站技术</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			《十步学会用CSS+DIV建站》有1个想法		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-9" class="comment even thread-even depth-1">
+			<article id="div-comment-9" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt='' src='http://2.gravatar.com/avatar/?s=42&#038;d=mm&#038;r=g' srcset='http://0.gravatar.com/avatar/?s=84&amp;d=mm&amp;r=g 2x' class='avatar avatar-42 photo avatar-default' height='42' width='42' />						<b class="fn">uev214</b><span class="says">说道：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="/blog/2007/62.html#comment-9">
+							<time datetime="2007-06-18T21:18:44+00:00">
+								2007年6月18日 21:18							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>帖子不错，支持。12114</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel='nofollow' class='comment-reply-link' href='/blog/2007/62.html?replytocom=9#respond' onclick='return addComment.moveForm( "div-comment-9", "9", "respond", "62" )' aria-label='回复给uev214'>回复</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+					<div id="respond" class="comment-respond">
+			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/2007/62.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表评论" /> <input type='hidden' name='comment_post_ID' value='62' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="/blog/2007/61.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">CSS 禅意花园主人 Dave Shea 访谈</span></a></div><div class="nav-next"><a href="/blog/2007/63.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">.net 学习资源收集</span></a></div></div>
+	</nav>
+	</main><!-- .site-main -->
+
+	
+</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="/blog/category/dotnet" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/pc_technology" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/entertainment" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/blog/category/database" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/blog/category/digest" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/orther" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/blog/category/management" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/web_development" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/blog/category/network" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/blog/category/life" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="/wp-login.php">登录</a></li>
+			<li><a href="/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<base href="https://www.biglee.cn/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>网站建设技术集锦 &#8211; 涉及网站建设、服务器维护等IT技术的博客</title>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="/comments/feed" />
+<script type="text/javascript">
+	var get = new Object();
+	get = GetRequest();
+	var year=2007;
+	id = get['id'];
+	if(typeof(id) != 'undefined'){
+		if(id>118 && id<154){
+		    year = 2008;
+		}else if(id>153 && id<176){
+		    year = 2009;
+		}else if(id>175 && id<182){
+		    year = 2010;
+		}else if(id>181 && id<198){
+		    year = 2011;
+		}else if(id>197 && id<231){
+		    year = 2012;
+		}else if(id>230 && id<253){
+		    year = 2013;
+		}else if(id>252 && id<304){
+		    year = 2014;
+		}else if(id==304){
+		    year = 2015;
+		}else if(id>304){
+		    year = 2016;
+		}
+		url = '/blog/'+year+'/'+id+'.html';
+		location.href=url;
+	}
+
+	function GetRequest() {  
+	  var url = location.search; //获取url中"?"符后的字串
+	   var theRequest = new Object();
+	   if (url.indexOf("?") != -1) {
+	      var str = url.substr(1);
+	      strs = str.split("&");
+	      for(var i = 0; i < strs.length; i ++) {
+	         theRequest[strs[i].split("=")[0]]=(strs[i].split("=")[1]);
+	      }
+	   }
+	   return theRequest;
+	}
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.biglee.cn\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.6" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="home blog hfeed">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<h1 class="site-title"><a href="/" rel="home">网站建设技术集锦</a></h1>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+			
+<article id="post-307" class="post-307 post type-post status-publish format-standard hentry category-web_development">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="/blog/2016/307.html" rel="bookmark">curl与file_get_contents访问远程接口慢的解决</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　这几天在协调处理短信接口调用失败的问题，处理完后发现发送短信很耗时，要5秒左右，是PHP调用 file_get_contents访问远程接口的的，而我前面处理调用失败问题时最后测试短信接口时是直接用的Linux命令curl调用，速度是非常快的。</p>
+<p>　　先从代码入手，刚开始以为是file_get_contents比curl慢，虽然觉得也不至于慢到这种程度，但是总得试试看，于是换成curl，依旧很慢。</p>
+<p>　　难道是域名解析问题？于是在hosts文件里写好本地解析，再试，果真正常了，秒发。看来真是域名解析问题，但又不知为何Shell里没问题，独独PHP里有问题。虽然把域名写死在hosts里能解决问题，但是总不是办法。</p>
+<p>　　上网查，有人说是PHP缓存了域名解析，重启PHP即可。我马上去重启PHP，还真好了。但是有一点我不明白，既然是缓存，那应该是速度更快才对。在一个技术群里讨论时我突然想起来昨天测试接口时发现服务器设置的首选DNS是不能用的，然后我改了。难道PHP缓存的不是域名解析，而是域名解析服务器（DNS）？看来只有这个解释了，有空可以做个测试验证一下。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2016/307.html" rel="bookmark"><time class="entry-date published" datetime="2016-01-09T18:35:30+00:00">2016年1月9日</time><time class="updated" datetime="2016-09-09T22:51:18+00:00">2016年9月9日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/web_development" rel="category tag">网站技术</a></span><span class="comments-link"><a href="/blog/2016/307.html#respond"><span class="screen-reader-text">于curl与file_get_contents访问远程接口慢的解决</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-306" class="post-306 post type-post status-publish format-standard hentry category-web_development">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="/blog/2016/306.html" rel="bookmark">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p> 　　今天在写一个导出数据到csv的功能，为了防止中文乱码，需要将utf8转码，我使用了这样的语句：</p>
+<div class="codeText">
+<pre class="prettyprint linenums:1">#这里先是把csv文件的内容生成，然后下面转码
+$csv=iconv(&#039;utf-8&#039;,&#039;gb2312&#039;,$csv);</pre>
+</div>
+<p>结果报<span style="color: #ff0000;"><strong><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">Notice: </span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">iconv():</span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;"> </span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">Unknown</span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;"> </span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;">error</span><span style="font-family: arial; font-size: 13px; line-height: 20.02px;"> (22)</span></strong></span><span style="color: #333333; font-family: arial; font-size: 13px; line-height: 20.02px;">的错误，想起来$csv里带有换行，所以没办法转换，于是在各个数据项串成csv文件内容前转换，这时报了两个</span><span style="color: #ff0000;"><strong>iconv(): Unknown error (84)</strong></span>的错误，输出内容，发现报错时有一个是处理汉字“密菓”，第二个字不认得，生僻，我突然想到，难道是字符集不支持，于是换成gbk：</p>
+<div class="codeText">
+<pre class="prettyprint linenums:1">$csv .= iconv(&#039;utf-8&#039;,&#039;gbk&#039;,$val)
+</pre>
+</div>
+<p>再运行，没报错了。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2016/306.html" rel="bookmark"><time class="entry-date published" datetime="2016-01-07T18:51:03+00:00">2016年1月7日</time><time class="updated" datetime="2016-09-11T13:34:09+00:00">2016年9月11日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/web_development" rel="category tag">网站技术</a></span><span class="comments-link"><a href="/blog/2016/306.html#respond"><span class="screen-reader-text">于PHP中Notice: iconv(): Unknown error (84) 的解决办法</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-305" class="post-305 post type-post status-publish format-standard hentry category-life">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="/blog/2016/305.html" rel="bookmark">微信大文件的清理</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　 最近手机可用空间越来越小了，新软件都没办法安装。前几天都是用手机自带的垃圾清理软件清理一些缓存之类的才能安装新软件，老是这样，太麻烦了。</p>
+<p>　　今天决定动手解决这个问题。用软件分析过文件占用后发现微信APP的文件夹里有几个文件异常的大，其中85f22adb&#8230;(很长就不抄完了)/sfs文件夹下有一个文件名叫sns.block.00001，大小达到1.3G。不知道这文件是干什么用的，删除怕聊天记录也没了，上网搜索了下，也没有人能说出个所以然。看这文件名，带有sns，我猜测与朋友圈有关系，于是退出微信，先重命名备份这个文件，然后再打开微信，发现聊天记录正常，没丢，通讯录也正常。再进入sfs文件夹，发现微信已经新建了一个文件sns.block.00000，为了验证我的想法，我刷了下朋友圈，再去看这个文件，发现变大了一些，再往下拉，加载更多的朋友圈内容，每加载一些内容，这个文件就会变大，观看朋友圈视频后也一样会增加此文件大小。由此可见此文件是保存朋友圈信息用的。</p>
+<p>　　总结：类似sns.block.00000，sns.block.00001这样的文件是保存朋友圈信息用的，以便回看历史信息能快速加载，少耗费流量。所以可以大胆放心地删除，最多是查看近日朋友圈内容的时候再下载一次而已。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2016/305.html" rel="bookmark"><time class="entry-date published" datetime="2016-01-04T15:23:33+00:00">2016年1月4日</time><time class="updated" datetime="2016-09-09T22:49:50+00:00">2016年9月9日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/life" rel="category tag">网络生活</a></span><span class="comments-link"><a href="/blog/2016/305.html#respond"><span class="screen-reader-text">于微信大文件的清理</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-304" class="post-304 post type-post status-publish format-standard hentry category-network">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="/blog/2015/304.html" rel="bookmark">博客貌似被黑了，有空换PHP的</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>&nbsp;　　由于近来工作比较忙，所以有大半年没关注我这个博客站了。</p>
+<p>　　前两天发现站点打不开了，于是找朋友要了个小地方，放上去，今天发现一堆的垃圾评论与留言，想登录后台管理，结果发现登录不上，提示密码错误。以为自己记错了，试了几个可能的密码，都不行，于量拿出很早已经写的重置用户密码的代码，重置，再登录，也不行，傻眼了，难道管理员用户有另外的表，记得没有啊，查看数据库确认表，才发现我的用户名被改了。看来是已经被黑了。</p>
+<p>　　这个博客站是8年前架的，那时用的是ASP，现在早就改行做PHP了，正好可以抽空把这个站也改成PHP的。</p>
+<p>　　除了用户名被改，还有恶意注册与留言，得抓紧时间换了。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2015/304.html" rel="bookmark"><time class="entry-date published" datetime="2015-09-24T14:51:41+00:00">2015年9月24日</time><time class="updated" datetime="2016-09-09T22:49:14+00:00">2016年9月9日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/network" rel="category tag">网络安全</a></span><span class="comments-link"><a href="/blog/2015/304.html#respond"><span class="screen-reader-text">于博客貌似被黑了，有空换PHP的</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-303" class="post-303 post type-post status-publish format-standard hentry category-web_development">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="/blog/2014/303.html" rel="bookmark">使用socket方式连接Nginx优化php-fpm性能</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>Nginx连接fastcgi的方式有2种：TCP和unix domain socket</p>
+<p>什么是Unix domain socket？&mdash;&mdash; 维基百科<br />
+Unix domain socket 或者 IPC socket是一种终端，可以使同一台操作系统上的两个或多个进程进行数据通信。与管道相比，Unix domain sockets 既可以使用字节流和数据队列，而管道通信则只能通过字节流。Unix domain sockets的接口和Internet socket很像，但它不使用网络底层协议来通信。Unix domain socket 的功能是POSIX操作系统里的一种组件。</p>
+<p>Unix domain sockets 使用系统文件的地址来作为自己的身份。它可以被系统进程引用。所以两个进程可以同时打开一个Unix domain sockets来进行通信。不过这种通信方式是发生在系统内核里而不会在网络里传播。</p>
+<p>TCP和unix domain socket方式对比<br />
+TCP是使用TCP端口连接127.0.0.1:9000<br />
+Socket是使用unix domain socket连接套接字/dev/shm/php-cgi.sock（<span style="color: rgb(255, 0, 0);">很多教程使用路径/tmp，而路径/dev/shm是个tmpfs，速度比磁盘快得多</span>）</p>
+<p>测试机是个1核的centos5.4，2用户并发时系统资源消耗50%左右，10用户资源就跑得很满了。</p>
+<div>&nbsp;</div>
+<div>
+<table border="1" bordercolor="#000000" cellpadding="2" cellspacing="0" height="115" style="box-sizing: border-box; width: 557px; border-collapse: collapse; margin: 10px auto; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;">
+<tbody style="box-sizing: border-box;">
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">&nbsp;</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">&nbsp;</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">2users</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">10users</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.2.5</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">tcp</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1060</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1294</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.2.5</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">socket</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">997</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1487</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.3.10</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">tcp</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">906</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1082</td>
+</tr>
+<tr style="box-sizing: border-box;">
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">nginx/1.2.9 + PHP 5.3.10</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">socket</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">880</td>
+<td style="box-sizing: border-box; border: 1px solid rgb(170, 170, 170); font-size: 0.875rem; padding: 8px 10px;">1247</td>
+</tr>
+</tbody>
+</table>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;"><span style="box-sizing: border-box; color: rgb(229, 51, 51);">结论是在服务器压力不大的情况下，tcp和socket差别不大，但在压力比较满的时候，用套接字方式，效果确实比较好。</span></p>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;"><span style="box-sizing: border-box; color: rgb(0, 102, 0);"><strong style="box-sizing: border-box;">下面是php 5.3以上版本将TCP改成socket方式的配置方法：</strong></span><br style="box-sizing: border-box;" /><br />
+修改php-fpm.conf（/usr/local/php/etc/php-fpm.conf）</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>;</span><span class="attribute">listen</span><span>&nbsp;=&nbsp;</span><span class="attribute-value">127</span><span>.0.0.1:9000&nbsp;&nbsp;</span></span></li>
+<li><span><span class="attribute">listen</span><span>&nbsp;=&nbsp;/dev/shm/php-cgi.sock&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;">修改nginx配置文件server段的配置，将http的方式改为socket方式</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>location&nbsp;~&nbsp;.php$&nbsp;{&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;#fastcgi_pass&nbsp;&nbsp;&nbsp;127.0.0.1:9000;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_pass&nbsp;unix:/dev/shm/php-cgi.sock;&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_index&nbsp;&nbsp;index.php;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_param&nbsp;&nbsp;SCRIPT_FILENAME&nbsp;&nbsp;$document_root$fastcgi_script_name;&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;include&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fastcgi_params;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>}&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p style="box-sizing: border-box; border: none; margin: 4px 0px 12px; outline: 0px; padding: 0px; list-style: none; vertical-align: baseline; color: rgb(51, 51, 51); font-family: 'Microsoft YaHei', 微软雅黑, Arial, sans-serif; font-size: 14px; line-height: 21.700000762939453px;">重启php-fpm与nginx</p>
+<p>service nginx restart<br />
+service php-fpm restart</p>
+<p>然后<br />
+ls -al /dev/shm<br />
+可以看到php-cgi.sock文件unix套接字类型</p>
+<p>参考：http://zh.wikipedia.org/wiki/Unix_domain_socket</p>
+<p>&nbsp;</p>
+<p>转载后记：我根据上文配置完后，访问PHP页面出现502，查看Nginx日志，有错误信息：nginx error connect to php-cgi.sock failed (13: Permission denied)</p>
+<p>编辑配置文件/usr/local/php/etc/php-fpm.conf</p>
+<p>将</p>
+<p>;listen.owner = nobody<br />
+;listen.group = nobody<br />
+;listen.mode = 0660<br />
+改为<br />
+listen.owner = nobody<br />
+listen.group = nobody<br />
+listen.mode = 0666</p>
+<p>保存，重启PHP-FPM即可</p>
+</div>
+<p>&nbsp;</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2014/303.html" rel="bookmark"><time class="entry-date published" datetime="2014-11-14T12:18:17+00:00">2014年11月14日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/web_development" rel="category tag">网站技术</a></span><span class="comments-link"><a href="/blog/2014/303.html#respond"><span class="screen-reader-text">于使用socket方式连接Nginx优化php-fpm性能</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-302" class="post-302 post type-post status-publish format-standard hentry category-web_development">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="/blog/2014/302.html" rel="bookmark">xhprof与Xdebug的奇怪问题</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>　　为了查找项目中比较耗性能的PHP代码，这两天在装xhprof用来跟踪代码，结果遇到了一个很奇怪的问题。安装配置好xhprof后，用来跟踪简单的代码没一点问题，但是在项目中一跟踪，PHP-FPM进程直接就挂了，查看各种日志，并且开了内核转储，折腾了半天也没找到挂了的原因。</p>
+<p>　　没办法，只好换Xdebug。安装，配置，很快就搞定了。</p>
+<p>　　在使用Xdebug前我突发奇想，不知道Xdebug能不能跟踪到xhprof导致PHP-FPM挂了的的问题，于是同时启用两者，结果意外地发现xhprof也能用了。为了证明是不是Xdebug导致xhprof可以用了，我禁用了Xdebug，xhprof又导致PHP-FPM挂了，重新启用又好了。</p>
+<p>　　真是好奇怪的问题，不知道是什么原因造成的，暂时也没时间深究了。</p>
+<p>附Xhprof的安装与使用方法：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>[root@localhost&nbsp;~]#&nbsp;tar&nbsp;-zxvf&nbsp;xhprof-0.9.4.tgz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span>[root@localhost&nbsp;~]#&nbsp;cd&nbsp;xhprof-0.9.4/extension/&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>[root@localhost&nbsp;extension]#&nbsp;phpize&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>[root@localhost&nbsp;extension]#&nbsp;./configure&nbsp;<span class="attribute">&#8211;with-php-config</span><span>=/usr/local/php/bin/php-config&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>[root@localhost&nbsp;extension]#&nbsp;make&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>[root@localhost&nbsp;extension]#&nbsp;make&nbsp;install&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>如果phpize执行不了，请先安装或者做链接：ln -s /usr/local/php/bin/phpize /usr/bin/phpize</p>
+<p>在php.ini文件中，添加如下配置：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>[xhprof]&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="attribute">extension</span><span>=</span><span class="attribute-value">xhprof</span><span>.so;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>;&nbsp;directory&nbsp;used&nbsp;by&nbsp;default&nbsp;implementation&nbsp;of&nbsp;the&nbsp;iXHProfRuns&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>;&nbsp;interface&nbsp;(namely,&nbsp;the&nbsp;XHProfRuns_Default&nbsp;class)&nbsp;for&nbsp;storing&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>;&nbsp;XHProf&nbsp;runs.&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>;&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span>;<span class="attribute">xhprof.output_dir</span><span>=</span><span class="tag">&lt;</span><span class="tag-name">directory_for_storing_xhprof_runs</span><span class="tag">&gt;</span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="attribute">xhprof.output_dir</span><span>=/tmp/xhprof&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p>把xhprof-0.9.4目录下的目录xhprof_html 和 xhprof_lib 下的所有文件拷贝到你网站的主目录下</p>
+<div class="codeText">
+<div class="codeHead">PHP代码</div>
+<ol start="1" class="dp-c">
+<li class="alt"><span><span>&lt;?php&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//cpu:&nbsp;XHPROF_FLAGS_CPU&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//内存：&nbsp;XHPROF_FLAGS_MEMORY&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//如果都监控用XHPROF_FLAGS_CPU&nbsp;+&nbsp;XHPROF_FLAGS_MEMORY&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>xhprof_enable(XHPROF_FLAGS_CPU&nbsp;+&nbsp;XHPROF_FLAGS_MEMORY);&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">//这中间是需要性能分析的php代码</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">//停止性能分析&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="vars">$data</span><span>&nbsp;=&nbsp;xhprof_disable();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">//显示性能分析数据&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="keyword">include_once</span><span>&nbsp;</span><span class="string">&quot;xhprof_lib/utils/xhprof_lib.php&quot;</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span><span class="keyword">include_once</span><span>&nbsp;</span><span class="string">&quot;xhprof_lib/utils/xhprof_runs.php&quot;</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="vars">$objXhprofRun</span><span>&nbsp;=&nbsp;</span><span class="keyword">new</span><span>&nbsp;XHProfRuns_Default();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;</span></li>
+<li class="alt"><span><span class="comment">//第一个参数&nbsp;是xhprof_disable()的返回值&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//第二个参数&nbsp;是自定义命名空间字符串&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//返回运行id，用这个id查看相关运行结果&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="vars">$run_id</span><span>&nbsp;=&nbsp;</span><span class="vars">$objXhprofRun</span><span>-&gt;save_run(</span><span class="vars">$data</span><span>,&nbsp;</span><span class="string">&quot;xhprof&quot;</span><span>);&nbsp;&nbsp;&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>&nbsp;&nbsp;</span></li>
+<li><span><span class="comment">//查看运行结果的url&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//run的值来源于save_run的返回值&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="comment">//source值来源于save_run的第二个参数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span><span class="comment">//www.abc.com&nbsp;需要用自己的域名替换&nbsp;&nbsp;</span><span>&nbsp;&nbsp;</span></span></li>
+<li><span><span class="func">echo</span><span>&nbsp;</span><span class="string">&quot;&lt;a&nbsp;href=&#39;http://www.abc.com/xhprof_html/index.php?run=&quot;</span><span>.</span><span class="vars">$run_id</span><span>.</span><span class="string">&quot;&amp;source=xhprof&#39;&gt;查看结果&lt;/a&gt;&quot;</span><span>;&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p>&nbsp;</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2014/302.html" rel="bookmark"><time class="entry-date published" datetime="2014-11-07T10:22:33+00:00">2014年11月7日</time><time class="updated" datetime="2014-11-10T01:51:00+00:00">2014年11月10日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/web_development" rel="category tag">网站技术</a></span><span class="comments-link"><a href="/blog/2014/302.html#respond"><span class="screen-reader-text">于xhprof与Xdebug的奇怪问题</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-301" class="post-301 post type-post status-publish format-standard hentry category-database">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="/blog/2014/301.html" rel="bookmark">mysql主从同步配置</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>前两天配置了Mysql主从，再记录如下，以备下次查看。</p>
+<p>&nbsp;</p>
+<p><strong>主服务器设置</strong></p>
+<p>1、登录Master服务器,修改my.cnf,添加如下内容； <br />
+[mysqld]<br />
+server-id = 53 #//数据库ID号， 为1时表示为Master,其中master_id必须为1到232&ndash;1之间的一个正整数值; <br />
+log-bin=mysql-bin #//启用二进制日志； <br />
+binlog-do-db=dbname #//需要同步的二进制数据库名； <br />
+binlog-ignore-db=mysql /#/不同步的二进制数据库名;这个同步后听说很麻烦，不同步； <br />
+log-slave-updates #//把更新的记录写到二进制文件中； <br />
+slave-skip-errors=all #//跳过错误，继续执行复制；</p>
+<p>2、建立同步用mysql账号，指定允许访问的IP为从服务器IP<br />
+mysql&gt;&nbsp;#GRANT REPLICATION SLAVE,RELOAD,SUPER ON *.* to rslave@192.168.33.54 identified by &#39;83ea4e19efe34874b50&#39;;<br />
+mysql&gt; FLUSH PRIVILEGES;</p>
+<p>到从服务器上验证登陆：<br />
+mysql -urslave -p83ea4e19efe34874b50 -h192.168.33.53</p>
+<p>3、写锁定 flush tables with read lock;<br />
+4、导出数据mysqldump -uroot -p dbname &gt; webdb.sql</p>
+<p><strong>从服务器设置</strong></p>
+<p>新版本与老版本的Mysql从服务器设置方式不一样，据说是以5.1.7版为分界线，具体请自己尝试。</p>
+<p>老版本的Mysql配置文件[mysqld]后添加：<br />
+server-id = 54<br />
+log-bin=mysql-bin<br />
+master-host = 192.168.33.53<br />
+master-user = rslave<br />
+master-password = 83ea4e19efe34874b50<br />
+master-port = 3306<br />
+master-connect-retry=60 #//如果发现主服务器断线，重新连接的时间差<br />
+replicate-ignore-db=mysql #//不需要备份的数据库； <br />
+replicate-do-db=dbname #//需要备份的数据库 <br />
+log-slave-update<br />
+slave-skip-errors = all #//跳过错误，继续执行复制；</p>
+<p>重启Mysql服务后执行：<br />
+mysql&gt; start slave;</p>
+<p>新版本的Mysql配置文件[mysqld]后添加：<br />
+server-id = 61<br />
+log-bin=mysql-bin</p>
+<p>并执行下面命令：（每次重启都要重新配置）<br />
+mysql&gt; stop slave;<br />
+mysql&gt; change master to master_host=&#39;192.168.33.53&#39;,master_user=&#39;rslave&#39;,master_password=&#39;83ea4e19efe34874b50&#39;;<br />
+mysql&gt; start slave;<br type="_moz" /><br />
+&nbsp;</p>
+<p>验证设置是否正确：<br />
+mysql&gt; show slave statusG;<br />
+主要是看以下两项是否为YES：<br />
+Slave_IO_Running: Yes<br />
+Slave_SQL_Running: Yes</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2014/301.html" rel="bookmark"><time class="entry-date published" datetime="2014-11-07T00:12:11+00:00">2014年11月7日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/database" rel="category tag">数据库</a></span><span class="comments-link"><a href="/blog/2014/301.html#respond"><span class="screen-reader-text">于mysql主从同步配置</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-300" class="post-300 post type-post status-publish format-standard hentry category-pc_technology">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="/blog/2014/300.html" rel="bookmark">ssh连接速度很慢的解决方法</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>问题现象：</p>
+<p>公司有几台服务器，SSH连接的时候很慢，半天才连接上，连上后一切操作正常，网络速度没问题。</p>
+<p>处理方法：</p>
+<p>用命令：ssh -v  服务器IP或者域名</p>
+<p>参数v能显示连接过程中的一系列步骤，看看在哪一步完成后卡得比较久，就是那一步出问题了。</p>
+<p>发现卡得比较久的有</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>debug1:&nbsp;Authentications&nbsp;that&nbsp;can&nbsp;continue:&nbsp;publickey,gssapi-keyex,gssapi-with-mic,password&nbsp;&nbsp;</span></span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;gssapi-keyex&nbsp;&nbsp;</span></li>
+<li class="alt"><span>debug1:&nbsp;No&nbsp;valid&nbsp;Key&nbsp;exchange&nbsp;context&nbsp;&nbsp;</span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;gssapi-with-mic&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>说明卡在了尝试gssapi认证过程上，编辑服务器上的SSH配置文件</p>
+<p>vi&nbsp;/etc/ssh/sshd_config</p>
+<p>将#GSSAPIAuthentication no这一行前面的#号删除，同时在GSSAPIAuthentication yes这行前面加上#号，禁用gssapi认证。</p>
+<p>重启SSH服务：service sshd restart</p>
+<p>再次连接，发现还是有点慢，但是比之前快了一些，继续用ssh -v 跟踪，卡在这：</p>
+<div class="codeText">
+<div class="codeHead">XML/HTML代码</div>
+<ol start="1" class="dp-xml">
+<li class="alt"><span><span>debug1:&nbsp;Authentications&nbsp;that&nbsp;can&nbsp;continue:&nbsp;publickey,password&nbsp;&nbsp;</span></span></li>
+<li><span>debug1:&nbsp;Next&nbsp;authentication&nbsp;method:&nbsp;publickey&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>这是因为服务器要将客户机的IP解析成域名，再次编辑SSH配置文件，将</p>
+<p>#UseDNS yes</p>
+<p>这行改成</p>
+<p>UseDNS no</p>
+<p>重启SSH服务，再次连接，终于是飞一般的感觉。</p>
+<p>&nbsp;</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2014/300.html" rel="bookmark"><time class="entry-date published" datetime="2014-11-05T03:58:58+00:00">2014年11月5日</time><time class="updated" datetime="2016-09-09T13:35:59+00:00">2016年9月9日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/pc_technology" rel="category tag">PC技术</a></span><span class="comments-link"><a href="/blog/2014/300.html#respond"><span class="screen-reader-text">于ssh连接速度很慢的解决方法</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-299" class="post-299 post type-post status-publish format-standard hentry category-web_development">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="/blog/2014/299.html" rel="bookmark">Ajax返回结果中文乱码的解决办法</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>情景：用JQuery的Ajax调用他站接口查询数据。</p>
+<p>代码：</p>
+<div class="codeText">
+<div class="codeHead">Javascript代码</div>
+<ol start="1" class="dp-c">
+<li class="alt"><span><span>$.getJSON(&nbsp;&nbsp;</span></span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;$strurl&nbsp;+&nbsp;<span class="string">&quot;/fwqueryjson.asp?callback=?&quot;</span><span>,&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;{&nbsp;FwCode:&nbsp;$FwCode.val()&nbsp;},&nbsp;&nbsp;</span></li>
+<li><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">function</span><span>(data)&nbsp;{$CheckResult.html(data.QueryResult);}&nbsp;&nbsp;</span></span></li>
+<li class="alt"><span>);&nbsp;&nbsp;</span></li>
+</ol>
+</div>
+<p>现象：返回的结果里的中文是乱码，英文与数字正常。</p>
+<p>原因：本地是UTF-8编码，他站是GB2312编码，请求时默认以本地编码发起请求，与远端不一致，导致乱码。</p>
+<p>解决：先指定Ajax请求的编码，代码如下</p>
+<div class="codeText">
+<div class="codeHead">Javascript代码</div>
+<ol start="1" class="dp-c">
+<li class="alt"><span><span>$.ajaxSetup({&nbsp;scriptCharset:&nbsp;</span><span class="string">&quot;gb2312&quot;</span><span>&nbsp;,&nbsp;contentType:&nbsp;</span><span class="string">&quot;application/json;&nbsp;charset=gb2312&quot;</span><span>});&nbsp;&nbsp;</span></span></li>
+</ol>
+</div>
+<p>&nbsp;</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2014/299.html" rel="bookmark"><time class="entry-date published" datetime="2014-10-25T23:42:13+00:00">2014年10月25日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/web_development" rel="category tag">网站技术</a></span><span class="comments-link"><a href="/blog/2014/299.html#respond"><span class="screen-reader-text">于Ajax返回结果中文乱码的解决办法</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<article id="post-298" class="post-298 post type-post status-publish format-standard hentry category-pc_technology">
+	<header class="entry-header">
+		
+		<h2 class="entry-title"><a href="/blog/2014/298.html" rel="bookmark">各种SSH终端软件对比</a></h2>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p><strong>Xshell</strong></p>
+<p>收费软件</p>
+<p><strong>ssh secure shell</strong></p>
+<p>免费软件</p>
+<p><strong>secureCRT</strong></p>
+<p>Secure[1] CRT是一款支持SSH（SSH1和SSH2）的终端仿真程序，简单的说是Windows下登录UNIX或Linux服务器主机的软件。SecureCRT支持SSH，同时支持Telnet和rlogin协议。SecureCRT是一款用于连接运行包括Windows、UNIX和VMS的理想工具。通过使用内含的VCP命令行程序可以进行加密文件的传输。有流行CRTTelnet客户机的所有特点,包括:自动注册、对不同主机保持不同的特性、打印功能、颜色设置、可变屏幕尺寸、用户定义的键位图和优良的VT100,VT102,VT220和ANSI竞争.能从命令行中运行或从浏览器中运行.其它特点包括文本手稿、易于使用的工具条、用户的键位图编辑器、可定制的ANSI颜色等.SecureCRT的SSH协议支持DES,3DES和RC4密码和密码与RSA鉴别。</p>
+<p>SecureCRT也是一个收费软件</p>
+<p><strong>PuTTY</strong></p>
+<p>Putty是一个免费的、Windows 32平台下的telnet、rlogin和ssh客户端，但是功能丝毫不逊色于商业的telnet类工具。<br />
+用它来远程管理Linux十分好用，其主要优点如下：<br />
+◆ 完全免费;<br />
+◆ 支持公钥认证;<br />
+◆ 全面支持ssh1和ssh2；<br />
+◆ 绿色软件，无需安装，下载后在桌面建个快捷方式即可使用；<br />
+◆ 体积很小，仅484KB(0.63 版本)；<br />
+◆ 操作简单，所有的操作都在一个控制面板中实现。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2014/298.html" rel="bookmark"><time class="entry-date published" datetime="2014-07-31T16:19:47+00:00">2014年7月31日</time><time class="updated" datetime="2014-07-31T03:20:00+00:00">2014年7月31日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/pc_technology" rel="category tag">PC技术</a></span><span class="comments-link"><a href="/blog/2014/298.html#respond"><span class="screen-reader-text">于各种SSH终端软件对比</span>留下评论</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><span class='page-numbers current'><span class="meta-nav screen-reader-text">页 </span>1</span>
+<a class='page-numbers' href='/page/2'><span class="meta-nav screen-reader-text">页 </span>2</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class='page-numbers' href='/page/30'><span class="meta-nav screen-reader-text">页 </span>30</a>
+<a class="next page-numbers" href="/page/2">下一页</a></div>
+	</nav>
+		</main><!-- .site-main -->
+	</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="/blog/category/dotnet" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/pc_technology" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/entertainment" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/blog/category/database" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/blog/category/digest" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/orther" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/blog/category/management" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/web_development" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/blog/category/network" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/blog/category/life" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="/wp-login.php">登录</a></li>
+			<li><a href="/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type="text/javascript" src="/wp-content/plugins/smartass-highlighter/highlighter.js" async></script><script type="text/javascript">window.onload = function(){prettyPrint();};</script><link rel="stylesheet" type="text/css" href="/wp-content/plugins/smartass-highlighter/highlighter.css" /><script type='text/javascript' src='/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

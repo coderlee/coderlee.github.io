@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<base href="https://www.biglee.cn/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="/xmlrpc.php">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>ADO.NET 2.0技术内幕 之 连接池 &#8211; 网站建设技术集锦</title>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; ADO.NET 2.0技术内幕 之 连接池评论Feed" href="/blog/2008/126.html/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='GridView 72般绝技' href='/blog/2008/125.html' />
+<link rel='next' title='.NET Framework 开发人员指南 之 使用连接池' href='/blog/2008/127.html' />
+<meta name="generator" content="WordPress 4.6" />
+<link rel="canonical" href="/blog/2008/126.html" />
+<link rel='shortlink' href='/?p=126' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2008%2F126.html" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2008%2F126.html&#038;format=xml" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="single single-post postid-126 single-format-standard">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+<article id="post-126" class="post-126 post type-post status-publish format-standard hentry category-dotnet">
+	<header class="entry-header">
+		<h1 class="entry-title">ADO.NET 2.0技术内幕 之 连接池</h1>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<h3>&amp;nbsp;连&amp;nbsp; 接&amp;nbsp; 池</h3>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">与微软以前的数据访问技术类似，ADO.NET包括对连接池的内置支持。</p>
+<h3 style="LINE-HEIGHT: 16.5pt">1&amp;nbsp; 连接句柄和物理连接</h3>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt">如果正在使用Visual Studio，可以使用Visual Studio调试工具检查对象的一些内部私有属性。例如，编写一些代码来打开一个SqlConnection，并在调用Open方法的地方设置断点。右击代码中的对象，并选择【添加监视】，将该对象添加到【监视】窗口。在【监视】窗口中，展开标有Non-Pubic Members的区域。向下滚动，将会看到一个称为InnerConnection的私有属性。</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt">从结构上讲，InnerConnection属性的内容是一个非常薄的层，位于数据库的物理连接之上。为在这里进行讨论，InnerConnection属性和到该数据库的物理连接是可交换的。在逐步执行代码时，将会看到在打开和关闭连接时，InnerConnection属性的值发生变化。当调用Open方法时，SQL Client .NET数据提供程序将SqlConnection对象关联至该数据库的物理连接，所以可以执行查询并返回结果。</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt">打开和关闭数据库连接的代价非常高。为了帮助节省资源并提高性能，.NET Framework中的.NET数据提供程序在默认情况下均使用连接池。</p>
+<h3 style="LINE-HEIGHT: 16.5pt">2&amp;nbsp; 连接池是什么</h3>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt">连接池是一种在打开数据存储区的连接时提高应用程序性能的机制。在调用SqlConnection对象的Close方法时，SQL Client .NET数据提供程序并不实际关闭内部连接。相反，数据提供程序将该内部连接存储到一个池中，以便在以后再次使用。甚至在SqlConnection对象被处理之后，该内部连接也保留在池中。如果在以后使用相同连接字符串和凭据调用SqlConnection对象的Open方法，将会再次使用同一内部连接与数据库进行通信。</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt">如果希望确认是否真正再次利用了同一内部连接，可以使用.NET Reflection中的功能以可编程方式访问私有InnerConnection属性的内容。以下代码(其需要对System.Reflection命名空间的引用)在Using代码块中打开一个SqlConnection，并存储SqlConnection的InnerConnection属性的值。通过利用Using代码块，在该代码块的末尾隐式处理了SqlConnection。此代码在Using代码块中打开另一个SqlConnection，并存储SqlConnection的InnerConnection属性的值。最后，此代码对比InnerConnection属性的内容，确认它们实际上为同一对象。</p>
+<p class="a7">Visual Basic</p>
+<p class="ab" style="MARGIN-LEFT: 21pt">Dim strConn As String = &amp;quot;Data Source=.SQLExpress;Integrated Security=True;&amp;quot;<br />Dim propInnerConn As PropertyInfo<br />propInnerConn = GetType(SqlConnection).GetProperty(&amp;quot;InnerConnection&amp;quot;, _<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BindingFlags.NonPublic o&#114; BindingFlags.Instance)<br />Dim objInnerConn1, objInnerConn2 As Object<br />Using cn As New SqlConnection(strConn)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open()<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; objInnerConn1 = propInnerConn.GetValue(cn, Nothing)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close()<br />End Using</p>
+<p class="ab" style="MARGIN-LEFT: 21pt">Using cn As New SqlConnection(strConn)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open()<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; objInnerConn2 = propInnerConn.GetValue(cn, Nothing)<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close()<br />End Using</p>
+<p class="ab" style="MARGIN-LEFT: 21pt">Console.WriteLine(objInnerConn1 Is objInnerConn2)</p>
+<p class="a7">Visual C#</p>
+<p class="ab" style="MARGIN-LEFT: 21pt">string strConn = @&amp;quot;Data Source=.SQLExpress;Integrated Security=True;&amp;quot;;<br />PropertyInfo propInnerConn;<br />propInnerConn = typeof(SqlConnection).GetProperty(&amp;quot;InnerConnection&amp;quot;,<br />&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BindingFlags.NonPublic | BindingFlags.Instance);<br />object objInnerConn1, objInnerConn2;<br />using (SqlConnection cn = new SqlConnection(strConn))<br />{<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; objInnerConn1 = propInnerConn.GetValue(cn, null);<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close();<br />}</p>
+<p class="ab" style="MARGIN-LEFT: 21pt">using (SqlConnection cn = new SqlConnection(strConn))<br />{<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; objInnerConn2 = propInnerConn.GetValue(cn, null);<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close();<br />}</p>
+<p class="ab" style="MARGIN-LEFT: 21pt">Console.WriteLine(objInnerConn1 == objInnerConn2);</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt">两个SqlConnection对象是在不同的Using代码块中创建的，所以其资源将在每个Using代码块的末尾被清除。InnerConnection属性的内容及其所封装的物理连接没有被处理，而是存储在池中，以便在以后被再次利用。</p>
+<p class="MsoList2" style="MARGIN: 6pt 0cm 6pt 52.5pt; TEXT-INDENT: -52.5pt; LINE-HEIGHT: 16.5pt"><sub><img height="27" alt="" src="http://book.csdn.net/BookFiles/396/img/image026.jpg" width="18" /></sub>&amp;nbsp;注意&amp;nbsp;&amp;nbsp;&amp;nbsp; 如果在连接字符串中禁用了连接池(稍后将解释如何禁用)，将会看到此内部连接不能被重复利用。</p>
+<h3 style="LINE-HEIGHT: 16.5pt">3&amp;nbsp; 连接池如何改进代码</h3>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt">考虑一个访问SQL Server数据库的典型ASP.NET或WebServices应用程序。客户端应用程序每次需要查询数据库时，就会在服务器端代码中进行往返，以打开SqlConnection来执行查询。在许多此类应用程序中，这一代码以相同凭据一次又一次地连接到相同数据库。理论上，这意味着客户端应用程序每次需要执行查询时，服务器端代码需要执行三个操 作&amp;mdash;&amp;mdash;登录到数据库(需要检查所提供的凭据)、执行查询、然后注销。</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt; LINE-HEIGHT: 16.5pt">连接池可以真正地提高此类应用程序的性能。通过将内部连接存储在池中，并在以后进行重复利用，就不再因为登录数据库以及从中注销而降低性能。对SqlConnection对象的Open和Close方法的调用可以短时间内返回，从而可以提高代码的性能和响应速度(请参见图3.4)。</p>
+<p align="center"><img height="298" alt="" src="http://book.csdn.net/BookFiles/396/img/image030.jpg" width="379" /></p>
+<p align="center">图3.4&amp;nbsp; 典型ASP.NET或WebServices应用程序中的连接池</p>
+<h3>4&amp;nbsp; 启用连接池</h3>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">在ADO.NET中，连接池是默认启用的。以下代码段将同一SqlConnection对象打开和关闭5次。由于连接池是默认启用的，所以当调用Close方法时，到数据库的实际连接没有被实际关闭，而是将该数据库连接发送到池中，以便在以后重复利用。</p>
+<p class="a7">Visual Basic</p>
+<p class="ab" style="MARGIN-LEFT: 21pt">Dim strConn As String<br />strConn = &amp;quot;Data Source=.SQLExpress;Integrated Security=True;&amp;quot;<br />Dim cn As New SqlConnection(strConn)<br />For intCounter As Integer = 1 To 5<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open()<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close()<br />Next intCounter</p>
+<p class="ab" style="MARGIN-LEFT: 21pt">Visual C#</p>
+<p class="ab" style="MARGIN-LEFT: 21pt">string strConn;<br />strConn = @&amp;quot;Data Source=.SQLExpress;Integrated Security=True;&amp;quot;;<br />SqlConnection cn = new SqlConnection(strConn);<br />for (int intCounter = 1; intCounter &amp;lt;= 5; intCounter++)<br />{&amp;nbsp;<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Open();<br />&amp;nbsp;&amp;nbsp;&amp;nbsp; cn.Close();<br />}</p>
+<h3>5&amp;nbsp; 放入池中的连接何时关闭</h3>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">在调用Close方法时，SqlClient将该连接返回到池中。假定该连接没有被再次使用，将在大约5分钟后将其从池中删除。但具体在多少秒后删除，并没有确切的数值。其行为取决于所生成的随机数以及创建该池时的相对湿度(relative humidity)。当然，如果在退出应用程序时存在已打开的连接池，那么作为应用程序正常清除过程的一部分，这些连接将被关闭和处理。</p>
+<h3>6&amp;nbsp; 禁用连接池</h3>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">您可能不希望使用连接池。例如，如果正在使用一个直接与数据库进行通信的简单Windows应用程序，那么可能希望禁用连接池。在采用这一架构时，各个客户端应用程序需要自己的连接。在启用连接池时，每个应用程序的连接被放入池中，如果在清除连接池之前重新打开该连接，将重复利用放入池中的连接。所以，如果应用程序频繁重复使用连接，那么在启用连接池的情况下，对SqlConnection.Open的调用将会更快速地返回。但是，这种方法将会导致在任意给定时刻存在许多活动的数据库连接。禁用连接池将会降低任意时刻的活动数据库连接数目，但这样会强制所有对SqlConnection.Open的调用都建立一个新的数据库连接。</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">如果希望禁用连接池，可以通过向连接字符串中添加Pooling=False，逐个连接地禁用连接池。</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">幸运的是，在ADO.NET 2.0中不再需要记忆诸如此类的属性。如果存在疑问，可以检查SqlConnectionStringBuilder类的选项。在这个类中可以找到一个Pooling属性，其取值为Boolean类型。默认情况下，此值被设置为True。将该值设置为False将会禁止将该连接放入池中。因此，在调用SqlConnection对象的Close方法时，将会关闭与数据库的实际连接。</p>
+<p class="MsoList2" style="MARGIN: 6pt 0cm 6pt 52.5pt; TEXT-INDENT: -52.5pt"><sub><img height="27" alt="" src="http://book.csdn.net/BookFiles/396/img/image005.jpg" width="18" /></sub>&amp;nbsp;注意&amp;nbsp;&amp;nbsp;&amp;nbsp; 在&amp;ldquo;偶尔进行连接&amp;rdquo;的Windows应用程序中，使用连接池可能很有帮助，具体取决于应用程序。如果应用程序希望定期重新连接到数据库，则可以发挥连接池的作用，将与数据库的物理连接保持打开状态，至少暂时如此。如果在从池中删除该物理连接之前，应用程序尝试重新连接到该数据库，则连接池逻辑(pooling logic)将会重新使用与该数据库的物理连接。</p>
+<h3>7&amp;nbsp; 有关连接池的常见问题</h3>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">学习连接池的开发人员越多，出现的问题也会越多。例如，在我听到的连接池相关问题中，最常见的一个是&amp;ldquo;我怎样才能知道与数据库的物理连接是被真正关闭了，还是仅仅被放入池中了？&amp;rdquo;，另一个常见问题是&amp;ldquo;我怎样才能分辨刚刚打开的连接是建立了一个新物理连接，还是重新利用了一个被放在池中的连接？&amp;rdquo;。</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">有许多工具可以帮助回答有关连接池的问题。其中一些工具更出色一些。我定期使用SQL Server事件探查器来监视对SQL Server数据库的连接和查询。在ADO.NET的2.0版中，还可以使用Windows中的【性能监视器】。</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">ADO.NET 2.0中的SQL Client .NET数据提供程序包括用于连接池的性能计数器。现在可以使用诸如【性能监视器】等工具来查看以下数目：放入池中的连接、活动连接、自由连接、活动与非活动连接池及活动与非活动连接池组。还可以搜集有关在每秒内进行连接和断开连接数目的信息。</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">在某些情况下，维护性能计数器会产生一些性能影响。为此，SQL Client .NET数据提供程序没有维护以下性能计数器：活动或自由连接的数目，或者每秒内放入池中的连接数目或断开连接的数目。可以通过向应用程序的配置文件中添加一项，以启用应用程序中的这些性能计数器。如需有关使用这些性能计数器的详细信息，请参阅MSDN网站上的文章&amp;ldquo;Using ADO.NET Performance Counters&amp;rdquo;(使用ADO.NET性能计数器)。</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">为便于您提出有关连接池的问题，也便于我回答这些问题，我已经开发了一个示例应用程序，如图3.5所示，它可以作为本书示例代码中的一部分进行下载。这一应用程序允许使用如图3.3所示的SqlConnectionStringBuilder/PropertyGrid对话框生成连接字符串。可以很容易地生成新的SqlConnection，打开和关闭现有连接，以及调用ClearPool和ClearAllPools方法。此示例还可以通过【性能监视器】访问SQL Client性能计数器，而不需要以手动方式添加性能计数器。此应用程序的配置文件中包含一项，其能够启用在默认情况下被关闭的性能计数器。在每次创建、打开或关闭SqlConnection或关闭一个或所有连接池时，此示例中的性能计数器都会被更新。</p>
+<p align="center"><img height="277" alt="" src="http://book.csdn.net/BookFiles/396/img/image031.jpg" width="284" /></p>
+<p align="center">图3.5&amp;nbsp; 研究连接池</p>
+<h3>8&amp;nbsp; ADO.NET如何确定是否使用放入池中的连接</h3>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">简单地说，假定连接池未被禁用，则SQL Client .NET数据提供程序在您调用SqlConnection对象的Open方法时检查ConnectionString，并确定池中是否存在可用连接。如果存在可用连接，则SQL Client使用该连接。否则，打开一个到数据库的新连接。</p>
+<p class="MsoNormal" style="TEXT-INDENT: 21pt">实际上还有一些需要说明的内容。设想一个ASP.NET应用程序，其中有多位用户以模拟(impersonation)登录同一数据库，每位用户都使用自己的凭据访问SQL Server数据库。每位用户的连接字符串都是相同的，但他们的凭据有很大不同。由于SQL Client考虑了用户权限，所以用于确定池中有哪些连接可供使用的逻辑要稍微复杂一些。</p>
+<h3>9&amp;nbsp; 强制ADO.NET使用新</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2008/126.html" rel="bookmark"><time class="entry-date published" datetime="2008-06-23T09:35:43+00:00">2008年6月23日</time><time class="updated" datetime="2008-06-23T09:44:00+00:00">2008年6月23日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/dotnet" rel="category tag">.Net</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+	
+					<div id="respond" class="comment-respond">
+			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/2008/126.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表评论" /> <input type='hidden' name='comment_post_ID' value='126' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="/blog/2008/125.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">GridView 72般绝技</span></a></div><div class="nav-next"><a href="/blog/2008/127.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">.NET Framework 开发人员指南 之 使用连接池</span></a></div></div>
+	</nav>
+	</main><!-- .site-main -->
+
+	
+</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="/blog/category/dotnet" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/pc_technology" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/entertainment" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/blog/category/database" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/blog/category/digest" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/orther" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/blog/category/management" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/web_development" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/blog/category/network" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/blog/category/life" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="/wp-login.php">登录</a></li>
+			<li><a href="/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>

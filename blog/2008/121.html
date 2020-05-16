@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<base href="https://www.biglee.cn/">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="/xmlrpc.php">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<title>26个日文片假名导致Access搜索(80040e14/内存溢出)的解决办法 &#8211; 网站建设技术集锦</title>
+<link rel='dns-prefetch' href='//s.w.org'>
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; Feed" href="/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 评论Feed" href="/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="网站建设技术集锦 &raquo; 26个日文片假名导致Access搜索(80040e14/内存溢出)的解决办法评论Feed" href="/blog/2008/121.html/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.6"}};
+			!function(a,b,c){function d(a){var c,d,e,f,g,h=b.createElement("canvas"),i=h.getContext&&h.getContext("2d"),j=String.fromCharCode;if(!i||!i.fillText)return!1;switch(i.textBaseline="top",i.font="600 32px Arial",a){case"flag":return i.fillText(j(55356,56806,55356,56826),0,0),!(h.toDataURL().length<3e3)&&(i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,65039,8205,55356,57096),0,0),c=h.toDataURL(),i.clearRect(0,0,h.width,h.height),i.fillText(j(55356,57331,55356,57096),0,0),d=h.toDataURL(),c!==d);case"diversity":return i.fillText(j(55356,57221),0,0),e=i.getImageData(16,16,1,1).data,f=e[0]+","+e[1]+","+e[2]+","+e[3],i.fillText(j(55356,57221,55356,57343),0,0),e=i.getImageData(16,16,1,1).data,g=e[0]+","+e[1]+","+e[2]+","+e[3],f!==g;case"simple":return i.fillText(j(55357,56835),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode8":return i.fillText(j(55356,57135),0,0),0!==i.getImageData(16,16,1,1).data[0];case"unicode9":return i.fillText(j(55358,56631),0,0),0!==i.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity","unicode9"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='genericons-css'  href='/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='twentysixteen-style-css'  href='/wp-content/themes/twentysixteen/style.css?ver=4.6' type='text/css' media='all' />
+<!--[if lt IE 10]>
+<link rel='stylesheet' id='twentysixteen-ie-css'  href='/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentysixteen-ie8-css'  href='/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='twentysixteen-ie7-css'  href='/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
+<![endif]-->
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='[视频]电影《投名状》（刺马）7分钟超长精彩片花' href='/blog/2007/118.html' />
+<link rel='next' title='程序安装错误解决方法实录' href='/blog/2008/119.html' />
+<meta name="generator" content="WordPress 4.6" />
+<link rel="canonical" href="/blog/2008/121.html" />
+<link rel='shortlink' href='/?p=121' />
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2008%2F121.html" />
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2Fblog%2F2008%2F121.html&#038;format=xml" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		</head>
+
+<body class="single single-post postid-121 single-format-standard">
+<div id="page" class="site">
+	<div class="site-inner">
+		<a class="skip-link screen-reader-text" href="#content">跳至内容</a>
+
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-header-main">
+				<div class="site-branding">
+					
+											<p class="site-title"><a href="/" rel="home">网站建设技术集锦</a></p>
+											<p class="site-description">涉及网站建设、服务器维护等IT技术的博客</p>
+									</div><!-- .site-branding -->
+
+									<button id="menu-toggle" class="menu-toggle">菜单</button>
+
+					<div id="site-header-menu" class="site-header-menu">
+													<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="主菜单">
+								<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa" class="primary-menu"><li id="menu-item-309" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li id="menu-item-315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li id="menu-item-316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li id="menu-item-317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li id="menu-item-318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
+</ul></div>							</nav><!-- .main-navigation -->
+						
+											</div><!-- .site-header-menu -->
+							</div><!-- .site-header-main -->
+
+					</header><!-- .site-header -->
+
+		<div id="content" class="site-content">
+
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		
+<article id="post-121" class="post-121 post type-post status-publish format-standard hentry category-web_development">
+	<header class="entry-header">
+		<h1 class="entry-title">26个日文片假名导致Access搜索(80040e14/内存溢出)的解决办法</h1>	</header><!-- .entry-header -->
+
+	
+	
+	<div class="entry-content">
+		<p>26个日文片假名导致Access搜索(80040e14/内存溢出)的解决办法</p>
+<p>补充最新修改版，使用Unicode的字符代码，而不是非unicode（负数值，有时会出错）代码<br />
+ゴ ガ ギ グ ゲ ザ ジ ズ ヅ デ ド ポ ベ プ ビ パ ヴ ボ ペ ブ ピ バ ヂ ダ ゾ ゼ<br />
+当字段内包含了这26个日文字符任意一个多个时,就会导致在执行SQL语句中包含了<br />
+[字段] like &#39;%aaaaa%&#39; 或 inStr(1,[字段],&#39;aaaaa&#39;,1)>0<br />
+这样的查询时,毫无道理的出现了<br />
+&#8220;Microsoft JET Database Engine 错误 &#39;80040e14&#39; 内存溢出&#8221;的错误<br />
+其他Jet SQL函数命令未作测试，大概与字符搜索定位匹配相关的都可能出错</p>
+<p>搜索相关资料得知被微软工程师证实是Access的bug,可能是语法关系都是微软的东东<br />
+在vbs中 执行inStr(1,日文平假名变量,&#8221;aaaaa&#8221;,1)依然要出现错误<br />
+Microsoft VBScript 运行时错误 错误 &#39;800a0005&#39; 无效的过程调用或参数: &#39;instr&#39; </p>
+<p>没有搜索,因这几个字符出现Access的论坛网站搜索无法进行,何等痛苦<br />
+昨天一朋友大叫怪事,他的音乐数据库无法搜索了,只有30000条记录时是好的<br />
+毫无疑问,日文片假名是祸根,花几分钟把有包含上面的日文替换成&#8221;?&#8221;搜索顺利恢复<br />
+找来论坛程序用户群最大的动网dvBBS AC版本 7.0SP2 版测试,同样有这个日文发帖后 导致无法搜索并且运行时出错的问题<br />
+线上去搜索 &#39;80040e14&#39; 内存溢出&#8221; 的错误 多的是!</p>
+<p>一简单有效的解决办法:<br />
+对这26个字符进行编码和解码,可能效率感觉不理想,测试下来问题不大,速度影响不是太大</p>
+<p>编码:</p>
+<p>Function Jencode(byVal iStr)<br />
+if isnull(iStr) o&#114; isEmpty(iStr) then<br />
+  Jencode=&#8221;&#8221;<br />
+  Exit function<br />
+end if<br />
+dim F,i,E</p>
+<p>  E=array(&#8220;Jn0;&#8221;,&#8221;Jn1;&#8221;,&#8221;Jn2;&#8221;,&#8221;Jn3;&#8221;,&#8221;Jn4;&#8221;,&#8221;Jn5;&#8221;,&#8221;Jn6;&#8221;,&#8221;Jn7;&#8221;,&#8221;Jn8;&#8221;,</p>
+<p>&#8220;Jn9;&#8221;,&#8221;Jn10;&#8221;,&#8221;Jn11;&#8221;,&#8221;Jn12;&#8221;,&#8221;Jn13;&#8221;,&#8221;Jn14;&#8221;,&#8221;Jn15;&#8221;,&#8221;Jn16;&#8221;,&#8221;Jn17;&#8221;,</p>
+<p>&#8220;Jn18;&#8221;,&#8221;Jn19;&#8221;,&#8221;Jn20;&#8221;,&#8221;Jn21;&#8221;,&#8221;Jn22;&#8221;,&#8221;Jn23;&#8221;,&#8221;Jn24;&#8221;,&#8221;Jn25;&#8221;)<br />
+  F=array(chrw(12468),chrw(12460),chrw(12462),chrw(12464),_<br />
+    chrw(12466),chrw(12470),chrw(12472),chrw(12474),_<br />
+    chrw(12485),chrw(12487),chrw(12489),chrw(12509),_<br />
+    chrw(12505),chrw(12503),chrw(12499),chrw(12497),_<br />
+    chrw(12532),chrw(12508),chrw(12506),chrw(12502),_<br />
+    chrw(12500),chrw(12496),chrw(12482),chrw(12480),_<br />
+    chrw(12478),chrw(12476))<br />
+  Jencode=iStr<br />
+  for i=0 to 25<br />
+   Jencode=replace(Jencode,F(i),E(i))<br />
+  next<br />
+End Function</p>
+<p>解码:</p>
+<p>Function Juncode(byVal iStr)<br />
+if isnull(iStr) o&#114; isEmpty(iStr) then<br />
+  Juncode=&#8221;&#8221;<br />
+  Exit function<br />
+end if<br />
+dim F,i,E</p>
+<p>E=array(&#8220;Jn0;&#8221;,&#8221;Jn1;&#8221;,&#8221;Jn2;&#8221;,&#8221;Jn3;&#8221;,&#8221;Jn4;&#8221;,&#8221;Jn5;&#8221;,&#8221;Jn6;&#8221;,&#8221;Jn7;&#8221;,&#8221;Jn8;&#8221;,&#8221;Jn9;&#8221;,</p>
+<p>&#8220;Jn10;&#8221;,&#8221;Jn11;&#8221;,&#8221;Jn12;&#8221;,&#8221;Jn13;&#8221;,&#8221;Jn14;&#8221;,&#8221;Jn15;&#8221;,&#8221;Jn16;&#8221;,&#8221;Jn17;&#8221;,&#8221;Jn18;&#8221;,</p>
+<p>&#8220;Jn19;&#8221;,&#8221;Jn20;&#8221;,&#8221;Jn21;&#8221;,&#8221;Jn22;&#8221;,&#8221;Jn23;&#8221;,&#8221;Jn24;&#8221;,&#8221;Jn25;&#8221;)<br />
+  F=array(chrw(12468),chrw(12460),chrw(12462),chrw(12464),_<br />
+    chrw(12466),chrw(12470),chrw(12472),chrw(12474),_<br />
+    chrw(12485),chrw(12487),chrw(12489),chrw(12509),_<br />
+    chrw(12505),chrw(12503),chrw(12499),chrw(12497),_<br />
+    chrw(12532),chrw(12508),chrw(12506),chrw(12502),_<br />
+    chrw(12500),chrw(12496),chrw(12482),chrw(12480),_<br />
+    chrw(12478),chrw(12476))<br />
+  Juncode=iStr<br />
+for i=0 to 25<br />
+  Juncode=replace(Juncode,E(i),F(i))&#39;□<br />
+next<br />
+End Function</p>
+<p>注意,如果直接使用字符不方便(windows还没装日文支持),注释掉的部分提供有 chr(-23804) </p>
+<p>..这样的定义</p>
+<p>这样<br />
+1.<br />
+表单输入保存时,使用Jencode()将这26个字符先编码再保存(为什么是这26个字符,</p>
+<p>经过全部测试87个平假名89个片假名最终认定的)<br />
+如<br />
+ゴ 即 chr(-23116) 编码为 Jn1;<br />
+2.<br />
+显示时,则使用 Juncode() 函数进行解码,还原日文片假名显示<br />
+3.<br />
+搜索关键字,也要使用 Jencode() 进行编码后再放入 like里<br />
+wh&#101;re [Topic] like &#39;%Jencode(kewwords)%&#39; 使用<br />
+才能保证搜索的值和编码过的数据库字段内容匹配</p>
+<p>==================================</p>
+<p>PS:<br />
+也可以使用正则表达式来改写上面的两个函数,或许效率还要更高些<br />
+再就是如果 压根不使用日文,也不需要搜索日文,则解码部分可以不用,</p>
+<p>保存数据实直接把这26个片假名字符替换为空字符或任一字符,比如&#8221;□&#8221;<br />
+抛砖引玉，如果有更本质的真正的好方法，谢分享</p>
+<p>附:<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+平假名87个 asc值<br />
+-23391 &#8211;> -23316<br />
+unicode 3040-309F </p>
+<p>ぁあぃいぅうぇえぉお<br />
+かがきぎくぐけげこご<br />
+さざしじすずせぜそぞ<br />
+ただちぢっつづてでと<br />
+どなにぬねのはばぱひ<br />
+びぴふぶぷへべぺほぼ<br />
+ぽまみむめもゃやゅゆ<br />
+ょよらりるれろゎわゐ<br />
+ゑをん゛゜ゝゞ<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;<br />
+片假名89个 asc值<br />
+-23135 -> -23059<br />
+unicode 30A0-30FF</p>
+<p>ァアィイゥウェエォオ<br />
+カガキギクグケゲコゴ<br />
+サザシジスズセゼソゾ<br />
+タダチヂッツヅテデト<br />
+ドナニヌネノハバパヒ<br />
+ビピフブプヘベペホボ<br />
+ポマミムメモャヤュユ<br />
+ョヨラリルレロヮワヰ<br />
+ヱヲンヴヵヶーヽヾ</p>
+<p>================补充 修改的版本===========================</p>
+<p>添加一个编码解码参数codeType<br />
+都使用一个函数<br />
+使用chr()不直接使用日文字符<br />
+这样~ 够简洁了吧？</p>
+<p>疑点： 显示日文是不会出错的，保存到数据库也不会出错<br />
+只有SQL使用 like 和 inStr 的时候 才会出错 这个与显示无关！<br />
+还有在vbs里使用 inStr(1,str,&#8221;aaa&#8221;,1)这样按字符搜索也会错<br />
+改为 inStr(lcase(str),&#8221;aaa&#8221;) 就不会出错</p>
+<p>如果一定得用  inStr(1,str,&#8221;aaa&#8221;,1) 字符搜索语法<br />
+则一定要在先inStr() 后 jncode() 的顺序 否则会出错</p>
+<p>一点问题都没有！ 注意到这几点绝对没错！</p>
+<p>rs(&#8220;TopicStr&#8221;)=Jncode(TopicStr,true)  &#39;encode 保存到数据库的资料<br />
+DisplayStr=Jncode(rs(&#8220;TopicStr&#8221;),false) &#39;uncode &#39;显示到页面的标题</p>
+<p>Function Jncode(byVal iStr,codeType)<br />
+if isnull(iStr) o&#114; isEmpty(iStr) o&#114; iStr=&#8221;&#8221; then<br />
+  Jncode=&#8221;&#8221; : Exit function<br />
+end if<br />
+dim F,i,E<br />
+  E=array(&#8220;Jn0;&#8221;,&#8221;Jn1;&#8221;,&#8221;Jn2;&#8221;,&#8221;Jn3;&#8221;,&#8221;Jn4;&#8221;,&#8221;Jn5;&#8221;,&#8221;Jn6;&#8221;,_<br />
+    &#8220;Jn7;&#8221;,&#8221;Jn8;&#8221;,&#8221;Jn9;&#8221;,&#8221;Jn10;&#8221;,&#8221;Jn11;&#8221;,&#8221;Jn12;&#8221;,&#8221;Jn13;&#8221;,_<br />
+    &#8220;Jn14;&#8221;,&#8221;Jn15;&#8221;,&#8221;Jn16;&#8221;,&#8221;Jn17;&#8221;,&#8221;Jn18;&#8221;,&#8221;Jn19;&#8221;,&#8221;Jn20;&#8221;,_<br />
+    &#8220;Jn21;&#8221;,&#8221;Jn22;&#8221;,&#8221;Jn23;&#8221;,&#8221;Jn24;&#8221;,&#8221;Jn25;&#8221;)<br />
+  F=array(chrw(12468),chrw(12460),chrw(12462),chrw(12464),_<br />
+    chrw(12466),chrw(12470),chrw(12472),chrw(12474),_<br />
+    chrw(12485),chrw(12487),chrw(12489),chrw(12509),_<br />
+    chrw(12505),chrw(12503),chrw(12499),chrw(12497),_<br />
+    chrw(12532),chrw(12508),chrw(12506),chrw(12502),_<br />
+    chrw(12500),chrw(12496),chrw(12482),chrw(12480),_<br />
+    chrw(12478),chrw(12476))<br />
+if codyType then<br />
+   for i=0 to 25 iStr=replace(iStr,F(i),E(i)) next<br />
+else<br />
+   for i=0 to 25 iStr=replace(iStr,E(i),F(i)) next<br />
+end if<br />
+Jncode=iStr<br />
+End Function</p>
+<p>附最简单的方法：<br />
+改查询语句，用InStr(1,LCase(columnName),LCase(&#39;&#8221;&amp;keyword&amp;&#8221;&#39;),0)<>0来替代Like语句。<br />
+经过本人实验，可用。</p>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<span class="byline"><span class="author vcard"><img alt='' src='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=49&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/b9f7391bdaee9d0a30a3fda8ddd6436e?s=98&amp;d=mm&amp;r=g 2x' class='avatar avatar-49 photo' height='49' width='49' /><span class="screen-reader-text">作者 </span> <a class="url fn n" href="/blog/author/lee">Lee</a></span></span><span class="posted-on"><span class="screen-reader-text">发布于 </span><a href="/blog/2008/121.html" rel="bookmark"><time class="entry-date published" datetime="2008-02-19T18:26:30+00:00">2008年2月19日</time><time class="updated" datetime="-001-11-30T00:00:00+00:00">-0001年11月30日</time></a></span><span class="cat-links"><span class="screen-reader-text">分类 </span><a href="/blog/category/web_development" rel="category tag">网站技术</a></span>			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+	
+					<div id="respond" class="comment-respond">
+			<h2 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/2008/121.html#respond" style="display:none;">取消回复</a></small></h2>				<form action="/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p><p class="comment-form-comment"><label for="comment">评论</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">姓名 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">电子邮件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">站点</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="发表评论" /> <input type='hidden' name='comment_post_ID' value='121' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>				</form>
+					</div><!-- #respond -->
+		
+</div><!-- .comments-area -->
+
+	<nav class="navigation post-navigation" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="/blog/2007/118.html" rel="prev"><span class="meta-nav" aria-hidden="true">上一</span> <span class="screen-reader-text">上篇文章：</span> <span class="post-title">[视频]电影《投名状》（刺马）7分钟超长精彩片花</span></a></div><div class="nav-next"><a href="/blog/2008/119.html" rel="next"><span class="meta-nav" aria-hidden="true">下一</span> <span class="screen-reader-text">下篇文章：</span> <span class="post-title">程序安装错误解决方法实录</span></a></div></div>
+	</nav>
+	</main><!-- .site-main -->
+
+	
+</div><!-- .content-area -->
+
+
+	<aside id="secondary" class="sidebar widget-area" role="complementary">
+		<section id="search-2" class="widget widget_search">
+<form role="search" method="get" class="search-form" action="/">
+	<label>
+		<span class="screen-reader-text">搜索：</span>
+		<input type="search" class="search-field" placeholder="搜索…" value="" name="s" />
+	</label>
+	<button type="submit" class="search-submit"><span class="screen-reader-text">搜索</span></button>
+</form>
+</section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">近期文章</h2>		<ul>
+					<li>
+				<a href="/blog/2016/307.html">curl与file_get_contents访问远程接口慢的解决</a>
+						</li>
+					<li>
+				<a href="/blog/2016/306.html">PHP中Notice: iconv(): Unknown error (84) 的解决办法</a>
+						</li>
+					<li>
+				<a href="/blog/2016/305.html">微信大文件的清理</a>
+						</li>
+					<li>
+				<a href="/blog/2015/304.html">博客貌似被黑了，有空换PHP的</a>
+						</li>
+					<li>
+				<a href="/blog/2014/303.html">使用socket方式连接Nginx优化php-fpm性能</a>
+						</li>
+				</ul>
+		</section>		<section id="recent-comments-2" class="widget widget_recent_comments"><h2 class="widget-title">近期评论</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/57.html#comment-113">看《西游记》悟团队建设</a>》</li><li class="recentcomments"><span class="comment-author-link">七月的路人甲</span>发表在《<a href="/blog/2007/58.html#comment-112">讯时2.70漏洞－对讯时新闻发布系统的艰难突破</a>》</li><li class="recentcomments"><span class="comment-author-link">sunchili</span>发表在《<a href="/blog/2012/208.html#comment-111">VideoShot.exe停止工作的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">嫁给风的女孩</span>发表在《<a href="/blog/2012/207.html#comment-109">Jinitiator控件IE崩溃及Jinitiator界面汉字方框的解决办法</a>》</li><li class="recentcomments"><span class="comment-author-link">李三</span>发表在《<a href="/blog/2013/240.html#comment-108">商务领航定制网关(EG692HW)电信管理员密码获取方法</a>》</li></ul></section><section id="archives-2" class="widget widget_archive"><h2 class="widget-title">文章归档</h2>		<ul>
+			<li><a href='/blog/date/2016/01'>2016年一月</a></li>
+	<li><a href='/blog/date/2015/09'>2015年九月</a></li>
+	<li><a href='/blog/date/2014/11'>2014年十一月</a></li>
+	<li><a href='/blog/date/2014/10'>2014年十月</a></li>
+	<li><a href='/blog/date/2014/07'>2014年七月</a></li>
+	<li><a href='/blog/date/2014/06'>2014年六月</a></li>
+	<li><a href='/blog/date/2014/05'>2014年五月</a></li>
+	<li><a href='/blog/date/2014/04'>2014年四月</a></li>
+	<li><a href='/blog/date/2014/03'>2014年三月</a></li>
+	<li><a href='/blog/date/2014/02'>2014年二月</a></li>
+	<li><a href='/blog/date/2014/01'>2014年一月</a></li>
+	<li><a href='/blog/date/2013/12'>2013年十二月</a></li>
+	<li><a href='/blog/date/2013/09'>2013年九月</a></li>
+	<li><a href='/blog/date/2013/08'>2013年八月</a></li>
+	<li><a href='/blog/date/2013/07'>2013年七月</a></li>
+	<li><a href='/blog/date/2013/06'>2013年六月</a></li>
+	<li><a href='/blog/date/2013/05'>2013年五月</a></li>
+	<li><a href='/blog/date/2013/04'>2013年四月</a></li>
+	<li><a href='/blog/date/2012/12'>2012年十二月</a></li>
+	<li><a href='/blog/date/2012/11'>2012年十一月</a></li>
+	<li><a href='/blog/date/2012/09'>2012年九月</a></li>
+	<li><a href='/blog/date/2012/08'>2012年八月</a></li>
+	<li><a href='/blog/date/2012/07'>2012年七月</a></li>
+	<li><a href='/blog/date/2012/06'>2012年六月</a></li>
+	<li><a href='/blog/date/2012/05'>2012年五月</a></li>
+	<li><a href='/blog/date/2012/04'>2012年四月</a></li>
+	<li><a href='/blog/date/2012/03'>2012年三月</a></li>
+	<li><a href='/blog/date/2012/01'>2012年一月</a></li>
+	<li><a href='/blog/date/2011/11'>2011年十一月</a></li>
+	<li><a href='/blog/date/2011/09'>2011年九月</a></li>
+	<li><a href='/blog/date/2011/08'>2011年八月</a></li>
+	<li><a href='/blog/date/2011/07'>2011年七月</a></li>
+	<li><a href='/blog/date/2011/02'>2011年二月</a></li>
+	<li><a href='/blog/date/2010/09'>2010年九月</a></li>
+	<li><a href='/blog/date/2010/08'>2010年八月</a></li>
+	<li><a href='/blog/date/2010/07'>2010年七月</a></li>
+	<li><a href='/blog/date/2010/06'>2010年六月</a></li>
+	<li><a href='/blog/date/2009/12'>2009年十二月</a></li>
+	<li><a href='/blog/date/2009/10'>2009年十月</a></li>
+	<li><a href='/blog/date/2009/08'>2009年八月</a></li>
+	<li><a href='/blog/date/2009/06'>2009年六月</a></li>
+	<li><a href='/blog/date/2009/05'>2009年五月</a></li>
+	<li><a href='/blog/date/2009/04'>2009年四月</a></li>
+	<li><a href='/blog/date/2009/03'>2009年三月</a></li>
+	<li><a href='/blog/date/2009/01'>2009年一月</a></li>
+	<li><a href='/blog/date/2008/12'>2008年十二月</a></li>
+	<li><a href='/blog/date/2008/11'>2008年十一月</a></li>
+	<li><a href='/blog/date/2008/10'>2008年十月</a></li>
+	<li><a href='/blog/date/2008/09'>2008年九月</a></li>
+	<li><a href='/blog/date/2008/08'>2008年八月</a></li>
+	<li><a href='/blog/date/2008/07'>2008年七月</a></li>
+	<li><a href='/blog/date/2008/06'>2008年六月</a></li>
+	<li><a href='/blog/date/2008/04'>2008年四月</a></li>
+	<li><a href='/blog/date/2008/02'>2008年二月</a></li>
+	<li><a href='/blog/date/2007/12'>2007年十二月</a></li>
+	<li><a href='/blog/date/2007/11'>2007年十一月</a></li>
+	<li><a href='/blog/date/2007/10'>2007年十月</a></li>
+	<li><a href='/blog/date/2007/09'>2007年九月</a></li>
+	<li><a href='/blog/date/2007/08'>2007年八月</a></li>
+	<li><a href='/blog/date/2007/07'>2007年七月</a></li>
+	<li><a href='/blog/date/2007/06'>2007年六月</a></li>
+	<li><a href='/blog/date/2007/05'>2007年五月</a></li>
+	<li><a href='/blog/date/2007/04'>2007年四月</a></li>
+		</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">分类目录</h2>		<ul>
+	<li class="cat-item cat-item-16"><a href="/blog/category/dotnet" >.Net</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/pc_technology" >PC技术</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/entertainment" >影音娱乐</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="/blog/category/database" >数据库</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="/blog/category/digest" >文摘</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/orther" >杂货铺</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="/blog/category/management" >管理营运</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/web_development" >网站技术</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="/blog/category/network" >网络安全</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="/blog/category/life" >网络生活</a>
+</li>
+		</ul>
+</section><section id="meta-2" class="widget widget_meta"><h2 class="widget-title">功能</h2>			<ul>
+						<li><a href="/wp-login.php">登录</a></li>
+			<li><a href="/feed">文章<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/comments/feed">评论<abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://cn.wordpress.org/" title="基于WordPress，一个优美、先进的个人信息发布平台。">WordPress.org</a></li>			</ul>
+			</section>	</aside><!-- .sidebar .widget-area -->
+
+		</div><!-- .site-content -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+							<nav class="main-navigation" role="navigation" aria-label="页脚主菜单">
+					<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="menu-%e5%af%bc%e8%88%aa-1" class="primary-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-309"><a href="/blog/category/web_development">网站技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-310"><a href="/blog/category/pc_technology">PC技术</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-311"><a href="/blog/category/orther">杂货铺</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-312"><a href="/blog/category/entertainment">影音娱乐</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-313"><a href="/blog/category/life">网络生活</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-314"><a href="/blog/category/digest">文摘</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-315"><a href="/blog/category/database">数据库</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-316"><a href="/blog/category/network">网络安全</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-317"><a href="/blog/category/management">管理营运</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-318"><a href="/blog/category/dotnet">.Net</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="/about_me">关于我</a></li>
+</ul></div>				</nav><!-- .main-navigation -->
+			
+			
+			<div class="site-info">
+								<span class="site-title"><a href="/" rel="home">网站建设技术集锦</a></span>
+				<a href="https://cn.wordpress.org/">自豪地采用WordPress</a>
+			</div><!-- .site-info -->
+		</footer><!-- .site-footer -->
+	</div><!-- .site-inner -->
+</div><!-- .site -->
+
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/comment-reply.min.js?ver=4.6'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var screenReaderText = {"expand":"\u5c55\u5f00\u5b50\u83dc\u5355","collapse":"\u6298\u53e0\u5b50\u83dc\u5355"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='/wp-content/themes/twentysixteen/js/functions.js?ver=20160816'></script>
+<script type='text/javascript' src='/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6b862532551ab821a572e486bca05514";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+</html>
